@@ -1,0 +1,5 @@
+﻿ALTER TABLE [dbo].[LINK_LINK_CHANGE_ACTIONS]
+	ADD CONSTRAINT [FK_LinkChangeAction_to_LinkChangeGroup] 
+	FOREIGN KEY (LinkChangeGroupId)
+	REFERENCES LINK_LINK_CHANGE_GROUPS (Id)	
+

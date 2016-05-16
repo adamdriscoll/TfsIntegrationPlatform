@@ -1,0 +1,328 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Configuration UniqueId="191B2CD3-CC5F-4433-ADA6-D2FB4C305969" FriendlyName="CQ to TFS Sync" >
+  <Providers>
+    <Provider ReferenceName="D9637401-7385-4643-9C64-31585D77ED16" FriendlyName="ClearQuest  Migration Provider" />
+    <Provider ReferenceName="663A8B36-7852-4750-87FC-D189B0640FC1" FriendlyName="TFS 2008 WIT Migration Provider" />
+    <!--<Provider ReferenceName="04201d39-6e47-416f-98b2-07f0013f8455" FriendlyName="TFS 2010 Migration WIT Provider" />-->
+  </Providers>
+  <SessionGroup FriendlyName="ClearQuest to TFS Sync Sessions"
+				SessionGroupGUID="DE6896E7-22E1-4618-A70B-CD36E18EC9D6">
+    <!-- BidirectionalSynchronizationWithOneWayContextSync -->
+    <WorkFlowType Frequency="ContinuousManual" DirectionOfFlow="Unidirectional" SyncContext="Disabled"/>
+
+    <!-- The ## token is used to encapsulate tokens that you would need to reconfigure to match your environment.
+         For example ... SourceIdentifier="##TEAM_PROJECT_NAME##" indicates that you need to replace the ##TEAM_PROJECT_NAME##
+                         with a valid team project name. If you look at the Getting Started Hands-On-Labs (HOL) this would appear
+                         as SourceIdentifier="TP-A" 
+      -->
+
+    <MigrationSources>
+      <!-- CQ migration source -->
+      <MigrationSource InternalUniqueId="BB2BD2C6-92B5-4817-AB51-A087B6532F0D"
+                       FriendlyName="CQ source"
+                       ServerIdentifier="##CQ_SOURCE_SERVER@CQ.MigrateMeFromRationalTools##"
+                       ServerUrl="##CQ_TARGET_SERVER@CQ.MigrateMeFromRationalTools##"
+                       SourceIdentifier="##CQ_SOURCE_SERVER##"
+                       ProviderReferenceName="D9637401-7385-4643-9C64-31585D77ED16">
+        <CustomSettings>
+          <CustomSetting SettingKey="LoginCredentialConfigType" SettingValue="UseTextUsernamePasswordPairInConfig" />
+          <CustomSetting SettingKey="UserName" SettingValue="##CQReaderAccount##" />
+          <CustomSetting SettingKey="Password" SettingValue="##PASSWORD##" />
+          <CustomSetting SettingKey="AdminUserName" SettingValue="" />
+          <CustomSetting SettingKey="AdminPassword" SettingValue="" />
+        </CustomSettings>
+      </MigrationSource>
+
+      <!-- TFS WIT migration source -->
+      <MigrationSource InternalUniqueId="F4741818-F14C-458F-BB20-4BBAC20F95C3"
+                       FriendlyName="TFS WIT target"
+                       ServerIdentifier="##TFS_SERVER_NAME##"
+                       ServerUrl="##http://TFS_SERVER_NAME:8090##"
+                       SourceIdentifier="##TEAM_PROJECT_NAME##"
+                       ProviderReferenceName="663A8B36-7852-4750-87FC-D189B0640FC1">
+        <CustomSettings>
+          <CustomSetting SettingKey="EnableBypassRuleDataSubmission" SettingValue="" />
+          <CustomSetting SettingKey="DisableAreaPathAutoCreation" SettingValue="" />
+          <CustomSetting SettingKey="DisableIterationPathAutoCreation" SettingValue="" />
+        </CustomSettings>
+      </MigrationSource>
+    </MigrationSources>
+
+    <Sessions>
+      <Session SessionUniqueId="882d715f-214a-4901-aefb-a309ed4a8bd2"
+               FriendlyName="Work Item Tracking session"
+               LeftMigrationSourceUniqueId="BB2BD2C6-92B5-4817-AB51-A087B6532F0D"
+               RightMigrationSourceUniqueId="F4741818-F14C-458F-BB20-4BBAC20F95C3"
+               SessionType="WorkItemTracking">
+        <EventSinks />
+        <Filters>
+          <FilterPair>
+            <FilterItem MigrationSourceUniqueId="BB2BD2C6-92B5-4817-AB51-A087B6532F0D" FilterString="StakeholderRequest::##XYZPROJECT## in (select T3.dbid from ##XYZPROJECT## T3
+                      where T3.dbid in (select parent_dbid 
+                                        from parent_child_links 
+                                        where parent_fielddef_id = 16779110 
+                                          and child_dbid in (select child_dbid 
+                                                             from parent_child_links 
+                                                             where parent_fielddef_id = 16777308 and parent_dbid = 33620742
+                                                            )
+                                                            ) and T3.name = 'GIS'
+                                       )" />
+            
+            <FilterItem MigrationSourceUniqueId="F4741818-F14C-458F-BB20-4BBAC20F95C3" FilterString="[System.Id] = 0" />
+          </FilterPair>
+          <FilterPair>
+            <FilterItem MigrationSourceUniqueId="BB2BD2C6-92B5-4817-AB51-A087B6532F0D" FilterString="requirement::project_name='GIS_01'" />
+            <FilterItem MigrationSourceUniqueId="F4741818-F14C-458F-BB20-4BBAC20F95C3" FilterString="[System.Id] = 0" />
+          </FilterPair>
+          <FilterPair>
+            <FilterItem MigrationSourceUniqueId="BB2BD2C6-92B5-4817-AB51-A087B6532F0D" FilterString="Task::##XYZPROJECT## in (select T3.dbid from ##XYZPROJECT## T3
+                      where T3.dbid in (select parent_dbid 
+                                        from parent_child_links 
+                                        where parent_fielddef_id = 16779110 
+                                          and child_dbid in (select child_dbid 
+                                                             from parent_child_links 
+                                                             where parent_fielddef_id = 16777308 and parent_dbid = 33620742
+                                                            )
+                                       ) and T3.name = 'GIS'
+                      )" />
+            <FilterItem MigrationSourceUniqueId="F4741818-F14C-458F-BB20-4BBAC20F95C3" FilterString="[System.Id] = 0" />
+          </FilterPair>
+          <FilterPair>
+            <FilterItem MigrationSourceUniqueId="BB2BD2C6-92B5-4817-AB51-A087B6532F0D" FilterString="request::##XYZPROJECT##_1 in (select T3.dbid from ##XYZPROJECT## T3
+                      where T3.dbid in (select parent_dbid 
+                                        from parent_child_links 
+                                        where parent_fielddef_id = 16779110 
+                                          and child_dbid in (select child_dbid 
+                                                             from parent_child_links 
+                                                             where parent_fielddef_id = 16777308 and parent_dbid = 33620742
+                                                            )
+                                                            ) and T3.name = 'GIS'
+                                       )" />
+            <FilterItem MigrationSourceUniqueId="F4741818-F14C-458F-BB20-4BBAC20F95C3" FilterString="[System.Id] = 0" />
+          </FilterPair>
+        </Filters>
+        <CustomSettings>
+          <SettingXml>
+            <WITSessionCustomSetting>
+              <WorkItemTypes>
+                <WorkItemType LeftWorkItemTypeName="Task" RightWorkItemTypeName="Task" fieldMap="Task2TaskFieldMap" />
+                <WorkItemType LeftWorkItemTypeName="StakeholderRequest" RightWorkItemTypeName="Requirement" fieldMap="StakeholderRequest2RequirementFieldMap" />
+                <WorkItemType LeftWorkItemTypeName="Request" RightWorkItemTypeName="Change Request" fieldMap="Request2ChangeRequestFieldMap" />
+                <WorkItemType LeftWorkItemTypeName="Requirement" RightWorkItemTypeName="Requirement" fieldMap="Requirement2RequirementFieldMap" />
+              </WorkItemTypes>
+              <FieldMaps>
+                <FieldMap name="Request2ChangeRequestFieldMap">
+                  <MappedFields>
+                    <MappedField LeftName="history" RightName="System.History" MapFromSide="Left" />
+                    <MappedField LeftName="State" RightName="System.State" MapFromSide="Left" valueMap="RequestStateMap"/>
+                    <MappedField LeftName="Priority" RightName="Microsoft.VSTS.Common.Priority" MapFromSide="Left" valueMap="PriorityMap"/>
+                    <MappedField LeftName="@@MissingField@@" RightName="System.Reason" MapFromSide="Left" valueMap="DefaultReason"/>
+                    <MappedField LeftName="@@MissingField@@" RightName="System.AssignedTo" MapFromSide="Left" valueMap="DefaultAssignedTo"/>
+                  </MappedFields>
+                  <AggregatedFields>
+                    <FieldsAggregationGroup MapFromSide="Left" TargetFieldName="System.Title" Format="[{0}] {1} [{2}]">
+                      <SourceField Index="0" SourceFieldName="Type" />
+                      <SourceField Index="1" SourceFieldName="Headline" />
+                      <SourceField Index="2" SourceFieldName="id" />
+                    </FieldsAggregationGroup>
+                    <FieldsAggregationGroup MapFromSide="Left" TargetFieldName="System.Description" Format="{0} &#x0D; Subsystem:{1} &#x0D; Planned Release:{2} &#x0D; Planned Iteration:{3} &#x0D; Released in:{4} &#x0D; Originator:{5} &#x0D; Notes:{6}">
+                      <SourceField Index="0" SourceFieldName="Description" />
+                      <SourceField Index="1" SourceFieldName="Subsystem" />
+                      <SourceField Index="2" SourceFieldName="PlannedRelease" />
+                      <SourceField Index="3" SourceFieldName="PlannedIteration" />
+                      <SourceField Index="4" SourceFieldName="Release" />
+                      <SourceField Index="5" SourceFieldName="Originator" />
+                      <SourceField Index="6" SourceFieldName="Note_Entry" />
+                    </FieldsAggregationGroup>
+                  </AggregatedFields>
+                </FieldMap>
+                <FieldMap name="StakeholderRequest2RequirementFieldMap">
+                  <MappedFields>
+                    <MappedField LeftName="Importance" RightName="Microsoft.VSTS.Common.Priority" MapFromSide="Left" valueMap="PriorityMap"/>
+                    <MappedField LeftName="history" RightName="System.History" MapFromSide="Left" />
+                    <!-- We decided not to provide any default mapping - it's up to the user to set one-->
+                    <MappedField LeftName="State" RightName="System.State" MapFromSide="Left" valueMap="StakeholderRequestStateMap"/>
+                    <MappedField LeftName="@@MissingField@@" RightName="Microsoft.VSTS.CMMI.RequirementType" MapFromSide="Left" valueMap="StakeholderFunctionalDefault"/>
+                    <MappedField LeftName="@@MissingField@@" RightName="System.Reason" MapFromSide="Left" valueMap="DefaultReason"/>
+                  </MappedFields>
+                  <AggregatedFields>
+                    <FieldsAggregationGroup MapFromSide="Left" TargetFieldName="System.Title" Format="{0} [{1}]">
+                      <SourceField Index="0" SourceFieldName="Headline" />
+                      <SourceField Index="1" SourceFieldName="id" />
+                    </FieldsAggregationGroup>
+                    <FieldsAggregationGroup MapFromSide="Left" TargetFieldName="System.Description" Format="{0} &#x0D; Subsystem:{1} &#x0D; Requestor:{2}">
+                      <SourceField Index="0" SourceFieldName="Description" />
+                      <SourceField Index="1" SourceFieldName="Subsystem" />
+                      <SourceField Index="2" SourceFieldName="Requestor" />             
+                    </FieldsAggregationGroup>
+                  </AggregatedFields>
+                </FieldMap>
+                <FieldMap name="Requirement2RequirementFieldMap">
+                  <MappedFields>
+                    <MappedField LeftName="@@MissingField@@" RightName="System.State" MapFromSide="Left" valueMap="RequirementStateMap"/>
+                    <MappedField LeftName="@@MissingField@@" RightName="Microsoft.VSTS.CMMI.RequirementType" MapFromSide="Left" valueMap="RequirementScenarioDefault"/>
+                    <MappedField LeftName="history" RightName="System.History" MapFromSide="Left" />
+                    <MappedField LeftName="@@MissingField@@" RightName="System.Reason" MapFromSide="Left" valueMap="DefaultReason"/>
+                  </MappedFields>
+                  <AggregatedFields>
+                    <FieldsAggregationGroup MapFromSide="Left" TargetFieldName="System.Title" Format="{0} [{1}]">
+                      <SourceField Index="0" SourceFieldName="Name" valueMap="HandleEmptyName"/>
+                      <SourceField Index="1" SourceFieldName="Req_ID" />
+                    </FieldsAggregationGroup>
+                    <FieldsAggregationGroup MapFromSide="Left" TargetFieldName="System.Description" Format="{0} &#x0D; Revision number:{1} &#x0D; Tag:{2}">
+                      <SourceField Index="0" SourceFieldName="Requirement" />
+                      <SourceField Index="1" SourceFieldName="Revision" />
+                      <SourceField Index="2" SourceFieldName="Tag" />
+                    </FieldsAggregationGroup>
+                  </AggregatedFields>
+                </FieldMap>
+                <FieldMap name="Task2TaskFieldMap">
+                  <MappedFields>
+                    <MappedField LeftName="Owner" RightName="System.AssignedTo" MapFromSide="Left" valueMap="UserMap"/>
+                    <MappedField LeftName="history" RightName="System.History" MapFromSide="Left" />
+                    <MappedField LeftName="State" RightName="System.State" MapFromSide="Left" valueMap="TaskStateMap"/>
+                    <MappedField LeftName="PlannedEffort" RightName="Microsoft.VSTS.CMMI.Estimate" MapFromSide="Left" />
+                    <MappedField LeftName="Effort" RightName="Microsoft.VSTS.Scheduling.CompletedWork" MapFromSide="Left" />
+                    <MappedField LeftName="Priority" RightName="Microsoft.VSTS.Common.Priority" MapFromSide="Left" valueMap="PriorityMap"/>
+                    <MappedField LeftName="@@MissingField@@" RightName="System.Reason" MapFromSide="Left" valueMap="DefaultReason"/>
+                  </MappedFields>
+                  <AggregatedFields>
+                    <FieldsAggregationGroup MapFromSide="Left" TargetFieldName="System.Title" Format="{0} [{1}]">
+                      <SourceField Index="0" SourceFieldName="Headline" />
+                      <SourceField Index="1" SourceFieldName="id" />
+                    </FieldsAggregationGroup>
+                    <FieldsAggregationGroup MapFromSide="Left" TargetFieldName="System.Description" Format="{0} &#x0D; Subsystem:{1} &#x0D; Start Date:{2} &#x0D; End Date:{3} &#x0D; Notes:{4}">
+                      <SourceField Index="0" SourceFieldName="Description" />
+                      <SourceField Index="1" SourceFieldName="Subsystem" />
+                      <SourceField Index="2" SourceFieldName="StartDate" />
+                      <SourceField Index="3" SourceFieldName="EndDate" />
+                      <SourceField Index="4" SourceFieldName="Note_Entry" />
+                    </FieldsAggregationGroup>
+                  </AggregatedFields>
+                </FieldMap>
+              </FieldMaps>
+              <ValueMaps>
+                <ValueMap name="UserMap">
+                  <!-- ## MAP USERS ## -->
+                  <Value LeftValue="michaf" RightValue="Michael Affronti (PM)" />
+                  <Value LeftValue="aprist" RightValue="April Stewart (Dev Lead)" />
+                  <Value LeftValue="dorikr" RightValue="Doris Krieger (Dev)" />
+                  <Value LeftValue="abuobe" RightValue="Abu Obeida Bakhach (Dev)" />
+                  <Value LeftValue="chriko" RightValue="Christine Koch (Tester)" />
+                  <Value LeftValue="chriba" RightValue="Chris Barry (Business Stakeholder)" />
+                  <Value LeftValue="robiwo" RightValue="Robin Wood (End User)" />
+                </ValueMap>
+                <ValueMap name="AreaIDDefault">
+                  <Value LeftValue="" RightValue="1" />
+                </ValueMap>
+                <ValueMap name="RequirentScenrioDefault">
+                  <Value LeftValue="" RightValue="Scenario" />
+                </ValueMap>
+                <ValueMap name="StakeholderFunctionalDefault">
+                  <Value LeftValue="" RightValue="Functional" />
+                </ValueMap>
+                <ValueMap name="RequirementScenarioDefault">
+                  <Value LeftValue="" RightValue="Scenario" />
+                </ValueMap>
+                <ValueMap name="PriorityMap">
+                  <Value LeftValue="High" RightValue="1" />
+                  <Value LeftValue="Medium" RightValue="2" />
+                  <Value LeftValue="Low" RightValue="3" />
+                  <Value LeftValue="" RightValue="3" />
+                </ValueMap>
+                <ValueMap name="HandleEmptyName">
+                  <Value LeftValue="" RightValue="Empty name" />
+                </ValueMap>
+                <ValueMap name="StakeholderRequestStateMap">
+                  <Value LeftValue="Submitted" RightValue="Proposed" />
+                  <Value LeftValue="Info_Requested" RightValue="Proposed" />
+                  <Value LeftValue="Rejected" RightValue="Closed" />
+                  <Value LeftValue="Accepted" RightValue="Active" />
+                  <Value LeftValue="Under_Resolution" RightValue="Active" />
+                  <Value LeftValue="Closed" RightValue="Closed" />
+                  <Value LeftValue="Duplicate" RightValue="Proposed" />
+                  <Value LeftValue="Submitted" RightValue="Proposed" />
+                  <Value LeftValue="" RightValue="Proposed" />
+                </ValueMap>
+                <ValueMap name="RequestStateMap">
+                  <Value LeftValue="Submitted" RightValue="Proposed" />
+                  <Value LeftValue="Accepted" RightValue="Proposed" />
+                  <Value LeftValue="Under_Resolution" RightValue="Active" />
+                  <Value LeftValue="Resolved" RightValue="Proposed" />
+                  <Value LeftValue="System_Tested" RightValue="Proposed" />
+                  <Value LeftValue="User_Accepted" RightValue="Proposed" />
+                  <Value LeftValue="Closed" RightValue="Closed" />
+                  <Value LeftValue="Postponed" RightValue="Proposed" />
+                  <Value LeftValue="Rejected" RightValue="Closed" />
+                  <Value LeftValue="Estimated" RightValue="Proposed" />
+                  <Value LeftValue="Spec_Requested" RightValue="Proposed" />
+                  <Value LeftValue="Ready_For_StageDeployment" RightValue="Proposed" />
+                  <Value LeftValue="Deployed_To_Stage" RightValue="Proposed" />
+                  <Value LeftValue="Ready_For_ProdDeployment" RightValue="Proposed" />
+                  <Value LeftValue="" RightValue="Proposed" />
+                </ValueMap>
+                <ValueMap name="TaskStateMap">
+                  <Value LeftValue="Submitted" RightValue="Proposed" />
+                  <Value LeftValue="Assigned" RightValue="Proposed" />
+                  <Value LeftValue="Under_Implementation" RightValue="Active" />
+                  <Value LeftValue="Implemented" RightValue="Resolved" />
+                  <Value LeftValue="Rejected" RightValue="Active" />
+                  <Value LeftValue="Integrated" RightValue="Closed" />
+                  <Value LeftValue="Closed" RightValue="Closed" />
+                  <Value LeftValue="" RightValue="Proposed" />
+                </ValueMap>
+                <ValueMap name="RequirementStateMap">
+                  <Value LeftValue="" RightValue="Proposed" />
+                </ValueMap>
+                <ValueMap name="EmptyValue2EmptyString">
+                  <Value LeftValue="" RightValue="" />
+                </ValueMap>
+                <ValueMap name="DefaultReason">
+                  <Value LeftValue="" RightValue="migration" />
+                </ValueMap>
+                <ValueMap name="DefaultAssignedTo">
+                  <Value LeftValue="" RightValue="##Michael Affronti (PM)##" />
+                </ValueMap>
+              </ValueMaps>
+            </WITSessionCustomSetting>
+          </SettingXml>
+        </CustomSettings>
+      </Session>
+    </Sessions>
+
+    <Linking >
+      <CustomSettings>
+      </CustomSettings>
+      <LinkTypeMappings>
+        <LinkTypeMapping LeftMigrationSourceUniqueId="BB2BD2C6-92B5-4817-AB51-A087B6532F0D"
+                         LeftLinkType="ClearQuestAdapter.LinkType.Duplicate"
+                         RightMigrationSourceUniqueId="F4741818-F14C-458F-BB20-4BBAC20F95C3"
+                         RightLinkType="Microsoft.TeamFoundation.Migration.TFS.LinkType.WorkItemToWorkItem"/>
+
+        <!-- Request to Task(s) -->
+        <LinkTypeMapping LeftMigrationSourceUniqueId="BB2BD2C6-92B5-4817-AB51-A087B6532F0D"
+                         LeftLinkType="ClearQuestAdapter.LinkType.ReferenceListFieldRecordLink.request.Tasks"
+                         RightMigrationSourceUniqueId="F4741818-F14C-458F-BB20-4BBAC20F95C3"
+                         RightLinkType="Microsoft.TeamFoundation.Migration.TFS.LinkType.WorkItemToWorkItem"/>
+
+        <!-- Request to Requirement(s) -->
+        <LinkTypeMapping LeftMigrationSourceUniqueId="BB2BD2C6-92B5-4817-AB51-A087B6532F0D"
+                         LeftLinkType="ClearQuestAdapter.LinkType.ReferenceListFieldRecordLink.request.Requirements_List"
+                         RightMigrationSourceUniqueId="F4741818-F14C-458F-BB20-4BBAC20F95C3"
+                         RightLinkType="Microsoft.TeamFoundation.Migration.TFS.LinkType.WorkItemToWorkItem"/>
+
+        <!-- Request to StakeHolderRequest(s) -->
+        <LinkTypeMapping LeftMigrationSourceUniqueId="BB2BD2C6-92B5-4817-AB51-A087B6532F0D"
+                         LeftLinkType="ClearQuestAdapter.LinkType.ReferenceListFieldRecordLink.request.StakeholderRequests"
+                         RightMigrationSourceUniqueId="F4741818-F14C-458F-BB20-4BBAC20F95C3"
+                         RightLinkType="Microsoft.TeamFoundation.Migration.TFS.LinkType.WorkItemToWorkItem"/>
+
+        <!-- Task(s) to Request -->
+        <LinkTypeMapping LeftMigrationSourceUniqueId="BB2BD2C6-92B5-4817-AB51-A087B6532F0D"
+                         LeftLinkType="ClearQuestAdapter.LinkType.ReferenceListFieldRecordLink.Task.Requests"
+                         RightMigrationSourceUniqueId="F4741818-F14C-458F-BB20-4BBAC20F95C3"
+                         RightLinkType="Microsoft.TeamFoundation.Migration.TFS.LinkType.WorkItemToWorkItem"/>
+      </LinkTypeMappings>
+    </Linking>
+  </SessionGroup>
+</Configuration>

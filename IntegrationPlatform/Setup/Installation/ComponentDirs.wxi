@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Include xmlns="http://schemas.microsoft.com/wix/2006/wi">
+
+  <Directory Id="TARGETDIR" Name="SourceDir">
+
+    <!-- Directory ID casing matters! Also some ids are well-known tokens.-->
+
+    <!-- TFS Integration Tools in Start Menu -->
+    <Directory Id="ProgramMenuFolder" SourceName="User's Programs Menu">
+      <Directory Id="ProgramMenuShortcutDirectory" Name="!(loc.ProductName)" />
+    </Directory>
+
+    <!-- TFS Integration Tools in Program Files -->
+    <Directory Id="ProgramFilesFolder">
+      <Directory Id="IntegrationToolsDir" Name="!(loc.ProductName)">
+        <Directory Id="INSTALLDIR">
+          <Directory Id="ConfigDir" Name="Configurations" >
+            <Directory Id="ConfigTfsDir" Name="Team Foundation Server"/>
+            <Directory Id="ConfigFileSystemDir" Name="File System" />
+            <Directory Id="ConfigRationalDir" Name="IBM Rational"/>
+          </Directory>
+          <Directory Id="PluginDir" Name="Plugins" />
+          <Directory Id="DocumentationDir" Name="Documentation" />
+          <Directory Id="ReportsDir" Name="Reports" />
+        </Directory>
+      </Directory>
+    </Directory>
+
+  </Directory>
+  
+  <DirectoryRef Id="TARGETDIR">
+    <Directory Id="WORKSPACEDIR" Name="TfsIPData">
+    </Directory>
+  </DirectoryRef>
+
+</Include>

@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Include xmlns="http://schemas.microsoft.com/wix/2006/wi">
+
+  <InstallExecuteSequence>
+    <!-- Only latch values from current config in install sequence if running silent install.  Note -->
+    <!-- that this custom action normally runs in the UI sequence so that defaults in the config file -->
+    <!-- appear as initial values in the wizard pages presented to users. -->
+    <Custom Action="SetDefaultValues" Before="CostFinalize"><![CDATA[UILevel<=3]]></Custom>
+    <Custom Action="NewerVersionDetected" After="FindRelatedProducts">NEWPRODUCTFOUND</Custom>
+    <!-- Deferred Custom Actions -->
+    <Custom Action="CACreateEventSources.SetProperty" Before="CACreateEventSources">NOT REMOVE</Custom>
+    <Custom Action="CACreateEventSources" Before="CADeleteEventSources.SetProperty">NOT REMOVE</Custom>
+    <Custom Action="CADeleteEventSources.SetProperty" Before="CADeleteEventSources">REMOVE</Custom>
+    <Custom Action="CADeleteEventSources" Before="CAStartWindowsServices.SetProperty">REMOVE</Custom>
+    <Custom Action="CAStartWindowsServices.SetProperty" Before="CAStartWindowsServices">NOT REMOVE and <![CDATA[&FEAT_SyncServices>2]]></Custom>
+    <Custom Action="CAStartWindowsServices" Before="CACreateWorkerProcessGroup.SetProperty">NOT REMOVE and <![CDATA[&FEAT_SyncServices>2]]></Custom>
+    <Custom Action="CACreateWorkerProcessGroup.SetProperty" Before="CACreateWorkerProcessGroup">NOT REMOVE</Custom>
+    <Custom Action="CACreateWorkerProcessGroup" Before="CAGrantFullControlRights.SetProperty">NOT REMOVE</Custom>
+    <Custom Action="CAGrantFullControlRights.SetProperty" Before="CAGrantFullControlRights">NOT REMOVE</Custom>
+    <Custom Action="CAGrantFullControlRights" Before="CADeleteWorkerProcessGroup.SetProperty">NOT REMOVE</Custom>
+    <Custom Action="CADeleteWorkerProcessGroup.SetProperty" Before="CADeleteWorkerProcessGroup">REMOVE</Custom>
+    <Custom Action="CADeleteWorkerProcessGroup" Before="CACreateDatabaseRole.SetProperty">REMOVE</Custom>
+    <Custom Action="CACreateDatabaseRole.SetProperty" Before="CACreateDatabaseRole">NOT REMOVE</Custom>
+    <Custom Action="CACreateDatabaseRole" Before="InstallFinalize">NOT REMOVE</Custom>
+    <!-- Immediate Custom Actions -->
+    <RemoveExistingProducts After="InstallFinalize" />
+
+  </InstallExecuteSequence>
+
+  <InstallUISequence>
+    <Custom Action="SetDefaultValues" Before="CostFinalize" />
+  </InstallUISequence>
+  
+</Include>

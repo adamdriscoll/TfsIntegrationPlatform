@@ -1,0 +1,3 @@
+﻿ALTER TABLE [dbo].[LINKING_SETTINGS]
+	ADD CONSTRAINT [PK_LinkingSettings]
+	PRIMARY KEY (Id)

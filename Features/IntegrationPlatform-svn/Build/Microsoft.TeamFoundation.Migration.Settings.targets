@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project InitialTargets="" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+  <!-- ********************************************************************************************* -->
+  <!-- Default to unsigned build.                                                                    -->
+  <!-- ********************************************************************************************* -->
+  <PropertyGroup>
+    <SignedBuild Condition="'$(SignedBuild)' == ''">false</SignedBuild>
+  </PropertyGroup>
+  
+  <!-- ********************************************************************************************* -->
+  <!-- Set OutputPath consistently for debug/release builds and for a limited set of target          -->
+  <!-- locations.                                                                                    -->
+  <!--                                                                                               -->
+  <!-- TfsIPProjectType values determine how OutDir and OutputPath are set.  Possible values:        -->
+  <!--                                                                                               -->
+  <!--   General: Local - Used for a local build that does not place binaries in shared location.    -->
+  <!--   Product: Base, Adapter, ShellAdapter, Addin, Configuration - Product binary placement.      -->
+  <!--   Test: Suitebin - Drop location for test assemblies.                                         -->
+  <!--   Setup: Layout - Drop location for MSI.                                                      -->
+  <!--                                                                                               -->
+  <!-- ********************************************************************************************* -->
+
+  <PropertyGroup>
+    <TfsIPSubdir Condition=" '$(TfsIPProjectType)'=='Base' ">Bin</TfsIPSubdir>
+    <TfsIPSubdir Condition=" '$(TfsIPProjectType)'=='Adapter' ">Bin\Plugins</TfsIPSubdir>
+    <TfsIPSubdir Condition=" '$(TfsIPProjectType)'=='ShellAdapter' ">Bin\Plugins</TfsIPSubdir>
+    <TfsIPSubdir Condition=" '$(TfsIPProjectType)'=='Addin' ">Bin\Plugins</TfsIPSubdir>
+    <TfsIPSubdir Condition=" '$(TfsIPProjectType)'=='Job' ">Bin\Plugins</TfsIPSubdir>
+    <TfsIPSubdir Condition=" '$(TfsIPProjectType)'=='Configuration' ">Bin\Configurations</TfsIPSubdir>
+    <TfsIPSubdir Condition=" '$(TfsIPProjectType)'=='Doc' ">Bin\Documentation</TfsIPSubdir>
+    <TfsIPSubdir Condition=" '$(TfsIPProjectType)'=='Reports' ">Bin\Reports</TfsIPSubdir>
+    <TfsIPSubdir Condition=" '$(TfsIPProjectType)'=='SuiteBin' ">Test</TfsIPSubdir>
+    <TfsIPSubdir Condition=" '$(TfsIPProjectType)'=='Layout' ">.\Setup</TfsIPSubdir>
+    <TfsIPSubdir Condition=" '$(TfsIPProjectType)'=='SQL' ">.\SQL</TfsIPSubdir>
+    <TfsIPSubdir Condition=" '$(TfsIPProjectType)'=='Local' ">Local</TfsIPSubdir>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="$(BuildingInsideVisualStudio) == 'true'">
+    <!-- ********************************************************************************************* -->
+    <!-- Consistent OutDir and OutputPath construction.                                                -->
+    <!-- ********************************************************************************************* -->
+    <OutRoot Condition="'$(OutRoot)' == ''">$(TfsIPRoot)\Binaries\$(Configuration)</OutRoot>
+    <OutRoot Condition="'$(OutRoot)' != '' and !HasTrailingSlash('$(OutRoot)')">$(OutRoot)\</OutRoot>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="$(BuildingInsideVisualStudio) != 'true'">
+    <!-- ********************************************************************************************* -->
+    <!-- Paths for building via TeamBuild.   Our TeamBuild workflow \Build\BuildProcessTemplate.xml"   -->
+    <!-- is customized pass in $(BuildOutDir) which is the root output folder.                         -->
+    <!-- For more information, see Jim Lamb's guidance here:                                           -->
+    <!-- http://blogs.msdn.com/jimlamb/archive/2010/04/13/customizableoutdir-in-tfs-2010.aspx          -->
+    <!-- ********************************************************************************************* -->
+    <OutRoot Condition="'$(OutRoot)' == ''">$(BuildOutDir)\$(Configuration)\$(SolutionName)</OutRoot>
+    <OutRoot Condition="'$(OutRoot)' != '' and !HasTrailingSlash('$(OutRoot)')">$(OutRoot)\</OutRoot>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <SymbolsPath Condition="'$(SymbolsPath)' ==''">$(OutRoot)\Symbols</SymbolsPath>
+    <OutDir>$(OutRoot)\$(TfsIPSubdir)</OutDir>
+    <OutputPath>$(OutDir)</OutputPath>
+    <!-- ********************************************************************************************* -->
+    <!-- Variables used by setup.                                                                      -->
+    <!-- ********************************************************************************************* -->
+    <RawBinPath Condition="'$(RawBinPath)' == ''">$(OutRoot)\Bin</RawBinPath>
+    <RawBinPath  Condition="'$(SignedBuild)' == 'true'">$(OutRoot)\Signed</RawBinPath>
+    <PluginBinPath Condition="'$(PluginBinPath)' == ''">$(RawBinPath)\Plugins</PluginBinPath>
+    <AdapterBinPath Condition="'$(AdapterBinPath)' == ''">$(RawBinPath)\Plugins</AdapterBinPath>
+    <AddinBinPath Condition="'$(AddinBinPath)' == ''">$(RawBinPath)\Plugins</AddinBinPath>
+    <JobBinPath Condition="'$(JobBinPath)' == ''">$(RawBinPath)\Plugins</JobBinPath>
+    <ConfigurationPath Condition="'$(ConfigurationPath)' == ''">$(RawBinPath)\Configurations</ConfigurationPath>
+    <DocumentationPath Condition="'$(DocumentationPath)' == ''">$(RawBinPath)\Documentation</DocumentationPath>
+    <ReportPath Condition="'$(ReportPath)' == ''">$(RawBinPath)\Reports</ReportPath>
+  </PropertyGroup>
+</Project>

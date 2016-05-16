@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WixLocalization Culture="en-us" xmlns="http://schemas.microsoft.com/wix/2006/localization">
+  <!--Product information-->
+  <String Id="ProductName">Microsoft Team Foundation Server Integration Tools</String>
+  <String Id="Manufacturer">Microsoft Corporation</String>
+  
+  <!-- Program menu shortcuts -->
+  <String Id="Shell_ShortcutName">TFS Integration</String>
+  <String Id="Guidance_ShortcutName">Documentation</String>
+
+  <!--Constants-->
+  <String Id="TfsIntegrationServiceName">TFS Integration Service</String>
+  <String Id="TfsIntegrationServiceDescription">The TFS Integration Service synchronizes content with TFS using configurations authored in the TFS Integration application.</String>
+  <String Id="TfsIntegrationJobServiceName">TFS Integration Job Service</String>
+  <String Id="TfsIntegrationJobServiceDescription">The TFS Integration Job Service is a host process for jobs that monitor the health of a long running synchronization with TFS.</String>
+  <String Id="TFSMigrationConsoleName">TFS Integration Console</String>
+  <String Id="TfsIntegrationExecWorkProcessGroupName">TFSIPEXEC_WPG</String>
+  <String Id="TfsIntegrationExecWorkProcessGroupComment">TFS Integration Platform worker process group</String>
+
+  <!--Feature: TFS Integration Platform -->
+  <String Id="MigrationToolFeature">TFS Integration Tools</String>
+  <String Id="MigrationToolFeatureDescription">Installs TFS Integration Tools with TFS adapters.</String>
+  <!--Feature: Synchronization Services -->
+  <String Id="SyncServicesFeature">TFS Integration Service</String>
+  <String Id="SyncServicesFeatureDescription">Select this feature when synchronizing content with TFS.  Installs a Windows Service host application and monitoring tools.</String>
+
+  <!--Dialog texts-->
+  <String Id="ServiceAccountDlgTitle" Overridable="yes">[ProductName] Setup</String>
+  <String Id="ServiceAccountDlgHeader">Service Account Information</String>
+  <String Id="ServiceAccountDlgDescription">Please specify service account credentials for the Windows Service.</String>
+  <String Id="ServiceAccountDlgText">This account will be granted owner permission to the TFS Integration Platform database and write permissions for the local workspace root for this account. If you use a windows login account, please make sure the account is in the local windows admin group.</String>
+  <String Id="ServiceAccountName">Domain\Account</String>
+  <String Id="ServiceAccountPassword">Password</String>
+  <String Id="ConfirmServiceAccountPassword">Confirm password</String>
+  <String Id="DBInfoDlg_Title" Overridable="yes">[ProductName] Setup</String>
+  <String Id="DBInfoDlg_Header">Database Information</String>
+  <String Id="DBInfoDlg_ServerName"><![CDATA[Server Name (server\instance):]]></String>
+  <String Id="DBInfoDlg_Description">Please enter the server and database information.</String>
+  <String Id="DBInfoDlg_Text">This tool stores configuration and runtime data in a database.  Microsoft SQL Server Express Edition can be used when installing these tools to do a one-time migration of content to TFS.  It is better to use a dedicated Microsoft SQL Server instance without the 4GB data limit of SQL Express when using the tools to synchronize content with TFS.</String>
+  <String Id="PasswordMismatchDlg_Title">Password mismatch</String>
+  <String Id="PasswordMismatchDlgText">The password entered does not match the confirmation password.  Please retype the passwords and try again.</String>
+  <String Id="DbConnectErrorDlg_Title">Database Error</String>
+  <String Id="GrandPermissionErrorDlg_Title">Failed to grant permission to service account</String>
+  <String Id="UIOk">Ok</String>
+  <String Id="WixUISkip">Skip</String>
+
+  <!--Error Messages-->
+  <String Id="MsgNewerVersionDetected">There is a newer version of this product installed.</String>
+  <String Id="NetFrameworkRequired">This tool requires the Microsoft .NET Framework 3.5 SP1. Please install this version of the .NET Framework and run setup again.</String>
+  <String Id="TeamExplorerRequired">This tool requires the TFS client object model.  Please install Team Explorer 2008, Team Explorer 2010, or Team Explorer Dev11 and run setup again.</String>
+  <String Id="AdminPrivilegesRequired">You must be logged in as an administrator to install this product.</String>
+
+  <!-- IBM Rational -->
+  <String Id="RationalConnectorFeature">IBM Rational ClearCase/ClearQuest Adapters</String>
+  <String Id="RationalConnectorFeatureDescription">This feature installs adapters that work with versions 7.x and 2003.06 of the IBM Rational ClearCase and IBM Rational ClearQuest tools.</String>
+
+</WixLocalization>

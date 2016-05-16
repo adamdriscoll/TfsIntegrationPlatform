@@ -1,0 +1,207 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="CancelKeyInfo" xml:space="preserve">
+    <value>Press Ctrl-C to cancel the command execution.</value>
+  </data>
+  <data name="CommandExecutionFailFormat" xml:space="preserve">
+    <value>Command '{0}' failed.</value>
+  </data>
+  <data name="CommandExecutionSucceedFormat" xml:space="preserve">
+    <value>Command '{0}' executed successfully.</value>
+  </data>
+  <data name="DeleteSessionGroupSucceedInfoFormat" xml:space="preserve">
+    <value>Session Group '{0}' has been successfully deleted.</value>
+  </data>
+  <data name="ErrorDataFolderInvalidPathInfoFormat" xml:space="preserve">
+    <value>The TFS Integration data folder specified in the configuration file '{0}' is invalid.</value>
+  </data>
+  <data name="ErrorDataFolderNotFoundOrUnmodifiableInfoFormat" xml:space="preserve">
+    <value>Cannot find or modify the  TFS Integration data folder '{0}'.</value>
+  </data>
+  <data name="ErrorFailToAddAccountToTFSIPEXECRole" xml:space="preserve">
+    <value>Error - adding user account to TFSIPEXEC role in the TFS_IntegrationPlatform DB failed.</value>
+  </data>
+  <data name="ErrorNeedAdminPrivilegeToRunCommandFormat" xml:space="preserve">
+    <value>Error - execution of command '{0}' requires Administrator's privilege.</value>
+  </data>
+  <data name="ErrorSessionGroupIsRunning" xml:space="preserve">
+    <value>Cannot perform compression - a session group is running.</value>
+  </data>
+  <data name="ErrorUnauthorizedAccessCreatingDataFolderInfoFormat" xml:space="preserve">
+    <value>The TFS Integration data folder specified in the configuration file '{0}' does not exist. You do not have permission to create the folder.</value>
+  </data>
+  <data name="ErrorUnauthorizedAccessUpdatingDataFolderInfoFormat" xml:space="preserve">
+    <value>You do not have permission to change the Access Control settings of the  TFS Integration data folder '{0}'.</value>
+  </data>
+  <data name="ErrorUnsupportedPlatformUpdatingDataFolderInfo" xml:space="preserve">
+    <value>This operation is not supported, because the current operating system is not Microsoft Windows 2000 or later.</value>
+  </data>
+  <data name="ExportConfigNonExistSessionGroupIdFormat" xml:space="preserve">
+    <value>The provided Session Group Unique Id '{0}' does not correspond to any existing session group.</value>
+  </data>
+  <data name="ExportConfigSuccessInfoFormat" xml:space="preserve">
+    <value>The configuration has been exported to file '{0}'.</value>
+  </data>
+  <data name="ImportConfigConfigNotExist" xml:space="preserve">
+    <value>There is no configuration file in the configuration package to import from.</value>
+  </data>
+  <data name="ImportConfigSuccessInfoFormat" xml:space="preserve">
+    <value>The configuration has been successfully imported. The imported configuration name is '{0}' (session group unique id: {1}).</value>
+  </data>
+  <data name="IntegrationServiceNotRunningInfo" xml:space="preserve">
+    <value>Service is running: False.</value>
+  </data>
+  <data name="InvalidCommandLineArgInfo" xml:space="preserve">
+    <value>Invalid command line arguments.</value>
+  </data>
+  <data name="InvalidCommandSpecificArgInfo" xml:space="preserve">
+    <value>Invalid command line arguments -</value>
+  </data>
+  <data name="InvalidSessionGroupUnqueIdInfoFormat" xml:space="preserve">
+    <value>'{0}' is not a valid Session Group Unique Id.</value>
+  </data>
+  <data name="KnownInvalidCommandSpecificArgFormat" xml:space="preserve">
+    <value>argument '{0}' is invalid for Command '{1}'. </value>
+  </data>
+  <data name="ListSessionGroupSuccessInfoHeader" xml:space="preserve">
+    <value>Session groups that can be deleted: </value>
+  </data>
+  <data name="MissingCommandInArgInfo" xml:space="preserve">
+    <value>Invalid command line arguments - please specify a command to execute.</value>
+  </data>
+  <data name="None" xml:space="preserve">
+    <value>None</value>
+  </data>
+  <data name="RunningSessionGroupsHeader" xml:space="preserve">
+    <value>Running session groups</value>
+  </data>
+  <data name="StatusServiceHostInfo" xml:space="preserve">
+    <value>Service hosted in Windows Service</value>
+  </data>
+  <data name="UnhandledExceptionInfo" xml:space="preserve">
+    <value>An error has occurred during the command execution...</value>
+  </data>
+  <data name="UnknownCommandName" xml:space="preserve">
+    <value>Unknown</value>
+  </data>
+  <data name="UnknownInvalidCommandSpecificArgFormat" xml:space="preserve">
+    <value>There is invalid argument(s) for Command '{0}'. </value>
+  </data>
+</root>

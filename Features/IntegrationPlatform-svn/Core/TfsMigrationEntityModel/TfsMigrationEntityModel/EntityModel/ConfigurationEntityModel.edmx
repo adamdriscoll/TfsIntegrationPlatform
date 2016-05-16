@@ -1,0 +1,1722 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Microsoft.TeamFounation.Migration.EntityModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2005" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2006/04/edm/ssdl">
+        <EntityContainer Name="MicrosoftTeamFounationMigrationEntityModelStoreContainer">
+          <EntitySet Name="ADDINS" EntityType="Microsoft.TeamFounation.Migration.EntityModel.Store.ADDINS" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="CONFLICT_CONFLICT_TYPES" EntityType="Microsoft.TeamFounation.Migration.EntityModel.Store.CONFLICT_CONFLICT_TYPES" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="CONFLICT_RESOLUTION_ACTIONS" EntityType="Microsoft.TeamFounation.Migration.EntityModel.Store.CONFLICT_RESOLUTION_ACTIONS" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="CONFLICT_RESOLUTION_RULES" EntityType="Microsoft.TeamFounation.Migration.EntityModel.Store.CONFLICT_RESOLUTION_RULES" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="CONFLICT_RULE_SCOPES" EntityType="Microsoft.TeamFounation.Migration.EntityModel.Store.CONFLICT_RULE_SCOPES" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="EVENT_SINK" EntityType="Microsoft.TeamFounation.Migration.EntityModel.Store.EVENT_SINK" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="EVENT_SINK_JUNC" EntityType="Microsoft.TeamFounation.Migration.EntityModel.Store.EVENT_SINK_JUNC" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="FIELD_EXCLUSION_COLLECTION" EntityType="Microsoft.TeamFounation.Migration.EntityModel.Store.FIELD_EXCLUSION_COLLECTION" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="FIELD_MAP_COLLECTION" EntityType="Microsoft.TeamFounation.Migration.EntityModel.Store.FIELD_MAP_COLLECTION" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="FILTER_ITEM_PAIR" EntityType="Microsoft.TeamFounation.Migration.EntityModel.Store.FILTER_ITEM_PAIR" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="HIGH_WATER_MARK" EntityType="Microsoft.TeamFounation.Migration.EntityModel.Store.HIGH_WATER_MARK" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="LINKING_SETTINGS" EntityType="Microsoft.TeamFounation.Migration.EntityModel.Store.LINKING_SETTINGS" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="MAPPINGS" EntityType="Microsoft.TeamFounation.Migration.EntityModel.Store.MAPPINGS" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="MIGRATION_SOURCE_CONFIGS" EntityType="Microsoft.TeamFounation.Migration.EntityModel.Store.MIGRATION_SOURCE_CONFIGS" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="MIGRATION_SOURCES" EntityType="Microsoft.TeamFounation.Migration.EntityModel.Store.MIGRATION_SOURCES" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="PROVIDERS" EntityType="Microsoft.TeamFounation.Migration.EntityModel.Store.PROVIDERS" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="RUNTIME_SESSIONS" EntityType="Microsoft.TeamFounation.Migration.EntityModel.Store.RUNTIME_SESSIONS" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="SESSION_CONFIGURATIONS" EntityType="Microsoft.TeamFounation.Migration.EntityModel.Store.SESSION_CONFIGURATIONS" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="SESSION_GROUP_CONFIGS" EntityType="Microsoft.TeamFounation.Migration.EntityModel.Store.SESSION_GROUP_CONFIGS" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="SESSION_GROUPS" EntityType="Microsoft.TeamFounation.Migration.EntityModel.Store.SESSION_GROUPS" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="STORED_CREDENTIALS" EntityType="Microsoft.TeamFounation.Migration.EntityModel.Store.STORED_CREDENTIALS" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="VALUE_MAP_COLLECTION" EntityType="Microsoft.TeamFounation.Migration.EntityModel.Store.VALUE_MAP_COLLECTION" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="WI_TYPE_MAP_COLLECTION" EntityType="Microsoft.TeamFounation.Migration.EntityModel.Store.WI_TYPE_MAP_COLLECTION" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_action_to_provider" Association="Microsoft.TeamFounation.Migration.EntityModel.Store.FK_action_to_provider">
+            <End Role="PROVIDERS" EntitySet="PROVIDERS" />
+            <End Role="CONFLICT_RESOLUTION_ACTIONS" EntitySet="CONFLICT_RESOLUTION_ACTIONS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EventSink" Association="Microsoft.TeamFounation.Migration.EntityModel.Store.FK_EventSink">
+            <End Role="PROVIDERS" EntitySet="PROVIDERS" />
+            <End Role="EVENT_SINK" EntitySet="EVENT_SINK" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EventSinkJunc1" Association="Microsoft.TeamFounation.Migration.EntityModel.Store.FK_EventSinkJunc1">
+            <End Role="EVENT_SINK" EntitySet="EVENT_SINK" />
+            <End Role="EVENT_SINK_JUNC" EntitySet="EVENT_SINK_JUNC" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EventSinkJunc2" Association="Microsoft.TeamFounation.Migration.EntityModel.Store.FK_EventSinkJunc2">
+            <End Role="SESSION_CONFIGURATIONS" EntitySet="SESSION_CONFIGURATIONS" />
+            <End Role="EVENT_SINK_JUNC" EntitySet="EVENT_SINK_JUNC" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FieldExclCollection" Association="Microsoft.TeamFounation.Migration.EntityModel.Store.FK_FieldExclCollection">
+            <End Role="WI_TYPE_MAP_COLLECTION" EntitySet="WI_TYPE_MAP_COLLECTION" />
+            <End Role="FIELD_EXCLUSION_COLLECTION" EntitySet="FIELD_EXCLUSION_COLLECTION" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FieldMapCollection1" Association="Microsoft.TeamFounation.Migration.EntityModel.Store.FK_FieldMapCollection1">
+            <End Role="WI_TYPE_MAP_COLLECTION" EntitySet="WI_TYPE_MAP_COLLECTION" />
+            <End Role="FIELD_MAP_COLLECTION" EntitySet="FIELD_MAP_COLLECTION" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FieldMapCollection2" Association="Microsoft.TeamFounation.Migration.EntityModel.Store.FK_FieldMapCollection2">
+            <End Role="MAPPINGS" EntitySet="MAPPINGS" />
+            <End Role="FIELD_MAP_COLLECTION" EntitySet="FIELD_MAP_COLLECTION" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FilterItemPair_to_SessionConfig" Association="Microsoft.TeamFounation.Migration.EntityModel.Store.FK_FilterItemPair_to_SessionConfig">
+            <End Role="SESSION_CONFIGURATIONS" EntitySet="SESSION_CONFIGURATIONS" />
+            <End Role="FILTER_ITEM_PAIR" EntitySet="FILTER_ITEM_PAIR" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MigrationSourceConfigs" Association="Microsoft.TeamFounation.Migration.EntityModel.Store.FK_MigrationSourceConfigs">
+            <End Role="MIGRATION_SOURCES" EntitySet="MIGRATION_SOURCES" />
+            <End Role="MIGRATION_SOURCE_CONFIGS" EntitySet="MIGRATION_SOURCE_CONFIGS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MigrationSources1" Association="Microsoft.TeamFounation.Migration.EntityModel.Store.FK_MigrationSources1">
+            <End Role="PROVIDERS" EntitySet="PROVIDERS" />
+            <End Role="MIGRATION_SOURCES" EntitySet="MIGRATION_SOURCES" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ResolutionRule_to_ResolutionAction" Association="Microsoft.TeamFounation.Migration.EntityModel.Store.FK_ResolutionRule_to_ResolutionAction">
+            <End Role="CONFLICT_RESOLUTION_ACTIONS" EntitySet="CONFLICT_RESOLUTION_ACTIONS" />
+            <End Role="CONFLICT_RESOLUTION_RULES" EntitySet="CONFLICT_RESOLUTION_RULES" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ResolutionRules1" Association="Microsoft.TeamFounation.Migration.EntityModel.Store.FK_ResolutionRules1">
+            <End Role="CONFLICT_RULE_SCOPES" EntitySet="CONFLICT_RULE_SCOPES" />
+            <End Role="CONFLICT_RESOLUTION_RULES" EntitySet="CONFLICT_RESOLUTION_RULES" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ResolutionRules2" Association="Microsoft.TeamFounation.Migration.EntityModel.Store.FK_ResolutionRules2">
+            <End Role="CONFLICT_CONFLICT_TYPES" EntitySet="CONFLICT_CONFLICT_TYPES" />
+            <End Role="CONFLICT_RESOLUTION_RULES" EntitySet="CONFLICT_RESOLUTION_RULES" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RT_Sessions1" Association="Microsoft.TeamFounation.Migration.EntityModel.Store.FK_RT_Sessions1">
+            <End Role="MIGRATION_SOURCES" EntitySet="MIGRATION_SOURCES" />
+            <End Role="RUNTIME_SESSIONS" EntitySet="RUNTIME_SESSIONS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RT_Sessions2" Association="Microsoft.TeamFounation.Migration.EntityModel.Store.FK_RT_Sessions2">
+            <End Role="MIGRATION_SOURCES" EntitySet="MIGRATION_SOURCES" />
+            <End Role="RUNTIME_SESSIONS" EntitySet="RUNTIME_SESSIONS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RT_Sessions3" Association="Microsoft.TeamFounation.Migration.EntityModel.Store.FK_RT_Sessions3">
+            <End Role="SESSION_GROUPS" EntitySet="SESSION_GROUPS" />
+            <End Role="RUNTIME_SESSIONS" EntitySet="RUNTIME_SESSIONS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SessionConfiguration5" Association="Microsoft.TeamFounation.Migration.EntityModel.Store.FK_SessionConfiguration5">
+            <End Role="SESSION_GROUP_CONFIGS" EntitySet="SESSION_GROUP_CONFIGS" />
+            <End Role="SESSION_CONFIGURATIONS" EntitySet="SESSION_CONFIGURATIONS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SessionConfigurations2" Association="Microsoft.TeamFounation.Migration.EntityModel.Store.FK_SessionConfigurations2">
+            <End Role="MIGRATION_SOURCE_CONFIGS" EntitySet="MIGRATION_SOURCE_CONFIGS" />
+            <End Role="SESSION_CONFIGURATIONS" EntitySet="SESSION_CONFIGURATIONS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SessionConfigurations3" Association="Microsoft.TeamFounation.Migration.EntityModel.Store.FK_SessionConfigurations3">
+            <End Role="MIGRATION_SOURCE_CONFIGS" EntitySet="MIGRATION_SOURCE_CONFIGS" />
+            <End Role="SESSION_CONFIGURATIONS" EntitySet="SESSION_CONFIGURATIONS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SessionGroupConfigs1" Association="Microsoft.TeamFounation.Migration.EntityModel.Store.FK_SessionGroupConfigs1">
+            <End Role="SESSION_GROUPS" EntitySet="SESSION_GROUPS" />
+            <End Role="SESSION_GROUP_CONFIGS" EntitySet="SESSION_GROUP_CONFIGS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SessionGroupConfigs3" Association="Microsoft.TeamFounation.Migration.EntityModel.Store.FK_SessionGroupConfigs3">
+            <End Role="LINKING_SETTINGS" EntitySet="LINKING_SETTINGS" />
+            <End Role="SESSION_GROUP_CONFIGS" EntitySet="SESSION_GROUP_CONFIGS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_StoredCredentials" Association="Microsoft.TeamFounation.Migration.EntityModel.Store.FK_StoredCredentials">
+            <End Role="MIGRATION_SOURCES" EntitySet="MIGRATION_SOURCES" />
+            <End Role="STORED_CREDENTIALS" EntitySet="STORED_CREDENTIALS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_to_provider" Association="Microsoft.TeamFounation.Migration.EntityModel.Store.FK_to_provider">
+            <End Role="PROVIDERS" EntitySet="PROVIDERS" />
+            <End Role="CONFLICT_CONFLICT_TYPES" EntitySet="CONFLICT_CONFLICT_TYPES" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ValueMapCollection1" Association="Microsoft.TeamFounation.Migration.EntityModel.Store.FK_ValueMapCollection1">
+            <End Role="MAPPINGS" EntitySet="MAPPINGS" />
+            <End Role="VALUE_MAP_COLLECTION" EntitySet="VALUE_MAP_COLLECTION" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ValueMapCollection2" Association="Microsoft.TeamFounation.Migration.EntityModel.Store.FK_ValueMapCollection2">
+            <End Role="FIELD_MAP_COLLECTION" EntitySet="FIELD_MAP_COLLECTION" />
+            <End Role="VALUE_MAP_COLLECTION" EntitySet="VALUE_MAP_COLLECTION" />
+          </AssociationSet>
+          <AssociationSet Name="FK_WITypeMapCollection" Association="Microsoft.TeamFounation.Migration.EntityModel.Store.FK_WITypeMapCollection">
+            <End Role="MAPPINGS" EntitySet="MAPPINGS" />
+            <End Role="WI_TYPE_MAP_COLLECTION" EntitySet="WI_TYPE_MAP_COLLECTION" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="ADDINS">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ReferenceName" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="FriendlyName" Type="nvarchar" Nullable="false" MaxLength="128" />
+          <Property Name="ProviderVersion" Type="nvarchar" MaxLength="30" />
+        </EntityType>
+        <EntityType Name="CONFLICT_CONFLICT_TYPES">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ReferenceName" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="FriendlyName" Type="nvarchar" Nullable="false" MaxLength="300" />
+          <Property Name="DescriptionDoc" Type="nvarchar(max)" />
+          <Property Name="IsActive" Type="bit" />
+          <Property Name="ProviderId" Type="int" />
+        </EntityType>
+        <EntityType Name="CONFLICT_RESOLUTION_ACTIONS">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ReferenceName" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="FriendlyName" Type="nvarchar" Nullable="false" MaxLength="300" />
+          <Property Name="IsActive" Type="bit" />
+          <Property Name="ProviderId" Type="int" />
+        </EntityType>
+        <EntityType Name="CONFLICT_RESOLUTION_RULES">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ReferenceName" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="ConflictTypeId" Type="int" Nullable="false" />
+          <Property Name="ResolutionActionId" Type="int" Nullable="false" />
+          <Property Name="ScopeId" Type="int" Nullable="false" />
+          <Property Name="ScopeInfoUniqueId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="SourceInfoUniqueId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="RuleData" Type="xml" Nullable="false" />
+          <Property Name="CreationTime" Type="datetime" Nullable="false" />
+          <Property Name="DeprecationTime" Type="datetime" />
+          <Property Name="Status" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CONFLICT_RULE_SCOPES">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Scope" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="EVENT_SINK">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="FriendlyName" Type="nvarchar" Nullable="false" MaxLength="128" />
+          <Property Name="ProviderId" Type="int" Nullable="false" />
+          <Property Name="CreationTime" Type="datetime" Nullable="false" />
+          <Property Name="SettingXml" Type="xml" />
+          <Property Name="SettingXmlSchema" Type="xml" />
+        </EntityType>
+        <EntityType Name="EVENT_SINK_JUNC">
+          <Key>
+            <PropertyRef Name="EventSinkId" />
+            <PropertyRef Name="SessionConfigId" />
+          </Key>
+          <Property Name="EventSinkId" Type="int" Nullable="false" />
+          <Property Name="SessionConfigId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="FIELD_EXCLUSION_COLLECTION">
+          <Key>
+            <PropertyRef Name="FieldName" />
+            <PropertyRef Name="Direction" />
+            <PropertyRef Name="WITypeMapId" />
+          </Key>
+          <Property Name="FieldName" Type="nvarchar" Nullable="false" MaxLength="200" />
+          <Property Name="Direction" Type="int" Nullable="false" />
+          <Property Name="WITypeMapId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="FIELD_MAP_COLLECTION">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="WITypeMapId" Type="int" Nullable="false" />
+          <Property Name="ValueMappingId" Type="int" Nullable="false" />
+          <Property Name="Direction" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="FILTER_ITEM_PAIR">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Filter1MigrationSourceReferenceName" Type="uniqueidentifier" />
+          <Property Name="Filter1" Type="nvarchar" />
+          <Property Name="Filter1SnapshotPoint" Type="nvarchar" MaxLength="200" />
+          <Property Name="Filter1PeerSnapshotPoint" Type="nvarchar" MaxLength="200" />
+          <Property Name="Filter1MergeScope" Type="nvarchar" MaxLength="200" />
+          <Property Name="Filter2MigrationSourceReferenceName" Type="uniqueidentifier" />
+          <Property Name="Filter2" Type="nvarchar" />
+          <Property Name="Filter2SnapshotPoint" Type="nvarchar" MaxLength="200" />
+          <Property Name="Filter2PeerSnapshotPoint" Type="nvarchar" MaxLength="200" />
+          <Property Name="Filter2MergeScope" Type="nvarchar" MaxLength="200" />
+          <Property Name="Neglect" Type="bit" Nullable="false" />
+          <Property Name="SessionConfigId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="HIGH_WATER_MARK">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="SessionUniqueId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="SourceUniqueId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Value" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="LINKING_SETTINGS">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="SettingXml" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MAPPINGS">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="LeftValue" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="RightValue" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MIGRATION_SOURCE_CONFIGS">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="CreationTime" Type="datetime" Nullable="false" />
+          <Property Name="MigrationSourceId" Type="int" Nullable="false" />
+          <Property Name="GeneralSettingXml" Type="xml" />
+          <Property Name="SettingXml" Type="xml" />
+          <Property Name="SettingXmlSchema" Type="xml" />
+        </EntityType>
+        <EntityType Name="MIGRATION_SOURCES">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="UniqueId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="FriendlyName" Type="nvarchar" Nullable="false" MaxLength="128" />
+          <Property Name="ServerIdentifier" Type="nvarchar" Nullable="false" MaxLength="128" />
+          <Property Name="ServerUrl" Type="nvarchar" Nullable="false" MaxLength="400" />
+          <Property Name="SourceIdentifier" Type="nvarchar" Nullable="false" MaxLength="300" />
+          <Property Name="ProviderId" Type="int" Nullable="false" />
+          <Property Name="NativeId" Type="nvarchar" MaxLength="400" />
+        </EntityType>
+        <EntityType Name="PROVIDERS">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ReferenceName" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="FriendlyName" Type="nvarchar" Nullable="false" MaxLength="128" />
+          <Property Name="ProviderVersion" Type="nvarchar" MaxLength="30" />
+        </EntityType>
+        <EntityType Name="RUNTIME_SESSIONS">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="SessionUniqueId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="LeftSourceId" Type="int" Nullable="false" />
+          <Property Name="RightSourceId" Type="int" Nullable="false" />
+          <Property Name="LeftHighWaterMarkLatest" Type="int" />
+          <Property Name="RightHighWaterMarkLatest" Type="int" />
+          <Property Name="LeftHighWaterMarkCurrent" Type="int" />
+          <Property Name="RightHighWaterMarkCurrent" Type="int" />
+          <Property Name="SessionGroupId" Type="int" Nullable="false" />
+          <Property Name="ExecOrderInSessionGroup" Type="int" />
+          <Property Name="State" Type="int" />
+          <Property Name="OrchestrationStatus" Type="int" />
+        </EntityType>
+        <EntityType Name="SESSION_CONFIGURATIONS">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="SessionUniqueId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="FriendlyName" Type="nvarchar" Nullable="false" MaxLength="128" />
+          <Property Name="SessionGroupConfigId" Type="int" Nullable="false" />
+          <Property Name="CreationTime" Type="datetime" Nullable="false" />
+          <Property Name="Creator" Type="nvarchar" MaxLength="50" />
+          <Property Name="DeprecationTime" Type="datetime" />
+          <Property Name="LeftSourceConfigId" Type="int" Nullable="false" />
+          <Property Name="RightSourceConfigId" Type="int" Nullable="false" />
+          <Property Name="Type" Type="int" Nullable="false" />
+          <Property Name="SettingXml" Type="xml" />
+          <Property Name="SettingXmlSchema" Type="xml" />
+        </EntityType>
+        <EntityType Name="SESSION_GROUP_CONFIGS">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="CreationTime" Type="datetime" Nullable="false" />
+          <Property Name="Creator" Type="nvarchar" MaxLength="50" />
+          <Property Name="DeprecationTime" Type="datetime" />
+          <Property Name="Status" Type="int" Nullable="false" />
+          <Property Name="SessionGroupId" Type="int" Nullable="false" />
+          <Property Name="LinkingSettingId" Type="int" />
+          <Property Name="FriendlyName" Type="nvarchar" MaxLength="300" />
+          <Property Name="UniqueId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="WorkFlowType" Type="int" Nullable="false" />
+          <Property Name="UserIdentityMappingsConfig" Type="xml" />
+          <Property Name="ErrorManagementConfig" Type="xml" />
+          <Property Name="AddinsConfig" Type="xml" />
+          <Property Name="Settings" Type="xml" />          
+        </EntityType>
+        <EntityType Name="SESSION_GROUPS">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="GroupUniqueId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="FriendlyName" Type="nvarchar" Nullable="false" MaxLength="128" />
+          <Property Name="State" Type="int" />
+          <Property Name="OrchestrationStatus" Type="int" />
+        </EntityType>
+        <EntityType Name="STORED_CREDENTIALS">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="CredentialString" Type="nvarchar" Nullable="false" MaxLength="300" />
+          <Property Name="MigrationSourceId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="VALUE_MAP_COLLECTION">
+          <Key>
+            <PropertyRef Name="MappingId" />
+          </Key>
+          <Property Name="FieldMapCollectionId" Type="int" />
+          <Property Name="MappingId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="WI_TYPE_MAP_COLLECTION">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="MappingId" Type="int" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_action_to_provider">
+          <End Role="PROVIDERS" Type="Microsoft.TeamFounation.Migration.EntityModel.Store.PROVIDERS" Multiplicity="0..1" />
+          <End Role="CONFLICT_RESOLUTION_ACTIONS" Type="Microsoft.TeamFounation.Migration.EntityModel.Store.CONFLICT_RESOLUTION_ACTIONS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PROVIDERS">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="CONFLICT_RESOLUTION_ACTIONS">
+              <PropertyRef Name="ProviderId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EventSink">
+          <End Role="PROVIDERS" Type="Microsoft.TeamFounation.Migration.EntityModel.Store.PROVIDERS" Multiplicity="1" />
+          <End Role="EVENT_SINK" Type="Microsoft.TeamFounation.Migration.EntityModel.Store.EVENT_SINK" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PROVIDERS">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="EVENT_SINK">
+              <PropertyRef Name="ProviderId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EventSinkJunc1">
+          <End Role="EVENT_SINK" Type="Microsoft.TeamFounation.Migration.EntityModel.Store.EVENT_SINK" Multiplicity="1" />
+          <End Role="EVENT_SINK_JUNC" Type="Microsoft.TeamFounation.Migration.EntityModel.Store.EVENT_SINK_JUNC" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EVENT_SINK">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="EVENT_SINK_JUNC">
+              <PropertyRef Name="EventSinkId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EventSinkJunc2">
+          <End Role="SESSION_CONFIGURATIONS" Type="Microsoft.TeamFounation.Migration.EntityModel.Store.SESSION_CONFIGURATIONS" Multiplicity="1" />
+          <End Role="EVENT_SINK_JUNC" Type="Microsoft.TeamFounation.Migration.EntityModel.Store.EVENT_SINK_JUNC" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SESSION_CONFIGURATIONS">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="EVENT_SINK_JUNC">
+              <PropertyRef Name="SessionConfigId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FieldExclCollection">
+          <End Role="WI_TYPE_MAP_COLLECTION" Type="Microsoft.TeamFounation.Migration.EntityModel.Store.WI_TYPE_MAP_COLLECTION" Multiplicity="1" />
+          <End Role="FIELD_EXCLUSION_COLLECTION" Type="Microsoft.TeamFounation.Migration.EntityModel.Store.FIELD_EXCLUSION_COLLECTION" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="WI_TYPE_MAP_COLLECTION">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="FIELD_EXCLUSION_COLLECTION">
+              <PropertyRef Name="WITypeMapId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FieldMapCollection1">
+          <End Role="WI_TYPE_MAP_COLLECTION" Type="Microsoft.TeamFounation.Migration.EntityModel.Store.WI_TYPE_MAP_COLLECTION" Multiplicity="1" />
+          <End Role="FIELD_MAP_COLLECTION" Type="Microsoft.TeamFounation.Migration.EntityModel.Store.FIELD_MAP_COLLECTION" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="WI_TYPE_MAP_COLLECTION">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="FIELD_MAP_COLLECTION">
+              <PropertyRef Name="WITypeMapId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FieldMapCollection2">
+          <End Role="MAPPINGS" Type="Microsoft.TeamFounation.Migration.EntityModel.Store.MAPPINGS" Multiplicity="1" />
+          <End Role="FIELD_MAP_COLLECTION" Type="Microsoft.TeamFounation.Migration.EntityModel.Store.FIELD_MAP_COLLECTION" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MAPPINGS">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="FIELD_MAP_COLLECTION">
+              <PropertyRef Name="ValueMappingId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FilterItemPair_to_SessionConfig">
+          <End Role="SESSION_CONFIGURATIONS" Type="Microsoft.TeamFounation.Migration.EntityModel.Store.SESSION_CONFIGURATIONS" Multiplicity="1" />
+          <End Role="FILTER_ITEM_PAIR" Type="Microsoft.TeamFounation.Migration.EntityModel.Store.FILTER_ITEM_PAIR" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SESSION_CONFIGURATIONS">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="FILTER_ITEM_PAIR">
+              <PropertyRef Name="SessionConfigId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MigrationSourceConfigs">
+          <End Role="MIGRATION_SOURCES" Type="Microsoft.TeamFounation.Migration.EntityModel.Store.MIGRATION_SOURCES" Multiplicity="1" />
+          <End Role="MIGRATION_SOURCE_CONFIGS" Type="Microsoft.TeamFounation.Migration.EntityModel.Store.MIGRATION_SOURCE_CONFIGS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MIGRATION_SOURCES">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="MIGRATION_SOURCE_CONFIGS">
+              <PropertyRef Name="MigrationSourceId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MigrationSources1">
+          <End Role="PROVIDERS" Type="Microsoft.TeamFounation.Migration.EntityModel.Store.PROVIDERS" Multiplicity="1" />
+          <End Role="MIGRATION_SOURCES" Type="Microsoft.TeamFounation.Migration.EntityModel.Store.MIGRATION_SOURCES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PROVIDERS">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="MIGRATION_SOURCES">
+              <PropertyRef Name="ProviderId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ResolutionRule_to_ResolutionAction">
+          <End Role="CONFLICT_RESOLUTION_ACTIONS" Type="Microsoft.TeamFounation.Migration.EntityModel.Store.CONFLICT_RESOLUTION_ACTIONS" Multiplicity="1" />
+          <End Role="CONFLICT_RESOLUTION_RULES" Type="Microsoft.TeamFounation.Migration.EntityModel.Store.CONFLICT_RESOLUTION_RULES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CONFLICT_RESOLUTION_ACTIONS">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="CONFLICT_RESOLUTION_RULES">
+              <PropertyRef Name="ResolutionActionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ResolutionRules1">
+          <End Role="CONFLICT_RULE_SCOPES" Type="Microsoft.TeamFounation.Migration.EntityModel.Store.CONFLICT_RULE_SCOPES" Multiplicity="1" />
+          <End Role="CONFLICT_RESOLUTION_RULES" Type="Microsoft.TeamFounation.Migration.EntityModel.Store.CONFLICT_RESOLUTION_RULES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CONFLICT_RULE_SCOPES">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="CONFLICT_RESOLUTION_RULES">
+              <PropertyRef Name="ScopeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ResolutionRules2">
+          <End Role="CONFLICT_CONFLICT_TYPES" Type="Microsoft.TeamFounation.Migration.EntityModel.Store.CONFLICT_CONFLICT_TYPES" Multiplicity="1" />
+          <End Role="CONFLICT_RESOLUTION_RULES" Type="Microsoft.TeamFounation.Migration.EntityModel.Store.CONFLICT_RESOLUTION_RULES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CONFLICT_CONFLICT_TYPES">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="CONFLICT_RESOLUTION_RULES">
+              <PropertyRef Name="ConflictTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RT_Sessions1">
+          <End Role="MIGRATION_SOURCES" Type="Microsoft.TeamFounation.Migration.EntityModel.Store.MIGRATION_SOURCES" Multiplicity="1" />
+          <End Role="RUNTIME_SESSIONS" Type="Microsoft.TeamFounation.Migration.EntityModel.Store.RUNTIME_SESSIONS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MIGRATION_SOURCES">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="RUNTIME_SESSIONS">
+              <PropertyRef Name="LeftSourceId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RT_Sessions2">
+          <End Role="MIGRATION_SOURCES" Type="Microsoft.TeamFounation.Migration.EntityModel.Store.MIGRATION_SOURCES" Multiplicity="1" />
+          <End Role="RUNTIME_SESSIONS" Type="Microsoft.TeamFounation.Migration.EntityModel.Store.RUNTIME_SESSIONS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MIGRATION_SOURCES">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="RUNTIME_SESSIONS">
+              <PropertyRef Name="RightSourceId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RT_Sessions3">
+          <End Role="SESSION_GROUPS" Type="Microsoft.TeamFounation.Migration.EntityModel.Store.SESSION_GROUPS" Multiplicity="1" />
+          <End Role="RUNTIME_SESSIONS" Type="Microsoft.TeamFounation.Migration.EntityModel.Store.RUNTIME_SESSIONS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SESSION_GROUPS">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="RUNTIME_SESSIONS">
+              <PropertyRef Name="SessionGroupId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SessionConfiguration5">
+          <End Role="SESSION_GROUP_CONFIGS" Type="Microsoft.TeamFounation.Migration.EntityModel.Store.SESSION_GROUP_CONFIGS" Multiplicity="1" />
+          <End Role="SESSION_CONFIGURATIONS" Type="Microsoft.TeamFounation.Migration.EntityModel.Store.SESSION_CONFIGURATIONS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SESSION_GROUP_CONFIGS">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="SESSION_CONFIGURATIONS">
+              <PropertyRef Name="SessionGroupConfigId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SessionConfigurations2">
+          <End Role="MIGRATION_SOURCE_CONFIGS" Type="Microsoft.TeamFounation.Migration.EntityModel.Store.MIGRATION_SOURCE_CONFIGS" Multiplicity="1" />
+          <End Role="SESSION_CONFIGURATIONS" Type="Microsoft.TeamFounation.Migration.EntityModel.Store.SESSION_CONFIGURATIONS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MIGRATION_SOURCE_CONFIGS">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="SESSION_CONFIGURATIONS">
+              <PropertyRef Name="LeftSourceConfigId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SessionConfigurations3">
+          <End Role="MIGRATION_SOURCE_CONFIGS" Type="Microsoft.TeamFounation.Migration.EntityModel.Store.MIGRATION_SOURCE_CONFIGS" Multiplicity="1" />
+          <End Role="SESSION_CONFIGURATIONS" Type="Microsoft.TeamFounation.Migration.EntityModel.Store.SESSION_CONFIGURATIONS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MIGRATION_SOURCE_CONFIGS">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="SESSION_CONFIGURATIONS">
+              <PropertyRef Name="RightSourceConfigId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SessionGroupConfigs1">
+          <End Role="SESSION_GROUPS" Type="Microsoft.TeamFounation.Migration.EntityModel.Store.SESSION_GROUPS" Multiplicity="1" />
+          <End Role="SESSION_GROUP_CONFIGS" Type="Microsoft.TeamFounation.Migration.EntityModel.Store.SESSION_GROUP_CONFIGS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SESSION_GROUPS">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="SESSION_GROUP_CONFIGS">
+              <PropertyRef Name="SessionGroupId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SessionGroupConfigs3">
+          <End Role="LINKING_SETTINGS" Type="Microsoft.TeamFounation.Migration.EntityModel.Store.LINKING_SETTINGS" Multiplicity="0..1" />
+          <End Role="SESSION_GROUP_CONFIGS" Type="Microsoft.TeamFounation.Migration.EntityModel.Store.SESSION_GROUP_CONFIGS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LINKING_SETTINGS">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="SESSION_GROUP_CONFIGS">
+              <PropertyRef Name="LinkingSettingId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_StoredCredentials">
+          <End Role="MIGRATION_SOURCES" Type="Microsoft.TeamFounation.Migration.EntityModel.Store.MIGRATION_SOURCES" Multiplicity="1" />
+          <End Role="STORED_CREDENTIALS" Type="Microsoft.TeamFounation.Migration.EntityModel.Store.STORED_CREDENTIALS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MIGRATION_SOURCES">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="STORED_CREDENTIALS">
+              <PropertyRef Name="MigrationSourceId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_to_provider">
+          <End Role="PROVIDERS" Type="Microsoft.TeamFounation.Migration.EntityModel.Store.PROVIDERS" Multiplicity="0..1" />
+          <End Role="CONFLICT_CONFLICT_TYPES" Type="Microsoft.TeamFounation.Migration.EntityModel.Store.CONFLICT_CONFLICT_TYPES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PROVIDERS">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="CONFLICT_CONFLICT_TYPES">
+              <PropertyRef Name="ProviderId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ValueMapCollection1">
+          <End Role="MAPPINGS" Type="Microsoft.TeamFounation.Migration.EntityModel.Store.MAPPINGS" Multiplicity="1" />
+          <End Role="VALUE_MAP_COLLECTION" Type="Microsoft.TeamFounation.Migration.EntityModel.Store.VALUE_MAP_COLLECTION" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="MAPPINGS">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="VALUE_MAP_COLLECTION">
+              <PropertyRef Name="MappingId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ValueMapCollection2">
+          <End Role="FIELD_MAP_COLLECTION" Type="Microsoft.TeamFounation.Migration.EntityModel.Store.FIELD_MAP_COLLECTION" Multiplicity="0..1" />
+          <End Role="VALUE_MAP_COLLECTION" Type="Microsoft.TeamFounation.Migration.EntityModel.Store.VALUE_MAP_COLLECTION" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FIELD_MAP_COLLECTION">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="VALUE_MAP_COLLECTION">
+              <PropertyRef Name="FieldMapCollectionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_WITypeMapCollection">
+          <End Role="MAPPINGS" Type="Microsoft.TeamFounation.Migration.EntityModel.Store.MAPPINGS" Multiplicity="1" />
+          <End Role="WI_TYPE_MAP_COLLECTION" Type="Microsoft.TeamFounation.Migration.EntityModel.Store.WI_TYPE_MAP_COLLECTION" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MAPPINGS">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="WI_TYPE_MAP_COLLECTION">
+              <PropertyRef Name="MappingId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Microsoft.TeamFounation.Migration.EntityModel" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2006/04/edm">
+        <EntityContainer Name="TfsMigrationConsolidatedDBEntities">
+          <EntitySet Name="EventSinkSettingSet" EntityType="Microsoft.TeamFounation.Migration.EntityModel.EventSinkSetting" />
+          <EntitySet Name="ExcludedFieldsSet" EntityType="Microsoft.TeamFounation.Migration.EntityModel.ExcludedFields" />
+          <EntitySet Name="FieldMappingsSet" EntityType="Microsoft.TeamFounation.Migration.EntityModel.FieldMappings" />
+          <EntitySet Name="LinkingSettingSet" EntityType="Microsoft.TeamFounation.Migration.EntityModel.LinkingSetting" />
+          <EntitySet Name="MappingSet" EntityType="Microsoft.TeamFounation.Migration.EntityModel.Mapping" />
+          <EntitySet Name="MigrationSourceConfigSet" EntityType="Microsoft.TeamFounation.Migration.EntityModel.MigrationSourceConfig" />
+          <EntitySet Name="MigrationSourceSet" EntityType="Microsoft.TeamFounation.Migration.EntityModel.MigrationSource" />
+          <EntitySet Name="ProviderSet" EntityType="Microsoft.TeamFounation.Migration.EntityModel.Provider" />
+          <EntitySet Name="SessionConfigSet" EntityType="Microsoft.TeamFounation.Migration.EntityModel.SessionConfig" />
+          <EntitySet Name="SessionGroupConfigSet" EntityType="Microsoft.TeamFounation.Migration.EntityModel.SessionGroupConfig" />
+          <EntitySet Name="SessionGroupSet" EntityType="Microsoft.TeamFounation.Migration.EntityModel.SessionGroup" />
+          <EntitySet Name="StoredCredentialSet" EntityType="Microsoft.TeamFounation.Migration.EntityModel.StoredCredential" />
+          <EntitySet Name="ValueMappingsSet" EntityType="Microsoft.TeamFounation.Migration.EntityModel.ValueMappings" />
+          <EntitySet Name="WorkItemTypeMappingsSet" EntityType="Microsoft.TeamFounation.Migration.EntityModel.WorkItemTypeMappings" />
+          <AssociationSet Name="FK_EventSink" Association="Microsoft.TeamFounation.Migration.EntityModel.FK_EventSink">
+            <End Role="PROVIDERS" EntitySet="ProviderSet" />
+            <End Role="EVENT_SINK" EntitySet="EventSinkSettingSet" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FieldExclCollection" Association="Microsoft.TeamFounation.Migration.EntityModel.FK_FieldExclCollection">
+            <End Role="WI_TYPE_MAP_COLLECTION" EntitySet="WorkItemTypeMappingsSet" />
+            <End Role="FIELD_EXCLUSION_COLLECTION" EntitySet="ExcludedFieldsSet" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FieldMapCollection1" Association="Microsoft.TeamFounation.Migration.EntityModel.FK_FieldMapCollection1">
+            <End Role="WI_TYPE_MAP_COLLECTION" EntitySet="WorkItemTypeMappingsSet" />
+            <End Role="FIELD_MAP_COLLECTION" EntitySet="FieldMappingsSet" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FieldMapCollection2" Association="Microsoft.TeamFounation.Migration.EntityModel.FK_FieldMapCollection2">
+            <End Role="MAPPINGS" EntitySet="MappingSet" />
+            <End Role="FIELD_MAP_COLLECTION" EntitySet="FieldMappingsSet" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ValueMapCollection2" Association="Microsoft.TeamFounation.Migration.EntityModel.FK_ValueMapCollection2">
+            <End Role="FIELD_MAP_COLLECTION" EntitySet="FieldMappingsSet" />
+            <End Role="VALUE_MAP_COLLECTION" EntitySet="ValueMappingsSet" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SessionGroupConfigs3" Association="Microsoft.TeamFounation.Migration.EntityModel.FK_SessionGroupConfigs3">
+            <End Role="LINKING_SETTINGS" EntitySet="LinkingSettingSet" />
+            <End Role="SESSION_GROUP_CONFIGS" EntitySet="SessionGroupConfigSet" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ValueMapCollection1" Association="Microsoft.TeamFounation.Migration.EntityModel.FK_ValueMapCollection1">
+            <End Role="MAPPINGS" EntitySet="MappingSet" />
+            <End Role="VALUE_MAP_COLLECTION" EntitySet="ValueMappingsSet" />
+          </AssociationSet>
+          <AssociationSet Name="FK_WITypeMapCollection" Association="Microsoft.TeamFounation.Migration.EntityModel.FK_WITypeMapCollection">
+            <End Role="MAPPINGS" EntitySet="MappingSet" />
+            <End Role="WI_TYPE_MAP_COLLECTION" EntitySet="WorkItemTypeMappingsSet" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MigrationSourceConfigs" Association="Microsoft.TeamFounation.Migration.EntityModel.FK_MigrationSourceConfigs">
+            <End Role="MIGRATION_SOURCES" EntitySet="MigrationSourceSet" />
+            <End Role="MIGRATION_SOURCE_CONFIGS" EntitySet="MigrationSourceConfigSet" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SessionConfigurations2" Association="Microsoft.TeamFounation.Migration.EntityModel.FK_SessionConfigurations2">
+            <End Role="MIGRATION_SOURCE_CONFIGS" EntitySet="MigrationSourceConfigSet" />
+            <End Role="SESSION_CONFIGURATIONS" EntitySet="SessionConfigSet" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SessionConfigurations3" Association="Microsoft.TeamFounation.Migration.EntityModel.FK_SessionConfigurations3">
+            <End Role="MIGRATION_SOURCE_CONFIGS" EntitySet="MigrationSourceConfigSet" />
+            <End Role="SESSION_CONFIGURATIONS" EntitySet="SessionConfigSet" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MigrationSources1" Association="Microsoft.TeamFounation.Migration.EntityModel.FK_MigrationSources1">
+            <End Role="PROVIDERS" EntitySet="ProviderSet" />
+            <End Role="MIGRATION_SOURCES" EntitySet="MigrationSourceSet" />
+          </AssociationSet>
+          <AssociationSet Name="FK_StoredCredentials" Association="Microsoft.TeamFounation.Migration.EntityModel.FK_StoredCredentials">
+            <End Role="MIGRATION_SOURCES" EntitySet="MigrationSourceSet" />
+            <End Role="STORED_CREDENTIALS" EntitySet="StoredCredentialSet" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SessionConfiguration5" Association="Microsoft.TeamFounation.Migration.EntityModel.FK_SessionConfiguration5">
+            <End Role="SESSION_GROUP_CONFIGS" EntitySet="SessionGroupConfigSet" />
+            <End Role="SESSION_CONFIGURATIONS" EntitySet="SessionConfigSet" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SessionGroupConfigs1" Association="Microsoft.TeamFounation.Migration.EntityModel.FK_SessionGroupConfigs1">
+            <End Role="SESSION_GROUPS" EntitySet="SessionGroupSet" />
+            <End Role="SESSION_GROUP_CONFIGS" EntitySet="SessionGroupConfigSet" />
+          </AssociationSet>
+          <AssociationSet Name="EVENT_SINK_JUNC" Association="Microsoft.TeamFounation.Migration.EntityModel.EVENT_SINK_JUNC">
+            <End Role="EVENT_SINK" EntitySet="EventSinkSettingSet" />
+            <End Role="SESSION_CONFIGURATIONS" EntitySet="SessionConfigSet" />
+          </AssociationSet>
+          <EntitySet Name="FilterItemPairSet" EntityType="Microsoft.TeamFounation.Migration.EntityModel.FilterItemPair" />
+          <AssociationSet Name="FK_FilterItemPair_to_SessionConfig" Association="Microsoft.TeamFounation.Migration.EntityModel.FK_FilterItemPair_to_SessionConfig">
+            <End Role="SessionConfig" EntitySet="SessionConfigSet" />
+            <End Role="FILTER_ITEM_PAIR" EntitySet="FilterItemPairSet" /></AssociationSet>
+          <EntitySet Name="EMSessionSet" EntityType="Microsoft.TeamFounation.Migration.EntityModel.EMSession" />
+          <AssociationSet Name="FK_RT_Sessions3" Association="Microsoft.TeamFounation.Migration.EntityModel.FK_RT_Sessions3">
+            <End Role="SessionGroup" EntitySet="SessionGroupSet" />
+            <End Role="RUNTIME_SESSIONS" EntitySet="EMSessionSet" /></AssociationSet>
+          <AssociationSet Name="FK_RT_Sessions1" Association="Microsoft.TeamFounation.Migration.EntityModel.FK_RT_Sessions1">
+            <End Role="MigrationSource" EntitySet="MigrationSourceSet" />
+            <End Role="EMSession" EntitySet="EMSessionSet" /></AssociationSet>
+          <AssociationSet Name="FK_RT_Sessions2" Association="Microsoft.TeamFounation.Migration.EntityModel.FK_RT_Sessions2">
+            <End Role="MigrationSource" EntitySet="MigrationSourceSet" />
+            <End Role="EMSession" EntitySet="EMSessionSet" /></AssociationSet>
+          <EntitySet Name="AddinSet" EntityType="Microsoft.TeamFounation.Migration.EntityModel.Addin" />
+          <EntitySet Name="ConfigConflictTypeSet" EntityType="Microsoft.TeamFounation.Migration.EntityModel.ConfigConflictType" />
+          <EntitySet Name="ConfigConflictResolutionActionSet" EntityType="Microsoft.TeamFounation.Migration.EntityModel.ConfigConflictResolutionAction" />
+          <EntitySet Name="ConfigConflictResolutionRuleSet" EntityType="Microsoft.TeamFounation.Migration.EntityModel.ConfigConflictResolutionRule" />
+          <EntitySet Name="ConfigConflictResolutionRuleScopeSet" EntityType="Microsoft.TeamFounation.Migration.EntityModel.ConfigConflictResolutionRuleScope" />
+          <AssociationSet Name="FK_ResolutionRules2" Association="Microsoft.TeamFounation.Migration.EntityModel.FK_ResolutionRules2">
+            <End Role="CONFLICT_CONFLICT_TYPES" EntitySet="ConfigConflictTypeSet" />
+            <End Role="CONFLICT_RESOLUTION_RULES" EntitySet="ConfigConflictResolutionRuleSet" /></AssociationSet>
+          <AssociationSet Name="FK_to_provider" Association="Microsoft.TeamFounation.Migration.EntityModel.FK_to_provider">
+            <End Role="Provider" EntitySet="ProviderSet" />
+            <End Role="CONFLICT_CONFLICT_TYPES" EntitySet="ConfigConflictTypeSet" /></AssociationSet>
+          <AssociationSet Name="FK_action_to_provider" Association="Microsoft.TeamFounation.Migration.EntityModel.FK_action_to_provider">
+            <End Role="Provider" EntitySet="ProviderSet" />
+            <End Role="CONFLICT_RESOLUTION_ACTIONS" EntitySet="ConfigConflictResolutionActionSet" /></AssociationSet>
+          <AssociationSet Name="FK_ResolutionRule_to_ResolutionAction" Association="Microsoft.TeamFounation.Migration.EntityModel.FK_ResolutionRule_to_ResolutionAction">
+            <End Role="CONFLICT_RESOLUTION_ACTIONS" EntitySet="ConfigConflictResolutionActionSet" />
+            <End Role="CONFLICT_RESOLUTION_RULES" EntitySet="ConfigConflictResolutionRuleSet" /></AssociationSet>
+          <AssociationSet Name="FK_ResolutionRules1" Association="Microsoft.TeamFounation.Migration.EntityModel.FK_ResolutionRules1">
+            <End Role="CONFLICT_RULE_SCOPES" EntitySet="ConfigConflictResolutionRuleScopeSet" />
+            <End Role="CONFLICT_RESOLUTION_RULES" EntitySet="ConfigConflictResolutionRuleSet" /></AssociationSet></EntityContainer>
+        <EntityType Name="EventSinkSetting">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="FriendlyName" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+          <Property Name="CreationTime" Type="DateTime" Nullable="false" />
+          <Property Name="SettingXml" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="SettingXmlSchema" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Provider" Relationship="Microsoft.TeamFounation.Migration.EntityModel.FK_EventSink" FromRole="EVENT_SINK" ToRole="PROVIDERS" />
+          <NavigationProperty Name="SessionConfig" Relationship="Microsoft.TeamFounation.Migration.EntityModel.EVENT_SINK_JUNC" FromRole="EVENT_SINK" ToRole="SESSION_CONFIGURATIONS" />
+        </EntityType>
+        <EntityType Name="ExcludedFields">
+          <Key>
+            <PropertyRef Name="FieldName" />
+            <PropertyRef Name="Direction" />
+            <PropertyRef Name="WITypeMapId" />
+          </Key>
+          <Property Name="FieldName" Type="String" Nullable="false" MaxLength="200" Unicode="true" FixedLength="false" />
+          <Property Name="Direction" Type="Int32" Nullable="false" />
+          <Property Name="WITypeMapId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="UsedInWorkItemTypeMapping" Relationship="Microsoft.TeamFounation.Migration.EntityModel.FK_FieldExclCollection" FromRole="FIELD_EXCLUSION_COLLECTION" ToRole="WI_TYPE_MAP_COLLECTION" />
+        </EntityType>
+        <EntityType Name="FieldMappings">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Direction" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="WorkItemTypeMappings" Relationship="Microsoft.TeamFounation.Migration.EntityModel.FK_FieldMapCollection1" FromRole="FIELD_MAP_COLLECTION" ToRole="WI_TYPE_MAP_COLLECTION" />
+          <NavigationProperty Name="FieldMapping" Relationship="Microsoft.TeamFounation.Migration.EntityModel.FK_FieldMapCollection2" FromRole="FIELD_MAP_COLLECTION" ToRole="MAPPINGS" />
+          <NavigationProperty Name="ValueMappings" Relationship="Microsoft.TeamFounation.Migration.EntityModel.FK_ValueMapCollection2" FromRole="FIELD_MAP_COLLECTION" ToRole="VALUE_MAP_COLLECTION" />
+        </EntityType>
+        <EntityType Name="LinkingSetting">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="SettingXml" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" Nullable="false" />
+          <NavigationProperty Name="SessionGroupConfig" Relationship="Microsoft.TeamFounation.Migration.EntityModel.FK_SessionGroupConfigs3" FromRole="LINKING_SETTINGS" ToRole="SESSION_GROUP_CONFIGS" />
+        </EntityType>
+        <EntityType Name="Mapping">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="LeftValue" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="RightValue" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="UsedInFieldMappings" Relationship="Microsoft.TeamFounation.Migration.EntityModel.FK_FieldMapCollection2" FromRole="MAPPINGS" ToRole="FIELD_MAP_COLLECTION" />
+          <NavigationProperty Name="UsedInValueMappings" Relationship="Microsoft.TeamFounation.Migration.EntityModel.FK_ValueMapCollection1" FromRole="MAPPINGS" ToRole="VALUE_MAP_COLLECTION" />
+          <NavigationProperty Name="UsedInWorkItemTypeMappings" Relationship="Microsoft.TeamFounation.Migration.EntityModel.FK_WITypeMapCollection" FromRole="MAPPINGS" ToRole="WI_TYPE_MAP_COLLECTION" />
+        </EntityType>
+        <EntityType Name="MigrationSourceConfig">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="CreationTime" Type="DateTime" Nullable="false" />
+          <Property Name="SettingXml" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="SettingXmlSchema" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="MigrationSource" Relationship="Microsoft.TeamFounation.Migration.EntityModel.FK_MigrationSourceConfigs" FromRole="MIGRATION_SOURCE_CONFIGS" ToRole="MIGRATION_SOURCES" />
+          <NavigationProperty Name="SessionConfigsAsLeft" Relationship="Microsoft.TeamFounation.Migration.EntityModel.FK_SessionConfigurations2" FromRole="MIGRATION_SOURCE_CONFIGS" ToRole="SESSION_CONFIGURATIONS" />
+          <NavigationProperty Name="SessionConfigsAsRight" Relationship="Microsoft.TeamFounation.Migration.EntityModel.FK_SessionConfigurations3" FromRole="MIGRATION_SOURCE_CONFIGS" ToRole="SESSION_CONFIGURATIONS" />
+          <Property Name="GeneralSettingXml" Type="String" Nullable="true" /></EntityType>
+        <EntityType Name="MigrationSource">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="FriendlyName" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+          <Property Name="ServerIdentifier" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+          <Property Name="ServerUrl" Type="String" Nullable="false" MaxLength="400" Unicode="true" FixedLength="false" />
+          <Property Name="SourceIdentifier" Type="String" Nullable="false" MaxLength="400" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Configs" Relationship="Microsoft.TeamFounation.Migration.EntityModel.FK_MigrationSourceConfigs" FromRole="MIGRATION_SOURCES" ToRole="MIGRATION_SOURCE_CONFIGS" />
+          <NavigationProperty Name="Provider" Relationship="Microsoft.TeamFounation.Migration.EntityModel.FK_MigrationSources1" FromRole="MIGRATION_SOURCES" ToRole="PROVIDERS" />
+          <NavigationProperty Name="StoredCredential" Relationship="Microsoft.TeamFounation.Migration.EntityModel.FK_StoredCredentials" FromRole="MIGRATION_SOURCES" ToRole="STORED_CREDENTIALS" />
+          <Property Name="UniqueId" Type="Guid" Nullable="false" />
+          <NavigationProperty Name="AsLeftInSessions" Relationship="Microsoft.TeamFounation.Migration.EntityModel.FK_RT_Sessions1" FromRole="MigrationSource" ToRole="EMSession" />
+          <NavigationProperty Name="AsRightInSessions" Relationship="Microsoft.TeamFounation.Migration.EntityModel.FK_RT_Sessions2" FromRole="MigrationSource" ToRole="EMSession" />
+          <Property Type="String" Name="NativeId" MaxLength="400" FixedLength="false" Unicode="true" /></EntityType>
+        <EntityType Name="Provider">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="FriendlyName" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="EventSinkSetting" Relationship="Microsoft.TeamFounation.Migration.EntityModel.FK_EventSink" FromRole="PROVIDERS" ToRole="EVENT_SINK" />
+          <NavigationProperty Name="MigrationSource" Relationship="Microsoft.TeamFounation.Migration.EntityModel.FK_MigrationSources1" FromRole="PROVIDERS" ToRole="MIGRATION_SOURCES" />
+          <Property Name="ReferenceName" Type="Guid" Nullable="false" />
+          <Property Name="ProviderVersion" Type="String" Nullable="true" />
+          <NavigationProperty Name="CONFLICT_CONFLICT_TYPES" Relationship="Microsoft.TeamFounation.Migration.EntityModel.FK_to_provider" FromRole="Provider" ToRole="CONFLICT_CONFLICT_TYPES" />
+          <NavigationProperty Name="CONFLICT_RESOLUTION_ACTIONS" Relationship="Microsoft.TeamFounation.Migration.EntityModel.FK_action_to_provider" FromRole="Provider" ToRole="CONFLICT_RESOLUTION_ACTIONS" /></EntityType>
+        <EntityType Name="SessionConfig">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="SessionUniqueId" Type="Guid" Nullable="false" />
+          <Property Name="FriendlyName" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+          <Property Name="CreationTime" Type="DateTime" Nullable="false" />
+          <Property Name="Creator" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="DeprecationTime" Type="DateTime" />
+          <Property Name="Type" Type="Int32" Nullable="false" />
+          <Property Name="SettingXml" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="SettingXmlSchema" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="LeftMigrationSourceConfig" Relationship="Microsoft.TeamFounation.Migration.EntityModel.FK_SessionConfigurations2" FromRole="SESSION_CONFIGURATIONS" ToRole="MIGRATION_SOURCE_CONFIGS" />
+          <NavigationProperty Name="RightMigrationSourceConfig" Relationship="Microsoft.TeamFounation.Migration.EntityModel.FK_SessionConfigurations3" FromRole="SESSION_CONFIGURATIONS" ToRole="MIGRATION_SOURCE_CONFIGS" />
+          <NavigationProperty Name="SessionGroupConfig" Relationship="Microsoft.TeamFounation.Migration.EntityModel.FK_SessionConfiguration5" FromRole="SESSION_CONFIGURATIONS" ToRole="SESSION_GROUP_CONFIGS" />
+          <NavigationProperty Name="EventSinks" Relationship="Microsoft.TeamFounation.Migration.EntityModel.EVENT_SINK_JUNC" FromRole="SESSION_CONFIGURATIONS" ToRole="EVENT_SINK" />
+          <NavigationProperty Name="FilterItemPairs" Relationship="Microsoft.TeamFounation.Migration.EntityModel.FK_FilterItemPair_to_SessionConfig" FromRole="SessionConfig" ToRole="FILTER_ITEM_PAIR" /></EntityType>
+        <EntityType Name="SessionGroupConfig">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="CreationTime" Type="DateTime" Nullable="false" />
+          <Property Name="Creator" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="DeprecationTime" Type="DateTime" />
+          <Property Name="Status" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="LinkingSetting" Relationship="Microsoft.TeamFounation.Migration.EntityModel.FK_SessionGroupConfigs3" FromRole="SESSION_GROUP_CONFIGS" ToRole="LINKING_SETTINGS" />
+          <NavigationProperty Name="SessionConfigs" Relationship="Microsoft.TeamFounation.Migration.EntityModel.FK_SessionConfiguration5" FromRole="SESSION_GROUP_CONFIGS" ToRole="SESSION_CONFIGURATIONS" />
+          <NavigationProperty Name="SessionGroup" Relationship="Microsoft.TeamFounation.Migration.EntityModel.FK_SessionGroupConfigs1" FromRole="SESSION_GROUP_CONFIGS" ToRole="SESSION_GROUPS" />
+          <Property Name="FriendlyName" Type="String" Nullable="true" />
+          <Property Name="UniqueId" Type="Guid" Nullable="false" />
+          <Property Name="WorkFlowType" Type="Int32" Nullable="false" />
+          <Property Name="UserIdentityMappingsConfig" Type="String" Nullable="true" />
+          <Property Name="ErrorManagementConfig" Type="String" Nullable="true" />
+          <Property Type="String" Name="AddinsConfig" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Settings" MaxLength="Max" FixedLength="false" Unicode="true" />          
+        </EntityType>
+        <EntityType Name="SessionGroup">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="GroupUniqueId" Type="Guid" Nullable="false" />
+          <Property Name="FriendlyName" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Configs" Relationship="Microsoft.TeamFounation.Migration.EntityModel.FK_SessionGroupConfigs1" FromRole="SESSION_GROUPS" ToRole="SESSION_GROUP_CONFIGS" />
+          <Property Name="State" Type="Int32" Nullable="true" />
+          <NavigationProperty Name="Sessions" Relationship="Microsoft.TeamFounation.Migration.EntityModel.FK_RT_Sessions3" FromRole="SessionGroup" ToRole="RUNTIME_SESSIONS" />
+          <Property Name="OrchestrationStatus" Type="Int32" Nullable="true" /></EntityType>
+        <EntityType Name="StoredCredential">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="CredentialString" Type="String" Nullable="false" MaxLength="300" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="MigrationSource" Relationship="Microsoft.TeamFounation.Migration.EntityModel.FK_StoredCredentials" FromRole="STORED_CREDENTIALS" ToRole="MIGRATION_SOURCES" />
+        </EntityType>
+        <EntityType Name="ValueMappings">
+          <Key>
+            <PropertyRef Name="MappingId" />
+          </Key>
+          <Property Name="MappingId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="UsedInFieldMappings" Relationship="Microsoft.TeamFounation.Migration.EntityModel.FK_ValueMapCollection2" FromRole="VALUE_MAP_COLLECTION" ToRole="FIELD_MAP_COLLECTION" />
+          <NavigationProperty Name="ValueMapping" Relationship="Microsoft.TeamFounation.Migration.EntityModel.FK_ValueMapCollection1" FromRole="VALUE_MAP_COLLECTION" ToRole="MAPPINGS" />
+        </EntityType>
+        <EntityType Name="WorkItemTypeMappings">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="ExcludedFields" Relationship="Microsoft.TeamFounation.Migration.EntityModel.FK_FieldExclCollection" FromRole="WI_TYPE_MAP_COLLECTION" ToRole="FIELD_EXCLUSION_COLLECTION" />
+          <NavigationProperty Name="FieldMaps" Relationship="Microsoft.TeamFounation.Migration.EntityModel.FK_FieldMapCollection1" FromRole="WI_TYPE_MAP_COLLECTION" ToRole="FIELD_MAP_COLLECTION" />
+          <NavigationProperty Name="WorkItemTypeMapping" Relationship="Microsoft.TeamFounation.Migration.EntityModel.FK_WITypeMapCollection" FromRole="WI_TYPE_MAP_COLLECTION" ToRole="MAPPINGS" />
+        </EntityType>
+        <Association Name="FK_EventSink">
+          <End Role="PROVIDERS" Type="Microsoft.TeamFounation.Migration.EntityModel.Provider" Multiplicity="1" />
+          <End Role="EVENT_SINK" Type="Microsoft.TeamFounation.Migration.EntityModel.EventSinkSetting" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_FieldExclCollection">
+          <End Role="WI_TYPE_MAP_COLLECTION" Type="Microsoft.TeamFounation.Migration.EntityModel.WorkItemTypeMappings" Multiplicity="1" />
+          <End Role="FIELD_EXCLUSION_COLLECTION" Type="Microsoft.TeamFounation.Migration.EntityModel.ExcludedFields" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="WI_TYPE_MAP_COLLECTION">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="FIELD_EXCLUSION_COLLECTION">
+              <PropertyRef Name="WITypeMapId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FieldMapCollection1">
+          <End Role="WI_TYPE_MAP_COLLECTION" Type="Microsoft.TeamFounation.Migration.EntityModel.WorkItemTypeMappings" Multiplicity="1" />
+          <End Role="FIELD_MAP_COLLECTION" Type="Microsoft.TeamFounation.Migration.EntityModel.FieldMappings" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_FieldMapCollection2">
+          <End Role="MAPPINGS" Type="Microsoft.TeamFounation.Migration.EntityModel.Mapping" Multiplicity="1" />
+          <End Role="FIELD_MAP_COLLECTION" Type="Microsoft.TeamFounation.Migration.EntityModel.FieldMappings" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_ValueMapCollection2">
+          <End Role="FIELD_MAP_COLLECTION" Type="Microsoft.TeamFounation.Migration.EntityModel.FieldMappings" Multiplicity="0..1" />
+          <End Role="VALUE_MAP_COLLECTION" Type="Microsoft.TeamFounation.Migration.EntityModel.ValueMappings" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_SessionGroupConfigs3">
+          <End Role="LINKING_SETTINGS" Type="Microsoft.TeamFounation.Migration.EntityModel.LinkingSetting" Multiplicity="0..1" />
+          <End Role="SESSION_GROUP_CONFIGS" Type="Microsoft.TeamFounation.Migration.EntityModel.SessionGroupConfig" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_ValueMapCollection1">
+          <End Role="MAPPINGS" Type="Microsoft.TeamFounation.Migration.EntityModel.Mapping" Multiplicity="1" />
+          <End Role="VALUE_MAP_COLLECTION" Type="Microsoft.TeamFounation.Migration.EntityModel.ValueMappings" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="MAPPINGS">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="VALUE_MAP_COLLECTION">
+              <PropertyRef Name="MappingId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_WITypeMapCollection">
+          <End Role="MAPPINGS" Type="Microsoft.TeamFounation.Migration.EntityModel.Mapping" Multiplicity="1" />
+          <End Role="WI_TYPE_MAP_COLLECTION" Type="Microsoft.TeamFounation.Migration.EntityModel.WorkItemTypeMappings" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_MigrationSourceConfigs">
+          <End Role="MIGRATION_SOURCES" Type="Microsoft.TeamFounation.Migration.EntityModel.MigrationSource" Multiplicity="1" />
+          <End Role="MIGRATION_SOURCE_CONFIGS" Type="Microsoft.TeamFounation.Migration.EntityModel.MigrationSourceConfig" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_SessionConfigurations2">
+          <End Role="MIGRATION_SOURCE_CONFIGS" Type="Microsoft.TeamFounation.Migration.EntityModel.MigrationSourceConfig" Multiplicity="1" />
+          <End Role="SESSION_CONFIGURATIONS" Type="Microsoft.TeamFounation.Migration.EntityModel.SessionConfig" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_SessionConfigurations3">
+          <End Role="MIGRATION_SOURCE_CONFIGS" Type="Microsoft.TeamFounation.Migration.EntityModel.MigrationSourceConfig" Multiplicity="1" />
+          <End Role="SESSION_CONFIGURATIONS" Type="Microsoft.TeamFounation.Migration.EntityModel.SessionConfig" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_MigrationSources1">
+          <End Role="PROVIDERS" Type="Microsoft.TeamFounation.Migration.EntityModel.Provider" Multiplicity="1" />
+          <End Role="MIGRATION_SOURCES" Type="Microsoft.TeamFounation.Migration.EntityModel.MigrationSource" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_StoredCredentials">
+          <End Role="MIGRATION_SOURCES" Type="Microsoft.TeamFounation.Migration.EntityModel.MigrationSource" Multiplicity="1" />
+          <End Role="STORED_CREDENTIALS" Type="Microsoft.TeamFounation.Migration.EntityModel.StoredCredential" Multiplicity="0..1" />
+        </Association>
+        <Association Name="FK_SessionConfiguration5">
+          <End Role="SESSION_GROUP_CONFIGS" Type="Microsoft.TeamFounation.Migration.EntityModel.SessionGroupConfig" Multiplicity="1" />
+          <End Role="SESSION_CONFIGURATIONS" Type="Microsoft.TeamFounation.Migration.EntityModel.SessionConfig" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_SessionGroupConfigs1">
+          <End Role="SESSION_GROUPS" Type="Microsoft.TeamFounation.Migration.EntityModel.SessionGroup" Multiplicity="1" />
+          <End Role="SESSION_GROUP_CONFIGS" Type="Microsoft.TeamFounation.Migration.EntityModel.SessionGroupConfig" Multiplicity="*" />
+        </Association>
+        <Association Name="EVENT_SINK_JUNC">
+          <End Role="EVENT_SINK" Type="Microsoft.TeamFounation.Migration.EntityModel.EventSinkSetting" Multiplicity="*" />
+          <End Role="SESSION_CONFIGURATIONS" Type="Microsoft.TeamFounation.Migration.EntityModel.SessionConfig" Multiplicity="*" />
+        </Association>
+        <EntityType Name="FilterItemPair">
+          <Key>
+            <PropertyRef Name="Id" /></Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Filter1" Type="String" Nullable="true" />
+          <Property Name="Filter2" Type="String" Nullable="true" />
+          <Property Name="Neglect" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="SessionConfiguration" Relationship="Microsoft.TeamFounation.Migration.EntityModel.FK_FilterItemPair_to_SessionConfig" FromRole="FILTER_ITEM_PAIR" ToRole="SessionConfig" />
+          <Property Name="Filter1MigrationSourceReferenceName" Type="Guid" Nullable="true" />
+          <Property Name="Filter2MigrationSourceReferenceName" Type="Guid" Nullable="true" />
+          <Property Name="Filter1SnapshotPoint" Type="String" Nullable="true" />
+          <Property Name="Filter2SnapshotPoint" Type="String" Nullable="true" />
+          <Property Name="Filter1MergeScope" Type="String" Nullable="true" />
+          <Property Name="Filter2MergeScope" Type="String" Nullable="true" />
+          <Property Name="Filter1PeerSnapshotPoint" Type="String" Nullable="true" />
+          <Property Name="Filter2PeerSnapshotPoint" Type="String" Nullable="true" /></EntityType>
+        <Association Name="FK_FilterItemPair_to_SessionConfig">
+          <End Type="Microsoft.TeamFounation.Migration.EntityModel.SessionConfig" Role="SessionConfig" Multiplicity="1" />
+          <End Type="Microsoft.TeamFounation.Migration.EntityModel.FilterItemPair" Role="FILTER_ITEM_PAIR" Multiplicity="*" /></Association>
+        <EntityType Name="EMSession">
+          <Key>
+            <PropertyRef Name="Id" /></Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="SessionUniqueId" Type="Guid" Nullable="false" />
+          <Property Name="LeftHighWaterMarkLatest" Type="Int32" Nullable="true" />
+          <Property Name="RightHighWaterMarkLatest" Type="Int32" Nullable="true" />
+          <Property Name="LeftHighWaterMarkCurrent" Type="Int32" Nullable="true" />
+          <Property Name="RightHighWaterMarkCurrent" Type="Int32" Nullable="true" />
+          <Property Name="ExecOrderInSessionGroup" Type="Int32" Nullable="true" />
+          <Property Name="State" Type="Int32" Nullable="true" />
+          <NavigationProperty Name="SessionGroup" Relationship="Microsoft.TeamFounation.Migration.EntityModel.FK_RT_Sessions3" FromRole="RUNTIME_SESSIONS" ToRole="SessionGroup" />
+          <NavigationProperty Name="LeftSource" Relationship="Microsoft.TeamFounation.Migration.EntityModel.FK_RT_Sessions1" FromRole="EMSession" ToRole="MigrationSource" />
+          <NavigationProperty Name="RightSource" Relationship="Microsoft.TeamFounation.Migration.EntityModel.FK_RT_Sessions2" FromRole="EMSession" ToRole="MigrationSource" />
+          <Property Name="OrchestrationStatus" Type="Int32" Nullable="true" /></EntityType>
+        <Association Name="FK_RT_Sessions3">
+          <End Type="Microsoft.TeamFounation.Migration.EntityModel.SessionGroup" Role="SessionGroup" Multiplicity="1" />
+          <End Type="Microsoft.TeamFounation.Migration.EntityModel.EMSession" Role="RUNTIME_SESSIONS" Multiplicity="*" /></Association>
+        <Association Name="FK_RT_Sessions1">
+          <End Type="Microsoft.TeamFounation.Migration.EntityModel.MigrationSource" Role="MigrationSource" Multiplicity="1" />
+          <End Type="Microsoft.TeamFounation.Migration.EntityModel.EMSession" Role="EMSession" Multiplicity="*" /></Association>
+        <Association Name="FK_RT_Sessions2">
+          <End Type="Microsoft.TeamFounation.Migration.EntityModel.MigrationSource" Role="MigrationSource" Multiplicity="1" />
+          <End Type="Microsoft.TeamFounation.Migration.EntityModel.EMSession" Role="EMSession" Multiplicity="*" /></Association>
+        <EntityType Name="Addin">
+          <Key>
+            <PropertyRef Name="Id" /></Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="ReferenceName" Type="Guid" Nullable="false" />
+          <Property Name="FriendlyName" Type="String" Nullable="false" />
+          <Property Name="ProviderVersion" Type="String" Nullable="true" /></EntityType>
+        <EntityType Name="ConfigConflictType">
+          <Key>
+            <PropertyRef Name="Id" /></Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="ReferenceName" Type="Guid" Nullable="false" />
+          <Property Name="FriendlyName" Type="String" Nullable="false" />
+          <Property Name="DescriptionDoc" Type="String" Nullable="true" />
+          <Property Name="IsActive" Type="Boolean" Nullable="true" />
+          <NavigationProperty Name="Rules" Relationship="Microsoft.TeamFounation.Migration.EntityModel.FK_ResolutionRules2" FromRole="CONFLICT_CONFLICT_TYPES" ToRole="CONFLICT_RESOLUTION_RULES" />
+          <NavigationProperty Name="Provider" Relationship="Microsoft.TeamFounation.Migration.EntityModel.FK_to_provider" FromRole="CONFLICT_CONFLICT_TYPES" ToRole="Provider" /></EntityType>
+        <EntityType Name="ConfigConflictResolutionAction">
+          <Key>
+            <PropertyRef Name="Id" /></Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="ReferenceName" Type="Guid" Nullable="false" />
+          <Property Name="FriendlyName" Type="String" Nullable="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="true" />
+          <NavigationProperty Name="Provider" Relationship="Microsoft.TeamFounation.Migration.EntityModel.FK_action_to_provider" FromRole="CONFLICT_RESOLUTION_ACTIONS" ToRole="Provider" />
+          <NavigationProperty Name="Rules" Relationship="Microsoft.TeamFounation.Migration.EntityModel.FK_ResolutionRule_to_ResolutionAction" FromRole="CONFLICT_RESOLUTION_ACTIONS" ToRole="CONFLICT_RESOLUTION_RULES" /></EntityType>
+        <EntityType Name="ConfigConflictResolutionRule">
+          <Key>
+            <PropertyRef Name="Id" /></Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="ReferenceName" Type="Guid" Nullable="false" />
+          <Property Name="ScopeInfoUniqueId" Type="Guid" Nullable="false" />
+          <Property Name="SourceInfoUniqueId" Type="Guid" Nullable="false" />
+          <Property Name="RuleData" Type="String" Nullable="false" />
+          <Property Name="CreationTime" Type="DateTime" Nullable="false" />
+          <Property Name="DeprecationTime" Type="DateTime" Nullable="true" />
+          <Property Name="Status" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="ConflictType" Relationship="Microsoft.TeamFounation.Migration.EntityModel.FK_ResolutionRules2" FromRole="CONFLICT_RESOLUTION_RULES" ToRole="CONFLICT_CONFLICT_TYPES" />
+          <NavigationProperty Name="ResolutionAction" Relationship="Microsoft.TeamFounation.Migration.EntityModel.FK_ResolutionRule_to_ResolutionAction" FromRole="CONFLICT_RESOLUTION_RULES" ToRole="CONFLICT_RESOLUTION_ACTIONS" />
+          <NavigationProperty Name="RuleScope" Relationship="Microsoft.TeamFounation.Migration.EntityModel.FK_ResolutionRules1" FromRole="CONFLICT_RESOLUTION_RULES" ToRole="CONFLICT_RULE_SCOPES" /></EntityType>
+        <EntityType Name="ConfigConflictResolutionRuleScope">
+          <Key>
+            <PropertyRef Name="Id" /></Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Scope" Type="String" Nullable="false" />
+          <NavigationProperty Name="Rules" Relationship="Microsoft.TeamFounation.Migration.EntityModel.FK_ResolutionRules1" FromRole="CONFLICT_RULE_SCOPES" ToRole="CONFLICT_RESOLUTION_RULES" /></EntityType>
+        <Association Name="FK_ResolutionRules2">
+          <End Type="Microsoft.TeamFounation.Migration.EntityModel.ConfigConflictType" Role="CONFLICT_CONFLICT_TYPES" Multiplicity="1" />
+          <End Type="Microsoft.TeamFounation.Migration.EntityModel.ConfigConflictResolutionRule" Role="CONFLICT_RESOLUTION_RULES" Multiplicity="*" /></Association>
+        <Association Name="FK_to_provider">
+          <End Type="Microsoft.TeamFounation.Migration.EntityModel.Provider" Role="Provider" Multiplicity="0..1" />
+          <End Type="Microsoft.TeamFounation.Migration.EntityModel.ConfigConflictType" Role="CONFLICT_CONFLICT_TYPES" Multiplicity="*" /></Association>
+        <Association Name="FK_action_to_provider">
+          <End Type="Microsoft.TeamFounation.Migration.EntityModel.Provider" Role="Provider" Multiplicity="0..1" />
+          <End Type="Microsoft.TeamFounation.Migration.EntityModel.ConfigConflictResolutionAction" Role="CONFLICT_RESOLUTION_ACTIONS" Multiplicity="*" /></Association>
+        <Association Name="FK_ResolutionRule_to_ResolutionAction">
+          <End Type="Microsoft.TeamFounation.Migration.EntityModel.ConfigConflictResolutionAction" Role="CONFLICT_RESOLUTION_ACTIONS" Multiplicity="1" />
+          <End Type="Microsoft.TeamFounation.Migration.EntityModel.ConfigConflictResolutionRule" Role="CONFLICT_RESOLUTION_RULES" Multiplicity="*" /></Association>
+        <Association Name="FK_ResolutionRules1">
+          <End Type="Microsoft.TeamFounation.Migration.EntityModel.ConfigConflictResolutionRuleScope" Role="CONFLICT_RULE_SCOPES" Multiplicity="1" />
+          <End Type="Microsoft.TeamFounation.Migration.EntityModel.ConfigConflictResolutionRule" Role="CONFLICT_RESOLUTION_RULES" Multiplicity="*" /></Association></Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="urn:schemas-microsoft-com:windows:storage:mapping:CS">
+        <EntityContainerMapping StorageEntityContainer="MicrosoftTeamFounationMigrationEntityModelStoreContainer" CdmEntityContainer="TfsMigrationConsolidatedDBEntities">
+          <EntitySetMapping Name="EventSinkSettingSet">
+            <EntityTypeMapping TypeName="IsTypeOf(Microsoft.TeamFounation.Migration.EntityModel.EventSinkSetting)">
+              <MappingFragment StoreEntitySet="EVENT_SINK">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="FriendlyName" ColumnName="FriendlyName" />
+                <ScalarProperty Name="CreationTime" ColumnName="CreationTime" />
+                <ScalarProperty Name="SettingXml" ColumnName="SettingXml" />
+                <ScalarProperty Name="SettingXmlSchema" ColumnName="SettingXmlSchema" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ExcludedFieldsSet">
+            <EntityTypeMapping TypeName="IsTypeOf(Microsoft.TeamFounation.Migration.EntityModel.ExcludedFields)">
+              <MappingFragment StoreEntitySet="FIELD_EXCLUSION_COLLECTION">
+                <ScalarProperty Name="FieldName" ColumnName="FieldName" />
+                <ScalarProperty Name="Direction" ColumnName="Direction" />
+                <ScalarProperty Name="WITypeMapId" ColumnName="WITypeMapId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FieldMappingsSet">
+            <EntityTypeMapping TypeName="IsTypeOf(Microsoft.TeamFounation.Migration.EntityModel.FieldMappings)">
+              <MappingFragment StoreEntitySet="FIELD_MAP_COLLECTION">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Direction" ColumnName="Direction" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LinkingSettingSet">
+            <EntityTypeMapping TypeName="IsTypeOf(Microsoft.TeamFounation.Migration.EntityModel.LinkingSetting)">
+              <MappingFragment StoreEntitySet="LINKING_SETTINGS">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="SettingXml" ColumnName="SettingXml" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MappingSet">
+            <EntityTypeMapping TypeName="IsTypeOf(Microsoft.TeamFounation.Migration.EntityModel.Mapping)">
+              <MappingFragment StoreEntitySet="MAPPINGS">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="LeftValue" ColumnName="LeftValue" />
+                <ScalarProperty Name="RightValue" ColumnName="RightValue" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MigrationSourceConfigSet">
+            <EntityTypeMapping TypeName="IsTypeOf(Microsoft.TeamFounation.Migration.EntityModel.MigrationSourceConfig)">
+              <MappingFragment StoreEntitySet="MIGRATION_SOURCE_CONFIGS">
+                <ScalarProperty Name="GeneralSettingXml" ColumnName="GeneralSettingXml" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="CreationTime" ColumnName="CreationTime" />
+                <ScalarProperty Name="SettingXml" ColumnName="SettingXml" />
+                <ScalarProperty Name="SettingXmlSchema" ColumnName="SettingXmlSchema" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MigrationSourceSet">
+            <EntityTypeMapping TypeName="IsTypeOf(Microsoft.TeamFounation.Migration.EntityModel.MigrationSource)">
+              <MappingFragment StoreEntitySet="MIGRATION_SOURCES">
+                <ScalarProperty Name="NativeId" ColumnName="NativeId" />
+                <ScalarProperty Name="UniqueId" ColumnName="UniqueId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="FriendlyName" ColumnName="FriendlyName" />
+                <ScalarProperty Name="ServerIdentifier" ColumnName="ServerIdentifier" />
+                <ScalarProperty Name="ServerUrl" ColumnName="ServerUrl" />
+                <ScalarProperty Name="SourceIdentifier" ColumnName="SourceIdentifier" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ProviderSet">
+            <EntityTypeMapping TypeName="IsTypeOf(Microsoft.TeamFounation.Migration.EntityModel.Provider)">
+              <MappingFragment StoreEntitySet="PROVIDERS">
+                <ScalarProperty Name="ProviderVersion" ColumnName="ProviderVersion" />
+                <ScalarProperty Name="ReferenceName" ColumnName="ReferenceName" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="FriendlyName" ColumnName="FriendlyName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SessionConfigSet">
+            <EntityTypeMapping TypeName="IsTypeOf(Microsoft.TeamFounation.Migration.EntityModel.SessionConfig)">
+              <MappingFragment StoreEntitySet="SESSION_CONFIGURATIONS">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="SessionUniqueId" ColumnName="SessionUniqueId" />
+                <ScalarProperty Name="FriendlyName" ColumnName="FriendlyName" />
+                <ScalarProperty Name="CreationTime" ColumnName="CreationTime" />
+                <ScalarProperty Name="Creator" ColumnName="Creator" />
+                <ScalarProperty Name="DeprecationTime" ColumnName="DeprecationTime" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="SettingXml" ColumnName="SettingXml" />
+                <ScalarProperty Name="SettingXmlSchema" ColumnName="SettingXmlSchema" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SessionGroupConfigSet">
+            <EntityTypeMapping TypeName="IsTypeOf(Microsoft.TeamFounation.Migration.EntityModel.SessionGroupConfig)">
+              <MappingFragment StoreEntitySet="SESSION_GROUP_CONFIGS">
+                <ScalarProperty Name="AddinsConfig" ColumnName="AddinsConfig" />
+                <ScalarProperty Name="ErrorManagementConfig" ColumnName="ErrorManagementConfig" />
+                <ScalarProperty Name="UserIdentityMappingsConfig" ColumnName="UserIdentityMappingsConfig" />
+                <ScalarProperty Name="WorkFlowType" ColumnName="WorkFlowType" />
+                <ScalarProperty Name="UniqueId" ColumnName="UniqueId" />
+                <ScalarProperty Name="FriendlyName" ColumnName="FriendlyName" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="CreationTime" ColumnName="CreationTime" />
+                <ScalarProperty Name="Creator" ColumnName="Creator" />
+                <ScalarProperty Name="DeprecationTime" ColumnName="DeprecationTime" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Settings" ColumnName="Settings" />                
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SessionGroupSet">
+            <EntityTypeMapping TypeName="IsTypeOf(Microsoft.TeamFounation.Migration.EntityModel.SessionGroup)">
+              <MappingFragment StoreEntitySet="SESSION_GROUPS">
+                <ScalarProperty Name="OrchestrationStatus" ColumnName="OrchestrationStatus" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="GroupUniqueId" ColumnName="GroupUniqueId" />
+                <ScalarProperty Name="FriendlyName" ColumnName="FriendlyName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="StoredCredentialSet">
+            <EntityTypeMapping TypeName="IsTypeOf(Microsoft.TeamFounation.Migration.EntityModel.StoredCredential)">
+              <MappingFragment StoreEntitySet="STORED_CREDENTIALS">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="CredentialString" ColumnName="CredentialString" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ValueMappingsSet">
+            <EntityTypeMapping TypeName="IsTypeOf(Microsoft.TeamFounation.Migration.EntityModel.ValueMappings)">
+              <MappingFragment StoreEntitySet="VALUE_MAP_COLLECTION">
+                <ScalarProperty Name="MappingId" ColumnName="MappingId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WorkItemTypeMappingsSet">
+            <EntityTypeMapping TypeName="IsTypeOf(Microsoft.TeamFounation.Migration.EntityModel.WorkItemTypeMappings)">
+              <MappingFragment StoreEntitySet="WI_TYPE_MAP_COLLECTION">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="FK_EventSink" TypeName="Microsoft.TeamFounation.Migration.EntityModel.FK_EventSink" StoreEntitySet="EVENT_SINK">
+            <EndProperty Name="PROVIDERS">
+              <ScalarProperty Name="Id" ColumnName="ProviderId" />
+            </EndProperty>
+            <EndProperty Name="EVENT_SINK">
+              <ScalarProperty Name="Id" ColumnName="Id" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_FieldExclCollection" TypeName="Microsoft.TeamFounation.Migration.EntityModel.FK_FieldExclCollection" StoreEntitySet="FIELD_EXCLUSION_COLLECTION">
+            <EndProperty Name="WI_TYPE_MAP_COLLECTION">
+              <ScalarProperty Name="Id" ColumnName="WITypeMapId" />
+            </EndProperty>
+            <EndProperty Name="FIELD_EXCLUSION_COLLECTION">
+              <ScalarProperty Name="FieldName" ColumnName="FieldName" />
+              <ScalarProperty Name="Direction" ColumnName="Direction" />
+              <ScalarProperty Name="WITypeMapId" ColumnName="WITypeMapId" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_FieldMapCollection1" TypeName="Microsoft.TeamFounation.Migration.EntityModel.FK_FieldMapCollection1" StoreEntitySet="FIELD_MAP_COLLECTION">
+            <EndProperty Name="WI_TYPE_MAP_COLLECTION">
+              <ScalarProperty Name="Id" ColumnName="WITypeMapId" />
+            </EndProperty>
+            <EndProperty Name="FIELD_MAP_COLLECTION">
+              <ScalarProperty Name="Id" ColumnName="Id" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_FieldMapCollection2" TypeName="Microsoft.TeamFounation.Migration.EntityModel.FK_FieldMapCollection2" StoreEntitySet="FIELD_MAP_COLLECTION">
+            <EndProperty Name="MAPPINGS">
+              <ScalarProperty Name="Id" ColumnName="ValueMappingId" />
+            </EndProperty>
+            <EndProperty Name="FIELD_MAP_COLLECTION">
+              <ScalarProperty Name="Id" ColumnName="Id" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_ValueMapCollection2" TypeName="Microsoft.TeamFounation.Migration.EntityModel.FK_ValueMapCollection2" StoreEntitySet="VALUE_MAP_COLLECTION">
+            <EndProperty Name="FIELD_MAP_COLLECTION">
+              <ScalarProperty Name="Id" ColumnName="FieldMapCollectionId" />
+            </EndProperty>
+            <EndProperty Name="VALUE_MAP_COLLECTION">
+              <ScalarProperty Name="MappingId" ColumnName="MappingId" />
+            </EndProperty>
+            <Condition ColumnName="FieldMapCollectionId" IsNull="false" />
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_SessionGroupConfigs3" TypeName="Microsoft.TeamFounation.Migration.EntityModel.FK_SessionGroupConfigs3" StoreEntitySet="SESSION_GROUP_CONFIGS">
+            <EndProperty Name="LINKING_SETTINGS">
+              <ScalarProperty Name="Id" ColumnName="LinkingSettingId" />
+            </EndProperty>
+            <EndProperty Name="SESSION_GROUP_CONFIGS">
+              <ScalarProperty Name="Id" ColumnName="Id" />
+            </EndProperty>
+            <Condition ColumnName="LinkingSettingId" IsNull="false" />
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_ValueMapCollection1" TypeName="Microsoft.TeamFounation.Migration.EntityModel.FK_ValueMapCollection1" StoreEntitySet="VALUE_MAP_COLLECTION">
+            <EndProperty Name="MAPPINGS">
+              <ScalarProperty Name="Id" ColumnName="MappingId" />
+            </EndProperty>
+            <EndProperty Name="VALUE_MAP_COLLECTION">
+              <ScalarProperty Name="MappingId" ColumnName="MappingId" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_WITypeMapCollection" TypeName="Microsoft.TeamFounation.Migration.EntityModel.FK_WITypeMapCollection" StoreEntitySet="WI_TYPE_MAP_COLLECTION">
+            <EndProperty Name="MAPPINGS">
+              <ScalarProperty Name="Id" ColumnName="MappingId" />
+            </EndProperty>
+            <EndProperty Name="WI_TYPE_MAP_COLLECTION">
+              <ScalarProperty Name="Id" ColumnName="Id" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_MigrationSourceConfigs" TypeName="Microsoft.TeamFounation.Migration.EntityModel.FK_MigrationSourceConfigs" StoreEntitySet="MIGRATION_SOURCE_CONFIGS">
+            <EndProperty Name="MIGRATION_SOURCES">
+              <ScalarProperty Name="Id" ColumnName="MigrationSourceId" />
+            </EndProperty>
+            <EndProperty Name="MIGRATION_SOURCE_CONFIGS">
+              <ScalarProperty Name="Id" ColumnName="Id" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_SessionConfigurations2" TypeName="Microsoft.TeamFounation.Migration.EntityModel.FK_SessionConfigurations2" StoreEntitySet="SESSION_CONFIGURATIONS">
+            <EndProperty Name="MIGRATION_SOURCE_CONFIGS">
+              <ScalarProperty Name="Id" ColumnName="LeftSourceConfigId" />
+            </EndProperty>
+            <EndProperty Name="SESSION_CONFIGURATIONS">
+              <ScalarProperty Name="Id" ColumnName="Id" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_SessionConfigurations3" TypeName="Microsoft.TeamFounation.Migration.EntityModel.FK_SessionConfigurations3" StoreEntitySet="SESSION_CONFIGURATIONS">
+            <EndProperty Name="MIGRATION_SOURCE_CONFIGS">
+              <ScalarProperty Name="Id" ColumnName="RightSourceConfigId" />
+            </EndProperty>
+            <EndProperty Name="SESSION_CONFIGURATIONS">
+              <ScalarProperty Name="Id" ColumnName="Id" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_MigrationSources1" TypeName="Microsoft.TeamFounation.Migration.EntityModel.FK_MigrationSources1" StoreEntitySet="MIGRATION_SOURCES">
+            <EndProperty Name="PROVIDERS">
+              <ScalarProperty Name="Id" ColumnName="ProviderId" />
+            </EndProperty>
+            <EndProperty Name="MIGRATION_SOURCES">
+              <ScalarProperty Name="Id" ColumnName="Id" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_StoredCredentials" TypeName="Microsoft.TeamFounation.Migration.EntityModel.FK_StoredCredentials" StoreEntitySet="STORED_CREDENTIALS">
+            <EndProperty Name="MIGRATION_SOURCES">
+              <ScalarProperty Name="Id" ColumnName="MigrationSourceId" />
+            </EndProperty>
+            <EndProperty Name="STORED_CREDENTIALS">
+              <ScalarProperty Name="Id" ColumnName="Id" />
+            </EndProperty>
+            <Condition ColumnName="MigrationSourceId" IsNull="false" /></AssociationSetMapping>
+          <AssociationSetMapping Name="FK_SessionConfiguration5" TypeName="Microsoft.TeamFounation.Migration.EntityModel.FK_SessionConfiguration5" StoreEntitySet="SESSION_CONFIGURATIONS">
+            <EndProperty Name="SESSION_GROUP_CONFIGS">
+              <ScalarProperty Name="Id" ColumnName="SessionGroupConfigId" />
+            </EndProperty>
+            <EndProperty Name="SESSION_CONFIGURATIONS">
+              <ScalarProperty Name="Id" ColumnName="Id" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_SessionGroupConfigs1" TypeName="Microsoft.TeamFounation.Migration.EntityModel.FK_SessionGroupConfigs1" StoreEntitySet="SESSION_GROUP_CONFIGS">
+            <EndProperty Name="SESSION_GROUPS">
+              <ScalarProperty Name="Id" ColumnName="SessionGroupId" />
+            </EndProperty>
+            <EndProperty Name="SESSION_GROUP_CONFIGS">
+              <ScalarProperty Name="Id" ColumnName="Id" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="EVENT_SINK_JUNC" TypeName="Microsoft.TeamFounation.Migration.EntityModel.EVENT_SINK_JUNC" StoreEntitySet="EVENT_SINK_JUNC">
+            <EndProperty Name="EVENT_SINK">
+              <ScalarProperty Name="Id" ColumnName="EventSinkId" />
+            </EndProperty>
+            <EndProperty Name="SESSION_CONFIGURATIONS">
+              <ScalarProperty Name="Id" ColumnName="SessionConfigId" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <EntitySetMapping Name="FilterItemPairSet">
+            <EntityTypeMapping TypeName="IsTypeOf(Microsoft.TeamFounation.Migration.EntityModel.FilterItemPair)">
+              <MappingFragment StoreEntitySet="FILTER_ITEM_PAIR">
+                <ScalarProperty Name="Filter2PeerSnapshotPoint" ColumnName="Filter2PeerSnapshotPoint" />
+                <ScalarProperty Name="Filter1PeerSnapshotPoint" ColumnName="Filter1PeerSnapshotPoint" />
+                <ScalarProperty Name="Filter2MergeScope" ColumnName="Filter2MergeScope" />
+                <ScalarProperty Name="Filter1MergeScope" ColumnName="Filter1MergeScope" />
+                <ScalarProperty Name="Filter2SnapshotPoint" ColumnName="Filter2SnapshotPoint" />
+                <ScalarProperty Name="Filter1SnapshotPoint" ColumnName="Filter1SnapshotPoint" />
+                <ScalarProperty Name="Filter2MigrationSourceReferenceName" ColumnName="Filter2MigrationSourceReferenceName" />
+                <ScalarProperty Name="Filter1MigrationSourceReferenceName" ColumnName="Filter1MigrationSourceReferenceName" />
+                <ScalarProperty Name="Neglect" ColumnName="Neglect" />
+                <ScalarProperty Name="Filter2" ColumnName="Filter2" />
+                <ScalarProperty Name="Filter1" ColumnName="Filter1" />
+                <ScalarProperty Name="Id" ColumnName="Id" /></MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <AssociationSetMapping Name="FK_FilterItemPair_to_SessionConfig" TypeName="Microsoft.TeamFounation.Migration.EntityModel.FK_FilterItemPair_to_SessionConfig" StoreEntitySet="FILTER_ITEM_PAIR">
+            <EndProperty Name="FILTER_ITEM_PAIR">
+              <ScalarProperty Name="Id" ColumnName="Id" /></EndProperty>
+            <EndProperty Name="SessionConfig">
+              <ScalarProperty Name="Id" ColumnName="SessionConfigId" /></EndProperty></AssociationSetMapping>
+          <EntitySetMapping Name="EMSessionSet">
+            <EntityTypeMapping TypeName="IsTypeOf(Microsoft.TeamFounation.Migration.EntityModel.EMSession)">
+              <MappingFragment StoreEntitySet="RUNTIME_SESSIONS">
+                <ScalarProperty Name="OrchestrationStatus" ColumnName="OrchestrationStatus" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="ExecOrderInSessionGroup" ColumnName="ExecOrderInSessionGroup" />
+                <ScalarProperty Name="RightHighWaterMarkCurrent" ColumnName="RightHighWaterMarkCurrent" />
+                <ScalarProperty Name="LeftHighWaterMarkCurrent" ColumnName="LeftHighWaterMarkCurrent" />
+                <ScalarProperty Name="RightHighWaterMarkLatest" ColumnName="RightHighWaterMarkLatest" />
+                <ScalarProperty Name="LeftHighWaterMarkLatest" ColumnName="LeftHighWaterMarkLatest" />
+                <ScalarProperty Name="SessionUniqueId" ColumnName="SessionUniqueId" />
+                <ScalarProperty Name="Id" ColumnName="Id" /></MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <AssociationSetMapping Name="FK_RT_Sessions3" TypeName="Microsoft.TeamFounation.Migration.EntityModel.FK_RT_Sessions3" StoreEntitySet="RUNTIME_SESSIONS">
+            <EndProperty Name="RUNTIME_SESSIONS">
+              <ScalarProperty Name="Id" ColumnName="Id" /></EndProperty>
+            <EndProperty Name="SessionGroup">
+              <ScalarProperty Name="Id" ColumnName="SessionGroupId" /></EndProperty></AssociationSetMapping>
+          <AssociationSetMapping Name="FK_RT_Sessions1" TypeName="Microsoft.TeamFounation.Migration.EntityModel.FK_RT_Sessions1" StoreEntitySet="RUNTIME_SESSIONS">
+            <EndProperty Name="EMSession">
+              <ScalarProperty Name="Id" ColumnName="Id" /></EndProperty>
+            <EndProperty Name="MigrationSource">
+              <ScalarProperty Name="Id" ColumnName="LeftSourceId" /></EndProperty></AssociationSetMapping>
+          <AssociationSetMapping Name="FK_RT_Sessions2" TypeName="Microsoft.TeamFounation.Migration.EntityModel.FK_RT_Sessions2" StoreEntitySet="RUNTIME_SESSIONS">
+            <EndProperty Name="EMSession">
+              <ScalarProperty Name="Id" ColumnName="Id" /></EndProperty>
+            <EndProperty Name="MigrationSource">
+              <ScalarProperty Name="Id" ColumnName="RightSourceId" /></EndProperty></AssociationSetMapping>
+          <EntitySetMapping Name="AddinSet">
+            <EntityTypeMapping TypeName="IsTypeOf(Microsoft.TeamFounation.Migration.EntityModel.Addin)">
+              <MappingFragment StoreEntitySet="ADDINS">
+                <ScalarProperty Name="ProviderVersion" ColumnName="ProviderVersion" />
+                <ScalarProperty Name="FriendlyName" ColumnName="FriendlyName" />
+                <ScalarProperty Name="ReferenceName" ColumnName="ReferenceName" />
+                <ScalarProperty Name="Id" ColumnName="Id" /></MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="ConfigConflictTypeSet">
+            <EntityTypeMapping TypeName="IsTypeOf(Microsoft.TeamFounation.Migration.EntityModel.ConfigConflictType)">
+              <MappingFragment StoreEntitySet="CONFLICT_CONFLICT_TYPES">
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="DescriptionDoc" ColumnName="DescriptionDoc" />
+                <ScalarProperty Name="FriendlyName" ColumnName="FriendlyName" />
+                <ScalarProperty Name="ReferenceName" ColumnName="ReferenceName" />
+                <ScalarProperty Name="Id" ColumnName="Id" /></MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="ConfigConflictResolutionActionSet">
+            <EntityTypeMapping TypeName="IsTypeOf(Microsoft.TeamFounation.Migration.EntityModel.ConfigConflictResolutionAction)">
+              <MappingFragment StoreEntitySet="CONFLICT_RESOLUTION_ACTIONS">
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="FriendlyName" ColumnName="FriendlyName" />
+                <ScalarProperty Name="ReferenceName" ColumnName="ReferenceName" />
+                <ScalarProperty Name="Id" ColumnName="Id" /></MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="ConfigConflictResolutionRuleSet">
+            <EntityTypeMapping TypeName="IsTypeOf(Microsoft.TeamFounation.Migration.EntityModel.ConfigConflictResolutionRule)">
+              <MappingFragment StoreEntitySet="CONFLICT_RESOLUTION_RULES">
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="DeprecationTime" ColumnName="DeprecationTime" />
+                <ScalarProperty Name="CreationTime" ColumnName="CreationTime" />
+                <ScalarProperty Name="RuleData" ColumnName="RuleData" />
+                <ScalarProperty Name="SourceInfoUniqueId" ColumnName="SourceInfoUniqueId" />
+                <ScalarProperty Name="ScopeInfoUniqueId" ColumnName="ScopeInfoUniqueId" />
+                <ScalarProperty Name="ReferenceName" ColumnName="ReferenceName" />
+                <ScalarProperty Name="Id" ColumnName="Id" /></MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="ConfigConflictResolutionRuleScopeSet">
+            <EntityTypeMapping TypeName="IsTypeOf(Microsoft.TeamFounation.Migration.EntityModel.ConfigConflictResolutionRuleScope)">
+              <MappingFragment StoreEntitySet="CONFLICT_RULE_SCOPES">
+                <ScalarProperty Name="Scope" ColumnName="Scope" />
+                <ScalarProperty Name="Id" ColumnName="Id" /></MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <AssociationSetMapping Name="FK_ResolutionRules2" TypeName="Microsoft.TeamFounation.Migration.EntityModel.FK_ResolutionRules2" StoreEntitySet="CONFLICT_RESOLUTION_RULES">
+            <EndProperty Name="CONFLICT_RESOLUTION_RULES">
+              <ScalarProperty Name="Id" ColumnName="Id" /></EndProperty>
+            <EndProperty Name="CONFLICT_CONFLICT_TYPES">
+              <ScalarProperty Name="Id" ColumnName="ConflictTypeId" /></EndProperty></AssociationSetMapping>
+          <AssociationSetMapping Name="FK_to_provider" TypeName="Microsoft.TeamFounation.Migration.EntityModel.FK_to_provider" StoreEntitySet="CONFLICT_CONFLICT_TYPES">
+            <EndProperty Name="CONFLICT_CONFLICT_TYPES">
+              <ScalarProperty Name="Id" ColumnName="Id" /></EndProperty>
+            <EndProperty Name="Provider">
+              <ScalarProperty Name="Id" ColumnName="ProviderId" /></EndProperty>
+            <Condition ColumnName="ProviderId" IsNull="false" /></AssociationSetMapping>
+          <AssociationSetMapping Name="FK_action_to_provider" TypeName="Microsoft.TeamFounation.Migration.EntityModel.FK_action_to_provider" StoreEntitySet="CONFLICT_RESOLUTION_ACTIONS">
+            <EndProperty Name="CONFLICT_RESOLUTION_ACTIONS">
+              <ScalarProperty Name="Id" ColumnName="Id" /></EndProperty>
+            <EndProperty Name="Provider">
+              <ScalarProperty Name="Id" ColumnName="ProviderId" /></EndProperty>
+            <Condition ColumnName="ProviderId" IsNull="false" /></AssociationSetMapping>
+          <AssociationSetMapping Name="FK_ResolutionRule_to_ResolutionAction" TypeName="Microsoft.TeamFounation.Migration.EntityModel.FK_ResolutionRule_to_ResolutionAction" StoreEntitySet="CONFLICT_RESOLUTION_RULES">
+            <EndProperty Name="CONFLICT_RESOLUTION_RULES">
+              <ScalarProperty Name="Id" ColumnName="Id" /></EndProperty>
+            <EndProperty Name="CONFLICT_RESOLUTION_ACTIONS">
+              <ScalarProperty Name="Id" ColumnName="ResolutionActionId" /></EndProperty></AssociationSetMapping>
+          <AssociationSetMapping Name="FK_ResolutionRules1" TypeName="Microsoft.TeamFounation.Migration.EntityModel.FK_ResolutionRules1" StoreEntitySet="CONFLICT_RESOLUTION_RULES">
+            <EndProperty Name="CONFLICT_RESOLUTION_RULES">
+              <ScalarProperty Name="Id" ColumnName="Id" /></EndProperty>
+            <EndProperty Name="CONFLICT_RULE_SCOPES">
+              <ScalarProperty Name="Id" ColumnName="ScopeId" /></EndProperty></AssociationSetMapping></EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2007/06/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="False" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram Name="ConfigurationEntityModel" ZoomLevel="85">
+        <EntityTypeShape EntityType="Microsoft.TeamFounation.Migration.EntityModel.EventSinkSetting" Width="2.25" PointX="2.75" PointY="5" Height="2.3648893229166656" IsExpanded="true" />
+        <EntityTypeShape EntityType="Microsoft.TeamFounation.Migration.EntityModel.ExcludedFields" Width="2.625" PointX="17.5" PointY="11.75" Height="1.5923063151041674" IsExpanded="true" />
+        <EntityTypeShape EntityType="Microsoft.TeamFounation.Migration.EntityModel.FieldMappings" Width="2.25" PointX="17.5" PointY="8.375" Height="1.7566536458333317" IsExpanded="true" />
+        <EntityTypeShape EntityType="Microsoft.TeamFounation.Migration.EntityModel.LinkingSetting" Width="2.125" PointX="2.125" PointY="3" Height="1.59568359375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Microsoft.TeamFounation.Migration.EntityModel.Mapping" Width="2.25" PointX="10.75" PointY="9.125" Height="1.9210009765624996" IsExpanded="true" />
+        <EntityTypeShape EntityType="Microsoft.TeamFounation.Migration.EntityModel.MigrationSourceConfig" Width="2.75" PointX="6.75" PointY="7.875" Height="2.0853483072916674" IsExpanded="true" />
+        <EntityTypeShape EntityType="Microsoft.TeamFounation.Migration.EntityModel.MigrationSource" Width="2.625" PointX="3.375" PointY="8.875" Height="2.4140429687499996" IsExpanded="true" />
+        <EntityTypeShape EntityType="Microsoft.TeamFounation.Migration.EntityModel.Provider" Width="1.875" PointX="0.5" PointY="6.375" Height="1.9802864583333335" IsExpanded="true" />
+        <EntityTypeShape EntityType="Microsoft.TeamFounation.Migration.EntityModel.SessionConfig" Width="2.625" PointX="10.25" PointY="3.875" Height="3.0714322916666674" IsExpanded="true" />
+        <EntityTypeShape EntityType="Microsoft.TeamFounation.Migration.EntityModel.SessionGroupConfig" Width="2.5" PointX="6.25" PointY="0.875" Height="2.9070849609374996" IsExpanded="true" />
+        <EntityTypeShape EntityType="Microsoft.TeamFounation.Migration.EntityModel.SessionGroup" Width="2.25" PointX="0.5" PointY="0.5" Height="2.172587890625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Microsoft.TeamFounation.Migration.EntityModel.StoredCredential" Width="1.875" PointX="6.75" PointY="10.75" Height="1.4279589843750031" IsExpanded="true" />
+        <EntityTypeShape EntityType="Microsoft.TeamFounation.Migration.EntityModel.ValueMappings" Width="2.75" PointX="20.5" PointY="9" Height="1.4279589843749996" IsExpanded="true" />
+        <EntityTypeShape EntityType="Microsoft.TeamFounation.Migration.EntityModel.WorkItemTypeMappings" Width="3" PointX="13.75" PointY="11.75" Height="1.5923063151041674" IsExpanded="true" />
+        <AssociationConnector Association="Microsoft.TeamFounation.Migration.EntityModel.FK_EventSink" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.375" PointY="6.8699446614583328" />
+          <ConnectorPoint PointX="2.75" PointY="6.8699446614583328" />
+          </AssociationConnector>
+        <AssociationConnector Association="Microsoft.TeamFounation.Migration.EntityModel.FK_FieldExclCollection" ManuallyRouted="false">
+          <ConnectorPoint PointX="16.75" PointY="12.546153157552084" />
+          <ConnectorPoint PointX="17.5" PointY="12.546153157552084" />
+          </AssociationConnector>
+        <AssociationConnector Association="Microsoft.TeamFounation.Migration.EntityModel.FK_FieldMapCollection1" ManuallyRouted="false">
+          <ConnectorPoint PointX="15.25" PointY="11.75" />
+          <ConnectorPoint PointX="15.25" PointY="9.2533268229166659" />
+          <ConnectorPoint PointX="17.5" PointY="9.2533268229166659" /></AssociationConnector>
+        <AssociationConnector Association="Microsoft.TeamFounation.Migration.EntityModel.FK_FieldMapCollection2" ManuallyRouted="false">
+          <ConnectorPoint PointX="13" PointY="9.7549902343749988" />
+          <ConnectorPoint PointX="15.166666666666666" PointY="9.7549902343749988" />
+          <ConnectorPoint PointX="15.333333333333334" PointY="9.7549902343749988" />
+          <ConnectorPoint PointX="17.5" PointY="9.7549902343749988" />
+          </AssociationConnector>
+        <AssociationConnector Association="Microsoft.TeamFounation.Migration.EntityModel.FK_ValueMapCollection2" ManuallyRouted="false">
+          <ConnectorPoint PointX="19.75" PointY="9.5658268229166659" />
+          <ConnectorPoint PointX="20.5" PointY="9.5658268229166659" />
+          </AssociationConnector>
+        <AssociationConnector Association="Microsoft.TeamFounation.Migration.EntityModel.FK_SessionGroupConfigs3" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.25" PointY="3.6006982421875" />
+          <ConnectorPoint PointX="5.1822891666666671" PointY="3.6006982421874993" />
+          <ConnectorPoint PointX="5.3489558333333331" PointY="3.6006982421875" />
+          <ConnectorPoint PointX="5.7135441666666669" PointY="3.6006982421874993" />
+          <ConnectorPoint PointX="5.8802108333333329" PointY="3.6006982421875" />
+          <ConnectorPoint PointX="6.25" PointY="3.6006982421875" /></AssociationConnector>
+        <AssociationConnector Association="Microsoft.TeamFounation.Migration.EntityModel.FK_ValueMapCollection1" ManuallyRouted="false">
+          <ConnectorPoint PointX="13" PointY="10.311056315104166" />
+          <ConnectorPoint PointX="15.166666666666666" PointY="10.311056315104166" />
+          <ConnectorPoint PointX="15.333333333333334" PointY="10.311056315104166" />
+          <ConnectorPoint PointX="20.5" PointY="10.311056315104166" /></AssociationConnector>
+        <AssociationConnector Association="Microsoft.TeamFounation.Migration.EntityModel.FK_WITypeMapCollection" ManuallyRouted="false">
+          <ConnectorPoint PointX="11.875" PointY="11.0460009765625" />
+          <ConnectorPoint PointX="11.875" PointY="12.546153157552084" />
+          <ConnectorPoint PointX="13.75" PointY="12.546153157552084" /></AssociationConnector>
+        <AssociationConnector Association="Microsoft.TeamFounation.Migration.EntityModel.FK_MigrationSourceConfigs" ManuallyRouted="false">
+          <ConnectorPoint PointX="6" PointY="9.6535953776041659" />
+          <ConnectorPoint PointX="6.75" PointY="9.6535953776041659" />
+          </AssociationConnector>
+        <AssociationConnector Association="Microsoft.TeamFounation.Migration.EntityModel.FK_SessionConfigurations2" ManuallyRouted="false">
+          <ConnectorPoint PointX="9.5" PointY="8.645018046875" />
+          <ConnectorPoint PointX="10.559083515625002" PointY="8.645018046875" />
+          <ConnectorPoint PointX="10.559083515625002" PointY="7.5859993489583326" />
+          </AssociationConnector>
+        <AssociationConnector Association="Microsoft.TeamFounation.Migration.EntityModel.FK_SessionConfigurations3" ManuallyRouted="false">
+          <ConnectorPoint PointX="9.5" PointY="8.2287565234375" />
+          <ConnectorPoint PointX="10.373289257812502" PointY="8.2287565234375" />
+          <ConnectorPoint PointX="10.373289257812502" PointY="7.5859993489583326" />
+          </AssociationConnector>
+        <AssociationConnector Association="Microsoft.TeamFounation.Migration.EntityModel.FK_MigrationSources1" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.375" PointY="8.1199421614583329" />
+          <ConnectorPoint PointX="5.1822891666666671" PointY="8.1199421614583329" />
+          <ConnectorPoint PointX="5.3489558333333331" PointY="8.1199421614583329" />
+          <ConnectorPoint PointX="5.53125" PointY="8.1199421614583329" />
+          <ConnectorPoint PointX="5.53125" PointY="8.875" /></AssociationConnector>
+        <AssociationConnector Association="Microsoft.TeamFounation.Migration.EntityModel.FK_StoredCredentials" ManuallyRouted="false">
+          <ConnectorPoint PointX="6" PointY="11.379547526041666" />
+          <ConnectorPoint PointX="6.75" PointY="11.379547526041666" />
+          </AssociationConnector>
+        <AssociationConnector Association="Microsoft.TeamFounation.Migration.EntityModel.FK_SessionConfiguration5" ManuallyRouted="false">
+          <ConnectorPoint PointX="7.5" PointY="4.201396484375" />
+          <ConnectorPoint PointX="7.5" PointY="5.2158611621093751" />
+          <ConnectorPoint PointX="10.25" PointY="5.2158611621093751" />
+          </AssociationConnector>
+        <AssociationConnector Association="Microsoft.TeamFounation.Migration.EntityModel.FK_SessionGroupConfigs1" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.75" PointY="2.162914036458333" />
+          <ConnectorPoint PointX="5.1822891666666671" PointY="2.1629140364583326" />
+          <ConnectorPoint PointX="5.3489558333333331" PointY="2.162914036458333" />
+          <ConnectorPoint PointX="5.7135441666666669" PointY="2.1629140364583326" />
+          <ConnectorPoint PointX="5.8802108333333329" PointY="2.162914036458333" />
+          <ConnectorPoint PointX="6.25" PointY="2.162914036458333" /></AssociationConnector>
+        <AssociationConnector Association="Microsoft.TeamFounation.Migration.EntityModel.EVENT_SINK_JUNC" ManuallyRouted="false">
+          <ConnectorPoint PointX="5" PointY="6.9178298398437494" />
+          <ConnectorPoint PointX="5.1822891666666671" PointY="6.9178298398437486" />
+          <ConnectorPoint PointX="5.3489558333333331" PointY="6.9178298398437494" />
+          <ConnectorPoint PointX="5.7135441666666669" PointY="6.9178298398437486" />
+          <ConnectorPoint PointX="5.8802108333333329" PointY="6.9178298398437494" />
+          <ConnectorPoint PointX="10.25" PointY="6.9178298398437494" /></AssociationConnector>
+        <EntityTypeShape EntityType="Microsoft.TeamFounation.Migration.EntityModel.FilterItemPair" Width="3.125" PointX="14.75" PointY="4.625" Height="2.3648893229166665" />
+        <AssociationConnector Association="Microsoft.TeamFounation.Migration.EntityModel.FK_FilterItemPair_to_SessionConfig" >
+          <ConnectorPoint PointX="12.875" PointY="5.8074446614583337" />
+          <ConnectorPoint PointX="14.75" PointY="5.8074446614583337" /></AssociationConnector>
+        <EntityTypeShape EntityType="Microsoft.TeamFounation.Migration.EntityModel.EMSession" Width="3" PointX="12.375" PointY="0.5" Height="3.1340950520833331" />
+        <AssociationConnector Association="Microsoft.TeamFounation.Migration.EntityModel.FK_RT_Sessions3" >
+          <ConnectorPoint PointX="2.75" PointY="0.75585843750000015" />
+          <ConnectorPoint PointX="5.1822891666666671" PointY="0.75585843749999959" />
+          <ConnectorPoint PointX="5.3489558333333331" PointY="0.75585843750000015" />
+          <ConnectorPoint PointX="5.7135441666666669" PointY="0.75585843749999959" />
+          <ConnectorPoint PointX="5.8802108333333329" PointY="0.75585843750000015" />
+          <ConnectorPoint PointX="12.375" PointY="0.75585843750000015" /></AssociationConnector>
+        <AssociationConnector Association="Microsoft.TeamFounation.Migration.EntityModel.FK_RT_Sessions1" >
+          <ConnectorPoint PointX="5.7968775" PointY="8.875" />
+          <ConnectorPoint PointX="5.7968775" PointY="0.6337851562500002" />
+          <ConnectorPoint PointX="12.375" PointY="0.6337851562500002" /></AssociationConnector>
+        <AssociationConnector Association="Microsoft.TeamFounation.Migration.EntityModel.FK_RT_Sessions2" >
+          <ConnectorPoint PointX="5.2656225" PointY="0.75" />
+          <ConnectorPoint PointX="5.2656225" PointY="0.75" />
+          <ConnectorPoint PointX="12.375" PointY="0.75" /></AssociationConnector>
+        <EntityTypeShape EntityType="Microsoft.TeamFounation.Migration.EntityModel.Addin" Width="1.5" PointX="9.375" PointY="1.375" Height="1.7879850260416672" />
+        <EntityTypeShape EntityType="Microsoft.TeamFounation.Migration.EntityModel.ConfigConflictType" Width="2.375" PointX="5.125" PointY="15.875" Height="2.3648893229166674" />
+        <EntityTypeShape EntityType="Microsoft.TeamFounation.Migration.EntityModel.ConfigConflictResolutionAction" Width="2.625" PointX="4.875" PointY="13" Height="2.1725878906249996" />
+        <EntityTypeShape EntityType="Microsoft.TeamFounation.Migration.EntityModel.ConfigConflictResolutionRule" Width="2.375" PointX="10.125" PointY="13.25" Height="3.1340950520833353" />
+        <EntityTypeShape EntityType="Microsoft.TeamFounation.Migration.EntityModel.ConfigConflictResolutionRuleScope" Width="2.5" PointX="10" PointY="18.125" Height="1.5956835937500031" />
+        <AssociationConnector Association="Microsoft.TeamFounation.Migration.EntityModel.FK_ResolutionRules2" >
+          <ConnectorPoint PointX="7.5" PointY="16.129547526041669" />
+          <ConnectorPoint PointX="10.125" PointY="16.129547526041669" />
+          </AssociationConnector>
+        <AssociationConnector Association="Microsoft.TeamFounation.Migration.EntityModel.FK_to_provider" >
+          <ConnectorPoint PointX="1.18749875" PointY="8.9321907552083335" />
+          <ConnectorPoint PointX="1.18749875" PointY="17.057444661458334" />
+          <ConnectorPoint PointX="5.125" PointY="17.057444661458334" /></AssociationConnector>
+        <AssociationConnector Association="Microsoft.TeamFounation.Migration.EntityModel.FK_action_to_provider" >
+          <ConnectorPoint PointX="1.8125018750000002" PointY="8.9321907552083335" />
+          <ConnectorPoint PointX="1.8125018750000002" PointY="14.0862939453125" />
+          <ConnectorPoint PointX="4.875" PointY="14.0862939453125" /></AssociationConnector>
+        <AssociationConnector Association="Microsoft.TeamFounation.Migration.EntityModel.FK_ResolutionRule_to_ResolutionAction" >
+          <ConnectorPoint PointX="7.5" PointY="14.2112939453125" />
+          <ConnectorPoint PointX="10.125" PointY="14.2112939453125" /></AssociationConnector>
+        <AssociationConnector Association="Microsoft.TeamFounation.Migration.EntityModel.FK_ResolutionRules1" >
+          <ConnectorPoint PointX="11.3125" PointY="18.125" />
+          <ConnectorPoint PointX="11.3125" PointY="16.384095052083335" />
+          </AssociationConnector></Diagram></edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

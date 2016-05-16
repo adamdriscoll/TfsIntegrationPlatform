@@ -1,0 +1,3 @@
+﻿ALTER TABLE [dbo].[RUNTIME_MIGRATION_ITEMS]
+ADD CONSTRAINT [UK_RT_MigrationItems]
+UNIQUE (SourceId, ItemId, ItemVersion)

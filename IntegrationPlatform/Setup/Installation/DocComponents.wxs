@@ -1,0 +1,280 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+  <!--                                                                                                             -->
+  <!-- This component delivers everything in the Documentation subdirectory to the user.  The Documentation.csproj -->
+  <!-- recursively copies all content to the output directory.  This file can be re-generated at any time from the -->
+  <!-- content on disk.  To regenerate:                                                                            -->
+  <!--      1) Build the solution                                                                                  -->
+  <!--      2) Open a command prompt to the Documentation directory                                                -->
+  <!--      3) Add to path or heat.exe ref below: C:\Program Files (x86)\Windows Installer XML v3.5\bin            -->
+  <!--      4) heat dir . -ag -var var.DocumentationPath -cg TfsIPDocumentation -dr INSTALLDIR -out doc.wxs        -->
+  <!--      5) Copy the body of the generated file below this header                                               -->
+  <!--      6) Change the file Id for Index.htm to FILE_Index.htm to satisfy the program menu reference            -->
+  <!--                                                                                                             -->
+  <Fragment>
+    <DirectoryRef Id="INSTALLDIR">
+      <Directory Id="dir1E8C8D5499E8BB227B398A791279B12F" Name="Documentation" />
+    </DirectoryRef>
+  </Fragment>
+  <Fragment>
+    <ComponentGroup Id="TfsIPDocumentation">
+      <Component Id="cmpA2F03DE3E6FF8F626FDEA4CAF884D7CB" Directory="dir1E8C8D5499E8BB227B398A791279B12F" Guid="*">
+        <File Id="filF8D5550C8CBDCE2688A5E7C99A832E51" KeyPath="yes" Source="$(var.DocumentationPath)\TFSIntegration.chm" />
+      </Component>
+      <Component Id="cmpE80B86064701BDCD1BF3DBFE1ECB9B60" Directory="dir1E8C8D5499E8BB227B398A791279B12F" Guid="*">
+        <File Id="filA52C23164C37065DF8D13FE40867E03B" KeyPath="yes" Source="$(var.DocumentationPath)\TFSIntegrationPlatformSDK.chm" />
+      </Component>
+      <Component Id="cmpF57BF2365734EBC871671A26127FA951" Directory="dirC626D9E1942737E556E23D38F4878A02" Guid="*">
+        <File Id="FILE_Index.htm" KeyPath="yes" Source="$(var.DocumentationPath)\Readiness Package\Index.htm" />
+      </Component>
+      <Component Id="cmp6ED1BDC7B6AD2EF5F6CB4E5FFE976B2D" Directory="dirAB5D08EC41CA6E2AE47EA7440FA16ED9" Guid="*">
+        <File Id="fil84A9FE50ADEBF5101A1484BFC521BB5D" KeyPath="yes" Source="$(var.DocumentationPath)\Readiness Package\Guidance\Summary_of_Adapters.mht" />
+      </Component>
+      <Component Id="cmp2B3A86519F6DDE3B7437C77733F7627A" Directory="dirAB5D08EC41CA6E2AE47EA7440FA16ED9" Guid="*">
+        <File Id="filB04E5F1F6BEBB52740CE5F8DE9364A33" KeyPath="yes" Source="$(var.DocumentationPath)\Readiness Package\Guidance\Summary_of_Tools.mht" />
+      </Component>
+      <Component Id="cmp780E9D3B58FD17B87BC60DC3D4D7BD4B" Directory="dirAB5D08EC41CA6E2AE47EA7440FA16ED9" Guid="*">
+        <File Id="fil7EA055E591240205FEA4818116CB823A" KeyPath="yes" Source="$(var.DocumentationPath)\Readiness Package\Guidance\TFS Integration Platform - Migration Guidance Poster.jpg" />
+      </Component>
+      <Component Id="cmp348A60D5D5EDDA70D2EFE9A4F54F5552" Directory="dirAB5D08EC41CA6E2AE47EA7440FA16ED9" Guid="*">
+        <File Id="fil2467D9BB9BE54F2B31033F5E56B66E53" KeyPath="yes" Source="$(var.DocumentationPath)\Readiness Package\Guidance\TFS Integration Platform - Planning Poster.jpg" />
+      </Component>
+      <Component Id="cmp6704AF47740D96E164EFE0D529623CDB" Directory="dirAB5D08EC41CA6E2AE47EA7440FA16ED9" Guid="*">
+        <File Id="fil464FF53A708620B9CEE7DEE52ADF3EC6" KeyPath="yes" Source="$(var.DocumentationPath)\Readiness Package\Guidance\TFS_Integration_Platform-Architecture_Overview.mht" />
+      </Component>
+      <Component Id="cmpA583539D2A3D1EB4FD077C8C2498D1FB" Directory="dirAB5D08EC41CA6E2AE47EA7440FA16ED9" Guid="*">
+        <File Id="fil3612FFCB9F03BD88C425CF775650AAF7" KeyPath="yes" Source="$(var.DocumentationPath)\Readiness Package\Guidance\TFS_Integration_Platform-ClearCase_Base_Migration.mht" />
+      </Component>
+      <Component Id="cmp8CF121850B4F0EBB8B446FB2517C65B3" Directory="dirAB5D08EC41CA6E2AE47EA7440FA16ED9" Guid="*">
+        <File Id="fil99B630914FB3EBFEA013B909235537E7" KeyPath="yes" Source="$(var.DocumentationPath)\Readiness Package\Guidance\TFS_Integration_Platform-ClearQuest_Base_Migration.mht" />
+      </Component>
+      <Component Id="cmpE695952BE333BE3AB82952308C50C4A3" Directory="dirAB5D08EC41CA6E2AE47EA7440FA16ED9" Guid="*">
+        <File Id="fil3380D62CB59AF3DB23F07977ACB197BF" KeyPath="yes" Source="$(var.DocumentationPath)\Readiness Package\Guidance\TFS_Integration_Platform-Configuration.mht" />
+      </Component>
+      <Component Id="cmpEF527880B66718F8BA3F073D7E74F217" Directory="dirAB5D08EC41CA6E2AE47EA7440FA16ED9" Guid="*">
+        <File Id="fil4071D0777282AB70C0E46C4EAE47C826" KeyPath="yes" Source="$(var.DocumentationPath)\Readiness Package\Guidance\TFS_Integration_Platform-Getting_Started_UI.mht" />
+      </Component>
+      <Component Id="cmp84FEAD589E581CB2E951F6E457C2F311" Directory="dirAB5D08EC41CA6E2AE47EA7440FA16ED9" Guid="*">
+        <File Id="fil5CB00F31C8C308143334783FCD81F407" KeyPath="yes" Source="$(var.DocumentationPath)\Readiness Package\Guidance\TFS_Integration_Platform-Migration_Guidance.mht" />
+      </Component>
+      <Component Id="cmp276642DE53DD402B88554CBCCF8AD969" Directory="dirAB5D08EC41CA6E2AE47EA7440FA16ED9" Guid="*">
+        <File Id="fil102FB0AF00C046509AE8B4D2FC855EBD" KeyPath="yes" Source="$(var.DocumentationPath)\Readiness Package\Guidance\TFS_Integration_Platform-Perforce_Migration.mht" />
+      </Component>
+      <Component Id="cmp488E3CAB62C9450C91E12E6CED4672CC" Directory="dirAB5D08EC41CA6E2AE47EA7440FA16ED9" Guid="*">
+        <File Id="fil8CC8C12ACA074C459D73961B5FAF345D" KeyPath="yes" Source="$(var.DocumentationPath)\Readiness Package\Guidance\TFS_Integration_Platform-Getting_Started_Rational_101.mht" />
+      </Component>
+      <Component Id="cmpFB12C5FB46AB494DA8E91F37325A7842" Directory="dirAB5D08EC41CA6E2AE47EA7440FA16ED9" Guid="*">
+        <File Id="fil86B8946B85DC4F60B45D025B1823C1CC" KeyPath="yes" Source="$(var.DocumentationPath)\Readiness Package\Guidance\TFS_Integration_Platform-Getting_Started_Rational_Conflict_Resolution.mht" />
+      </Component>
+      <Component Id="cmpD64AF0AB946241BFA7D7006EF37EF25C" Directory="dirAB5D08EC41CA6E2AE47EA7440FA16ED9" Guid="*">
+        <File Id="fil256128D8E8B342DD96B41CC70C49E245" KeyPath="yes" Source="$(var.DocumentationPath)\Readiness Package\Guidance\TFS_Integration_Platform-Getting_Started_Rational_Mapping_and_Monitoring.mht" />
+      </Component>      
+      <Component Id="cmp496152DFBDC746A9B500BFD83127F9DD" Directory="dirAB5D08EC41CA6E2AE47EA7440FA16ED9" Guid="*">
+        <File Id="filE1D04396A8CC4B59B4139BD22652D4D0" KeyPath="yes" Source="$(var.DocumentationPath)\Readiness Package\Guidance\Microsoft_Visual_Studio_TFS_Integration_Platform_Data_Sheet.mht" />
+      </Component>
+      <Component Id="cmpF59B8B7E330BB88901B36663347FAA88" Directory="dir3953C4377E572C9B9DD2C55A1EE714AC" Guid="*">
+        <File Id="fil24AABD1FA363E14C3BC252064E00D43D" KeyPath="yes" Source="$(var.DocumentationPath)\Readiness Package\Index_files\colorschememapping.xml" />
+      </Component>
+      <Component Id="cmpB330BCF406CB2D926ACC6194A85DC664" Directory="dir3953C4377E572C9B9DD2C55A1EE714AC" Guid="*">
+        <File Id="fil59CF8BEBA5FE44656D483C98CA2DFF10" KeyPath="yes" Source="$(var.DocumentationPath)\Readiness Package\Index_files\filelist.xml" />
+      </Component>
+      <Component Id="cmp20C414684C3F2EE63CACC06DDB890ED6" Directory="dir3953C4377E572C9B9DD2C55A1EE714AC" Guid="*">
+        <File Id="fil33417931BC10EFDB211AB908E2E93B0F" KeyPath="yes" Source="$(var.DocumentationPath)\Readiness Package\Index_files\image001.png" />
+      </Component>
+      <Component Id="cmp477C9F268089F7A64BF3F79D6C95A07F" Directory="dir3953C4377E572C9B9DD2C55A1EE714AC" Guid="*">
+        <File Id="filBC80E14A2D944867C3CFCF84B344A8CA" KeyPath="yes" Source="$(var.DocumentationPath)\Readiness Package\Index_files\image002.jpg" />
+      </Component>
+      <Component Id="cmpC7FBEE239830F3FBA371868EB3D12097" Directory="dir3953C4377E572C9B9DD2C55A1EE714AC" Guid="*">
+        <File Id="fil3BD86A75D98FBE9B8FE7F5118179E0A0" KeyPath="yes" Source="$(var.DocumentationPath)\Readiness Package\Index_files\preview.wmf" />
+      </Component>
+      <Component Id="cmp9FC772357C6CB3991E01D3EFCB4511D2" Directory="dir3953C4377E572C9B9DD2C55A1EE714AC" Guid="*">
+        <File Id="fil237228B75F6870D407B051AEC2569337" KeyPath="yes" Source="$(var.DocumentationPath)\Readiness Package\Index_files\themedata.thmx" />
+      </Component>
+      <Component Id="cmp4CA181B7611BEDA9DDEA657DD13CA285" Directory="dir09DBA92061CE6D9E55539A807DBB3C33" Guid="*">
+        <File Id="fil6C707DC57B4D292C675743539A84779A" KeyPath="yes" Source="$(var.DocumentationPath)\Readiness Package\Samples\Example-Microsoft_Case_Study_and_PR_Release-Optional_activies.mht" />
+      </Component>
+      <Component Id="cmp3D789DA34081F434FBB0DF988A4D9785" Directory="dir09DBA92061CE6D9E55539A807DBB3C33" Guid="*">
+        <File Id="fil6E4D8F2F038421F80D19EF4182061185" KeyPath="yes" Source="$(var.DocumentationPath)\Readiness Package\Samples\Example-Microsoft_Case_Study_and_PR_Release_Agreement.mht" />
+      </Component>
+      <Component Id="cmp80592C8751B27F80CB5CF7D2CA5483A8" Directory="dir09DBA92061CE6D9E55539A807DBB3C33" Guid="*">
+        <File Id="fil6BA4251888A4758BB7EC356B68F504C6" KeyPath="yes" Source="$(var.DocumentationPath)\Readiness Package\Samples\Information_Gathering.mht" />
+      </Component>
+      <Component Id="cmp36360D1E497D0FCE41DA4B2E44027DA8" Directory="dir09DBA92061CE6D9E55539A807DBB3C33" Guid="*">
+        <File Id="filC7D64406F86246728552075D0BA92BFB" KeyPath="yes" Source="$(var.DocumentationPath)\Readiness Package\Samples\TFSINTCO_Request_for_POC_Engagement _Sample_Questionnaire.mht" />
+      </Component>
+      <Component Id="cmpBE862AC3FABDD10E8349AB6E45CA73B0" Directory="dir09DBA92061CE6D9E55539A807DBB3C33" Guid="*">
+        <File Id="fil7E224B2B7FE2ACD9AEACB59A95C28B8B" KeyPath="yes" Source="$(var.DocumentationPath)\Readiness Package\Samples\TFS_Integration_Platform-Custom_Adapter_POC.mht" />
+      </Component>
+      <Component Id="cmp1E9EBD165DC4B94D2E1C2FAA5537FAE8" Directory="dir09DBA92061CE6D9E55539A807DBB3C33" Guid="*">
+        <File Id="fil499B6FD33C64E435203AB2C4DF2FCBAC" KeyPath="yes" Source="$(var.DocumentationPath)\Readiness Package\Samples\TFS_Integration_Platform-WSS_Adapter_Samples.mht" />
+      </Component>
+      <Component Id="cmp28D9A4A32DF8CC22A1516C2E497EDC25" Directory="dir09DBA92061CE6D9E55539A807DBB3C33" Guid="*">
+        <File Id="fil01791DCDDA4772878015C7DD25EFB4C7" KeyPath="yes" Source="$(var.DocumentationPath)\Readiness Package\Samples\TFS_Integration_Platform_POC_Use_Case.dotx" />
+      </Component>
+      <Component Id="cmpF0AE96CBCF572A449774824561BF4216" Directory="dirC76D56C4987724113933003F5071B9C2" Guid="*">
+        <File Id="filE27028B0169C4A6196508F3D8A4ECFB3" KeyPath="yes" Source="$(var.DocumentationPath)\Readiness Package\Scenarios\POC CheckList.png" />
+      </Component>
+      <Component Id="cmpE127028BE7495102DE517779F3417F66" Directory="dir88B8E30E90B4AE652BEF9FE31B4A3CEE" Guid="*">
+        <File Id="fil2EC4D3E950608596D0EFC743E8C1BA0B" KeyPath="yes" Source="$(var.DocumentationPath)\Readiness Package\Scenarios\CC and TFS Synchronization\CC-TFS_Synchronization_Best_Practices.mht" />
+      </Component>
+      <Component Id="cmp7793283512324CA981307282BD26C3D7" Directory="dir88B8E30E90B4AE652BEF9FE31B4A3CEE" Guid="*">
+        <File Id="fil976CABC1783BD20E36830665EEE3D254" KeyPath="yes" Source="$(var.DocumentationPath)\Readiness Package\Scenarios\CC and TFS Synchronization\CC-TFS_Sync_Requirements_Example.mht" />
+      </Component>
+      <Component Id="cmpEBAC91D0E955555999D87E7FEC3E188A" Directory="dir88B8E30E90B4AE652BEF9FE31B4A3CEE" Guid="*">
+        <File Id="fil582408AD96517675767514A0ADF412C9" KeyPath="yes" Source="$(var.DocumentationPath)\Readiness Package\Scenarios\CC and TFS Synchronization\CC_TFS_CC_to_IN.XML" />
+      </Component>
+      <Component Id="cmpA7A982D5D4889726C79684B7AF8718CD" Directory="dir88B8E30E90B4AE652BEF9FE31B4A3CEE" Guid="*">
+        <File Id="fil52F5092E0EDCD475B980FE5D51DDA81C" KeyPath="yes" Source="$(var.DocumentationPath)\Readiness Package\Scenarios\CC and TFS Synchronization\Example Test Plan.mht" />
+      </Component>
+      <Component Id="cmpB030EFBCC335AFC856B6496875795483" Directory="dir88B8E30E90B4AE652BEF9FE31B4A3CEE" Guid="*">
+        <File Id="filC81EA98DE1A2F79C4E72E2056C67255A" KeyPath="yes" Source="$(var.DocumentationPath)\Readiness Package\Scenarios\CC and TFS Synchronization\TFS_CC_OUT_to_CC.XML" />
+      </Component>
+      <Component Id="cmp6FBA4653CE4180E87980D9853848DDDE" Directory="dirEBF755F74706E6C6E818B09FD4A649F7" Guid="*">
+        <File Id="filC9E859B1FE5B39A08598C6379082A3FE" KeyPath="yes" Source="$(var.DocumentationPath)\Readiness Package\Scenarios\CC to TFS Manual Migration\CC-TFS_Migration_Best_Practices.mht" />
+      </Component>
+      <Component Id="cmpC1E128D4F6E3CE3DD9A1B1A926F8B725" Directory="dirEBF755F74706E6C6E818B09FD4A649F7" Guid="*">
+        <File Id="fil14AF8E81D5A1383B1FCC1281F561FB60" KeyPath="yes" Source="$(var.DocumentationPath)\Readiness Package\Scenarios\CC to TFS Manual Migration\Example_Use_Case-CC_to_TFS_Migration.mht" />
+      </Component>
+      <Component Id="cmpC99FD616868693B99F2212AA0D700273" Directory="dir2E363DF13B0408177FFF7B114A01B350" Guid="*">
+        <File Id="fil0B49FB35A2DC933FCAA647667BDFF956" KeyPath="yes" Source="$(var.DocumentationPath)\Readiness Package\Scenarios\CQ to TFS Tooling Migration\CQ-TFS_Migration_Best_Practices.mht" />
+      </Component>
+      <Component Id="cmpB30E29C8F27ABEF6F127344ECA888A8B" Directory="dir2E363DF13B0408177FFF7B114A01B350" Guid="*">
+        <File Id="fil58C51A001F017030B15CF13FF4DDDA3A" KeyPath="yes" Source="$(var.DocumentationPath)\Readiness Package\Scenarios\CQ to TFS Tooling Migration\Example Config File - CQ to TFS Sample (CQ to CMMI 4.2) 1.xml" />
+      </Component>
+      <Component Id="cmp3D22E52A4D7EDE2FF18456DF6EE57AB1" Directory="dir2E363DF13B0408177FFF7B114A01B350" Guid="*">
+        <File Id="filA1232BAFA75EF0F651239E521DFB8FE5" KeyPath="yes" Source="$(var.DocumentationPath)\Readiness Package\Scenarios\CQ to TFS Tooling Migration\Example Config File - CQ to TFS Sample (CQ to CMMI 4.2) 2.xml" />
+      </Component>
+      <Component Id="cmp73987D8C5C9EE5FAC48A785AD8DA8F5E" Directory="dir2E363DF13B0408177FFF7B114A01B350" Guid="*">
+        <File Id="filC9A711173DFA00CA91A17925C30F3C3F" KeyPath="yes" Source="$(var.DocumentationPath)\Readiness Package\Scenarios\CQ to TFS Tooling Migration\Example Config File - CQ to TFS Sample (CQ to CMMI 4.2) 3.xml" />
+      </Component>
+      <Component Id="cmpA2355A1797FD3AC643763A6F775621ED" Directory="dir2E363DF13B0408177FFF7B114A01B350" Guid="*">
+        <File Id="filDF9C0A98B692733A622757CC49D4D002" KeyPath="yes" Source="$(var.DocumentationPath)\Readiness Package\Scenarios\CQ to TFS Tooling Migration\Example Config File - CQ to TFS Sample (CQ to CMMI 4.2) 4.xml" />
+      </Component>
+      <Component Id="cmp9C5654B05BAEB3F3A53692881554D8A7" Directory="dir2E363DF13B0408177FFF7B114A01B350" Guid="*">
+        <File Id="fil368FFA4E3C8F3AF5C4D3C688EC16763E" KeyPath="yes" Source="$(var.DocumentationPath)\Readiness Package\Scenarios\CQ to TFS Tooling Migration\Example Config File - CQ to TFS Sample (CQ to CMMI 4.2) 5.xml" />
+      </Component>
+      <Component Id="cmp0D1B1179B4383DF510BF9BD5D34FC1A2" Directory="dir2E363DF13B0408177FFF7B114A01B350" Guid="*">
+        <File Id="fil6A1B5F94B2836582614C852072C649B7" KeyPath="yes" Source="$(var.DocumentationPath)\Readiness Package\Scenarios\CQ to TFS Tooling Migration\Example Config File - CQ to TFS Sample (CQ to CMMI 4.2) 6.xml" />
+      </Component>
+      <Component Id="cmp15C1FFEDA66625B32870D70642FAFA1B" Directory="dir2E363DF13B0408177FFF7B114A01B350" Guid="*">
+        <File Id="filE851C965261644B29EC6456FB0CACDB2" KeyPath="yes" Source="$(var.DocumentationPath)\Readiness Package\Scenarios\CQ to TFS Tooling Migration\Example Config File - CQ to TFS Sample (SAR-SAR_Defect-Defect) 1.xml" />
+      </Component>
+      <Component Id="cmp44B0A080716FA639505277615BB46D29" Directory="dir2E363DF13B0408177FFF7B114A01B350" Guid="*">
+        <File Id="fil379C5B70D18EBFC744C811A0C88F6231" KeyPath="yes" Source="$(var.DocumentationPath)\Readiness Package\Scenarios\CQ to TFS Tooling Migration\Example Config File - CQ to TFS Sample (SAR-SAR_Defect-Defect) 2.xml" />
+      </Component>
+      <Component Id="cmp69B8860015C425F2FC614793B59DEEB0" Directory="dir2E363DF13B0408177FFF7B114A01B350" Guid="*">
+        <File Id="fil46B493747B776B9701FAFFDDAE6B3F16" KeyPath="yes" Source="$(var.DocumentationPath)\Readiness Package\Scenarios\CQ to TFS Tooling Migration\Example Config File - CQ to TFS Sample (SAR-SAR_Defect-Defect) 3.xml" />
+      </Component>
+      <Component Id="cmp0EC0AA116D4FCC82B7D253C7F93093D4" Directory="dir2E363DF13B0408177FFF7B114A01B350" Guid="*">
+        <File Id="filF07839AD3B3DCFA1545D007159D490D4" KeyPath="yes" Source="$(var.DocumentationPath)\Readiness Package\Scenarios\CQ to TFS Tooling Migration\Example_Fields_Mappings-CQ_to_Agile_V5.mht" />
+      </Component>
+      <Component Id="cmp3BAB54FD74F5F64EF9253D626B8557CF" Directory="dir2E363DF13B0408177FFF7B114A01B350" Guid="*">
+        <File Id="filACEE7B1442D8249530C8A69A64857815" KeyPath="yes" Source="$(var.DocumentationPath)\Readiness Package\Scenarios\CQ to TFS Tooling Migration\Example_Fields_Mappings-CQ_to_CMMI_4.2.mht" />
+      </Component>
+      <Component Id="cmp326D97A395FD2B3B8BC07ECD2BD45405" Directory="dir2E363DF13B0408177FFF7B114A01B350" Guid="*">
+        <File Id="filB843343B7B75F01500287966CE6434B3" KeyPath="yes" Source="$(var.DocumentationPath)\Readiness Package\Scenarios\CQ to TFS Tooling Migration\Example_Manual_Use_Case-CQ_to_TFS_Migration.mht" />
+      </Component>
+      <Component Id="cmp49AC4840C8481BD92E9C2829DE2DED4C" Directory="dir2E363DF13B0408177FFF7B114A01B350" Guid="*">
+        <File Id="filCDE2DFFA16A0D308C80E43799271168E" KeyPath="yes" Source="$(var.DocumentationPath)\Readiness Package\Scenarios\CQ to TFS Tooling Migration\Example_Use_Case-CQ_to_TFS_Migration.mht" />
+      </Component>
+      <Component Id="cmp4F216269B9394DAD8D30F10E976A7227" Directory="dirEB59D8D537194AFFA5A9AF7E8DC1BA1F" Guid="*">
+        <File Id="fil1B3D4F3D3BE74CAF81747EE8DB4B3A4C" KeyPath="yes" Source="$(var.DocumentationPath)\Readiness Package\Scenarios\Rational to TFS HOLs\HOL_TFSIPDD_ClearQuest.xml" />
+      </Component>
+      <Component Id="cmpC2F09D62AD8240828E10C39DE21242D6" Directory="dirEB59D8D537194AFFA5A9AF7E8DC1BA1F" Guid="*">
+        <File Id="filF6D70AB1A9584A408759E5FEA8DCFAB0" KeyPath="yes" Source="$(var.DocumentationPath)\Readiness Package\Scenarios\Rational to TFS HOLs\HOL_TFSIPDD_InvalidFieldValueConflict.xml" />
+      </Component>
+      <Component Id="cmpC835F90BE38A424BAE895503FD8D3A6D" Directory="dirEB59D8D537194AFFA5A9AF7E8DC1BA1F" Guid="*">
+        <File Id="filFB4C7CD046EB4E62B0C39020C540336B" KeyPath="yes" Source="$(var.DocumentationPath)\Readiness Package\Scenarios\Rational to TFS HOLs\HOL_TFSIPDD_RuntimeConflicts.xml" />
+      </Component>
+      <Component Id="cmp3B7D479E7C2447BAAA58FABEC1CFBC95" Directory="dirEB59D8D537194AFFA5A9AF7E8DC1BA1F" Guid="*">
+        <File Id="fil5B3699F920FA4A9E87F1B8A349803849" KeyPath="yes" Source="$(var.DocumentationPath)\Readiness Package\Scenarios\Rational to TFS HOLs\HOL_TFSIPDD_WITUnmappedConflict.xml" />
+      </Component>
+      <Component Id="cmp49FC22EC1C70205AD745185222568EA3" Directory="dir324AABA3261D87739869D836BDC77A70" Guid="*">
+        <File Id="fil352C7CDA43EB642565079221DCAAC63A" KeyPath="yes" Source="$(var.DocumentationPath)\Readiness Package\Tooling Setup\TFS_Integration_Platform-Build_Instructions.mht" />
+      </Component>
+    </ComponentGroup>
+  </Fragment>
+  <Fragment>
+    <DirectoryRef Id="dir324AABA3261D87739869D836BDC77A70" />
+  </Fragment>
+  <Fragment>
+    <DirectoryRef Id="dir09DBA92061CE6D9E55539A807DBB3C33" />
+  </Fragment>
+  <Fragment>
+    <DirectoryRef Id="dirEBF755F74706E6C6E818B09FD4A649F7" />
+  </Fragment>
+  <Fragment>
+    <DirectoryRef Id="dirAB5D08EC41CA6E2AE47EA7440FA16ED9" />
+  </Fragment>
+  <Fragment>
+    <DirectoryRef Id="dir1E8C8D5499E8BB227B398A791279B12F" />
+  </Fragment>
+  <Fragment>
+    <DirectoryRef Id="dir2E363DF13B0408177FFF7B114A01B350" />
+  </Fragment>
+  <Fragment>
+    <DirectoryRef Id="dir88B8E30E90B4AE652BEF9FE31B4A3CEE" />
+  </Fragment>
+  <Fragment>
+    <DirectoryRef Id="dirEB59D8D537194AFFA5A9AF7E8DC1BA1F" />
+  </Fragment>
+  <Fragment>
+    <DirectoryRef Id="dirC76D56C4987724113933003F5071B9C2" />
+  </Fragment>
+  <Fragment>
+    <DirectoryRef Id="dirC626D9E1942737E556E23D38F4878A02" />
+  </Fragment>
+  <Fragment>
+    <DirectoryRef Id="dir3953C4377E572C9B9DD2C55A1EE714AC" />
+  </Fragment>
+  <Fragment>
+    <DirectoryRef Id="dirC626D9E1942737E556E23D38F4878A02">
+      <Directory Id="dir09DBA92061CE6D9E55539A807DBB3C33" Name="Samples" />
+    </DirectoryRef>
+  </Fragment>
+  <Fragment>
+    <DirectoryRef Id="dirC76D56C4987724113933003F5071B9C2">
+      <Directory Id="dir2E363DF13B0408177FFF7B114A01B350" Name="CQ to TFS Tooling Migration" />
+    </DirectoryRef>
+  </Fragment>
+  <Fragment>
+    <DirectoryRef Id="dirC626D9E1942737E556E23D38F4878A02">
+      <Directory Id="dir324AABA3261D87739869D836BDC77A70" Name="Tooling Setup" />
+    </DirectoryRef>
+  </Fragment>
+  <Fragment>
+    <DirectoryRef Id="dirC626D9E1942737E556E23D38F4878A02">
+      <Directory Id="dir3953C4377E572C9B9DD2C55A1EE714AC" Name="Index_files" />
+    </DirectoryRef>
+  </Fragment>
+  <Fragment>
+    <DirectoryRef Id="dirC76D56C4987724113933003F5071B9C2">
+      <Directory Id="dir88B8E30E90B4AE652BEF9FE31B4A3CEE" Name="CC and TFS Synchronization" />
+    </DirectoryRef>
+  </Fragment>
+  <Fragment>
+    <DirectoryRef Id="dirC76D56C4987724113933003F5071B9C2">
+      <Directory Id="dirEB59D8D537194AFFA5A9AF7E8DC1BA1F" Name="Rational to TFS HOLs" />
+    </DirectoryRef>
+  </Fragment>
+  <Fragment>
+    <DirectoryRef Id="dirC626D9E1942737E556E23D38F4878A02">
+      <Directory Id="dirAB5D08EC41CA6E2AE47EA7440FA16ED9" Name="Guidance" />
+    </DirectoryRef>
+  </Fragment>
+  <Fragment>
+    <DirectoryRef Id="dir1E8C8D5499E8BB227B398A791279B12F">
+      <Directory Id="dirC626D9E1942737E556E23D38F4878A02" Name="Readiness Package" />
+    </DirectoryRef>
+  </Fragment>
+  <Fragment>
+    <DirectoryRef Id="dirC626D9E1942737E556E23D38F4878A02">
+      <Directory Id="dirC76D56C4987724113933003F5071B9C2" Name="Scenarios" />
+    </DirectoryRef>
+  </Fragment>
+  <Fragment>
+    <DirectoryRef Id="dirC76D56C4987724113933003F5071B9C2">
+      <Directory Id="dirEBF755F74706E6C6E818B09FD4A649F7" Name="CC to TFS Manual Migration" />
+    </DirectoryRef>
+  </Fragment>
+</Wix>

@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippet Format="1.0.0">
+    <Header>
+        <Title>log write</Title>
+        <Shortcut>logw</Shortcut>
+        <Description>Expansion snippet for Logger.Write</Description>
+        <SnippetTypes>
+            <SnippetType>Expansion</SnippetType>
+        </SnippetTypes>
+    </Header>
+    <Snippet>
+        <Declarations>
+            <Literal default="true">
+                <ID>source</ID>
+                <ToolTip>LogSource for this message</ToolTip>
+                <Default>Common</Default>
+            </Literal>
+            <Literal default="true">
+                <ID>level</ID>
+                <ToolTip>TraceLevel for this message</ToolTip>
+                <Default>Error</Default>
+            </Literal>
+            <Literal default="true">
+                <ID>message</ID>
+                <ToolTip>Message to log</ToolTip>
+                <Default>""</Default>
+            </Literal>
+        </Declarations>
+        <Code Language="csharp" Format="CData"><![CDATA[Logger.Write(LogSource.$source$, TraceLevel.$level$, $message$);$end$]]>
+	</Code>
+    </Snippet>
+</CodeSnippet>

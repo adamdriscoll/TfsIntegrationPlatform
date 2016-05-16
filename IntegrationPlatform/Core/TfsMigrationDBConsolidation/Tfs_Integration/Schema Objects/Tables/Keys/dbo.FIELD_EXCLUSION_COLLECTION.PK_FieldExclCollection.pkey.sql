@@ -1,0 +1,3 @@
+﻿ALTER TABLE [dbo].[FIELD_EXCLUSION_COLLECTION]
+	ADD CONSTRAINT [PK_FieldExclCollection]
+	PRIMARY KEY (FieldName, Direction, WITypeMapId)

@@ -1,0 +1,25 @@
+Use Clearcase2003Adapter to migrate between ClearCase and TFS server. 
+---------------------------------------------------------------------
+
+Build:
+---------------------------------------------------------------------
+1. Open ClearCase2003Adapter.sln from $/Orcas/feature/MigrationDogfood/Internal/Adapters/ClearCase/ClearCase2003Adapter.sln. This will open ClearCase2003Adapter.csproj along with other migration tools projects. 
+2. Build the solution. The binaries will be dropped to folder ReleaseCode\Binaries\Debug\bin\i386. File ClearCase2003Adapter.dll will be dropped under folder ReleaseCode\Binaries\Debug\bin\i386\Plugins
+
+Execute:
+---------------------------------------------------------------------
+1.Pre create a view used for migration is NOT necessary any more. 
+  The CC adaptor will create two view for the analysis and migration. The view name is 
+  ccc_<machine_name>_view_Ana and ccc_<machine_name>_view_Migration
+  The default storage location for these 2 views are C:\ccstg_c_1\cc-tut. 
+
+
+2.Edit the configuration file for your ClearCase and TFS settings. There is a sample setting file $/Orcas/feature/MigrationDogfood/Internal/Adapters/ClearCase/ClearCase2003Adapter/ClearCaseToTfsTest.xml
+In the sample configuration file, for ClearCase server
+  1)ServerUrl is the vob name, e.g. \shi_vob
+  2)FilterString is the path under the vob you want to migrate, e.g. \shi_vob means all elements under the vob \shi_vob
+  3)The branch to be migrated is hard coded as ‘\main’
+
+3. The ClearCase to TFS migration can be executed in the commandline :
+   MigrationConsole.exe ClearCaseToTfsTest.xml
+

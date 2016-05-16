@@ -1,0 +1,227 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <!-- ********************************************************************************************* -->
+  <!-- OutputPath should NOT be set in this project file to let the common settings determine        -->
+  <!-- the build location.                                                                           -->
+  <!-- ********************************************************************************************* -->
+  <PropertyGroup>
+    <!-- Relative path to Binaries subdirectory. -->
+    <TfsIPRoot>..\..\..\..</TfsIPRoot>
+    <!-- See common settings for possible values of TfsIPProjectType.  Determines placement of binaries. -->
+    <TfsIPProjectType>Adapter</TfsIPProjectType>
+  </PropertyGroup>
+  <Import Project="$(TfsIPRoot)\Build\Microsoft.TeamFoundation.Migration.Settings.targets" />
+  <!-- ********************************************************************************************* -->
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{543AFA3E-6BA2-44B5-A9A0-475E2F798FA6}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Microsoft.TeamFoundation.Migration.Shell.RationalShellAdapter</RootNamespace>
+    <AssemblyName>RationalShellAdapter</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <!--<OutputPath>..\..\..\..\ReleaseCode\Binaries\Debug\bin\i386\Plugins\</OutputPath>-->
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <!--<OutputPath>bin\Release\</OutputPath>-->
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="PresentationCore">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="PresentationFramework">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="TfsCommonShellAdapter, Version=2.0.30319.1, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="WindowsBase">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="$(TfsIPRoot)\Version\Version.cs">
+      <Link>Version.cs</Link>
+    </Compile>
+    <Compile Include="CCAttrTypeNotFoundConflictTypeViewModel.cs" />
+    <Compile Include="CCCheckinConflictTypeViewModel.cs" />
+    <Compile Include="CQInvalidFieldValueCustomControl.cs" />
+    <Compile Include="FilePropertyCreationConflictTypeViewModel.cs" />
+    <Compile Include="LabelCreationConflictTypeViewModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ClearQuestShellAdapter.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="ClearCaseConnectDialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="StoredQueryDialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ClearQuestConnectDialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="ClearCaseShellAdapter.cs" />
+    <Compile Include="ClearCaseConnectDialog.xaml.cs">
+      <DependentUpon>ClearCaseConnectDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="StoredQueryDialog.xaml.cs">
+      <DependentUpon>StoredQueryDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="ClearQuestConnectDialog.xaml.cs">
+      <DependentUpon>ClearQuestConnectDialog.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="ClearQuest.Interop, Version=7.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>$(TfsIPRoot)\Binaries\External\IBM Rational\ClearQuest\ClearQuest.Interop.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ClearCase.Interop, Version=6.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>$(TfsIPRoot)\Binaries\External\IBM Rational\ClearCase\Interop.ClearCase.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UIAutomationProvider">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="$(TfsIPRoot)\Adapters\IBM Rational\ClearCase/ClearCaseDetailedHistoryAdapter\ClearCaseDetailedHistoryAdapter.csproj">
+      <Project>{263025E0-6BB4-4779-A2DA-83F751998290}</Project>
+      <Name>ClearCaseDetailedHistoryAdapter</Name>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="$(TfsIPRoot)\Adapters\IBM Rational\ClearQuest/ClearQuestAdapter\ClearQuestAdapter.csproj">
+      <Project>{004FA1B8-6868-48EF-BDB0-0AFB45BCCE60}</Project>
+      <Name>ClearQuestAdapter</Name>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Core\TfsMigrationEntityModel\TfsMigrationEntityModel\TfsMigrationEntityModel.csproj">
+      <Project>{DD017AA0-4088-42F1-98D6-99BC96DAAD37}</Project>
+      <Name>TfsMigrationEntityModel</Name>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Core\Toolkit\Toolkit.csproj">
+      <Project>{CB63E30B-6779-4F8B-A9BD-3BEB7DD84A2A}</Project>
+      <Name>Toolkit</Name>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Core\WinCredentials\WinCredentials.vcxproj">
+      <Project>{70D20CAA-CC74-4679-B035-F9002ACB96DC}</Project>
+      <Name>WinCredentials</Name>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\EditorFoundation\Source\EditorFoundation.csproj">
+      <Project>{8437726A-FB7F-4109-96EC-BA2880957CED}</Project>
+      <Name>EditorFoundation</Name>
+      <Private>False</Private>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Graphics\KeepLocal.png" />
+    <Resource Include="Graphics\TakeServer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Graphics\folderclosed_16.png" />
+    <Resource Include="Graphics\query_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Graphics\busywait_transparent.png" />
+  </ItemGroup>
+  <Import Project="$(TfsIPRoot)\Build\Microsoft.TeamFoundation.Migration.targets" />
+</Project>

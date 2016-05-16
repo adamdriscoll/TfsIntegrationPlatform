@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectGuid>{42DD56B5-A8A2-4D06-87BD-C981D3B0EBE1}</ProjectGuid>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup>
+    <FileSystemTfsTarget>11</FileSystemTfsTarget>
+  </PropertyGroup>
+  <ItemGroup>
+    <!-- All of the TFS 11 specific dependencies are isolated in this file.  This lets us maintain a common -->
+    <!-- source tree that is compiled into a TFS 2010 and TFS 11 specific adapter without duplicating code. -->
+    <Compile Include="VersionSpecificUtils.cs" />
+  </ItemGroup>
+  <Import Project="..\FileSystemAdapterForTfs2010\FileSystemAdapterForTfs2010.csproj" />
+</Project>

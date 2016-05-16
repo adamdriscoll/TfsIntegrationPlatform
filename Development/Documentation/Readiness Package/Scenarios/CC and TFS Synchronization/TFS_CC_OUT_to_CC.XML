@@ -1,0 +1,76 @@
+<?xml version="1.0"?>
+<Configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" UniqueId="263fa107-07e7-4ace-9002-9db9ea45bec2" FriendlyName="FromCCoutToCC">
+   <Providers>
+      <Provider ReferenceName="FEBC091F-82A2-449e-AED8-133E5896C47A" FriendlyName="TFS 2010 VC Migration Provider"/>
+      <Provider ReferenceName="b9379f30-2026-4d36-92a6-9654abf91bfd" FriendlyName="ClearCase selected history adapter between ClearCase and TFS." />
+   </Providers>
+   <Addins>
+    <!-- <Addin ReferenceName="AC260D98-2411-4829-B4F7-D548F1BC8143" FriendlyName="Start Sync via Semaphore File AnalysisAddin" /> -->
+    <Addin ReferenceName="356F2115-223D-46d5-90BF-3027EEAA271B" FriendlyName="ChangeGroup Label Addin" /> 
+  </Addins>
+
+  <!-- The ## token is used to encapsulate tokens that you would need to reconfigure to match your environment.
+         For example ... SourceIdentifier="##TEAM_PROJECT_NAME##" indicates that you need to replace the ##TEAM_PROJECT_NAME##
+                         with a valid team project name. If you look at the Getting Started Hands-On-Labs (HOL) this would appear
+                         as SourceIdentifier="TP-A" 
+      -->
+
+  <SessionGroup FriendlyName="Session Group Friendly Name" SessionGroupGUID="32a61611-908b-4e22-a1b7-968b2b38c42d">
+	  <WorkFlowType Frequency="ContinuousManual" DirectionOfFlow="Unidirectional" SyncContext="Disabled" />
+      <MigrationSources>
+         <MigrationSource InternalUniqueId="db49122f-b85f-43e2-8416-ec5b95feaa39" 
+                          FriendlyName="TFS 2010 Sandbox" 
+                          ServerIdentifier="TFS 2010 Sandbox" 
+                          ServerUrl="http://##SERVER##:8080/tfs/##Sandbox" SourceIdentifier="TestTools.Sandbox.##" ProviderReferenceName="FEBC091F-82A2-449e-AED8-133E5896C47A">
+						<CustomSettings>
+						  <CustomSetting SettingKey="AnalysisAddin1" SettingValue="356F2115-223D-46d5-90BF-3027EEAA271B" />
+						  <!-- <CustomSetting SettingKey="AnalysisAddin1" SettingValue="AC260D98-2411-4829-B4F7-D548F1BC8143" /> 
+              <CustomSetting SettingKey="SemaphoreFilePath" SettingValue="c:\MigrationSemaphoreAndMetadata.xml" /> -->
+            </CustomSettings>
+            <StoredCredential/>
+         </MigrationSource>
+         <MigrationSource InternalUniqueId="9ece04ce-7f07-4b08-9505-54a39f732ce9" 
+                          FriendlyName="ClearCaseV6" 
+                          ServerIdentifier="ClearCaseV6" 
+                          ServerUrl="\TESTVOB" SourceIdentifier="sourceClearCase" 
+                          ProviderReferenceName="b9379f30-2026-4d36-92a6-9654abf91bfd">
+            <CustomSettings>
+              <CustomSetting SettingKey="CCBranchName" SettingValue="tfs_integration_branch_20100507" />
+              <CustomSetting SettingKey="StorageLocationLocalPath"   SettingValue="C:\CCStorages\views" /> --> 
+              <CustomSetting SettingKey="DownloadFolder" SettingValue="c:\localDownloadFolderPath" />
+              <CustomSetting SettingKey="PrecreatedViewName" SettingValue="##_tfs2cc_view" />
+              <CustomSetting SettingKey="DynamicViewName" SettingValue="##_tfs2cc_view" />
+              <CustomSetting SettingKey="DynamicViewRoot" SettingValue="u:\" />
+              <CustomSetting SettingKey="VobName" SettingValue="\TESTVOB" />
+              <CustomSetting SettingKey="LabelAllVersions" SettingValue="True" />
+              <CustomSetting SettingKey="ClearfsimportConfiguration.ParseOutput" SettingValue="True" />
+            </CustomSettings>
+            <StoredCredential/>
+         </MigrationSource>
+      </MigrationSources>
+      <Sessions>
+         <Session SessionType="VersionControl" SessionUniqueId="337b4cac-7d84-4012-9aee-a916cc655df4" 
+                  FriendlyName="Version Control session" LeftMigrationSourceUniqueId="db49122f-b85f-43e2-8416-ec5b95feaa39" RightMigrationSourceUniqueId="9ece04ce-7f07-4b08-9505-54a39f732ce9">
+            <EventSinks/>
+            <CustomSettings>
+               <SettingXml>
+                  <VCSessionCustomSetting>
+                     <Settings><Setting SettingKey="DisableTargetAnalysis" SettingValue="True" /> </Settings>
+                  </VCSessionCustomSetting>
+               </SettingXml>
+               <SettingXmlSchema/>
+            </CustomSettings>
+            <Filters>
+            <FilterPair Neglect="false">
+                  <!--<FilterItem MigrationSourceUniqueId="ff48ab2d-58c9-4ca3-9145-c81ebb4edfa0" FilterString="P:\syngoBASE\src\TAU\Core"/>-->
+                  <FilterItem MigrationSourceUniqueId="db49122f-b85f-43e2-8416-ec5b95feaa39" FilterString="$/TestTools.Sandbox.3/##_Core3/CC_out"/>
+                  <FilterItem MigrationSourceUniqueId="9ece04ce-7f07-4b08-9505-54a39f732ce9" FilterString="\TESTVOB\Core20100507"/>
+               </FilterPair>
+            </Filters>
+         </Session>
+      </Sessions>
+      <Linking>
+      </Linking>
+   </SessionGroup>
+   
+</Configuration>

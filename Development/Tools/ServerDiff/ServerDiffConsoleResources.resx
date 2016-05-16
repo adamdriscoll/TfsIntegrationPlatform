@@ -1,0 +1,204 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ServerDiffUsage" xml:space="preserve">
+    <value>Usage:
+
+ServerDiff vc [/Session:&lt;sessionUniqueId&gt;]
+              [/LeftVersion:&lt;version&gt; /RightVersion:&lt;version&gt;] 
+              [/NoContentComparison] [/Verbose]
+
+Compares the version control files in two servers that are particating in a 
+migration or sync session.
+
+/Session (or /s): Specifies the Guid of a Session that should be used as the
+                  basic for the comparison.
+                  If the /session argument is not supplied, the most recently 
+                  started version control sync session is used as the basis of
+                  the comparison.  In either case the version control contents
+                  of the two servers at the time that the session’s last
+                  “sync point” completed are compared.
+
+/LeftVersion (or /l): 
+
+/RightVersion (or /r):
+
+/NoContentComparison (or /n): Don’t compare the contents of each work item;
+                              just verify that for each work item on each 
+                              server there is an identifiable corresponding
+                              work item on the other system.
+
+/Verbose (or /v): Display verbose information about the diff operation such
+                  as the number of work items processed, processing time, etc.
+                  Differences are reported whether /v is specified or not.
+
+or 
+
+
+ServerDiff wit [/Session:&lt;sessionUniqueId&gt;]
+               [/LeftQueryCondition:&lt;queryCondition&gt;]
+               [/RightQueryCondition:&lt;queryCondition&gt;]
+               [/NoContentComparison] [/Verbose]
+
+Compares the Work Items in the two servers for in a migration or sync session.
+
+/Session (or /s):  Specifies the Guid of a Session that should be used as the 
+                   basic for the comparison.
+                   If not supplied, the most recently started work item sync 
+                   session is used as the basis of the comparison.
+                   In either case the WorkItem contents of the servers at the
+                   time the session’s last “sync point” completed are compared.
+
+/LeftQueryCondition (or /l): Perform the diff operation on the subset of work
+                             items identified by the &lt;queryCondition&gt;
+                             as applied to the server considered to be on the
+                             left side of the sync/migration session.
+
+/RightQueryCondition (or /r): Perform the diff operation on the subset of work
+                              items identified by the &lt;queryCondition&gt;
+                              as applied to the server considered to be on the
+                              right side of the sync/migration session.
+
+Note: Either one, both, or neither of /LeftQueryCondition and 
+/RightQueryCondition may be specified:
+
+ * If neither is specified, all work items migrated in the WIT migration 
+   session defined by the configuration of the session are compared.
+ * If one of these arguments is specified, the corresponding work items on the
+   other server are identified and compared. This is not a good option to use
+   if you want to verify that all work items have been sync’d to both servers,
+   as items that exist only on the side not specified using a query condition
+   will not be reported.
+ * If both /LeftQueryCondition and /RightQueryCondition are specified, both
+   queries are used to identify the subsets to be compared on the respective
+   sides, but it is up to the user to ensure that the queries identify 
+   equivalent subsets on the two servers.
+
+/NoContentComparison (or /n): Don’t compare the contents of each work item;
+                              just verify that there is a corresponding work
+                              item on the other system.
+
+/Verbose (or /v): Display verbose information about the diff operation such
+                  as the number of work items processed, processing time, etc.
+                  Differences are reported whether /v is specified or not.</value>
+  </data>
+  <data name="SessionArgIsNotGuid" xml:space="preserve">
+    <value>The value provided for the /Session argument is not a valid Guid: {0}</value>
+  </data>
+</root>

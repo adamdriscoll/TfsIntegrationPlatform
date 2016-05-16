@@ -1,0 +1,5 @@
+﻿ALTER TABLE [dbo].[RUNTIME_SESSION_RUNS]
+	ADD CONSTRAINT [FK_SessionRun_To_ConflictCollection] 
+	FOREIGN KEY (ConflictCollectionId)
+	REFERENCES RUNTIME_CONFLICT_COLLECTIONS (Id)	
+

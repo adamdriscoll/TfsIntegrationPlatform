@@ -1,0 +1,3 @@
+﻿ALTER TABLE [dbo].[STORED_CREDENTIALS]
+	ADD CONSTRAINT [PK_StoredCredentials]
+	PRIMARY KEY (Id)

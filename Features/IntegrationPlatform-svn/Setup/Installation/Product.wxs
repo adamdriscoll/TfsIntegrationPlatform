@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi"
+     xmlns:sql="http://schemas.microsoft.com/wix/SqlExtension" 
+     xmlns:util="http://schemas.microsoft.com/wix/UtilExtension" 
+     xmlns:fire="http://schemas.microsoft.com/wix/FirewallExtension">
+
+  <!-- Establish a reference to the root of the install directory for includes.  Pull in -->
+  <!-- VersionPath, and other variables. -->
+  <?ifndef TfsIPRoot ?>
+  <?define TfsIPRoot=$(var.TfsIPRoot)?>
+  <?endif ?>
+  <?ifndef InstallRootPath ?>
+  <?define InstallRootPath=$(var.TfsIPRoot)\Setup\Installation?>
+  <?endif ?>
+  <?include $(var.InstallRootPath)\Variables.wxi ?>
+
+  <!-- The following values have to change with every major version change -->
+  <!-- Import version definitions for ProductCode, ProductVersion, AssemblyVersion -->
+  <?include $(var.VersionPath)\Version.wxi ?>
+  <?define PackageCode = "*"?>
+  <?define MinimumProductVersion = 1.0.0?>
+  <?define ProductInstallRegistryKey = "SOFTWARE\Microsoft\TeamFoundationIntegrationTool" ?>
+  
+  <!-- Do not update the UpgradeCode, it has to be the same throughout all releases -->
+  <?define UpgradeCode = "{77CF29A3-F69A-4a4c-8C68-AE14B6E33A7C}" ?>
+  
+  <Product UpgradeCode="$(var.UpgradeCode)" Manufacturer="!(loc.Manufacturer)" Id="$(var.ProductCode)" Language="1033" Name="!(loc.ProductName)" Version="$(var.ProductVersion)">
+		<Package Id="$(var.PackageCode)" Manufacturer="!(loc.Manufacturer)" InstallerVersion="200" Platform="x86" Languages="1033" SummaryCodepage="1252" Compressed="yes" />
+    <Upgrade Id="$(var.UpgradeCode)">
+      <UpgradeVersion Property="OLDPRODUCTFOUND" IncludeMinimum="yes" Minimum="$(var.MinimumProductVersion)" IncludeMaximum="yes" Maximum="$(var.ProductVersion)" />
+      <UpgradeVersion Property="NEWPRODUCTFOUND" IncludeMinimum="no" Minimum="$(var.ProductVersion)" OnlyDetect="yes" />
+    </Upgrade>
+    <Media Id="1" DiskPrompt="1" EmbedCab="yes" Cabinet="Installation.cab" VolumeLabel="DISK1" />
+    <WixVariable Id="WixUILicenseRtf" Value="$(var.InstallRootPath)\License.rtf" />
+
+    <?include $(var.InstallRootPath)\Properties.wxi?>
+    <?include $(var.InstallRootPath)\Conditions.wxi?>
+    <?include $(var.InstallRootPath)\ComponentDirs.wxi?>
+    <?include $(var.InstallRootPath)\Components.wxi?>
+    <?include $(var.InstallRootPath)\DBComponents.wxi?>
+    <?include $(var.InstallRootPath)\CustomActions.wxi?>
+    <?include $(var.InstallRootPath)\UI.wxi?>
+    <?include $(var.InstallRootPath)\Sequences.wxi?>
+    
+    <Feature Id="FEAT_MigrationTool" Title="!(loc.MigrationToolFeature)" Description="!(loc.MigrationToolFeatureDescription)" AllowAdvertise="no" Level="1" Absent="disallow">
+      <ComponentGroupRef Id="TfsIPComponents"/>
+    </Feature>
+
+    <Feature Id="FEAT_SyncServices" Title="!(loc.SyncServicesFeature)" Description="!(loc.SyncServicesFeatureDescription)" AllowAdvertise="no" Level="2" Absent="allow">
+      <ComponentGroupRef Id="SynchronizationServiceComponents"/>
+    </Feature>
+
+    <Feature Id="FEAT_RationalConnector" Title="!(loc.RationalConnectorFeature)" Description="!(loc.RationalConnectorFeatureDescription)" Level="2" Absent="allow">
+      <ComponentGroupRef Id="RationalComponents" />
+    </Feature>
+  </Product>
+</Wix>

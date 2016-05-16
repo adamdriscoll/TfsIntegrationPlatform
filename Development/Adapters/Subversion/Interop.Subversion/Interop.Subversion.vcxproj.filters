@@ -1,0 +1,221 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Header Files\DynamicInvocation">
+      <UniqueIdentifier>{fb051c22-8048-40ff-a50a-3224cf6ee4c5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\DynamicInvocation">
+      <UniqueIdentifier>{a7d04042-5561-4284-a4cf-dd8d895f3dd8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\LibraryAccess">
+      <UniqueIdentifier>{dbcfee3c-3a3f-4606-8ce1-b4d2fbf9dfbd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\LibraryAccess">
+      <UniqueIdentifier>{3f301002-eed8-4098-a652-822972b527cc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Helpers">
+      <UniqueIdentifier>{9d595cd2-c146-4f2e-a65d-eef9ee1b24f4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Helpers">
+      <UniqueIdentifier>{55e79953-0150-499b-82ca-95661bf8fe48}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\ObjectModel">
+      <UniqueIdentifier>{effefd2c-4f74-492b-9614-e4c9d5c293a3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\ObjectModel">
+      <UniqueIdentifier>{735caca3-ad4f-4b56-9cb2-c4c306df20b6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Commands">
+      <UniqueIdentifier>{5fbb718c-4a62-411c-bcd1-d5823733ab19}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Commands">
+      <UniqueIdentifier>{69c1ed2a-4cd2-4731-9ae2-ed62e2e61200}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Stdafx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SubversionClient.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DynamicInvocationAttribute.h">
+      <Filter>Header Files\DynamicInvocation</Filter>
+    </ClInclude>
+    <ClInclude Include="Library.h">
+      <Filter>Header Files\DynamicInvocation</Filter>
+    </ClInclude>
+    <ClInclude Include="LibraryLoader.h">
+      <Filter>Header Files\DynamicInvocation</Filter>
+    </ClInclude>
+    <ClInclude Include="ProcAddress.h">
+      <Filter>Header Files\DynamicInvocation</Filter>
+    </ClInclude>
+    <ClInclude Include="LibraryUnloadException.h">
+      <Filter>Header Files\DynamicInvocation</Filter>
+    </ClInclude>
+    <ClInclude Include="SubversionNotFoundException.h">
+      <Filter>Header Files\DynamicInvocation</Filter>
+    </ClInclude>
+    <ClInclude Include="DI_Svn_Client-1.h">
+      <Filter>Header Files\LibraryAccess</Filter>
+    </ClInclude>
+    <ClInclude Include="DI_Svn_Subr-1.h">
+      <Filter>Header Files\LibraryAccess</Filter>
+    </ClInclude>
+    <ClInclude Include="DI_LibApr.h">
+      <Filter>Header Files\LibraryAccess</Filter>
+    </ClInclude>
+    <ClInclude Include="AprPool.h">
+      <Filter>Header Files\Helpers</Filter>
+    </ClInclude>
+    <ClInclude Include="ChangeSet.h">
+      <Filter>Header Files\ObjectModel</Filter>
+    </ClInclude>
+    <ClInclude Include="Change.h">
+      <Filter>Header Files\ObjectModel</Filter>
+    </ClInclude>
+    <ClInclude Include="ChangeAction.h">
+      <Filter>Header Files\ObjectModel</Filter>
+    </ClInclude>
+    <ClInclude Include="SvnError.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SubversionContext.h">
+      <Filter>Header Files\Helpers</Filter>
+    </ClInclude>
+    <ClInclude Include="ItemInfo.h">
+      <Filter>Header Files\ObjectModel</Filter>
+    </ClInclude>
+    <ClInclude Include="Depth.h">
+      <Filter>Header Files\ObjectModel</Filter>
+    </ClInclude>
+    <ClInclude Include="DownloadCommand.h">
+      <Filter>Header Files\Commands</Filter>
+    </ClInclude>
+    <ClInclude Include="LatestRevisionCommand.h">
+      <Filter>Header Files\Commands</Filter>
+    </ClInclude>
+    <ClInclude Include="SubversionInfoCommand.h">
+      <Filter>Header Files\Commands</Filter>
+    </ClInclude>
+    <ClInclude Include="ItemInfoCommand.h">
+      <Filter>Header Files\Commands</Filter>
+    </ClInclude>
+    <ClInclude Include="LogCommand.h">
+      <Filter>Header Files\Commands</Filter>
+    </ClInclude>
+    <ClInclude Include="DiffSummaryCommand.h">
+      <Filter>Header Files\Commands</Filter>
+    </ClInclude>
+    <ClInclude Include="ListCommand.h">
+      <Filter>Header Files\Commands</Filter>
+    </ClInclude>
+    <ClInclude Include="Item.h">
+      <Filter>Header Files\ObjectModel</Filter>
+    </ClInclude>
+    <ClInclude Include="Utils.h">
+      <Filter>Header Files\Helpers</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="AssemblyInfo.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Stdafx.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SubversionClient.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Library.cpp">
+      <Filter>Source Files\DynamicInvocation</Filter>
+    </ClCompile>
+    <ClCompile Include="LibraryLoader.cpp">
+      <Filter>Source Files\DynamicInvocation</Filter>
+    </ClCompile>
+    <ClCompile Include="ProcAddress.cpp">
+      <Filter>Source Files\DynamicInvocation</Filter>
+    </ClCompile>
+    <ClCompile Include="DI_Svn_Client-1.cpp">
+      <Filter>Source Files\LibraryAccess</Filter>
+    </ClCompile>
+    <ClCompile Include="DI_Svn_subr-1.cpp">
+      <Filter>Source Files\LibraryAccess</Filter>
+    </ClCompile>
+    <ClCompile Include="DI_LibApr.cpp">
+      <Filter>Source Files\LibraryAccess</Filter>
+    </ClCompile>
+    <ClCompile Include="AprPool.cpp">
+      <Filter>Source Files\Helpers</Filter>
+    </ClCompile>
+    <ClCompile Include="ChangeSet.cpp">
+      <Filter>Source Files\ObjectModel</Filter>
+    </ClCompile>
+    <ClCompile Include="Change.cpp">
+      <Filter>Source Files\ObjectModel</Filter>
+    </ClCompile>
+    <ClCompile Include="SvnError.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SubversionContext.cpp">
+      <Filter>Source Files\Helpers</Filter>
+    </ClCompile>
+    <ClCompile Include="ItemInfo.cpp">
+      <Filter>Source Files\ObjectModel</Filter>
+    </ClCompile>
+    <ClCompile Include="DownloadCommand.cpp">
+      <Filter>Source Files\Commands</Filter>
+    </ClCompile>
+    <ClCompile Include="LatestRevisionCommand.cpp">
+      <Filter>Source Files\Commands</Filter>
+    </ClCompile>
+    <ClCompile Include="SubversionInfoCommand.cpp">
+      <Filter>Source Files\Commands</Filter>
+    </ClCompile>
+    <ClCompile Include="ItemInfoCommand.cpp">
+      <Filter>Source Files\Commands</Filter>
+    </ClCompile>
+    <ClCompile Include="LogCommand.cpp">
+      <Filter>Source Files\Commands</Filter>
+    </ClCompile>
+    <ClCompile Include="DiffSummaryCommand.cpp">
+      <Filter>Source Files\Commands</Filter>
+    </ClCompile>
+    <ClCompile Include="ListCommand.cpp">
+      <Filter>Source Files\Commands</Filter>
+    </ClCompile>
+    <ClCompile Include="Item.cpp">
+      <Filter>Source Files\ObjectModel</Filter>
+    </ClCompile>
+    <ClCompile Include="Utils.cpp">
+      <Filter>Source Files\Helpers</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ReadMe.txt" />
+    <None Include="app.ico">
+      <Filter>Resource Files</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="app.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>

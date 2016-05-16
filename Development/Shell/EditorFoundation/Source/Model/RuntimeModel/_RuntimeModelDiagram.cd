@@ -1,0 +1,171 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Microsoft.TeamFoundation.Migration.Shell.ChangeActionViewModel">
+    <Position X="7.25" Y="14.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>aAAACAAiEAAAAAAIIAAAAAAAIwAgAJAAQAAAJAAIAYA=</HashCode>
+      <FileName>RuntimeModel\ChangeActionViewModel.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Conflicts" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="Microsoft.TeamFoundation.Migration.Shell.ChangeGroupViewModel">
+    <Position X="7.25" Y="8.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AIACAACGAAAEgAQAAAAAAAQQIAAAAAAAgAAAAGAAAIA=</HashCode>
+      <FileName>RuntimeModel\ChangeGroupViewModel.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="ChangeActions" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="Microsoft.TeamFoundation.Migration.Shell.MigrationSourceViewModel">
+    <Position X="21" Y="8.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAGAAAAAAQAAAAIAAAAAAABgAAQAAAAQAA=</HashCode>
+      <FileName>RuntimeModel\MigrationSourceViewModel.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Provider" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Microsoft.TeamFoundation.Migration.Shell.ProviderViewModel">
+    <Position X="24.5" Y="8.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAQAAAAAAI=</HashCode>
+      <FileName>RuntimeModel\ProviderViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Microsoft.TeamFoundation.Migration.Shell.SessionGroupConfigViewModel">
+    <Position X="17.25" Y="4.25" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAEAAAAEAAAAAAAAACAAAAAAAUAEAAQgEAAQAA=</HashCode>
+      <FileName>RuntimeModel\SessionGroupConfigViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Microsoft.TeamFoundation.Migration.Shell.RuntimeViewModel">
+    <Position X="5.75" Y="1.75" Width="3.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAAAAAAAAAAAAAAAAQAAAAAAIAAAAAIAAAAAA=</HashCode>
+      <FileName>RuntimeModel\RuntimeViewModel.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="ActiveSessionGroup" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Microsoft.TeamFoundation.Migration.Shell.SessionGroupRunViewModel">
+    <Position X="11" Y="3.25" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>CIBCgAACBABAEAgAICAAAAAQIAAAAQEAAAAAAAAAAAA=</HashCode>
+      <FileName>RuntimeModel\SessionGroupRunViewModel.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="SessionGroupConfig" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="SessionRuns" />
+      <Property Name="Conflicts" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="Microsoft.TeamFoundation.Migration.Shell.SessionRunViewModel">
+    <Position X="11" Y="8.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>KAhKgCECAoBAIAAAbQAACAQQIABAgBEAAAgAJAACCAA=</HashCode>
+      <FileName>RuntimeModel\SessionRunViewModel.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="SessionConfig" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="ChangeGroupsInScope" />
+      <Property Name="Conflicts" />
+      <Property Name="DualChangeGroups" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="Microsoft.TeamFoundation.Migration.Shell.SessionConfigViewModel">
+    <Position X="17.25" Y="8.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>IAACIAAAAIAAAAAABAAAAAAAQCAAAAgAAQAQAAgAAAA=</HashCode>
+      <FileName>RuntimeModel\SessionConfigViewModel.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="LeftMigrationSource" />
+      <Property Name="RightMigrationSource" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Microsoft.TeamFoundation.Migration.Shell.ConflictViewModel">
+    <Position X="11" Y="17.75" Width="2.5" />
+    <AssociationLine Name="ResolvedByRule" Type="Microsoft.TeamFoundation.Migration.Shell.ConflictResolutionRuleViewModel">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.186" Y="0.098" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="SupportedResolutionActions" Type="Microsoft.TeamFoundation.Migration.Shell.ResolutionActionViewModel">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.111" Y="0.186" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAACAAAEAQAAAAAAAAAKAAAQIAAQGAEACAIEBAAAAIA=</HashCode>
+      <FileName>RuntimeModel\ConflictViewModel.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="ResolvedByRule" />
+      <Property Name="ConflictType" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="SupportedResolutionActions" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="Microsoft.TeamFoundation.Migration.Shell.ConflictTypeViewModel">
+    <Position X="14.75" Y="16.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAICAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAQAAAAAAI=</HashCode>
+      <FileName>RuntimeModel\ConflictTypeViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Microsoft.TeamFoundation.Migration.Shell.ConflictResolutionRuleViewModel">
+    <Position X="17.5" Y="18.25" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAEAAAAACAAgAAAAAAAAAAAgAQAAAAAoAEAAAI=</HashCode>
+      <FileName>RuntimeModel\ConflictResolutionRuleViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Microsoft.TeamFoundation.Migration.Shell.ResolutionActionViewModel">
+    <Position X="14.75" Y="22.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACAAAAIAAAAAAAAAAAAAAAAAAAQAAAAIAI=</HashCode>
+      <FileName>ProviderModel\ResolutionActionViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Microsoft.TeamFoundation.Migration.Shell.DualChangeGroupViewModel">
+    <Position X="2.75" Y="9.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgAEAAAAAAABAAAAAAAAAAAAAAAQAAAAAAAAAAA=</HashCode>
+      <FileName>RuntimeModel\DualChangeGroupViewModel.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="m_leftChangeGroup" />
+      <Field Name="m_rightChangeGroup" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Microsoft.TeamFoundation.Migration.Shell.SessionGroupViewModel">
+    <Position X="14.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EABAAAAAAABAAAAAAAEgAAAQAAAAAAIAAAAAIAAAAAA=</HashCode>
+      <FileName>RuntimeModel\SessionGroupViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Microsoft.TeamFoundation.Migration.Shell.SessionViewModel">
+    <Position X="14.75" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAAAIBAAAAAAAACAAAQABAAAAAAAAASAAAAAAA=</HashCode>
+      <FileName>RuntimeModel\SessionViewModel.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="AllChangeGroups" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

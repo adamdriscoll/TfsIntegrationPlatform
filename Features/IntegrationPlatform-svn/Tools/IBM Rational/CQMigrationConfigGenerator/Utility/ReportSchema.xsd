@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="ReportSchema" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+    <xs:annotation>
+        <xs:documentation>
+      Schema definition for Pre-Migration and Post-Migration report for VersionControl and WorkItemTracking Converters
+    </xs:documentation>
+    </xs:annotation>
+    <xs:element name="Report">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="Type" minOccurs="1" maxOccurs="1">
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:enumeration value="PreMigration" />
+                            <xs:enumeration value="PostMigration" />
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <xs:element name="Converter" minOccurs="1" maxOccurs="1">
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:enumeration value="VSSConverter" />
+                            <xs:enumeration value="SDConverter" />
+                            <xs:enumeration value="PSConverter" />
+                            <xs:enumeration value="CQConverter" />
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <xs:element name="RunBy" type="xs:string" minOccurs="1" maxOccurs="1"/>
+                <xs:element name="SourceSystem" minOccurs="1" maxOccurs="1">
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:enumeration value="ClearCase" />
+                            <xs:enumeration value="ClearQuest" />
+                            <xs:enumeration value="CSV" />
+                            <xs:enumeration value="PS" />
+                            <xs:enumeration value="PVCS" />
+                            <xs:enumeration value="SD" />
+                            <xs:enumeration value="VSS" />
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <xs:element name="TargetSystem" minOccurs="1" maxOccurs="1">
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:enumeration value="WorkItemTracking" />
+                            <xs:enumeration value="VersionControl" />
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <xs:element name="Title" type="xs:string" minOccurs="1" maxOccurs="1" />
+                <xs:element name="UserInput" minOccurs="1" maxOccurs="1">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="CommandLine" type="xs:string" minOccurs="1" maxOccurs="1" />
+                            <xs:element name="Options" minOccurs="0" maxOccurs="1">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="Option" type="xs:string" minOccurs="0" maxOccurs="unbounded" />
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                        <xs:attribute name="UsingUI" type="xs:boolean" use="required" />
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="Issues" minOccurs="0" maxOccurs="1">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="Issue" minOccurs="0" maxOccurs="unbounded">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="Item" type="xs:string" minOccurs="0" maxOccurs="1" />
+                                        <xs:element name="Location" type="xs:string" minOccurs="0" maxOccurs="1" />
+                                        <xs:element name="Message" type="xs:string" minOccurs="1" maxOccurs="1" />
+                                        <xs:element name="AdditionalInfos" minOccurs="0" maxOccurs="1">
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                    <xs:element name="AdditionalInfo" type="xs:string" minOccurs="0" maxOccurs="unbounded" />
+                                                </xs:sequence>
+                                            </xs:complexType>
+                                        </xs:element>
+                                    </xs:sequence>
+                                    <xs:attribute name="IssueID" type="xs:string" use="required" />
+                                    <xs:attribute name="Type" use="required">
+                                        <xs:simpleType>
+                                            <xs:restriction base="xs:string">
+                                                <xs:enumeration value="Critical" />
+                                                <xs:enumeration value="Error" />
+                                                <xs:enumeration value="Warning" />
+                                                <xs:enumeration value="Info" />
+                                            </xs:restriction>
+                                        </xs:simpleType>
+                                    </xs:attribute>
+                                    <xs:attribute name="Group" use="optional" />
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="Summary" minOccurs="1" maxOccurs="1">
+                    <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="TypeOfMigration" minOccurs="1" maxOccurs="1">
+                            <xs:simpleType>
+                              <xs:restriction base="xs:string">
+                                <xs:enumeration value="Full" />
+                                <xs:enumeration value="Incremental"/>
+                              </xs:restriction>
+                            </xs:simpleType>
+                          </xs:element>
+                          <xs:element name="SourceActionStartTime" type="xs:string" minOccurs="1" maxOccurs="1" />
+                          <xs:element name="SourceActionEndTime" type="xs:string" minOccurs="1" maxOccurs="1" />
+                          <xs:element name="StartTime" type="xs:string" minOccurs="1" maxOccurs="1" />
+                          <xs:element name="EndTime" type="xs:string" minOccurs="1" maxOccurs="1" />
+                          <xs:element name="TotalTime" type="xs:string" minOccurs="1" maxOccurs="1" />
+                            <xs:element name="Status" type="xs:string" minOccurs="1" maxOccurs="1" />
+                            <xs:element name="SourceAndDestination" minOccurs="1" maxOccurs="1">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:any minOccurs="1" maxOccurs="unbounded" processContents="skip" />
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="Statistics" minOccurs="1" maxOccurs="1">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="HasCriticalError" type="xs:boolean" minOccurs="1" maxOccurs="1" />
+                            <xs:element name="NumberOfErrors" type="xs:long" minOccurs="1" maxOccurs="1" />
+                            <xs:element name="NumberOfWarnings" type="xs:long" minOccurs="1" maxOccurs="1" />
+                            <xs:element name="NumberOfItems" type="xs:long" minOccurs="1" maxOccurs="1" />
+                            <xs:element name="StatisicsDetails" minOccurs="0" maxOccurs="1">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:any minOccurs="0" maxOccurs="unbounded" processContents="skip" />
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="Output" minOccurs="0" maxOccurs="1">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="File" minOccurs="0" maxOccurs="unbounded">
+                                <xs:complexType>
+                                    <xs:simpleContent>
+                                        <xs:extension base="xs:string">
+                                            <xs:attribute name="Name" type="xs:string" use="required" />
+                                        </xs:extension>
+                                    </xs:simpleContent>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="Dependencies" minOccurs="0" maxOccurs="1">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:any minOccurs="1" maxOccurs="unbounded" processContents="skip" />
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+            <xs:attribute name="Version" type="xs:string" use="required" />
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="ReportSchema">
+        <xs:complexType>
+            <xs:choice maxOccurs="1">
+                <xs:element ref="Report" />
+            </xs:choice>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

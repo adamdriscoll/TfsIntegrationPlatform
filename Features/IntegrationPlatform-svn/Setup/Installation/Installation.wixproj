@@ -1,0 +1,131 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <!-- ********************************************************************************************* -->
+  <!-- OutputPath should NOT be set in this project file to let the common settings determine        -->
+  <!-- the build location.                                                                           -->
+  <!-- ********************************************************************************************* -->
+  <PropertyGroup>
+    <!-- Relative path to Binaries subdirectory. -->
+    <TfsIPRoot>..\..</TfsIPRoot>
+    <!-- See common settings for possible values of TfsIPProjectType.  Determines placement of binaries. -->
+    <TfsIPProjectType>Layout</TfsIPProjectType>
+  </PropertyGroup>
+  <Import Project="$(TfsIPRoot)\Build\Microsoft.TeamFoundation.Migration.Settings.targets" />
+  <!-- ********************************************************************************************* -->
+  <!-- Pass computed paths to wxs.                                                                   -->
+  <!-- ********************************************************************************************* -->
+  <PropertyGroup>
+    <WixConstants1>RawBinPath=$(RawBinPath);PluginBinPath=$(PluginBinPath);AdapterBinPath=$(AdapterBinPath);AddinBinPath=$(AddinBinPath);JobBinPath=$(JobBinPath)</WixConstants1>
+    <WixConstants2>ConfigurationPath=$(ConfigurationPath);DocumentationPath=$(DocumentationPath);ReportPath=$(ReportPath)</WixConstants2>
+    <WixConstants3>TfsIPRoot=$(TfsIPRoot)</WixConstants3>
+    <WixConstants3 Condition="'$(SignedBuild)' == 'true'">$(WixConstants3);SignedBuild</WixConstants3>
+    <WixConstants3 Condition="'$(Configuration)' == 'Debug'">$(WixConstants3);Debug</WixConstants3>
+    <DefineConstants>$(WixConstants1);$(WixConstants2);$(WixConstants3)</DefineConstants>
+    <!-- We define registry keys as key paths for each start menu shortcut. The ICE validation doesn't like
+    the fact that we set the key to HKMU (HKLM when ALLUSERS=1, HKCU when ALLUSERS=0). For our installer, we force ALLUSERS=1, which means that
+    it will always get translated to HKLM, which is expected and we can ignore this warning;
+    * error LGHT0204: ICE57: Component ' ' has both per-user data and a keypath that can be either per-user or per-machine.
+    -->
+    <SuppressIces>ICE57</SuppressIces>
+  </PropertyGroup>
+  <!-- ********************************************************************************************* -->
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <!--<OutputPath>bin\$(Configuration)\</OutputPath>-->
+    <IntermediateOutputPath>obj\$(Configuration)\</IntermediateOutputPath>
+    <ProductVersion>3.0</ProductVersion>
+    <ProjectGuid>{c0ebbfa0-a343-4c09-9fef-fb85a9869f91}</ProjectGuid>
+    <SchemaVersion>2.0</SchemaVersion>
+    <OutputName>TFSIntegrationTools</OutputName>
+    <OutputType>Package</OutputType>
+    <WixTargetsPath Condition=" '$(WixTargetsPath)' == '' ">$(MSBuildExtensionsPath)\Microsoft\WiX\v3.5\Wix2010.targets</WixTargetsPath>
+    <SccProjectName>SAK</SccProjectName>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+  </PropertyGroup>
+  <!-- ********************************************************************************************* -->
+  <!-- Configuration and project content.                                                            -->
+  <!-- ********************************************************************************************* -->
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <SuppressAllWarnings>True</SuppressAllWarnings>
+    <Pedantic>False</Pedantic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="DocComponents.wxs" />
+    <Compile Include="Product.wxs" />
+    <Compile Include="UI\DbInformationDlg.wxs" />
+    <Compile Include="UI\DbConnectErrorDlg.wxs" />
+    <Compile Include="UI\GrantPermissionErrorDlg.wxs" />
+    <Compile Include="UI\PasswordMismatchDlg.wxs" />
+    <Compile Include="UI\ServiceAccountDlg.wxs" />
+    <Compile Include="UI\WixUI_CustomizeFeatureTree.wxs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Strings.wxl" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\InstallationCA\InstallationCA.csproj">
+      <Name>InstallationCA</Name>
+      <Project>{91e8d17c-049b-4d9e-b6c1-fe9419ca7caf}</Project>
+      <Private>True</Private>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WixExtension Include="WixUIExtension">
+      <HintPath>$(WixExtDir)\WixUIExtension.dll</HintPath>
+      <Name>WixUIExtension</Name>
+    </WixExtension>
+    <WixExtension Include="WixSqlExtension">
+      <HintPath>$(WixExtDir)\WixSqlExtension.dll</HintPath>
+      <Name>WixSqlExtension</Name>
+    </WixExtension>
+    <WixExtension Include="WixFirewallExtension">
+      <HintPath>$(WixExtDir)\WixFirewallExtension.dll</HintPath>
+      <Name>WixFirewallExtension</Name>
+    </WixExtension>
+    <WixExtension Include="WixUtilExtension">
+      <HintPath>$(WixExtDir)\WixUtilExtension.dll</HintPath>
+      <Name>WixUtilExtension</Name>
+    </WixExtension>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="..\..\Version\Version.wxi">
+      <Link>Version.wxi</Link>
+    </Content>
+    <Content Include="ComponentDirs.wxi" />
+    <Content Include="Components.wxi" />
+    <Content Include="Conditions.wxi" />
+    <Content Include="CustomActions.wxi" />
+    <Content Include="Database\Tfs_IntegrationPlatform.sql" />
+    <Content Include="Database\UpgradeFromDBVersion1.0.sql" />
+    <Content Include="Database\UpgradeFromDBVersion1.1.sql" />
+    <Content Include="Database\UpgradeFromDBVersion1.2.sql" />
+    <Content Include="Database\UpgradeFromDBVersion1.3.sql" />
+    <Content Include="Database\UpgradeFromDBVersion1.4.sql" />
+    <Content Include="Database\UpgradeFromDBVersion1.5.sql" />
+    <Content Include="Database\UpgradeFromDBVersion1.6.sql" />
+    <Content Include="Database\UpgradeFromDBVersion1.7.sql" />
+    <Content Include="Database\UpgradeFromDBVersion1.8.sql" />
+    <Content Include="Database\UpgradeFromDBVersion1.9.sql" />
+    <Content Include="Database\UpgradeFromDBVersion2.0.sql" />
+    <Content Include="Database\UpgradeFromDBVersion2.1.sql" />
+    <Content Include="Database\UpgradeFromDBVersion2.2.sql" />
+    <Content Include="Database\UpgradeFromDBVersion2.3.sql" />
+    <Content Include="Database\UpgradeFromDBVersion2.4.sql" />
+    <Content Include="DBComponents.wxi" />
+    <Content Include="License.rtf" />
+    <Content Include="Properties.wxi" />
+    <Content Include="Sequences.wxi" />
+    <Content Include="UI.wxi" />
+    <Content Include="Variables.wxi" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Database" />
+    <Folder Include="UI" />
+  </ItemGroup>
+  <Import Project="$(TfsIPRoot)\Build\Microsoft.TeamFoundation.Migration.Wix.targets" />
+</Project>

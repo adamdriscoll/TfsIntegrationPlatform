@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+  <Fragment>
+    <UI>
+      <Dialog Id="GrantPermissionErrorDlg" Width="330" Height="170" Title="!(loc.GrandPermissionErrorDlg_Title)">
+        <Control Id="No" Type="PushButton" X="264" Y="143" Width="56" Height="17" Default="yes" Cancel="yes" Text="!(loc.UIOk)">
+          <Publish Event="EndDialog" Value="Return">1</Publish>
+        </Control>
+        <Control Id="Text" Type="Text"  X="48" Y="15" Width="262" Height="128" Text="[LASTERROR]" />
+        <Control Id="Icon" Type="Icon" X="15" Y="15" Width="24" Height="24" ToolTip="!(loc.ErrorDlgErrorIconTooltip)" FixedSize="yes" IconSize="32" Text="!(loc.ErrorDlgErrorIcon)" />
+      </Dialog>
+    </UI>
+  </Fragment>
+</Wix>

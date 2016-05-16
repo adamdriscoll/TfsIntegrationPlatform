@@ -1,0 +1,3 @@
+﻿ALTER TABLE [dbo].[SESSION_GROUPS]
+	ADD CONSTRAINT [PK_SessionGroups]
+	PRIMARY KEY (Id)

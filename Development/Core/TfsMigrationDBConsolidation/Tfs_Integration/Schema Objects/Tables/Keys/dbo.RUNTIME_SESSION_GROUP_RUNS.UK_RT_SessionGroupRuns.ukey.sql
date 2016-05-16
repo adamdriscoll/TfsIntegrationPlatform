@@ -1,0 +1,3 @@
+﻿ALTER TABLE [dbo].[RUNTIME_SESSION_GROUP_RUNS]
+ADD CONSTRAINT [UK_RT_SessionGroupRuns]
+UNIQUE (StartTime, SessionGroupConfigId)

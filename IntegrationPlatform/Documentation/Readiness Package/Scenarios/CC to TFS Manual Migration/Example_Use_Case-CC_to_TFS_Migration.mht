@@ -1,0 +1,4070 @@
+MIME-Version: 1.0
+Content-Type: multipart/related; boundary="----=_NextPart_01CAF282.35796960"
+
+This document is a Single File Web Page, also known as a Web Archive file.  If you are seeing this message, your browser or editor doesn't support Web Archive files.  Please download a browser that supports Web Archive, such as Windows® Internet Explorer®.
+
+------=_NextPart_01CAF282.35796960
+Content-Location: file:///C:/AA4BB24E/Example_Use_Case-CC_to_TFS_Migration.htm
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset="us-ascii"
+
+<html xmlns:v=3D"urn:schemas-microsoft-com:vml"
+xmlns:o=3D"urn:schemas-microsoft-com:office:office"
+xmlns:w=3D"urn:schemas-microsoft-com:office:word"
+xmlns:m=3D"http://schemas.microsoft.com/office/2004/12/omml"
+xmlns=3D"http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=3DContent-Type content=3D"text/html; charset=3Dus-ascii">
+<meta name=3DProgId content=3DWord.Document>
+<meta name=3DGenerator content=3D"Microsoft Word 14">
+<meta name=3DOriginator content=3D"Microsoft Word 14">
+<link rel=3DFile-List
+href=3D"Example_Use_Case-CC_to_TFS_Migration_files/filelist.xml">
+<link rel=3DPreview href=3D"Example_Use_Case-CC_to_TFS_Migration_files/prev=
+iew.wmf">
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>Willy-Peter Schaub</o:Author>
+  <o:Template>TIP Use Case.dotx</o:Template>
+  <o:LastAuthor>Willy-Peter Schaub</o:LastAuthor>
+  <o:Revision>3</o:Revision>
+  <o:TotalTime>10</o:TotalTime>
+  <o:Created>2010-05-13T16:53:00Z</o:Created>
+  <o:LastSaved>2010-05-13T16:53:00Z</o:LastSaved>
+  <o:Pages>2</o:Pages>
+  <o:Words>328</o:Words>
+  <o:Characters>1873</o:Characters>
+  <o:Company>Microsoft</o:Company>
+  <o:Lines>15</o:Lines>
+  <o:Paragraphs>4</o:Paragraphs>
+  <o:CharactersWithSpaces>2197</o:CharactersWithSpaces>
+  <o:Version>14.00</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]-->
+<link rel=3DdataStoreItem
+href=3D"Example_Use_Case-CC_to_TFS_Migration_files/item0016.xml"
+target=3D"Example_Use_Case-CC_to_TFS_Migration_files/props017.xml">
+<link rel=3DdataStoreItem
+href=3D"Example_Use_Case-CC_to_TFS_Migration_files/item0018.xml"
+target=3D"Example_Use_Case-CC_to_TFS_Migration_files/props019.xml">
+<link rel=3DdataStoreItem
+href=3D"Example_Use_Case-CC_to_TFS_Migration_files/item0020.xml"
+target=3D"Example_Use_Case-CC_to_TFS_Migration_files/props021.xml">
+<link rel=3DdataStoreItem
+href=3D"Example_Use_Case-CC_to_TFS_Migration_files/item0022.xml"
+target=3D"Example_Use_Case-CC_to_TFS_Migration_files/props023.xml">
+<link rel=3DthemeData
+href=3D"Example_Use_Case-CC_to_TFS_Migration_files/themedata.thmx">
+<link rel=3DcolorSchemeMapping
+href=3D"Example_Use_Case-CC_to_TFS_Migration_files/colorschememapping.xml">
+<!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:View>Print</w:View>
+  <w:Zoom>BestFit</w:Zoom>
+  <w:SpellingState>Clean</w:SpellingState>
+  <w:GrammarState>Clean</w:GrammarState>
+  <w:TrackMoves>false</w:TrackMoves>
+  <w:TrackFormatting/>
+  <w:HyphenationZone>21</w:HyphenationZone>
+  <w:PunctuationKerning/>
+  <w:DrawingGridHorizontalSpacing>5.5 pt</w:DrawingGridHorizontalSpacing>
+  <w:DisplayHorizontalDrawingGridEvery>2</w:DisplayHorizontalDrawingGridEve=
+ry>
+  <w:ValidateAgainstSchemas/>
+  <w:SaveIfXMLInvalid>false</w:SaveIfXMLInvalid>
+  <w:IgnoreMixedContent>false</w:IgnoreMixedContent>
+  <w:AlwaysShowPlaceholderText>false</w:AlwaysShowPlaceholderText>
+  <w:DoNotPromoteQF/>
+  <w:LidThemeOther>EN-ZA</w:LidThemeOther>
+  <w:LidThemeAsian>X-NONE</w:LidThemeAsian>
+  <w:LidThemeComplexScript>X-NONE</w:LidThemeComplexScript>
+  <w:Compatibility>
+   <w:BreakWrappedTables/>
+   <w:SnapToGridInCell/>
+   <w:WrapTextWithPunct/>
+   <w:UseAsianBreakRules/>
+   <w:DontGrowAutofit/>
+   <w:SplitPgBreakAndParaMark/>
+   <w:UseFELayout/>
+  </w:Compatibility>
+  <m:mathPr>
+   <m:mathFont m:val=3D"Cambria Math"/>
+   <m:brkBin m:val=3D"before"/>
+   <m:brkBinSub m:val=3D"&#45;-"/>
+   <m:smallFrac m:val=3D"off"/>
+   <m:dispDef/>
+   <m:lMargin m:val=3D"0"/>
+   <m:rMargin m:val=3D"0"/>
+   <m:defJc m:val=3D"centerGroup"/>
+   <m:wrapIndent m:val=3D"1440"/>
+   <m:intLim m:val=3D"subSup"/>
+   <m:naryLim m:val=3D"undOvr"/>
+  </m:mathPr></w:WordDocument>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:LatentStyles DefLockedState=3D"false" DefUnhideWhenUsed=3D"true"
+  DefSemiHidden=3D"true" DefQFormat=3D"false" DefPriority=3D"99"
+  LatentStyleCount=3D"267">
+  <w:LsdException Locked=3D"false" Priority=3D"0" SemiHidden=3D"false"
+   UnhideWhenUsed=3D"false" QFormat=3D"true" Name=3D"Normal"/>
+  <w:LsdException Locked=3D"false" Priority=3D"9" SemiHidden=3D"false"
+   UnhideWhenUsed=3D"false" QFormat=3D"true" Name=3D"heading 1"/>
+  <w:LsdException Locked=3D"false" Priority=3D"9" QFormat=3D"true" Name=3D"=
+heading 2"/>
+  <w:LsdException Locked=3D"false" Priority=3D"9" QFormat=3D"true" Name=3D"=
+heading 3"/>
+  <w:LsdException Locked=3D"false" Priority=3D"9" QFormat=3D"true" Name=3D"=
+heading 4"/>
+  <w:LsdException Locked=3D"false" Priority=3D"9" QFormat=3D"true" Name=3D"=
+heading 5"/>
+  <w:LsdException Locked=3D"false" Priority=3D"9" QFormat=3D"true" Name=3D"=
+heading 6"/>
+  <w:LsdException Locked=3D"false" Priority=3D"9" QFormat=3D"true" Name=3D"=
+heading 7"/>
+  <w:LsdException Locked=3D"false" Priority=3D"9" QFormat=3D"true" Name=3D"=
+heading 8"/>
+  <w:LsdException Locked=3D"false" Priority=3D"9" QFormat=3D"true" Name=3D"=
+heading 9"/>
+  <w:LsdException Locked=3D"false" Priority=3D"39" Name=3D"toc 1"/>
+  <w:LsdException Locked=3D"false" Priority=3D"39" Name=3D"toc 2"/>
+  <w:LsdException Locked=3D"false" Priority=3D"39" Name=3D"toc 3"/>
+  <w:LsdException Locked=3D"false" Priority=3D"39" Name=3D"toc 4"/>
+  <w:LsdException Locked=3D"false" Priority=3D"39" Name=3D"toc 5"/>
+  <w:LsdException Locked=3D"false" Priority=3D"39" Name=3D"toc 6"/>
+  <w:LsdException Locked=3D"false" Priority=3D"39" Name=3D"toc 7"/>
+  <w:LsdException Locked=3D"false" Priority=3D"39" Name=3D"toc 8"/>
+  <w:LsdException Locked=3D"false" Priority=3D"39" Name=3D"toc 9"/>
+  <w:LsdException Locked=3D"false" Priority=3D"35" QFormat=3D"true" Name=3D=
+"caption"/>
+  <w:LsdException Locked=3D"false" Priority=3D"10" SemiHidden=3D"false"
+   UnhideWhenUsed=3D"false" QFormat=3D"true" Name=3D"Title"/>
+  <w:LsdException Locked=3D"false" Priority=3D"1" Name=3D"Default Paragraph=
+ Font"/>
+  <w:LsdException Locked=3D"false" Priority=3D"11" SemiHidden=3D"false"
+   UnhideWhenUsed=3D"false" QFormat=3D"true" Name=3D"Subtitle"/>
+  <w:LsdException Locked=3D"false" Priority=3D"22" SemiHidden=3D"false"
+   UnhideWhenUsed=3D"false" QFormat=3D"true" Name=3D"Strong"/>
+  <w:LsdException Locked=3D"false" Priority=3D"20" SemiHidden=3D"false"
+   UnhideWhenUsed=3D"false" QFormat=3D"true" Name=3D"Emphasis"/>
+  <w:LsdException Locked=3D"false" Priority=3D"59" SemiHidden=3D"false"
+   UnhideWhenUsed=3D"false" Name=3D"Table Grid"/>
+  <w:LsdException Locked=3D"false" UnhideWhenUsed=3D"false" Name=3D"Placeho=
+lder Text"/>
+  <w:LsdException Locked=3D"false" Priority=3D"1" SemiHidden=3D"false"
+   UnhideWhenUsed=3D"false" QFormat=3D"true" Name=3D"No Spacing"/>
+  <w:LsdException Locked=3D"false" Priority=3D"60" SemiHidden=3D"false"
+   UnhideWhenUsed=3D"false" Name=3D"Light Shading"/>
+  <w:LsdException Locked=3D"false" Priority=3D"61" SemiHidden=3D"false"
+   UnhideWhenUsed=3D"false" Name=3D"Light List"/>
+  <w:LsdException Locked=3D"false" Priority=3D"62" SemiHidden=3D"false"
+   UnhideWhenUsed=3D"false" Name=3D"Light Grid"/>
+  <w:LsdException Locked=3D"false" Priority=3D"63" SemiHidden=3D"false"
+   UnhideWhenUsed=3D"false" Name=3D"Medium Shading 1"/>
+  <w:LsdException Locked=3D"false" Priority=3D"64" SemiHidden=3D"false"
+   UnhideWhenUsed=3D"false" Name=3D"Medium Shading 2"/>
+  <w:LsdException Locked=3D"false" Priority=3D"65" SemiHidden=3D"false"
+   UnhideWhenUsed=3D"false" Name=3D"Medium List 1"/>
+  <w:LsdException Locked=3D"false" Priority=3D"66" SemiHidden=3D"false"
+   UnhideWhenUsed=3D"false" Name=3D"Medium List 2"/>
+  <w:LsdException Locked=3D"false" Priority=3D"67" SemiHidden=3D"false"
+   UnhideWhenUsed=3D"false" Name=3D"Medium Grid 1"/>
+  <w:LsdException Locked=3D"false" Priority=3D"68" SemiHidden=3D"false"
+   UnhideWhenUsed=3D"false" Name=3D"Medium Grid 2"/>
+  <w:LsdException Locked=3D"false" Priority=3D"69" SemiHidden=3D"false"
+   UnhideWhenUsed=3D"false" Name=3D"Medium Grid 3"/>
+  <w:LsdException Locked=3D"false" Priority=3D"70" SemiHidden=3D"false"
+   UnhideWhenUsed=3D"false" Name=3D"Dark List"/>
+  <w:LsdException Locked=3D"false" Priority=3D"71" SemiHidden=3D"false"
+   UnhideWhenUsed=3D"false" Name=3D"Colorful Shading"/>
+  <w:LsdException Locked=3D"false" Priority=3D"72" SemiHidden=3D"false"
+   UnhideWhenUsed=3D"false" Name=3D"Colorful List"/>
+  <w:LsdException Locked=3D"false" Priority=3D"73" SemiHidden=3D"false"
+   UnhideWhenUsed=3D"false" Name=3D"Colorful Grid"/>
+  <w:LsdException Locked=3D"false" Priority=3D"60" SemiHidden=3D"false"
+   UnhideWhenUsed=3D"false" Name=3D"Light Shading Accent 1"/>
+  <w:LsdException Locked=3D"false" Priority=3D"61" SemiHidden=3D"false"
+   UnhideWhenUsed=3D"false" Name=3D"Light List Accent 1"/>
+  <w:LsdException Locked=3D"false" Priority=3D"62" SemiHidden=3D"false"
+   UnhideWhenUsed=3D"false" Name=3D"Light Grid Accent 1"/>
+  <w:LsdException Locked=3D"false" Priority=3D"63" SemiHidden=3D"false"
+   UnhideWhenUsed=3D"false" Name=3D"Medium Shading 1 Accent 1"/>
+  <w:LsdException Locked=3D"false" Priority=3D"64" SemiHidden=3D"false"
+   UnhideWhenUsed=3D"false" Name=3D"Medium Shading 2 Accent 1"/>
+  <w:LsdException Locked=3D"false" Priority=3D"65" SemiHidden=3D"false"
+   UnhideWhenUsed=3D"false" Name=3D"Medium List 1 Accent 1"/>
+  <w:LsdException Locked=3D"false" UnhideWhenUsed=3D"false" Name=3D"Revisio=
+n"/>
+  <w:LsdException Locked=3D"false" Priority=3D"34" SemiHidden=3D"false"
+   UnhideWhenUsed=3D"false" QFormat=3D"true" Name=3D"List Paragraph"/>
+  <w:LsdException Locked=3D"false" Priority=3D"29" SemiHidden=3D"false"
+   UnhideWhenUsed=3D"false" QFormat=3D"true" Name=3D"Quote"/>
+  <w:LsdException Locked=3D"false" Priority=3D"30" SemiHidden=3D"false"
+   UnhideWhenUsed=3D"false" QFormat=3D"true" Name=3D"Intense Quote"/>
+  <w:LsdException Locked=3D"false" Priority=3D"66" SemiHidden=3D"false"
+   UnhideWhenUsed=3D"false" Name=3D"Medium List 2 Accent 1"/>
+  <w:LsdException Locked=3D"false" Priority=3D"67" SemiHidden=3D"false"
+   UnhideWhenUsed=3D"false" Name=3D"Medium Grid 1 Accent 1"/>
+  <w:LsdException Locked=3D"false" Priority=3D"68" SemiHidden=3D"false"
+   UnhideWhenUsed=3D"false" Name=3D"Medium Grid 2 Accent 1"/>
+  <w:LsdException Locked=3D"false" Priority=3D"69" SemiHidden=3D"false"
+   UnhideWhenUsed=3D"false" Name=3D"Medium Grid 3 Accent 1"/>
+  <w:LsdException Locked=3D"false" Priority=3D"70" SemiHidden=3D"false"
+   UnhideWhenUsed=3D"false" Name=3D"Dark List Accent 1"/>
+  <w:LsdException Locked=3D"false" Priority=3D"71" SemiHidden=3D"false"
+   UnhideWhenUsed=3D"false" Name=3D"Colorful Shading Accent 1"/>
+  <w:LsdException Locked=3D"false" Priority=3D"72" SemiHidden=3D"false"
+   UnhideWhenUsed=3D"false" Name=3D"Colorful List Accent 1"/>
+  <w:LsdException Locked=3D"false" Priority=3D"73" SemiHidden=3D"false"
+   UnhideWhenUsed=3D"false" Name=3D"Colorful Grid Accent 1"/>
+  <w:LsdException Locked=3D"false" Priority=3D"60" SemiHidden=3D"false"
+   UnhideWhenUsed=3D"false" Name=3D"Light Shading Accent 2"/>
+  <w:LsdException Locked=3D"false" Priority=3D"61" SemiHidden=3D"false"
+   UnhideWhenUsed=3D"false" Name=3D"Light List Accent 2"/>
+  <w:LsdException Locked=3D"false" Priority=3D"62" SemiHidden=3D"false"
+   UnhideWhenUsed=3D"false" Name=3D"Light Grid Accent 2"/>
+  <w:LsdException Locked=3D"false" Priority=3D"63" SemiHidden=3D"false"
+   UnhideWhenUsed=3D"false" Name=3D"Medium Shading 1 Accent 2"/>
+  <w:LsdException Locked=3D"false" Priority=3D"64" SemiHidden=3D"false"
+   UnhideWhenUsed=3D"false" Name=3D"Medium Shading 2 Accent 2"/>
+  <w:LsdException Locked=3D"false" Priority=3D"65" SemiHidden=3D"false"
+   UnhideWhenUsed=3D"false" Name=3D"Medium List 1 Accent 2"/>
+  <w:LsdException Locked=3D"false" Priority=3D"66" SemiHidden=3D"false"
+   UnhideWhenUsed=3D"false" Name=3D"Medium List 2 Accent 2"/>
+  <w:LsdException Locked=3D"false" Priority=3D"67" SemiHidden=3D"false"
+   UnhideWhenUsed=3D"false" Name=3D"Medium Grid 1 Accent 2"/>
+  <w:LsdException Locked=3D"false" Priority=3D"68" SemiHidden=3D"false"
+   UnhideWhenUsed=3D"false" Name=3D"Medium Grid 2 Accent 2"/>
+  <w:LsdException Locked=3D"false" Priority=3D"69" SemiHidden=3D"false"
+   UnhideWhenUsed=3D"false" Name=3D"Medium Grid 3 Accent 2"/>
+  <w:LsdException Locked=3D"false" Priority=3D"70" SemiHidden=3D"false"
+   UnhideWhenUsed=3D"false" Name=3D"Dark List Accent 2"/>
+  <w:LsdException Locked=3D"false" Priority=3D"71" SemiHidden=3D"false"
+   UnhideWhenUsed=3D"false" Name=3D"Colorful Shading Accent 2"/>
+  <w:LsdException Locked=3D"false" Priority=3D"72" SemiHidden=3D"false"
+   UnhideWhenUsed=3D"false" Name=3D"Colorful List Accent 2"/>
+  <w:LsdException Locked=3D"false" Priority=3D"73" SemiHidden=3D"false"
+   UnhideWhenUsed=3D"false" Name=3D"Colorful Grid Accent 2"/>
+  <w:LsdException Locked=3D"false" Priority=3D"60" SemiHidden=3D"false"
+   UnhideWhenUsed=3D"false" Name=3D"Light Shading Accent 3"/>
+  <w:LsdException Locked=3D"false" Priority=3D"61" SemiHidden=3D"false"
+   UnhideWhenUsed=3D"false" Name=3D"Light List Accent 3"/>
+  <w:LsdException Locked=3D"false" Priority=3D"62" SemiHidden=3D"false"
+   UnhideWhenUsed=3D"false" Name=3D"Light Grid Accent 3"/>
+  <w:LsdException Locked=3D"false" Priority=3D"63" SemiHidden=3D"false"
+   UnhideWhenUsed=3D"false" Name=3D"Medium Shading 1 Accent 3"/>
+  <w:LsdException Locked=3D"false" Priority=3D"64" SemiHidden=3D"false"
+   UnhideWhenUsed=3D"false" Name=3D"Medium Shading 2 Accent 3"/>
+  <w:LsdException Locked=3D"false" Priority=3D"65" SemiHidden=3D"false"
+   UnhideWhenUsed=3D"false" Name=3D"Medium List 1 Accent 3"/>
+  <w:LsdException Locked=3D"false" Priority=3D"66" SemiHidden=3D"false"
+   UnhideWhenUsed=3D"false" Name=3D"Medium List 2 Accent 3"/>
+  <w:LsdException Locked=3D"false" Priority=3D"67" SemiHidden=3D"false"
+   UnhideWhenUsed=3D"false" Name=3D"Medium Grid 1 Accent 3"/>
+  <w:LsdException Locked=3D"false" Priority=3D"68" SemiHidden=3D"false"
+   UnhideWhenUsed=3D"false" Name=3D"Medium Grid 2 Accent 3"/>
+  <w:LsdException Locked=3D"false" Priority=3D"69" SemiHidden=3D"false"
+   UnhideWhenUsed=3D"false" Name=3D"Medium Grid 3 Accent 3"/>
+  <w:LsdException Locked=3D"false" Priority=3D"70" SemiHidden=3D"false"
+   UnhideWhenUsed=3D"false" Name=3D"Dark List Accent 3"/>
+  <w:LsdException Locked=3D"false" Priority=3D"71" SemiHidden=3D"false"
+   UnhideWhenUsed=3D"false" Name=3D"Colorful Shading Accent 3"/>
+  <w:LsdException Locked=3D"false" Priority=3D"72" SemiHidden=3D"false"
+   UnhideWhenUsed=3D"false" Name=3D"Colorful List Accent 3"/>
+  <w:LsdException Locked=3D"false" Priority=3D"73" SemiHidden=3D"false"
+   UnhideWhenUsed=3D"false" Name=3D"Colorful Grid Accent 3"/>
+  <w:LsdException Locked=3D"false" Priority=3D"60" SemiHidden=3D"false"
+   UnhideWhenUsed=3D"false" Name=3D"Light Shading Accent 4"/>
+  <w:LsdException Locked=3D"false" Priority=3D"61" SemiHidden=3D"false"
+   UnhideWhenUsed=3D"false" Name=3D"Light List Accent 4"/>
+  <w:LsdException Locked=3D"false" Priority=3D"62" SemiHidden=3D"false"
+   UnhideWhenUsed=3D"false" Name=3D"Light Grid Accent 4"/>
+  <w:LsdException Locked=3D"false" Priority=3D"63" SemiHidden=3D"false"
+   UnhideWhenUsed=3D"false" Name=3D"Medium Shading 1 Accent 4"/>
+  <w:LsdException Locked=3D"false" Priority=3D"64" SemiHidden=3D"false"
+   UnhideWhenUsed=3D"false" Name=3D"Medium Shading 2 Accent 4"/>
+  <w:LsdException Locked=3D"false" Priority=3D"65" SemiHidden=3D"false"
+   UnhideWhenUsed=3D"false" Name=3D"Medium List 1 Accent 4"/>
+  <w:LsdException Locked=3D"false" Priority=3D"66" SemiHidden=3D"false"
+   UnhideWhenUsed=3D"false" Name=3D"Medium List 2 Accent 4"/>
+  <w:LsdException Locked=3D"false" Priority=3D"67" SemiHidden=3D"false"
+   UnhideWhenUsed=3D"false" Name=3D"Medium Grid 1 Accent 4"/>
+  <w:LsdException Locked=3D"false" Priority=3D"68" SemiHidden=3D"false"
+   UnhideWhenUsed=3D"false" Name=3D"Medium Grid 2 Accent 4"/>
+  <w:LsdException Locked=3D"false" Priority=3D"69" SemiHidden=3D"false"
+   UnhideWhenUsed=3D"false" Name=3D"Medium Grid 3 Accent 4"/>
+  <w:LsdException Locked=3D"false" Priority=3D"70" SemiHidden=3D"false"
+   UnhideWhenUsed=3D"false" Name=3D"Dark List Accent 4"/>
+  <w:LsdException Locked=3D"false" Priority=3D"71" SemiHidden=3D"false"
+   UnhideWhenUsed=3D"false" Name=3D"Colorful Shading Accent 4"/>
+  <w:LsdException Locked=3D"false" Priority=3D"72" SemiHidden=3D"false"
+   UnhideWhenUsed=3D"false" Name=3D"Colorful List Accent 4"/>
+  <w:LsdException Locked=3D"false" Priority=3D"73" SemiHidden=3D"false"
+   UnhideWhenUsed=3D"false" Name=3D"Colorful Grid Accent 4"/>
+  <w:LsdException Locked=3D"false" Priority=3D"60" SemiHidden=3D"false"
+   UnhideWhenUsed=3D"false" Name=3D"Light Shading Accent 5"/>
+  <w:LsdException Locked=3D"false" Priority=3D"61" SemiHidden=3D"false"
+   UnhideWhenUsed=3D"false" Name=3D"Light List Accent 5"/>
+  <w:LsdException Locked=3D"false" Priority=3D"62" SemiHidden=3D"false"
+   UnhideWhenUsed=3D"false" Name=3D"Light Grid Accent 5"/>
+  <w:LsdException Locked=3D"false" Priority=3D"63" SemiHidden=3D"false"
+   UnhideWhenUsed=3D"false" Name=3D"Medium Shading 1 Accent 5"/>
+  <w:LsdException Locked=3D"false" Priority=3D"64" SemiHidden=3D"false"
+   UnhideWhenUsed=3D"false" Name=3D"Medium Shading 2 Accent 5"/>
+  <w:LsdException Locked=3D"false" Priority=3D"65" SemiHidden=3D"false"
+   UnhideWhenUsed=3D"false" Name=3D"Medium List 1 Accent 5"/>
+  <w:LsdException Locked=3D"false" Priority=3D"66" SemiHidden=3D"false"
+   UnhideWhenUsed=3D"false" Name=3D"Medium List 2 Accent 5"/>
+  <w:LsdException Locked=3D"false" Priority=3D"67" SemiHidden=3D"false"
+   UnhideWhenUsed=3D"false" Name=3D"Medium Grid 1 Accent 5"/>
+  <w:LsdException Locked=3D"false" Priority=3D"68" SemiHidden=3D"false"
+   UnhideWhenUsed=3D"false" Name=3D"Medium Grid 2 Accent 5"/>
+  <w:LsdException Locked=3D"false" Priority=3D"69" SemiHidden=3D"false"
+   UnhideWhenUsed=3D"false" Name=3D"Medium Grid 3 Accent 5"/>
+  <w:LsdException Locked=3D"false" Priority=3D"70" SemiHidden=3D"false"
+   UnhideWhenUsed=3D"false" Name=3D"Dark List Accent 5"/>
+  <w:LsdException Locked=3D"false" Priority=3D"71" SemiHidden=3D"false"
+   UnhideWhenUsed=3D"false" Name=3D"Colorful Shading Accent 5"/>
+  <w:LsdException Locked=3D"false" Priority=3D"72" SemiHidden=3D"false"
+   UnhideWhenUsed=3D"false" Name=3D"Colorful List Accent 5"/>
+  <w:LsdException Locked=3D"false" Priority=3D"73" SemiHidden=3D"false"
+   UnhideWhenUsed=3D"false" Name=3D"Colorful Grid Accent 5"/>
+  <w:LsdException Locked=3D"false" Priority=3D"60" SemiHidden=3D"false"
+   UnhideWhenUsed=3D"false" Name=3D"Light Shading Accent 6"/>
+  <w:LsdException Locked=3D"false" Priority=3D"61" SemiHidden=3D"false"
+   UnhideWhenUsed=3D"false" Name=3D"Light List Accent 6"/>
+  <w:LsdException Locked=3D"false" Priority=3D"62" SemiHidden=3D"false"
+   UnhideWhenUsed=3D"false" Name=3D"Light Grid Accent 6"/>
+  <w:LsdException Locked=3D"false" Priority=3D"63" SemiHidden=3D"false"
+   UnhideWhenUsed=3D"false" Name=3D"Medium Shading 1 Accent 6"/>
+  <w:LsdException Locked=3D"false" Priority=3D"64" SemiHidden=3D"false"
+   UnhideWhenUsed=3D"false" Name=3D"Medium Shading 2 Accent 6"/>
+  <w:LsdException Locked=3D"false" Priority=3D"65" SemiHidden=3D"false"
+   UnhideWhenUsed=3D"false" Name=3D"Medium List 1 Accent 6"/>
+  <w:LsdException Locked=3D"false" Priority=3D"66" SemiHidden=3D"false"
+   UnhideWhenUsed=3D"false" Name=3D"Medium List 2 Accent 6"/>
+  <w:LsdException Locked=3D"false" Priority=3D"67" SemiHidden=3D"false"
+   UnhideWhenUsed=3D"false" Name=3D"Medium Grid 1 Accent 6"/>
+  <w:LsdException Locked=3D"false" Priority=3D"68" SemiHidden=3D"false"
+   UnhideWhenUsed=3D"false" Name=3D"Medium Grid 2 Accent 6"/>
+  <w:LsdException Locked=3D"false" Priority=3D"69" SemiHidden=3D"false"
+   UnhideWhenUsed=3D"false" Name=3D"Medium Grid 3 Accent 6"/>
+  <w:LsdException Locked=3D"false" Priority=3D"70" SemiHidden=3D"false"
+   UnhideWhenUsed=3D"false" Name=3D"Dark List Accent 6"/>
+  <w:LsdException Locked=3D"false" Priority=3D"71" SemiHidden=3D"false"
+   UnhideWhenUsed=3D"false" Name=3D"Colorful Shading Accent 6"/>
+  <w:LsdException Locked=3D"false" Priority=3D"72" SemiHidden=3D"false"
+   UnhideWhenUsed=3D"false" Name=3D"Colorful List Accent 6"/>
+  <w:LsdException Locked=3D"false" Priority=3D"73" SemiHidden=3D"false"
+   UnhideWhenUsed=3D"false" Name=3D"Colorful Grid Accent 6"/>
+  <w:LsdException Locked=3D"false" Priority=3D"19" SemiHidden=3D"false"
+   UnhideWhenUsed=3D"false" QFormat=3D"true" Name=3D"Subtle Emphasis"/>
+  <w:LsdException Locked=3D"false" Priority=3D"21" SemiHidden=3D"false"
+   UnhideWhenUsed=3D"false" QFormat=3D"true" Name=3D"Intense Emphasis"/>
+  <w:LsdException Locked=3D"false" Priority=3D"31" SemiHidden=3D"false"
+   UnhideWhenUsed=3D"false" QFormat=3D"true" Name=3D"Subtle Reference"/>
+  <w:LsdException Locked=3D"false" Priority=3D"32" SemiHidden=3D"false"
+   UnhideWhenUsed=3D"false" QFormat=3D"true" Name=3D"Intense Reference"/>
+  <w:LsdException Locked=3D"false" Priority=3D"33" SemiHidden=3D"false"
+   UnhideWhenUsed=3D"false" QFormat=3D"true" Name=3D"Book Title"/>
+  <w:LsdException Locked=3D"false" Priority=3D"37" Name=3D"Bibliography"/>
+  <w:LsdException Locked=3D"false" Priority=3D"39" QFormat=3D"true" Name=3D=
+"TOC Heading"/>
+ </w:LatentStyles>
+</xml><![endif]-->
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;
+	mso-font-charset:2;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:0 268435456 0 0 -2147483648 0;}
+@font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;
+	mso-font-charset:2;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:0 268435456 0 0 -2147483648 0;}
+@font-face
+	{font-family:Cambria;
+	panose-1:2 4 5 3 5 4 6 3 2 4;
+	mso-font-charset:0;
+	mso-generic-font-family:roman;
+	mso-font-pitch:variable;
+	mso-font-signature:-536870145 1073743103 0 0 415 0;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;
+	mso-font-charset:0;
+	mso-generic-font-family:swiss;
+	mso-font-pitch:variable;
+	mso-font-signature:-520092929 1073786111 9 0 415 0;}
+@font-face
+	{font-family:Tahoma;
+	panose-1:2 11 6 4 3 5 4 4 2 4;
+	mso-font-charset:0;
+	mso-generic-font-family:swiss;
+	mso-font-pitch:variable;
+	mso-font-signature:-520081665 -1073717157 41 0 66047 0;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-parent:"";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:10.0pt;
+	margin-left:0in;
+	line-height:115%;
+	mso-pagination:widow-orphan;
+	font-size:11.0pt;
+	font-family:"Calibri","sans-serif";
+	mso-ascii-font-family:Calibri;
+	mso-ascii-theme-font:minor-latin;
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:minor-fareast;
+	mso-hansi-font-family:Calibri;
+	mso-hansi-theme-font:minor-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:minor-bidi;
+	mso-ansi-language:PL;
+	mso-fareast-language:PL;}
+h1
+	{mso-style-priority:9;
+	mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-link:"Heading 1 Char";
+	mso-style-next:Normal;
+	margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan lines-together;
+	page-break-after:avoid;
+	mso-outline-level:1;
+	font-size:14.0pt;
+	font-family:"Cambria","serif";
+	mso-ascii-font-family:Cambria;
+	mso-ascii-theme-font:major-latin;
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:major-fareast;
+	mso-hansi-font-family:Cambria;
+	mso-hansi-theme-font:major-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:major-bidi;
+	color:#365F91;
+	mso-themecolor:accent1;
+	mso-themeshade:191;
+	mso-font-kerning:0pt;
+	mso-ansi-language:PL;
+	mso-fareast-language:PL;}
+h2
+	{mso-style-priority:9;
+	mso-style-qformat:yes;
+	mso-style-link:"Heading 2 Char";
+	mso-style-next:Normal;
+	margin-top:10.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	line-height:115%;
+	mso-pagination:widow-orphan lines-together;
+	page-break-after:avoid;
+	mso-outline-level:2;
+	font-size:13.0pt;
+	font-family:"Cambria","serif";
+	mso-ascii-font-family:Cambria;
+	mso-ascii-theme-font:major-latin;
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:major-fareast;
+	mso-hansi-font-family:Cambria;
+	mso-hansi-theme-font:major-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:major-bidi;
+	color:#4F81BD;
+	mso-themecolor:accent1;
+	mso-ansi-language:PL;
+	mso-fareast-language:PL;}
+p.MsoHeader, li.MsoHeader, div.MsoHeader
+	{mso-style-priority:99;
+	mso-style-link:"Header Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	tab-stops:center 225.65pt right 451.3pt;
+	font-size:11.0pt;
+	font-family:"Calibri","sans-serif";
+	mso-ascii-font-family:Calibri;
+	mso-ascii-theme-font:minor-latin;
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:minor-fareast;
+	mso-hansi-font-family:Calibri;
+	mso-hansi-theme-font:minor-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:minor-bidi;
+	mso-ansi-language:PL;
+	mso-fareast-language:PL;}
+p.MsoFooter, li.MsoFooter, div.MsoFooter
+	{mso-style-priority:99;
+	mso-style-link:"Footer Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	tab-stops:center 225.65pt right 451.3pt;
+	font-size:11.0pt;
+	font-family:"Calibri","sans-serif";
+	mso-ascii-font-family:Calibri;
+	mso-ascii-theme-font:minor-latin;
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:minor-fareast;
+	mso-hansi-font-family:Calibri;
+	mso-hansi-theme-font:minor-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:minor-bidi;
+	mso-ansi-language:PL;
+	mso-fareast-language:PL;}
+p.MsoDocumentMap, li.MsoDocumentMap, div.MsoDocumentMap
+	{mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-style-link:"Document Map Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:8.0pt;
+	font-family:"Tahoma","sans-serif";
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:minor-fareast;
+	mso-ansi-language:PL;
+	mso-fareast-language:PL;}
+p.MsoAcetate, li.MsoAcetate, div.MsoAcetate
+	{mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-style-link:"Balloon Text Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:8.0pt;
+	font-family:"Tahoma","sans-serif";
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:minor-fareast;
+	mso-ansi-language:PL;
+	mso-fareast-language:PL;}
+span.MsoPlaceholderText
+	{mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-style-unhide:no;
+	color:gray;}
+p.MsoListParagraph, li.MsoListParagraph, div.MsoListParagraph
+	{mso-style-priority:34;
+	mso-style-unhide:no;
+	mso-style-qformat:yes;
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:10.0pt;
+	margin-left:.5in;
+	mso-add-space:auto;
+	line-height:115%;
+	mso-pagination:widow-orphan;
+	font-size:11.0pt;
+	font-family:"Calibri","sans-serif";
+	mso-ascii-font-family:Calibri;
+	mso-ascii-theme-font:minor-latin;
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:minor-fareast;
+	mso-hansi-font-family:Calibri;
+	mso-hansi-theme-font:minor-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:minor-bidi;
+	mso-ansi-language:PL;
+	mso-fareast-language:PL;}
+p.MsoListParagraphCxSpFirst, li.MsoListParagraphCxSpFirst, div.MsoListParag=
+raphCxSpFirst
+	{mso-style-priority:34;
+	mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-type:export-only;
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	mso-add-space:auto;
+	line-height:115%;
+	mso-pagination:widow-orphan;
+	font-size:11.0pt;
+	font-family:"Calibri","sans-serif";
+	mso-ascii-font-family:Calibri;
+	mso-ascii-theme-font:minor-latin;
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:minor-fareast;
+	mso-hansi-font-family:Calibri;
+	mso-hansi-theme-font:minor-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:minor-bidi;
+	mso-ansi-language:PL;
+	mso-fareast-language:PL;}
+p.MsoListParagraphCxSpMiddle, li.MsoListParagraphCxSpMiddle, div.MsoListPar=
+agraphCxSpMiddle
+	{mso-style-priority:34;
+	mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-type:export-only;
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	mso-add-space:auto;
+	line-height:115%;
+	mso-pagination:widow-orphan;
+	font-size:11.0pt;
+	font-family:"Calibri","sans-serif";
+	mso-ascii-font-family:Calibri;
+	mso-ascii-theme-font:minor-latin;
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:minor-fareast;
+	mso-hansi-font-family:Calibri;
+	mso-hansi-theme-font:minor-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:minor-bidi;
+	mso-ansi-language:PL;
+	mso-fareast-language:PL;}
+p.MsoListParagraphCxSpLast, li.MsoListParagraphCxSpLast, div.MsoListParagra=
+phCxSpLast
+	{mso-style-priority:34;
+	mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-type:export-only;
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:10.0pt;
+	margin-left:.5in;
+	mso-add-space:auto;
+	line-height:115%;
+	mso-pagination:widow-orphan;
+	font-size:11.0pt;
+	font-family:"Calibri","sans-serif";
+	mso-ascii-font-family:Calibri;
+	mso-ascii-theme-font:minor-latin;
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:minor-fareast;
+	mso-hansi-font-family:Calibri;
+	mso-hansi-theme-font:minor-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:minor-bidi;
+	mso-ansi-language:PL;
+	mso-fareast-language:PL;}
+span.Heading1Char
+	{mso-style-name:"Heading 1 Char";
+	mso-style-priority:9;
+	mso-style-unhide:no;
+	mso-style-locked:yes;
+	mso-style-link:"Heading 1";
+	mso-ansi-font-size:14.0pt;
+	mso-bidi-font-size:14.0pt;
+	font-family:"Cambria","serif";
+	mso-ascii-font-family:Cambria;
+	mso-ascii-theme-font:major-latin;
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:major-fareast;
+	mso-hansi-font-family:Cambria;
+	mso-hansi-theme-font:major-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:major-bidi;
+	color:#365F91;
+	mso-themecolor:accent1;
+	mso-themeshade:191;
+	font-weight:bold;}
+span.HeaderChar
+	{mso-style-name:"Header Char";
+	mso-style-priority:99;
+	mso-style-unhide:no;
+	mso-style-locked:yes;
+	mso-style-link:Header;}
+span.FooterChar
+	{mso-style-name:"Footer Char";
+	mso-style-priority:99;
+	mso-style-unhide:no;
+	mso-style-locked:yes;
+	mso-style-link:Footer;}
+span.BalloonTextChar
+	{mso-style-name:"Balloon Text Char";
+	mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-style-unhide:no;
+	mso-style-locked:yes;
+	mso-style-link:"Balloon Text";
+	mso-ansi-font-size:8.0pt;
+	mso-bidi-font-size:8.0pt;
+	font-family:"Tahoma","sans-serif";
+	mso-ascii-font-family:Tahoma;
+	mso-hansi-font-family:Tahoma;
+	mso-bidi-font-family:Tahoma;}
+span.DocumentMapChar
+	{mso-style-name:"Document Map Char";
+	mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-style-unhide:no;
+	mso-style-locked:yes;
+	mso-style-link:"Document Map";
+	mso-ansi-font-size:8.0pt;
+	mso-bidi-font-size:8.0pt;
+	font-family:"Tahoma","sans-serif";
+	mso-ascii-font-family:Tahoma;
+	mso-hansi-font-family:Tahoma;
+	mso-bidi-font-family:Tahoma;}
+span.Heading2Char
+	{mso-style-name:"Heading 2 Char";
+	mso-style-priority:9;
+	mso-style-unhide:no;
+	mso-style-locked:yes;
+	mso-style-link:"Heading 2";
+	mso-ansi-font-size:13.0pt;
+	mso-bidi-font-size:13.0pt;
+	font-family:"Cambria","serif";
+	mso-ascii-font-family:Cambria;
+	mso-ascii-theme-font:major-latin;
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:major-fareast;
+	mso-hansi-font-family:Cambria;
+	mso-hansi-theme-font:major-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:major-bidi;
+	color:#4F81BD;
+	mso-themecolor:accent1;
+	font-weight:bold;}
+span.SpellE
+	{mso-style-name:"";
+	mso-spl-e:yes;}
+span.GramE
+	{mso-style-name:"";
+	mso-gram-e:yes;}
+.MsoChpDefault
+	{mso-style-type:export-only;
+	mso-default-props:yes;
+	font-family:"Calibri","sans-serif";
+	mso-ascii-font-family:Calibri;
+	mso-ascii-theme-font:minor-latin;
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:minor-fareast;
+	mso-hansi-font-family:Calibri;
+	mso-hansi-theme-font:minor-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:minor-bidi;
+	mso-ansi-language:PL;
+	mso-fareast-language:PL;}
+.MsoPapDefault
+	{mso-style-type:export-only;
+	margin-bottom:10.0pt;
+	line-height:115%;}
+ /* Page Definitions */
+ @page
+	{mso-footnote-separator:url("Example_Use_Case-CC_to_TFS_Migration_files/he=
+ader.htm") fs;
+	mso-footnote-continuation-separator:url("Example_Use_Case-CC_to_TFS_Migrat=
+ion_files/header.htm") fcs;
+	mso-endnote-separator:url("Example_Use_Case-CC_to_TFS_Migration_files/head=
+er.htm") es;
+	mso-endnote-continuation-separator:url("Example_Use_Case-CC_to_TFS_Migrati=
+on_files/header.htm") ecs;}
+@page WordSection1
+	{size:841.9pt 595.3pt;
+	mso-page-orientation:landscape;
+	margin:1.0in .75in 1.0in .75in;
+	mso-header-margin:.5in;
+	mso-footer-margin:.5in;
+	mso-header:url("Example_Use_Case-CC_to_TFS_Migration_files/header.htm") h1;
+	mso-footer:url("Example_Use_Case-CC_to_TFS_Migration_files/header.htm") f1;
+	mso-paper-source:0;}
+div.WordSection1
+	{page:WordSection1;}
+ /* List Definitions */
+ @list l0
+	{mso-list-id:34892177;
+	mso-list-type:hybrid;
+	mso-list-template-ids:1656900416 470351873 470351875 470351877 470351873 4=
+70351875 470351877 470351873 470351875 470351877;}
+@list l0:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:.25in;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l0:level2
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:.75in;
+	text-indent:-.25in;
+	font-family:"Courier New";}
+@list l0:level3
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:1.25in;
+	text-indent:-.25in;
+	font-family:Wingdings;}
+@list l0:level4
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:1.75in;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l0:level5
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:2.25in;
+	text-indent:-.25in;
+	font-family:"Courier New";}
+@list l0:level6
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:2.75in;
+	text-indent:-.25in;
+	font-family:Wingdings;}
+@list l0:level7
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:3.25in;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l0:level8
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:3.75in;
+	text-indent:-.25in;
+	font-family:"Courier New";}
+@list l0:level9
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:4.25in;
+	text-indent:-.25in;
+	font-family:Wingdings;}
+@list l1
+	{mso-list-id:621425475;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-1325267212 470351873 470351875 470351877 470351873 =
+470351875 470351877 470351873 470351875 470351877;}
+@list l1:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l1:level2
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Courier New";}
+@list l1:level3
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Wingdings;}
+@list l1:level4
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l1:level5
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Courier New";}
+@list l1:level6
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Wingdings;}
+@list l1:level7
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l1:level8
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Courier New";}
+@list l1:level9
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Wingdings;}
+@list l2
+	{mso-list-id:755638342;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-1200449542 68485121 68485123 68485125 68485121 6848=
+5123 68485125 68485121 68485123 68485125;}
+@list l2:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l2:level2
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Courier New";}
+@list l2:level3
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Wingdings;}
+@list l2:level4
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l2:level5
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Courier New";}
+@list l2:level6
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Wingdings;}
+@list l2:level7
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l2:level8
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Courier New";}
+@list l2:level9
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Wingdings;}
+@list l3
+	{mso-list-id:799349266;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-1370046700 68485121 68485123 68485125 68485121 6848=
+5123 68485125 68485121 68485123 68485125;}
+@list l3:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l3:level2
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Courier New";}
+@list l3:level3
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Wingdings;}
+@list l3:level4
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l3:level5
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Courier New";}
+@list l3:level6
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Wingdings;}
+@list l3:level7
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l3:level8
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Courier New";}
+@list l3:level9
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Wingdings;}
+@list l4
+	{mso-list-id:1060976642;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-593467834 470351873 470351875 470351877 470351873 4=
+70351875 470351877 470351873 470351875 470351877;}
+@list l4:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:.25in;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l4:level2
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:.75in;
+	text-indent:-.25in;
+	font-family:"Courier New";}
+@list l4:level3
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:1.25in;
+	text-indent:-.25in;
+	font-family:Wingdings;}
+@list l4:level4
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:1.75in;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l4:level5
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:2.25in;
+	text-indent:-.25in;
+	font-family:"Courier New";}
+@list l4:level6
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:2.75in;
+	text-indent:-.25in;
+	font-family:Wingdings;}
+@list l4:level7
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:3.25in;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l4:level8
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:3.75in;
+	text-indent:-.25in;
+	font-family:"Courier New";}
+@list l4:level9
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:4.25in;
+	text-indent:-.25in;
+	font-family:Wingdings;}
+@list l5
+	{mso-list-id:1559705116;
+	mso-list-type:hybrid;
+	mso-list-template-ids:679392544 470351873 470351875 470351877 470351873 47=
+0351875 470351877 470351873 470351875 470351877;}
+@list l5:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:.25in;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l5:level2
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:.75in;
+	text-indent:-.25in;
+	font-family:"Courier New";}
+@list l5:level3
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:1.25in;
+	text-indent:-.25in;
+	font-family:Wingdings;}
+@list l5:level4
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:1.75in;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l5:level5
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:2.25in;
+	text-indent:-.25in;
+	font-family:"Courier New";}
+@list l5:level6
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:2.75in;
+	text-indent:-.25in;
+	font-family:Wingdings;}
+@list l5:level7
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:3.25in;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l5:level8
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:3.75in;
+	text-indent:-.25in;
+	font-family:"Courier New";}
+@list l5:level9
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:4.25in;
+	text-indent:-.25in;
+	font-family:Wingdings;}
+@list l6
+	{mso-list-id:1626303392;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-257734 470351873 470351875 470351877 470351873 4703=
+51875 470351877 470351873 470351875 470351877;}
+@list l6:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l6:level2
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Courier New";}
+@list l6:level3
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Wingdings;}
+@list l6:level4
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l6:level5
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Courier New";}
+@list l6:level6
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Wingdings;}
+@list l6:level7
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l6:level8
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Courier New";}
+@list l6:level9
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Wingdings;}
+@list l7
+	{mso-list-id:1934433421;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-1683179192 67698703 67698713 67698715 67698703 6769=
+8713 67698715 67698703 67698713 67698715;}
+@list l7:level1
+	{mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l7:level2
+	{mso-level-number-format:alpha-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l7:level3
+	{mso-level-number-format:roman-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:right;
+	text-indent:-9.0pt;}
+@list l7:level4
+	{mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l7:level5
+	{mso-level-number-format:alpha-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l7:level6
+	{mso-level-number-format:roman-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:right;
+	text-indent:-9.0pt;}
+@list l7:level7
+	{mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l7:level8
+	{mso-level-number-format:alpha-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l7:level9
+	{mso-level-number-format:roman-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:right;
+	text-indent:-9.0pt;}
+ol
+	{margin-bottom:0in;}
+ul
+	{margin-bottom:0in;}
+-->
+</style>
+<!--[if gte mso 10]>
+<style>
+ /* Style Definitions */
+ table.MsoNormalTable
+	{mso-style-name:"Table Normal";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-style-parent:"";
+	mso-padding-alt:0in 5.4pt 0in 5.4pt;
+	mso-para-margin-top:0in;
+	mso-para-margin-right:0in;
+	mso-para-margin-bottom:10.0pt;
+	mso-para-margin-left:0in;
+	line-height:115%;
+	mso-pagination:widow-orphan;
+	font-size:11.0pt;
+	font-family:"Calibri","sans-serif";
+	mso-ascii-font-family:Calibri;
+	mso-ascii-theme-font:minor-latin;
+	mso-hansi-font-family:Calibri;
+	mso-hansi-theme-font:minor-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:minor-bidi;
+	mso-ansi-language:PL;
+	mso-fareast-language:PL;}
+table.MsoTableGrid
+	{mso-style-name:"Table Grid";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-priority:59;
+	mso-style-unhide:no;
+	border:solid black 1.0pt;
+	mso-border-themecolor:text1;
+	mso-border-alt:solid black .5pt;
+	mso-border-themecolor:text1;
+	mso-padding-alt:0in 5.4pt 0in 5.4pt;
+	mso-border-insideh:.5pt solid black;
+	mso-border-insideh-themecolor:text1;
+	mso-border-insidev:.5pt solid black;
+	mso-border-insidev-themecolor:text1;
+	mso-para-margin:0in;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:11.0pt;
+	font-family:"Calibri","sans-serif";
+	mso-ascii-font-family:Calibri;
+	mso-ascii-theme-font:minor-latin;
+	mso-hansi-font-family:Calibri;
+	mso-hansi-theme-font:minor-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:minor-bidi;
+	mso-ansi-language:PL;
+	mso-fareast-language:PL;}
+table.MsoTableMediumShading1Accent3
+	{mso-style-name:"Medium Shading 1 - Accent 3";
+	mso-tstyle-rowband-size:1;
+	mso-tstyle-colband-size:1;
+	mso-style-priority:63;
+	mso-style-unhide:no;
+	border:solid #B3CC82 1.0pt;
+	mso-border-themecolor:accent3;
+	mso-border-themetint:191;
+	mso-padding-alt:0in 5.4pt 0in 5.4pt;
+	mso-border-insideh:1.0pt solid #B3CC82;
+	mso-border-insideh-themecolor:accent3;
+	mso-border-insideh-themetint:191;
+	mso-para-margin:0in;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:11.0pt;
+	font-family:"Calibri","sans-serif";
+	mso-ascii-font-family:Calibri;
+	mso-ascii-theme-font:minor-latin;
+	mso-hansi-font-family:Calibri;
+	mso-hansi-theme-font:minor-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:minor-bidi;
+	mso-ansi-language:PL;
+	mso-fareast-language:PL;}
+table.MsoTableMediumShading1Accent3FirstRow
+	{mso-style-name:"Medium Shading 1 - Accent 3";
+	mso-table-condition:first-row;
+	mso-style-priority:63;
+	mso-style-unhide:no;
+	mso-tstyle-shading:#9BBB59;
+	mso-tstyle-shading-themecolor:accent3;
+	mso-tstyle-border-top:1.0pt solid #B3CC82;
+	mso-tstyle-border-top-themecolor:accent3;
+	mso-tstyle-border-top-themetint:191;
+	mso-tstyle-border-left:1.0pt solid #B3CC82;
+	mso-tstyle-border-left-themecolor:accent3;
+	mso-tstyle-border-left-themetint:191;
+	mso-tstyle-border-bottom:1.0pt solid #B3CC82;
+	mso-tstyle-border-bottom-themecolor:accent3;
+	mso-tstyle-border-bottom-themetint:191;
+	mso-tstyle-border-right:1.0pt solid #B3CC82;
+	mso-tstyle-border-right-themecolor:accent3;
+	mso-tstyle-border-right-themetint:191;
+	mso-tstyle-border-insideh:cell-none;
+	mso-tstyle-border-insidev:cell-none;
+	mso-para-margin-top:0in;
+	mso-para-margin-bottom:0in;
+	mso-para-margin-bottom:.0001pt;
+	line-height:normal;
+	color:white;
+	mso-themecolor:background1;
+	mso-ansi-font-weight:bold;
+	mso-bidi-font-weight:bold;}
+table.MsoTableMediumShading1Accent3LastRow
+	{mso-style-name:"Medium Shading 1 - Accent 3";
+	mso-table-condition:last-row;
+	mso-style-priority:63;
+	mso-style-unhide:no;
+	mso-tstyle-border-top:2.25pt double #B3CC82;
+	mso-tstyle-border-top-themecolor:accent3;
+	mso-tstyle-border-top-themetint:191;
+	mso-tstyle-border-left:1.0pt solid #B3CC82;
+	mso-tstyle-border-left-themecolor:accent3;
+	mso-tstyle-border-left-themetint:191;
+	mso-tstyle-border-bottom:1.0pt solid #B3CC82;
+	mso-tstyle-border-bottom-themecolor:accent3;
+	mso-tstyle-border-bottom-themetint:191;
+	mso-tstyle-border-right:1.0pt solid #B3CC82;
+	mso-tstyle-border-right-themecolor:accent3;
+	mso-tstyle-border-right-themetint:191;
+	mso-tstyle-border-insideh:cell-none;
+	mso-tstyle-border-insidev:cell-none;
+	mso-para-margin-top:0in;
+	mso-para-margin-bottom:0in;
+	mso-para-margin-bottom:.0001pt;
+	line-height:normal;
+	mso-ansi-font-weight:bold;
+	mso-bidi-font-weight:bold;}
+table.MsoTableMediumShading1Accent3FirstCol
+	{mso-style-name:"Medium Shading 1 - Accent 3";
+	mso-table-condition:first-column;
+	mso-style-priority:63;
+	mso-style-unhide:no;
+	mso-ansi-font-weight:bold;
+	mso-bidi-font-weight:bold;}
+table.MsoTableMediumShading1Accent3LastCol
+	{mso-style-name:"Medium Shading 1 - Accent 3";
+	mso-table-condition:last-column;
+	mso-style-priority:63;
+	mso-style-unhide:no;
+	mso-ansi-font-weight:bold;
+	mso-bidi-font-weight:bold;}
+table.MsoTableMediumShading1Accent3OddColumn
+	{mso-style-name:"Medium Shading 1 - Accent 3";
+	mso-table-condition:odd-column;
+	mso-style-priority:63;
+	mso-style-unhide:no;
+	mso-tstyle-shading:#E6EED5;
+	mso-tstyle-shading-themecolor:accent3;
+	mso-tstyle-shading-themetint:63;}
+table.MsoTableMediumShading1Accent3OddRow
+	{mso-style-name:"Medium Shading 1 - Accent 3";
+	mso-table-condition:odd-row;
+	mso-style-priority:63;
+	mso-style-unhide:no;
+	mso-tstyle-shading:#E6EED5;
+	mso-tstyle-shading-themecolor:accent3;
+	mso-tstyle-shading-themetint:63;
+	mso-tstyle-border-insideh:cell-none;
+	mso-tstyle-border-insidev:cell-none;}
+table.MsoTableMediumShading1Accent3EvenRow
+	{mso-style-name:"Medium Shading 1 - Accent 3";
+	mso-table-condition:even-row;
+	mso-style-priority:63;
+	mso-style-unhide:no;
+	mso-tstyle-border-insideh:cell-none;
+	mso-tstyle-border-insidev:cell-none;}
+table.LightList-Accent11
+	{mso-style-name:"Light List - Accent 11";
+	mso-tstyle-rowband-size:1;
+	mso-tstyle-colband-size:1;
+	mso-style-priority:61;
+	mso-style-unhide:no;
+	border:solid #4F81BD 1.0pt;
+	mso-border-themecolor:accent1;
+	mso-padding-alt:0in 5.4pt 0in 5.4pt;
+	mso-para-margin:0in;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:11.0pt;
+	font-family:"Calibri","sans-serif";
+	mso-ascii-font-family:Calibri;
+	mso-ascii-theme-font:minor-latin;
+	mso-hansi-font-family:Calibri;
+	mso-hansi-theme-font:minor-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:minor-bidi;
+	mso-ansi-language:PL;
+	mso-fareast-language:PL;}
+table.LightList-Accent11FirstRow
+	{mso-style-name:"Light List - Accent 11";
+	mso-table-condition:first-row;
+	mso-style-priority:61;
+	mso-style-unhide:no;
+	mso-tstyle-shading:#4F81BD;
+	mso-tstyle-shading-themecolor:accent1;
+	mso-para-margin-top:0in;
+	mso-para-margin-bottom:0in;
+	mso-para-margin-bottom:.0001pt;
+	line-height:normal;
+	color:white;
+	mso-themecolor:background1;
+	mso-ansi-font-weight:bold;
+	mso-bidi-font-weight:bold;}
+table.LightList-Accent11LastRow
+	{mso-style-name:"Light List - Accent 11";
+	mso-table-condition:last-row;
+	mso-style-priority:61;
+	mso-style-unhide:no;
+	mso-tstyle-border-top:2.25pt double #4F81BD;
+	mso-tstyle-border-top-themecolor:accent1;
+	mso-tstyle-border-left:1.0pt solid #4F81BD;
+	mso-tstyle-border-left-themecolor:accent1;
+	mso-tstyle-border-bottom:1.0pt solid #4F81BD;
+	mso-tstyle-border-bottom-themecolor:accent1;
+	mso-tstyle-border-right:1.0pt solid #4F81BD;
+	mso-tstyle-border-right-themecolor:accent1;
+	mso-para-margin-top:0in;
+	mso-para-margin-bottom:0in;
+	mso-para-margin-bottom:.0001pt;
+	line-height:normal;
+	mso-ansi-font-weight:bold;
+	mso-bidi-font-weight:bold;}
+table.LightList-Accent11FirstCol
+	{mso-style-name:"Light List - Accent 11";
+	mso-table-condition:first-column;
+	mso-style-priority:61;
+	mso-style-unhide:no;
+	mso-ansi-font-weight:bold;
+	mso-bidi-font-weight:bold;}
+table.LightList-Accent11LastCol
+	{mso-style-name:"Light List - Accent 11";
+	mso-table-condition:last-column;
+	mso-style-priority:61;
+	mso-style-unhide:no;
+	mso-ansi-font-weight:bold;
+	mso-bidi-font-weight:bold;}
+table.LightList-Accent11OddColumn
+	{mso-style-name:"Light List - Accent 11";
+	mso-table-condition:odd-column;
+	mso-style-priority:61;
+	mso-style-unhide:no;
+	mso-tstyle-border-top:1.0pt solid #4F81BD;
+	mso-tstyle-border-top-themecolor:accent1;
+	mso-tstyle-border-left:1.0pt solid #4F81BD;
+	mso-tstyle-border-left-themecolor:accent1;
+	mso-tstyle-border-bottom:1.0pt solid #4F81BD;
+	mso-tstyle-border-bottom-themecolor:accent1;
+	mso-tstyle-border-right:1.0pt solid #4F81BD;
+	mso-tstyle-border-right-themecolor:accent1;}
+table.LightList-Accent11OddRow
+	{mso-style-name:"Light List - Accent 11";
+	mso-table-condition:odd-row;
+	mso-style-priority:61;
+	mso-style-unhide:no;
+	mso-tstyle-border-top:1.0pt solid #4F81BD;
+	mso-tstyle-border-top-themecolor:accent1;
+	mso-tstyle-border-left:1.0pt solid #4F81BD;
+	mso-tstyle-border-left-themecolor:accent1;
+	mso-tstyle-border-bottom:1.0pt solid #4F81BD;
+	mso-tstyle-border-bottom-themecolor:accent1;
+	mso-tstyle-border-right:1.0pt solid #4F81BD;
+	mso-tstyle-border-right-themecolor:accent1;}
+table.MediumShading1-Accent11
+	{mso-style-name:"Medium Shading 1 - Accent 11";
+	mso-tstyle-rowband-size:1;
+	mso-tstyle-colband-size:1;
+	mso-style-priority:63;
+	mso-style-unhide:no;
+	border:solid #7BA0CD 1.0pt;
+	mso-border-themecolor:accent1;
+	mso-border-themetint:191;
+	mso-padding-alt:0in 5.4pt 0in 5.4pt;
+	mso-border-insideh:1.0pt solid #7BA0CD;
+	mso-border-insideh-themecolor:accent1;
+	mso-border-insideh-themetint:191;
+	mso-para-margin:0in;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:11.0pt;
+	font-family:"Calibri","sans-serif";
+	mso-ascii-font-family:Calibri;
+	mso-ascii-theme-font:minor-latin;
+	mso-hansi-font-family:Calibri;
+	mso-hansi-theme-font:minor-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:minor-bidi;
+	mso-ansi-language:PL;
+	mso-fareast-language:PL;}
+table.MediumShading1-Accent11FirstRow
+	{mso-style-name:"Medium Shading 1 - Accent 11";
+	mso-table-condition:first-row;
+	mso-style-priority:63;
+	mso-style-unhide:no;
+	mso-tstyle-shading:#4F81BD;
+	mso-tstyle-shading-themecolor:accent1;
+	mso-tstyle-border-top:1.0pt solid #7BA0CD;
+	mso-tstyle-border-top-themecolor:accent1;
+	mso-tstyle-border-top-themetint:191;
+	mso-tstyle-border-left:1.0pt solid #7BA0CD;
+	mso-tstyle-border-left-themecolor:accent1;
+	mso-tstyle-border-left-themetint:191;
+	mso-tstyle-border-bottom:1.0pt solid #7BA0CD;
+	mso-tstyle-border-bottom-themecolor:accent1;
+	mso-tstyle-border-bottom-themetint:191;
+	mso-tstyle-border-right:1.0pt solid #7BA0CD;
+	mso-tstyle-border-right-themecolor:accent1;
+	mso-tstyle-border-right-themetint:191;
+	mso-tstyle-border-insideh:cell-none;
+	mso-tstyle-border-insidev:cell-none;
+	mso-para-margin-top:0in;
+	mso-para-margin-bottom:0in;
+	mso-para-margin-bottom:.0001pt;
+	line-height:normal;
+	color:white;
+	mso-themecolor:background1;
+	mso-ansi-font-weight:bold;
+	mso-bidi-font-weight:bold;}
+table.MediumShading1-Accent11LastRow
+	{mso-style-name:"Medium Shading 1 - Accent 11";
+	mso-table-condition:last-row;
+	mso-style-priority:63;
+	mso-style-unhide:no;
+	mso-tstyle-border-top:2.25pt double #7BA0CD;
+	mso-tstyle-border-top-themecolor:accent1;
+	mso-tstyle-border-top-themetint:191;
+	mso-tstyle-border-left:1.0pt solid #7BA0CD;
+	mso-tstyle-border-left-themecolor:accent1;
+	mso-tstyle-border-left-themetint:191;
+	mso-tstyle-border-bottom:1.0pt solid #7BA0CD;
+	mso-tstyle-border-bottom-themecolor:accent1;
+	mso-tstyle-border-bottom-themetint:191;
+	mso-tstyle-border-right:1.0pt solid #7BA0CD;
+	mso-tstyle-border-right-themecolor:accent1;
+	mso-tstyle-border-right-themetint:191;
+	mso-tstyle-border-insideh:cell-none;
+	mso-tstyle-border-insidev:cell-none;
+	mso-para-margin-top:0in;
+	mso-para-margin-bottom:0in;
+	mso-para-margin-bottom:.0001pt;
+	line-height:normal;
+	mso-ansi-font-weight:bold;
+	mso-bidi-font-weight:bold;}
+table.MediumShading1-Accent11FirstCol
+	{mso-style-name:"Medium Shading 1 - Accent 11";
+	mso-table-condition:first-column;
+	mso-style-priority:63;
+	mso-style-unhide:no;
+	mso-ansi-font-weight:bold;
+	mso-bidi-font-weight:bold;}
+table.MediumShading1-Accent11LastCol
+	{mso-style-name:"Medium Shading 1 - Accent 11";
+	mso-table-condition:last-column;
+	mso-style-priority:63;
+	mso-style-unhide:no;
+	mso-ansi-font-weight:bold;
+	mso-bidi-font-weight:bold;}
+table.MediumShading1-Accent11OddColumn
+	{mso-style-name:"Medium Shading 1 - Accent 11";
+	mso-table-condition:odd-column;
+	mso-style-priority:63;
+	mso-style-unhide:no;
+	mso-tstyle-shading:#D3DFEE;
+	mso-tstyle-shading-themecolor:accent1;
+	mso-tstyle-shading-themetint:63;}
+table.MediumShading1-Accent11OddRow
+	{mso-style-name:"Medium Shading 1 - Accent 11";
+	mso-table-condition:odd-row;
+	mso-style-priority:63;
+	mso-style-unhide:no;
+	mso-tstyle-shading:#D3DFEE;
+	mso-tstyle-shading-themecolor:accent1;
+	mso-tstyle-shading-themetint:63;
+	mso-tstyle-border-insideh:cell-none;
+	mso-tstyle-border-insidev:cell-none;}
+table.MediumShading1-Accent11EvenRow
+	{mso-style-name:"Medium Shading 1 - Accent 11";
+	mso-table-condition:even-row;
+	mso-style-priority:63;
+	mso-style-unhide:no;
+	mso-tstyle-border-insideh:cell-none;
+	mso-tstyle-border-insidev:cell-none;}
+</style>
+<![endif]--><!--[if gte mso 9]><xml>
+ <o:shapedefaults v:ext=3D"edit" spidmax=3D"2049"/>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext=3D"edit">
+  <o:idmap v:ext=3D"edit" data=3D"1"/>
+ </o:shapelayout></xml><![endif]-->
+</head>
+
+<body lang=3DEN-US style=3D'tab-interval:.5in'>
+
+<div class=3DWordSection1>
+
+<h1><span lang=3DPL>POC</span></h1>
+
+<table class=3DMediumShading1-Accent11 border=3D1 cellspacing=3D0 cellpaddi=
+ng=3D0
+ style=3D'border-collapse:collapse;border:none;mso-border-alt:solid #7BA0CD=
+ 1.0pt;
+ mso-border-themecolor:accent1;mso-border-themetint:191;mso-yfti-tbllook:11=
+84;
+ mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr style=3D'mso-yfti-irow:-1;mso-yfti-firstrow:yes'>
+  <td width=3D205 valign=3Dtop style=3D'width:154.0pt;border:solid #7BA0CD =
+1.0pt;
+  mso-border-themecolor:accent1;mso-border-themetint:191;border-right:none;
+  background:#4F81BD;mso-background-themecolor:accent1;padding:0in 5.4pt 0i=
+n 5.4pt'>
+  <p class=3DMsoNormal style=3D'margin-bottom:0in;margin-bottom:.0001pt;lin=
+e-height:
+  normal;mso-yfti-cnfc:5'><b><span lang=3DPL style=3D'color:white;mso-theme=
+color:
+  background1'>Information<o:p></o:p></span></b></p>
+  </td>
+  <td width=3D762 valign=3Dtop style=3D'width:571.4pt;border:solid #7BA0CD =
+1.0pt;
+  mso-border-themecolor:accent1;mso-border-themetint:191;border-left:none;
+  background:#4F81BD;mso-background-themecolor:accent1;padding:0in 5.4pt 0i=
+n 5.4pt'>
+  <p class=3DMsoNormal style=3D'margin-bottom:0in;margin-bottom:.0001pt;lin=
+e-height:
+  normal;mso-yfti-cnfc:1'><b><span lang=3DPL style=3D'color:white;mso-theme=
+color:
+  background1'>Description<o:p></o:p></span></b></p>
+  </td>
+ </tr>
+ <tr style=3D'mso-yfti-irow:0'>
+  <td width=3D205 valign=3Dtop style=3D'width:154.0pt;border-top:none;borde=
+r-left:
+  solid #7BA0CD 1.0pt;mso-border-left-themecolor:accent1;mso-border-left-th=
+emetint:
+  191;border-bottom:solid #7BA0CD 1.0pt;mso-border-bottom-themecolor:accent=
+1;
+  mso-border-bottom-themetint:191;border-right:none;mso-border-top-alt:soli=
+d #7BA0CD 1.0pt;
+  mso-border-top-themecolor:accent1;mso-border-top-themetint:191;background:
+  #D3DFEE;mso-background-themecolor:accent1;mso-background-themetint:63;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=3DMsoNormal style=3D'margin-bottom:0in;margin-bottom:.0001pt;lin=
+e-height:
+  normal;mso-yfti-cnfc:68'><b><span lang=3DPL>Customer:<o:p></o:p></span></=
+b></p>
+  </td>
+  <td width=3D762 valign=3Dtop style=3D'width:571.4pt;border-top:none;borde=
+r-left:
+  none;border-bottom:solid #7BA0CD 1.0pt;mso-border-bottom-themecolor:accen=
+t1;
+  mso-border-bottom-themetint:191;border-right:solid #7BA0CD 1.0pt;mso-bord=
+er-right-themecolor:
+  accent1;mso-border-right-themetint:191;mso-border-top-alt:solid #7BA0CD 1=
+.0pt;
+  mso-border-top-themecolor:accent1;mso-border-top-themetint:191;background:
+  #D3DFEE;mso-background-themecolor:accent1;mso-background-themetint:63;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=3DMsoNormal style=3D'margin-bottom:0in;margin-bottom:.0001pt;lin=
+e-height:
+  normal;mso-yfti-cnfc:64'><span lang=3DPL style=3D'color:#0070C0'>MigrateM=
+eFromRationalTools</span><i
+  style=3D'mso-bidi-font-style:normal'><span lang=3DPL><o:p></o:p></span></=
+i></p>
+  </td>
+ </tr>
+ <tr style=3D'mso-yfti-irow:1;mso-yfti-lastrow:yes'>
+  <td width=3D205 valign=3Dtop style=3D'width:154.0pt;border-top:none;borde=
+r-left:
+  solid #7BA0CD 1.0pt;mso-border-left-themecolor:accent1;mso-border-left-th=
+emetint:
+  191;border-bottom:solid #7BA0CD 1.0pt;mso-border-bottom-themecolor:accent=
+1;
+  mso-border-bottom-themetint:191;border-right:none;mso-border-top-alt:soli=
+d #7BA0CD 1.0pt;
+  mso-border-top-themecolor:accent1;mso-border-top-themetint:191;padding:0i=
+n 5.4pt 0in 5.4pt'>
+  <p class=3DMsoNormal style=3D'margin-bottom:0in;margin-bottom:.0001pt;lin=
+e-height:
+  normal;mso-yfti-cnfc:132'><b><span lang=3DPL>POC:<o:p></o:p></span></b></=
+p>
+  </td>
+  <td width=3D762 valign=3Dtop style=3D'width:571.4pt;border-top:none;borde=
+r-left:
+  none;border-bottom:solid #7BA0CD 1.0pt;mso-border-bottom-themecolor:accen=
+t1;
+  mso-border-bottom-themetint:191;border-right:solid #7BA0CD 1.0pt;mso-bord=
+er-right-themecolor:
+  accent1;mso-border-right-themetint:191;mso-border-top-alt:solid #7BA0CD 1=
+.0pt;
+  mso-border-top-themecolor:accent1;mso-border-top-themetint:191;padding:0i=
+n 5.4pt 0in 5.4pt'>
+  <p class=3DMsoNormal style=3D'margin-bottom:0in;margin-bottom:.0001pt;lin=
+e-height:
+  normal;mso-yfti-cnfc:128'><i style=3D'mso-bidi-font-style:normal'><span
+  lang=3DPL>ClearCase / ClearQuest manual tip migration<o:p></o:p></span></=
+i></p>
+  </td>
+ </tr>
+</table>
+
+<h2><span lang=3DPL>Use case</span></h2>
+
+<h1><span style=3D'mso-ansi-language:EN-US'>Migrating GIS Project<o:p></o:p=
+></span></h1>
+
+<table class=3DMediumShading1-Accent11 border=3D1 cellspacing=3D0 cellpaddi=
+ng=3D0
+ width=3D967 style=3D'width:725.4pt;border-collapse:collapse;border:none;
+ mso-border-alt:solid #7BA0CD 1.0pt;mso-border-themecolor:accent1;mso-borde=
+r-themetint:
+ 191;mso-yfti-tbllook:1184;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr style=3D'mso-yfti-irow:-1;mso-yfti-firstrow:yes'>
+  <td width=3D205 valign=3Dtop style=3D'width:154.0pt;border:solid #7BA0CD =
+1.0pt;
+  mso-border-themecolor:accent1;mso-border-themetint:191;border-right:none;
+  background:#4F81BD;mso-background-themecolor:accent1;padding:0in 5.4pt 0i=
+n 5.4pt'>
+  <p class=3DMsoNormal style=3D'margin-bottom:0in;margin-bottom:.0001pt;lin=
+e-height:
+  normal;mso-yfti-cnfc:5'><b><span lang=3DPL style=3D'color:white;mso-theme=
+color:
+  background1'>Information<o:p></o:p></span></b></p>
+  </td>
+  <td width=3D762 valign=3Dtop style=3D'width:571.4pt;border:solid #7BA0CD =
+1.0pt;
+  mso-border-themecolor:accent1;mso-border-themetint:191;border-left:none;
+  background:#4F81BD;mso-background-themecolor:accent1;padding:0in 5.4pt 0i=
+n 5.4pt'>
+  <p class=3DMsoNormal style=3D'margin-bottom:0in;margin-bottom:.0001pt;lin=
+e-height:
+  normal;mso-yfti-cnfc:1'><b><span lang=3DPL style=3D'color:white;mso-theme=
+color:
+  background1'>Description<o:p></o:p></span></b></p>
+  </td>
+ </tr>
+ <tr style=3D'mso-yfti-irow:0'>
+  <td width=3D205 valign=3Dtop style=3D'width:154.0pt;border-top:none;borde=
+r-left:
+  solid #7BA0CD 1.0pt;mso-border-left-themecolor:accent1;mso-border-left-th=
+emetint:
+  191;border-bottom:solid #7BA0CD 1.0pt;mso-border-bottom-themecolor:accent=
+1;
+  mso-border-bottom-themetint:191;border-right:none;mso-border-top-alt:soli=
+d #7BA0CD 1.0pt;
+  mso-border-top-themecolor:accent1;mso-border-top-themetint:191;background:
+  #D3DFEE;mso-background-themecolor:accent1;mso-background-themetint:63;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=3DMsoNormal style=3D'margin-bottom:0in;margin-bottom:.0001pt;lin=
+e-height:
+  normal;mso-yfti-cnfc:68'><b><span lang=3DPL>Use Case Title:<o:p></o:p></s=
+pan></b></p>
+  </td>
+  <td width=3D762 valign=3Dtop style=3D'width:571.4pt;border-top:none;borde=
+r-left:
+  none;border-bottom:solid #7BA0CD 1.0pt;mso-border-bottom-themecolor:accen=
+t1;
+  mso-border-bottom-themetint:191;border-right:solid #7BA0CD 1.0pt;mso-bord=
+er-right-themecolor:
+  accent1;mso-border-right-themetint:191;mso-border-top-alt:solid #7BA0CD 1=
+.0pt;
+  mso-border-top-themecolor:accent1;mso-border-top-themetint:191;background:
+  #D3DFEE;mso-background-themecolor:accent1;mso-background-themetint:63;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=3DMsoNormal style=3D'margin-bottom:0in;margin-bottom:.0001pt;lin=
+e-height:
+  normal;mso-yfti-cnfc:64'><i style=3D'mso-bidi-font-style:normal'><span
+  style=3D'mso-ansi-language:EN-US'>Clear Case to TFS XYZ Project Migration=
+<o:p></o:p></span></i></p>
+  </td>
+ </tr>
+ <tr style=3D'mso-yfti-irow:1'>
+  <td width=3D205 valign=3Dtop style=3D'width:154.0pt;border-top:none;borde=
+r-left:
+  solid #7BA0CD 1.0pt;mso-border-left-themecolor:accent1;mso-border-left-th=
+emetint:
+  191;border-bottom:solid #7BA0CD 1.0pt;mso-border-bottom-themecolor:accent=
+1;
+  mso-border-bottom-themetint:191;border-right:none;mso-border-top-alt:soli=
+d #7BA0CD 1.0pt;
+  mso-border-top-themecolor:accent1;mso-border-top-themetint:191;padding:0i=
+n 5.4pt 0in 5.4pt'>
+  <p class=3DMsoNormal style=3D'margin-bottom:0in;margin-bottom:.0001pt;lin=
+e-height:
+  normal;mso-yfti-cnfc:132'><b><span lang=3DPL>Migration type<o:p></o:p></s=
+pan></b></p>
+  </td>
+  <td width=3D762 valign=3Dtop style=3D'width:571.4pt;border-top:none;borde=
+r-left:
+  none;border-bottom:solid #7BA0CD 1.0pt;mso-border-bottom-themecolor:accen=
+t1;
+  mso-border-bottom-themetint:191;border-right:solid #7BA0CD 1.0pt;mso-bord=
+er-right-themecolor:
+  accent1;mso-border-right-themetint:191;mso-border-top-alt:solid #7BA0CD 1=
+.0pt;
+  mso-border-top-themecolor:accent1;mso-border-top-themetint:191;padding:0i=
+n 5.4pt 0in 5.4pt'>
+  <p class=3DMsoNormal style=3D'margin-bottom:0in;margin-bottom:.0001pt;lin=
+e-height:
+  normal;mso-yfti-cnfc:128'><i style=3D'mso-bidi-font-style:normal'><span
+  style=3D'mso-ansi-language:EN-US'>Once of migration<o:p></o:p></span></i>=
+</p>
+  </td>
+ </tr>
+ <tr style=3D'mso-yfti-irow:2'>
+  <td width=3D205 valign=3Dtop style=3D'width:154.0pt;border-top:none;borde=
+r-left:
+  solid #7BA0CD 1.0pt;mso-border-left-themecolor:accent1;mso-border-left-th=
+emetint:
+  191;border-bottom:solid #7BA0CD 1.0pt;mso-border-bottom-themecolor:accent=
+1;
+  mso-border-bottom-themetint:191;border-right:none;mso-border-top-alt:soli=
+d #7BA0CD 1.0pt;
+  mso-border-top-themecolor:accent1;mso-border-top-themetint:191;background:
+  #D3DFEE;mso-background-themecolor:accent1;mso-background-themetint:63;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=3DMsoNormal style=3D'margin-bottom:0in;margin-bottom:.0001pt;lin=
+e-height:
+  normal;mso-yfti-cnfc:68'><b><span lang=3DPL>Data Volume<o:p></o:p></span>=
+</b></p>
+  </td>
+  <td width=3D762 valign=3Dtop style=3D'width:571.4pt;border-top:none;borde=
+r-left:
+  none;border-bottom:solid #7BA0CD 1.0pt;mso-border-bottom-themecolor:accen=
+t1;
+  mso-border-bottom-themetint:191;border-right:solid #7BA0CD 1.0pt;mso-bord=
+er-right-themecolor:
+  accent1;mso-border-right-themetint:191;mso-border-top-alt:solid #7BA0CD 1=
+.0pt;
+  mso-border-top-themecolor:accent1;mso-border-top-themetint:191;background:
+  #D3DFEE;mso-background-themecolor:accent1;mso-background-themetint:63;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=3DMsoNormal style=3D'margin-bottom:0in;margin-bottom:.0001pt;lin=
+e-height:
+  normal;mso-yfti-cnfc:64'><i style=3D'mso-bidi-font-style:normal'><span
+  style=3D'mso-ansi-language:EN-US'>~12000 of files to migrate;<span
+  style=3D'mso-spacerun:yes'>&nbsp; </span>500MB of data<o:p></o:p></span><=
+/i></p>
+  </td>
+ </tr>
+ <tr style=3D'mso-yfti-irow:3'>
+  <td width=3D205 valign=3Dtop style=3D'width:154.0pt;border-top:none;borde=
+r-left:
+  solid #7BA0CD 1.0pt;mso-border-left-themecolor:accent1;mso-border-left-th=
+emetint:
+  191;border-bottom:solid #7BA0CD 1.0pt;mso-border-bottom-themecolor:accent=
+1;
+  mso-border-bottom-themetint:191;border-right:none;mso-border-top-alt:soli=
+d #7BA0CD 1.0pt;
+  mso-border-top-themecolor:accent1;mso-border-top-themetint:191;padding:0i=
+n 5.4pt 0in 5.4pt'>
+  <p class=3DMsoNormal style=3D'margin-bottom:0in;margin-bottom:.0001pt;lin=
+e-height:
+  normal;mso-yfti-cnfc:132'><b><span lang=3DPL>Actors:<o:p></o:p></span></b=
+></p>
+  </td>
+  <td width=3D762 valign=3Dtop style=3D'width:571.4pt;border-top:none;borde=
+r-left:
+  none;border-bottom:solid #7BA0CD 1.0pt;mso-border-bottom-themecolor:accen=
+t1;
+  mso-border-bottom-themetint:191;border-right:solid #7BA0CD 1.0pt;mso-bord=
+er-right-themecolor:
+  accent1;mso-border-right-themetint:191;mso-border-top-alt:solid #7BA0CD 1=
+.0pt;
+  mso-border-top-themecolor:accent1;mso-border-top-themetint:191;padding:0i=
+n 5.4pt 0in 5.4pt'>
+  <p class=3DMsoNormal style=3D'margin-bottom:0in;margin-bottom:.0001pt;lin=
+e-height:
+  normal;mso-yfti-cnfc:128'><span class=3DSpellE><i style=3D'mso-bidi-font-=
+style:
+  normal'><span style=3D'mso-ansi-language:EN-US'>MigrateMeFromRationalTool=
+s</span></i></span><i
+  style=3D'mso-bidi-font-style:normal'><span style=3D'mso-ansi-language:EN-=
+US'> TFS
+  Administrator, Microsoft Consulting Services Poland<o:p></o:p></span></i>=
+</p>
+  </td>
+ </tr>
+ <tr style=3D'mso-yfti-irow:4'>
+  <td width=3D205 valign=3Dtop style=3D'width:154.0pt;border-top:none;borde=
+r-left:
+  solid #7BA0CD 1.0pt;mso-border-left-themecolor:accent1;mso-border-left-th=
+emetint:
+  191;border-bottom:solid #7BA0CD 1.0pt;mso-border-bottom-themecolor:accent=
+1;
+  mso-border-bottom-themetint:191;border-right:none;mso-border-top-alt:soli=
+d #7BA0CD 1.0pt;
+  mso-border-top-themecolor:accent1;mso-border-top-themetint:191;background:
+  #D3DFEE;mso-background-themecolor:accent1;mso-background-themetint:63;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=3DMsoNormal style=3D'margin-bottom:0in;margin-bottom:.0001pt;lin=
+e-height:
+  normal;mso-yfti-cnfc:68'><b><span style=3D'mso-ansi-language:EN-US'>Goal =
+and
+  scope in context:<o:p></o:p></span></b></p>
+  </td>
+  <td width=3D762 valign=3Dtop style=3D'width:571.4pt;border-top:none;borde=
+r-left:
+  none;border-bottom:solid #7BA0CD 1.0pt;mso-border-bottom-themecolor:accen=
+t1;
+  mso-border-bottom-themetint:191;border-right:solid #7BA0CD 1.0pt;mso-bord=
+er-right-themecolor:
+  accent1;mso-border-right-themetint:191;mso-border-top-alt:solid #7BA0CD 1=
+.0pt;
+  mso-border-top-themecolor:accent1;mso-border-top-themetint:191;background:
+  #D3DFEE;mso-background-themecolor:accent1;mso-background-themetint:63;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=3DMsoNormal style=3D'margin-bottom:0in;margin-bottom:.0001pt;lin=
+e-height:
+  normal;mso-yfti-cnfc:64'><i style=3D'mso-bidi-font-style:normal'><span
+  style=3D'mso-ansi-language:EN-US'>Migrate the version control data from <=
+span
+  class=3DSpellE>ClearCase</span> to Team Foundation Server<o:p></o:p></spa=
+n></i></p>
+  </td>
+ </tr>
+ <tr style=3D'mso-yfti-irow:5'>
+  <td width=3D205 valign=3Dtop style=3D'width:154.0pt;border-top:none;borde=
+r-left:
+  solid #7BA0CD 1.0pt;mso-border-left-themecolor:accent1;mso-border-left-th=
+emetint:
+  191;border-bottom:solid #7BA0CD 1.0pt;mso-border-bottom-themecolor:accent=
+1;
+  mso-border-bottom-themetint:191;border-right:none;mso-border-top-alt:soli=
+d #7BA0CD 1.0pt;
+  mso-border-top-themecolor:accent1;mso-border-top-themetint:191;padding:0i=
+n 5.4pt 0in 5.4pt'>
+  <p class=3DMsoNormal style=3D'margin-bottom:0in;margin-bottom:.0001pt;lin=
+e-height:
+  normal;mso-yfti-cnfc:132'><b><span lang=3DPL>Importance:<o:p></o:p></span=
+></b></p>
+  </td>
+  <td width=3D762 valign=3Dtop style=3D'width:571.4pt;border-top:none;borde=
+r-left:
+  none;border-bottom:solid #7BA0CD 1.0pt;mso-border-bottom-themecolor:accen=
+t1;
+  mso-border-bottom-themetint:191;border-right:solid #7BA0CD 1.0pt;mso-bord=
+er-right-themecolor:
+  accent1;mso-border-right-themetint:191;mso-border-top-alt:solid #7BA0CD 1=
+.0pt;
+  mso-border-top-themecolor:accent1;mso-border-top-themetint:191;padding:0i=
+n 5.4pt 0in 5.4pt'>
+  <p class=3DMsoNormal style=3D'margin-bottom:0in;margin-bottom:.0001pt;lin=
+e-height:
+  normal;mso-yfti-cnfc:128'><i style=3D'mso-bidi-font-style:normal'><span
+  lang=3DPL>Expected<o:p></o:p></span></i></p>
+  </td>
+ </tr>
+ <tr style=3D'mso-yfti-irow:6'>
+  <td width=3D205 valign=3Dtop style=3D'width:154.0pt;border-top:none;borde=
+r-left:
+  solid #7BA0CD 1.0pt;mso-border-left-themecolor:accent1;mso-border-left-th=
+emetint:
+  191;border-bottom:solid #7BA0CD 1.0pt;mso-border-bottom-themecolor:accent=
+1;
+  mso-border-bottom-themetint:191;border-right:none;mso-border-top-alt:soli=
+d #7BA0CD 1.0pt;
+  mso-border-top-themecolor:accent1;mso-border-top-themetint:191;background:
+  #D3DFEE;mso-background-themecolor:accent1;mso-background-themetint:63;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=3DMsoNormal style=3D'margin-bottom:0in;margin-bottom:.0001pt;lin=
+e-height:
+  normal;mso-yfti-cnfc:68'><b><span lang=3DPL>Risk:<o:p></o:p></span></b></=
+p>
+  </td>
+  <td width=3D762 valign=3Dtop style=3D'width:571.4pt;border-top:none;borde=
+r-left:
+  none;border-bottom:solid #7BA0CD 1.0pt;mso-border-bottom-themecolor:accen=
+t1;
+  mso-border-bottom-themetint:191;border-right:solid #7BA0CD 1.0pt;mso-bord=
+er-right-themecolor:
+  accent1;mso-border-right-themetint:191;mso-border-top-alt:solid #7BA0CD 1=
+.0pt;
+  mso-border-top-themecolor:accent1;mso-border-top-themetint:191;background:
+  #D3DFEE;mso-background-themecolor:accent1;mso-background-themetint:63;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=3DMsoNormal style=3D'margin-bottom:0in;margin-bottom:.0001pt;lin=
+e-height:
+  normal;mso-yfti-cnfc:64'><i style=3D'mso-bidi-font-style:normal'><span
+  style=3D'mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></i></p>
+  </td>
+ </tr>
+ <tr style=3D'mso-yfti-irow:7'>
+  <td width=3D205 valign=3Dtop style=3D'width:154.0pt;border-top:none;borde=
+r-left:
+  solid #7BA0CD 1.0pt;mso-border-left-themecolor:accent1;mso-border-left-th=
+emetint:
+  191;border-bottom:solid #7BA0CD 1.0pt;mso-border-bottom-themecolor:accent=
+1;
+  mso-border-bottom-themetint:191;border-right:none;mso-border-top-alt:soli=
+d #7BA0CD 1.0pt;
+  mso-border-top-themecolor:accent1;mso-border-top-themetint:191;padding:0i=
+n 5.4pt 0in 5.4pt'>
+  <p class=3DMsoNormal style=3D'margin-bottom:0in;margin-bottom:.0001pt;lin=
+e-height:
+  normal;mso-yfti-cnfc:132'><b><span lang=3DPL>Preconditions:<o:p></o:p></s=
+pan></b></p>
+  </td>
+  <td width=3D762 valign=3Dtop style=3D'width:571.4pt;border-top:none;borde=
+r-left:
+  none;border-bottom:solid #7BA0CD 1.0pt;mso-border-bottom-themecolor:accen=
+t1;
+  mso-border-bottom-themetint:191;border-right:solid #7BA0CD 1.0pt;mso-bord=
+er-right-themecolor:
+  accent1;mso-border-right-themetint:191;mso-border-top-alt:solid #7BA0CD 1=
+.0pt;
+  mso-border-top-themecolor:accent1;mso-border-top-themetint:191;padding:0i=
+n 5.4pt 0in 5.4pt'>
+  <p class=3DMsoListParagraphCxSpFirst style=3D'margin-top:0in;margin-right=
+:0in;
+  margin-bottom:0in;margin-left:.25in;margin-bottom:.0001pt;mso-add-space:a=
+uto;
+  text-indent:-.25in;line-height:normal;mso-list:l0 level1 lfo1;mso-yfti-cn=
+fc:
+  128'><![if !supportLists]><span style=3D'font-family:Symbol;mso-fareast-f=
+ont-family:
+  Symbol;mso-bidi-font-family:Symbol;mso-ansi-language:EN-US'><span
+  style=3D'mso-list:Ignore'>&middot;<span style=3D'font:7.0pt "Times New Ro=
+man"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span></span><![endif]><i style=3D'mso-bidi-font-style:normal'><s=
+pan
+  style=3D'mso-ansi-language:EN-US'>Team Foundation Server environment inst=
+alled<o:p></o:p></span></i></p>
+  <p class=3DMsoListParagraphCxSpMiddle style=3D'margin-top:0in;margin-righ=
+t:0in;
+  margin-bottom:0in;margin-left:.75in;margin-bottom:.0001pt;mso-add-space:a=
+uto;
+  text-indent:-.25in;line-height:normal;mso-list:l0 level2 lfo1;mso-yfti-cn=
+fc:
+  128'><![if !supportLists]><span style=3D'font-family:"Courier New";mso-fa=
+reast-font-family:
+  "Courier New";mso-ansi-language:EN-US'><span style=3D'mso-list:Ignore'>o<=
+span
+  style=3D'font:7.0pt "Times New Roman"'>&nbsp;&nbsp; </span></span></span>=
+<![endif]><i
+  style=3D'mso-bidi-font-style:normal'><span style=3D'mso-ansi-language:EN-=
+US'>MSF
+  for CMMI v4.2 template is use for target projects<o:p></o:p></span></i></=
+p>
+  <p class=3DMsoListParagraphCxSpMiddle style=3D'margin-top:0in;margin-righ=
+t:0in;
+  margin-bottom:0in;margin-left:.75in;margin-bottom:.0001pt;mso-add-space:a=
+uto;
+  text-indent:-.25in;line-height:normal;mso-list:l0 level2 lfo1;mso-yfti-cn=
+fc:
+  128'><![if !supportLists]><span style=3D'font-family:"Courier New";mso-fa=
+reast-font-family:
+  "Courier New";mso-ansi-language:EN-US'><span style=3D'mso-list:Ignore'>o<=
+span
+  style=3D'font:7.0pt "Times New Roman"'>&nbsp;&nbsp; </span></span></span>=
+<![endif]><i
+  style=3D'mso-bidi-font-style:normal'><span style=3D'mso-ansi-language:EN-=
+US'>No
+  customizations are implemented for TFS template <o:p></o:p></span></i></p>
+  <p class=3DMsoListParagraphCxSpMiddle style=3D'margin-top:0in;margin-righ=
+t:0in;
+  margin-bottom:0in;margin-left:.25in;margin-bottom:.0001pt;mso-add-space:a=
+uto;
+  text-indent:-.25in;line-height:normal;mso-list:l0 level1 lfo1;mso-yfti-cn=
+fc:
+  128'><![if !supportLists]><span style=3D'font-family:Symbol;mso-fareast-f=
+ont-family:
+  Symbol;mso-bidi-font-family:Symbol;mso-ansi-language:EN-US'><span
+  style=3D'mso-list:Ignore'>&middot;<span style=3D'font:7.0pt "Times New Ro=
+man"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span></span><![endif]><span class=3DSpellE><i style=3D'mso-bidi-=
+font-style:
+  normal'><span style=3D'mso-ansi-language:EN-US'>ClearCase</span></i></spa=
+n><i
+  style=3D'mso-bidi-font-style:normal'><span style=3D'mso-ansi-language:EN-=
+US'>
+  environment installed and configured for UCM (Rational Unified Change
+  Management)<o:p></o:p></span></i></p>
+  <p class=3DMsoListParagraphCxSpMiddle style=3D'margin-top:0in;margin-righ=
+t:0in;
+  margin-bottom:0in;margin-left:.25in;margin-bottom:.0001pt;mso-add-space:a=
+uto;
+  text-indent:-.25in;line-height:normal;mso-list:l0 level1 lfo1;mso-yfti-cn=
+fc:
+  128'><![if !supportLists]><span style=3D'font-family:Symbol;mso-fareast-f=
+ont-family:
+  Symbol;mso-bidi-font-family:Symbol;mso-ansi-language:EN-US'><span
+  style=3D'mso-list:Ignore'>&middot;<span style=3D'font:7.0pt "Times New Ro=
+man"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span></span><![endif]><i style=3D'mso-bidi-font-style:normal'><s=
+pan
+  style=3D'mso-ansi-language:EN-US'>The set of branches for migration is
+  specified<o:p></o:p></span></i></p>
+  <p class=3DMsoListParagraphCxSpMiddle style=3D'margin-top:0in;margin-righ=
+t:0in;
+  margin-bottom:0in;margin-left:.75in;margin-bottom:.0001pt;mso-add-space:a=
+uto;
+  text-indent:-.25in;line-height:normal;mso-list:l0 level2 lfo1;mso-yfti-cn=
+fc:
+  128'><![if !supportLists]><span style=3D'font-family:"Courier New";mso-fa=
+reast-font-family:
+  "Courier New";mso-ansi-language:EN-US'><span style=3D'mso-list:Ignore'>o<=
+span
+  style=3D'font:7.0pt "Times New Roman"'>&nbsp;&nbsp; </span></span></span>=
+<![endif]><i
+  style=3D'mso-bidi-font-style:normal'><span style=3D'mso-ansi-language:EN-=
+US'>3
+  branches (Integration, Development, Release)<o:p></o:p></span></i></p>
+  <p class=3DMsoListParagraphCxSpMiddle style=3D'margin-top:0in;margin-righ=
+t:0in;
+  margin-bottom:0in;margin-left:.75in;margin-bottom:.0001pt;mso-add-space:a=
+uto;
+  text-indent:-.25in;line-height:normal;mso-list:l0 level2 lfo1;mso-yfti-cn=
+fc:
+  128'><![if !supportLists]><span style=3D'font-family:"Courier New";mso-fa=
+reast-font-family:
+  "Courier New";mso-ansi-language:EN-US'><span style=3D'mso-list:Ignore'>o<=
+span
+  style=3D'font:7.0pt "Times New Roman"'>&nbsp;&nbsp; </span></span></span>=
+<![endif]><i
+  style=3D'mso-bidi-font-style:normal'><span style=3D'mso-ansi-language:EN-=
+US'>Only
+  latest version of source tree is to be migrated<o:p></o:p></span></i></p>
+  <p class=3DMsoListParagraphCxSpMiddle style=3D'margin-top:0in;margin-righ=
+t:0in;
+  margin-bottom:0in;margin-left:.75in;margin-bottom:.0001pt;mso-add-space:a=
+uto;
+  text-indent:-.25in;line-height:normal;mso-list:l0 level2 lfo1;mso-yfti-cn=
+fc:
+  128'><![if !supportLists]><span style=3D'font-family:"Courier New";mso-fa=
+reast-font-family:
+  "Courier New";mso-ansi-language:EN-US'><span style=3D'mso-list:Ignore'>o<=
+span
+  style=3D'font:7.0pt "Times New Roman"'>&nbsp;&nbsp; </span></span></span>=
+<![endif]><i
+  style=3D'mso-bidi-font-style:normal'><span style=3D'mso-ansi-language:EN-=
+US'>No
+  parent-child relationship is to be migrated<o:p></o:p></span></i></p>
+  <p class=3DMsoListParagraphCxSpMiddle style=3D'margin-top:0in;margin-righ=
+t:0in;
+  margin-bottom:0in;margin-left:.25in;margin-bottom:.0001pt;mso-add-space:a=
+uto;
+  text-indent:-.25in;line-height:normal;mso-list:l0 level1 lfo1;mso-yfti-cn=
+fc:
+  128'><![if !supportLists]><span style=3D'font-family:Symbol;mso-fareast-f=
+ont-family:
+  Symbol;mso-bidi-font-family:Symbol;mso-ansi-language:EN-US'><span
+  style=3D'mso-list:Ignore'>&middot;<span style=3D'font:7.0pt "Times New Ro=
+man"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span></span><![endif]><i style=3D'mso-bidi-font-style:normal'><s=
+pan
+  style=3D'mso-ansi-language:EN-US'>Set of Application Verification Test (A=
+VT) is
+  defined for every application version (branch) to verify the correctness
+  source files data and project. It consists of the following conditions:<o=
+:p></o:p></span></i></p>
+  <p class=3DMsoListParagraphCxSpMiddle style=3D'margin-top:0in;margin-righ=
+t:0in;
+  margin-bottom:0in;margin-left:.75in;margin-bottom:.0001pt;mso-add-space:a=
+uto;
+  text-indent:-.25in;line-height:normal;mso-list:l0 level2 lfo1;mso-yfti-cn=
+fc:
+  128'><![if !supportLists]><span style=3D'font-family:"Courier New";mso-fa=
+reast-font-family:
+  "Courier New";mso-ansi-language:EN-US'><span style=3D'mso-list:Ignore'>o<=
+span
+  style=3D'font:7.0pt "Times New Roman"'>&nbsp;&nbsp; </span></span></span>=
+<![endif]><i
+  style=3D'mso-bidi-font-style:normal'><span style=3D'mso-ansi-language:EN-=
+US'>Successful
+  build for application<o:p></o:p></span></i></p>
+  <p class=3DMsoListParagraphCxSpMiddle style=3D'margin-top:0in;margin-righ=
+t:0in;
+  margin-bottom:0in;margin-left:.75in;margin-bottom:.0001pt;mso-add-space:a=
+uto;
+  text-indent:-.25in;line-height:normal;mso-list:l0 level2 lfo1;mso-yfti-cn=
+fc:
+  128'><![if !supportLists]><span style=3D'font-family:"Courier New";mso-fa=
+reast-font-family:
+  "Courier New";mso-ansi-language:EN-US'><span style=3D'mso-list:Ignore'>o<=
+span
+  style=3D'font:7.0pt "Times New Roman"'>&nbsp;&nbsp; </span></span></span>=
+<![endif]><i
+  style=3D'mso-bidi-font-style:normal'><span style=3D'mso-ansi-language:EN-=
+US'>Application
+  can run <o:p></o:p></span></i></p>
+  <p class=3DMsoListParagraphCxSpLast style=3D'margin-top:0in;margin-right:=
+0in;
+  margin-bottom:0in;margin-left:.75in;margin-bottom:.0001pt;mso-add-space:a=
+uto;
+  text-indent:-.25in;line-height:normal;mso-list:l0 level2 lfo1;mso-yfti-cn=
+fc:
+  128'><![if !supportLists]><span style=3D'font-family:"Courier New";mso-fa=
+reast-font-family:
+  "Courier New";mso-ansi-language:EN-US'><span style=3D'mso-list:Ignore'>o<=
+span
+  style=3D'font:7.0pt "Times New Roman"'>&nbsp;&nbsp; </span></span></span>=
+<![endif]><i
+  style=3D'mso-bidi-font-style:normal'><span style=3D'mso-ansi-language:EN-=
+US'>Set
+  of Tests is defined that verify that application works correctly<o:p></o:=
+p></span></i></p>
+  </td>
+ </tr>
+ <tr style=3D'mso-yfti-irow:8'>
+  <td width=3D205 valign=3Dtop style=3D'width:154.0pt;border-top:none;borde=
+r-left:
+  solid #7BA0CD 1.0pt;mso-border-left-themecolor:accent1;mso-border-left-th=
+emetint:
+  191;border-bottom:solid #7BA0CD 1.0pt;mso-border-bottom-themecolor:accent=
+1;
+  mso-border-bottom-themetint:191;border-right:none;mso-border-top-alt:soli=
+d #7BA0CD 1.0pt;
+  mso-border-top-themecolor:accent1;mso-border-top-themetint:191;background:
+  #D3DFEE;mso-background-themecolor:accent1;mso-background-themetint:63;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=3DMsoNormal style=3D'margin-bottom:0in;margin-bottom:.0001pt;lin=
+e-height:
+  normal;mso-yfti-cnfc:68'><b><span lang=3DPL>Open issues &amp; notes:<o:p>=
+</o:p></span></b></p>
+  </td>
+  <td width=3D762 valign=3Dtop style=3D'width:571.4pt;border-top:none;borde=
+r-left:
+  none;border-bottom:solid #7BA0CD 1.0pt;mso-border-bottom-themecolor:accen=
+t1;
+  mso-border-bottom-themetint:191;border-right:solid #7BA0CD 1.0pt;mso-bord=
+er-right-themecolor:
+  accent1;mso-border-right-themetint:191;mso-border-top-alt:solid #7BA0CD 1=
+.0pt;
+  mso-border-top-themecolor:accent1;mso-border-top-themetint:191;background:
+  #D3DFEE;mso-background-themecolor:accent1;mso-background-themetint:63;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=3DMsoListParagraphCxSpFirst style=3D'margin-top:0in;margin-right=
+:0in;
+  margin-bottom:0in;margin-left:.25in;margin-bottom:.0001pt;mso-add-space:a=
+uto;
+  text-indent:-.25in;line-height:normal;mso-list:l5 level1 lfo5;mso-yfti-cn=
+fc:
+  64'><![if !supportLists]><span style=3D'font-family:Symbol;mso-fareast-fo=
+nt-family:
+  Symbol;mso-bidi-font-family:Symbol;mso-ansi-language:EN-US'><span
+  style=3D'mso-list:Ignore'>&middot;<span style=3D'font:7.0pt "Times New Ro=
+man"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span></span><![endif]><i style=3D'mso-bidi-font-style:normal'><s=
+pan
+  style=3D'mso-ansi-language:EN-US'>The AVT for the project is under
+  investigation<o:p></o:p></span></i></p>
+  <p class=3DMsoListParagraphCxSpLast style=3D'margin-top:0in;margin-right:=
+0in;
+  margin-bottom:0in;margin-left:.25in;margin-bottom:.0001pt;mso-add-space:a=
+uto;
+  text-indent:-.25in;line-height:normal;mso-list:l5 level1 lfo5;mso-yfti-cn=
+fc:
+  64'><![if !supportLists]><span style=3D'font-family:Symbol;mso-fareast-fo=
+nt-family:
+  Symbol;mso-bidi-font-family:Symbol;mso-ansi-language:EN-US'><span
+  style=3D'mso-list:Ignore'>&middot;<span style=3D'font:7.0pt "Times New Ro=
+man"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span></span><![endif]><i style=3D'mso-bidi-font-style:normal'><s=
+pan
+  style=3D'mso-ansi-language:EN-US'>Exact folder structure and content is u=
+nder
+  investigation.<o:p></o:p></span></i></p>
+  </td>
+ </tr>
+ <tr style=3D'mso-yfti-irow:9;mso-yfti-lastrow:yes'>
+  <td width=3D205 valign=3Dtop style=3D'width:154.0pt;border-top:none;borde=
+r-left:
+  solid #7BA0CD 1.0pt;mso-border-left-themecolor:accent1;mso-border-left-th=
+emetint:
+  191;border-bottom:solid #7BA0CD 1.0pt;mso-border-bottom-themecolor:accent=
+1;
+  mso-border-bottom-themetint:191;border-right:none;mso-border-top-alt:soli=
+d #7BA0CD 1.0pt;
+  mso-border-top-themecolor:accent1;mso-border-top-themetint:191;padding:0i=
+n 5.4pt 0in 5.4pt'>
+  <p class=3DMsoNormal style=3D'margin-bottom:0in;margin-bottom:.0001pt;lin=
+e-height:
+  normal;mso-yfti-cnfc:132'><b><span style=3D'mso-ansi-language:EN-US'>Atta=
+chments<o:p></o:p></span></b></p>
+  </td>
+  <td width=3D762 valign=3Dtop style=3D'width:571.4pt;border-top:none;borde=
+r-left:
+  none;border-bottom:solid #7BA0CD 1.0pt;mso-border-bottom-themecolor:accen=
+t1;
+  mso-border-bottom-themetint:191;border-right:solid #7BA0CD 1.0pt;mso-bord=
+er-right-themecolor:
+  accent1;mso-border-right-themetint:191;mso-border-top-alt:solid #7BA0CD 1=
+.0pt;
+  mso-border-top-themecolor:accent1;mso-border-top-themetint:191;padding:0i=
+n 5.4pt 0in 5.4pt'>
+  <p class=3DMsoNormal style=3D'margin-bottom:0in;margin-bottom:.0001pt;lin=
+e-height:
+  normal;mso-yfti-cnfc:128'><i style=3D'mso-bidi-font-style:normal'><span
+  style=3D'mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></i></p>
+  </td>
+ </tr>
+</table>
+
+<h2><span lang=3DPL>Scenario</span></h2>
+
+<table class=3DMediumShading1-Accent11 border=3D1 cellspacing=3D0 cellpaddi=
+ng=3D0
+ width=3D967 style=3D'width:725.4pt;border-collapse:collapse;border:none;
+ mso-border-alt:solid #7BA0CD 1.0pt;mso-border-themecolor:accent1;mso-borde=
+r-themetint:
+ 191;mso-yfti-tbllook:1184;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr style=3D'mso-yfti-irow:-1;mso-yfti-firstrow:yes'>
+  <td width=3D205 valign=3Dtop style=3D'width:154.0pt;border:solid #7BA0CD =
+1.0pt;
+  mso-border-themecolor:accent1;mso-border-themetint:191;border-right:none;
+  background:#4F81BD;mso-background-themecolor:accent1;padding:0in 5.4pt 0i=
+n 5.4pt'>
+  <p class=3DMsoNormal style=3D'margin-bottom:0in;margin-bottom:.0001pt;lin=
+e-height:
+  normal;mso-yfti-cnfc:5'><b><span lang=3DPL style=3D'color:white;mso-theme=
+color:
+  background1'>Step<o:p></o:p></span></b></p>
+  </td>
+  <td width=3D762 valign=3Dtop style=3D'width:571.4pt;border:solid #7BA0CD =
+1.0pt;
+  mso-border-themecolor:accent1;mso-border-themetint:191;border-left:none;
+  background:#4F81BD;mso-background-themecolor:accent1;padding:0in 5.4pt 0i=
+n 5.4pt'>
+  <p class=3DMsoNormal style=3D'margin-bottom:0in;margin-bottom:.0001pt;lin=
+e-height:
+  normal;mso-yfti-cnfc:1'><b><span lang=3DPL style=3D'color:white;mso-theme=
+color:
+  background1'>Detailed description<o:p></o:p></span></b></p>
+  </td>
+ </tr>
+ <tr style=3D'mso-yfti-irow:0'>
+  <td width=3D205 valign=3Dtop style=3D'width:154.0pt;border-top:none;borde=
+r-left:
+  solid #7BA0CD 1.0pt;mso-border-left-themecolor:accent1;mso-border-left-th=
+emetint:
+  191;border-bottom:solid #7BA0CD 1.0pt;mso-border-bottom-themecolor:accent=
+1;
+  mso-border-bottom-themetint:191;border-right:none;mso-border-top-alt:soli=
+d #7BA0CD 1.0pt;
+  mso-border-top-themecolor:accent1;mso-border-top-themetint:191;background:
+  #D3DFEE;mso-background-themecolor:accent1;mso-background-themetint:63;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=3DMsoListParagraph style=3D'margin-bottom:0in;margin-bottom:.000=
+1pt;
+  mso-add-space:auto;text-indent:-.25in;line-height:normal;mso-list:l7 leve=
+l1 lfo8;
+  mso-yfti-cnfc:68'><![if !supportLists]><b><span lang=3DPL style=3D'mso-fa=
+reast-font-family:
+  Calibri;mso-fareast-theme-font:minor-latin;mso-bidi-font-family:Calibri;
+  mso-bidi-theme-font:minor-latin'><span style=3D'mso-list:Ignore'>1.<span
+  style=3D'font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbs=
+p; </span></span></span></b><![endif]><b><span
+  lang=3DPL><o:p>&nbsp;</o:p></span></b></p>
+  </td>
+  <td width=3D762 valign=3Dtop style=3D'width:571.4pt;border-top:none;borde=
+r-left:
+  none;border-bottom:solid #7BA0CD 1.0pt;mso-border-bottom-themecolor:accen=
+t1;
+  mso-border-bottom-themetint:191;border-right:solid #7BA0CD 1.0pt;mso-bord=
+er-right-themecolor:
+  accent1;mso-border-right-themetint:191;mso-border-top-alt:solid #7BA0CD 1=
+.0pt;
+  mso-border-top-themecolor:accent1;mso-border-top-themetint:191;background:
+  #D3DFEE;mso-background-themecolor:accent1;mso-background-themetint:63;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=3DMsoNormal style=3D'margin-bottom:0in;margin-bottom:.0001pt;lin=
+e-height:
+  normal;mso-yfti-cnfc:64'><i style=3D'mso-bidi-font-style:normal'><span
+  style=3D'mso-ansi-language:EN-US'>Verify the correctness of current solut=
+ion
+  and source files in the CC according to AVT<o:p></o:p></span></i></p>
+  </td>
+ </tr>
+ <tr style=3D'mso-yfti-irow:1'>
+  <td width=3D205 valign=3Dtop style=3D'width:154.0pt;border-top:none;borde=
+r-left:
+  solid #7BA0CD 1.0pt;mso-border-left-themecolor:accent1;mso-border-left-th=
+emetint:
+  191;border-bottom:solid #7BA0CD 1.0pt;mso-border-bottom-themecolor:accent=
+1;
+  mso-border-bottom-themetint:191;border-right:none;mso-border-top-alt:soli=
+d #7BA0CD 1.0pt;
+  mso-border-top-themecolor:accent1;mso-border-top-themetint:191;padding:0i=
+n 5.4pt 0in 5.4pt'>
+  <p class=3DMsoListParagraph style=3D'margin-bottom:0in;margin-bottom:.000=
+1pt;
+  mso-add-space:auto;text-indent:-.25in;line-height:normal;mso-list:l7 leve=
+l1 lfo8;
+  mso-yfti-cnfc:132'><![if !supportLists]><b><span style=3D'mso-fareast-fon=
+t-family:
+  Calibri;mso-fareast-theme-font:minor-latin;mso-bidi-font-family:Calibri;
+  mso-bidi-theme-font:minor-latin;mso-ansi-language:EN-US'><span
+  style=3D'mso-list:Ignore'>2.<span style=3D'font:7.0pt "Times New Roman"'>=
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span></span></b><![endif]><b><span style=3D'mso-ansi-language:EN=
+-US'><o:p>&nbsp;</o:p></span></b></p>
+  </td>
+  <td width=3D762 valign=3Dtop style=3D'width:571.4pt;border-top:none;borde=
+r-left:
+  none;border-bottom:solid #7BA0CD 1.0pt;mso-border-bottom-themecolor:accen=
+t1;
+  mso-border-bottom-themetint:191;border-right:solid #7BA0CD 1.0pt;mso-bord=
+er-right-themecolor:
+  accent1;mso-border-right-themetint:191;mso-border-top-alt:solid #7BA0CD 1=
+.0pt;
+  mso-border-top-themecolor:accent1;mso-border-top-themetint:191;padding:0i=
+n 5.4pt 0in 5.4pt'>
+  <p class=3DMsoNormal style=3D'margin-bottom:0in;margin-bottom:.0001pt;lin=
+e-height:
+  normal;mso-yfti-cnfc:128'><i style=3D'mso-bidi-font-style:normal'><span
+  style=3D'mso-ansi-language:EN-US'>Create Team Project for application<o:p=
+></o:p></span></i></p>
+  </td>
+ </tr>
+ <tr style=3D'mso-yfti-irow:2'>
+  <td width=3D205 valign=3Dtop style=3D'width:154.0pt;border-top:none;borde=
+r-left:
+  solid #7BA0CD 1.0pt;mso-border-left-themecolor:accent1;mso-border-left-th=
+emetint:
+  191;border-bottom:solid #7BA0CD 1.0pt;mso-border-bottom-themecolor:accent=
+1;
+  mso-border-bottom-themetint:191;border-right:none;mso-border-top-alt:soli=
+d #7BA0CD 1.0pt;
+  mso-border-top-themecolor:accent1;mso-border-top-themetint:191;background:
+  #D3DFEE;mso-background-themecolor:accent1;mso-background-themetint:63;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=3DMsoListParagraph style=3D'margin-bottom:0in;margin-bottom:.000=
+1pt;
+  mso-add-space:auto;text-indent:-.25in;line-height:normal;mso-list:l7 leve=
+l1 lfo8;
+  mso-yfti-cnfc:68'><![if !supportLists]><b><span lang=3DPL style=3D'mso-fa=
+reast-font-family:
+  Calibri;mso-fareast-theme-font:minor-latin;mso-bidi-font-family:Calibri;
+  mso-bidi-theme-font:minor-latin'><span style=3D'mso-list:Ignore'>3.<span
+  style=3D'font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbs=
+p; </span></span></span></b><![endif]><b><span
+  lang=3DPL><o:p>&nbsp;</o:p></span></b></p>
+  </td>
+  <td width=3D762 valign=3Dtop style=3D'width:571.4pt;border-top:none;borde=
+r-left:
+  none;border-bottom:solid #7BA0CD 1.0pt;mso-border-bottom-themecolor:accen=
+t1;
+  mso-border-bottom-themetint:191;border-right:solid #7BA0CD 1.0pt;mso-bord=
+er-right-themecolor:
+  accent1;mso-border-right-themetint:191;mso-border-top-alt:solid #7BA0CD 1=
+.0pt;
+  mso-border-top-themecolor:accent1;mso-border-top-themetint:191;background:
+  #D3DFEE;mso-background-themecolor:accent1;mso-background-themetint:63;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=3DMsoNormal style=3D'margin-bottom:0in;margin-bottom:.0001pt;lin=
+e-height:
+  normal;mso-yfti-cnfc:64'><i style=3D'mso-bidi-font-style:normal'><span
+  style=3D'mso-ansi-language:EN-US'>Get latest source tree for all three
+  (Integration, Development, Release) CC streams<o:p></o:p></span></i></p>
+  </td>
+ </tr>
+ <tr style=3D'mso-yfti-irow:3'>
+  <td width=3D205 valign=3Dtop style=3D'width:154.0pt;border-top:none;borde=
+r-left:
+  solid #7BA0CD 1.0pt;mso-border-left-themecolor:accent1;mso-border-left-th=
+emetint:
+  191;border-bottom:solid #7BA0CD 1.0pt;mso-border-bottom-themecolor:accent=
+1;
+  mso-border-bottom-themetint:191;border-right:none;mso-border-top-alt:soli=
+d #7BA0CD 1.0pt;
+  mso-border-top-themecolor:accent1;mso-border-top-themetint:191;padding:0i=
+n 5.4pt 0in 5.4pt'>
+  <p class=3DMsoListParagraph style=3D'margin-bottom:0in;margin-bottom:.000=
+1pt;
+  mso-add-space:auto;text-indent:-.25in;line-height:normal;mso-list:l7 leve=
+l1 lfo8;
+  mso-yfti-cnfc:132'><![if !supportLists]><b><span lang=3DPL style=3D'mso-f=
+areast-font-family:
+  Calibri;mso-fareast-theme-font:minor-latin;mso-bidi-font-family:Calibri;
+  mso-bidi-theme-font:minor-latin'><span style=3D'mso-list:Ignore'>4.<span
+  style=3D'font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbs=
+p; </span></span></span></b><![endif]><b><span
+  lang=3DPL><o:p>&nbsp;</o:p></span></b></p>
+  </td>
+  <td width=3D762 valign=3Dtop style=3D'width:571.4pt;border-top:none;borde=
+r-left:
+  none;border-bottom:solid #7BA0CD 1.0pt;mso-border-bottom-themecolor:accen=
+t1;
+  mso-border-bottom-themetint:191;border-right:solid #7BA0CD 1.0pt;mso-bord=
+er-right-themecolor:
+  accent1;mso-border-right-themetint:191;mso-border-top-alt:solid #7BA0CD 1=
+.0pt;
+  mso-border-top-themecolor:accent1;mso-border-top-themetint:191;padding:0i=
+n 5.4pt 0in 5.4pt'>
+  <p class=3DMsoNormal style=3D'margin-bottom:0in;margin-bottom:.0001pt;lin=
+e-height:
+  normal;mso-yfti-cnfc:128'><i style=3D'mso-bidi-font-style:normal'><span
+  style=3D'mso-ansi-language:EN-US'>Create TFS workspace and mappings<o:p><=
+/o:p></span></i></p>
+  </td>
+ </tr>
+ <tr style=3D'mso-yfti-irow:4'>
+  <td width=3D205 valign=3Dtop style=3D'width:154.0pt;border-top:none;borde=
+r-left:
+  solid #7BA0CD 1.0pt;mso-border-left-themecolor:accent1;mso-border-left-th=
+emetint:
+  191;border-bottom:solid #7BA0CD 1.0pt;mso-border-bottom-themecolor:accent=
+1;
+  mso-border-bottom-themetint:191;border-right:none;mso-border-top-alt:soli=
+d #7BA0CD 1.0pt;
+  mso-border-top-themecolor:accent1;mso-border-top-themetint:191;background:
+  #D3DFEE;mso-background-themecolor:accent1;mso-background-themetint:63;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=3DMsoListParagraph style=3D'margin-bottom:0in;margin-bottom:.000=
+1pt;
+  mso-add-space:auto;text-indent:-.25in;line-height:normal;mso-list:l7 leve=
+l1 lfo8;
+  mso-yfti-cnfc:68'><![if !supportLists]><b><span style=3D'mso-fareast-font=
+-family:
+  Calibri;mso-fareast-theme-font:minor-latin;mso-bidi-font-family:Calibri;
+  mso-bidi-theme-font:minor-latin;mso-ansi-language:EN-US'><span
+  style=3D'mso-list:Ignore'>5.<span style=3D'font:7.0pt "Times New Roman"'>=
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span></span></b><![endif]><b><span style=3D'mso-ansi-language:EN=
+-US'><o:p>&nbsp;</o:p></span></b></p>
+  </td>
+  <td width=3D762 valign=3Dtop style=3D'width:571.4pt;border-top:none;borde=
+r-left:
+  none;border-bottom:solid #7BA0CD 1.0pt;mso-border-bottom-themecolor:accen=
+t1;
+  mso-border-bottom-themetint:191;border-right:solid #7BA0CD 1.0pt;mso-bord=
+er-right-themecolor:
+  accent1;mso-border-right-themetint:191;mso-border-top-alt:solid #7BA0CD 1=
+.0pt;
+  mso-border-top-themecolor:accent1;mso-border-top-themetint:191;background:
+  #D3DFEE;mso-background-themecolor:accent1;mso-background-themetint:63;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=3DMsoNormal style=3D'margin-bottom:0in;margin-bottom:.0001pt;lin=
+e-height:
+  normal;mso-yfti-cnfc:64'><i style=3D'mso-bidi-font-style:normal'><span
+  style=3D'mso-ansi-language:EN-US'>Create folder structure on TFS to refle=
+ct
+  branch strategy (Main, <span class=3DSpellE>Dev</span>, <span class=3DGra=
+mE>Release</span>).
+  <o:p></o:p></span></i></p>
+  </td>
+ </tr>
+ <tr style=3D'mso-yfti-irow:5'>
+  <td width=3D205 valign=3Dtop style=3D'width:154.0pt;border-top:none;borde=
+r-left:
+  solid #7BA0CD 1.0pt;mso-border-left-themecolor:accent1;mso-border-left-th=
+emetint:
+  191;border-bottom:solid #7BA0CD 1.0pt;mso-border-bottom-themecolor:accent=
+1;
+  mso-border-bottom-themetint:191;border-right:none;mso-border-top-alt:soli=
+d #7BA0CD 1.0pt;
+  mso-border-top-themecolor:accent1;mso-border-top-themetint:191;padding:0i=
+n 5.4pt 0in 5.4pt'>
+  <p class=3DMsoListParagraph style=3D'margin-bottom:0in;margin-bottom:.000=
+1pt;
+  mso-add-space:auto;text-indent:-.25in;line-height:normal;mso-list:l7 leve=
+l1 lfo8;
+  mso-yfti-cnfc:132'><![if !supportLists]><b><span style=3D'mso-fareast-fon=
+t-family:
+  Calibri;mso-fareast-theme-font:minor-latin;mso-bidi-font-family:Calibri;
+  mso-bidi-theme-font:minor-latin;mso-ansi-language:EN-US'><span
+  style=3D'mso-list:Ignore'>6.<span style=3D'font:7.0pt "Times New Roman"'>=
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span></span></b><![endif]><b><span style=3D'mso-ansi-language:EN=
+-US'><o:p>&nbsp;</o:p></span></b></p>
+  </td>
+  <td width=3D762 valign=3Dtop style=3D'width:571.4pt;border-top:none;borde=
+r-left:
+  none;border-bottom:solid #7BA0CD 1.0pt;mso-border-bottom-themecolor:accen=
+t1;
+  mso-border-bottom-themetint:191;border-right:solid #7BA0CD 1.0pt;mso-bord=
+er-right-themecolor:
+  accent1;mso-border-right-themetint:191;mso-border-top-alt:solid #7BA0CD 1=
+.0pt;
+  mso-border-top-themecolor:accent1;mso-border-top-themetint:191;padding:0i=
+n 5.4pt 0in 5.4pt'>
+  <p class=3DMsoNormal style=3D'margin-bottom:0in;margin-bottom:.0001pt;lin=
+e-height:
+  normal;mso-yfti-cnfc:128'><i style=3D'mso-bidi-font-style:normal'><span
+  style=3D'mso-ansi-language:EN-US'>Check in the source tree into appropria=
+te folders
+  in to TFS.<o:p></o:p></span></i></p>
+  </td>
+ </tr>
+ <tr style=3D'mso-yfti-irow:6'>
+  <td width=3D205 valign=3Dtop style=3D'width:154.0pt;border-top:none;borde=
+r-left:
+  solid #7BA0CD 1.0pt;mso-border-left-themecolor:accent1;mso-border-left-th=
+emetint:
+  191;border-bottom:solid #7BA0CD 1.0pt;mso-border-bottom-themecolor:accent=
+1;
+  mso-border-bottom-themetint:191;border-right:none;mso-border-top-alt:soli=
+d #7BA0CD 1.0pt;
+  mso-border-top-themecolor:accent1;mso-border-top-themetint:191;background:
+  #D3DFEE;mso-background-themecolor:accent1;mso-background-themetint:63;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=3DMsoListParagraph style=3D'margin-bottom:0in;margin-bottom:.000=
+1pt;
+  mso-add-space:auto;text-indent:-.25in;line-height:normal;mso-list:l7 leve=
+l1 lfo8;
+  mso-yfti-cnfc:68'><![if !supportLists]><b><span style=3D'mso-fareast-font=
+-family:
+  Calibri;mso-fareast-theme-font:minor-latin;mso-bidi-font-family:Calibri;
+  mso-bidi-theme-font:minor-latin;mso-ansi-language:EN-US'><span
+  style=3D'mso-list:Ignore'>7.<span style=3D'font:7.0pt "Times New Roman"'>=
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span></span></b><![endif]><b><span style=3D'mso-ansi-language:EN=
+-US'><o:p>&nbsp;</o:p></span></b></p>
+  </td>
+  <td width=3D762 valign=3Dtop style=3D'width:571.4pt;border-top:none;borde=
+r-left:
+  none;border-bottom:solid #7BA0CD 1.0pt;mso-border-bottom-themecolor:accen=
+t1;
+  mso-border-bottom-themetint:191;border-right:solid #7BA0CD 1.0pt;mso-bord=
+er-right-themecolor:
+  accent1;mso-border-right-themetint:191;mso-border-top-alt:solid #7BA0CD 1=
+.0pt;
+  mso-border-top-themecolor:accent1;mso-border-top-themetint:191;background:
+  #D3DFEE;mso-background-themecolor:accent1;mso-background-themetint:63;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=3DMsoNormal style=3D'margin-bottom:0in;margin-bottom:.0001pt;lin=
+e-height:
+  normal;mso-yfti-cnfc:64'><i style=3D'mso-bidi-font-style:normal'><span
+  style=3D'mso-ansi-language:EN-US'>Crete TFS workspace and map it to local
+  folder. Get latest version of the source tree<o:p></o:p></span></i></p>
+  </td>
+ </tr>
+ <tr style=3D'mso-yfti-irow:7;mso-yfti-lastrow:yes'>
+  <td width=3D205 valign=3Dtop style=3D'width:154.0pt;border-top:none;borde=
+r-left:
+  solid #7BA0CD 1.0pt;mso-border-left-themecolor:accent1;mso-border-left-th=
+emetint:
+  191;border-bottom:solid #7BA0CD 1.0pt;mso-border-bottom-themecolor:accent=
+1;
+  mso-border-bottom-themetint:191;border-right:none;mso-border-top-alt:soli=
+d #7BA0CD 1.0pt;
+  mso-border-top-themecolor:accent1;mso-border-top-themetint:191;padding:0i=
+n 5.4pt 0in 5.4pt'><a
+  name=3D"_Ref247008750"></a>
+  <p class=3DMsoListParagraph style=3D'margin-bottom:0in;margin-bottom:.000=
+1pt;
+  mso-add-space:auto;text-indent:-.25in;line-height:normal;mso-list:l7 leve=
+l1 lfo8;
+  mso-yfti-cnfc:132'><span style=3D'mso-bookmark:_Ref247008750'><![if !supp=
+ortLists]><b><span
+  lang=3DPL style=3D'mso-fareast-font-family:Calibri;mso-fareast-theme-font=
+:minor-latin;
+  mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin'><span
+  style=3D'mso-list:Ignore'>8.<span style=3D'font:7.0pt "Times New Roman"'>=
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span></span></b><![endif]><b><span lang=3DPL><o:p>&nbsp;</o:p></=
+span></b></span></p>
+  </td>
+  <span style=3D'mso-bookmark:_Ref247008750'></span>
+  <td width=3D762 valign=3Dtop style=3D'width:571.4pt;border-top:none;borde=
+r-left:
+  none;border-bottom:solid #7BA0CD 1.0pt;mso-border-bottom-themecolor:accen=
+t1;
+  mso-border-bottom-themetint:191;border-right:solid #7BA0CD 1.0pt;mso-bord=
+er-right-themecolor:
+  accent1;mso-border-right-themetint:191;mso-border-top-alt:solid #7BA0CD 1=
+.0pt;
+  mso-border-top-themecolor:accent1;mso-border-top-themetint:191;padding:0i=
+n 5.4pt 0in 5.4pt'>
+  <p class=3DMsoNormal style=3D'margin-bottom:0in;margin-bottom:.0001pt;lin=
+e-height:
+  normal;mso-yfti-cnfc:128'><i style=3D'mso-bidi-font-style:normal'><span
+  style=3D'mso-ansi-language:EN-US'>Verify migration process<o:p></o:p></sp=
+an></i></p>
+  <p class=3DMsoListParagraph style=3D'margin-bottom:0in;margin-bottom:.000=
+1pt;
+  mso-add-space:auto;text-indent:-.25in;line-height:normal;mso-list:l2 leve=
+l1 lfo7;
+  mso-yfti-cnfc:128'><![if !supportLists]><span style=3D'font-family:Symbol;
+  mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol;mso-ansi-langu=
+age:
+  EN-US'><span style=3D'mso-list:Ignore'>&middot;<span style=3D'font:7.0pt =
+"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span></span><![endif]><i style=3D'mso-bidi-font-style:normal'><s=
+pan
+  style=3D'mso-ansi-language:EN-US'>Execute defined earlier AVT for every
+  migrated version like release or integration<o:p></o:p></span></i></p>
+  </td>
+ </tr>
+</table>
+
+<h2><span style=3D'mso-ansi-language:EN-US'>Exceptions<o:p></o:p></span></h=
+2>
+
+<table class=3DMediumShading1-Accent11 border=3D1 cellspacing=3D0 cellpaddi=
+ng=3D0
+ width=3D967 style=3D'width:725.4pt;border-collapse:collapse;border:none;
+ mso-border-alt:solid #7BA0CD 1.0pt;mso-border-themecolor:accent1;mso-borde=
+r-themetint:
+ 191;mso-yfti-tbllook:1184;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr style=3D'mso-yfti-irow:-1;mso-yfti-firstrow:yes'>
+  <td width=3D205 valign=3Dtop style=3D'width:154.0pt;border:solid #7BA0CD =
+1.0pt;
+  mso-border-themecolor:accent1;mso-border-themetint:191;border-right:none;
+  background:#4F81BD;mso-background-themecolor:accent1;padding:0in 5.4pt 0i=
+n 5.4pt'>
+  <p class=3DMsoNormal style=3D'margin-bottom:0in;margin-bottom:.0001pt;lin=
+e-height:
+  normal;mso-yfti-cnfc:5'><b><span style=3D'color:white;mso-themecolor:back=
+ground1;
+  mso-ansi-language:EN-US'>Step<o:p></o:p></span></b></p>
+  </td>
+  <td width=3D762 valign=3Dtop style=3D'width:571.4pt;border:solid #7BA0CD =
+1.0pt;
+  mso-border-themecolor:accent1;mso-border-themetint:191;border-left:none;
+  background:#4F81BD;mso-background-themecolor:accent1;padding:0in 5.4pt 0i=
+n 5.4pt'>
+  <p class=3DMsoNormal style=3D'margin-bottom:0in;margin-bottom:.0001pt;lin=
+e-height:
+  normal;mso-yfti-cnfc:1'><b><span style=3D'color:white;mso-themecolor:back=
+ground1;
+  mso-ansi-language:EN-US'>Detailed description<o:p></o:p></span></b></p>
+  </td>
+ </tr>
+ <tr style=3D'mso-yfti-irow:0;mso-yfti-lastrow:yes'>
+  <td width=3D205 valign=3Dtop style=3D'width:154.0pt;border-top:none;borde=
+r-left:
+  solid #7BA0CD 1.0pt;mso-border-left-themecolor:accent1;mso-border-left-th=
+emetint:
+  191;border-bottom:solid #7BA0CD 1.0pt;mso-border-bottom-themecolor:accent=
+1;
+  mso-border-bottom-themetint:191;border-right:none;mso-border-top-alt:soli=
+d #7BA0CD 1.0pt;
+  mso-border-top-themecolor:accent1;mso-border-top-themetint:191;background:
+  #D3DFEE;mso-background-themecolor:accent1;mso-background-themetint:63;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=3DMsoNormal style=3D'margin-bottom:0in;margin-bottom:.0001pt;lin=
+e-height:
+  normal;mso-yfti-cnfc:68'><!--[if supportFields]><b><i style=3D'mso-bidi-f=
+ont-style:
+  normal'><span style=3D'mso-ansi-language:EN-US'><span style=3D'mso-elemen=
+t:field-begin'></span><span
+  style=3D'mso-spacerun:yes'>&nbsp;</span>REF _Ref247008750 \r \h <span
+  style=3D'mso-element:field-separator'></span></span></i></b><![endif]--><=
+b><i
+  style=3D'mso-bidi-font-style:normal'><span style=3D'mso-ansi-language:EN-=
+US'>8<!--[if gte mso 9]><xml>
+   <w:data>08D0C9EA79F9BACE118C8200AA004BA90B02000000080000000E0000005F0052=
+00650066003200340037003000300038003700350030000000</w:data>
+  </xml><![endif]--></span></i></b><!--[if supportFields]><b><i
+  style=3D'mso-bidi-font-style:normal'><span style=3D'mso-ansi-language:EN-=
+US'><span
+  style=3D'mso-element:field-end'></span></span></i></b><![endif]--><b><i
+  style=3D'mso-bidi-font-style:normal'><span style=3D'mso-ansi-language:EN-=
+US'>.1<o:p></o:p></span></i></b></p>
+  </td>
+  <td width=3D762 valign=3Dtop style=3D'width:571.4pt;border-top:none;borde=
+r-left:
+  none;border-bottom:solid #7BA0CD 1.0pt;mso-border-bottom-themecolor:accen=
+t1;
+  mso-border-bottom-themetint:191;border-right:solid #7BA0CD 1.0pt;mso-bord=
+er-right-themecolor:
+  accent1;mso-border-right-themetint:191;mso-border-top-alt:solid #7BA0CD 1=
+.0pt;
+  mso-border-top-themecolor:accent1;mso-border-top-themetint:191;background:
+  #D3DFEE;mso-background-themecolor:accent1;mso-background-themetint:63;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=3DMsoNormal style=3D'margin-bottom:0in;margin-bottom:.0001pt;lin=
+e-height:
+  normal;mso-yfti-cnfc:64'><i style=3D'mso-bidi-font-style:normal'><span
+  style=3D'mso-ansi-language:EN-US'>AVT fail. Investigate and resolve all i=
+ssues.<o:p></o:p></span></i></p>
+  </td>
+ </tr>
+</table>
+
+<h1><span style=3D'mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></h1>
+
+</div>
+
+</body>
+
+</html>
+
+------=_NextPart_01CAF282.35796960
+Content-Location: file:///C:/AA4BB24E/Example_Use_Case-CC_to_TFS_Migration_files/preview.wmf
+Content-Transfer-Encoding: base64
+Content-Type: image/x-wmf
+
+AQAJAAADAjQAAAwAeQAAAAAABAAAAAMBCAAFAAAACwIAAAAABQAAAAwCGwNkBAQAAAAuARgAHAAA
+APsC6/8AAAAAAACQAQAAAAAEQAASQ2FtYnJpYQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAA
+LQEAAAQAAAAtAQAABAAAAC0BAAAEAAAAAgEBAAUAAAAJAgAAAAITAAAAMgpEAEgABQAEAAAAAABj
+BBoDICAgICAABQAEAAUABQAFAAUAAAAJAgAAAAJJAAAAMgpEAGAAKQAEAAAAAABjBBoDVEZTIElu
+dGVncmF0aW9uIFBsYXRmb3JtIERlbGl2ZXJ5IFByb2plY3QADAALAAoABgAHAAwABwAKAAoACQAK
+AAcABgALAAwABgAMAAYACgAHAAYACwAJABEABwAOAAoABgAGAAsACgAJAAsABQAMAAkACwAGAAoA
+CQAHAAUAAAAJAgAAAAINAAAAMgpEANkBAQAEAAAAAABjBBoDIAAFAAUAAAAJAgAAAAINAAAAMgpE
+AN4BAQAEAAAAAABjBBoDlgALAAUAAAAJAgAAAAINAAAAMgpEAOkBAQAEAAAAAABjBBoDIAAFAAUA
+AAAJAgAAAAI0AAAAMgpEAO4BGwAEAAAAAABjBBoDTWlncmF0ZU1lRnJvbVJhdGlvbmFsVG9vbHMg
+ABEABgAKAAkACgAHAAoAEQAKAAsACQALABEADQAKAAcABgALAAwACgAHAAwACwALAAYACQAKAAUA
+AAAJAgAAAAIQAAAAMgpEAAUDAwAEAAAAAABjBBoDQ0MgAAwADAAEAAUAAAAJAgAAAAINAAAAMgpE
+ACEDAQAEAAAAAABjBBoDTQARAAUAAAAJAgAAAAIZAAAAMgpEADIDCQAEAAAAAABjBBoDaWdyYXRp
+b24gAAYACgAJAAoABwAGAAsADAAGAAUAAAAJAgAAAAIXAAAAMgpEAH8DCAAEAAAAAABjBBoDVXNl
+IENhc2UOAAkACgAGAAwACgAJAAoABQAAAAkCAAAAAg0AAAAyCkQAzwMBAAQAAAAAAGMEGgMgAAwA
+BQAAAAkCAAAAAgMAAAAeAAcAAAAWBBoDYwQAAAAABwAAAPwCAABiJCMCAAAEAAAALQEBAAwAAABA
+CSEA8AAAAAAAAAAEANcDSgBGAAcAAAD8AgAA////AAAABAAAAC0BAgAEAAAA8AEBAAQAAAAnAf//
+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
+AQLT3+4CBwAAAPwCAADT3+4CAAAEAAAALQEJAAwAAABACSEA8AAAAAAAAAASAL8AbQFIAAQAAAAt
+AQIABAAAAPABCQAFAAAACQIAAAACBQAAAAEC////AgQAAAACAQEABAAAAC0BBgAEAAAALQEGAAQA
+AAAtAQYABQAAAAkCAAAAAjIAAAAyCnoBSAAaAAQAQQBtAQ4BfwFHb2FsIGFuZCBzY29wZSBpbiBj
+b250ZXh0OgoACAAHAAQAAgAHAAgACAAEAAYABgAIAAgACAACAAQACAADAAYACAAIAAUACAAHAAUA
+BAAFAAAACQIAAAACDQAAADIKegHqAAEABABBAG0BDgF/ASAABwAFAAAACQIAAAACBAAAACcB//8F
+AAAACQIAAAACBQAAAAEC09/uAgcAAAD8AgAA09/uAgAABAAAAC0BCQAMAAAAQAkhAPAAAAAAAAAA
+EgAHAG0BDgEEAAAALQECAAQAAADwAQkABQAAAAkCAAAAAgUAAAABAv///wIFAAAACQIAAAACBQAA
+AAEC09/uAgcAAAD8AgAA09/uAgAABAAAAC0BCQAMAAAAQAkhAPAAAAAAAAAAEgAGAG0BAQQEAAAA
+LQECAAQAAADwAQkABQAAAAkCAAAAAgUAAAABAv///wIDAAAAHgAHAAAAFgR/AQcEbQEOAQUAAAAJ
+AgAAAAIFAAAAAQLT3+4CBwAAAPwCAADT3+4CAAAEAAAALQEJAAwAAABACSEA8AAAAAAAAAASAOwC
+bQEVAQQAAAAtAQIABAAAAPABCQAFAAAACQIAAAACBQAAAAEC////AgQAAAACAQEABAAAAC0BBwAE
+AAAALQEHAAQAAAAtAQcABQAAAAkCAAAAAnkAAAAyCnoBFQFJAAQADgFtAQcEfwFNaWdyYXRlIHRo
+ZSB2ZXJzaW9uIGNvbnRyb2wgZGF0YSBmcm9tIENsZWFyQ2FzZSB0byBUZWFtIEZvdW5kYXRpb24g
+U2VydmVyAA0AAwAIAAUACAAFAAcAAgAFAAgABwADAAcABwAFAAYAAwAIAAgAAgAGAAgACAAFAAUA
+CAADAAIACAAIAAUACAACAAUABQAIAAwAAgAIAAMABwAIAAUACAAIAAYABwACAAUACAADAAcABwAI
+AAwAAwAHAAgACAAIAAgACAAFAAMACAAHAAMABwAHAAUABwAHAAUABQAAAAkCAAAAAg0AAAAyCnoB
+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
+kwIHBKcBDgEcAAAA+wLx/wAAAAAAAJABAAAAAARAACJBcmlhbAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAQAAAAtAQkABAAAAC0BCQAEAAAALQEJAAQAAAAtAQcABAAAAC0BBwAEAAAALQEHAAQA
+AAACAQEABAAAAC0BAwAEAAAALQEDAAQAAAAtAQMABQAAAAkCAAAAAg0AAAAyCrUBFQEBAAQIDgGn
+AQcEkwK3AAcABAAAAC0BCQAEAAAALQEJAAQAAAAtAQkABQAAAAkCAAAAAg0AAAAyCrUBHAEBAAQA
+DgGnAQcEkwIgABEABAAAAC0BBwAEAAAALQEHAAQAAAAtAQcABQAAAAkCAAAAAjQAAAAyCrUBLQEb
+AAQADgGnAQcEkwJUZWFtIEZvdW5kYXRpb24gU2VydmVyIGVudmkABwAHAAgADAADAAcACAAIAAgA
+CAAIAAUAAwAIAAcAAwAHAAcABQAHAAcABQACAAcACAAHAAMABQAAAAkCAAAAAiUAAAAyCrUB3AER
+AAQADgGnAQcEkwJyb25tZW50IGluc3RhbGxlZAAFAAgACAALAAcACAAFAAIAAwAIAAYABQAIAAMA
+AwAHAAgABQAAAAkCAAAAAg0AAAAyCrUBRQIBAAQADgGnAQcEkwIgAAkABQAAAAkCAAAAAhwAAAD7
+AvH/AAAAAAAAkAEAAAAABEAAMUNvdXJpZXIgTmV3AAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAC0B
+CgAEAAAALQEKAAQAAAAtAQoABAAAAAIBAQAEAAAALQEKAAQAAAAtAQoABAAAAC0BCgAFAAAACQIA
+AAACDQAAADIKxgFFAQEABAAOAacBBwSTAm8ACQAEAAAALQEJAAQAAAAtAQkABAAAAC0BCQAFAAAA
+CQIAAAACDQAAADIKxgFOAQEABAAOAacBBwSTAiAADwAEAAAALQEHAAQAAAAtAQcABAAAAC0BBwAF
+AAAACQIAAAACMgAAADIKxgFdARoABAAOAacBBwSTAk1TRiBmb3IgQ01NSSB2NC4yIHRlbXBsYXRl
+DQAHAAcAAgAFAAgABQADAAgADQANAAQAAgAHAAcABAAHAAMABQAHAAwACAADAAgABQAHAAUAAAAJ
+AgAAAAINAAAAMgrGAQoCAQAEAA4BpwEHBJMCIAACAAUAAAAJAgAAAAIyAAAAMgrGAQwCGgAEAA4B
+pwEHBJMCaXMgdXNlIGZvciB0YXJnZXQgcHJvamVjdHMDAAYAAwAIAAYABwADAAUACAAFAAIABQAI
+AAUACAAHAAUAAwAIAAUACAAEAAcABgAFAAYABQAAAAkCAAAAAg0AAAAyCsYBngIBAAQADgGnAQcE
+kwIgAAkABQAAAAkCAAAAAgQAAAACAQEABAAAAC0BCgAEAAAALQEKAAQAAAAtAQoABQAAAAkCAAAA
+Ag0AAAAyCtgBRQEBAAQADgGnAQcEkwJvAAkABAAAAC0BCQAEAAAALQEJAAQAAAAtAQkABQAAAAkC
+AAAAAg0AAAAyCtgBTgEBAAQADgGnAQcEkwIgAA8ABAAAAC0BBwAEAAAALQEHAAQAAAAtAQcABQAA
+AAkCAAAAAlgAAAAyCtgBXQEzAAQADgGnAQcEkwJObyBjdXN0b21pemF0aW9ucyBhcmUgaW1wbGVt
+ZW50ZWQgZm9yIFRGUyB0ZW1wbGF0ZSAACgAIAAIABgAIAAYABQAIAAwAAwAGAAgABQADAAgACAAG
+AAIACAAFAAcAAgADAAwACAADAAcADAAHAAgABQAHAAgAAgAFAAgABQACAAcABwAHAAMABQAHAAwA
+CAADAAgABQAHAAIABQAAAAkCAAAAAg0AAAAyCtgBnAIBAAQADgGnAQcEkwIgAAkABQAAAAkCAAAA
+AgQAAAACAQEABAAAAC0BAwAEAAAALQEDAAQAAAAtAQMABQAAAAkCAAAAAg0AAAAyCusBFQEBAAQI
+DgGnAQcEkwK3AAcABAAAAC0BCQAEAAAALQEJAAQAAAAtAQkABQAAAAkCAAAAAg0AAAAyCusBHAEB
+AAQADgGnAQcEkwIgABEABAAAAC0BBwAEAAAALQEHAAQAAAAtAQcABQAAAAkCAAAAAlAAAAAyCusB
+LQEuAAQADgGnAQcEkwJDbGVhckNhc2UgZW52aXJvbm1lbnQgaW5zdGFsbGVkIGFuZCBjb25maWd1
+cmVkCAADAAcACAAFAAgACAAGAAcAAgAHAAgABwADAAUACAAIAAwABwAIAAUAAgADAAgABgAFAAgA
+AwADAAcACAACAAgACAAIAAIABgAIAAgABQADAAgACAAFAAcACAAFAAAACQIAAAACDQAAADIK6wFM
+AgEABAAOAacBBwSTAiAAAgAFAAAACQIAAAACGQAAADIK6wFOAgkABAAOAacBBwSTAmZvciBVQ00g
+KAAFAAgABQACAAoACAANAAIABQAFAAAACQIAAAACPgAAADIK6wGIAiIABAAOAacBBwSTAlJhdGlv
+bmFsIFVuaWZpZWQgQ2hhbmdlIE1hbmFnZW1lbnQIAAgABQADAAgACAAIAAMAAgAKAAgAAwAFAAMA
+BwAIAAIACAAIAAgACAAHAAcAAgANAAgACAAIAAcABwAMAAcABwAFAAUAAAAJAgAAAAINAAAAMgrr
+AW0DAQAEAA4BpwEHBJMCKQAFAAUAAAAJAgAAAAINAAAAMgrrAXIDAQAEAA4BpwEHBJMCIAAJAAUA
+AAAJAgAAAAIEAAAAAgEBAAQAAAAtAQMABAAAAC0BAwAEAAAALQEDAAUAAAAJAgAAAAINAAAAMgr+
+ARUBAQAECA4BpwEHBJMCtwAHAAQAAAAtAQkABAAAAC0BCQAEAAAALQEJAAUAAAAJAgAAAAINAAAA
+Mgr+ARwBAQAEAA4BpwEHBJMCIAARAAQAAAAtAQcABAAAAC0BBwAEAAAALQEHAAUAAAAJAgAAAAJQ
+AAAAMgr+AS0BLgAEAA4BpwEHBJMCVGhlIHNldCBvZiBicmFuY2hlcyBmb3IgbWlncmF0aW9uIGlz
+IHNwZWNpZmllZAcACAAHAAMABgAHAAUAAwAIAAUAAgAIAAUACAAIAAYACAAHAAYAAgAFAAgABQAC
+AAwAAwAIAAUACAAFAAMACAAIAAIAAwAGAAMABgAIAAcABgADAAUAAwAHAAgABQAAAAkCAAAAAg0A
+AAAyCv4BNwIBAAQADgGnAQcEkwIgAAkABQAAAAkCAAAAAgQAAAACAQEABAAAAC0BCgAEAAAALQEK
+AAQAAAAtAQoABQAAAAkCAAAAAg0AAAAyChACRQEBAAQADgGnAQcEkwJvAAkABAAAAC0BCQAEAAAA
+LQEJAAQAAAAtAQkABQAAAAkCAAAAAg0AAAAyChACTgEBAAQADgGnAQcEkwIgAA8ABAAAAC0BBwAE
+AAAALQEHAAQAAAAtAQcABQAAAAkCAAAAAkMAAAAyChACXQElAAQADgGnAQcEkwIzIGJyYW5jaGVz
+IChJbnRlZ3JhdGlvbiwgRGV2ZWxvcG1lbnQsAAcABAAIAAUACAAIAAYACAAHAAYAAgAFAAQACAAF
+AAcACAAFAAgABQADAAgABwAEAAIACQAHAAcABwADAAgACAAMAAcABwAFAAQABQAAAAkCAAAAAg0A
+AAAyChACRQIBAAQADgGnAQcEkwIgAAIABQAAAAkCAAAAAhYAAAAyChACRwIHAAQADgGnAQcEkwJS
+ZWxlYXNlAAgABwADAAcACAAGAAcABQAAAAkCAAAAAg0AAAAyChACdQIBAAQADgGnAQcEkwIpAAUA
+BQAAAAkCAAAAAg0AAAAyChACegIBAAQADgGnAQcEkwIgAAkABQAAAAkCAAAAAgQAAAACAQEABAAA
+AC0BCgAEAAAALQEKAAQAAAAtAQoABQAAAAkCAAAAAg0AAAAyCiICRQEBAAQADgGnAQcEkwJvAAkA
+BAAAAC0BCQAEAAAALQEJAAQAAAAtAQkABQAAAAkCAAAAAg0AAAAyCiICTgEBAAQADgGnAQcEkwIg
+AA8ABAAAAC0BBwAEAAAALQEHAAQAAAAtAQcABQAAAAkCAAAAAh0AAAAyCiICXQEMAAQADgGnAQcE
+kwJPbmx5IGxhdGVzdCAKAAgAAwAHAAIAAwAIAAUABwAGAAUAAwAFAAAACQIAAAACRwAAADIKIgKg
+ASgABAAOAacBBwSTAnZlcnNpb24gb2Ygc291cmNlIHRyZWUgaXMgdG8gYmUgbWlncmF0ZWQHAAcA
+BQAGAAMACAAIAAIACAAFAAMABgAIAAgABQAGAAcAAgAFAAUABwAHAAMAAwAGAAMABQAIAAMACAAH
+AAMADAADAAgABQAIAAUABwAIAAUAAAAJAgAAAAINAAAAMgoiAokCAQAEAA4BpwEHBJMCIAAJAAUA
+AAAJAgAAAAIEAAAAAgEBAAQAAAAtAQoABAAAAC0BCgAEAAAALQEKAAUAAAAJAgAAAAINAAAAMgoz
+AkUBAQAEAA4BpwEHBJMCbwAJAAQAAAAtAQkABAAAAC0BCQAEAAAALQEJAAUAAAAJAgAAAAINAAAA
+MgozAk4BAQAEAA4BpwEHBJMCIAAPAAQAAAAtAQcABAAAAC0BBwAEAAAALQEHAAUAAAAJAgAAAAIZ
+AAAAMgozAl0BCQAEAA4BpwEHBJMCTm8gcGFyZW50AAoACAACAAgACAAFAAcACAAFAAUAAAAJAgAA
+AAINAAAAMgozApoBAQAEAA4BpwEHBJMCLQAFAAUAAAAJAgAAAAJBAAAAMgozAp8BJAAEAA4BpwEH
+BJMCY2hpbGQgcmVsYXRpb25zaGlwIGlzIHRvIGJlIG1pZ3JhdGVkBgAIAAMAAwAIAAIABQAHAAMA
+CAAFAAMACAAIAAYACAADAAgAAgADAAYAAwAFAAgAAwAIAAcAAgAMAAMACAAFAAgABQAHAAgABQAA
+AAkCAAAAAg0AAAAyCjMCbAIBAAQADgGnAQcEkwIgAAkABQAAAAkCAAAAAgQAAAACAQEABAAAAC0B
+AwAEAAAALQEDAAQAAAAtAQMABQAAAAkCAAAAAg0AAAAyCkYCFQEBAAQIDgGnAQcEkwK3AAcABAAA
+AC0BCQAEAAAALQEJAAQAAAAtAQkABQAAAAkCAAAAAg0AAAAyCkYCHAEBAAQADgGnAQcEkwIgABEA
+BAAAAC0BBwAEAAAALQEHAAQAAAAtAQcABQAAAAkCAAAAAkEAAAAyCkYCLQEkAAQADgGnAQcEkwJT
+ZXQgb2YgQXBwbGljYXRpb24gVmVyaWZpY2F0aW9uIFRlc3QHAAcABQADAAgABQACAAkACAAIAAMA
+AwAGAAgABQADAAgACAACAAkABwAFAAMABQADAAYACAAFAAMACAAIAAIABwAHAAYABQAFAAAACQIA
+AAACDQAAADIKRgL6AQEABAAOAacBBwSTAiAAAwAFAAAACQIAAAACEQAAADIKRgL9AQQABAAOAacB
+BwSTAihBVlQFAAkACQAHAAUAAAAJAgAAAAIRAAAAMgpGAhsCBAAEAA4BpwEHBJMCKSBpcwUAAgAD
+AAYABQAAAAkCAAAAAg0AAAAyCkYCKwIBAAQADgGnAQcEkwIgAAIABQAAAAkCAAAAAh0AAAAyCkYC
+LQIMAAQADgGnAQcEkwJkZWZpbmVkIGZvciAIAAcABQADAAgABwAIAAIABQAIAAUAAwAFAAAACQIA
+AAACEQAAADIKRgJyAgQABAAOAacBBwSTAmV2ZXIHAAcABwAFAAUAAAAJAgAAAAI6AAAAMgpGAowC
+HwAEAA4BpwEHBJMCeSBhcHBsaWNhdGlvbiB2ZXJzaW9uIChicmFuY2gpIAAHAAIACAAIAAgAAwAD
+AAYACAAFAAMACAAIAAIABwAHAAUABgADAAgACAACAAUACAAFAAgACAAGAAgABQACAAUAAAAJAgAA
+AAIaAAAAMgpGAkADCgAEAA4BpwEHBJMCdG8gdmVyaWZ5IAUACAACAAcABwAFAAMABQAHAAIABQAA
+AAkCAAAAAi4AAAAyCkYCcwMXAAQADgGnAQcEkwJ0aGUgY29ycmVjdG5lc3Mgc291cmNlIAAFAAgA
+BwACAAYACAAFAAUABwAGAAUACAAHAAYABgACAAYACAAIAAUABgAHAAIABQAAAAkCAAAAAgQAAAAC
+AQEABQAAAAkCAAAAAi8AAAAyClgCLQEYAAQADgGnAQcEkwJmaWxlcyBkYXRhIGFuZCBwcm9qZWN0
+LiAFAAMAAwAHAAYAAwAIAAgABQAIAAIACAAIAAgAAgAIAAUACAAEAAcABgAFAAQAAgAFAAAACQIA
+AAACDgAAADIKWAKyAQIABAAOAacBBwSTAkl0BAAFAAUAAAAJAgAAAAINAAAAMgpYArsBAQAEAA4B
+pwEHBJMCIAADAAUAAAAJAgAAAAIWAAAAMgpYAr4BBwAEAA4BpwEHBJMCY29uc2lzdAAGAAgACAAG
+AAMABgAFAAUAAAAJAgAAAAINAAAAMgpYAugBAQAEAA4BpwEHBJMCcwAGAAUAAAAJAgAAAAINAAAA
+MgpYAu4BAQAEAA4BpwEHBJMCIAACAAUAAAAJAgAAAAINAAAAMgpYAvABAQAEAA4BpwEHBJMCbwAI
+AAUAAAAJAgAAAAITAAAAMgpYAvgBBQAEAA4BpwEHBJMCZiB0aGUABQACAAUACAAHAAUAAAAJAgAA
+AAINAAAAMgpYAhMCAQAEAA4BpwEHBJMCIAADAAUAAAAJAgAAAAIrAAAAMgpYAhYCFQAEAA4BpwEH
+BJMCZm9sbG93aW5nIGNvbmRpdGlvbnM6AAUACAADAAMACAALAAMACAAIAAIABgAIAAgACAADAAUA
+AwAIAAgABgAEAAUAAAAJAgAAAAINAAAAMgpYApQCAQAEAA4BpwEHBJMCIAAJAAUAAAAJAgAAAAIE
+AAAAAgEBAAQAAAAtAQoABAAAAC0BCgAEAAAALQEKAAUAAAAJAgAAAAINAAAAMgpqAkUBAQAEAA4B
+pwEHBJMCbwAJAAQAAAAtAQkABAAAAC0BCQAEAAAALQEJAAUAAAAJAgAAAAINAAAAMgpqAk4BAQAE
+AA4BpwEHBJMCIAAPAAQAAAAtAQcABAAAAC0BBwAEAAAALQEHAAUAAAAJAgAAAAIaAAAAMgpqAl0B
+CgAEAA4BpwEHBJMCU3VjY2Vzc2Z1bAcACAAGAAYABwAGAAYABQAIAAMABQAAAAkCAAAAAg0AAAAy
+CmoCmwEBAAQADgGnAQcEkwIgAAIABQAAAAkCAAAAAisAAAAyCmoCnQEVAAQADgGnAQcEkwJidWls
+ZCBmb3IgYXBwbGljYXRpb24ACAAIAAMAAwAIAAIABQAIAAUAAwAIAAgACAADAAMABgAIAAUAAwAI
+AAgABQAAAAkCAAAAAg0AAAAyCmoCFgIBAAQADgGnAQcEkwIgAAkABQAAAAkCAAAAAgQAAAACAQEA
+BAAAAC0BCgAEAAAALQEKAAQAAAAtAQoABQAAAAkCAAAAAg0AAAAyCnwCRQEBAAQADgGnAQcEkwJv
+AAkABAAAAC0BCQAEAAAALQEJAAQAAAAtAQkABQAAAAkCAAAAAg0AAAAyCnwCTgEBAAQADgGnAQcE
+kwIgAA8ABAAAAC0BBwAEAAAALQEHAAQAAAAtAQcABQAAAAkCAAAAAikAAAAyCnwCXQEUAAQADgGn
+AQcEkwJBcHBsaWNhdGlvbiBjYW4gcnVuIAkACAAIAAMAAwAGAAgABQADAAgACAACAAYACAAIAAIA
+BQAIAAgAAwAFAAAACQIAAAACDQAAADIKfALUAQEABAAOAacBBwSTAiAACQAFAAAACQIAAAACBAAA
+AAIBAQAEAAAALQEKAAQAAAAtAQoABAAAAC0BCgAFAAAACQIAAAACDQAAADIKjgJFAQEABAAOAacB
+BwSTAm8ACQAEAAAALQEJAAQAAAAtAQkABAAAAC0BCQAFAAAACQIAAAACDQAAADIKjgJOAQEABAAO
+AacBBwSTAiAADwAEAAAALQEHAAQAAAAtAQcABAAAAC0BBwAFAAAACQIAAAACHQAAADIKjgJdAQwA
+BAAOAacBBwSTAlNldCBvZiBUZXN0cwcABwAFAAMACAAFAAIABwAHAAYABQAGAAUAAAAJAgAAAAIN
+AAAAMgqOAqEBAQAEAA4BpwEHBJMCIAADAAUAAAAJAgAAAAIaAAAAMgqOAqQBCgAEAA4BpwEHBJMC
+aXMgZGVmaW5lZAMABgADAAgABwAFAAMACAAHAAgABQAAAAkCAAAAAg0AAAAyCo4C3gEBAAQADgGn
+AQcEkwIgAAIABQAAAAkCAAAAAkYAAAAyCo4C4AEnAAQADgGnAQcEkwJ0aGF0IHZlcmlmeSB0aGF0
+IGFwcGxpY2F0aW9uIHdvcmtzIGNvcnIABQAIAAgABQACAAcABwAFAAMABQAHAAMABQAIAAgABQAC
+AAgACAAIAAMAAwAGAAgABQADAAgACAACAAsACAAFAAcABgACAAYACAAFAAUABQAAAAkCAAAAAg0A
+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
+AAIAAwAAAAAA
+
+------=_NextPart_01CAF282.35796960
+Content-Location: file:///C:/AA4BB24E/Example_Use_Case-CC_to_TFS_Migration_files/item0016.xml
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/xml
+
+<?xml version=3D"1.0" encoding=3D"utf-8"?><ct:contentTypeSchema ct:_=3D"" m=
+a:_=3D"" ma:contentTypeName=3D"Document" ma:contentTypeID=3D"0x010100EA833D=
+6EFD55FF478686145E9D7CAEC4" ma:contentTypeVersion=3D"0" ma:contentTypeDescr=
+iption=3D"Create a new document." ma:contentTypeScope=3D"" ma:versionID=3D"=
+6a048f94afd3b2fc6aa9c693dffec9bd" xmlns:ct=3D"http://schemas.microsoft.com/=
+office/2006/metadata/contentType" xmlns:ma=3D"http://schemas.microsoft.com/=
+office/2006/metadata/properties/metaAttributes">
+<xsd:schema targetNamespace=3D"http://schemas.microsoft.com/office/2006/met=
+adata/properties" ma:root=3D"true" ma:fieldsID=3D"4aeb20c0e3442673af7ee1078=
+6458764" xmlns:xsd=3D"http://www.w3.org/2001/XMLSchema" xmlns:p=3D"http://s=
+chemas.microsoft.com/office/2006/metadata/properties">
+<xsd:element name=3D"properties">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element name=3D"documentManagement">
+<xsd:complexType>
+<xsd:all/>
+</xsd:complexType>
+</xsd:element>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+</xsd:schema>
+<xsd:schema targetNamespace=3D"http://schemas.openxmlformats.org/package/20=
+06/metadata/core-properties" elementFormDefault=3D"qualified" attributeForm=
+Default=3D"unqualified" blockDefault=3D"#all" xmlns=3D"http://schemas.openx=
+mlformats.org/package/2006/metadata/core-properties" xmlns:xsd=3D"http://ww=
+w.w3.org/2001/XMLSchema" xmlns:xsi=3D"http://www.w3.org/2001/XMLSchema-inst=
+ance" xmlns:dc=3D"http://purl.org/dc/elements/1.1/" xmlns:dcterms=3D"http:/=
+/purl.org/dc/terms/" xmlns:odoc=3D"http://schemas.microsoft.com/office/inte=
+rnal/2005/internalDocumentation">
+<xsd:import namespace=3D"http://purl.org/dc/elements/1.1/" schemaLocation=
+=3D"http://dublincore.org/schemas/xmls/qdc/2003/04/02/dc.xsd"/>
+<xsd:import namespace=3D"http://purl.org/dc/terms/" schemaLocation=3D"http:=
+//dublincore.org/schemas/xmls/qdc/2003/04/02/dcterms.xsd"/>
+<xsd:element name=3D"coreProperties" type=3D"CT_coreProperties"/>
+<xsd:complexType name=3D"CT_coreProperties">
+<xsd:all>
+<xsd:element ref=3D"dc:creator" minOccurs=3D"0" maxOccurs=3D"1"/>
+<xsd:element ref=3D"dcterms:created" minOccurs=3D"0" maxOccurs=3D"1"/>
+<xsd:element ref=3D"dc:identifier" minOccurs=3D"0" maxOccurs=3D"1"/>
+<xsd:element name=3D"contentType" minOccurs=3D"0" maxOccurs=3D"1" type=3D"x=
+sd:string" ma:index=3D"0" ma:displayName=3D"Content Type" ma:readOnly=3D"tr=
+ue"/>
+<xsd:element ref=3D"dc:title" minOccurs=3D"0" maxOccurs=3D"1" ma:index=3D"4=
+" ma:displayName=3D"Title"/>
+<xsd:element ref=3D"dc:subject" minOccurs=3D"0" maxOccurs=3D"1"/>
+<xsd:element ref=3D"dc:description" minOccurs=3D"0" maxOccurs=3D"1"/>
+<xsd:element name=3D"keywords" minOccurs=3D"0" maxOccurs=3D"1" type=3D"xsd:=
+string"/>
+<xsd:element ref=3D"dc:language" minOccurs=3D"0" maxOccurs=3D"1"/>
+<xsd:element name=3D"category" minOccurs=3D"0" maxOccurs=3D"1" type=3D"xsd:=
+string"/>
+<xsd:element name=3D"version" minOccurs=3D"0" maxOccurs=3D"1" type=3D"xsd:s=
+tring"/>
+<xsd:element name=3D"revision" minOccurs=3D"0" maxOccurs=3D"1" type=3D"xsd:=
+string">
+<xsd:annotation>
+<xsd:documentation>
+                        This value indicates the number of saves or revisio=
+ns. The application is responsible for updating this value after each revis=
+ion.
+                    </xsd:documentation>
+</xsd:annotation>
+</xsd:element>
+<xsd:element name=3D"lastModifiedBy" minOccurs=3D"0" maxOccurs=3D"1" type=
+=3D"xsd:string"/>
+<xsd:element ref=3D"dcterms:modified" minOccurs=3D"0" maxOccurs=3D"1"/>
+<xsd:element name=3D"lastPrinted" minOccurs=3D"0" maxOccurs=3D"1" type=3D"x=
+sd:dateTime"/>
+<xsd:element name=3D"contentStatus" minOccurs=3D"0" maxOccurs=3D"1" type=3D=
+"xsd:string"/>
+</xsd:all>
+</xsd:complexType>
+</xsd:schema>
+</ct:contentTypeSchema>
+------=_NextPart_01CAF282.35796960
+Content-Location: file:///C:/AA4BB24E/Example_Use_Case-CC_to_TFS_Migration_files/props017.xml
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/xml
+
+<?xml version=3D"1.0" encoding=3D"UTF-8" standalone=3D"no"?>
+<ds:datastoreItem ds:itemID=3D"{490F020F-C596-43FA-9530-E79D77E1813F}" xmln=
+s:ds=3D"http://schemas.openxmlformats.org/officeDocument/2006/customXml"><d=
+s:schemaRefs><ds:schemaRef ds:uri=3D"http://schemas.microsoft.com/office/20=
+06/metadata/contentType"/><ds:schemaRef ds:uri=3D"http://schemas.microsoft.=
+com/office/2006/metadata/properties/metaAttributes"/><ds:schemaRef ds:uri=
+=3D"http://www.w3.org/2001/XMLSchema"/><ds:schemaRef ds:uri=3D"http://schem=
+as.microsoft.com/office/2006/metadata/properties"/><ds:schemaRef ds:uri=3D"=
+http://schemas.openxmlformats.org/package/2006/metadata/core-properties"/><=
+ds:schemaRef ds:uri=3D"http://purl.org/dc/elements/1.1/"/><ds:schemaRef ds:=
+uri=3D"http://purl.org/dc/terms/"/><ds:schemaRef ds:uri=3D"http://schemas.m=
+icrosoft.com/office/internal/2005/internalDocumentation"/></ds:schemaRefs><=
+/ds:datastoreItem>
+------=_NextPart_01CAF282.35796960
+Content-Location: file:///C:/AA4BB24E/Example_Use_Case-CC_to_TFS_Migration_files/item0018.xml
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/xml
+
+<outs:outSpaceData xmlns:outs=3D"http://schemas.microsoft.com/office/2009/o=
+utspace/metadata"><outs:relatedDates><outs:relatedDate><outs:type>3</outs:t=
+ype><outs:displayName>Last Modified</outs:displayName><outs:dateTime>2009-1=
+1-25T16:36:00Z</outs:dateTime><outs:isPinned>true</outs:isPinned></outs:rel=
+atedDate><outs:relatedDate><outs:type>2</outs:type><outs:displayName>Create=
+d</outs:displayName><outs:dateTime>2009-11-24T15:44:00Z</outs:dateTime><out=
+s:isPinned>true</outs:isPinned></outs:relatedDate><outs:relatedDate><outs:t=
+ype>4</outs:type><outs:displayName>Last Printed</outs:displayName><outs:dat=
+eTime/><outs:isPinned>true</outs:isPinned></outs:relatedDate></outs:related=
+Dates><outs:relatedDocuments><outs:relatedDocument><outs:type>2</outs:type>=
+<outs:displayName>Other documents in current folder</outs:displayName><outs=
+:uri/><outs:isPinned>true</outs:isPinned></outs:relatedDocument></outs:rela=
+tedDocuments><outs:relatedPeople><outs:relatedPeopleItem><outs:category>Aut=
+hor</outs:category><outs:people><outs:relatedPerson><outs:displayName>Willy=
+-Peter Schaub</outs:displayName><outs:accountName></outs:accountName></outs=
+:relatedPerson></outs:people><outs:source>0</outs:source><outs:isPinned>tru=
+e</outs:isPinned></outs:relatedPeopleItem><outs:relatedPeopleItem><outs:cat=
+egory>Last modified by</outs:category><outs:people><outs:relatedPerson><out=
+s:displayName>Adam Jagocki</outs:displayName><outs:accountName></outs:accou=
+ntName></outs:relatedPerson></outs:people><outs:source>0</outs:source><outs=
+:isPinned>true</outs:isPinned></outs:relatedPeopleItem><outs:relatedPeopleI=
+tem><outs:category>Manager</outs:category><outs:people/><outs:source>0</out=
+s:source><outs:isPinned>false</outs:isPinned></outs:relatedPeopleItem></out=
+s:relatedPeople><propertyMetadataList xmlns=3D"http://schemas.microsoft.com=
+/office/2009/outspace/metadata"><propertyMetadata><type>0</type><propertyId=
+>2228224</propertyId><propertyName/><isPinned>true</isPinned></propertyMeta=
+data><propertyMetadata><type>0</type><propertyId>589824</propertyId><proper=
+tyName/><isPinned>true</isPinned></propertyMetadata><propertyMetadata><type=
+>0</type><propertyId>589825</propertyId><propertyName/><isPinned>true</isPi=
+nned></propertyMetadata><propertyMetadata><type>0</type><propertyId>786432<=
+/propertyId><propertyName/><isPinned>true</isPinned></propertyMetadata><pro=
+pertyMetadata><type>0</type><propertyId>14</propertyId><propertyName/><isPi=
+nned>true</isPinned></propertyMetadata><propertyMetadata><type>0</type><pro=
+pertyId>8</propertyId><propertyName/><isPinned>true</isPinned></propertyMet=
+adata><propertyMetadata><type>0</type><propertyId>6</propertyId><propertyNa=
+me/><isPinned>true</isPinned></propertyMetadata><propertyMetadata><type>0</=
+type><propertyId>655365</propertyId><propertyName/><isPinned>false</isPinne=
+d></propertyMetadata><propertyMetadata><type>0</type><propertyId>1</propert=
+yId><propertyName/><isPinned>false</isPinned></propertyMetadata><propertyMe=
+tadata><type>0</type><propertyId>0</propertyId><propertyName/><isPinned>fal=
+se</isPinned></propertyMetadata><propertyMetadata><type>0</type><propertyId=
+>13</propertyId><propertyName/><isPinned>false</isPinned></propertyMetadata=
+><propertyMetadata><type>0</type><propertyId>1179653</propertyId><propertyN=
+ame/><isPinned>false</isPinned></propertyMetadata><propertyMetadata><type>0=
+</type><propertyId>22</propertyId><propertyName/><isPinned>false</isPinned>=
+</propertyMetadata></propertyMetadataList><outs:corruptMetadataWasLost>true=
+</outs:corruptMetadataWasLost></outs:outSpaceData>
+------=_NextPart_01CAF282.35796960
+Content-Location: file:///C:/AA4BB24E/Example_Use_Case-CC_to_TFS_Migration_files/props019.xml
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/xml
+
+<?xml version=3D"1.0" encoding=3D"UTF-8" standalone=3D"no"?>
+<ds:datastoreItem ds:itemID=3D"{2898E3AE-E749-4575-887D-678CF346C559}" xmln=
+s:ds=3D"http://schemas.openxmlformats.org/officeDocument/2006/customXml"><d=
+s:schemaRefs><ds:schemaRef ds:uri=3D"http://schemas.microsoft.com/office/20=
+09/outspace/metadata"/></ds:schemaRefs></ds:datastoreItem>
+------=_NextPart_01CAF282.35796960
+Content-Location: file:///C:/AA4BB24E/Example_Use_Case-CC_to_TFS_Migration_files/item0020.xml
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/xml
+
+<?mso-contentType?><FormTemplates xmlns=3D"http://schemas.microsoft.com/sha=
+repoint/v3/contenttype/forms"><Display>DocumentLibraryForm</Display><Edit>D=
+ocumentLibraryForm</Edit><New>DocumentLibraryForm</New></FormTemplates>
+------=_NextPart_01CAF282.35796960
+Content-Location: file:///C:/AA4BB24E/Example_Use_Case-CC_to_TFS_Migration_files/props021.xml
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/xml
+
+<?xml version=3D"1.0" encoding=3D"UTF-8" standalone=3D"no"?>
+<ds:datastoreItem ds:itemID=3D"{9C5B210F-9E7B-4605-8685-8B479F1D61AC}" xmln=
+s:ds=3D"http://schemas.openxmlformats.org/officeDocument/2006/customXml"><d=
+s:schemaRefs><ds:schemaRef ds:uri=3D"http://schemas.microsoft.com/sharepoin=
+t/v3/contenttype/forms"/></ds:schemaRefs></ds:datastoreItem>
+------=_NextPart_01CAF282.35796960
+Content-Location: file:///C:/AA4BB24E/Example_Use_Case-CC_to_TFS_Migration_files/item0022.xml
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/xml
+
+<b:Sources SelectedStyle=3D"\APA.XSL" StyleName=3D"APA" xmlns:b=3D"http://s=
+chemas.openxmlformats.org/officeDocument/2006/bibliography" xmlns=3D"http:/=
+/schemas.openxmlformats.org/officeDocument/2006/bibliography"></b:Sources>
+
+------=_NextPart_01CAF282.35796960
+Content-Location: file:///C:/AA4BB24E/Example_Use_Case-CC_to_TFS_Migration_files/props023.xml
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/xml
+
+<?xml version=3D"1.0" encoding=3D"UTF-8" standalone=3D"no"?>
+<ds:datastoreItem ds:itemID=3D"{33539AEE-5EF6-49B8-925B-67EF52A082CB}" xmln=
+s:ds=3D"http://schemas.openxmlformats.org/officeDocument/2006/customXml"><d=
+s:schemaRefs><ds:schemaRef ds:uri=3D"http://schemas.openxmlformats.org/offi=
+ceDocument/2006/bibliography"/></ds:schemaRefs></ds:datastoreItem>
+------=_NextPart_01CAF282.35796960
+Content-Location: file:///C:/AA4BB24E/Example_Use_Case-CC_to_TFS_Migration_files/themedata.thmx
+Content-Transfer-Encoding: base64
+Content-Type: application/vnd.ms-officetheme
+
+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
+AACbCgAAAAA=
+
+------=_NextPart_01CAF282.35796960
+Content-Location: file:///C:/AA4BB24E/Example_Use_Case-CC_to_TFS_Migration_files/colorschememapping.xml
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/xml
+
+<?xml version=3D"1.0" encoding=3D"UTF-8" standalone=3D"yes"?>
+<a:clrMap xmlns:a=3D"http://schemas.openxmlformats.org/drawingml/2006/main"=
+ bg1=3D"lt1" tx1=3D"dk1" bg2=3D"lt2" tx2=3D"dk2" accent1=3D"accent1" accent=
+2=3D"accent2" accent3=3D"accent3" accent4=3D"accent4" accent5=3D"accent5" a=
+ccent6=3D"accent6" hlink=3D"hlink" folHlink=3D"folHlink"/>
+------=_NextPart_01CAF282.35796960
+Content-Location: file:///C:/AA4BB24E/Example_Use_Case-CC_to_TFS_Migration_files/header.htm
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset="us-ascii"
+
+<html xmlns:v=3D"urn:schemas-microsoft-com:vml"
+xmlns:o=3D"urn:schemas-microsoft-com:office:office"
+xmlns:w=3D"urn:schemas-microsoft-com:office:word"
+xmlns:m=3D"http://schemas.microsoft.com/office/2004/12/omml"
+xmlns=3D"http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=3DContent-Type content=3D"text/html; charset=3Dus-ascii">
+<meta name=3DProgId content=3DWord.Document>
+<meta name=3DGenerator content=3D"Microsoft Word 14">
+<meta name=3DOriginator content=3D"Microsoft Word 14">
+<link id=3DMain-File rel=3DMain-File
+href=3D"../Example_Use_Case-CC_to_TFS_Migration.htm">
+<![if IE]>
+<base
+href=3D"file:///C:\AA4BB24E\Example_Use_Case-CC_to_TFS_Migration_files\head=
+er.htm"
+id=3D"webarch_temp_base_tag">
+<![endif]><!--[if gte mso 9]><xml>
+ <o:shapedefaults v:ext=3D"edit" spidmax=3D"2049"/>
+</xml><![endif]-->
+</head>
+
+<body lang=3DEN-US>
+
+<div style=3D'mso-element:footnote-separator' id=3Dfs>
+
+<p class=3DMsoNormal style=3D'margin-bottom:0in;margin-bottom:.0001pt;line-=
+height:
+normal'><span lang=3DPL><span style=3D'mso-special-character:footnote-separ=
+ator'><![if !supportFootnotes]>
+
+<hr align=3Dleft size=3D1 width=3D"33%">
+
+<![endif]></span></span></p>
+
+<p class=3DMsoNormal><span lang=3DPL><o:p>&nbsp;</o:p></span></p>
+
+<p class=3DMsoNormal><span lang=3DPL><o:p>&nbsp;</o:p></span></p>
+
+<p class=3DMsoNormal><span lang=3DPL><o:p>&nbsp;</o:p></span></p>
+
+<p class=3DMsoNormal><span lang=3DPL><o:p>&nbsp;</o:p></span></p>
+
+<p class=3DMsoNormal><span lang=3DPL><o:p>&nbsp;</o:p></span></p>
+
+<p class=3DMsoNormal><span lang=3DPL><o:p>&nbsp;</o:p></span></p>
+
+<p class=3DMsoNormal><span lang=3DPL><o:p>&nbsp;</o:p></span></p>
+
+<p class=3DMsoNormal><span lang=3DPL><o:p>&nbsp;</o:p></span></p>
+
+<p class=3DMsoNormal><span lang=3DPL><o:p>&nbsp;</o:p></span></p>
+
+<p class=3DMsoNormal><span lang=3DPL><o:p>&nbsp;</o:p></span></p>
+
+<p class=3DMsoNormal><span lang=3DPL><o:p>&nbsp;</o:p></span></p>
+
+<p class=3DMsoNormal><span lang=3DPL><o:p>&nbsp;</o:p></span></p>
+
+<p class=3DMsoNormal><span lang=3DPL><o:p>&nbsp;</o:p></span></p>
+
+<p class=3DMsoNormal><span lang=3DPL><o:p>&nbsp;</o:p></span></p>
+
+<p class=3DMsoNormal><span lang=3DPL><o:p>&nbsp;</o:p></span></p>
+
+<p class=3DMsoNormal><span lang=3DPL><o:p>&nbsp;</o:p></span></p>
+
+<p class=3DMsoNormal><span lang=3DPL><o:p>&nbsp;</o:p></span></p>
+
+<p class=3DMsoNormal><span lang=3DPL><o:p>&nbsp;</o:p></span></p>
+
+<p class=3DMsoNormal><span lang=3DPL><o:p>&nbsp;</o:p></span></p>
+
+<p class=3DMsoNormal><span lang=3DPL><o:p>&nbsp;</o:p></span></p>
+
+<p class=3DMsoNormal><span lang=3DPL><o:p>&nbsp;</o:p></span></p>
+
+<p class=3DMsoNormal><span lang=3DPL><o:p>&nbsp;</o:p></span></p>
+
+<p class=3DMsoNormal><span lang=3DPL><o:p>&nbsp;</o:p></span></p>
+
+<p class=3DMsoNormal><span lang=3DPL><o:p>&nbsp;</o:p></span></p>
+
+<p class=3DMsoNormal><span lang=3DPL><o:p>&nbsp;</o:p></span></p>
+
+<p class=3DMsoNormal><span lang=3DPL><o:p>&nbsp;</o:p></span></p>
+
+<p class=3DMsoNormal><span lang=3DPL><o:p>&nbsp;</o:p></span></p>
+
+</div>
+
+<div style=3D'mso-element:footnote-continuation-separator' id=3Dfcs>
+
+<p class=3DMsoNormal style=3D'margin-bottom:0in;margin-bottom:.0001pt;line-=
+height:
+normal'><span lang=3DPL><span style=3D'mso-special-character:footnote-conti=
+nuation-separator'><![if !supportFootnotes]>
+
+<hr align=3Dleft size=3D1>
+
+<![endif]></span></span></p>
+
+<p class=3DMsoNormal><span lang=3DPL><o:p>&nbsp;</o:p></span></p>
+
+<p class=3DMsoNormal><span lang=3DPL><o:p>&nbsp;</o:p></span></p>
+
+<p class=3DMsoNormal><span lang=3DPL><o:p>&nbsp;</o:p></span></p>
+
+<p class=3DMsoNormal><span lang=3DPL><o:p>&nbsp;</o:p></span></p>
+
+<p class=3DMsoNormal><span lang=3DPL><o:p>&nbsp;</o:p></span></p>
+
+<p class=3DMsoNormal><span lang=3DPL><o:p>&nbsp;</o:p></span></p>
+
+<p class=3DMsoNormal><span lang=3DPL><o:p>&nbsp;</o:p></span></p>
+
+<p class=3DMsoNormal><span lang=3DPL><o:p>&nbsp;</o:p></span></p>
+
+<p class=3DMsoNormal><span lang=3DPL><o:p>&nbsp;</o:p></span></p>
+
+<p class=3DMsoNormal><span lang=3DPL><o:p>&nbsp;</o:p></span></p>
+
+<p class=3DMsoNormal><span lang=3DPL><o:p>&nbsp;</o:p></span></p>
+
+<p class=3DMsoNormal><span lang=3DPL><o:p>&nbsp;</o:p></span></p>
+
+<p class=3DMsoNormal><span lang=3DPL><o:p>&nbsp;</o:p></span></p>
+
+<p class=3DMsoNormal><span lang=3DPL><o:p>&nbsp;</o:p></span></p>
+
+<p class=3DMsoNormal><span lang=3DPL><o:p>&nbsp;</o:p></span></p>
+
+<p class=3DMsoNormal><span lang=3DPL><o:p>&nbsp;</o:p></span></p>
+
+<p class=3DMsoNormal><span lang=3DPL><o:p>&nbsp;</o:p></span></p>
+
+<p class=3DMsoNormal><span lang=3DPL><o:p>&nbsp;</o:p></span></p>
+
+<p class=3DMsoNormal><span lang=3DPL><o:p>&nbsp;</o:p></span></p>
+
+<p class=3DMsoNormal><span lang=3DPL><o:p>&nbsp;</o:p></span></p>
+
+<p class=3DMsoNormal><span lang=3DPL><o:p>&nbsp;</o:p></span></p>
+
+<p class=3DMsoNormal><span lang=3DPL><o:p>&nbsp;</o:p></span></p>
+
+<p class=3DMsoNormal><span lang=3DPL><o:p>&nbsp;</o:p></span></p>
+
+<p class=3DMsoNormal><span lang=3DPL><o:p>&nbsp;</o:p></span></p>
+
+<p class=3DMsoNormal><span lang=3DPL><o:p>&nbsp;</o:p></span></p>
+
+<p class=3DMsoNormal><span lang=3DPL><o:p>&nbsp;</o:p></span></p>
+
+<p class=3DMsoNormal><span lang=3DPL><o:p>&nbsp;</o:p></span></p>
+
+</div>
+
+<div style=3D'mso-element:endnote-separator' id=3Des>
+
+<p class=3DMsoNormal style=3D'margin-bottom:0in;margin-bottom:.0001pt;line-=
+height:
+normal'><span lang=3DPL><span style=3D'mso-special-character:footnote-separ=
+ator'><![if !supportFootnotes]>
+
+<hr align=3Dleft size=3D1 width=3D"33%">
+
+<![endif]></span></span></p>
+
+<p class=3DMsoNormal><span lang=3DPL><o:p>&nbsp;</o:p></span></p>
+
+<p class=3DMsoNormal><span lang=3DPL><o:p>&nbsp;</o:p></span></p>
+
+<p class=3DMsoNormal><span lang=3DPL><o:p>&nbsp;</o:p></span></p>
+
+<p class=3DMsoNormal><span lang=3DPL><o:p>&nbsp;</o:p></span></p>
+
+<p class=3DMsoNormal><span lang=3DPL><o:p>&nbsp;</o:p></span></p>
+
+<p class=3DMsoNormal><span lang=3DPL><o:p>&nbsp;</o:p></span></p>
+
+<p class=3DMsoNormal><span lang=3DPL><o:p>&nbsp;</o:p></span></p>
+
+<p class=3DMsoNormal><span lang=3DPL><o:p>&nbsp;</o:p></span></p>
+
+<p class=3DMsoNormal><span lang=3DPL><o:p>&nbsp;</o:p></span></p>
+
+<p class=3DMsoNormal><span lang=3DPL><o:p>&nbsp;</o:p></span></p>
+
+<p class=3DMsoNormal><span lang=3DPL><o:p>&nbsp;</o:p></span></p>
+
+<p class=3DMsoNormal><span lang=3DPL><o:p>&nbsp;</o:p></span></p>
+
+<p class=3DMsoNormal><span lang=3DPL><o:p>&nbsp;</o:p></span></p>
+
+<p class=3DMsoNormal><span lang=3DPL><o:p>&nbsp;</o:p></span></p>
+
+<p class=3DMsoNormal><span lang=3DPL><o:p>&nbsp;</o:p></span></p>
+
+<p class=3DMsoNormal><span lang=3DPL><o:p>&nbsp;</o:p></span></p>
+
+<p class=3DMsoNormal><span lang=3DPL><o:p>&nbsp;</o:p></span></p>
+
+<p class=3DMsoNormal><span lang=3DPL><o:p>&nbsp;</o:p></span></p>
+
+<p class=3DMsoNormal><span lang=3DPL><o:p>&nbsp;</o:p></span></p>
+
+<p class=3DMsoNormal><span lang=3DPL><o:p>&nbsp;</o:p></span></p>
+
+<p class=3DMsoNormal><span lang=3DPL><o:p>&nbsp;</o:p></span></p>
+
+<p class=3DMsoNormal><span lang=3DPL><o:p>&nbsp;</o:p></span></p>
+
+<p class=3DMsoNormal><span lang=3DPL><o:p>&nbsp;</o:p></span></p>
+
+<p class=3DMsoNormal><span lang=3DPL><o:p>&nbsp;</o:p></span></p>
+
+<p class=3DMsoNormal><span lang=3DPL><o:p>&nbsp;</o:p></span></p>
+
+<p class=3DMsoNormal><span lang=3DPL><o:p>&nbsp;</o:p></span></p>
+
+<p class=3DMsoNormal><span lang=3DPL><o:p>&nbsp;</o:p></span></p>
+
+</div>
+
+<div style=3D'mso-element:endnote-continuation-separator' id=3Decs>
+
+<p class=3DMsoNormal style=3D'margin-bottom:0in;margin-bottom:.0001pt;line-=
+height:
+normal'><span lang=3DPL><span style=3D'mso-special-character:footnote-conti=
+nuation-separator'><![if !supportFootnotes]>
+
+<hr align=3Dleft size=3D1>
+
+<![endif]></span></span></p>
+
+<p class=3DMsoNormal><span lang=3DPL><o:p>&nbsp;</o:p></span></p>
+
+<p class=3DMsoNormal><span lang=3DPL><o:p>&nbsp;</o:p></span></p>
+
+<p class=3DMsoNormal><span lang=3DPL><o:p>&nbsp;</o:p></span></p>
+
+<p class=3DMsoNormal><span lang=3DPL><o:p>&nbsp;</o:p></span></p>
+
+<p class=3DMsoNormal><span lang=3DPL><o:p>&nbsp;</o:p></span></p>
+
+<p class=3DMsoNormal><span lang=3DPL><o:p>&nbsp;</o:p></span></p>
+
+<p class=3DMsoNormal><span lang=3DPL><o:p>&nbsp;</o:p></span></p>
+
+<p class=3DMsoNormal><span lang=3DPL><o:p>&nbsp;</o:p></span></p>
+
+<p class=3DMsoNormal><span lang=3DPL><o:p>&nbsp;</o:p></span></p>
+
+<p class=3DMsoNormal><span lang=3DPL><o:p>&nbsp;</o:p></span></p>
+
+<p class=3DMsoNormal><span lang=3DPL><o:p>&nbsp;</o:p></span></p>
+
+<p class=3DMsoNormal><span lang=3DPL><o:p>&nbsp;</o:p></span></p>
+
+<p class=3DMsoNormal><span lang=3DPL><o:p>&nbsp;</o:p></span></p>
+
+<p class=3DMsoNormal><span lang=3DPL><o:p>&nbsp;</o:p></span></p>
+
+<p class=3DMsoNormal><span lang=3DPL><o:p>&nbsp;</o:p></span></p>
+
+<p class=3DMsoNormal><span lang=3DPL><o:p>&nbsp;</o:p></span></p>
+
+<p class=3DMsoNormal><span lang=3DPL><o:p>&nbsp;</o:p></span></p>
+
+<p class=3DMsoNormal><span lang=3DPL><o:p>&nbsp;</o:p></span></p>
+
+<p class=3DMsoNormal><span lang=3DPL><o:p>&nbsp;</o:p></span></p>
+
+<p class=3DMsoNormal><span lang=3DPL><o:p>&nbsp;</o:p></span></p>
+
+<p class=3DMsoNormal><span lang=3DPL><o:p>&nbsp;</o:p></span></p>
+
+<p class=3DMsoNormal><span lang=3DPL><o:p>&nbsp;</o:p></span></p>
+
+<p class=3DMsoNormal><span lang=3DPL><o:p>&nbsp;</o:p></span></p>
+
+<p class=3DMsoNormal><span lang=3DPL><o:p>&nbsp;</o:p></span></p>
+
+<p class=3DMsoNormal><span lang=3DPL><o:p>&nbsp;</o:p></span></p>
+
+<p class=3DMsoNormal><span lang=3DPL><o:p>&nbsp;</o:p></span></p>
+
+<p class=3DMsoNormal><span lang=3DPL><o:p>&nbsp;</o:p></span></p>
+
+</div>
+
+<div style=3D'mso-element:header' id=3Dh1>
+
+<div style=3D'mso-element:para-border-div;border:none;border-bottom:solid #=
+622423 3.0pt;
+mso-border-bottom-themecolor:accent2;mso-border-bottom-themeshade:127;
+padding:0in 0in 1.0pt 0in'>
+
+<p class=3DMsoHeader style=3D'border:none;mso-border-bottom-alt:solid #6224=
+23 3.0pt;
+mso-border-bottom-themecolor:accent2;mso-border-bottom-themeshade:127;
+padding:0in;mso-padding-alt:0in 0in 1.0pt 0in'><span lang=3DEN-GB
+style=3D'font-size:16.0pt;font-family:"Cambria","serif";mso-ascii-theme-fon=
+t:
+major-latin;mso-fareast-font-family:"Times New Roman";mso-fareast-theme-fon=
+t:
+major-fareast;mso-hansi-theme-font:major-latin;mso-bidi-font-family:"Times =
+New Roman";
+mso-bidi-theme-font:major-bidi;mso-ansi-language:EN-GB'><w:Sdt
+ PrefixMappings=3D"xmlns:ns0=3D'http://schemas.openxmlformats.org/package/2=
+006/metadata/core-properties' xmlns:ns1=3D'http://purl.org/dc/elements/1.1/=
+'"
+ Xpath=3D"/ns0:coreProperties[1]/ns1:title[1]" ShowingPlcHdr=3D"t" Text=3D"=
+t"
+ StoreItemID=3D"X_6C3C8BC8-F283-45AE-878A-BAB7291924A1" Title=3D"Title"
+ ID=3D"77738743"><span style=3D'mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp; =
+</span></w:Sdt>TFS
+Integration Platform Delivery Project &#8211; <span class=3DSpellE>MigrateM=
+eFromRationalTools</span>
+CC Migration Use Case<o:p></o:p></span></p>
+
+</div>
+
+</div>
+
+<div style=3D'mso-element:footer' id=3Df1>
+
+<div style=3D'mso-element:para-border-div;border:none;border-top:solid #622=
+423 3.0pt;
+mso-border-top-themecolor:accent2;mso-border-top-themeshade:127;padding:1.0=
+pt 0in 0in 0in'>
+
+<p class=3DMsoFooter style=3D'border:none;mso-border-top-alt:solid #622423 =
+3.0pt;
+mso-border-top-themecolor:accent2;mso-border-top-themeshade:127;padding:0in;
+mso-padding-alt:1.0pt 0in 0in 0in'><span lang=3DPL style=3D'mso-ascii-font-=
+family:
+Calibri;mso-hansi-font-family:Calibri;mso-bidi-font-family:Calibri'>Copyrig=
+ht </span><span
+lang=3DPL style=3D'font-family:Symbol;mso-bidi-font-family:Symbol'>&Oacute;=
+ </span><span
+lang=3DPL style=3D'mso-ascii-font-family:Calibri;mso-hansi-font-family:Cali=
+bri;
+mso-bidi-font-family:Calibri'>2009 Microsoft Corporation</span><span lang=
+=3DPL
+style=3D'font-family:"Cambria","serif";mso-ascii-theme-font:major-latin;
+mso-hansi-theme-font:major-latin;mso-ansi-language:EN-GB'> </span><span
+lang=3DEN-GB style=3D'font-family:"Cambria","serif";mso-ascii-theme-font:ma=
+jor-latin;
+mso-hansi-theme-font:major-latin;mso-ansi-language:EN-GB'><w:PTab
+ Alignment=3D"RIGHT" RelativeTo=3D"MARGIN" Leader=3D"NONE"></w:PTab>Page </=
+span><!--[if supportFields]><span
+lang=3DEN-GB style=3D'mso-ansi-language:EN-GB'><span style=3D'mso-element:f=
+ield-begin'></span><span
+style=3D'mso-spacerun:yes'>&nbsp;</span>PAGE<span
+style=3D'mso-spacerun:yes'>&nbsp;&nbsp; </span>\* MERGEFORMAT <span
+style=3D'mso-element:field-separator'></span></span><![endif]--><span lang=
+=3DEN-GB
+style=3D'font-family:"Cambria","serif";mso-ascii-theme-font:major-latin;
+mso-hansi-theme-font:major-latin;mso-ansi-language:EN-GB;mso-no-proof:yes'>=
+1</span><!--[if supportFields]><span
+lang=3DEN-GB style=3D'mso-ansi-language:EN-GB'><span style=3D'mso-element:f=
+ield-end'></span></span><![endif]--><span
+lang=3DEN-GB style=3D'font-family:"Cambria","serif";mso-ascii-theme-font:ma=
+jor-latin;
+mso-hansi-theme-font:major-latin;mso-ansi-language:EN-GB'><o:p></o:p></span=
+></p>
+
+</div>
+
+</div>
+
+</body>
+
+</html>
+
+------=_NextPart_01CAF282.35796960
+Content-Location: file:///C:/AA4BB24E/Example_Use_Case-CC_to_TFS_Migration_files/filelist.xml
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/xml; charset="utf-8"
+
+<xml xmlns:o=3D"urn:schemas-microsoft-com:office:office">
+ <o:MainFile HRef=3D"../Example_Use_Case-CC_to_TFS_Migration.htm"/>
+ <o:File HRef=3D"preview.wmf"/>
+ <o:File HRef=3D"item0016.xml"/>
+ <o:File HRef=3D"props017.xml"/>
+ <o:File HRef=3D"item0018.xml"/>
+ <o:File HRef=3D"props019.xml"/>
+ <o:File HRef=3D"item0020.xml"/>
+ <o:File HRef=3D"props021.xml"/>
+ <o:File HRef=3D"item0022.xml"/>
+ <o:File HRef=3D"props023.xml"/>
+ <o:File HRef=3D"themedata.thmx"/>
+ <o:File HRef=3D"colorschememapping.xml"/>
+ <o:File HRef=3D"header.htm"/>
+ <o:File HRef=3D"filelist.xml"/>
+</xml>
+------=_NextPart_01CAF282.35796960--

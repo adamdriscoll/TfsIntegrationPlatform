@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:wit="http://www.microsoft.com/vsts/converters/wit"
+                               xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="ProductStudio">
+    <xs:complexType>
+      <xs:all>
+        <xs:element name="QueryFileName" type="NonEmptyString" minOccurs="1" maxOccurs="1" />
+        <xs:element name="UseDefaultCredentials" type="NonEmptyString" minOccurs="1" maxOccurs="1" />
+        <xs:element name="Domain" type="NonEmptyString" minOccurs="1" maxOccurs="1" />
+        <xs:element name="PsFieldMapFile" type="NonEmptyString" minOccurs="1" maxOccurs="1" />
+        <xs:element name="AdditionalInfo" type="NonEmptyString" minOccurs="1" maxOccurs="1" />
+        <xs:element name="PSFieldToMapToIterationPath" type="NonEmptyString" minOccurs="0" maxOccurs="1" />
+      </xs:all>
+    </xs:complexType>
+  </xs:element>
+
+  <!-- Non-empty string -->
+  <xs:simpleType name="NonEmptyString">
+      <xs:restriction base="xs:string">
+          <xs:minLength value="1" />
+      </xs:restriction>
+  </xs:simpleType>
+
+</xs:schema>

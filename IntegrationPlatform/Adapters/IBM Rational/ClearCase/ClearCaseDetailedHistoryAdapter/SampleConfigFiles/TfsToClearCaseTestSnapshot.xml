@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<Configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+               UniqueId="a063169b-f74f-4f56-a722-88f8af107360" FriendlyName="ClearCaseToTfs">
+  <Providers>
+    <Provider ReferenceName="FEBC091F-82A2-449e-AED8-133E5896C47A" FriendlyName="TFS 2010 VC Migration Provider" />
+    <Provider ReferenceName="F2A6BA65-8ACB-4cd0-BE8F-B25887F94392" FriendlyName="ClearCase 2003 Provider" />
+  </Providers>
+  <SessionGroup FriendlyName="Session Group Friendly Name" SessionGroupGUID="3b84188b-a76d-49f6-8dc0-981df285caa6">
+	<WorkFlowType Frequency="ContinuousManual" DirectionOfFlow="Unidirectional" SyncContext="Disabled" /> 
+    <MigrationSources>
+      <MigrationSource InternalUniqueId="b271fe89-8ece-4f8e-9b1d-813b42444440" FriendlyName="TFS 2010 source" 
+                       ServerIdentifier="TFS 2008 target" 
+                       ServerUrl="http://pei-dev10-2:8080/tfs" 
+                       SourceIdentifier="sourceTfs" 
+                       ProviderReferenceName="FEBC091F-82A2-449e-AED8-133E5896C47A">
+        <CustomSettings />
+      </MigrationSource>
+    <!-- Note: ServerUrl in the ClearCase MigrationSource is used to verify the connection to the ClearCase server -->
+	  <MigrationSource InternalUniqueId="07ed1fe0-c06a-4e41-9f2d-59899bfa0265" FriendlyName="ClearCase 2003 source" 
+                       ServerIdentifier="ClearCase 2003 target" 
+                       ServerUrl="\shi_vob" 
+                       SourceIdentifier="sourceClearCase" 
+                       ProviderReferenceName="F2A6BA65-8ACB-4cd0-BE8F-B25887F94392">
+        <CustomSettings>
+          <CustomSetting SettingKey="StorageLocation" SettingValue="\\localhost\ccstg_c_1" />
+          <CustomSetting SettingKey="CCBranchName" SettingValue="E2ETestBranch" />
+          <CustomSetting SettingKey="VobName" SettingValue="\e2e_vob" />
+          <CustomSetting SettingKey="VobName" SettingValue="\shi_vob" />
+        </CustomSettings>
+      </MigrationSource>
+    </MigrationSources>
+	
+    <Sessions>
+      <Session SessionType="VersionControl" SessionUniqueId="eee462b4-ca7f-432b-ac12-abc65dc73909" FriendlyName="Version Control Session"
+               RightMigrationSourceUniqueId="07ed1fe0-c06a-4e41-9f2d-59899bfa0265"
+               LeftMigrationSourceUniqueId="b271fe89-8ece-4f8e-9b1d-813b42444440">
+        <EventSinks />
+        <CustomSettings />
+        <Filters>
+          <FilterPair Neglect="false">
+            <FilterItem MigrationSourceUniqueId="b271fe89-8ece-4f8e-9b1d-813b42444440" FilterString="$/tp1/clearcase/3" />
+            <FilterItem MigrationSourceUniqueId="07ed1fe0-c06a-4e41-9f2d-59899bfa0265" FilterString="\e2e_vob\mig21" />
+          </FilterPair>
+        </Filters>
+      </Session>
+    </Sessions>
+    <Linking>
+      <CustomSettings /><LinkTypeMappings />
+    </Linking>
+  </SessionGroup>
+</Configuration>

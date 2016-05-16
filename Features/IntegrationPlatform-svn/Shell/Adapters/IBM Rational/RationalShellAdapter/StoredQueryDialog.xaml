@@ -1,0 +1,67 @@
+﻿<!-- Copyright © Microsoft Corporation.  All Rights Reserved.  This code released under the terms of the Microsoft Public License (MS-PL, http://opensource.org/licenses/ms-pl.html.) -->
+<Window x:Class="Microsoft.TeamFoundation.Migration.Shell.RationalShellAdapter.StoredQueryDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:Microsoft.TeamFoundation.Migration.Shell.RationalShellAdapter"
+        WindowStartupLocation="CenterOwner"
+        Title="Choose a ClearQuest Query" ResizeMode="NoResize"
+        ShowInTaskbar="False"
+        Height="300" Width="400">
+    <Window.Resources>
+        <HierarchicalDataTemplate DataType="{x:Type local:StoredQueryNodeViewModel}" ItemsSource="{Binding Children}">
+            <StackPanel Orientation="Horizontal" ToolTip="{Binding ToolTip}" Margin="2">
+                <Image Width="16" Margin="0,0,2,0">
+                    <Image.Style>
+                        <Style>
+                            <Setter Property="Image.Source" Value="Graphics\query_16.png" />
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding Query}" Value="{x:Null}">
+                                    <Setter Property="Image.Source" Value="Graphics\folderclosed_16.png" />
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Image.Style>
+                </Image>
+                <TextBlock Text="{Binding Name}" MouseDown="TextBlock_MouseDown">
+                    <TextBlock.Style>
+                        <Style>
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding IsValid}" Value="False">
+                                    <Setter Property="TextBlock.Foreground" Value="Gray" />
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </TextBlock.Style>
+                </TextBlock>
+            </StackPanel>
+        </HierarchicalDataTemplate>
+        <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
+    </Window.Resources>
+    <Grid Margin="12">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0" Margin="0,0,0,6" >
+            <TreeView x:Name="rootTreeView" ItemsSource="{Binding Root.Children}" SelectedItemChanged="rootTreeView_SelectedItemChanged" />
+            <TextBlock Text="Loading..." HorizontalAlignment="Center" VerticalAlignment="Center" Visibility="{Binding IsLoading, Converter={StaticResource BooleanToVisibilityConverter}}" />
+        </Grid>
+        <UniformGrid Grid.Row="1" Columns="2" HorizontalAlignment="Right">
+            <Button x:Name="saveButton" Content="OK" Click="saveButton_Click" IsDefault="True" Margin="3">
+                <Button.Style>
+                    <Style>
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding ElementName=rootTreeView, Path=SelectedItem.Query}" Value="{x:Null}">
+                                <Setter Property="Button.IsEnabled" Value="False" />
+                            </DataTrigger>
+                            <DataTrigger Binding="{Binding ElementName=rootTreeView, Path=SelectedItem.IsValid}" Value="False">
+                                <Setter Property="Button.IsEnabled" Value="False" />
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+            </Button>
+            <Button x:Name="cancelButton" Content="Cancel" IsCancel="True" />
+        </UniformGrid>
+    </Grid>
+</Window>

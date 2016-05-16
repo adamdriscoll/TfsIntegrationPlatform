@@ -1,0 +1,3 @@
+﻿ALTER TABLE [dbo].[WI_TYPE_MAP_COLLECTION]
+ADD CONSTRAINT [UK_WITypeMapCollection]
+UNIQUE (MappingId)

@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Note that Build has been replaced with an CopyContentFiles so that we do not generate an empty Documentation.dll -->
+<Project ToolsVersion="4.0" DefaultTargets="CopyContentFiles" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <!-- ********************************************************************************************* -->
+  <!-- OutputPath should NOT be set in this project file to let the common settings determine        -->
+  <!-- the build location.                                                                           -->
+  <!-- ********************************************************************************************* -->
+  <PropertyGroup>
+    <!-- Relative path to Binaries subdirectory. -->
+    <TfsIPRoot>..</TfsIPRoot>
+    <!-- See common settings for possible values of TfsIPProjectType.  Determines placement of binaries. -->
+    <TfsIPProjectType>Reports</TfsIPProjectType>
+  </PropertyGroup>
+  <Import Project="$(TfsIPRoot)\Build\Microsoft.TeamFoundation.Migration.Settings.targets" />
+  <!-- ********************************************************************************************* -->
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A7E8D4C4-3480-4FF7-906E-F3810B83DE5F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Reports</RootNamespace>
+    <AssemblyName>Reports</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <!--<OutputPath>bin\Debug\</OutputPath>-->
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <!--<OutputPath>bin\Release\</OutputPath>-->
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Content Include="TFS Integration - Active Conflicts.rdl">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TFS Integration - Latency.rdl">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Installation Instructions.mht">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(TfsIPRoot)\Build\Microsoft.TeamFoundation.Migration.targets" />
+</Project>

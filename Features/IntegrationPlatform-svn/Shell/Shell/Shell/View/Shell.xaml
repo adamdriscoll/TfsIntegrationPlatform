@@ -1,0 +1,13 @@
+﻿<!-- Copyright © Microsoft Corporation.  All Rights Reserved.  This code released under the terms of the Microsoft Public License (MS-PL, http://opensource.org/licenses/ms-pl.html.) -->
+<ev:Shell 
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:ev="clr-namespace:Microsoft.TeamFoundation.Migration.Shell.View;assembly=Microsoft.TeamFoundation.Migration.Shell"
+    xmlns:m="clr-namespace:Microsoft.TeamFoundation.Migration.Shell.Model;assembly=Microsoft.TeamFoundation.Migration.Shell"
+    xmlns:c="clr-namespace:Microsoft.TeamFoundation.Migration.Shell.Controller;assembly=Microsoft.TeamFoundation.Migration.Shell"
+    xmlns:v="clr-namespace:Microsoft.TeamFoundation.Migration.Shell.View;assembly=Microsoft.TeamFoundation.Migration.Shell"
+    x:Class="Microsoft.TeamFoundation.Migration.Shell.Tfs.Shell"
+    Icon="Images\ToolsIcon.ico"
+    x:TypeArguments="v:ShellViewModel,c:ShellController,m:ConfigurationModel">
+<!-- root object referenced by TfsMigrationShell app -->
+</ev:Shell>

@@ -1,0 +1,288 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <!-- ********************************************************************************************* -->
+  <!-- OutputPath should NOT be set in this project file to let the common settings determine        -->
+  <!-- the build location.                                                                           -->
+  <!-- ********************************************************************************************* -->
+  <PropertyGroup>
+    <!-- Relative path to Binaries subdirectory. -->
+    <TfsIPRoot>..\..\..</TfsIPRoot>
+    <!-- See common settings for possible values of TfsIPProjectType.  Determines placement of binaries. -->
+    <TfsIPProjectType>Adapter</TfsIPProjectType>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <Import Project="$(TfsIPRoot)\Build\Microsoft.TeamFoundation.Migration.Settings.targets" />
+  <!-- ********************************************************************************************* -->
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E340292B-FCDF-4D3B-9203-4D3D393B77AF}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Microsoft.TeamFoundation.Migration.Tfs2010WitAdapter</RootNamespace>
+    <AssemblyName>Tfs2010WITAdapter</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <!--<OutputPath>bin\Debug\</OutputPath>-->
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <!--<OutputPath>bin\Release\</OutputPath>-->
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.TeamFoundation, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Binaries\Internal\TFS2010\Microsoft.TeamFoundation.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.TeamFoundation.Client, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Binaries\Internal\TFS2010\Microsoft.TeamFoundation.Client.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.TeamFoundation.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Binaries\Internal\TFS2010\Microsoft.TeamFoundation.Common.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.TeamFoundation.VersionControl.Client, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Binaries\Internal\TFS2010\Microsoft.TeamFoundation.VersionControl.Client.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.TeamFoundation.WorkItemTracking.Client, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Binaries\Internal\TFS2010\Microsoft.TeamFoundation.WorkItemTracking.Client.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.TeamFoundation.WorkItemTracking.Proxy, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Binaries\Internal\TFS2010\Microsoft.TeamFoundation.WorkItemTracking.Proxy.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.Entity">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\..\..\Version\Version.cs">
+      <Link>Version.cs</Link>
+    </Compile>
+    <Compile Include="CommonConcepts\FieldValueComparer.cs" />
+    <Compile Include="CommonConcepts\MigrationField.cs" />
+    <Compile Include="CommonConcepts\MigrationRevision.cs" />
+    <Compile Include="CommonConcepts\Watermark.cs" />
+    <Compile Include="Conflicts\ExcessivePathConflictHandler.cs" />
+    <Compile Include="Conflicts\ExcessivePathConflictType.cs" />
+    <Compile Include="Conflicts\FileAttachmentOversizedConflictHandler.cs" />
+    <Compile Include="Conflicts\FileAttachmentOversizedConflictType.cs" />
+    <Compile Include="Conflicts\HistoryNotFoundResolution\ConversionResult.cs" />
+    <Compile Include="Conflicts\HistoryNotFoundResolution\FieldNotExistException.cs" />
+    <Compile Include="Conflicts\HistoryNotFoundResolution\ItemConversionHistory.cs" />
+    <Compile Include="Conflicts\HistoryNotFoundResolution\MigrationAction.cs" />
+    <Compile Include="Conflicts\HistoryNotFoundResolution\MigrationException.cs" />
+    <Compile Include="Conflicts\HistoryNotFoundResolution\Tfs2010WitAnalysisProvider.cs" />
+    <Compile Include="Conflicts\HistoryNotFoundResolution\Tfs2010WitMigrationProvider.cs" />
+    <Compile Include="Conflicts\HistoryNotFoundResolution\TfsConstants.cs.cs" />
+    <Compile Include="Conflicts\HistoryNotFoundResolution\TfsMigrationWorkItemStore.cs" />
+    <Compile Include="Conflicts\HistoryNotFoundResolution\TfsUpdateDocument.cs" />
+    <Compile Include="Conflicts\HistoryNotFoundResolution\TfsWITAnalysisProvider.cs" />
+    <Compile Include="Conflicts\HistoryNotFoundResolution\TfsWITMigrationProvider.cs" />
+    <Compile Include="Conflicts\InsufficientPermissionConflictHandler.cs" />
+    <Compile Include="Conflicts\InsufficientPermissionConflictType.cs" />
+    <Compile Include="Conflicts\IntegerRange.cs" />
+    <Compile Include="Conflicts\InvalidFieldConflictHandler.cs" />
+    <Compile Include="Conflicts\InvalidFieldConflictType.cs" />
+    <Compile Include="Conflicts\InvalidFieldValueConflictHandler.cs" />
+    <Compile Include="Conflicts\InvalidFieldValueConflictType.cs" />
+    <Compile Include="Conflicts\InvalidSubmissionConflictHandler.cs" />
+    <Compile Include="Conflicts\InvalidSubmissionConflictType.cs" />
+    <Compile Include="Conflicts\InvalidWorkItemLinkDetails.cs" />
+    <Compile Include="Conflicts\TFSCyclicLinkConflictHandler.cs" />
+    <Compile Include="Conflicts\TFSCyclicLinkConflictType.cs" />
+    <Compile Include="Conflicts\TFSLinkAccessViolationConflictType.cs" />
+    <Compile Include="Conflicts\TFSModifyLockedWorkItemLinkConflictHandler.cs" />
+    <Compile Include="Conflicts\TFSModifyLockedWorkItemLinkConflictType.cs" />
+    <Compile Include="Conflicts\TFSModifyLockedWorkItemLinkConflict_ResolveByForceDelete.cs" />
+    <Compile Include="Conflicts\TFSMulitpleParentLinkConflictHandler.cs" />
+    <Compile Include="Conflicts\TFSMulitpleParentLinkConflictType.cs" />
+    <Compile Include="Conflicts\WitGeneralConflictHandler.cs" />
+    <Compile Include="Conflicts\WitGeneralConflictType.cs" />
+    <Compile Include="Conflicts\WorkItemHistoryNotFoundConflictHandler.cs" />
+    <Compile Include="Conflicts\WorkItemHistoryNotFoundConflictType.cs" />
+    <Compile Include="Conflicts\WorkItemTypeNotExistConflictHandler.cs" />
+    <Compile Include="Conflicts\WorkItemTypeNotExistConflictType.cs" />
+    <Compile Include="Constants.cs" />
+    <Compile Include="CSSAdapter.cs" />
+    <Compile Include="EventingAndException\AnalysisCompleteEventArgs.cs" />
+    <Compile Include="EventingAndException\CollectionEventArgs.cs" />
+    <Compile Include="EventingAndException\WitExceptions.cs" />
+    <Compile Include="EventingAndException\WorkItemMigrationEventArgs.cs" />
+    <Compile Include="FieldValueCorrectionAlgorithm.cs" />
+    <Compile Include="ITfsWorkItemServer.cs" />
+    <Compile Include="IWITDSyncer.cs" />
+    <Compile Include="Linking\ChangeListArtifactType.cs" />
+    <Compile Include="Linking\ExternalArtifactType.cs" />
+    <Compile Include="Linking\HyperlinkArtifactType.cs" />
+    <Compile Include="Linking\ILinkHandler.cs" />
+    <Compile Include="Linking\LinkingConstants.cs" />
+    <Compile Include="Linking\Tfs2008LinkProvider.cs" />
+    <Compile Include="Linking\Tfs2010LinkProvider.cs" />
+    <Compile Include="Linking\Tfs2010WorkItemLinkTypeBase.cs" />
+    <Compile Include="Linking\Tfs2010WorkItemRelatedLinkType.cs" />
+    <Compile Include="Linking\TfsArtifactHandlerBase.cs" />
+    <Compile Include="Linking\TfsChangeListHandler.cs" />
+    <Compile Include="Linking\TfsExternalArtifactHandler.cs" />
+    <Compile Include="Linking\TfsHyperlinkHandler.cs" />
+    <Compile Include="Linking\TfsLatestFileHandler.cs" />
+    <Compile Include="Linking\TfsLinkingProviderBase.cs" />
+    <Compile Include="Linking\TfsRevisionFileHandler.cs" />
+    <Compile Include="Linking\TfsWorkItemHandler.cs" />
+    <Compile Include="Linking\VersionControlledFileArtifactType.cs" />
+    <Compile Include="Linking\WorkItemArtifactType.cs" />
+    <Compile Include="Linking\WorkItemChangeListLinkType.cs" />
+    <Compile Include="Linking\WorkItemExternalLinkType.cs" />
+    <Compile Include="Linking\WorkItemHyperlinkLinkType.cs" />
+    <Compile Include="Linking\WorkItemLatestFileLinkType.cs" />
+    <Compile Include="Linking\WorkItemRelatedLinkType.cs" />
+    <Compile Include="Linking\WorkItemRevisionFileLinkType.cs" />
+    <Compile Include="Md5HashUtility.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tfs2010MigrationDataSource.cs" />
+    <Compile Include="Tfs2010MigrationWorkItemStore.cs" />
+    <Compile Include="Tfs2010UpdateDocument.cs" />
+    <Compile Include="Tfs2010WitAnalysisProvider.cs" />
+    <Compile Include="Tfs2010WitMigrationProvider.cs" />
+    <Compile Include="Tfs2010WITAdapter.cs" />
+    <Compile Include="Tfs2010WorkItemServer.cs" />
+    <Compile Include="TfsBatchUpdateHelper.cs" />
+    <Compile Include="TfsCore.cs" />
+    <Compile Include="Conflicts\TFSLinkAccessViolationConflictHandler.cs" />
+    <Compile Include="TfsMigrationDataSource.cs" />
+    <Compile Include="TfsMigrationFileAttachment.cs" />
+    <Compile Include="TfsMigrationWorkItem.cs" />
+    <Compile Include="TfsMigrationWorkItems.cs" />
+    <Compile Include="TfsMigrationWorkItemStore.cs" />
+    <Compile Include="TfsServerDataIntegrityChecker.cs" />
+    <Compile Include="TfsServerDateTime.cs" />
+    <Compile Include="TfsUpdateDocument.cs" />
+    <Compile Include="TfsWITAdapterResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TfsWITAdapterResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="TfsWITAnalysisProvider.cs" />
+    <Compile Include="TfsWITCustomSetting.cs" />
+    <Compile Include="TfsWITDiffItem.cs" />
+    <Compile Include="TfsWITDiffProvider.cs" />
+    <Compile Include="TfsWITDSyncer.cs" />
+    <Compile Include="TfsWITMigrationItem.cs" />
+    <Compile Include="TfsWITMigrationProvider.cs" />
+    <Compile Include="TfsWITMigrationSource.cs" />
+    <Compile Include="TfsWITQueryBuilder.cs" />
+    <Compile Include="TfsWITRecordDetails.cs" />
+    <Compile Include="TfsWITSyncMonitorProvider.cs" />
+    <Compile Include="UpdateResult.cs" />
+    <Compile Include="WITDUpdateCommands.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="TfsWITAdapterResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>TfsWITAdapterResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Core\TfsMigrationEntityModel\TfsMigrationEntityModel\TfsMigrationEntityModel.csproj">
+      <Project>{DD017AA0-4088-42F1-98D6-99BC96DAAD37}</Project>
+      <Name>TfsMigrationEntityModel</Name>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Core\Toolkit\Toolkit.csproj">
+      <Project>{CB63E30B-6779-4F8B-A9BD-3BEB7DD84A2A}</Project>
+      <Name>Toolkit</Name>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\TfsWITAdapterCommon\TfsWITAdapterCommon.csproj">
+      <Project>{234C76C6-7834-4092-9661-4D0334A5566F}</Project>
+      <Name>TfsWITAdapterCommon</Name>
+      <Private>False</Private>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(TfsIPRoot)\Build\Microsoft.TeamFoundation.Migration.targets" />
+</Project>

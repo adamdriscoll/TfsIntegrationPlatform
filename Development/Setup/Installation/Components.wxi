@@ -1,0 +1,507 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Include xmlns="http://schemas.microsoft.com/wix/2006/wi"
+     xmlns:sql="http://schemas.microsoft.com/wix/SqlExtension"
+     xmlns:util="http://schemas.microsoft.com/wix/UtilExtension"
+     xmlns:fire="http://schemas.microsoft.com/wix/FirewallExtension">
+
+  <!-- ************************************************************************ -->
+  <!-- TFS Integration Platform Common                                          -->
+  <!-- ************************************************************************ -->
+
+  <DirectoryRef Id="ProgramMenuShortcutDirectory">
+    <Component Id="COMP_TfsMigrationShell.exe.Shortcut" Guid="B4B6CD5A-F74C-4a9f-AA22-11148121A4A1">
+      <RegistryKey Root="HKMU" Key="$(var.ProductInstallRegistryKey)\$(var.ProductVersion)\Shortcuts" Action="createAndRemoveOnUninstall">
+        <RegistryValue Name="Shell" Value="1" Type="integer" KeyPath="yes" />
+      </RegistryKey>
+      <Shortcut Id="SC_TfsMigrationShell" Name="!(loc.Shell_ShortcutName)" Target="[#FILE_MigrationShell.exe]" WorkingDirectory="INSTALLDIR" />
+      <RemoveFolder Id="ShortcutRemoveFolder1" On="uninstall" />
+    </Component>
+    <Component Id="COMP_Index.htm.Shortcut" Guid="4BF06B00-FB8A-4402-952C-E3B7B1126484">
+      <RegistryKey Root="HKMU" Key="$(var.ProductInstallRegistryKey)\$(var.ProductVersion)\Shortcuts" Action="createAndRemoveOnUninstall">
+        <RegistryValue Name="Documentation" Value="1" Type="integer" KeyPath="yes" />
+      </RegistryKey>
+      <Shortcut Id="SC_TfsIndex" Name="!(loc.Guidance_ShortcutName)" Target="[#FILE_Index.htm]" WorkingDirectory="INSTALLDIR" />
+      <RemoveFolder Id="ShortcutRemoveFolder2" On="uninstall" />
+    </Component>
+  </DirectoryRef>
+
+  <!-- ************************************************************************ -->
+  <!-- Documentation                                                            -->
+  <!-- ************************************************************************ -->
+
+  <!-- Doc content placed using heat.exe generated DocComponents.wxs fragment.  -->
+  
+  <!-- ************************************************************************ -->
+  <!-- Working directory                                                        -->
+  <!-- ************************************************************************ -->
+
+  <DirectoryRef Id="WORKSPACEDIR" >
+    <Component Id="COMP_CreateWorkspaceDir" Guid="30ADC8F8-2EAA-4ca1-9172-224981E74D7F">
+      <CreateFolder Directory="WORKSPACEDIR" />
+    </Component>
+  </DirectoryRef>
+
+  <!-- ************************************************************************ -->
+  <!-- Common components                                                        -->
+  <!-- ************************************************************************ -->
+
+  <DirectoryRef Id="INSTALLDIR">
+    <Component Id="COMP_FirewallException" Guid="E4CAB122-B829-466f-A14C-F89BAA91BE90" KeyPath="yes">
+      <fire:FirewallException Id="FW_ShellException" Name="!(loc.Shell_ShortcutName)" File="FILE_MigrationShell.exe" Scope="any" IgnoreFailure="yes"/>
+      <fire:FirewallException Id="FW_MigrationConsoleException" Name="!(loc.TFSMigrationConsoleName)" File="FILE_MigrationConsole.exe" Scope="any" IgnoreFailure="yes"/>
+    </Component>
+
+    <Component Id="COMP_MigrationToolDatabaseReg" Guid="{6A4E781F-837F-45cf-8635-2A5DF7A4AFC6}">
+      <RegistryKey Root="HKLM" Key="$(var.ProductInstallRegistryKey)" Action="createAndRemoveOnUninstall">
+        <RegistryValue Name="DatabaseName" Value="[DATABASENAME]" Type="string" />
+        <RegistryValue Name ="DatabaseServer" Value="[DATABASESERVER]" Type="string" />
+      </RegistryKey>
+    </Component>
+
+    <Component Id ="COMP_TfsIPCommonFiles" Guid="{2A05C6CB-4A97-44e1-820D-F4197D1D0993}" >
+      <File Id="FILE_MigrationShell.exe" Name="TfsMigrationShell.exe"
+            Source="$(var.RawBinPath)\TfsMigrationShell.exe" DiskId="1" KeyPath="yes"/>
+      <File Id="FILE_MigrationShell.dll" Name="Microsoft.TeamFoundation.Migration.Shell.dll"
+            Source="$(var.RawBinPath)\Microsoft.TeamFoundation.Migration.Shell.dll" DiskId="1"/>
+      <File Id="FILE_Toolkit.dll" Name="Microsoft.TeamFoundation.Migration.Toolkit.dll"
+            Source="$(var.RawBinPath)\Microsoft.TeamFoundation.Migration.Toolkit.dll" DiskId="1" />
+      <File Id="FILE_EntityModel.dll" Name="Microsoft.TeamFoundation.Migration.EntityModel.dll"
+            Source="$(var.RawBinPath)\Microsoft.TeamFoundation.Migration.EntityModel.dll" DiskId="1"/>
+      <File Id="FILE_MigrationConsole.exe" Name="MigrationConsole.exe"
+            Source="$(var.RawBinPath)\MigrationConsole.exe" DiskId="1"/>
+      <File Id="FILE_WinCredentials.dll" Name="WinCredentials.dll"
+            Source="$(var.RawBinPath)\WinCredentials.dll" DiskId="1"/>
+    </Component>
+
+    <Component Id="COMP_TfsIPConfig" Guid="{063F6F9A-4DE5-43F8-8756-938C4171F8E4}" >
+      <File Id="FILE_GlobalConfiguration" Name="MigrationToolServers.config"
+            Source="$(var.RawBinPath)\MigrationToolServers.config" DiskId="1" KeyPath="yes" />
+      <util:XmlFile Id="SetWorkspaceRoot" File="[#FILE_GlobalConfiguration]" Action="setValue" PreserveModifiedDate="yes" Permanent="no" Sequence="1"
+            ElementPath="/configuration/appSettings/add[\[]@key='WorkSpaceRoot'[\]]/@value" Value="[WORKSPACEDIR]" />
+      <util:XmlFile Id="SetDBInformation" File="[#FILE_GlobalConfiguration]" Action="setValue" PreserveModifiedDate="yes" Permanent="no" Sequence="2"
+            ElementPath="/configuration/connectionStrings/add[\[]@name='TfsMigrationDBConnection'[\]]/@connectionString" Value="Data Source=[DATABASESERVER];Initial Catalog=[DATABASENAME];Integrated Security=True;MultipleActiveResultSets=True" />
+    </Component>
+
+    <Component Id="COMP_TfsIPShellConfig" Guid="{5495FBB9-12A0-4DD6-A93A-77C723408E6B}">
+      <File Id="FILE_AppConfig_Shell" Name="TfsMigrationShell.exe.config"
+            Source="$(var.RawBinPath)\TfsMigrationShell.exe.config" DiskId="1" KeyPath="yes" />
+    </Component>
+
+    <Component Id="COMP_TfsIPReadMe" Guid="{ADC2DED6-A225-47AC-8C79-2E4144336200}">
+      <File Id="FILE_ReadMe_Txt" Name="README.txt"
+            Source="$(var.RawBinPath)\README.txt" DiskId="1" KeyPath="yes" />
+    </Component>
+  </DirectoryRef>
+
+  <ComponentGroup Id="CommonProgramMenuComponents">
+    <ComponentRef Id="COMP_TfsMigrationShell.exe.Shortcut"/>
+    <ComponentRef Id="COMP_Index.htm.Shortcut"/>
+  </ComponentGroup>
+
+  <ComponentGroup Id="CommonProgramFileComponents">
+    <ComponentRef Id="COMP_MigrationToolDatabaseReg"/>
+    <ComponentRef Id="COMP_CreateWorkspaceDir"/>
+    <ComponentRef Id="COMP_FirewallException"/>
+    <ComponentRef Id="COMP_TfsIPCommonFiles" />
+    <ComponentRef Id="COMP_TfsIPConfig" />
+    <ComponentRef Id="COMP_TfsIPShellConfig" />
+    <ComponentRef Id="COMP_TfsIPReadMe" />
+    <ComponentGroupRef Id="TfsIPDocumentation"/>
+  </ComponentGroup>
+
+  <!-- ************************************************************************ -->
+  <!-- TFS Adapters                                                             -->
+  <!-- ************************************************************************ -->
+
+  <DirectoryRef Id="PluginDir" >
+    <Component Id ="COMP_TfsAdapters" Guid="9EBA9574-D3C3-482e-A576-9191D34D5D3D" >
+      <File Id="FILE_Tfs2008VCAdapter.dll" Name="Tfs2008VCAdapter.dll"
+            Source="$(var.PluginBinPath)\Tfs2008VCAdapter.dll" DiskId="1"  KeyPath="yes" />
+      <File Id="FILE_Tfs2008WITAdapter.dll" Name="Tfs2008WITAdapter.dll"
+            Source="$(var.PluginBinPath)\Tfs2008WITAdapter.dll" DiskId="1"/>
+      <File Id="FILE_Tfs2010WITAdapter.dll" Name="Tfs2010WITAdapter.dll"
+            Source="$(var.PluginBinPath)\Tfs2010WITAdapter.dll" DiskId="1"/>
+      <File Id="FILE_Tfs2010VCAdapter.dll" Name="Tfs2010VCAdapter.dll"
+            Source="$(var.PluginBinPath)\Tfs2010VCAdapter.dll" DiskId="1"/>
+      <File Id="TfsWitAdapterCommmon.dll" Name="Microsoft.TeamFoundation.Migration.TfsWitAdapter.Common.dll"
+            Source="$(var.PluginBinPath)\Microsoft.TeamFoundation.Migration.TfsWitAdapter.Common.dll" DiskId="1"/>
+      <File Id="FILE_TfsVCAdapterCommon.dll" Name="TfsVCAdapterCommon.dll"
+            Source="$(var.PluginBinPath)\TfsVCAdapterCommon.dll" DiskId="1"/>
+    </Component>
+
+    <!-- ************************************************************************ -->
+    <!-- TFS Shell Adapters                                                       -->
+    <!-- ************************************************************************ -->
+    
+    <Component Id ="COMP_TfsShellAdapters" Guid="5836826D-0F67-44d8-B3B9-82BE2DB87D98" >
+      <File Id="FILE_Tfs2008ShellAdapter" Name="Tfs2008ShellAdapter.dll"
+          Source="$(var.PluginBinPath)\Tfs2008ShellAdapter.dll" DiskId="1" KeyPath="yes" />
+      <File Id="FILE_Tfs2010ShellAdapter" Name="Tfs2010ShellAdapter.dll"
+          Source="$(var.PluginBinPath)\Tfs2010ShellAdapter.dll" DiskId="1" />
+      <File Id="FILE_DefaultShellAdapter" Name="DefaultShellAdapter.dll"
+          Source="$(var.PluginBinPath)\DefaultShellAdapter.dll" DiskId="1" />
+      <File Id="FILE_TfsCommonShellAdapter" Name="TfsCommonShellAdapter.dll"
+          Source="$(var.PluginBinPath)\TfsCommonShellAdapter.dll" DiskId="1" />
+    </Component>
+    
+    <!-- ************************************************************************ -->
+    <!-- FileSystem Adapters                                                      -->
+    <!-- ************************************************************************ -->
+
+    <Component Id="COMP_FileSystemAdapter" Guid="7D5D2827-B57D-48E1-95B7-B5829D785D0A">
+      <File Id="FileSystemAdapterForTfs2008" Name="FileSystemAdapterForTfs2008.dll"
+          Source="$(var.PluginBinPath)\FileSystemAdapterForTfs2008.dll" DiskId="1" KeyPath="yes" />
+      <File Id="FileSystemAdapterForTfs2010" Name="FileSystemAdapterForTfs2010.dll"
+          Source="$(var.PluginBinPath)\FileSystemAdapterForTfs2010.dll" DiskId="1" />
+    </Component>
+
+    <!-- ************************************************************************ -->
+    <!-- FileSystem Shell Adapter                                                 -->
+    <!-- ************************************************************************ -->
+
+    <Component Id="COMP_FileSystemShellAdapter" Guid="216A3E91-52CF-4380-ADBA-C09110D75C86">
+      <File Id="FILE_Tool_FileSystemShellAdapter" Name="FileSystemShellAdapter.dll"
+          Source="$(var.PluginBinPath)\FileSystemShellAdapter.dll" DiskId="1" KeyPath="yes" />
+    </Component>
+    
+    <!-- ************************************************************************ -->
+    <!-- General Addins                                                           -->
+    <!-- ************************************************************************ -->
+
+    <Component Id ="COMP_DefaultAddins" Guid="497B1365-C87E-4240-9D4C-7B61B4F2D612" >
+      <File Id="FILE_SemaphoreFileAnalysisAddin" Name="SemaphoreFileAnalysisAddin.dll"
+          Source="$(var.PluginBinPath)\SemaphoreFileAnalysisAddin.dll" DiskId="1" KeyPath="yes"/>
+      <File Id="FILE_ChangeGroupLabelAnalysisAddin" Name="ChangeGroupLabelAnalysisAddin.dll"
+          Source="$(var.PluginBinPath)\ChangeGroupLabelAnalysisAddin.dll" DiskId="1" />
+      <File Id="FILE_DefaultUserIdLookupAddin" Name="DefaultUserIdLookupAddin.dll"
+          Source="$(var.PluginBinPath)\DefaultUserIdLookupAddin.dll" DiskId="1" />
+    </Component>
+
+    <!-- ************************************************************************ -->
+    <!-- IBM Rational Adapters                                                    -->
+    <!-- ************************************************************************ -->
+
+    <Component Id ="COMP_RationalAdapters" Guid="D2B82217-2826-4d17-8A10-0A49F79153CF" >
+      <!-- Fix for the bug 438775 -->
+      <RemoveFile Id="FILE_ClearCaseSelectedHistoryAdapter" Name="ClearCaseSelectedHistoryAdapter.dll" On="install" />
+      <!-- Rational adapters -->
+      <File Id="FILE_InteropClearCaseDLL" Name="Interop.ClearCase.dll"
+            Source="$(var.PluginBinPath)\Interop.ClearCase.dll" DiskId="1" />
+      <File Id="FILE_ClearQuestInteropDLL" Name="ClearQuest.Interop.dll"
+            Source="$(var.PluginBinPath)\ClearQuest.Interop.dll" DiskId="1"/>
+      <File Id="FILE_ClearCaseDetailedHistoryAdapterDLL" Name="ClearCaseDetailedHistoryAdapter.dll"
+            Source="$(var.PluginBinPath)\ClearCaseDetailedHistoryAdapter.dll" DiskId="1"/>
+      <File Id="FILE_ClearCaseSelectedHistoryAdapterForTfs2008DLL" Name="ClearCaseSelectedHistoryAdapterForTfs2008.dll"
+            Source="$(var.PluginBinPath)\ClearCaseSelectedHistoryAdapterForTfs2008.dll" DiskId="1"/>
+      <File Id="FILE_ClearCaseSelectedHistoryAdapterForTfs2010DLL" Name="ClearCaseSelectedHistoryAdapterForTfs2010.dll"
+            Source="$(var.PluginBinPath)\ClearCaseSelectedHistoryAdapterForTfs2010.dll" DiskId="1"/>
+      <File Id="FILE_ClearQuestAdapterDLL" Name="ClearQuestAdapter.dll"
+            Source="$(var.PluginBinPath)\ClearQuestAdapter.dll" DiskId="1"/>
+    </Component>
+
+    <!-- ************************************************************************ -->
+    <!-- IBM Rational Shell Adapter                                               -->
+    <!-- ************************************************************************ -->
+
+    <Component Id ="COMP_RationalShellAdapter" Guid="6955BE26-1717-4490-B449-D47CB19D8D3C" >
+      <!-- Rational shell adapters -->
+      <File Id="FILE_Tool_RationalShellAdapter" Name="RationalShellAdapter.dll"
+          Source="$(var.PluginBinPath)\RationalShellAdapter.dll" DiskId="1" />
+    </Component>
+
+    <!-- ************************************************************************ -->
+    <!-- IBM Rational Addins                                                      -->
+    <!-- ************************************************************************ -->
+
+    <Component Id ="COMP_RationalAddins" Guid="5BD4F41C-28B4-43EE-A0AD-262C2AB33C2B" >
+      <!-- Rational addins -->
+      <File Id="FILE_RationalClearCaseSymbolicLinkMonitorAnalysisAddin" Name="ClearCaseSymbolicLinkMonitorAnalysisAddin.dll"
+          Source="$(var.PluginBinPath)\ClearCaseSymbolicLinkMonitorAnalysisAddin.dll" DiskId="1" />
+    </Component>
+
+    <!-- ************************************************************************ -->
+    <!-- Subversion Adapters                                                      -->
+    <!-- ************************************************************************ -->
+
+    <Component Id ="COMP_SubversionAdapters" Guid="97369697-BBEF-4080-B6A2-2C82AFE7E565" >
+      <!-- Subversion adapters -->
+      <File Id="FILE_SubversionDLL" Name="SubversionAdapter.dll"
+            Source="$(var.PluginBinPath)\SubversionAdapter.dll" DiskId="1" />
+      <File Id="FILE_InteropSubversionDLL" Name="Interop.Subversion.dll"
+            Source="$(var.PluginBinPath)\Interop.Subversion.dll" DiskId="1" />
+    </Component>
+
+    <!-- ************************************************************************ -->
+    <!-- Subversion Shell Adapter                                                 -->
+    <!-- ************************************************************************ -->
+
+    <Component Id ="COMP_SubversionShellAdapter" Guid="DF642C28-F500-4916-860A-A4321CB538FD" >
+      <!-- Subversion shell adapters -->
+      <File Id="FILE_Tool_SubversionShellAdapter" Name="SubversionShellAdapter.dll"
+          Source="$(var.PluginBinPath)\SubversionShellAdapter.dll" DiskId="1" />
+    </Component>
+  </DirectoryRef>
+
+  <ComponentGroup Id="TfsPluginComponents">
+    <ComponentRef Id="COMP_TfsAdapters" />
+    <ComponentRef Id="COMP_TfsShellAdapters" />
+    <ComponentRef Id="COMP_FileSystemAdapter" />
+    <ComponentRef Id="COMP_FileSystemShellAdapter" />
+    <ComponentRef Id="COMP_DefaultAddins" />
+  </ComponentGroup>
+
+  <ComponentGroup Id="RationalPluginComponents">
+    <ComponentRef Id="COMP_RationalAdapters" />
+    <ComponentRef Id="COMP_RationalShellAdapter" />
+    <ComponentRef Id="COMP_RationalAddins" />
+  </ComponentGroup>
+
+  <ComponentGroup Id="SubversionPluginComponents">
+    <ComponentRef Id="COMP_SubversionAdapters" />
+    <ComponentRef Id="COMP_SubversionShellAdapter" />
+  </ComponentGroup>
+
+  <!-- ************************************************************************ -->
+  <!-- Tools                                                                    -->
+  <!-- ************************************************************************ -->
+
+  <DirectoryRef Id="INSTALLDIR" >
+    <!-- ************************************************************************ -->
+    <!-- TFS Tools                                                                -->
+    <!-- ************************************************************************ -->
+
+    <Component Id ="COMP_TfsTools" Guid="34295DBE-7CEC-41BA-BE55-CD2E2B039E10" >
+      <File Id="FILE_TfsIntegrationAdmin.exe" Name="TfsIntegrationAdmin.exe"
+        Source="$(var.RawBinPath)\TfsIntegrationAdmin.exe" DiskId="1"/>
+      <File Id="FILE_ServerDiff.exe" Name="ServerDiff.exe"
+        Source="$(var.RawBinPath)\ServerDiff.exe" DiskId="1" />
+    </Component>
+
+    <!-- ************************************************************************ -->
+    <!-- IBM Rational Tools                                                       -->
+    <!-- ************************************************************************ -->
+
+    <Component Id ="COMP_RationalTools" Guid="45AEA172-3D5E-45F4-9D68-036E9ED25B94" >
+      <!-- Rational tools -->
+      <File Id="FILE_ClearQuestMigrationConfigGenerator" Name="ClearQuestMigrationConfigGenerator.exe"
+          Source="$(var.RawBinPath)\ClearQuestMigrationConfigGenerator.exe" DiskId="1" />
+      <File Id="FILE_ClearQuestInteropDLL_2" Name="ClearQuest.Interop.dll"
+          Source="$(var.RawBinPath)\ClearQuest.Interop.dll" DiskId="1"/>
+    </Component>
+  </DirectoryRef>
+  
+  <ComponentGroup Id="TfsToolComponents">
+    <ComponentRef Id="COMP_TfsTools" />
+  </ComponentGroup>
+
+  <ComponentGroup Id="RationalToolComponents">
+    <ComponentRef Id="COMP_RationalTools" />
+  </ComponentGroup>
+
+  <!-- ************************************************************************ -->
+  <!-- Configuration Files                                                      -->
+  <!-- ************************************************************************ -->
+
+  <DirectoryRef Id="ConfigDir" >
+    <Component Id ="COMP_Config" Guid="0A1FFDD6-AB62-43A1-87AE-34AD9A3A0D0B" >
+        <File Id="FILE_Config_ReadMe" Name="README.txt"
+            Source="$(var.ConfigurationPath)\README.txt" DiskId="1" KeyPath="yes" />
+    </Component>
+  </DirectoryRef>
+  
+  <DirectoryRef Id="ConfigTfsDir" >
+    <Component Id ="COMP_ConfigTfs" Guid="D4761337-7056-4F78-8630-89AE37B3C571" >
+      <File Id="FILE_VersionControl.xml" Name="VersionControl.xml"
+            Source="$(var.ConfigurationPath)\Team Foundation Server\VersionControl.xml" DiskId="1"  KeyPath="yes" />
+      <File Id="FILE_VersionControlAndWorkItemTracking.xml" Name="VersionControlAndWorkItemTracking.xml"
+            Source="$(var.ConfigurationPath)\Team Foundation Server\VersionControlAndWorkItemTracking.xml" DiskId="1" />
+      <File Id="FILE_WorkItemTracking.xml" Name="WorkItemTracking.xml"
+            Source="$(var.ConfigurationPath)\Team Foundation Server\WorkItemTracking.xml" DiskId="1" />
+      <File Id="FILE_WorkItemTracking_ExplicitFieldMap.xml" Name="WorkItemTracking_ExplicitFieldMap.xml"
+            Source="$(var.ConfigurationPath)\Team Foundation Server\WorkItemTracking_ExplicitFieldMap.xml" DiskId="1" />
+    </Component>
+  </DirectoryRef>
+
+  <DirectoryRef Id="ConfigFileSystemDir" >
+    <Component Id ="COMP_ConfigFileSystem" Guid="8F114AC8-534A-42C9-969D-65AA09BFC83A" >
+      <File Id="FILE_FileSystemToTFS2008.xml" Name="FileSystem_To_TFS2008.xml"
+            Source="$(var.ConfigurationPath)\File System\FileSystem_To_TFS2008.xml" DiskId="1"  KeyPath="yes" />
+      <File Id="FILE_FileSystemToTFS2010.xml" Name="FileSystem_To_TFS2010.xml"
+            Source="$(var.ConfigurationPath)\File System\FileSystem_To_TFS2010.xml" DiskId="1" />
+    </Component>
+  </DirectoryRef>
+
+  <DirectoryRef Id="ConfigRationalDir">
+    <Component Id ="COMP_ConfigRational" Guid="CD69A36E-6A18-4C4C-B939-22DC2BA28A2D" >
+      <File Id="FILE_ClearQuest.xml" Name="ClearQuest.xml"
+            Source="$(var.ConfigurationPath)\IBM Rational\ClearQuest.xml" DiskId="1"  KeyPath="yes" />
+      <File Id="FILE_ClearCase.xml" Name="ClearCase.xml"
+            Source="$(var.ConfigurationPath)\IBM Rational\ClearCase.xml" DiskId="1"  />
+    </Component>
+  </DirectoryRef>
+
+  <DirectoryRef Id="ConfigSubversionDir">
+    <Component Id ="COMP_ConfigSubversion" Guid="D8C65702-92E9-4469-9550-60953BDC126A" >
+      <File Id="FILE_Subversion.xml" Name="Subversion_to_TFS.xml"
+            Source="$(var.ConfigurationPath)\Subversion\Subversion_to_TFS.xml" DiskId="1"  KeyPath="yes" />
+    </Component>
+  </DirectoryRef>
+
+  <ComponentGroup Id="TfsConfigComponents">
+    <ComponentRef Id="COMP_Config" />
+    <ComponentRef Id="COMP_ConfigTfs" />
+    <ComponentRef Id="COMP_ConfigFileSystem" />
+  </ComponentGroup>
+
+  <ComponentGroup Id="RationalConfigComponents">
+    <ComponentRef Id="COMP_ConfigRational" />
+  </ComponentGroup>
+
+  <ComponentGroup Id="SubversionConfigComponents">
+    <ComponentRef Id="COMP_ConfigSubversion" />
+  </ComponentGroup>
+
+  <!-- ************************************************************************ -->
+  <!-- Reports                                                                  -->
+  <!-- ************************************************************************ -->
+
+  <DirectoryRef Id="ReportsDir">
+    <Component Id="COMP_SyncReports" Guid="4433BC9B-0A9B-4663-BD84-C755D9E4EEF6">
+      <File Id="FILE_Install.chm" Name="Installation Instructions.mht" Source="$(var.ReportPath)\Installation Instructions.mht" DiskId="1" KeyPath="yes" />
+      <File Id="FILE_Conflicts.rdl" Name="TFS Integration - Active Conflicts.rdl" Source="$(var.ReportPath)\TFS Integration - Active Conflicts.rdl" DiskId="1" />
+      <File Id="FILE_Latency.rdl" Name="TFS Integration - Latency.rdl" Source="$(var.ReportPath)\TFS Integration - Latency.rdl" DiskId="1" />
+    </Component>
+  </DirectoryRef>
+  
+  <!-- ************************************************************************ -->
+  <!-- Command-Line                                                             -->
+  <!-- ************************************************************************ -->
+
+  <DirectoryRef Id="INSTALLDIR">
+    <Component Id="COMP_TfsIPEnvironmentVariables" Guid="153D4AFE-DEAA-4b59-84F2-070BA6A7415C" KeyPath="yes">
+      <!-- Add TFS Integration Tools dir to PATH environment variable -->
+      <Environment Id="AddTfsIPDir" Action="set" Part="all" Name="TfsIPDir" Permanent="no" System="yes" Value="[INSTALLDIR]" />
+      <Environment Id="AddTfsIPDirToPATH" Action="set" Part="last" Name="PATH" Permanent="yes" System="yes" Value="%TfsIPDir%" />
+    </Component>
+  </DirectoryRef>
+
+  <ComponentGroup Id="CommandLineComponents">
+    <ComponentRef Id="COMP_TfsIPEnvironmentVariables" />
+  </ComponentGroup>
+
+  <!-- ************************************************************************ -->
+  <!-- TFS Integration Platform                                                 -->
+  <!-- ************************************************************************ -->
+
+  <!-- Everything but the TFS adapters and config files as a base to build on. -->
+  <ComponentGroup Id="TfsIPCoreComponents">
+    <ComponentGroupRef Id="CommonProgramMenuComponents" />
+    <ComponentGroupRef Id="CommonProgramFileComponents" />
+    <ComponentGroupRef Id="CommandLineComponents"/>
+
+    <ComponentGroupRef Id="DatabaseGroup"/>
+  </ComponentGroup>
+
+  <!-- The standard TFS Integration Platform component group -->
+  <ComponentGroup Id="TfsIPComponents">
+    <ComponentGroupRef Id="TfsIPCoreComponents" />
+    <ComponentGroupRef Id="TfsPluginComponents" />
+    <ComponentGroupRef Id="TfsToolComponents" />
+    <ComponentGroupRef Id="TfsConfigComponents" />
+  </ComponentGroup>
+
+  <!-- ************************************************************************ -->
+  <!-- IBM Rational Components                                                  -->
+  <!-- ************************************************************************ -->
+
+  <ComponentGroup Id="RationalComponents">
+    <ComponentGroupRef Id="RationalPluginComponents" />
+    <ComponentGroupRef Id="RationalToolComponents"/>
+    <ComponentGroupRef Id="RationalConfigComponents" />
+
+    <ComponentGroupRef Id="TfsIPComponents"/>
+  </ComponentGroup>
+
+  <!-- ************************************************************************ -->
+  <!-- Subversion Components                                                    -->
+  <!-- ************************************************************************ -->
+
+  <ComponentGroup Id="SubversionComponents">
+    <ComponentGroupRef Id="SubversionPluginComponents" />
+    <ComponentGroupRef Id="SubversionConfigComponents" />
+
+    <ComponentGroupRef Id="TfsIPComponents"/>
+  </ComponentGroup>
+
+  <!-- ************************************************************************ -->
+  <!-- Synchronization Services                                                 -->
+  <!-- ************************************************************************ -->
+
+  <DirectoryRef Id="INSTALLDIR">
+    <Component Id ="COMP_TfsIntegrationService" Guid="6D89851C-5C90-4951-847A-E735831D941C" >
+      <util:User Id="SQLUser1" Name ="[SERVICEACCOUNTNAME]" Password="[SERVICEACCOUNTPASSWORD]" LogonAsService="yes" CreateUser="no"/>
+      <File Id="FILE_TfsIntegrationService.exe" Name="TfsIntegrationService.exe"
+            Source="$(var.RawBinPath)\TfsIntegrationService.exe" DiskId="1" KeyPath="yes"/>
+      <!-- TFS Integration Service -->
+      <ServiceInstall Id="TfsIntegrationServiceInstall" Description="!(loc.TfsIntegrationServiceDescription)" Vital="yes"
+                      DisplayName="!(loc.TfsIntegrationServiceName)" Name="!(loc.TfsIntegrationServiceName)"
+                      Start="auto" Type="ownProcess" ErrorControl="normal"
+                      Account="[SERVICEACCOUNTNAME]" Password="[SERVICEACCOUNTPASSWORD]" />
+      <ServiceControl Id="TfsIntegrationServiceControl" Name="!(loc.TfsIntegrationServiceName)"
+                      Stop="both" Remove="uninstall" Wait="yes" />
+    </Component>
+    
+    <Component Id ="COMP_TfsIntegrationJobService" Guid="320FD7C8-2939-4FDB-BBA1-F631AF1E5CBE" >
+      <util:User Id="SQLUser2" Name ="[SERVICEACCOUNTNAME]" Password="[SERVICEACCOUNTPASSWORD]" LogonAsService="yes" CreateUser="no"/>
+      <File Id="FILE_TfsIntegrationJobService.exe" Name="TfsIntegrationJobService.exe"
+            Source="$(var.RawBinPath)\TfsIntegrationJobService.exe" DiskId="1"  KeyPath="yes"/>
+      <!-- Unsigned config file -->
+      <File Id="FILE_TfsIntegrationJobService.config" Name="TfsIntegrationJobService.config"
+            Source="$(var.RawBinPath)\TfsIntegrationJobService.config" DiskId="1" />
+      <File Id="FILE_TfsIntegrationJobService.exe.config" Name="TfsIntegrationJobService.exe.config"
+            Source="$(var.RawBinPath)\TfsIntegrationJobService.exe.config" DiskId="1" />
+      <!-- TFS Integration Job Service -->
+      <ServiceInstall Id="TfsIntegrationJobServiceInstall" Description="!(loc.TfsIntegrationJobServiceDescription)" Vital="yes"
+                  DisplayName="!(loc.TfsIntegrationJobServiceName)" Name="!(loc.TfsIntegrationJobServiceName)"
+                  Start="auto" Type="ownProcess" ErrorControl="normal"
+                  Account="[SERVICEACCOUNTNAME]" Password="[SERVICEACCOUNTPASSWORD]" />
+      <ServiceControl Id="TfsIntegrationJobServiceControl" Name="!(loc.TfsIntegrationJobServiceName)"
+                      Stop="both" Remove="uninstall" Wait="yes" />
+    </Component>
+
+    <Component Id ="COMP_TfsIntegrationSyncMonitorConsole" Guid="6AB809D8-F16C-4877-9F53-60EA15F7FBBA" >
+      <File Id="FILE_SyncServices_SyncMonitorConsole.exe" Name="SyncMonitorConsole.exe"
+            Source="$(var.RawBinPath)\SyncMonitorConsole.exe" DiskId="1" KeyPath="yes"/>
+    </Component>
+    
+    <Component Id="COMP_TfsIPSyncConfig" Guid="{6AB8B68A-119B-491F-8868-97FFB983D2B9}" >
+      <util:XmlFile Id="SetUseServiceTrue" File="[#FILE_GlobalConfiguration]" Action="setValue" PreserveModifiedDate="yes" Permanent="no" Sequence="1"
+         ElementPath="/configuration/appSettings/add[\[]@key='UseWindowsService'[\]]/@value" Value="true" />
+      <!-- This is a trick to tell setup it is fine that there are no files in this component -->
+      <CreateFolder/>
+    </Component>
+  </DirectoryRef>
+
+  <DirectoryRef Id="PluginDir">
+    <Component Id ="COMP_TfsIntegrationJobServiceJobs" Guid="F3794DEE-A0B1-49AA-A8E5-9F5D5E80D7CA" >
+      <File Id="FILE_SyncMonitorJob.dll" Name="SyncMonitorJob.dll"
+            Source="$(var.PluginBinPath)\SyncMonitorJob.dll" DiskId="1" KeyPath="yes"/>
+      <File Id="FILE_VCServerDiffJob.dll" Name="VCServerDiffJob.dll"
+            Source="$(var.PluginBinPath)\VCServerDiffJob.dll" DiskId="1" />
+      <File Id="FILE_WITServerDiffJob.dll" Name="WITServerDiffJob.dll"
+            Source="$(var.PluginBinPath)\WITServerDiffJob.dll" DiskId="1" />
+    </Component>
+  </DirectoryRef>
+  
+  <ComponentGroup Id="SynchronizationServiceComponents">
+    <ComponentRef Id="COMP_TfsIntegrationService" />
+    <ComponentRef Id="COMP_TfsIntegrationJobService"/>
+    <ComponentRef Id="COMP_TfsIntegrationSyncMonitorConsole"/>
+    <ComponentRef Id="COMP_TfsIntegrationJobServiceJobs" />
+    <ComponentRef Id="COMP_SyncReports" />
+    <ComponentRef Id="COMP_TfsIPSyncConfig"/>
+    
+    <ComponentGroupRef Id="TfsIPComponents"/>
+  </ComponentGroup>
+
+</Include>

@@ -1,0 +1,3 @@
+﻿ALTER TABLE [dbo].[CONFLICT_CONTENT_RESV]
+	ADD CONSTRAINT [PK_ContentResv]
+	PRIMARY KEY (ConflictId, ItemId)

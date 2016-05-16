@@ -1,0 +1,177 @@
+﻿<!-- Copyright © Microsoft Corporation.  All Rights Reserved.  This code released under the terms of the Microsoft Public License (MS-PL, http://opensource.org/licenses/ms-pl.html.) -->
+<UserControl x:Class="Microsoft.TeamFoundation.Migration.Shell.HistoryView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Height="Auto" DataContextChanged="UserControl_DataContextChanged"
+    xmlns:local="clr-namespace:Microsoft.TeamFoundation.Migration.Shell"
+    xmlns:vm="clr-namespace:Microsoft.TeamFoundation.Migration.Shell.ViewModel;assembly=Microsoft.TeamFoundation.Migration.Shell"
+    xmlns:sys="clr-namespace:System;assembly=mscorlib"
+    >
+    <UserControl.Resources>
+        <local:StatusConverter x:Key="statusConverter"/>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+        <ComboBox Grid.Row="0" Grid.ColumnSpan="3" ItemsSource="{Binding OneWaySessions}" IsSynchronizedWithCurrentItem="True" DisplayMemberPath="FriendlyName" SelectedItem="{Binding SelectedOneWaySession}" SelectionChanged="ComboBox_SelectionChanged" />
+        <Button Grid.Row="1" Grid.Column="0" DataContext="{Binding OneWaySessions/}" Content="+" Click="previousButton_Click" MinWidth="0" />
+        <Button Grid.Row="1" Grid.Column="2" DataContext="{Binding OneWaySessions/}" Content="+" Click="nextButton_Click" MinWidth="0" />
+        <Grid Grid.Row="1" Grid.Column="1" DataContext="{Binding OneWaySessions/}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <ProgressBar Visibility="Collapsed" Grid.Row="0" Height="6" Minimum="0" Maximum="100" IsIndeterminate="{Binding IsIndeterminate}" Value="{Binding LoadProgress, Mode=OneWay}">
+                <ProgressBar.Style>
+                    <Style TargetType="{x:Type ProgressBar}" BasedOn="{StaticResource {x:Type ProgressBar}}">
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding LoadProgress}" Value="100">
+                                <Setter Property="ProgressBar.Visibility" Value="Hidden"/>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </ProgressBar.Style>
+            </ProgressBar>
+            <Grid Grid.Row="1" SizeChanged="Grid_SizeChanged">
+                <local:ZoomScrollViewer MinZoom="1" MaxZoom="6" Grid.Column="1" x:Name="changeGroupsScrollViewer" HorizontalScrollBarVisibility="Visible" VerticalScrollBarVisibility="Hidden" VerticalContentAlignment="Stretch" PreviewMouseWheel="zoomScrollViewer_MouseWheel" ScrollViewer.ScrollChanged="changeGroupsScrollViewer_ScrollChanged" >
+                    <Grid>
+                        <ItemsControl x:Name="changeGroupsItemsControl" ItemsSource="{Binding ChangeGroups}" SnapsToDevicePixels="True">
+                            <ItemsControl.ItemTemplate>
+                                <DataTemplate>
+                                    <Grid>
+                                        <Border BorderThickness="1,0,0,0" ToolTipService.InitialShowDelay="0" ToolTipService.Placement="Right" ToolTipService.BetweenShowDelay="0" ToolTipService.ShowDuration="{x:Static sys:Int32.MaxValue}">
+                                            <Border.ToolTip>
+                                                <Grid>
+                                                    <Grid.RowDefinitions>
+                                                        <RowDefinition Height="Auto"/>
+                                                        <RowDefinition Height="Auto"/>
+                                                        <RowDefinition Height="Auto"/>
+                                                        <RowDefinition Height="Auto"/>
+                                                        <RowDefinition Height="Auto"/>
+                                                    </Grid.RowDefinitions>
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="Auto"/>
+                                                        <ColumnDefinition Width="*"/>
+                                                    </Grid.ColumnDefinitions>
+                                                    <TextBlock Grid.Row="0" Grid.Column="0" Text="Id: "/>
+                                                    <TextBlock Grid.Row="1" Grid.Column="0" Text="Name: "/>
+                                                    <TextBlock Grid.Row="2" Grid.Column="0" Text="Change Actions: "/>
+                                                    <TextBlock Grid.Row="3" Grid.Column="0" Text="Status: "/>
+                                                    <TextBlock Grid.Row="4" Grid.Column="0" Text="Comment: "/>
+                                                    <TextBlock Grid.Row="0" Grid.Column="1" Text="{Binding Id}"/>
+                                                    <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding Name}"/>
+                                                    <TextBlock Grid.Row="2" Grid.Column="1" Text="{Binding ChangeActionCount}"/>
+                                                    <TextBlock Grid.Row="3" Grid.Column="1" Text="{Binding Status}"/>
+                                                    <TextBlock Grid.Row="4" Grid.Column="1" Text="{Binding Comment}"/>
+                                                </Grid>
+                                            </Border.ToolTip>
+                                            <Border.Style>
+                                                <Style TargetType="{x:Type Border}">
+                                                    <EventSetter Event="MouseEnter" Handler="onMouseEnter"/>
+                                                    <EventSetter Event="MouseLeave" Handler="onMouseLeave"/>
+                                                    <Setter Property="Border.BorderBrush" Value="Transparent"/>
+                                                    <Style.Triggers>
+                                                        <DataTrigger Binding="{Binding IsMilestone}" Value="True">
+                                                            <Setter Property="Border.BorderBrush" Value="LightGray"/>
+                                                        </DataTrigger>
+                                                    </Style.Triggers>
+                                                </Style>
+                                            </Border.Style>
+                                            <Viewbox Stretch="Fill">
+                                                <Border Height="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ItemsControl}}, Path=DataContext.MaxHeight}" Background="Transparent">
+                                                    <Rectangle VerticalAlignment="Bottom" Width="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:ZoomScrollViewer}}, Path=Zoom}" Height="{Binding ChangeGroupHeight}" Fill="{Binding DisplayColor}"/>
+                                                </Border>
+                                            </Viewbox>
+                                        </Border>
+                                        <Canvas Panel.ZIndex="99">
+                                            <TextBlock Text="{Binding Bucket, StringFormat={}{0}k}" Foreground="LightGray">
+                                                <TextBlock.LayoutTransform>
+                                                    <RotateTransform Angle="90"/>
+                                                </TextBlock.LayoutTransform>
+                                                <TextBlock.Style>
+                                                    <Style>
+                                                        <Style.Triggers>
+                                                            <DataTrigger Binding="{Binding IsMilestone}" Value="False">
+                                                                <Setter Property="TextBlock.Visibility" Value="Collapsed"/>
+                                                            </DataTrigger>
+                                                        </Style.Triggers>
+                                                    </Style>
+                                                </TextBlock.Style>
+                                            </TextBlock>
+                                        </Canvas>
+                                    </Grid>
+                                </DataTemplate>
+                            </ItemsControl.ItemTemplate>
+                            <ItemsControl.ItemsPanel>
+                                <ItemsPanelTemplate>
+                                    <StackPanel Orientation="Horizontal"/>
+                                </ItemsPanelTemplate>
+                            </ItemsControl.ItemsPanel>
+                        </ItemsControl>
+                    </Grid>
+                    <local:ZoomScrollViewer.Style>
+                        <Style TargetType="{x:Type local:ZoomScrollViewer}">
+                            <Setter Property="OverridesDefaultStyle" Value="True" />
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="{x:Type local:ZoomScrollViewer}">
+                                        <Border CornerRadius="2" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
+                                            <Grid Background="{TemplateBinding Background}">
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="*"/>
+                                                    <RowDefinition Height="Auto"/>
+                                                </Grid.RowDefinitions>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="*"/>
+                                                    <ColumnDefinition Width="Auto"/>
+                                                </Grid.ColumnDefinitions>
+
+                                                <ScrollContentPresenter
+                                                    x:Name="PART_ScrollContentPresenter"
+                                                    Grid.Row="0" Grid.Column="0"
+                                                    Cursor="{TemplateBinding Cursor}"
+                                                    ContentTemplate="{TemplateBinding ScrollViewer.ContentTemplate}"
+                                                    CanContentScroll="True"/>
+
+                                                <ScrollBar
+                                                    x:Name="PART_VerticalScrollBar"
+                                                    IsTabStop="False"
+                                                    Visibility="{TemplateBinding ScrollViewer.ComputedVerticalScrollBarVisibility}"
+                                                    Grid.Column="1" Grid.Row="0" Orientation="Vertical"
+                                                    ViewportSize="{TemplateBinding ScrollViewer.ViewportHeight}"
+                                                    Maximum="{TemplateBinding ScrollViewer.ScrollableHeight}"
+                                                    Minimum="0"
+                                                    Value="{TemplateBinding ScrollViewer.VerticalOffset}"
+                                                    />
+
+                                                <DockPanel Grid.Column="0" Grid.Row="1" >
+                                                    <Slider DataContext="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:ZoomScrollViewer}}}"  DockPanel.Dock="Right" x:Name="zoomSlider" Value="{Binding Zoom}" Minimum="{Binding MinZoom}" Maximum="{Binding MaxZoom}" IsSnapToTickEnabled="True" TickFrequency="1" TickPlacement="BottomRight" Width="50" />
+                                                    <ScrollBar x:Name="PART_HorizontalScrollBar"
+                                                     IsTabStop="False"
+                                                     Visibility="{TemplateBinding ScrollViewer.ComputedHorizontalScrollBarVisibility}"
+                                                     Orientation="Horizontal"
+                                                     ViewportSize="{TemplateBinding ScrollViewer.ViewportWidth}"
+                                                     Maximum="{TemplateBinding ScrollViewer.ScrollableWidth}"
+                                                     Minimum="0"
+                                                     Value="{TemplateBinding ScrollViewer.HorizontalOffset}"
+                                                     />
+                                                </DockPanel>
+                                            </Grid>
+                                        </Border>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+                    </local:ZoomScrollViewer.Style>
+                </local:ZoomScrollViewer>
+            </Grid>
+        </Grid>
+    </Grid>
+</UserControl>

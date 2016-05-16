@@ -1,0 +1,3 @@
+﻿ALTER TABLE [dbo].[RUNTIME_SESSIONS]
+ADD CONSTRAINT [UK_RT_Sessions]
+UNIQUE (SessionUniqueId)

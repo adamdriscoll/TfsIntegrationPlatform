@@ -1,0 +1,205 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <!-- ********************************************************************************************* -->
+  <!-- OutputPath should NOT be set in this project file to let the common settings determine        -->
+  <!-- the build location.                                                                           -->
+  <!-- ********************************************************************************************* -->
+  <PropertyGroup>
+    <!-- The condition allows this project to be included for build against different binaries. -->
+    <TfsIPRoot Condition=" '$(TfsIPRoot)' == '' ">..\..\..</TfsIPRoot>
+    <!-- See common settings for possible values of TfsIPProjectType.  Determines placement of binaries. -->
+    <TfsIPProjectType>Adapter</TfsIPProjectType>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <Import Project="$(TfsIPRoot)\Build\Microsoft.TeamFoundation.Migration.Settings.targets" />
+  <!-- ********************************************************************************************* -->
+  <!-- Latch project root to allow *.csproj to be included with binary reference overrides to build for -->
+  <!-- alternate target (e.g., TFS 2008 OM).                                                            -->
+  <PropertyGroup>
+    <TfsTarget Condition=" '$(TfsTarget)' == '' ">2010</TfsTarget>
+    <TfsVCAdapterRoot>$(TfsIPRoot)\Adapters\Tfs\Tfs2010VCAdapter</TfsVCAdapterRoot>
+  </PropertyGroup>
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{3FA5977B-72B9-4359-9A92-02092A4CA1E8}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Microsoft.TeamFoundation.Migration.Tfs2010VCAdapter</RootNamespace>
+    <AssemblyName>Tfs$(TfsTarget)VCAdapter</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <!--<OutputPath>bin\Debug\</OutputPath>-->
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <!--<OutputPath>bin\Release\</OutputPath>-->
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.TeamFoundation.Client, PublicKeyToken=b03f5f7f11d50a3a">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Binaries\Internal\TFS$(TfsTarget)\Microsoft.TeamFoundation.Client.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.TeamFoundation.Common, PublicKeyToken=b03f5f7f11d50a3a">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Binaries\Internal\TFS$(TfsTarget)\Microsoft.TeamFoundation.Common.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.TeamFoundation.VersionControl.Client, PublicKeyToken=b03f5f7f11d50a3a">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Binaries\Internal\TFS$(TfsTarget)\Microsoft.TeamFoundation.VersionControl.Client.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.TeamFoundation.VersionControl.Common, PublicKeyToken=b03f5f7f11d50a3a">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Binaries\Internal\TFS$(TfsTarget)\Microsoft.TeamFoundation.VersionControl.Common.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="$(TfsIPRoot)\Version\Version.cs">
+      <Link>Version.cs</Link>
+    </Compile>
+    <Compile Include="$(TfsVCAdapterRoot)\BatchedItem.cs" />
+    <Compile Include="$(TfsVCAdapterRoot)\BatchedItemEventArgs.cs" />
+    <Compile Include="$(TfsVCAdapterRoot)\BatchingContext.cs" />
+    <Compile Include="$(TfsVCAdapterRoot)\ChangeOptimizer.cs" />
+    <Compile Include="$(TfsVCAdapterRoot)\Conflicts\ChangeTypeScopeInterpreter.cs" />
+    <Compile Include="$(TfsVCAdapterRoot)\Conflicts\UnhandledChangeTypeConflict.cs" />
+    <Compile Include="$(TfsVCAdapterRoot)\Conflicts\UnhandledChangeTypeConflictAction.cs" />
+    <Compile Include="$(TfsVCAdapterRoot)\Conflicts\UnhandledChangeTypeConflictHandler.cs" />
+    <Compile Include="$(TfsVCAdapterRoot)\Conflicts\UnhandledChangeTypeConflictType.cs" />
+    <Compile Include="$(TfsVCAdapterRoot)\Properties\AssemblyInfo.cs" />
+    <Compile Include="$(TfsVCAdapterRoot)\TFSVCDiffItem.cs" />
+    <Compile Include="$(TfsVCAdapterRoot)\TfsVCAdapterResource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TfsVCAdapterResource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="$(TfsVCAdapterRoot)\TFSAnalysisAlgorithms.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(TfsVCAdapterRoot)\TfsChangeActionHandlers.cs" />
+    <Compile Include="$(TfsVCAdapterRoot)\TfsConstants.cs" />
+    <Compile Include="$(TfsVCAdapterRoot)\TFSMigrationItem.cs" />
+    <Compile Include="$(TfsVCAdapterRoot)\TfsVCAdapter.cs" />
+    <Compile Include="$(TfsVCAdapterRoot)\TfsVCAnalysisProvider.cs" />
+    <Compile Include="$(TfsVCAdapterRoot)\TfsVCDiffProvider.cs" />
+    <Compile Include="$(TfsVCAdapterRoot)\TfsVCMigrationProvider.cs" />
+    <Compile Include="$(TfsVCAdapterRoot)\TfsVCSyncMonitorProvider.cs" />
+    <Compile Include="$(TfsVCAdapterRoot)\Util.cs" />
+    <Compile Condition=" '$(TfsTarget)' == '2010' " Include="VersionSpecificUtils.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(TfsVCAdapterRoot)\TfsVCAdapterResource.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>TfsVCAdapterResource.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="$(TfsIPRoot)\Core\TfsMigrationEntityModel\TfsMigrationEntityModel\TfsMigrationEntityModel.csproj">
+      <Project>{DD017AA0-4088-42F1-98D6-99BC96DAAD37}</Project>
+      <Name>TfsMigrationEntityModel</Name>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="$(TfsIPRoot)\Core\Toolkit\Toolkit.csproj">
+      <Project>{CB63E30B-6779-4F8B-A9BD-3BEB7DD84A2A}</Project>
+      <Name>Toolkit</Name>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="$(TfsIPRoot)\Adapters\Tfs\TfsVCAdapterCommon\TfsVCAdapterCommon.csproj">
+      <Project>{E4F7FE33-F853-450C-9EE3-46749C89EC2B}</Project>
+      <Name>TfsVCAdapterCommon</Name>
+      <Private>False</Private>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(TfsIPRoot)\Build\Microsoft.TeamFoundation.Migration.targets" />
+</Project>

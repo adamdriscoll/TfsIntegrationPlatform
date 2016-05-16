@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="Configuration" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+  <!-- Trigger option -->
+  <xs:simpleType name="TriggerOption">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="IntervalBased" />
+      <xs:enumeration value="TimeBased" />
+    </xs:restriction>
+  </xs:simpleType>
+
+  <!-- Non-empty string -->
+  <xs:simpleType name="NonEmptyString">
+    <xs:restriction base="xs:normalizedString">
+      <xs:minLength value="1" />
+    </xs:restriction>
+  </xs:simpleType>
+  
+  <!-- Collection of settings -->
+  <xs:complexType name="PropertyBagType">
+    <xs:sequence>
+      <xs:element name="Setting" minOccurs="0" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:attribute name="SettingKey" type="NonEmptyString" use="required" />
+          <xs:attribute name="SettingValue" type="xs:string" use="required" />
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  
+  <xs:element name="Configuration" msdata:IsDataSet="true" msdata:UseCurrentLocale="true">
+    <xs:complexType>
+      <xs:all minOccurs="0">
+        <xs:element name="Jobs">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Job" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:all>
+                    <xs:element name="Trigger" minOccurs="1" maxOccurs="1">
+                      <xs:complexType>
+                        <xs:all>
+                          <!-- The value of Setting element can be -->
+                          <!-- 1. IntervalBased: an integer representing interval in seconds -->
+                          <!-- 2. TimeBased: a valid DateTime string (e.g. 8:04:00 PM), and only HH MM SS value is used for now -->
+                          <xs:element name="Setting" minOccurs="1" maxOccurs="1" type="xs:string">
+                          </xs:element>
+                        </xs:all>
+                        <xs:attribute name="Option" use="required" type="TriggerOption" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="Settings" minOccurs="0" maxOccurs="1">
+                      <xs:complexType>
+                        <xs:all>
+                          <xs:element name="NamedSettings" minOccurs="0" maxOccurs="1" type="PropertyBagType" />
+                          <xs:element name="CustomSettings" minOccurs="0" maxOccurs="1">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:any minOccurs="0" maxOccurs="unbounded" processContents="skip" />
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:all>
+                      </xs:complexType>
+	                  </xs:element>
+                  </xs:all>
+                  <xs:attribute name="ReferenceName" type="xs:string" use="required" />
+                  <xs:attribute name="Enabled" type="xs:boolean" use="required" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:all>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

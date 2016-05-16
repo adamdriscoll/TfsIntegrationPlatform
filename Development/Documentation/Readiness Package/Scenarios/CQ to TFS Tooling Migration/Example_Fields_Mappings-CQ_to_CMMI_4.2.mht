@@ -1,0 +1,2550 @@
+MIME-Version: 1.0
+X-Document-Type: Workbook
+Content-Type: multipart/related; boundary="----=_NextPart_01CAF8CC.E75A6BC0"
+
+This document is a Single File Web Page, also known as a Web Archive file.  If you are seeing this message, your browser or editor doesn't support Web Archive files.  Please download a browser that supports Web Archive, such as Windows® Internet Explorer®.
+
+------=_NextPart_01CAF8CC.E75A6BC0
+Content-Location: file:///C:/DEC055F2/Example_Fields_Mappings-CQ_to_CMMI_4.2.htm
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset="us-ascii"
+
+<html xmlns:v=3D"urn:schemas-microsoft-com:vml"
+xmlns:o=3D"urn:schemas-microsoft-com:office:office"
+xmlns:x=3D"urn:schemas-microsoft-com:office:excel"
+xmlns:dt=3D"uuid:C2F41010-65B3-11d1-A29F-00AA00C14882"
+xmlns=3D"http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta name=3D"Excel Workbook Frameset">
+<meta http-equiv=3DContent-Type content=3D"text/html; charset=3Dus-ascii">
+<meta name=3DProgId content=3DExcel.Sheet>
+<meta name=3DGenerator content=3D"Microsoft Excel 14">
+<link rel=3DFile-List
+href=3D"Example_Fields_Mappings-CQ_to_CMMI_4.2_files/filelist.xml">
+<![if !supportTabStrip]>
+<link id=3D"shLink" href=3D"Example_Fields_Mappings-CQ_to_CMMI_4.2_files/sh=
+eet001.htm">
+<link id=3D"shLink" href=3D"Example_Fields_Mappings-CQ_to_CMMI_4.2_files/sh=
+eet002.htm">
+<link id=3D"shLink" href=3D"Example_Fields_Mappings-CQ_to_CMMI_4.2_files/sh=
+eet003.htm">
+<link id=3D"shLink" href=3D"Example_Fields_Mappings-CQ_to_CMMI_4.2_files/sh=
+eet004.htm">
+
+<link id=3D"shLink">
+
+<script language=3D"JavaScript">
+<!--
+ var c_lTabs=3D4;
+
+ var c_rgszSh=3Dnew Array(c_lTabs);
+ c_rgszSh[0] =3D "Change&nbsp;Request&nbsp;Mapping";
+ c_rgszSh[1] =3D "Requirments&nbsp;Mappings";
+ c_rgszSh[2] =3D "Stakeholder&nbsp;Request&nbsp;Mapping";
+ c_rgszSh[3] =3D "Task&nbsp;Mapping";
+
+
+
+ var c_rgszClr=3Dnew Array(8);
+ c_rgszClr[0]=3D"window";
+ c_rgszClr[1]=3D"buttonface";
+ c_rgszClr[2]=3D"windowframe";
+ c_rgszClr[3]=3D"windowtext";
+ c_rgszClr[4]=3D"threedlightshadow";
+ c_rgszClr[5]=3D"threedhighlight";
+ c_rgszClr[6]=3D"threeddarkshadow";
+ c_rgszClr[7]=3D"threedshadow";
+
+ var g_iShCur;
+ var g_rglTabX=3Dnew Array(c_lTabs);
+
+function fnGetIEVer()
+{
+ var ua=3Dwindow.navigator.userAgent
+ var msie=3Dua.indexOf("MSIE")
+ if (msie>0 && window.navigator.platform=3D=3D"Win32")
+  return parseInt(ua.substring(msie+5,ua.indexOf(".", msie)));
+ else
+  return 0;
+}
+
+function fnBuildFrameset()
+{
+ var szHTML=3D"<frameset rows=3D\"*,18\" border=3D0 width=3D0 frameborder=
+=3Dno framespacing=3D0>"+
+  "<frame src=3D\""+document.all.item("shLink")[0].href+"\" name=3D\"frShee=
+t\" noresize>"+
+  "<frameset cols=3D\"54,*\" border=3D0 width=3D0 frameborder=3Dno framespa=
+cing=3D0>"+
+  "<frame src=3D\"\" name=3D\"frScroll\" marginwidth=3D0 marginheight=3D0 s=
+crolling=3Dno>"+
+  "<frame src=3D\"\" name=3D\"frTabs\" marginwidth=3D0 marginheight=3D0 scr=
+olling=3Dno>"+
+  "</frameset></frameset><plaintext>";
+
+ with (document) {
+  open("text/html","replace");
+  write(szHTML);
+  close();
+ }
+
+ fnBuildTabStrip();
+}
+
+function fnBuildTabStrip()
+{
+ var szHTML=3D
+  "<html><head><style>.clScroll {font:8pt Courier New;color:"+c_rgszClr[6]+=
+";cursor:default;line-height:10pt;}"+
+  ".clScroll2 {font:10pt Arial;color:"+c_rgszClr[6]+";cursor:default;line-h=
+eight:11pt;}</style></head>"+
+  "<body onclick=3D\"event.returnValue=3Dfalse;\" ondragstart=3D\"event.ret=
+urnValue=3Dfalse;\" onselectstart=3D\"event.returnValue=3Dfalse;\" bgcolor=
+=3D"+c_rgszClr[4]+" topmargin=3D0 leftmargin=3D0><table cellpadding=3D0 cel=
+lspacing=3D0 width=3D100%>"+
+  "<tr><td colspan=3D6 height=3D1 bgcolor=3D"+c_rgszClr[2]+"></td></tr>"+
+  "<tr><td style=3D\"font:1pt\">&nbsp;<td>"+
+  "<td valign=3Dtop id=3DtdScroll class=3D\"clScroll\" onclick=3D\"parent.f=
+nFastScrollTabs(0);\" onmouseover=3D\"parent.fnMouseOverScroll(0);\" onmous=
+eout=3D\"parent.fnMouseOutScroll(0);\"><a>&#171;</a></td>"+
+  "<td valign=3Dtop id=3DtdScroll class=3D\"clScroll2\" onclick=3D\"parent.=
+fnScrollTabs(0);\" ondblclick=3D\"parent.fnScrollTabs(0);\" onmouseover=3D\=
+"parent.fnMouseOverScroll(1);\" onmouseout=3D\"parent.fnMouseOutScroll(1);\=
+"><a>&lt</a></td>"+
+  "<td valign=3Dtop id=3DtdScroll class=3D\"clScroll2\" onclick=3D\"parent.=
+fnScrollTabs(1);\" ondblclick=3D\"parent.fnScrollTabs(1);\" onmouseover=3D\=
+"parent.fnMouseOverScroll(2);\" onmouseout=3D\"parent.fnMouseOutScroll(2);\=
+"><a>&gt</a></td>"+
+  "<td valign=3Dtop id=3DtdScroll class=3D\"clScroll\" onclick=3D\"parent.f=
+nFastScrollTabs(1);\" onmouseover=3D\"parent.fnMouseOverScroll(3);\" onmous=
+eout=3D\"parent.fnMouseOutScroll(3);\"><a>&#187;</a></td>"+
+  "<td style=3D\"font:1pt\">&nbsp;<td></tr></table></body></html>";
+
+ with (frames['frScroll'].document) {
+  open("text/html","replace");
+  write(szHTML);
+  close();
+ }
+
+ szHTML =3D
+  "<html><head>"+
+  "<style>A:link,A:visited,A:active {text-decoration:none;"+"color:"+c_rgsz=
+Clr[3]+";}"+
+  ".clTab {cursor:hand;background:"+c_rgszClr[1]+";font:9pt Arial;padding-l=
+eft:3px;padding-right:3px;text-align:center;}"+
+  ".clBorder {background:"+c_rgszClr[2]+";font:1pt;}"+
+  "</style></head><body onload=3D\"parent.fnInit();\" onselectstart=3D\"eve=
+nt.returnValue=3Dfalse;\" ondragstart=3D\"event.returnValue=3Dfalse;\" bgco=
+lor=3D"+c_rgszClr[4]+
+  " topmargin=3D0 leftmargin=3D0><table id=3DtbTabs cellpadding=3D0 cellspa=
+cing=3D0>";
+
+ var iCellCount=3D(c_lTabs+1)*2;
+
+ var i;
+ for (i=3D0;i<iCellCount;i+=3D2)
+  szHTML+=3D"<col width=3D1><col>";
+
+ var iRow;
+ for (iRow=3D0;iRow<6;iRow++) {
+
+  szHTML+=3D"<tr>";
+
+  if (iRow=3D=3D5)
+   szHTML+=3D"<td colspan=3D"+iCellCount+"></td>";
+  else {
+   if (iRow=3D=3D0) {
+    for(i=3D0;i<iCellCount;i++)
+     szHTML+=3D"<td height=3D1 class=3D\"clBorder\"></td>";
+   } else if (iRow=3D=3D1) {
+    for(i=3D0;i<c_lTabs;i++) {
+     szHTML+=3D"<td height=3D1 nowrap class=3D\"clBorder\">&nbsp;</td>";
+     szHTML+=3D
+      "<td id=3DtdTab height=3D1 nowrap class=3D\"clTab\" onmouseover=3D\"p=
+arent.fnMouseOverTab("+i+");\" onmouseout=3D\"parent.fnMouseOutTab("+i+");\=
+">"+
+      "<a href=3D\""+document.all.item("shLink")[i].href+"\" target=3D\"frS=
+heet\" id=3DaTab>&nbsp;"+c_rgszSh[i]+"&nbsp;</a></td>";
+    }
+    szHTML+=3D"<td id=3DtdTab height=3D1 nowrap class=3D\"clBorder\"><a id=
+=3DaTab>&nbsp;</a></td><td width=3D100%></td>";
+   } else if (iRow=3D=3D2) {
+    for (i=3D0;i<c_lTabs;i++)
+     szHTML+=3D"<td height=3D1></td><td height=3D1 class=3D\"clBorder\"></t=
+d>";
+    szHTML+=3D"<td height=3D1></td><td height=3D1></td>";
+   } else if (iRow=3D=3D3) {
+    for (i=3D0;i<iCellCount;i++)
+     szHTML+=3D"<td height=3D1></td>";
+   } else if (iRow=3D=3D4) {
+    for (i=3D0;i<c_lTabs;i++)
+     szHTML+=3D"<td height=3D1 width=3D1></td><td height=3D1></td>";
+    szHTML+=3D"<td height=3D1 width=3D1></td><td></td>";
+   }
+  }
+  szHTML+=3D"</tr>";
+ }
+
+ szHTML+=3D"</table></body></html>";
+ with (frames['frTabs'].document) {
+  open("text/html","replace");
+  charset=3Ddocument.charset;
+  write(szHTML);
+  close();
+ }
+}
+
+function fnInit()
+{
+ g_rglTabX[0]=3D0;
+ var i;
+ for (i=3D1;i<=3Dc_lTabs;i++)
+  with (frames['frTabs'].document.all.tbTabs.rows[1].cells[fnTabToCol(i-1)])
+   g_rglTabX[i]=3DoffsetLeft+offsetWidth-6;
+}
+
+function fnTabToCol(iTab)
+{
+ return 2*iTab+1;
+}
+
+function fnNextTab(fDir)
+{
+ var iNextTab=3D-1;
+ var i;
+
+ with (frames['frTabs'].document.body) {
+  if (fDir=3D=3D0) {
+   if (scrollLeft>0) {
+    for (i=3D0;i<c_lTabs&&g_rglTabX[i]<scrollLeft;i++);
+    if (i<c_lTabs)
+     iNextTab=3Di-1;
+   }
+  } else {
+   if (g_rglTabX[c_lTabs]+6>offsetWidth+scrollLeft) {
+    for (i=3D0;i<c_lTabs&&g_rglTabX[i]<=3DscrollLeft;i++);
+    if (i<c_lTabs)
+     iNextTab=3Di;
+   }
+  }
+ }
+ return iNextTab;
+}
+
+function fnScrollTabs(fDir)
+{
+ var iNextTab=3DfnNextTab(fDir);
+
+ if (iNextTab>=3D0) {
+  frames['frTabs'].scroll(g_rglTabX[iNextTab],0);
+  return true;
+ } else
+  return false;
+}
+
+function fnFastScrollTabs(fDir)
+{
+ if (c_lTabs>16)
+  frames['frTabs'].scroll(g_rglTabX[fDir?c_lTabs-1:0],0);
+ else
+  if (fnScrollTabs(fDir)>0) window.setTimeout("fnFastScrollTabs("+fDir+");"=
+,5);
+}
+
+function fnSetTabProps(iTab,fActive)
+{
+ var iCol=3DfnTabToCol(iTab);
+ var i;
+
+ if (iTab>=3D0) {
+  with (frames['frTabs'].document.all) {
+   with (tbTabs) {
+    for (i=3D0;i<=3D4;i++) {
+     with (rows[i]) {
+      if (i=3D=3D0)
+       cells[iCol].style.background=3Dc_rgszClr[fActive?0:2];
+      else if (i>0 && i<4) {
+       if (fActive) {
+        cells[iCol-1].style.background=3Dc_rgszClr[2];
+        cells[iCol].style.background=3Dc_rgszClr[0];
+        cells[iCol+1].style.background=3Dc_rgszClr[2];
+       } else {
+        if (i=3D=3D1) {
+         cells[iCol-1].style.background=3Dc_rgszClr[2];
+         cells[iCol].style.background=3Dc_rgszClr[1];
+         cells[iCol+1].style.background=3Dc_rgszClr[2];
+        } else {
+         cells[iCol-1].style.background=3Dc_rgszClr[4];
+         cells[iCol].style.background=3Dc_rgszClr[(i=3D=3D2)?2:4];
+         cells[iCol+1].style.background=3Dc_rgszClr[4];
+        }
+       }
+      } else
+       cells[iCol].style.background=3Dc_rgszClr[fActive?2:4];
+     }
+    }
+   }
+   with (aTab[iTab].style) {
+    cursor=3D(fActive?"default":"hand");
+    color=3Dc_rgszClr[3];
+   }
+  }
+ }
+}
+
+function fnMouseOverScroll(iCtl)
+{
+ frames['frScroll'].document.all.tdScroll[iCtl].style.color=3Dc_rgszClr[7];
+}
+
+function fnMouseOutScroll(iCtl)
+{
+ frames['frScroll'].document.all.tdScroll[iCtl].style.color=3Dc_rgszClr[6];
+}
+
+function fnMouseOverTab(iTab)
+{
+ if (iTab!=3Dg_iShCur) {
+  var iCol=3DfnTabToCol(iTab);
+  with (frames['frTabs'].document.all) {
+   tdTab[iTab].style.background=3Dc_rgszClr[5];
+  }
+ }
+}
+
+function fnMouseOutTab(iTab)
+{
+ if (iTab>=3D0) {
+  var elFrom=3Dframes['frTabs'].event.srcElement;
+  var elTo=3Dframes['frTabs'].event.toElement;
+
+  if ((!elTo) ||
+   (elFrom.tagName=3D=3DelTo.tagName) ||
+   (elTo.tagName=3D=3D"A" && elTo.parentElement!=3DelFrom) ||
+   (elFrom.tagName=3D=3D"A" && elFrom.parentElement!=3DelTo)) {
+
+   if (iTab!=3Dg_iShCur) {
+    with (frames['frTabs'].document.all) {
+     tdTab[iTab].style.background=3Dc_rgszClr[1];
+    }
+   }
+  }
+ }
+}
+
+function fnSetActiveSheet(iSh)
+{
+ if (iSh!=3Dg_iShCur) {
+  fnSetTabProps(g_iShCur,false);
+  fnSetTabProps(iSh,true);
+  g_iShCur=3DiSh;
+ }
+}
+
+ window.g_iIEVer=3DfnGetIEVer();
+ if (window.g_iIEVer>=3D4)
+  fnBuildFrameset();
+//-->
+</script>
+<![endif]><!--[if gte mso 9]><xml>
+ <x:ExcelWorkbook>
+  <x:ExcelWorksheets>
+   <x:ExcelWorksheet>
+    <x:Name>Change Request Mapping</x:Name>
+    <x:WorksheetSource
+     HRef=3D"Example_Fields_Mappings-CQ_to_CMMI_4.2_files/sheet001.htm"/>
+   </x:ExcelWorksheet>
+   <x:ExcelWorksheet>
+    <x:Name>Requirments Mappings</x:Name>
+    <x:WorksheetSource
+     HRef=3D"Example_Fields_Mappings-CQ_to_CMMI_4.2_files/sheet002.htm"/>
+   </x:ExcelWorksheet>
+   <x:ExcelWorksheet>
+    <x:Name>Stakeholder Request Mapping</x:Name>
+    <x:WorksheetSource
+     HRef=3D"Example_Fields_Mappings-CQ_to_CMMI_4.2_files/sheet003.htm"/>
+   </x:ExcelWorksheet>
+   <x:ExcelWorksheet>
+    <x:Name>Task Mapping</x:Name>
+    <x:WorksheetSource
+     HRef=3D"Example_Fields_Mappings-CQ_to_CMMI_4.2_files/sheet004.htm"/>
+   </x:ExcelWorksheet>
+  </x:ExcelWorksheets>
+  <x:Stylesheet
+   HRef=3D"Example_Fields_Mappings-CQ_to_CMMI_4.2_files/stylesheet.css"/>
+  <x:WindowHeight>7680</x:WindowHeight>
+  <x:WindowWidth>13335</x:WindowWidth>
+  <x:WindowTopX>360</x:WindowTopX>
+  <x:WindowTopY>60</x:WindowTopY>
+  <x:TabRatio>459</x:TabRatio>
+  <x:ProtectStructure>False</x:ProtectStructure>
+  <x:ProtectWindows>False</x:ProtectWindows>
+ </x:ExcelWorkbook>
+</xml><![endif]-->
+</head>
+
+<frameset rows=3D"*,39" border=3D0 width=3D0 frameborder=3Dno framespacing=
+=3D0>
+ <frame src=3D"Example_Fields_Mappings-CQ_to_CMMI_4.2_files/sheet001.htm" n=
+ame=3D"frSheet">
+ <frame src=3D"Example_Fields_Mappings-CQ_to_CMMI_4.2_files/tabstrip.htm" n=
+ame=3D"frTabs" marginwidth=3D0 marginheight=3D0>
+ <noframes>
+  <body>
+   <p>This page uses frames, but your browser doesn't support them.</p>
+  </body>
+ </noframes>
+</frameset>
+</html>
+
+------=_NextPart_01CAF8CC.E75A6BC0
+Content-Location: file:///C:/DEC055F2/Example_Fields_Mappings-CQ_to_CMMI_4.2_files/stylesheet.css
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/css; charset="us-ascii"
+
+tr
+	{mso-height-source:auto;}
+col
+	{mso-width-source:auto;}
+br
+	{mso-data-placement:same-cell;}
+.style0
+	{mso-number-format:General;
+	text-align:general;
+	vertical-align:bottom;
+	white-space:nowrap;
+	mso-rotate:0;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	color:black;
+	font-size:11.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:238;
+	border:none;
+	mso-protection:locked visible;
+	mso-style-name:Normal;
+	mso-style-id:0;}
+.font13
+	{color:windowtext;
+	font-size:11.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:238;}
+td
+	{mso-style-parent:style0;
+	padding-top:1px;
+	padding-right:1px;
+	padding-left:1px;
+	mso-ignore:padding;
+	color:black;
+	font-size:11.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:238;
+	mso-number-format:General;
+	text-align:general;
+	vertical-align:bottom;
+	border:none;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	mso-protection:locked visible;
+	white-space:nowrap;
+	mso-rotate:0;}
+.xl65
+	{mso-style-parent:style0;
+	font-weight:700;}
+.xl66
+	{mso-style-parent:style0;
+	color:black;}
+.xl67
+	{mso-style-parent:style0;
+	color:black;
+	font-size:18.0pt;
+	font-weight:700;}
+.xl68
+	{mso-style-parent:style0;
+	color:black;
+	font-weight:700;}
+.xl69
+	{mso-style-parent:style0;
+	color:white;
+	font-weight:700;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	border-top:none;
+	border-right:.5pt solid white;
+	border-bottom:1.5pt solid white;
+	border-left:none;
+	background:#4F81BD;
+	mso-pattern:#4F81BD none;}
+.xl70
+	{mso-style-parent:style0;
+	color:white;
+	font-weight:700;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	border-top:none;
+	border-right:.5pt solid white;
+	border-bottom:1.5pt solid white;
+	border-left:.5pt solid white;
+	background:#4F81BD;
+	mso-pattern:#4F81BD none;}
+.xl71
+	{mso-style-parent:style0;
+	color:white;
+	font-weight:700;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	border-top:none;
+	border-right:none;
+	border-bottom:1.5pt solid white;
+	border-left:.5pt solid white;
+	background:#4F81BD;
+	mso-pattern:#4F81BD none;}
+.xl72
+	{mso-style-parent:style0;
+	color:black;
+	font-weight:700;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	border-top:.5pt solid white;
+	border-right:.5pt solid white;
+	border-bottom:.5pt solid white;
+	border-left:none;
+	background:#B8CCE4;
+	mso-pattern:#B8CCE4 none;}
+.xl73
+	{mso-style-parent:style0;
+	color:black;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	border:.5pt solid white;
+	background:#B8CCE4;
+	mso-pattern:#B8CCE4 none;}
+.xl74
+	{mso-style-parent:style0;
+	color:black;
+	font-weight:700;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	border:.5pt solid white;
+	background:#B8CCE4;
+	mso-pattern:#B8CCE4 none;}
+.xl75
+	{mso-style-parent:style0;
+	color:black;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	border-top:.5pt solid white;
+	border-right:none;
+	border-bottom:.5pt solid white;
+	border-left:.5pt solid white;
+	background:#B8CCE4;
+	mso-pattern:#B8CCE4 none;}
+.xl76
+	{mso-style-parent:style0;
+	color:black;
+	font-weight:700;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	border-top:.5pt solid white;
+	border-right:.5pt solid white;
+	border-bottom:.5pt solid white;
+	border-left:none;
+	background:#DCE6F1;
+	mso-pattern:#DCE6F1 none;}
+.xl77
+	{mso-style-parent:style0;
+	color:black;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	border:.5pt solid white;
+	background:#DCE6F1;
+	mso-pattern:#DCE6F1 none;}
+.xl78
+	{mso-style-parent:style0;
+	color:black;
+	font-weight:700;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	border:.5pt solid white;
+	background:#DCE6F1;
+	mso-pattern:#DCE6F1 none;}
+.xl79
+	{mso-style-parent:style0;
+	color:black;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	border-top:.5pt solid white;
+	border-right:none;
+	border-bottom:.5pt solid white;
+	border-left:.5pt solid white;
+	background:#DCE6F1;
+	mso-pattern:#DCE6F1 none;}
+.xl80
+	{mso-style-parent:style0;
+	color:black;
+	font-weight:700;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	background:#B8CCE4;
+	mso-pattern:#B8CCE4 none;}
+.xl81
+	{mso-style-parent:style0;
+	color:black;
+	font-weight:700;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	border-top:.5pt solid white;
+	border-right:none;
+	border-bottom:.5pt solid white;
+	border-left:none;
+	background:#B8CCE4;
+	mso-pattern:#B8CCE4 none;}
+.xl82
+	{mso-style-parent:style0;
+	color:black;
+	font-size:10.0pt;
+	font-family:Arial, sans-serif;
+	mso-font-charset:0;
+	border-top:.5pt solid white;
+	border-right:none;
+	border-bottom:.5pt solid white;
+	border-left:.5pt solid white;
+	background:#DCE6F1;
+	mso-pattern:#DCE6F1 none;}
+.xl83
+	{mso-style-parent:style0;
+	color:black;
+	font-weight:700;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	border-top:.5pt solid white;
+	border-right:.5pt solid white;
+	border-bottom:none;
+	border-left:none;
+	background:#DCE6F1;
+	mso-pattern:#DCE6F1 none;}
+.xl84
+	{mso-style-parent:style0;
+	color:black;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	border-top:.5pt solid white;
+	border-right:.5pt solid white;
+	border-bottom:none;
+	border-left:.5pt solid white;
+	background:#DCE6F1;
+	mso-pattern:#DCE6F1 none;}
+.xl85
+	{mso-style-parent:style0;
+	color:black;
+	font-weight:700;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	border-top:.5pt solid white;
+	border-right:.5pt solid white;
+	border-bottom:none;
+	border-left:.5pt solid white;
+	background:#DCE6F1;
+	mso-pattern:#DCE6F1 none;}
+.xl86
+	{mso-style-parent:style0;
+	color:black;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	border-top:.5pt solid white;
+	border-right:none;
+	border-bottom:none;
+	border-left:.5pt solid white;
+	background:#DCE6F1;
+	mso-pattern:#DCE6F1 none;}
+.xl87
+	{mso-style-parent:style0;
+	color:black;
+	font-weight:700;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	border:.5pt solid #95B3D7;
+	background:#DCE6F1;
+	mso-pattern:#DCE6F1 none;}
+.xl88
+	{mso-style-parent:style0;
+	color:black;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	border:.5pt solid #95B3D7;
+	background:#B8CCE4;
+	mso-pattern:#B8CCE4 none;}
+.xl89
+	{mso-style-parent:style0;
+	color:black;
+	font-weight:700;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	border:.5pt solid #95B3D7;
+	background:#B8CCE4;
+	mso-pattern:#B8CCE4 none;}
+.xl90
+	{mso-style-parent:style0;
+	color:black;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	border:.5pt solid #95B3D7;
+	background:#DCE6F1;
+	mso-pattern:#DCE6F1 none;}
+.xl91
+	{mso-style-parent:style0;
+	color:black;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	vertical-align:top;
+	border:.5pt solid #95B3D7;
+	background:#DCE6F1;
+	mso-pattern:#DCE6F1 none;
+	white-space:normal;}
+.xl92
+	{mso-style-parent:style0;
+	color:black;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	border:.5pt solid #95B3D7;
+	background:#DCE6F1;
+	mso-pattern:#DCE6F1 none;
+	white-space:normal;}
+.xl93
+	{mso-style-parent:style0;
+	color:black;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	border:.5pt solid #95B3D7;
+	background:#B8CCE4;
+	mso-pattern:#B8CCE4 none;
+	white-space:normal;}
+.xl94
+	{mso-style-parent:style0;
+	color:black;
+	font-weight:700;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	border-top:.5pt solid #4F81BD;
+	border-right:.5pt solid #4F81BD;
+	border-bottom:1.0pt solid #4F81BD;
+	border-left:.5pt solid #4F81BD;
+	background:#B8CCE4;
+	mso-pattern:#B8CCE4 none;}
+.xl95
+	{mso-style-parent:style0;
+	color:black;
+	font-weight:700;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	border-top:.5pt solid #4F81BD;
+	border-right:.5pt solid #4F81BD;
+	border-bottom:1.0pt solid #4F81BD;
+	border-left:none;
+	background:#B8CCE4;
+	mso-pattern:#B8CCE4 none;}
+.xl96
+	{mso-style-parent:style0;
+	color:black;
+	font-weight:700;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	background:#DCE6F1;
+	mso-pattern:#DCE6F1 none;}
+.xl97
+	{mso-style-parent:style0;
+	color:black;
+	background:#DCE6F1;
+	mso-pattern:#DCE6F1 none;}
+.xl98
+	{mso-style-parent:style0;
+	color:black;
+	background:#B8CCE4;
+	mso-pattern:#B8CCE4 none;}
+.xl99
+	{mso-style-parent:style0;
+	color:black;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	background:#DCE6F1;
+	mso-pattern:#DCE6F1 none;}
+.xl100
+	{mso-style-parent:style0;
+	color:black;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	background:#B8CCE4;
+	mso-pattern:#B8CCE4 none;}
+.xl101
+	{mso-style-parent:style0;
+	color:black;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	vertical-align:top;
+	border:.5pt solid #95B3D7;
+	background:#B8CCE4;
+	mso-pattern:#B8CCE4 none;
+	white-space:normal;}
+.xl102
+	{mso-style-parent:style0;
+	color:black;
+	font-weight:700;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	border:.5pt solid #95B3D7;
+	background:#DCE6F1;
+	mso-pattern:#DCE6F1 none;
+	white-space:normal;}
+.xl103
+	{mso-style-parent:style0;
+	color:black;
+	font-weight:700;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	border-top:.5pt solid #4F81BD;
+	border-right:.5pt solid #4F81BD;
+	border-bottom:1.0pt solid #4F81BD;
+	border-left:.5pt solid white;
+	background:#B8CCE4;
+	mso-pattern:#B8CCE4 none;}
+.xl104
+	{mso-style-parent:style0;
+	color:black;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	border-top:.5pt solid white;
+	border-right:none;
+	border-bottom:.5pt solid white;
+	border-left:none;
+	background:#DCE6F1;
+	mso-pattern:#DCE6F1 none;}
+.xl105
+	{mso-style-parent:style0;
+	color:black;
+	font-weight:700;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	border:.5pt solid #95B3D7;
+	background:#B8CCE4;
+	mso-pattern:#B8CCE4 none;
+	white-space:normal;}
+.xl106
+	{mso-style-parent:style0;
+	color:windowtext;
+	font-weight:700;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	border-top:.5pt solid #4F81BD;
+	border-right:.5pt solid #4F81BD;
+	border-bottom:1.0pt solid #4F81BD;
+	border-left:.5pt solid #4F81BD;
+	background:#B8CCE4;
+	mso-pattern:#B8CCE4 none;}
+.xl107
+	{mso-style-parent:style0;
+	color:windowtext;
+	font-weight:700;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	border-top:.5pt solid #4F81BD;
+	border-right:.5pt solid #4F81BD;
+	border-bottom:1.0pt solid #4F81BD;
+	border-left:.5pt solid white;
+	background:#B8CCE4;
+	mso-pattern:#B8CCE4 none;}
+
+------=_NextPart_01CAF8CC.E75A6BC0
+Content-Location: file:///C:/DEC055F2/Example_Fields_Mappings-CQ_to_CMMI_4.2_files/tabstrip.htm
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset="us-ascii"
+
+<html>
+<head>
+<meta http-equiv=3DContent-Type content=3D"text/html; charset=3Dus-ascii">
+<meta name=3DProgId content=3DExcel.Sheet>
+<meta name=3DGenerator content=3D"Microsoft Excel 14">
+<link id=3DMain-File rel=3DMain-File
+href=3D"../Example_Fields_Mappings-CQ_to_CMMI_4.2.htm">
+<![if IE]>
+<base
+href=3D"file:///C:\DEC055F2\Example_Fields_Mappings-CQ_to_CMMI_4.2_files\ta=
+bstrip.htm"
+id=3D"webarch_temp_base_tag">
+<![endif]>
+<script language=3D"JavaScript">
+<!--
+if (window.name!=3D"frTabs")
+ window.location.replace(document.all.item("Main-File").href);
+//-->
+</script>
+<style>
+<!--
+A {
+    text-decoration:none;
+    color:#000000;
+    font-size:9pt;
+}
+-->
+</style>
+</head>
+<body topmargin=3D0 leftmargin=3D0 bgcolor=3D"#808080">
+<table border=3D0 cellspacing=3D1>
+ <tr>
+ <td bgcolor=3D"#FFFFFF" nowrap><b><small><small>&nbsp;<a href=3D"sheet001.=
+htm" target=3D"frSheet"><font face=3D"Arial" color=3D"#000000">Change Reque=
+st Mapping</font></a>&nbsp;</small></small></b></td>
+ <td bgcolor=3D"#FFFFFF" nowrap><b><small><small>&nbsp;<a href=3D"sheet002.=
+htm" target=3D"frSheet"><font face=3D"Arial" color=3D"#000000">Requirments =
+Mappings</font></a>&nbsp;</small></small></b></td>
+ <td bgcolor=3D"#FFFFFF" nowrap><b><small><small>&nbsp;<a href=3D"sheet003.=
+htm" target=3D"frSheet"><font face=3D"Arial" color=3D"#000000">Stakeholder =
+Request Mapping</font></a>&nbsp;</small></small></b></td>
+ <td bgcolor=3D"#FFFFFF" nowrap><b><small><small>&nbsp;<a href=3D"sheet004.=
+htm" target=3D"frSheet"><font face=3D"Arial" color=3D"#000000">Task Mapping=
+</font></a>&nbsp;</small></small></b></td>
+
+ </tr>
+</table>
+</body>
+</html>
+
+------=_NextPart_01CAF8CC.E75A6BC0
+Content-Location: file:///C:/DEC055F2/Example_Fields_Mappings-CQ_to_CMMI_4.2_files/sheet001.htm
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset="us-ascii"
+
+<html xmlns:v=3D"urn:schemas-microsoft-com:vml"
+xmlns:o=3D"urn:schemas-microsoft-com:office:office"
+xmlns:x=3D"urn:schemas-microsoft-com:office:excel"
+xmlns=3D"http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=3DContent-Type content=3D"text/html; charset=3Dus-ascii">
+<meta name=3DProgId content=3DExcel.Sheet>
+<meta name=3DGenerator content=3D"Microsoft Excel 14">
+<link id=3DMain-File rel=3DMain-File
+href=3D"../Example_Fields_Mappings-CQ_to_CMMI_4.2.htm">
+<link rel=3DFile-List href=3Dfilelist.xml>
+<![if IE]>
+<base
+href=3D"file:///C:\DEC055F2\Example_Fields_Mappings-CQ_to_CMMI_4.2_files\sh=
+eet001.htm"
+id=3D"webarch_temp_base_tag">
+<![endif]>
+<link rel=3DStylesheet href=3Dstylesheet.css>
+<style>
+<!--table
+	{mso-displayed-decimal-separator:"\.";
+	mso-displayed-thousand-separator:"\,";}
+@page
+	{margin:.75in .7in .75in .7in;
+	mso-header-margin:.3in;
+	mso-footer-margin:.3in;}
+-->
+</style>
+<![if !supportTabStrip]><script language=3D"JavaScript">
+<!--
+function fnUpdateTabs()
+ {
+  if (parent.window.g_iIEVer>=3D4) {
+   if (parent.document.readyState=3D=3D"complete"
+    && parent.frames['frTabs'].document.readyState=3D=3D"complete")
+   parent.fnSetActiveSheet(0);
+  else
+   window.setTimeout("fnUpdateTabs();",150);
+ }
+}
+
+if (window.name!=3D"frSheet")
+ window.location.replace("../Example_Fields_Mappings-CQ_to_CMMI_4.2.htm");
+else
+ fnUpdateTabs();
+//-->
+</script>
+<![endif]>
+</head>
+
+<body link=3Dblue vlink=3Dpurple>
+
+<table border=3D0 cellpadding=3D0 cellspacing=3D0 width=3D1040 style=3D'bor=
+der-collapse:
+ collapse;table-layout:fixed;width:781pt'>
+ <col width=3D64 style=3D'width:48pt'>
+ <col class=3Dxl65 width=3D124 style=3D'mso-width-source:userset;mso-width-=
+alt:4534;
+ width:93pt'>
+ <col width=3D365 style=3D'mso-width-source:userset;mso-width-alt:13348;wid=
+th:274pt'>
+ <col class=3Dxl65 width=3D106 style=3D'mso-width-source:userset;mso-width-=
+alt:3876;
+ width:80pt'>
+ <col width=3D381 style=3D'mso-width-source:userset;mso-width-alt:13933;wid=
+th:286pt'>
+ <col width=3D64 span=3D5 style=3D'width:48pt'>
+ <col width=3D185 style=3D'mso-width-source:userset;mso-width-alt:6765;widt=
+h:139pt'>
+ <col width=3D300 style=3D'mso-width-source:userset;mso-width-alt:10971;wid=
+th:225pt'>
+ <tr height=3D31 style=3D'height:23.25pt'>
+  <td height=3D31 class=3Dxl66 width=3D64 style=3D'height:23.25pt;width:48p=
+t'></td>
+  <td class=3Dxl67 colspan=3D2 width=3D489 style=3D'mso-ignore:colspan;widt=
+h:367pt'>Change
+  Request Mappings</td>
+  <td class=3Dxl68 width=3D106 style=3D'width:80pt'></td>
+  <td class=3Dxl66 width=3D381 style=3D'width:286pt'></td>
+ </tr>
+ <tr height=3D31 style=3D'height:23.25pt'>
+  <td height=3D31 class=3Dxl66 style=3D'height:23.25pt'></td>
+  <td class=3Dxl67 colspan=3D2 style=3D'mso-ignore:colspan'>TFS Template MS=
+F for CMMI
+  4.2</td>
+  <td class=3Dxl68></td>
+  <td class=3Dxl66></td>
+ </tr>
+ <tr height=3D31 style=3D'height:23.25pt'>
+  <td height=3D31 class=3Dxl66 style=3D'height:23.25pt'></td>
+  <td class=3Dxl67 colspan=3D2 style=3D'mso-ignore:colspan'>TFS Target - Ch=
+ange
+  Request</td>
+  <td class=3Dxl68></td>
+  <td class=3Dxl66></td>
+ </tr>
+ <tr height=3D31 style=3D'height:23.25pt'>
+  <td height=3D31 class=3Dxl66 style=3D'height:23.25pt'></td>
+  <td class=3Dxl67></td>
+  <td class=3Dxl66></td>
+  <td class=3Dxl68></td>
+  <td class=3Dxl66></td>
+ </tr>
+ <tr height=3D21 style=3D'height:15.75pt'>
+  <td height=3D21 class=3Dxl66 style=3D'height:15.75pt'></td>
+  <td class=3Dxl69>CQ Field</td>
+  <td class=3Dxl70 style=3D'border-left:none'>CQ Value</td>
+  <td class=3Dxl70 style=3D'border-left:none'>TFS Field</td>
+  <td class=3Dxl71 style=3D'border-left:none'>TFS Value</td>
+ </tr>
+ <tr height=3D21 style=3D'height:15.75pt'>
+  <td height=3D21 class=3Dxl66 style=3D'height:15.75pt'></td>
+  <td class=3Dxl72>Status</td>
+  <td class=3Dxl73 style=3D'border-left:none'>&nbsp;</td>
+  <td class=3Dxl74 style=3D'border-left:none'>State</td>
+  <td class=3Dxl75 style=3D'border-left:none'>&nbsp;</td>
+ </tr>
+ <tr height=3D20 style=3D'height:15.0pt'>
+  <td height=3D20 class=3Dxl66 style=3D'height:15.0pt'></td>
+  <td class=3Dxl76 style=3D'border-top:none'>&nbsp;</td>
+  <td class=3Dxl77 style=3D'border-top:none;border-left:none'>Submitted&nbs=
+p;</td>
+  <td class=3Dxl78 style=3D'border-top:none;border-left:none'>&nbsp;</td>
+  <td class=3Dxl79 style=3D'border-top:none;border-left:none'>Proposed</td>
+ </tr>
+ <tr height=3D20 style=3D'height:15.0pt'>
+  <td height=3D20 class=3Dxl66 style=3D'height:15.0pt'></td>
+  <td class=3Dxl72 style=3D'border-top:none'>&nbsp;</td>
+  <td class=3Dxl73 style=3D'border-top:none;border-left:none'>Rejected&nbsp=
+;</td>
+  <td class=3Dxl74 style=3D'border-top:none;border-left:none'>&nbsp;</td>
+  <td class=3Dxl75 style=3D'border-top:none;border-left:none'>Closed / Reas=
+on set
+  to rejected</td>
+ </tr>
+ <tr height=3D20 style=3D'height:15.0pt'>
+  <td height=3D20 class=3Dxl66 style=3D'height:15.0pt'></td>
+  <td class=3Dxl76 style=3D'border-top:none'>&nbsp;</td>
+  <td class=3Dxl77 style=3D'border-top:none;border-left:none'>&nbsp;</td>
+  <td class=3Dxl78 style=3D'border-top:none;border-left:none'>Reason</td>
+  <td class=3Dxl79 style=3D'border-top:none;border-left:none'>Rejected</td>
+ </tr>
+ <tr height=3D20 style=3D'height:15.0pt'>
+  <td height=3D20 class=3Dxl66 style=3D'height:15.0pt'></td>
+  <td class=3Dxl72 style=3D'border-top:none'>&nbsp;</td>
+  <td class=3Dxl73 style=3D'border-top:none;border-left:none'>Under_Resolut=
+ion&nbsp;</td>
+  <td class=3Dxl74 style=3D'border-top:none;border-left:none'>&nbsp;</td>
+  <td class=3Dxl75 style=3D'border-top:none;border-left:none'>Accepted</td>
+ </tr>
+ <tr height=3D20 style=3D'height:15.0pt'>
+  <td height=3D20 class=3Dxl66 style=3D'height:15.0pt'></td>
+  <td class=3Dxl76 style=3D'border-top:none'>&nbsp;</td>
+  <td class=3Dxl77 style=3D'border-top:none;border-left:none'>Closed&nbsp;<=
+/td>
+  <td class=3Dxl78 style=3D'border-top:none;border-left:none'>&nbsp;</td>
+  <td class=3Dxl79 style=3D'border-top:none;border-left:none'>Closed</td>
+ </tr>
+ <tr height=3D20 style=3D'height:15.0pt'>
+  <td height=3D20 class=3Dxl66 style=3D'height:15.0pt'></td>
+  <td class=3Dxl72 style=3D'border-top:none'>ABB Project</td>
+  <td class=3Dxl73 style=3D'border-top:none;border-left:none'>&nbsp;</td>
+  <td class=3Dxl73 style=3D'border-top:none;border-left:none'>Ignored</td>
+  <td class=3Dxl75 style=3D'border-top:none;border-left:none'>&nbsp;</td>
+ </tr>
+ <tr height=3D20 style=3D'height:15.0pt'>
+  <td height=3D20 class=3Dxl66 style=3D'height:15.0pt'></td>
+  <td class=3Dxl76 style=3D'border-top:none'>Planned Release</td>
+  <td class=3Dxl77 style=3D'border-top:none;border-left:none'>System.String=
+</td>
+  <td class=3Dxl78 style=3D'border-top:none;border-left:none'>Description</=
+td>
+  <td class=3Dxl79 style=3D'border-top:none;border-left:none'>Release: [val=
+ue]</td>
+ </tr>
+ <tr height=3D20 style=3D'height:15.0pt'>
+  <td height=3D20 class=3Dxl66 style=3D'height:15.0pt'></td>
+  <td class=3Dxl72 style=3D'border-top:none'>Planned Iteration</td>
+  <td class=3Dxl73 style=3D'border-top:none;border-left:none'>System.String=
+</td>
+  <td class=3Dxl74 style=3D'border-top:none;border-left:none'>Description</=
+td>
+  <td class=3Dxl75 style=3D'border-top:none;border-left:none'>Planned Itera=
+tion:
+  [value]</td>
+ </tr>
+ <tr height=3D20 style=3D'height:15.0pt'>
+  <td height=3D20 class=3Dxl66 style=3D'height:15.0pt'></td>
+  <td class=3Dxl76 style=3D'border-top:none'>Priority</td>
+  <td class=3Dxl77 style=3D'border-top:none;border-left:none'>&nbsp;</td>
+  <td class=3Dxl78 style=3D'border-top:none;border-left:none'>Priority</td>
+  <td class=3Dxl79 style=3D'border-top:none;border-left:none'>&nbsp;</td>
+ </tr>
+ <tr height=3D20 style=3D'height:15.0pt'>
+  <td height=3D20 class=3Dxl66 style=3D'height:15.0pt'></td>
+  <td class=3Dxl72 style=3D'border-top:none'>&nbsp;</td>
+  <td class=3Dxl73 style=3D'border-top:none;border-left:none'>High</td>
+  <td class=3Dxl74 style=3D'border-top:none;border-left:none'>&nbsp;</td>
+  <td class=3Dxl75 align=3Dright style=3D'border-top:none;border-left:none'=
+>1</td>
+ </tr>
+ <tr height=3D20 style=3D'height:15.0pt'>
+  <td height=3D20 class=3Dxl66 style=3D'height:15.0pt'></td>
+  <td class=3Dxl76 style=3D'border-top:none'>&nbsp;</td>
+  <td class=3Dxl77 style=3D'border-top:none;border-left:none'>Medium</td>
+  <td class=3Dxl78 style=3D'border-top:none;border-left:none'>&nbsp;</td>
+  <td class=3Dxl79 align=3Dright style=3D'border-top:none;border-left:none'=
+>2</td>
+ </tr>
+ <tr height=3D20 style=3D'height:15.0pt'>
+  <td height=3D20 class=3Dxl66 style=3D'height:15.0pt'></td>
+  <td class=3Dxl72 style=3D'border-top:none'>&nbsp;</td>
+  <td class=3Dxl73 style=3D'border-top:none;border-left:none'>Low</td>
+  <td class=3Dxl74 style=3D'border-top:none;border-left:none'>&nbsp;</td>
+  <td class=3Dxl75 align=3Dright style=3D'border-top:none;border-left:none'=
+>3</td>
+ </tr>
+ <tr height=3D20 style=3D'height:15.0pt'>
+  <td height=3D20 class=3Dxl66 style=3D'height:15.0pt'></td>
+  <td class=3Dxl76 style=3D'border-top:none'>Type</td>
+  <td class=3Dxl77 style=3D'border-top:none;border-left:none'>&nbsp;</td>
+  <td class=3Dxl78 style=3D'border-top:none;border-left:none'>Title</td>
+  <td class=3Dxl79 style=3D'border-top:none;border-left:none'>&nbsp;</td>
+ </tr>
+ <tr height=3D20 style=3D'height:15.0pt'>
+  <td height=3D20 class=3Dxl66 style=3D'height:15.0pt'></td>
+  <td class=3Dxl72 style=3D'border-top:none'>&nbsp;</td>
+  <td class=3Dxl73 style=3D'border-top:none;border-left:none'>Feature</td>
+  <td class=3Dxl74 style=3D'border-top:none;border-left:none'>&nbsp;</td>
+  <td class=3Dxl75 style=3D'border-top:none;border-left:none'>[CQ_CR_Type]<=
+/td>
+ </tr>
+ <tr height=3D20 style=3D'height:15.0pt'>
+  <td height=3D20 class=3Dxl66 style=3D'height:15.0pt'></td>
+  <td class=3Dxl76 style=3D'border-top:none'>&nbsp;</td>
+  <td class=3Dxl77 style=3D'border-top:none;border-left:none'>Change</td>
+  <td class=3Dxl78 style=3D'border-top:none;border-left:none'>&nbsp;</td>
+  <td class=3Dxl79 style=3D'border-top:none;border-left:none'>[CQ_CR_Type]<=
+/td>
+ </tr>
+ <tr height=3D20 style=3D'height:15.0pt'>
+  <td height=3D20 class=3Dxl66 style=3D'height:15.0pt'></td>
+  <td class=3Dxl72 style=3D'border-top:none'>&nbsp;</td>
+  <td class=3Dxl73 style=3D'border-top:none;border-left:none'>Bug</td>
+  <td class=3Dxl74 style=3D'border-top:none;border-left:none'>&nbsp;</td>
+  <td class=3Dxl75 style=3D'border-top:none;border-left:none'>[CQ_CR_Type]<=
+/td>
+ </tr>
+ <tr height=3D20 style=3D'height:15.0pt'>
+  <td height=3D20 class=3Dxl66 style=3D'height:15.0pt'></td>
+  <td class=3Dxl76 style=3D'border-top:none'>&nbsp;</td>
+  <td class=3Dxl77 style=3D'border-top:none;border-left:none'>Hotfix</td>
+  <td class=3Dxl78 style=3D'border-top:none;border-left:none'>&nbsp;</td>
+  <td class=3Dxl79 style=3D'border-top:none;border-left:none'>[CQ_CR_Type]<=
+/td>
+ </tr>
+ <tr height=3D20 style=3D'height:15.0pt'>
+  <td height=3D20 class=3Dxl66 style=3D'height:15.0pt'></td>
+  <td class=3Dxl72 style=3D'border-top:none'>Subsystem</td>
+  <td class=3Dxl73 style=3D'border-top:none;border-left:none'>System.String=
+</td>
+  <td class=3Dxl74 style=3D'border-top:none;border-left:none'>Description</=
+td>
+  <td class=3Dxl75 style=3D'border-top:none;border-left:none'>Subsystem: [v=
+alue]</td>
+ </tr>
+ <tr height=3D20 style=3D'height:15.0pt'>
+  <td height=3D20 class=3Dxl66 style=3D'height:15.0pt'></td>
+  <td class=3Dxl76 style=3D'border-top:none'>Released in</td>
+  <td class=3Dxl77 style=3D'border-top:none;border-left:none'>System.String=
+</td>
+  <td class=3Dxl78 style=3D'border-top:none;border-left:none'>Description</=
+td>
+  <td class=3Dxl79 style=3D'border-top:none;border-left:none'>Released in: =
+[value]</td>
+ </tr>
+ <tr height=3D20 style=3D'height:15.0pt'>
+  <td height=3D20 class=3Dxl66 style=3D'height:15.0pt'></td>
+  <td class=3Dxl72 style=3D'border-top:none'>Requirment links</td>
+  <td class=3Dxl73 style=3D'border-top:none;border-left:none'>&nbsp;</td>
+  <td class=3Dxl74 style=3D'border-top:none;border-left:none'>Links</td>
+  <td class=3Dxl75 style=3D'border-top:none;border-left:none'>&nbsp;</td>
+ </tr>
+ <tr height=3D20 style=3D'height:15.0pt'>
+  <td height=3D20 class=3Dxl66 style=3D'height:15.0pt'></td>
+  <td class=3Dxl76 style=3D'border-top:none'>&nbsp;</td>
+  <td class=3Dxl77 style=3D'border-top:none;border-left:none'>Link to Requi=
+rment</td>
+  <td class=3Dxl78 style=3D'border-top:none;border-left:none'>&nbsp;</td>
+  <td class=3Dxl79 style=3D'border-top:none;border-left:none'>Link to Appro=
+priate
+  Requirement</td>
+ </tr>
+ <tr height=3D20 style=3D'height:15.0pt'>
+  <td height=3D20 class=3Dxl66 style=3D'height:15.0pt'></td>
+  <td class=3Dxl72 style=3D'border-top:none'>Attachments</td>
+  <td class=3Dxl73 style=3D'border-top:none;border-left:none'>&nbsp;</td>
+  <td class=3Dxl74 style=3D'border-top:none;border-left:none'>Attachments</=
+td>
+  <td class=3Dxl75 style=3D'border-top:none;border-left:none'>&nbsp;</td>
+ </tr>
+ <tr height=3D20 style=3D'height:15.0pt'>
+  <td height=3D20 class=3Dxl66 style=3D'height:15.0pt'></td>
+  <td class=3Dxl76 style=3D'border-top:none'>&nbsp;</td>
+  <td class=3Dxl77 style=3D'border-top:none;border-left:none'>Attachment</t=
+d>
+  <td class=3Dxl78 style=3D'border-top:none;border-left:none'>&nbsp;</td>
+  <td class=3Dxl79 style=3D'border-top:none;border-left:none'>Appropriate
+  Attachment are copied</td>
+ </tr>
+ <tr height=3D20 style=3D'height:15.0pt'>
+  <td height=3D20 class=3Dxl66 style=3D'height:15.0pt'></td>
+  <td class=3Dxl81 colspan=3D2 style=3D'mso-ignore:colspan;border-right:.5p=
+t solid white'>Stakeholder
+  Request</td>
+  <td class=3Dxl74 style=3D'border-top:none;border-left:none'>Links</td>
+  <td class=3Dxl75 style=3D'border-top:none;border-left:none'>&nbsp;</td>
+ </tr>
+ <tr height=3D20 style=3D'height:15.0pt'>
+  <td height=3D20 class=3Dxl66 style=3D'height:15.0pt'></td>
+  <td class=3Dxl76 style=3D'border-top:none'>&nbsp;</td>
+  <td class=3Dxl77 style=3D'border-top:none;border-left:none'>Link to Stake=
+ Holder
+  Request</td>
+  <td class=3Dxl78 style=3D'border-top:none;border-left:none'>&nbsp;</td>
+  <td class=3Dxl79 style=3D'border-top:none;border-left:none'>Link to
+  Appropriate<span style=3D'mso-spacerun:yes'>&nbsp; </span>Requirement in =
+the
+  links section</td>
+ </tr>
+ <tr height=3D20 style=3D'height:15.0pt'>
+  <td height=3D20 class=3Dxl66 style=3D'height:15.0pt'></td>
+  <td class=3Dxl72 style=3D'border-top:none'>History</td>
+  <td class=3Dxl73 style=3D'border-top:none;border-left:none'>&nbsp;</td>
+  <td class=3Dxl74 style=3D'border-top:none;border-left:none'>History</td>
+  <td class=3Dxl75 style=3D'border-top:none;border-left:none'>&nbsp;</td>
+ </tr>
+ <tr height=3D20 style=3D'height:15.0pt'>
+  <td height=3D20 class=3Dxl66 style=3D'height:15.0pt'></td>
+  <td class=3Dxl76 style=3D'border-top:none'>&nbsp;</td>
+  <td class=3Dxl77 style=3D'border-top:none;border-left:none'>Date/Time</td>
+  <td class=3Dxl78 style=3D'border-top:none;border-left:none'>&nbsp;</td>
+  <td class=3Dxl79 style=3D'border-top:none;border-left:none'>[DateTime]</t=
+d>
+ </tr>
+ <tr height=3D20 style=3D'height:15.0pt'>
+  <td height=3D20 class=3Dxl66 style=3D'height:15.0pt'></td>
+  <td class=3Dxl72 style=3D'border-top:none'>&nbsp;</td>
+  <td class=3Dxl73 style=3D'border-top:none;border-left:none'>User Name</td>
+  <td class=3Dxl74 style=3D'border-top:none;border-left:none'>&nbsp;</td>
+  <td class=3Dxl75 style=3D'border-top:none;border-left:none'>[UserName]</t=
+d>
+ </tr>
+ <tr height=3D20 style=3D'height:15.0pt'>
+  <td height=3D20 class=3Dxl66 style=3D'height:15.0pt'></td>
+  <td class=3Dxl76 style=3D'border-top:none'>&nbsp;</td>
+  <td class=3Dxl77 style=3D'border-top:none;border-left:none'>Action</td>
+  <td class=3Dxl78 style=3D'border-top:none;border-left:none'>&nbsp;</td>
+  <td class=3Dxl79 style=3D'border-top:none;border-left:none'>[Action]</td>
+ </tr>
+ <tr height=3D20 style=3D'height:15.0pt'>
+  <td height=3D20 class=3Dxl66 style=3D'height:15.0pt'></td>
+  <td class=3Dxl72 style=3D'border-top:none'>&nbsp;</td>
+  <td class=3Dxl73 style=3D'border-top:none;border-left:none'>Old State</td>
+  <td class=3Dxl74 style=3D'border-top:none;border-left:none'>&nbsp;</td>
+  <td class=3Dxl75 style=3D'border-top:none;border-left:none'>[Old State]</=
+td>
+ </tr>
+ <tr height=3D20 style=3D'height:15.0pt'>
+  <td height=3D20 class=3Dxl66 style=3D'height:15.0pt'></td>
+  <td class=3Dxl76 style=3D'border-top:none'>&nbsp;</td>
+  <td class=3Dxl77 style=3D'border-top:none;border-left:none'>New State</td>
+  <td class=3Dxl78 style=3D'border-top:none;border-left:none'>&nbsp;</td>
+  <td class=3Dxl79 style=3D'border-top:none;border-left:none'>[New State]</=
+td>
+ </tr>
+ <tr height=3D20 style=3D'height:15.0pt'>
+  <td height=3D20 class=3Dxl66 style=3D'height:15.0pt'></td>
+  <td class=3Dxl72 style=3D'border-top:none'>Master</td>
+  <td class=3Dxl73 style=3D'border-top:none;border-left:none'>&nbsp;</td>
+  <td class=3Dxl74 style=3D'border-top:none;border-left:none'>Ignore</td>
+  <td class=3Dxl75 style=3D'border-top:none;border-left:none'>&nbsp;</td>
+ </tr>
+ <tr height=3D20 style=3D'height:15.0pt'>
+  <td height=3D20 class=3Dxl66 style=3D'height:15.0pt'></td>
+  <td class=3Dxl76 style=3D'border-top:none'>Headline</td>
+  <td class=3Dxl77 style=3D'border-top:none;border-left:none'>System.String=
+</td>
+  <td class=3Dxl78 style=3D'border-top:none;border-left:none'>Title</td>
+  <td class=3Dxl82 style=3D'border-top:none;border-left:none'>[Headline]</t=
+d>
+ </tr>
+ <tr height=3D20 style=3D'height:15.0pt'>
+  <td height=3D20 class=3Dxl66 style=3D'height:15.0pt'></td>
+  <td class=3Dxl72 style=3D'border-top:none'>Description</td>
+  <td class=3Dxl73 style=3D'border-top:none;border-left:none'>System.String=
+</td>
+  <td class=3Dxl74 style=3D'border-top:none;border-left:none'>Description</=
+td>
+  <td class=3Dxl75 style=3D'border-top:none;border-left:none'>Description:
+  [Description]</td>
+ </tr>
+ <tr height=3D20 style=3D'height:15.0pt'>
+  <td height=3D20 class=3Dxl66 style=3D'height:15.0pt'></td>
+  <td class=3Dxl76 style=3D'border-top:none'>ID</td>
+  <td class=3Dxl77 style=3D'border-top:none;border-left:none'>System.String=
+</td>
+  <td class=3Dxl78 style=3D'border-top:none;border-left:none'>Title</td>
+  <td class=3Dxl79 style=3D'border-top:none;border-left:none'>[CQ_ID]</td>
+ </tr>
+ <tr height=3D20 style=3D'height:15.0pt'>
+  <td height=3D20 class=3Dxl66 style=3D'height:15.0pt'></td>
+  <td class=3Dxl72 style=3D'border-top:none'>Notes</td>
+  <td class=3Dxl73 style=3D'border-top:none;border-left:none'>System.String=
+</td>
+  <td class=3Dxl74 style=3D'border-top:none;border-left:none'>Description</=
+td>
+  <td class=3Dxl75 style=3D'border-top:none;border-left:none'>Notes: [Notes=
+]</td>
+ </tr>
+ <tr height=3D20 style=3D'height:15.0pt'>
+  <td height=3D20 class=3Dxl66 style=3D'height:15.0pt'></td>
+  <td class=3Dxl76 style=3D'border-top:none'>Originator</td>
+  <td class=3Dxl77 style=3D'border-top:none;border-left:none'>System.String=
+</td>
+  <td class=3Dxl78 style=3D'border-top:none;border-left:none'>Description</=
+td>
+  <td class=3Dxl79 style=3D'border-top:none;border-left:none'>Originator:
+  [Originator]</td>
+ </tr>
+ <tr height=3D20 style=3D'height:15.0pt'>
+  <td height=3D20 class=3Dxl66 style=3D'height:15.0pt'></td>
+  <td class=3Dxl72 style=3D'border-top:none'>Tasks</td>
+  <td class=3Dxl73 style=3D'border-top:none;border-left:none'>&nbsp;</td>
+  <td class=3Dxl74 style=3D'border-top:none;border-left:none'>Links</td>
+  <td class=3Dxl75 style=3D'border-top:none;border-left:none'>&nbsp;</td>
+ </tr>
+ <tr height=3D20 style=3D'height:15.0pt'>
+  <td height=3D20 class=3Dxl66 style=3D'height:15.0pt'></td>
+  <td class=3Dxl83 style=3D'border-top:none'>&nbsp;</td>
+  <td class=3Dxl84 style=3D'border-top:none;border-left:none'>Links to Task=
+s</td>
+  <td class=3Dxl85 style=3D'border-top:none;border-left:none'>&nbsp;</td>
+  <td class=3Dxl86 style=3D'border-top:none;border-left:none'>Link to Appop=
+riate
+  Tasks in the links section</td>
+ </tr>
+ <tr height=3D20 style=3D'height:15.0pt'>
+  <td height=3D20 class=3Dxl66 style=3D'height:15.0pt'></td>
+  <td class=3Dxl68></td>
+  <td class=3Dxl66></td>
+  <td class=3Dxl68></td>
+  <td class=3Dxl66></td>
+ </tr>
+ <tr height=3D20 style=3D'height:15.0pt'>
+  <td height=3D20 class=3Dxl66 style=3D'height:15.0pt'></td>
+  <td class=3Dxl68 colspan=3D2 style=3D'mso-ignore:colspan'>Multi value TFS=
+ fields</td>
+  <td class=3Dxl68></td>
+  <td class=3Dxl66></td>
+ </tr>
+ <tr height=3D20 style=3D'height:15.0pt'>
+  <td height=3D20 class=3Dxl66 style=3D'height:15.0pt'></td>
+  <td class=3Dxl87>Field Name</td>
+  <td class=3Dxl87 style=3D'border-left:none'>Field Value [<font class=3D"f=
+ont13">in
+  brackets CQ source field ]</font></td>
+  <td class=3Dxl87 style=3D'border-left:none'>Comment</td>
+  <td class=3Dxl87 style=3D'border-left:none'>Example</td>
+ </tr>
+ <tr height=3D20 style=3D'height:15.0pt'>
+  <td height=3D20 class=3Dxl66 style=3D'height:15.0pt'></td>
+  <td class=3Dxl88 style=3D'border-top:none'>Title</td>
+  <td class=3Dxl88 style=3D'border-top:none;border-left:none'><span
+  style=3D'mso-spacerun:yes'>&nbsp;</span>[[CQ_CR_Type]] [Headline] [[CQ_ID=
+] ]</td>
+  <td class=3Dxl89 style=3D'border-top:none;border-left:none'>&nbsp;</td>
+  <td class=3Dxl88 style=3D'border-top:none;border-left:none'>[Feature] Exa=
+mple
+  headline [CQU400009244]</td>
+ </tr>
+ <tr height=3D140 style=3D'height:105.0pt'>
+  <td height=3D140 class=3Dxl66 style=3D'height:105.0pt'></td>
+  <td class=3Dxl90 style=3D'border-top:none'>Description</td>
+  <td class=3Dxl91 width=3D365 style=3D'border-top:none;border-left:none;wi=
+dth:274pt'>[Description]<br>
+    Subsystem: [Subsystem]<br>
+    Planned Release: [Planned Release]<br>
+    Planned Iteration: [Planned Iteration]<br>
+    Released in: [Released in]<br>
+    Originator: [Originator]<br>
+    Notes: [Notes]</td>
+  <td class=3Dxl87 style=3D'border-top:none;border-left:none'>&nbsp;</td>
+  <td class=3Dxl92 width=3D381 style=3D'border-top:none;border-left:none;wi=
+dth:286pt'>Short
+  description<br>
+    Subsystem: Transformers<br>
+    Planned Release: 2.1<br>
+    Planned Iteration: 1<br>
+    Released in: Release 2.5<br>
+    Originator: Doris Krieger<br>
+    Notes: Some example notes</td>
+ </tr>
+ <tr height=3D80 style=3D'height:60.0pt'>
+  <td height=3D80 class=3Dxl66 style=3D'height:60.0pt'></td>
+  <td class=3Dxl88 style=3D'border-top:none'>History</td>
+  <td class=3Dxl93 width=3D365 style=3D'border-top:none;border-left:none;wi=
+dth:274pt'>Date/Time
+  User Name Action Old State New State<br>
+    [DateTime] [UserName] [Action] [Old State] [New State]</td>
+  <td class=3Dxl93 width=3D106 style=3D'border-top:none;border-left:none;wi=
+dth:80pt'>Each
+  entry copied in the same way as a new line</td>
+  <td class=3Dxl93 width=3D381 style=3D'border-top:none;border-left:none;wi=
+dth:286pt'>Date/Time
+  User Name Action Old State New State<br>
+    20090-11-19 16:23:44 plslppuk Submit no_value Submitted<br>
+    20090-11-29 14:12:13 plslppuk Submit Submitted Submitted</td>
+ </tr>
+ <![if supportMisalignedColumns]>
+ <tr height=3D0 style=3D'display:none'>
+  <td width=3D64 style=3D'width:48pt'></td>
+  <td width=3D124 style=3D'width:93pt'></td>
+  <td width=3D365 style=3D'width:274pt'></td>
+  <td width=3D106 style=3D'width:80pt'></td>
+  <td width=3D381 style=3D'width:286pt'></td>
+ </tr>
+ <![endif]>
+</table>
+
+</body>
+
+</html>
+
+------=_NextPart_01CAF8CC.E75A6BC0
+Content-Location: file:///C:/DEC055F2/Example_Fields_Mappings-CQ_to_CMMI_4.2_files/sheet002.htm
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset="us-ascii"
+
+<html xmlns:o=3D"urn:schemas-microsoft-com:office:office"
+xmlns:x=3D"urn:schemas-microsoft-com:office:excel"
+xmlns=3D"http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=3DContent-Type content=3D"text/html; charset=3Dus-ascii">
+<meta name=3DProgId content=3DExcel.Sheet>
+<meta name=3DGenerator content=3D"Microsoft Excel 14">
+<link id=3DMain-File rel=3DMain-File
+href=3D"../Example_Fields_Mappings-CQ_to_CMMI_4.2.htm">
+<link rel=3DFile-List href=3Dfilelist.xml>
+<![if IE]>
+<base
+href=3D"file:///C:\DEC055F2\Example_Fields_Mappings-CQ_to_CMMI_4.2_files\sh=
+eet002.htm"
+id=3D"webarch_temp_base_tag">
+<![endif]>
+<link rel=3DStylesheet href=3Dstylesheet.css>
+<style>
+<!--table
+	{mso-displayed-decimal-separator:"\.";
+	mso-displayed-thousand-separator:"\,";}
+@page
+	{margin:.75in .7in .75in .7in;
+	mso-header-margin:.3in;
+	mso-footer-margin:.3in;}
+-->
+</style>
+<![if !supportTabStrip]><script language=3D"JavaScript">
+<!--
+function fnUpdateTabs()
+ {
+  if (parent.window.g_iIEVer>=3D4) {
+   if (parent.document.readyState=3D=3D"complete"
+    && parent.frames['frTabs'].document.readyState=3D=3D"complete")
+   parent.fnSetActiveSheet(1);
+  else
+   window.setTimeout("fnUpdateTabs();",150);
+ }
+}
+
+if (window.name!=3D"frSheet")
+ window.location.replace("../Example_Fields_Mappings-CQ_to_CMMI_4.2.htm");
+else
+ fnUpdateTabs();
+//-->
+</script>
+<![endif]>
+</head>
+
+<body link=3Dblue vlink=3Dpurple>
+
+<table border=3D0 cellpadding=3D0 cellspacing=3D0 width=3D1142 style=3D'bor=
+der-collapse:
+ collapse;table-layout:fixed;width:857pt'>
+ <col width=3D64 style=3D'width:48pt'>
+ <col width=3D168 style=3D'mso-width-source:userset;mso-width-alt:6144;widt=
+h:126pt'>
+ <col width=3D364 style=3D'mso-width-source:userset;mso-width-alt:13312;wid=
+th:273pt'>
+ <col width=3D153 style=3D'mso-width-source:userset;mso-width-alt:5595;widt=
+h:115pt'>
+ <col width=3D393 style=3D'mso-width-source:userset;mso-width-alt:14372;wid=
+th:295pt'>
+ <tr height=3D31 style=3D'height:23.25pt'>
+  <td height=3D31 class=3Dxl66 width=3D64 style=3D'height:23.25pt;width:48p=
+t'></td>
+  <td class=3Dxl67 colspan=3D2 width=3D532 style=3D'mso-ignore:colspan;widt=
+h:399pt'>Requirments
+  Mappings</td>
+  <td class=3Dxl66 width=3D153 style=3D'width:115pt'></td>
+  <td class=3Dxl66 width=3D393 style=3D'width:295pt'></td>
+ </tr>
+ <tr height=3D31 style=3D'height:23.25pt'>
+  <td height=3D31 class=3Dxl66 style=3D'height:23.25pt'></td>
+  <td class=3Dxl67 colspan=3D2 style=3D'mso-ignore:colspan'>TFS Template MS=
+F for CMMI
+  4.2</td>
+  <td class=3Dxl66></td>
+  <td class=3Dxl66></td>
+ </tr>
+ <tr height=3D31 style=3D'height:23.25pt'>
+  <td height=3D31 class=3Dxl66 style=3D'height:23.25pt'></td>
+  <td class=3Dxl67 colspan=3D2 style=3D'mso-ignore:colspan'>TFS Target - Re=
+quirement</td>
+  <td class=3Dxl66></td>
+  <td class=3Dxl66></td>
+ </tr>
+ <tr height=3D21 style=3D'height:15.75pt'>
+  <td height=3D21 class=3Dxl66 style=3D'height:15.75pt'></td>
+  <td class=3Dxl94>CQ Field</td>
+  <td class=3Dxl95>CQ Value</td>
+  <td class=3Dxl95>TFS Field</td>
+  <td class=3Dxl95>TFS Value</td>
+ </tr>
+ <tr height=3D20 style=3D'height:15.0pt'>
+  <td height=3D20 class=3Dxl66 style=3D'height:15.0pt'></td>
+  <td class=3Dxl96>no source</td>
+  <td class=3Dxl96>&nbsp;</td>
+  <td class=3Dxl96>Type</td>
+  <td class=3Dxl97>Scenario</td>
+ </tr>
+ <tr height=3D20 style=3D'height:15.0pt'>
+  <td height=3D20 class=3Dxl66 style=3D'height:15.0pt'></td>
+  <td class=3Dxl80>Name</td>
+  <td class=3Dxl98>System.String</td>
+  <td class=3Dxl80>Title</td>
+  <td class=3Dxl98>[value]</td>
+ </tr>
+ <tr height=3D20 style=3D'height:15.0pt'>
+  <td height=3D20 class=3Dxl66 style=3D'height:15.0pt'></td>
+  <td class=3Dxl96>Text</td>
+  <td class=3Dxl97>System.String</td>
+  <td class=3Dxl96>Description</td>
+  <td class=3Dxl97>Text: [value]</td>
+ </tr>
+ <tr height=3D20 style=3D'height:15.0pt'>
+  <td height=3D20 class=3Dxl66 style=3D'height:15.0pt'></td>
+  <td class=3Dxl80>RA Project</td>
+  <td class=3Dxl98>&nbsp;</td>
+  <td class=3Dxl98>Ignore</td>
+  <td class=3Dxl98>&nbsp;</td>
+ </tr>
+ <tr height=3D20 style=3D'height:15.0pt'>
+  <td height=3D20 class=3Dxl66 style=3D'height:15.0pt'></td>
+  <td class=3Dxl96>RequistePro project</td>
+  <td class=3Dxl97>System.String</td>
+  <td class=3Dxl99>Ignore</td>
+  <td class=3Dxl97>&nbsp;</td>
+ </tr>
+ <tr height=3D20 style=3D'height:15.0pt'>
+  <td height=3D20 class=3Dxl66 style=3D'height:15.0pt'></td>
+  <td class=3Dxl80>ID</td>
+  <td class=3Dxl98>System.String</td>
+  <td class=3Dxl80>Title</td>
+  <td class=3Dxl98>[value]</td>
+ </tr>
+ <tr height=3D20 style=3D'height:15.0pt'>
+  <td height=3D20 class=3Dxl66 style=3D'height:15.0pt'></td>
+  <td class=3Dxl96>Revision Number</td>
+  <td class=3Dxl97>&nbsp;</td>
+  <td class=3Dxl96>Description</td>
+  <td class=3Dxl97>Revision number [value]</td>
+ </tr>
+ <tr height=3D20 style=3D'height:15.0pt'>
+  <td height=3D20 class=3Dxl66 style=3D'height:15.0pt'></td>
+  <td class=3Dxl80>Revision Date</td>
+  <td class=3Dxl98>&nbsp;</td>
+  <td class=3Dxl100>Ignore</td>
+  <td class=3Dxl98>&nbsp;</td>
+ </tr>
+ <tr height=3D20 style=3D'height:15.0pt'>
+  <td height=3D20 class=3Dxl66 style=3D'height:15.0pt'></td>
+  <td class=3Dxl96>Tag</td>
+  <td class=3Dxl97>&nbsp;</td>
+  <td class=3Dxl97>Description</td>
+  <td class=3Dxl97>Tag: [Value]</td>
+ </tr>
+ <tr height=3D20 style=3D'height:15.0pt'>
+  <td height=3D20 class=3Dxl66 style=3D'height:15.0pt'></td>
+  <td class=3Dxl80>Type</td>
+  <td class=3Dxl98>&nbsp;</td>
+  <td class=3Dxl100>Ignore</td>
+  <td class=3Dxl98>&nbsp;</td>
+ </tr>
+ <tr height=3D20 style=3D'height:15.0pt'>
+  <td height=3D20 class=3Dxl66 style=3D'height:15.0pt'></td>
+  <td class=3Dxl66></td>
+  <td class=3Dxl66></td>
+  <td class=3Dxl66></td>
+  <td class=3Dxl66></td>
+ </tr>
+ <tr height=3D20 style=3D'height:15.0pt'>
+  <td height=3D20 class=3Dxl66 style=3D'height:15.0pt'></td>
+  <td class=3Dxl68>Multi value TFS fields</td>
+  <td class=3Dxl66></td>
+  <td class=3Dxl68></td>
+  <td class=3Dxl66></td>
+ </tr>
+ <tr height=3D20 style=3D'height:15.0pt'>
+  <td height=3D20 class=3Dxl66 style=3D'height:15.0pt'></td>
+  <td class=3Dxl87>Field Name</td>
+  <td class=3Dxl87 style=3D'border-left:none'>Field Value [<font class=3D"f=
+ont13">in
+  brackets CQ source field ]</font></td>
+  <td class=3Dxl87 style=3D'border-left:none'>Comment</td>
+  <td class=3Dxl87 style=3D'border-left:none'>Example</td>
+ </tr>
+ <tr height=3D60 style=3D'height:45.0pt'>
+  <td height=3D60 class=3Dxl66 style=3D'height:45.0pt'></td>
+  <td class=3Dxl88 style=3D'border-top:none'>Description</td>
+  <td class=3Dxl101 width=3D364 style=3D'border-top:none;border-left:none;w=
+idth:273pt'>[Text]<br>
+    Revision number [RevisionNumber]<br>
+    Tag: [Tag]</td>
+  <td class=3Dxl89 style=3D'border-top:none;border-left:none'>&nbsp;</td>
+  <td class=3Dxl93 width=3D393 style=3D'border-top:none;border-left:none;wi=
+dth:295pt'>Short
+  description<br>
+    Revision number [RevisionNumber]<br>
+    Tag: Example Tag</td>
+ </tr>
+ <tr height=3D20 style=3D'height:15.0pt'>
+  <td height=3D20 class=3Dxl66 style=3D'height:15.0pt'></td>
+  <td class=3Dxl90 style=3D'border-top:none'>Title</td>
+  <td class=3Dxl92 width=3D364 style=3D'border-top:none;border-left:none;wi=
+dth:273pt'>[Name]
+  [[CQID]]</td>
+  <td class=3Dxl102 width=3D153 style=3D'border-top:none;border-left:none;w=
+idth:115pt'>&nbsp;</td>
+  <td class=3Dxl92 width=3D393 style=3D'border-top:none;border-left:none;wi=
+dth:295pt'>Example
+  name [12345678]</td>
+ </tr>
+ <![if supportMisalignedColumns]>
+ <tr height=3D0 style=3D'display:none'>
+  <td width=3D64 style=3D'width:48pt'></td>
+  <td width=3D168 style=3D'width:126pt'></td>
+  <td width=3D364 style=3D'width:273pt'></td>
+  <td width=3D153 style=3D'width:115pt'></td>
+  <td width=3D393 style=3D'width:295pt'></td>
+ </tr>
+ <![endif]>
+</table>
+
+</body>
+
+</html>
+
+------=_NextPart_01CAF8CC.E75A6BC0
+Content-Location: file:///C:/DEC055F2/Example_Fields_Mappings-CQ_to_CMMI_4.2_files/sheet003.htm
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset="us-ascii"
+
+<html xmlns:v=3D"urn:schemas-microsoft-com:vml"
+xmlns:o=3D"urn:schemas-microsoft-com:office:office"
+xmlns:x=3D"urn:schemas-microsoft-com:office:excel"
+xmlns=3D"http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=3DContent-Type content=3D"text/html; charset=3Dus-ascii">
+<meta name=3DProgId content=3DExcel.Sheet>
+<meta name=3DGenerator content=3D"Microsoft Excel 14">
+<link id=3DMain-File rel=3DMain-File
+href=3D"../Example_Fields_Mappings-CQ_to_CMMI_4.2.htm">
+<link rel=3DFile-List href=3Dfilelist.xml>
+<![if IE]>
+<base
+href=3D"file:///C:\DEC055F2\Example_Fields_Mappings-CQ_to_CMMI_4.2_files\sh=
+eet003.htm"
+id=3D"webarch_temp_base_tag">
+<![endif]>
+<link rel=3DStylesheet href=3Dstylesheet.css>
+<style>
+<!--table
+	{mso-displayed-decimal-separator:"\.";
+	mso-displayed-thousand-separator:"\,";}
+@page
+	{margin:.75in .7in .75in .7in;
+	mso-header-margin:.3in;
+	mso-footer-margin:.3in;}
+-->
+</style>
+<![if !supportTabStrip]><script language=3D"JavaScript">
+<!--
+function fnUpdateTabs()
+ {
+  if (parent.window.g_iIEVer>=3D4) {
+   if (parent.document.readyState=3D=3D"complete"
+    && parent.frames['frTabs'].document.readyState=3D=3D"complete")
+   parent.fnSetActiveSheet(2);
+  else
+   window.setTimeout("fnUpdateTabs();",150);
+ }
+}
+
+if (window.name!=3D"frSheet")
+ window.location.replace("../Example_Fields_Mappings-CQ_to_CMMI_4.2.htm");
+else
+ fnUpdateTabs();
+//-->
+</script>
+<![endif]>
+</head>
+
+<body link=3Dblue vlink=3Dpurple>
+
+<table border=3D0 cellpadding=3D0 cellspacing=3D0 width=3D1162 style=3D'bor=
+der-collapse:
+ collapse;table-layout:fixed;width:872pt'>
+ <col width=3D64 style=3D'width:48pt'>
+ <col class=3Dxl65 width=3D124 style=3D'mso-width-source:userset;mso-width-=
+alt:4534;
+ width:93pt'>
+ <col width=3D364 style=3D'mso-width-source:userset;mso-width-alt:13312;wid=
+th:273pt'>
+ <col class=3Dxl65 width=3D153 style=3D'mso-width-source:userset;mso-width-=
+alt:5595;
+ width:115pt'>
+ <col width=3D393 style=3D'mso-width-source:userset;mso-width-alt:14372;wid=
+th:295pt'>
+ <col width=3D64 style=3D'width:48pt'>
+ <tr height=3D31 style=3D'height:23.25pt'>
+  <td height=3D31 class=3Dxl66 width=3D64 style=3D'height:23.25pt;width:48p=
+t'></td>
+  <td class=3Dxl67 colspan=3D2 width=3D488 style=3D'mso-ignore:colspan;widt=
+h:366pt'>Stakeholder
+  Request Mapping</td>
+  <td class=3Dxl68 width=3D153 style=3D'width:115pt'></td>
+  <td class=3Dxl66 width=3D393 style=3D'width:295pt'></td>
+  <td class=3Dxl66 width=3D64 style=3D'width:48pt'></td>
+ </tr>
+ <tr height=3D31 style=3D'height:23.25pt'>
+  <td height=3D31 class=3Dxl66 style=3D'height:23.25pt'></td>
+  <td class=3Dxl67 colspan=3D2 style=3D'mso-ignore:colspan'>TFS Template MS=
+F for CMMI
+  4.2</td>
+  <td class=3Dxl68></td>
+  <td class=3Dxl66></td>
+  <td class=3Dxl66></td>
+ </tr>
+ <tr height=3D31 style=3D'height:23.25pt'>
+  <td height=3D31 class=3Dxl66 style=3D'height:23.25pt'></td>
+  <td class=3Dxl67 colspan=3D2 style=3D'mso-ignore:colspan'>TFS Target - Re=
+quirement</td>
+  <td class=3Dxl68></td>
+  <td class=3Dxl66></td>
+  <td class=3Dxl66></td>
+ </tr>
+ <tr height=3D21 style=3D'height:15.75pt'>
+  <td height=3D21 class=3Dxl66 style=3D'height:15.75pt'></td>
+  <td class=3Dxl94>CQ Field</td>
+  <td class=3Dxl103>CQ Value</td>
+  <td class=3Dxl103>TFS Field</td>
+  <td class=3Dxl103>TFS Value</td>
+  <td class=3Dxl66></td>
+ </tr>
+ <tr height=3D20 style=3D'height:15.0pt'>
+  <td height=3D20 class=3Dxl66 style=3D'height:15.0pt'></td>
+  <td class=3Dxl76>no source</td>
+  <td class=3Dxl78 style=3D'border-left:none'>&nbsp;</td>
+  <td class=3Dxl78 style=3D'border-left:none'>Type</td>
+  <td class=3Dxl79 style=3D'border-left:none'>Functional</td>
+  <td class=3Dxl66></td>
+ </tr>
+ <tr height=3D20 style=3D'height:15.0pt'>
+  <td height=3D20 class=3Dxl66 style=3D'height:15.0pt'></td>
+  <td class=3Dxl72 style=3D'border-top:none'>Headline</td>
+  <td class=3Dxl73 style=3D'border-top:none;border-left:none'>System.String=
+</td>
+  <td class=3Dxl74 style=3D'border-top:none;border-left:none'>Title</td>
+  <td class=3Dxl75 style=3D'border-top:none;border-left:none'>&nbsp;</td>
+  <td class=3Dxl66></td>
+ </tr>
+ <tr height=3D20 style=3D'height:15.0pt'>
+  <td height=3D20 class=3Dxl66 style=3D'height:15.0pt'></td>
+  <td class=3Dxl76 style=3D'border-top:none'>Description</td>
+  <td class=3Dxl77 style=3D'border-top:none;border-left:none'>System.String=
+</td>
+  <td class=3Dxl78 style=3D'border-top:none;border-left:none'>Description</=
+td>
+  <td class=3Dxl79 style=3D'border-top:none;border-left:none'>Description: =
+[value]</td>
+  <td class=3Dxl66></td>
+ </tr>
+ <tr height=3D20 style=3D'height:15.0pt'>
+  <td height=3D20 class=3Dxl66 style=3D'height:15.0pt'></td>
+  <td class=3Dxl72 style=3D'border-top:none'>Requestor</td>
+  <td class=3Dxl73 style=3D'border-top:none;border-left:none'>System.String=
+</td>
+  <td class=3Dxl74 style=3D'border-top:none;border-left:none'>Description</=
+td>
+  <td class=3Dxl75 style=3D'border-top:none;border-left:none'>Requestor: [v=
+alue]</td>
+  <td class=3Dxl66></td>
+ </tr>
+ <tr height=3D20 style=3D'height:15.0pt'>
+  <td height=3D20 class=3Dxl66 style=3D'height:15.0pt'></td>
+  <td class=3Dxl76 style=3D'border-top:none'>ABB Project</td>
+  <td class=3Dxl77 style=3D'border-top:none;border-left:none'>&nbsp;</td>
+  <td class=3Dxl77 style=3D'border-top:none;border-left:none'>Ignore</td>
+  <td class=3Dxl79 style=3D'border-top:none;border-left:none'>&nbsp;</td>
+  <td class=3Dxl66></td>
+ </tr>
+ <tr height=3D20 style=3D'height:15.0pt'>
+  <td height=3D20 class=3Dxl66 style=3D'height:15.0pt'></td>
+  <td class=3Dxl72 style=3D'border-top:none'>Subsystem</td>
+  <td class=3Dxl73 style=3D'border-top:none;border-left:none'>System.String=
+</td>
+  <td class=3Dxl74 style=3D'border-top:none;border-left:none'>Description</=
+td>
+  <td class=3Dxl75 style=3D'border-top:none;border-left:none'>Subsystem: [v=
+alue]</td>
+  <td class=3Dxl66></td>
+ </tr>
+ <tr height=3D20 style=3D'height:15.0pt'>
+  <td height=3D20 class=3Dxl66 style=3D'height:15.0pt'></td>
+  <td class=3Dxl76 style=3D'border-top:none'>Importance</td>
+  <td class=3Dxl77 style=3D'border-top:none;border-left:none'>&nbsp;</td>
+  <td class=3Dxl78 style=3D'border-top:none;border-left:none'>Priority</td>
+  <td class=3Dxl79 style=3D'border-top:none;border-left:none'>&nbsp;</td>
+  <td class=3Dxl66></td>
+ </tr>
+ <tr height=3D20 style=3D'height:15.0pt'>
+  <td height=3D20 class=3Dxl66 style=3D'height:15.0pt'></td>
+  <td class=3Dxl72 style=3D'border-top:none'>&nbsp;</td>
+  <td class=3Dxl73 style=3D'border-top:none;border-left:none'>High</td>
+  <td class=3Dxl74 style=3D'border-top:none;border-left:none'>&nbsp;</td>
+  <td class=3Dxl75 align=3Dright style=3D'border-top:none;border-left:none'=
+>1</td>
+  <td class=3Dxl66></td>
+ </tr>
+ <tr height=3D20 style=3D'height:15.0pt'>
+  <td height=3D20 class=3Dxl66 style=3D'height:15.0pt'></td>
+  <td class=3Dxl76 style=3D'border-top:none'>&nbsp;</td>
+  <td class=3Dxl77 style=3D'border-top:none;border-left:none'>Medium</td>
+  <td class=3Dxl78 style=3D'border-top:none;border-left:none'>&nbsp;</td>
+  <td class=3Dxl79 align=3Dright style=3D'border-top:none;border-left:none'=
+>2</td>
+  <td class=3Dxl66></td>
+ </tr>
+ <tr height=3D20 style=3D'height:15.0pt'>
+  <td height=3D20 class=3Dxl66 style=3D'height:15.0pt'></td>
+  <td class=3Dxl72 style=3D'border-top:none'>&nbsp;</td>
+  <td class=3Dxl73 style=3D'border-top:none;border-left:none'>Low</td>
+  <td class=3Dxl74 style=3D'border-top:none;border-left:none'>&nbsp;</td>
+  <td class=3Dxl75 align=3Dright style=3D'border-top:none;border-left:none'=
+>3</td>
+  <td class=3Dxl66></td>
+ </tr>
+ <tr height=3D20 style=3D'height:15.0pt'>
+  <td height=3D20 class=3Dxl66 style=3D'height:15.0pt'></td>
+  <td class=3Dxl76 style=3D'border-top:none'>Requests</td>
+  <td class=3Dxl77 style=3D'border-top:none;border-left:none'>&nbsp;</td>
+  <td class=3Dxl78 style=3D'border-top:none;border-left:none'>Ignore</td>
+  <td class=3Dxl79 colspan=3D2 style=3D'mso-ignore:colspan'>Link will be cr=
+eated
+  while linkin Change Request to Stake Holder Request</td>
+ </tr>
+ <tr height=3D20 style=3D'height:15.0pt'>
+  <td height=3D20 class=3Dxl66 style=3D'height:15.0pt'></td>
+  <td class=3Dxl72 style=3D'border-top:none'>Attachments</td>
+  <td class=3Dxl73 style=3D'border-top:none;border-left:none'>&nbsp;</td>
+  <td class=3Dxl74 style=3D'border-top:none;border-left:none'>Attachments</=
+td>
+  <td class=3Dxl75 style=3D'border-top:none;border-left:none'>&nbsp;</td>
+  <td class=3Dxl66></td>
+ </tr>
+ <tr height=3D20 style=3D'height:15.0pt'>
+  <td height=3D20 class=3Dxl66 style=3D'height:15.0pt'></td>
+  <td class=3Dxl76 style=3D'border-top:none'>&nbsp;</td>
+  <td class=3Dxl77 style=3D'border-top:none;border-left:none'>Attachment</t=
+d>
+  <td class=3Dxl78 style=3D'border-top:none;border-left:none'>&nbsp;</td>
+  <td class=3Dxl79 style=3D'border-top:none;border-left:none'>Appropriate
+  Attachment are copied</td>
+  <td class=3Dxl66></td>
+ </tr>
+ <tr height=3D20 style=3D'height:15.0pt'>
+  <td height=3D20 class=3Dxl66 style=3D'height:15.0pt'></td>
+  <td class=3Dxl72 style=3D'border-top:none'>History</td>
+  <td class=3Dxl73 style=3D'border-top:none;border-left:none'>&nbsp;</td>
+  <td class=3Dxl74 style=3D'border-top:none;border-left:none'>History</td>
+  <td class=3Dxl75 style=3D'border-top:none;border-left:none'>&nbsp;</td>
+  <td class=3Dxl66></td>
+ </tr>
+ <tr height=3D20 style=3D'height:15.0pt'>
+  <td height=3D20 class=3Dxl66 style=3D'height:15.0pt'></td>
+  <td class=3Dxl76 style=3D'border-top:none'>&nbsp;</td>
+  <td class=3Dxl77 style=3D'border-top:none;border-left:none'>Date/Time</td>
+  <td class=3Dxl78 style=3D'border-top:none;border-left:none'>&nbsp;</td>
+  <td class=3Dxl79 style=3D'border-top:none;border-left:none'>[DateTime]</t=
+d>
+  <td class=3Dxl66></td>
+ </tr>
+ <tr height=3D20 style=3D'height:15.0pt'>
+  <td height=3D20 class=3Dxl66 style=3D'height:15.0pt'></td>
+  <td class=3Dxl72 style=3D'border-top:none'>&nbsp;</td>
+  <td class=3Dxl73 style=3D'border-top:none;border-left:none'>User Name</td>
+  <td class=3Dxl74 style=3D'border-top:none;border-left:none'>&nbsp;</td>
+  <td class=3Dxl75 style=3D'border-top:none;border-left:none'>[UserName]</t=
+d>
+  <td class=3Dxl66></td>
+ </tr>
+ <tr height=3D20 style=3D'height:15.0pt'>
+  <td height=3D20 class=3Dxl66 style=3D'height:15.0pt'></td>
+  <td class=3Dxl76 style=3D'border-top:none'>&nbsp;</td>
+  <td class=3Dxl77 style=3D'border-top:none;border-left:none'>Action</td>
+  <td class=3Dxl78 style=3D'border-top:none;border-left:none'>&nbsp;</td>
+  <td class=3Dxl79 style=3D'border-top:none;border-left:none'>[Action]</td>
+  <td class=3Dxl66></td>
+ </tr>
+ <tr height=3D20 style=3D'height:15.0pt'>
+  <td height=3D20 class=3Dxl66 style=3D'height:15.0pt'></td>
+  <td class=3Dxl72 style=3D'border-top:none'>&nbsp;</td>
+  <td class=3Dxl73 style=3D'border-top:none;border-left:none'>Old State</td>
+  <td class=3Dxl74 style=3D'border-top:none;border-left:none'>&nbsp;</td>
+  <td class=3Dxl75 style=3D'border-top:none;border-left:none'>[Old State]</=
+td>
+  <td class=3Dxl66></td>
+ </tr>
+ <tr height=3D20 style=3D'height:15.0pt'>
+  <td height=3D20 class=3Dxl66 style=3D'height:15.0pt'></td>
+  <td class=3Dxl76 style=3D'border-top:none'>&nbsp;</td>
+  <td class=3Dxl77 style=3D'border-top:none;border-left:none'>New State</td>
+  <td class=3Dxl78 style=3D'border-top:none;border-left:none'>&nbsp;</td>
+  <td class=3Dxl79 style=3D'border-top:none;border-left:none'>[New State]</=
+td>
+  <td class=3Dxl66></td>
+ </tr>
+ <tr height=3D20 style=3D'height:15.0pt'>
+  <td height=3D20 class=3Dxl66 style=3D'height:15.0pt'></td>
+  <td class=3Dxl72 style=3D'border-top:none'>Master</td>
+  <td class=3Dxl73 style=3D'border-top:none;border-left:none'>&nbsp;</td>
+  <td class=3Dxl73 style=3D'border-top:none;border-left:none'>Ignore</td>
+  <td class=3Dxl75 style=3D'border-top:none;border-left:none'>&nbsp;</td>
+  <td class=3Dxl66></td>
+ </tr>
+ <tr height=3D20 style=3D'height:15.0pt'>
+  <td height=3D20 class=3Dxl66 style=3D'height:15.0pt'></td>
+  <td class=3Dxl83 style=3D'border-top:none'>ID</td>
+  <td class=3Dxl84 style=3D'border-top:none;border-left:none'>System.String=
+</td>
+  <td class=3Dxl85 style=3D'border-top:none;border-left:none'>Title</td>
+  <td class=3Dxl86 style=3D'border-top:none;border-left:none'>[value]</td>
+  <td class=3Dxl66></td>
+ </tr>
+ <tr height=3D20 style=3D'height:15.0pt'>
+  <td height=3D20 class=3Dxl66 style=3D'height:15.0pt'></td>
+  <td class=3Dxl68></td>
+  <td class=3Dxl66></td>
+  <td class=3Dxl68></td>
+  <td class=3Dxl66></td>
+  <td class=3Dxl66></td>
+ </tr>
+ <tr height=3D20 style=3D'height:15.0pt'>
+  <td height=3D20 class=3Dxl66 style=3D'height:15.0pt'></td>
+  <td class=3Dxl68 colspan=3D2 style=3D'mso-ignore:colspan'>Multi value TFS=
+ fields</td>
+  <td class=3Dxl68></td>
+  <td class=3Dxl66></td>
+  <td class=3Dxl66></td>
+ </tr>
+ <tr height=3D20 style=3D'height:15.0pt'>
+  <td height=3D20 class=3Dxl66 style=3D'height:15.0pt'></td>
+  <td class=3Dxl87>Field Name</td>
+  <td class=3Dxl87 style=3D'border-left:none'>Field Value [<font class=3D"f=
+ont13">in
+  brackets CQ source field ]</font></td>
+  <td class=3Dxl87 style=3D'border-left:none'>Comment</td>
+  <td class=3Dxl87 style=3D'border-left:none'>Example</td>
+  <td class=3Dxl66></td>
+ </tr>
+ <tr height=3D60 style=3D'height:45.0pt'>
+  <td height=3D60 class=3Dxl66 style=3D'height:45.0pt'></td>
+  <td class=3Dxl88 style=3D'border-top:none'>Description</td>
+  <td class=3Dxl101 width=3D364 style=3D'border-top:none;border-left:none;w=
+idth:273pt'>[Description]<br>
+    Subsystem: [Subsyste]<br>
+    Requestor: [Requestor]</td>
+  <td class=3Dxl89 style=3D'border-top:none;border-left:none'>&nbsp;</td>
+  <td class=3Dxl93 width=3D393 style=3D'border-top:none;border-left:none;wi=
+dth:295pt'>Short
+  description<br>
+    Subsystem: Tranformers<br>
+    Requestor: Doris Krieger</td>
+  <td class=3Dxl66></td>
+ </tr>
+ <tr height=3D60 style=3D'height:45.0pt'>
+  <td height=3D60 class=3Dxl66 style=3D'height:45.0pt'></td>
+  <td class=3Dxl90 style=3D'border-top:none'>History</td>
+  <td class=3Dxl92 width=3D364 style=3D'border-top:none;border-left:none;wi=
+dth:273pt'>Date/Time
+  User Name Action Old State New State<br>
+    [DateTime] [UserName] [Action] [Old State] [New State]</td>
+  <td class=3Dxl92 width=3D153 style=3D'border-top:none;border-left:none;wi=
+dth:115pt'>Each
+  entry copied in the same way as a new line</td>
+  <td class=3Dxl92 width=3D393 style=3D'border-top:none;border-left:none;wi=
+dth:295pt'>Date/Time
+  User Name Action Old State New State<br>
+    20090-11-19 16:23:44 plslppuk Submit no_value Submitted<br>
+    20090-11-29 14:12:13 plslppuk Submit Submitted Submitted</td>
+  <td class=3Dxl66></td>
+ </tr>
+ <tr height=3D20 style=3D'height:15.0pt'>
+  <td height=3D20 class=3Dxl66 style=3D'height:15.0pt'></td>
+  <td class=3Dxl88 style=3D'border-top:none'>Tite</td>
+  <td class=3Dxl93 width=3D364 style=3D'border-top:none;border-left:none;wi=
+dth:273pt'>[Headline]
+  [[CQID]]</td>
+  <td class=3Dxl105 width=3D153 style=3D'border-top:none;border-left:none;w=
+idth:115pt'>&nbsp;</td>
+  <td class=3Dxl93 width=3D393 style=3D'border-top:none;border-left:none;wi=
+dth:295pt'>Example
+  headline [CQU12345678]</td>
+  <td class=3Dxl66></td>
+ </tr>
+ <![if supportMisalignedColumns]>
+ <tr height=3D0 style=3D'display:none'>
+  <td width=3D64 style=3D'width:48pt'></td>
+  <td width=3D124 style=3D'width:93pt'></td>
+  <td width=3D364 style=3D'width:273pt'></td>
+  <td width=3D153 style=3D'width:115pt'></td>
+  <td width=3D393 style=3D'width:295pt'></td>
+  <td width=3D64 style=3D'width:48pt'></td>
+ </tr>
+ <![endif]>
+</table>
+
+</body>
+
+</html>
+
+------=_NextPart_01CAF8CC.E75A6BC0
+Content-Location: file:///C:/DEC055F2/Example_Fields_Mappings-CQ_to_CMMI_4.2_files/sheet004.htm
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset="us-ascii"
+
+<html xmlns:v=3D"urn:schemas-microsoft-com:vml"
+xmlns:o=3D"urn:schemas-microsoft-com:office:office"
+xmlns:x=3D"urn:schemas-microsoft-com:office:excel"
+xmlns=3D"http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=3DContent-Type content=3D"text/html; charset=3Dus-ascii">
+<meta name=3DProgId content=3DExcel.Sheet>
+<meta name=3DGenerator content=3D"Microsoft Excel 14">
+<link id=3DMain-File rel=3DMain-File
+href=3D"../Example_Fields_Mappings-CQ_to_CMMI_4.2.htm">
+<link rel=3DFile-List href=3Dfilelist.xml>
+<![if IE]>
+<base
+href=3D"file:///C:\DEC055F2\Example_Fields_Mappings-CQ_to_CMMI_4.2_files\sh=
+eet004.htm"
+id=3D"webarch_temp_base_tag">
+<![endif]>
+<link rel=3DStylesheet href=3Dstylesheet.css>
+<style>
+<!--table
+	{mso-displayed-decimal-separator:"\.";
+	mso-displayed-thousand-separator:"\,";}
+@page
+	{margin:.75in .7in .75in .7in;
+	mso-header-margin:.3in;
+	mso-footer-margin:.3in;}
+-->
+</style>
+<![if !supportTabStrip]><script language=3D"JavaScript">
+<!--
+function fnUpdateTabs()
+ {
+  if (parent.window.g_iIEVer>=3D4) {
+   if (parent.document.readyState=3D=3D"complete"
+    && parent.frames['frTabs'].document.readyState=3D=3D"complete")
+   parent.fnSetActiveSheet(3);
+  else
+   window.setTimeout("fnUpdateTabs();",150);
+ }
+}
+
+if (window.name!=3D"frSheet")
+ window.location.replace("../Example_Fields_Mappings-CQ_to_CMMI_4.2.htm");
+else
+ fnUpdateTabs();
+//-->
+</script>
+<![endif]>
+</head>
+
+<body link=3Dblue vlink=3Dpurple>
+
+<table border=3D0 cellpadding=3D0 cellspacing=3D0 width=3D1098 style=3D'bor=
+der-collapse:
+ collapse;table-layout:fixed;width:824pt'>
+ <col width=3D64 style=3D'width:48pt'>
+ <col width=3D124 style=3D'mso-width-source:userset;mso-width-alt:4534;widt=
+h:93pt'>
+ <col width=3D364 style=3D'mso-width-source:userset;mso-width-alt:13312;wid=
+th:273pt'>
+ <col width=3D153 style=3D'mso-width-source:userset;mso-width-alt:5595;widt=
+h:115pt'>
+ <col width=3D393 style=3D'mso-width-source:userset;mso-width-alt:14372;wid=
+th:295pt'>
+ <tr height=3D31 style=3D'height:23.25pt'>
+  <td height=3D31 class=3Dxl66 width=3D64 style=3D'height:23.25pt;width:48p=
+t'></td>
+  <td class=3Dxl67 colspan=3D2 width=3D488 style=3D'mso-ignore:colspan;widt=
+h:366pt'>Task
+  Mapping</td>
+  <td class=3Dxl66 width=3D153 style=3D'width:115pt'></td>
+  <td class=3Dxl66 width=3D393 style=3D'width:295pt'></td>
+ </tr>
+ <tr height=3D31 style=3D'height:23.25pt'>
+  <td height=3D31 class=3Dxl66 style=3D'height:23.25pt'></td>
+  <td class=3Dxl67 colspan=3D2 style=3D'mso-ignore:colspan'>TFS Template MS=
+F for CMMI
+  4.2</td>
+  <td class=3Dxl66></td>
+  <td class=3Dxl66></td>
+ </tr>
+ <tr height=3D31 style=3D'height:23.25pt'>
+  <td height=3D31 class=3Dxl66 style=3D'height:23.25pt'></td>
+  <td class=3Dxl67 colspan=3D2 style=3D'mso-ignore:colspan'>TFS Target - Ta=
+sk</td>
+  <td class=3Dxl66></td>
+  <td class=3Dxl66></td>
+ </tr>
+ <tr height=3D21 style=3D'height:15.75pt'>
+  <td height=3D21 class=3Dxl66 style=3D'height:15.75pt'></td>
+  <td class=3Dxl106>CQ Field</td>
+  <td class=3Dxl107>CQ Value</td>
+  <td class=3Dxl107>TFS Field</td>
+  <td class=3Dxl107>TFS Value</td>
+ </tr>
+ <tr height=3D20 style=3D'height:15.0pt'>
+  <td height=3D20 class=3Dxl66 style=3D'height:15.0pt'></td>
+  <td class=3Dxl72>Headline</td>
+  <td class=3Dxl73 style=3D'border-left:none'>System.String</td>
+  <td class=3Dxl74 style=3D'border-left:none'>Title</td>
+  <td class=3Dxl75 style=3D'border-left:none'>&nbsp;</td>
+ </tr>
+ <tr height=3D20 style=3D'height:15.0pt'>
+  <td height=3D20 class=3Dxl66 style=3D'height:15.0pt'></td>
+  <td class=3Dxl76 style=3D'border-top:none'>Description</td>
+  <td class=3Dxl77 style=3D'border-top:none;border-left:none'>System.String=
+</td>
+  <td class=3Dxl78 style=3D'border-top:none;border-left:none'>Description</=
+td>
+  <td class=3Dxl79 style=3D'border-top:none;border-left:none'>Desciption: [=
+value]</td>
+ </tr>
+ <tr height=3D20 style=3D'height:15.0pt'>
+  <td height=3D20 class=3Dxl66 style=3D'height:15.0pt'></td>
+  <td class=3Dxl72 style=3D'border-top:none'>Owner</td>
+  <td class=3Dxl73 style=3D'border-top:none;border-left:none'>&nbsp;</td>
+  <td class=3Dxl74 style=3D'border-top:none;border-left:none'>Assigned To</=
+td>
+  <td class=3Dxl75 style=3D'border-top:none;border-left:none'>Valid user</t=
+d>
+ </tr>
+ <tr height=3D20 style=3D'height:15.0pt'>
+  <td height=3D20 class=3Dxl66 style=3D'height:15.0pt'></td>
+  <td class=3Dxl76 style=3D'border-top:none'>State</td>
+  <td class=3Dxl77 style=3D'border-top:none;border-left:none'>&nbsp;</td>
+  <td class=3Dxl78 style=3D'border-top:none;border-left:none'>State</td>
+  <td class=3Dxl79 style=3D'border-top:none;border-left:none'>&nbsp;</td>
+ </tr>
+ <tr height=3D20 style=3D'height:15.0pt'>
+  <td height=3D20 class=3Dxl66 style=3D'height:15.0pt'></td>
+  <td class=3Dxl72 style=3D'border-top:none'>&nbsp;</td>
+  <td class=3Dxl73 style=3D'border-top:none;border-left:none'>Submitted</td>
+  <td class=3Dxl74 style=3D'border-top:none;border-left:none'>&nbsp;</td>
+  <td class=3Dxl75 style=3D'border-top:none;border-left:none'>Proposed</td>
+ </tr>
+ <tr height=3D20 style=3D'height:15.0pt'>
+  <td height=3D20 class=3Dxl66 style=3D'height:15.0pt'></td>
+  <td class=3Dxl76 style=3D'border-top:none'>&nbsp;</td>
+  <td class=3Dxl77 style=3D'border-top:none;border-left:none'>Assigned</td>
+  <td class=3Dxl78 style=3D'border-top:none;border-left:none'>&nbsp;</td>
+  <td class=3Dxl79 style=3D'border-top:none;border-left:none'>Proposed</td>
+ </tr>
+ <tr height=3D20 style=3D'height:15.0pt'>
+  <td height=3D20 class=3Dxl66 style=3D'height:15.0pt'></td>
+  <td class=3Dxl72 style=3D'border-top:none'>&nbsp;</td>
+  <td class=3Dxl73 style=3D'border-top:none;border-left:none'>Under Impleme=
+ntation</td>
+  <td class=3Dxl74 style=3D'border-top:none;border-left:none'>&nbsp;</td>
+  <td class=3Dxl75 style=3D'border-top:none;border-left:none'>Assigned</td>
+ </tr>
+ <tr height=3D20 style=3D'height:15.0pt'>
+  <td height=3D20 class=3Dxl66 style=3D'height:15.0pt'></td>
+  <td class=3Dxl76 style=3D'border-top:none'>&nbsp;</td>
+  <td class=3Dxl77 style=3D'border-top:none;border-left:none'>Implemented</=
+td>
+  <td class=3Dxl78 style=3D'border-top:none;border-left:none'>&nbsp;</td>
+  <td class=3Dxl79 style=3D'border-top:none;border-left:none'>Resolved</td>
+ </tr>
+ <tr height=3D20 style=3D'height:15.0pt'>
+  <td height=3D20 class=3Dxl66 style=3D'height:15.0pt'></td>
+  <td class=3Dxl72 style=3D'border-top:none'>&nbsp;</td>
+  <td class=3Dxl73 style=3D'border-top:none;border-left:none'>Rejected</td>
+  <td class=3Dxl74 style=3D'border-top:none;border-left:none'>&nbsp;</td>
+  <td class=3Dxl75 style=3D'border-top:none;border-left:none'>Active</td>
+ </tr>
+ <tr height=3D20 style=3D'height:15.0pt'>
+  <td height=3D20 class=3Dxl66 style=3D'height:15.0pt'></td>
+  <td class=3Dxl76 style=3D'border-top:none'>&nbsp;</td>
+  <td class=3Dxl77 style=3D'border-top:none;border-left:none'>&nbsp;</td>
+  <td class=3Dxl78 style=3D'border-top:none;border-left:none'>Reason</td>
+  <td class=3Dxl79 style=3D'border-top:none;border-left:none'>Rejected</td>
+ </tr>
+ <tr height=3D20 style=3D'height:15.0pt'>
+  <td height=3D20 class=3Dxl66 style=3D'height:15.0pt'></td>
+  <td class=3Dxl72 style=3D'border-top:none'>&nbsp;</td>
+  <td class=3Dxl73 style=3D'border-top:none;border-left:none'>Integrated</t=
+d>
+  <td class=3Dxl74 style=3D'border-top:none;border-left:none'>&nbsp;</td>
+  <td class=3Dxl75 style=3D'border-top:none;border-left:none'>Closed</td>
+ </tr>
+ <tr height=3D20 style=3D'height:15.0pt'>
+  <td height=3D20 class=3Dxl66 style=3D'height:15.0pt'></td>
+  <td class=3Dxl76 style=3D'border-top:none'>&nbsp;</td>
+  <td class=3Dxl77 style=3D'border-top:none;border-left:none'>Closed</td>
+  <td class=3Dxl78 style=3D'border-top:none;border-left:none'>&nbsp;</td>
+  <td class=3Dxl79 style=3D'border-top:none;border-left:none'>Closed</td>
+ </tr>
+ <tr height=3D20 style=3D'height:15.0pt'>
+  <td height=3D20 class=3Dxl66 style=3D'height:15.0pt'></td>
+  <td class=3Dxl72 style=3D'border-top:none'>History</td>
+  <td class=3Dxl73 style=3D'border-top:none;border-left:none'>&nbsp;</td>
+  <td class=3Dxl74 style=3D'border-top:none;border-left:none'>History</td>
+  <td class=3Dxl75 style=3D'border-top:none;border-left:none'>&nbsp;</td>
+ </tr>
+ <tr height=3D20 style=3D'height:15.0pt'>
+  <td height=3D20 class=3Dxl66 style=3D'height:15.0pt'></td>
+  <td class=3Dxl76 style=3D'border-top:none'>&nbsp;</td>
+  <td class=3Dxl77 style=3D'border-top:none;border-left:none'>Date/Time</td>
+  <td class=3Dxl78 style=3D'border-top:none;border-left:none'>&nbsp;</td>
+  <td class=3Dxl79 style=3D'border-top:none;border-left:none'>[DateTime]</t=
+d>
+ </tr>
+ <tr height=3D20 style=3D'height:15.0pt'>
+  <td height=3D20 class=3Dxl66 style=3D'height:15.0pt'></td>
+  <td class=3Dxl72 style=3D'border-top:none'>&nbsp;</td>
+  <td class=3Dxl73 style=3D'border-top:none;border-left:none'>User Name</td>
+  <td class=3Dxl74 style=3D'border-top:none;border-left:none'>&nbsp;</td>
+  <td class=3Dxl75 style=3D'border-top:none;border-left:none'>[UserName]</t=
+d>
+ </tr>
+ <tr height=3D20 style=3D'height:15.0pt'>
+  <td height=3D20 class=3Dxl66 style=3D'height:15.0pt'></td>
+  <td class=3Dxl76 style=3D'border-top:none'>&nbsp;</td>
+  <td class=3Dxl77 style=3D'border-top:none;border-left:none'>Action</td>
+  <td class=3Dxl78 style=3D'border-top:none;border-left:none'>&nbsp;</td>
+  <td class=3Dxl79 style=3D'border-top:none;border-left:none'>[Action]</td>
+ </tr>
+ <tr height=3D20 style=3D'height:15.0pt'>
+  <td height=3D20 class=3Dxl66 style=3D'height:15.0pt'></td>
+  <td class=3Dxl72 style=3D'border-top:none'>&nbsp;</td>
+  <td class=3Dxl73 style=3D'border-top:none;border-left:none'>Old State</td>
+  <td class=3Dxl74 style=3D'border-top:none;border-left:none'>&nbsp;</td>
+  <td class=3Dxl75 style=3D'border-top:none;border-left:none'>[Old State]</=
+td>
+ </tr>
+ <tr height=3D20 style=3D'height:15.0pt'>
+  <td height=3D20 class=3Dxl66 style=3D'height:15.0pt'></td>
+  <td class=3Dxl76 style=3D'border-top:none'>&nbsp;</td>
+  <td class=3Dxl77 style=3D'border-top:none;border-left:none'>New State</td>
+  <td class=3Dxl78 style=3D'border-top:none;border-left:none'>&nbsp;</td>
+  <td class=3Dxl79 style=3D'border-top:none;border-left:none'>[New State]</=
+td>
+ </tr>
+ <tr height=3D20 style=3D'height:15.0pt'>
+  <td height=3D20 class=3Dxl66 style=3D'height:15.0pt'></td>
+  <td class=3Dxl72 style=3D'border-top:none'>Requests</td>
+  <td class=3Dxl73 style=3D'border-top:none;border-left:none'>&nbsp;</td>
+  <td class=3Dxl74 style=3D'border-top:none;border-left:none'>Links</td>
+  <td class=3Dxl75 style=3D'border-top:none;border-left:none'>&nbsp;</td>
+ </tr>
+ <tr height=3D20 style=3D'height:15.0pt'>
+  <td height=3D20 class=3Dxl66 style=3D'height:15.0pt'></td>
+  <td class=3Dxl76 style=3D'border-top:none'>&nbsp;</td>
+  <td class=3Dxl77 style=3D'border-top:none;border-left:none'>Links to CR</=
+td>
+  <td class=3Dxl78 style=3D'border-top:none;border-left:none'>&nbsp;</td>
+  <td class=3Dxl79 style=3D'border-top:none;border-left:none'>Appropriate l=
+inks to
+  CR in TFS</td>
+ </tr>
+ <tr height=3D20 style=3D'height:15.0pt'>
+  <td height=3D20 class=3Dxl66 style=3D'height:15.0pt'></td>
+  <td class=3Dxl72 style=3D'border-top:none'>Priority</td>
+  <td class=3Dxl73 style=3D'border-top:none;border-left:none'>&nbsp;</td>
+  <td class=3Dxl74 style=3D'border-top:none;border-left:none'>Priority</td>
+  <td class=3Dxl75 style=3D'border-top:none;border-left:none'>&nbsp;</td>
+ </tr>
+ <tr height=3D20 style=3D'height:15.0pt'>
+  <td height=3D20 class=3Dxl66 style=3D'height:15.0pt'></td>
+  <td class=3Dxl76 style=3D'border-top:none'>&nbsp;</td>
+  <td class=3Dxl77 style=3D'border-top:none;border-left:none'>High</td>
+  <td class=3Dxl78 style=3D'border-top:none;border-left:none'>&nbsp;</td>
+  <td class=3Dxl79 align=3Dright style=3D'border-top:none;border-left:none'=
+>1</td>
+ </tr>
+ <tr height=3D20 style=3D'height:15.0pt'>
+  <td height=3D20 class=3Dxl66 style=3D'height:15.0pt'></td>
+  <td class=3Dxl72 style=3D'border-top:none'>&nbsp;</td>
+  <td class=3Dxl73 style=3D'border-top:none;border-left:none'>Medium</td>
+  <td class=3Dxl74 style=3D'border-top:none;border-left:none'>&nbsp;</td>
+  <td class=3Dxl75 align=3Dright style=3D'border-top:none;border-left:none'=
+>2</td>
+ </tr>
+ <tr height=3D20 style=3D'height:15.0pt'>
+  <td height=3D20 class=3Dxl66 style=3D'height:15.0pt'></td>
+  <td class=3Dxl76 style=3D'border-top:none'>&nbsp;</td>
+  <td class=3Dxl77 style=3D'border-top:none;border-left:none'>Low</td>
+  <td class=3Dxl78 style=3D'border-top:none;border-left:none'>&nbsp;</td>
+  <td class=3Dxl79 align=3Dright style=3D'border-top:none;border-left:none'=
+>3</td>
+ </tr>
+ <tr height=3D20 style=3D'height:15.0pt'>
+  <td height=3D20 class=3Dxl66 style=3D'height:15.0pt'></td>
+  <td class=3Dxl72 style=3D'border-top:none'>ABB Project</td>
+  <td class=3Dxl73 style=3D'border-top:none;border-left:none'>&nbsp;</td>
+  <td class=3Dxl73 style=3D'border-top:none;border-left:none'>Ignored</td>
+  <td class=3Dxl75 style=3D'border-top:none;border-left:none'>&nbsp;</td>
+ </tr>
+ <tr height=3D20 style=3D'height:15.0pt'>
+  <td height=3D20 class=3Dxl66 style=3D'height:15.0pt'></td>
+  <td class=3Dxl76 style=3D'border-top:none'>Attachments</td>
+  <td class=3Dxl77 style=3D'border-top:none;border-left:none'>&nbsp;</td>
+  <td class=3Dxl78 style=3D'border-top:none;border-left:none'>Attachments</=
+td>
+  <td class=3Dxl79 style=3D'border-top:none;border-left:none'>&nbsp;</td>
+ </tr>
+ <tr height=3D20 style=3D'height:15.0pt'>
+  <td height=3D20 class=3Dxl66 style=3D'height:15.0pt'></td>
+  <td class=3Dxl72 style=3D'border-top:none'>&nbsp;</td>
+  <td class=3Dxl73 style=3D'border-top:none;border-left:none'>Attachment</t=
+d>
+  <td class=3Dxl74 style=3D'border-top:none;border-left:none'>&nbsp;</td>
+  <td class=3Dxl75 style=3D'border-top:none;border-left:none'>Appropriate
+  Attachment are copied</td>
+ </tr>
+ <tr height=3D20 style=3D'height:15.0pt'>
+  <td height=3D20 class=3Dxl66 style=3D'height:15.0pt'></td>
+  <td class=3Dxl76 style=3D'border-top:none'>Subsystem</td>
+  <td class=3Dxl77 style=3D'border-top:none;border-left:none'>&nbsp;</td>
+  <td class=3Dxl78 style=3D'border-top:none;border-left:none'>Description</=
+td>
+  <td class=3Dxl79 style=3D'border-top:none;border-left:none'>Subsystem: [v=
+alue]</td>
+ </tr>
+ <tr height=3D20 style=3D'height:15.0pt'>
+  <td height=3D20 class=3Dxl66 style=3D'height:15.0pt'></td>
+  <td class=3Dxl72 style=3D'border-top:none'>Planned Effort</td>
+  <td class=3Dxl73 style=3D'border-top:none;border-left:none'>&nbsp;</td>
+  <td class=3Dxl74 style=3D'border-top:none;border-left:none'>Estimate</td>
+  <td class=3Dxl75 style=3D'border-top:none;border-left:none'>&nbsp;</td>
+ </tr>
+ <tr height=3D20 style=3D'height:15.0pt'>
+  <td height=3D20 class=3Dxl66 style=3D'height:15.0pt'></td>
+  <td class=3Dxl76 style=3D'border-top:none'>Actual Effort</td>
+  <td class=3Dxl77 style=3D'border-top:none;border-left:none'>&nbsp;</td>
+  <td class=3Dxl78 style=3D'border-top:none;border-left:none'>Completed Wor=
+k</td>
+  <td class=3Dxl79 style=3D'border-top:none;border-left:none'>&nbsp;</td>
+ </tr>
+ <tr height=3D20 style=3D'height:15.0pt'>
+  <td height=3D20 class=3Dxl66 style=3D'height:15.0pt'></td>
+  <td class=3Dxl72 style=3D'border-top:none'>Start Date</td>
+  <td class=3Dxl73 style=3D'border-top:none;border-left:none'>&nbsp;</td>
+  <td class=3Dxl74 style=3D'border-top:none;border-left:none'>Description</=
+td>
+  <td class=3Dxl75 style=3D'border-top:none;border-left:none'>Start Date: [=
+value]</td>
+ </tr>
+ <tr height=3D20 style=3D'height:15.0pt'>
+  <td height=3D20 class=3Dxl66 style=3D'height:15.0pt'></td>
+  <td class=3Dxl76 style=3D'border-top:none'>End Date</td>
+  <td class=3Dxl77 style=3D'border-top:none;border-left:none'>&nbsp;</td>
+  <td class=3Dxl78 style=3D'border-top:none;border-left:none'>Description</=
+td>
+  <td class=3Dxl79 style=3D'border-top:none;border-left:none'>End Date: [va=
+lue]</td>
+ </tr>
+ <tr height=3D20 style=3D'height:15.0pt'>
+  <td height=3D20 class=3Dxl66 style=3D'height:15.0pt'></td>
+  <td class=3Dxl72 style=3D'border-top:none'>Notes</td>
+  <td class=3Dxl73 style=3D'border-top:none;border-left:none'>&nbsp;</td>
+  <td class=3Dxl74 style=3D'border-top:none;border-left:none'>Description</=
+td>
+  <td class=3Dxl75 style=3D'border-top:none;border-left:none'>Notes: [value=
+]</td>
+ </tr>
+ <tr height=3D20 style=3D'height:15.0pt'>
+  <td height=3D20 class=3Dxl66 style=3D'height:15.0pt'></td>
+  <td class=3Dxl76 style=3D'border-top:none'>ID</td>
+  <td class=3Dxl77 style=3D'border-top:none;border-left:none'>System.String=
+</td>
+  <td class=3Dxl78 style=3D'border-top:none;border-left:none'>Title</td>
+  <td class=3Dxl79 style=3D'border-top:none;border-left:none'>[value]</td>
+ </tr>
+ <tr height=3D20 style=3D'height:15.0pt'>
+  <td height=3D20 class=3Dxl66 style=3D'height:15.0pt'></td>
+  <td class=3Dxl66></td>
+  <td class=3Dxl66></td>
+  <td class=3Dxl66></td>
+  <td class=3Dxl66></td>
+ </tr>
+ <tr height=3D20 style=3D'height:15.0pt'>
+  <td height=3D20 class=3Dxl66 style=3D'height:15.0pt'></td>
+  <td class=3Dxl66></td>
+  <td class=3Dxl66></td>
+  <td class=3Dxl66></td>
+  <td class=3Dxl66></td>
+ </tr>
+ <tr height=3D20 style=3D'height:15.0pt'>
+  <td height=3D20 class=3Dxl66 style=3D'height:15.0pt'></td>
+  <td class=3Dxl87>Field Name</td>
+  <td class=3Dxl87 style=3D'border-left:none'>Field Value [<font class=3D"f=
+ont13">in
+  brackets CQ source field ]</font></td>
+  <td class=3Dxl87 style=3D'border-left:none'>Comment</td>
+  <td class=3Dxl87 style=3D'border-left:none'>Example</td>
+ </tr>
+ <tr height=3D100 style=3D'height:75.0pt'>
+  <td height=3D100 class=3Dxl66 style=3D'height:75.0pt'></td>
+  <td class=3Dxl88 style=3D'border-top:none'>Description</td>
+  <td class=3Dxl101 width=3D364 style=3D'border-top:none;border-left:none;w=
+idth:273pt'>Subsystem:
+  [Subsystem]<br>
+    Start Date: [Start Date]<br>
+    End Date: [End Date]<br>
+    Description: [Description]<br>
+    Notes: [Notes]</td>
+  <td class=3Dxl89 style=3D'border-top:none;border-left:none'>&nbsp;</td>
+  <td class=3Dxl93 width=3D393 style=3D'border-top:none;border-left:none;wi=
+dth:295pt'>Subsystem:
+  Transformers<br>
+    Start Date: 01.11.2009<br>
+    End Date: 16.11.2009<br>
+    Description: Short description<br>
+    Notes: Some example notes</td>
+ </tr>
+ <tr height=3D60 style=3D'height:45.0pt'>
+  <td height=3D60 class=3Dxl66 style=3D'height:45.0pt'></td>
+  <td class=3Dxl90 style=3D'border-top:none'>History</td>
+  <td class=3Dxl92 width=3D364 style=3D'border-top:none;border-left:none;wi=
+dth:273pt'>Date/Time
+  User Name Action Old State New State<br>
+    [DateTime] [UserName] [Action] [Old State] [New State]</td>
+  <td class=3Dxl92 width=3D153 style=3D'border-top:none;border-left:none;wi=
+dth:115pt'>Each
+  entry copied in the same way as a new line</td>
+  <td class=3Dxl92 width=3D393 style=3D'border-top:none;border-left:none;wi=
+dth:295pt'>Date/Time
+  User Name Action Old State New State<br>
+    20090-11-19 16:23:44 plslppuk Submit no_value Submitted<br>
+    20090-11-29 14:12:13 plslppuk Submit Submitted Submitted</td>
+ </tr>
+ <tr height=3D20 style=3D'height:15.0pt'>
+  <td height=3D20 class=3Dxl66 style=3D'height:15.0pt'></td>
+  <td class=3Dxl88 style=3D'border-top:none'>Tite</td>
+  <td class=3Dxl93 width=3D364 style=3D'border-top:none;border-left:none;wi=
+dth:273pt'>[Headline]
+  [[CQID]]</td>
+  <td class=3Dxl105 width=3D153 style=3D'border-top:none;border-left:none;w=
+idth:115pt'>&nbsp;</td>
+  <td class=3Dxl93 width=3D393 style=3D'border-top:none;border-left:none;wi=
+dth:295pt'>Example
+  headline [CQU12345678]</td>
+ </tr>
+ <![if supportMisalignedColumns]>
+ <tr height=3D0 style=3D'display:none'>
+  <td width=3D64 style=3D'width:48pt'></td>
+  <td width=3D124 style=3D'width:93pt'></td>
+  <td width=3D364 style=3D'width:273pt'></td>
+  <td width=3D153 style=3D'width:115pt'></td>
+  <td width=3D393 style=3D'width:295pt'></td>
+ </tr>
+ <![endif]>
+</table>
+
+</body>
+
+</html>
+
+------=_NextPart_01CAF8CC.E75A6BC0
+Content-Location: file:///C:/DEC055F2/Example_Fields_Mappings-CQ_to_CMMI_4.2_files/filelist.xml
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/xml; charset="utf-8"
+
+<xml xmlns:o=3D"urn:schemas-microsoft-com:office:office">
+ <o:MainFile HRef=3D"../Example_Fields_Mappings-CQ_to_CMMI_4.2.htm"/>
+ <o:File HRef=3D"stylesheet.css"/>
+ <o:File HRef=3D"tabstrip.htm"/>
+ <o:File HRef=3D"sheet001.htm"/>
+ <o:File HRef=3D"sheet002.htm"/>
+ <o:File HRef=3D"sheet003.htm"/>
+ <o:File HRef=3D"sheet004.htm"/>
+ <o:File HRef=3D"filelist.xml"/>
+</xml>
+------=_NextPart_01CAF8CC.E75A6BC0--

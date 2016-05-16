@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectGuid>{302B198D-B86B-41B2-B41A-AAD1CA9F314D}</ProjectGuid>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup>
+    <FileSystemTfsTarget>2008</FileSystemTfsTarget>
+  </PropertyGroup>
+  <ItemGroup>
+    <!-- All of the TFS 2008 specific dependencies are isolated in this file.  This lets us maintain a common -->
+    <!-- source tree that is compiled into a TFS 2010 and TFS 2008 specific adapter without duplicating code. -->
+    <Compile Include="VersionSpecificUtils.cs" />
+  </ItemGroup>
+  <Import Project="..\FileSystemAdapterForTfs2010\FileSystemAdapterForTfs2010.csproj" />
+</Project>

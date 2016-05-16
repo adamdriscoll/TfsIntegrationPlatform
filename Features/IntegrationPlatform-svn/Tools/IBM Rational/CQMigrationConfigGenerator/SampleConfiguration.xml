@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WorkItemConverter>
+  <Source id="ClearQuest">
+    <ClearQuest>
+      <ConnectionName>7.0.0</ConnectionName> 
+      <UserDatabase>UCM01</UserDatabase> 
+      <QueryName>Personal Queries/DefectQuery</QueryName> 
+      <UserID>teyang</UserID>
+    </ClearQuest>
+  </Source>
+  <VSTS>
+    <URI>http://teyang-test-vm1:8080</URI>
+    <ProjectName>target 101</ProjectName> 
+  </VSTS>
+  <ExitOnError>true</ExitOnError>
+  <OutputDirectory>DefectSchema</OutputDirectory>
+</WorkItemConverter>

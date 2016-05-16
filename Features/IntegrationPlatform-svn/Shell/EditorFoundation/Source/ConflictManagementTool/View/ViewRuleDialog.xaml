@@ -1,0 +1,73 @@
+﻿<!-- Copyright © Microsoft Corporation.  All Rights Reserved.  This code released under the terms of the Microsoft Public License (MS-PL, http://opensource.org/licenses/ms-pl.html.) -->
+<Window x:Class="Microsoft.TeamFoundation.Migration.Shell.ConflictManagement.ViewRuleDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:properties="clr-namespace:Microsoft.TeamFoundation.Migration.Shell.Properties"
+        Background="{DynamicResource WindowBackgroundBrush}"
+        Title="View Rule Details" MinHeight="350" MinWidth="300" Height="350" Width="600" ShowInTaskbar="False" WindowStartupLocation="CenterOwner">
+    <Grid Margin="12">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <TextBlock Grid.Row="0" Grid.Column="0" Text="Last Modified:" Margin="0,0,0,6"/>
+            <TextBlock Grid.Row="1" Grid.Column="0" Text="Conflict Type:" Margin="0,0,0,6"/>
+            <TextBlock Grid.Row="2" Grid.Column="0" Text="Resolution Action:" Margin="0,0,6,6"/>
+            <TextBlock Grid.Row="3" Grid.Column="0" Text="Scope:" Margin="0,0,0,6"/>
+            <TextBlock Grid.Row="0" Grid.Column="1" Text="{Binding CreationTime}"/>
+            <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding ConflictType.FriendlyName}" />
+            <TextBlock Grid.Row="2" Grid.Column="1" Text="{Binding ResolutionAction.FriendlyName}" />
+            <TextBlock Grid.Row="3" Grid.Column="1" Text="{Binding Scope}" />
+        </Grid>
+        <TextBlock Grid.Row="1" Margin="0,0,0,6" TextWrapping="Wrap">
+            <TextBlock.Text>
+                <MultiBinding StringFormat="{x:Static properties:Resources.RulesDialogMessageString}">
+                    <Binding Path="Scope"/>
+                    <Binding Path="ResolvedConflicts.Count"/>
+                    <Binding Path="ConflictType.FriendlyName"/>
+                </MultiBinding>
+            </TextBlock.Text>
+        </TextBlock>
+        <ListView Grid.Row="2" ItemsSource="{Binding ResolvedConflicts}" SizeChanged="ListView_SizeChanged" GridViewColumnHeader.Click="ListView_Click" Margin="0,0,0,6">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Id" HeaderStringFormat="Id" Width="50">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Path=Id}" ToolTip="{Binding Path=Id}" TextTrimming="CharacterEllipsis"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Header="Scope" HeaderStringFormat="ScopeHint" Width="200">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding ScopeHint}" ToolTip="{Binding ScopeHint}" TextTrimming="CharacterEllipsis"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Header="Conflict Details" HeaderStringFormat="ConflictDetails">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Height="17" Text="{Binding ConflictDetails}" ToolTip="{Binding ConflictDetails}" TextTrimming="CharacterEllipsis"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Button x:Name="closeButton" Grid.Row="3" MinHeight="23" MinWidth="75" Content="Close" IsCancel="True" HorizontalAlignment="Right" Click="closeButton_Click"/>
+    </Grid>
+</Window>

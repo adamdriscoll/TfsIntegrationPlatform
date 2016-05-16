@@ -1,0 +1,3 @@
+﻿ALTER TABLE [dbo].[CONFLICT_RESOLUTION_RULES]
+ADD CONSTRAINT [UK_ResolutionRules]
+UNIQUE (ReferenceName)

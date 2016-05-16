@@ -1,0 +1,421 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AlwaysDropAttachmentAction" xml:space="preserve">
+    <value>Always drop oversized attachments.</value>
+  </data>
+  <data name="ChainOnBackloggedItemConflictTypeDescription" xml:space="preserve">
+    <value>This conflict is detected when revisions are made to items that reside in the backlog</value>
+  </data>
+  <data name="ChainOnBackloggedItemConflictTypeFriendlyName" xml:space="preserve">
+    <value>Chain on backlogged item conflict type</value>
+  </data>
+  <data name="ChainOnConflictConflictTypeDescription" xml:space="preserve">
+    <value>This conflict is block a list of change actions on a particular conflict</value>
+  </data>
+  <data name="ChainOnConflictConflictTypeFriendlyName" xml:space="preserve">
+    <value>Chain on conflict conflict type</value>
+  </data>
+  <data name="CyclicLinkReferenceConflictTypeDescription" xml:space="preserve">
+    <value>This conflict is detected when cyclic link references are created for a non-circular link type.</value>
+  </data>
+  <data name="CyclicLinkReferenceConflictTypeFriendlyName" xml:space="preserve">
+    <value>Cyclic link reference conflict type</value>
+  </data>
+  <data name="DropAttachmentAction" xml:space="preserve">
+    <value>Drop this attachment.</value>
+  </data>
+  <data name="GenericConflictTypeDescription" xml:space="preserve">
+    <value>This conflict type represents runtime errors detected by the framework.</value>
+  </data>
+  <data name="GenericConflictTypeFriendlyName" xml:space="preserve">
+    <value>Runtime Error</value>
+  </data>
+  <data name="InsufficientPermissionsConflictTypeDescription" xml:space="preserve">
+    <value>You may need to manually verify/modify {0} permissions for this conflict to be successfully resolved.</value>
+    <comment>0=endpoint name</comment>
+  </data>
+  <data name="InvalidShortFilenameFormatConflictTypeDetails" xml:space="preserve">
+    <value>The following changegroup includes a file with an invalid 8.3 short filename format:</value>
+  </data>
+  <data name="InvalidShortFilenameFormatConflictTypeDescription" xml:space="preserve">
+    <value>You may need to modify the TFS setting for filename formats for this conflict to be successfully resolved.</value>
+  </data>
+  <data name="UnChangedContentConflictTypeDescription" xml:space="preserve">
+    <value>This conflict is detected when the content for the changeset includes no changes.</value>
+  </data>
+  <data name="TfsCheckinConflictTypeDetails" xml:space="preserve">
+    <value>A code review failed before the checkin of the following change group:</value>
+  </data>
+  <data name="TfsCheckinConflictTypeDescription" xml:space="preserve">
+    <value>This conflict is due to a code review failure before the checkin of a change group.</value>
+  </data>
+  <data name="TfsHistoryNotFoundConflictTypeDetails" xml:space="preserve">
+    <value>There is no history information found for the following migrated changeset:</value>
+  </data>
+  <data name="TfsHistoryNotFoundConflictTypeDescription" xml:space="preserve">
+    <value>This conflict is detected when the history information of a migrated changeset is not found.</value>
+  </data>
+  <data name="SkipMigrationAction" xml:space="preserve">
+    <value>Skip the migration for this item.</value>
+  </data>
+  <data name="BranchParentNotFoundConflictTypeDescription" xml:space="preserve">
+    <value>This conflict is due to a branch from path that can not be detected. Typical causes include lack of read permission to branch from path, or the branch from path has been destroyed. Choose a resolution action:</value>
+  </data>
+  <data name="InvalidLabelNameConflictTypeDescription" xml:space="preserve">
+    <value>The label name contains invalid characters.</value>
+  </data>
+  <data name="DuplicateLabelNameConflictTypeDescription" xml:space="preserve">
+    <value>This conflict is due to a label that already exists in the target system.</value>
+  </data>
+  <data name="DuplicateLabelNameConflictTypeDetails" xml:space="preserve">
+    <value>A label already exists in the target system.</value>
+  </data>
+  <data name="RenameLabelAction" xml:space="preserve">
+    <value>Rename the label to:</value>
+  </data>
+  <data name="ResolveBranchParentAction" xml:space="preserve">
+    <value>Resolve the conflict for the following path(Changing to 'Add' for 'Branch', skipping 'Merge' and changing to 'Add' for 'Rename').</value>
+  </data>
+  <data name="BranchParentNotFoundConflictDetails" xml:space="preserve">
+    <value>A branch from path can not be detected in the target system for the following item:</value>
+  </data>
+  <data name="TfsItemNotFoundConflictDetails" xml:space="preserve">
+    <value>The following item can not be found in the target system:</value>
+  </data>
+  <data name="UnchangedConflictDetails" xml:space="preserve">
+    <value>The following change group contains no changes:</value>
+  </data>
+  <data name="VCContentConflictDetails" xml:space="preserve">
+    <value>A content conflict has been detected between the source and the target system for the following item:</value>
+  </data>
+  <data name="VCNameSpaceConflictDetails" xml:space="preserve">
+    <value>A namespace conflict has been detected between the source and the target system for the following item:</value>
+  </data>
+  <data name="VCMissingItemConflictDetails" xml:space="preserve">
+    <value>The following item could not be found in the target system:</value>
+  </data>
+  <data name="VCPathNotMappedConflictDetails" xml:space="preserve">
+    <value>The following path is not mapped in the target system:</value>
+  </data>
+  <data name="VCInvalidPathConflictTypeDescription" xml:space="preserve">
+    <value>This conflict is detected when the action to be migrated has an invalid TFS path.</value>
+  </data>
+  <data name="VCInvalidPathConflictTypeDetails" xml:space="preserve">
+    <value>The following invalid TFS path is detected for the migration action:</value>
+  </data>
+  <data name="SkipAction" xml:space="preserve">
+    <value>Resolve this conflict by skipping the action.</value>
+  </data>
+  <data name="SkipErrors" xml:space="preserve">
+    <value>Skip the errors and make the checkin.</value>
+  </data>
+  <data name="AutoResolveConflict" xml:space="preserve">
+    <value>Auto resolve this conflict.</value>
+  </data>
+  <data name="SuppressHistoryAction" xml:space="preserve">
+    <value>Suppress the history with the following changeset ID:</value>
+  </data>
+  <data name="SkipHistoryAction" xml:space="preserve">
+    <value>Skip the history query and checkin as 'Add'.</value>
+  </data>
+  <data name="TfsItemNotFoundConflictTypeDescription" xml:space="preserve">
+    <value>This conflict is due to an item that is not found in the target system(This conflict may be the result of a destroy operation or lack of read permissions). Choose a resolution action:</value>
+  </data>
+  <data name="OversizedAttachmentConflictTypeDescription" xml:space="preserve">
+    <value>Choose a resolution:</value>
+  </data>
+  <data name="RetryAction" xml:space="preserve">
+    <value>Retry the operation.</value>
+  </data>
+  <data name="RetryManualAddAction" xml:space="preserve">
+    <value>Retry the operation(The missing item may have to be added by the user manually).</value>
+  </data>
+  <data name="RetryManualAction" xml:space="preserve">
+    <value>Retry the operation(Requires manual changes to TFS settings).</value>
+  </data>
+  <data name="TakeLocalChangesAction" xml:space="preserve">
+    <value>Always take the source system's changes.</value>
+  </data>
+  <data name="TakeOtherChangesAction" xml:space="preserve">
+    <value>Always take the target system's changes.</value>
+  </data>
+  <data name="TakeSourceChangesAction" xml:space="preserve">
+    <value>Always take the {0} source's changes for all conflicts arising from the source path selected below:</value>
+  </data>
+  <data name="TakeSourceChangesActionWithChangeset" xml:space="preserve">
+    <value>Always take the {0} source's changes for all conflicts arising from the source path selected below. If you only want this rule to apply to this specific conflict, then choose {1}.</value>
+  </data>
+  <data name="UserMergeChangesAction" xml:space="preserve">
+    <value>Use the following merged changesets for the source and the target system(Requires a manual merge).</value>
+  </data>
+  <data name="LabelCreationConflictTypeDetails" xml:space="preserve">
+    <value>This conflict is a fallback to use when we cannot determine a more specific cause for the label creation failure.</value>
+  </data>
+  <data name="LabelCreationConflictTypeDescription" xml:space="preserve">
+    <value>This conflict is due to a failure in label creation. Choose a resolution action:</value>
+  </data>
+  <data name="FilePropertyCreationConflictTypeDetails" xml:space="preserve">
+    <value>A conflict has been detected when a migration action fails to create a file property.</value>
+  </data>
+  <data name="FilePropertyCreationConflictTypeDescription" xml:space="preserve">
+    <value>This conflict is due to a migration action that attempts to create a file property fails. Choose a resolution action:</value>
+  </data>
+  <data name="VCBranchParentNotFoundConflictTypeDescription" xml:space="preserve">
+    <value>This conflict is detected when the branch from path can not be detected. Typical causes include lack of read permission to branch from path, or the branch from path has been destroyed.</value>
+  </data>
+  <data name="VCBranchParentNotFoundConflictTypeFriendlyName" xml:space="preserve">
+    <value>VC branch parent not found conflict type</value>
+  </data>
+  <data name="VCContentConflictTypeDescription" xml:space="preserve">
+    <value>This conflict is due to revisions that are made to mapped files on both the source and the target system. Choose a resolution action:</value>
+  </data>
+  <data name="VCNameSpaceConflictTypeDescription" xml:space="preserve">
+    <value>This conflict is due to revisions that are made to mapped files on both the source and the target system. Choose a resolution action:</value>
+  </data>
+  <data name="VCContentConflictTypeFriendlyName" xml:space="preserve">
+    <value>VC content conflict type</value>
+  </data>
+  <data name="VCNameSpaceConflictTypeFriendlyName" xml:space="preserve">
+    <value>VC Namespace conflict type</value>
+  </data>
+  <data name="VCFilePropertyCreationConflictTypeDescription" xml:space="preserve">
+    <value>This conflict is detected when a migration action that attempts to create a file property fails.</value>
+  </data>
+  <data name="VCFilePropertyCreationConflictTypeFriendlyName" xml:space="preserve">
+    <value>File property creation conflict type</value>
+  </data>
+  <data name="VCInvalidLabelNameConflictTypeDescription" xml:space="preserve">
+    <value>This conflict is detected when the action to be migrated has a invalid label name.</value>
+  </data>
+  <data name="VCInvalidLabelNameConflictTypeFriendlyName" xml:space="preserve">
+    <value>Invalid label name conflict type</value>
+  </data>
+  <data name="VCLabelAlreadyExistsConflictTypeDescription" xml:space="preserve">
+    <value>This conflict is detected when the action to be migrated is adding a label with a name that already exists.</value>
+  </data>
+  <data name="VCLabelAlreadyExistsConflictTypeFriendlyName" xml:space="preserve">
+    <value>Label already exists conflict type</value>
+  </data>
+  <data name="VCLabelCreationConflictTypeDescription" xml:space="preserve">
+    <value>This conflict is detected when a migration action that attempts to create a label fails.</value>
+  </data>
+  <data name="VCLabelCreationConflictTypeFriendlyName" xml:space="preserve">
+    <value>Label creation conflict type</value>
+  </data>
+  <data name="VCMissingItemConflictTypeDescription" xml:space="preserve">
+    <value>This conflict is detected when an item to be migrated does not exist on the target server.</value>
+  </data>
+  <data name="VCMissingItemConflictTypeFriendlyName" xml:space="preserve">
+    <value>VC missing item conflict</value>
+  </data>
+  <data name="VCPathNotMappedConflictTypeDescription" xml:space="preserve">
+    <value>This conflict is due to a path that is migrated is not mapped in the target system. Choose a resolution action:</value>
+  </data>
+  <data name="ChangeToAddAction" xml:space="preserve">
+    <value>Resolve this conflict by changing to 'Add' for 'Branch', by skipping for 'Merge' and by changing to 'Add' for 'Remove'.</value>
+  </data>
+  <data name="AddPathToMappingAction" xml:space="preserve">
+    <value>Change the configuration and retry the operation(Requires user to manually add the path or its parent path to the mapping).</value>
+  </data>
+  <data name="VCPathNotMappedConflictTypeFriendlyName" xml:space="preserve">
+    <value>VC path not mapped conflict type</value>
+  </data>
+  <data name="TfsCheckinConflictTypeFriendlyName" xml:space="preserve">
+    <value>TFS checkin conflict</value>
+    <comment>VC</comment>
+  </data>
+  <data name="TFSDosShortNameConflictTypeDescription" xml:space="preserve">
+    <value>This conflict is detected when a path is in the DOS (8.3) short path format.</value>
+    <comment>VC</comment>
+  </data>
+  <data name="TFSDosShortNameConflictTypeFriendlyName" xml:space="preserve">
+    <value>DOS (8.3) short path format conflict</value>
+    <comment>VC</comment>
+  </data>
+  <data name="TFSHistoryNotFoundConflictTypeFriendlyName" xml:space="preserve">
+    <value>TFS history not found conflict</value>
+    <comment>VC</comment>
+  </data>
+  <data name="VCInvalidPathConflictTypeFriendlyName" xml:space="preserve">
+    <value>TFS invalid path conflict</value>
+    <comment>VC</comment>
+  </data>
+  <data name="TfsItemNotFoundConflictTypeFriendlyName" xml:space="preserve">
+    <value>TFS item not found conflict</value>
+    <comment>VC</comment>
+  </data>
+  <data name="TFSZeroCheckinConflictTypeFriendlyName" xml:space="preserve">
+    <value>Unchanged Content</value>
+    <comment>VC</comment>
+  </data>
+  <data name="VCUserPromptConflictTypeFriendlyName" xml:space="preserve">
+    <value>User Prompt</value>
+    <comment>VC</comment>
+  </data>
+  <data name="VCUserPromptConflictTypeDescription" xml:space="preserve">
+    <value>A conflict type that requires user's intervention.</value>
+    <comment>VC</comment>
+  </data>
+  <data name="WITEditEditAlwaysTakeSourceAction" xml:space="preserve">
+    <value>Always resolve field collisions by taking changes from the source item.</value>
+  </data>
+  <data name="WITEditEditAlwaysTakeTargetAction" xml:space="preserve">
+    <value>Always resolve field collisions by keeping changes of the target item.</value>
+  </data>
+  <data name="WITEditEditConflictTypeDescription" xml:space="preserve">
+    <value>This conflict is detected when revisions are made to mapped work items on both the source and target system.</value>
+  </data>
+  <data name="WITEditEditConflictTypeFriendlyName" xml:space="preserve">
+    <value>WIT edit/edit conflict type</value>
+  </data>
+  <data name="WITEditEditTakeSourceAction" xml:space="preserve">
+    <value>Take the changes from the source item (applies to this item only).</value>
+  </data>
+  <data name="WITEditEditTakeTargetAction" xml:space="preserve">
+    <value>Keep the changes from the target item (applies to this item only).</value>
+  </data>
+  <data name="WITFieldCollisionConflictTypeDescription" xml:space="preserve">
+    <value>This conflict is the result of fields that have changed in both the source and target systems</value>
+  </data>
+  <data name="WITUnmappedWITConflictTypeDescription" xml:space="preserve">
+    <value>This conflict is detected when a source Work Item Type is not mapped in the configuration.</value>
+  </data>
+  <data name="WITUnmappedWITConflictTypeFriendlyName" xml:space="preserve">
+    <value>WIT unmapped Work Item Type conflict type</value>
+  </data>
+  <data name="VCChangeGroupInProgressConflictTypeDescription" xml:space="preserve">
+    <value>This conflict type is detected when there are other in-progress change groups in the migration pipeline.</value>
+  </data>
+  <data name="WitTakeChangesAction" xml:space="preserve">
+    <value>Take the changes from {0} (applies to this item only).</value>
+  </data>
+  <data name="WitAlwaysTakeChangesAction" xml:space="preserve">
+    <value>Always resolve field collisions by taking changes from {0}.</value>
+  </data>
+  <data name="WitKeepChangesAction" xml:space="preserve">
+    <value>Keep the changes from {0} (applies to this item only).</value>
+  </data>
+  <data name="WitAlwaysKeepChangesAction" xml:space="preserve">
+    <value>Always resolve field collisions by keeping changes of {0}.</value>
+  </data>
+  <data name="VCChangeGroupInProgressConflictTypeFriendlyName" xml:space="preserve">
+    <value>Change group in progress</value>
+  </data>
+</root>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:wit="http://www.microsoft.com/vsts/converters/wit"
+                               xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="ClearQuest">
+    <xs:complexType>
+      <xs:all>
+        <xs:element name="ConnectionName" type="xs:string" minOccurs="1" maxOccurs="1"  />
+        <xs:element name="UserDatabase" type="NonEmptyString" minOccurs="1" maxOccurs="1"  />
+        <xs:element name="QueryName" type="NonEmptyString" minOccurs="1" maxOccurs="1"  />
+        <xs:element name="UserID" type="NonEmptyString" minOccurs="1" maxOccurs="1"  />
+      </xs:all>
+    </xs:complexType>
+  </xs:element>
+
+  <!-- Non-empty string -->
+  <xs:simpleType name="NonEmptyString">
+      <xs:restriction base="xs:string">
+          <xs:minLength value="1" />
+      </xs:restriction>
+  </xs:simpleType>
+
+</xs:schema>

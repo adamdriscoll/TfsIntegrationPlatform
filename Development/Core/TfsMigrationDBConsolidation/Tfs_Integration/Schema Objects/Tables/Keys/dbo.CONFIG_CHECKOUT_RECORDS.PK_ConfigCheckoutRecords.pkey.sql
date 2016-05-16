@@ -1,0 +1,3 @@
+﻿ALTER TABLE [dbo].[CONFIG_CHECKOUT_RECORDS]
+	ADD CONSTRAINT [PK_ConfigCheckoutRecords]
+	PRIMARY KEY (SessionGroupConfigId)

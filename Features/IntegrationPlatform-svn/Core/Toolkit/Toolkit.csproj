@@ -1,0 +1,468 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <!-- ********************************************************************************************* -->
+  <!-- OutputPath should NOT be set in this project file to let the common settings determine        -->
+  <!-- the build location.                                                                           -->
+  <!-- ********************************************************************************************* -->
+  <PropertyGroup>
+    <!-- Relative path to Binaries subdirectory. -->
+    <TfsIPRoot>..\..</TfsIPRoot>
+    <!-- See common settings for possible values of TfsIPProjectType.  Determines placement of binaries. -->
+    <TfsIPProjectType>Base</TfsIPProjectType>
+  </PropertyGroup>
+  <Import Project="$(TfsIPRoot)\Build\Microsoft.TeamFoundation.Migration.Settings.targets" />
+  <!-- ********************************************************************************************* -->
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{CB63E30B-6779-4F8B-A9BD-3BEB7DD84A2A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Microsoft.TeamFoundation.Migration.Toolkit</RootNamespace>
+    <AssemblyName>Microsoft.TeamFoundation.Migration.Toolkit</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <!--<OutputPath>bin\Debug\</OutputPath>-->
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>3</WarningLevel>
+    <DocumentationFile>$(OutputPath)\Microsoft.TeamFoundation.Migration.Toolkit.XML</DocumentationFile>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <!--<OutputPath>bin\Release\</OutputPath>-->
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>$(OutputPath)\Microsoft.TeamFoundation.Migration.Toolkit.XML</DocumentationFile>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.Entity">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Management" />
+    <Reference Include="System.Runtime.Serialization">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.ServiceModel">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\..\Version\Version.cs">
+      <Link>Version.cs</Link>
+    </Compile>
+    <Compile Include="AddinUtilities\AddinCustomSettingsHelper.cs" />
+    <Compile Include="AddinUtilities\GenerateLabelActionsHelper.cs" />
+    <Compile Include="AdminUtilities\ConfigExportImport\ConfigExporter.cs" />
+    <Compile Include="AdminUtilities\ConfigExportImport\ConfigImporter.cs" />
+    <Compile Include="AdminUtilities\ConfigExportImport\ResolutionRuleImporter.cs" />
+    <Compile Include="AdminUtilities\ConfigExportImport\ZipUtility.cs" />
+    <Compile Include="AdminUtilities\ServiceAccount\DBRoleUtil.cs" />
+    <Compile Include="AdminUtilities\ServiceAccount\ServiceAccountUtility.cs" />
+    <Compile Include="AdminUtilities\ServiceAccount\SqlCommands.cs" />
+    <Compile Include="AdminUtilities\ServiceAccount\WindowsServiceLogonUtil.cs" />
+    <Compile Include="AdminUtilities\SessionGroupDeletion\SessionGroupDeletionTask.cs" />
+    <Compile Include="AdminUtilities\ServiceAccount\SqlHelper.cs" />
+    <Compile Include="AdminUtilities\ServiceAccount\WindowsGroupUtil.cs" />
+    <Compile Include="BasicChangeActionHandlers.cs" />
+    <Compile Include="CommentDecoration\CommentDecorationService.cs" />
+    <Compile Include="Configuration\SessionGroupConfigurationSaver.cs" />
+    <Compile Include="ConflictManagement\ConflictDetailsProperties.cs" />
+    <Compile Include="ConflictManagement\ConflictManagementServiceProxy.cs" />
+    <Compile Include="ConflictManagement\ConflictTypeRegistry.cs" />
+    <Compile Include="ConflictManagement\FrameworkBasicConflictResolutionAction\MultipleRetryResolutionAction.cs" />
+    <Compile Include="ConflictManagement\FrameworkBasicConflictResolutionAction\SkipConflictedActionResolutionAction.cs" />
+    <Compile Include="ConflictManagement\FrameworkBasicConflictResolutionAction\UpdatedConfigurationResolutionAction.cs" />
+    <Compile Include="ConflictManagement\RuntimeConflicts.cs" />
+    <Compile Include="ConflictManagement\VCBasicConflicts\VCInvalidPathConflict.cs" />
+    <Compile Include="ConflictManagement\VCBasicConflicts\VCInvalidPathConflictAction.cs" />
+    <Compile Include="ConflictManagement\VCBasicConflicts\VCInvalidPathConflictHandler.cs" />
+    <Compile Include="ConflictManagement\VCBasicConflicts\VCInvalidPathConflictType.cs" />
+    <Compile Include="ConflictManagement\VCBasicConflicts\VCChangeGroupInProgressConflict.cs" />
+    <Compile Include="ConflictManagement\VCBasicConflicts\VCChangeGroupInProgressConflictAction.cs" />
+    <Compile Include="ConflictManagement\VCBasicConflicts\VCChangeGroupInprogressConflictHandler.cs" />
+    <Compile Include="ConflictManagement\VCBasicConflicts\VCChangeGroupInProgressConflictType.cs" />
+    <Compile Include="ConflictManagement\VCBasicConflicts\VCFilePropertyCreationConflict.cs" />
+    <Compile Include="ConflictManagement\VCBasicConflicts\VCFilePropertyCreationConflictAction.cs" />
+    <Compile Include="ConflictManagement\VCBasicConflicts\VCFilePropertylCreationConflictHandler.cs" />
+    <Compile Include="ConflictManagement\VCBasicConflicts\VCFilePropertyCreationConflictType.cs" />
+    <Compile Include="ConflictManagement\VCBasicConflicts\VCLabelCreationConflictAction.cs" />
+    <Compile Include="ConflictManagement\VCBasicConflicts\VCLabelCreationConflict.cs" />
+    <Compile Include="ConflictManagement\VCBasicConflicts\VCLabelCreationConflictHandler.cs" />
+    <Compile Include="ConflictManagement\VCBasicConflicts\VCLabelCreationConflictType.cs" />
+    <Compile Include="ConflictManagement\VCBasicConflicts\VCLabelAlreadyExistsConflictType.cs" />
+    <Compile Include="ConflictManagement\VCBasicConflicts\VCLabelAlreadyExistsConflictHandler.cs" />
+    <Compile Include="ConflictManagement\VCBasicConflicts\VCLabelAlreadyExistsConflict.cs" />
+    <Compile Include="ConflictManagement\VCBasicConflicts\VCLabelConflictManualRenameAction.cs" />
+    <Compile Include="ConflictManagement\VCBasicConflicts\VCInvalidLabelNameConflict.cs" />
+    <Compile Include="ConflictManagement\VCBasicConflicts\VCInvalidLabelNameAutomaticRenameAction.cs" />
+    <Compile Include="ConflictManagement\VCBasicConflicts\VCInvalidLabelNameConflictHandler.cs" />
+    <Compile Include="ConflictManagement\VCBasicConflicts\VCInvalidLabelNameConflictType.cs" />
+    <Compile Include="ConflictManagement\VCBasicConflicts\VCNameSpaceConflictType.cs" />
+    <Compile Include="ConflictManagement\VCBasicConflicts\VCNameSpaceContentConflict.cs" />
+    <Compile Include="ConflictManagement\VCBasicConflicts\VCUserPromptConflict.cs" />
+    <Compile Include="ConflictManagement\VCBasicConflicts\VCUserPromptConflictAction.cs" />
+    <Compile Include="ConflictManagement\VCBasicConflicts\VCUserPromptConflictHandler.cs" />
+    <Compile Include="ConflictManagement\VCBasicConflicts\VCUserPromptConflictType.cs" />
+    <Compile Include="ConflictManagement\WITBasicConflicts\WITUnmappedWITConflictExcludeWITInSessionFilter.cs" />
+    <Compile Include="ConflictManagement\WITBasicConflicts\WITUnmappedWITConflictUpdateWITMappingAction.cs" />
+    <Compile Include="ErrorManagement\TraceLogChannel.cs" />
+    <Compile Include="EventLogSource.cs" />
+    <Compile Include="Interfaces\CommentDecoration\ICommentDecorationService.cs" />
+    <Compile Include="RelatedArtifactStoreBase.cs" />
+    <Compile Include="WinCredentialsProxy.cs" />
+    <Compile Include="DomainUser.cs" />
+    <Compile Include="ErrorManagement\BlockingSessionGroupChannel.cs" />
+    <Compile Include="ErrorManagement\DebugAssertChannel.cs" />
+    <Compile Include="ErrorManagement\DefaultErrorRoutingPolicies.cs" />
+    <Compile Include="ErrorManagement\ErrorHandlingResult.cs" />
+    <Compile Include="ErrorManagement\ErrorManager.cs" />
+    <Compile Include="ErrorManagement\ErrorRegistrationService.cs" />
+    <Compile Include="ErrorManagement\ErrorRouter.cs" />
+    <Compile Include="ErrorManagement\ErrorRoutingAlgorithm.cs" />
+    <Compile Include="ErrorManagement\ErrorRoutingPolicy.cs" />
+    <Compile Include="ErrorManagement\ErrorRoutingPolicyFactory.cs" />
+    <Compile Include="ErrorManagement\ErrorSignatureBase.cs" />
+    <Compile Include="ErrorManagement\ErrorSignatureComparer.cs" />
+    <Compile Include="ErrorManagement\ErrorSignatureFactory.cs" />
+    <Compile Include="ErrorManagement\ErrorSignatureOneLevelException.cs" />
+    <Compile Include="ErrorManagement\ErrorSignatureTwoLevelException.cs" />
+    <Compile Include="ErrorManagement\EventLogChannel.cs" />
+    <Compile Include="ErrorManagement\EventLogWriter.cs" />
+    <Compile Include="ErrorManagement\IErrorRoutingChannel.cs" />
+    <Compile Include="ErrorManagement\MaxOccurrenceErrorRoutingPolicy.cs" />
+    <Compile Include="ErrorManagement\MissingErrorRouterException.cs" />
+    <Compile Include="Interfaces\Addins\AnalysisAddin.cs" />
+    <Compile Include="Interfaces\Addins\AnalysisContext.cs" />
+    <Compile Include="AddinUtilities\LabelProperties.cs" />
+    <Compile Include="AddinUtilities\LabelItemFromMigrationAction.cs" />
+    <Compile Include="AddinUtilities\LabelFromMigrationAction.cs" />
+    <Compile Include="Interfaces\Addins\MigrationAddin.cs" />
+    <Compile Include="Interfaces\Addins\MigrationContext.cs" />
+    <Compile Include="Interfaces\AnalysisProviderBase.cs" />
+    <Compile Include="Interfaces\ICredentialManagementService.cs" />
+    <Compile Include="Interfaces\INewworkCredentialManagementService.cs" />
+    <Compile Include="Interfaces\Linking\ILinkTranslationService.cs" />
+    <Compile Include="AddinUtilities\FileMetadataProperties.cs" />
+    <Compile Include="Interfaces\MigrationProviderBase.cs" />
+    <Compile Include="MigrationItemSerializer.cs" />
+    <Compile Include="WorkItemAttachmentStore.cs" />
+    <Compile Include="WorkItemLinkStore.cs" />
+    <Compile Include="ServerDiff\ServerDiffLinkTranslationService.cs" />
+    <Compile Include="Services\CredentialManagementService.cs" />
+    <Compile Include="Services\MigrationItemCache.cs" />
+    <Compile Include="Services\TranslationServiceBase.cs" />
+    <Compile Include="SyncMonitor\SyncMonitorTranslationService.cs" />
+    <Compile Include="SyncOrchestrator\ProviderCapabilityAttribute.cs" />
+    <Compile Include="SyncOrchestrator\SessionGroupStatus.cs" />
+    <Compile Include="UserIdentityLookup\AliasMappingRuleEvaluator.cs" />
+    <Compile Include="ConflictManagement\FrameworkBasicConflictResolutionAction\AutomaticResolutionAction.cs" />
+    <Compile Include="ConflictManagement\FrameworkBasicConflicts\ChainOnConflictConflictHandler.cs" />
+    <Compile Include="ConflictManagement\FrameworkBasicConflicts\ChainOnConflictConflictType.cs" />
+    <Compile Include="ConflictManagement\VCBasicConflicts\VCBranchParentNotFoundConflict.cs" />
+    <Compile Include="ConflictManagement\VCBasicConflicts\VCBranchParentNotFoundConflictAction.cs" />
+    <Compile Include="ConflictManagement\VCBasicConflicts\VCBranchParentNotFoundConflictHandler.cs" />
+    <Compile Include="ConflictManagement\VCBasicConflicts\VCBranchParentNotFoundConflictType.cs" />
+    <Compile Include="ConflictManagement\WITBasicConflicts\WITEditEditConflictIgnoreByFieldChangeAction.cs" />
+    <Compile Include="ConflictManagement\WITBasicConflicts\WITEditEditConflictTakeTargetChangesAction.cs" />
+    <Compile Include="ConflictManagement\WITBasicConflicts\WITUnmappedWITConflictHandler.cs" />
+    <Compile Include="ConflictManagement\WITBasicConflicts\WITUnmappedWITConflictType.cs" />
+    <Compile Include="ConflictManagement\WITBasicConflicts\WorkItemField.cs" />
+    <Compile Include="ConsoleTraceWriter.cs" />
+    <Compile Include="UserIdentityLookup\DisplayNameMappingRuleEvaluator.cs" />
+    <Compile Include="UserIdentityLookup\DomainMappingRuleEvaluator.cs" />
+    <Compile Include="Interfaces\Diff\IVCDiffProvider.cs" />
+    <Compile Include="Interfaces\Addins\ILabelItem.cs" />
+    <Compile Include="Interfaces\Addins\ILabel.cs" />
+    <Compile Include="SyncPoint.cs" />
+    <Compile Include="DataVirtualization\IItemsProvider.cs" />
+    <Compile Include="DataVirtualization\PagedCollection.cs" />
+    <Compile Include="DataVirtualization\PagedCollectionEnum.cs" />
+    <Compile Include="DataVirtualization\SqlChangeGroupProvider.cs" />
+    <Compile Include="Eventing\MigrationEventArgs.cs" />
+    <Compile Include="Eventing\MigrationSessionEventArgs.cs" />
+    <Compile Include="FileTraceWriter.cs" />
+    <Compile Include="UserIdentityLookup\FormatStringCompositionRule.cs" />
+    <Compile Include="UserIdentityLookup\FormatStringDecompositionRule.cs" />
+    <Compile Include="UserIdentityLookup\IdentityLookupContext.cs" />
+    <Compile Include="Interfaces\Diff\IDiffComparer.cs" />
+    <Compile Include="Interfaces\Diff\IDiffProvider.cs" />
+    <Compile Include="Interfaces\Diff\IWITDiffItem.cs" />
+    <Compile Include="Interfaces\Diff\IVCDiffItem.cs" />
+    <Compile Include="Interfaces\Diff\IWITDiffProvider.cs" />
+    <Compile Include="Interfaces\Diff\VCItemType.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Interfaces\Framework Services\IAddinManagementService.cs" />
+    <Compile Include="Interfaces\IAddin.cs" />
+    <Compile Include="Interfaces\UserIdentityLookup\IUserIdentityFactory.cs" />
+    <Compile Include="Interfaces\UserIdentityLookup\IUserIdentityLookupService.cs" />
+    <Compile Include="Interfaces\UserIdentityLookup\IUserIdentityLookupServiceProvider.cs" />
+    <Compile Include="Interfaces\TranslationServices\IServerPathTranslationService.cs" />
+    <Compile Include="Interfaces\TranslationServices\IVCServerPathTranslationService.cs" />
+    <Compile Include="Interfaces\IAnalysisProvider.cs" />
+    <Compile Include="AnalysisEngine.cs" />
+    <Compile Include="ChangeActionHandlers.cs" />
+    <Compile Include="ChangeGroup.cs" />
+    <Compile Include="ChangeGroupManager.cs" />
+    <Compile Include="Interfaces\IMigrationProvider.cs" />
+    <Compile Include="ConflictManagement\BasicPathScopeInterpreter.cs" />
+    <Compile Include="ConflictManagement\FrameworkBasicConflictResolutionAction\ManualConflictResolutionAction.cs" />
+    <Compile Include="ConflictManagement\LinkingBasicConflicts\CyclicLinkReferenceConflictDropLinkFromSource.cs" />
+    <Compile Include="ConflictManagement\LinkingBasicConflicts\CyclicLinkReferenceConflictHandler.cs" />
+    <Compile Include="ConflictManagement\LinkingBasicConflicts\CyclicLinkReferenceConflictType.cs" />
+    <Compile Include="ConflictManagement\VCBasicConflicts\VCScopeInterpreter.cs" />
+    <Compile Include="ConflictManagement\FrameworkBasicConflicts\GenericConflictHandler.cs" />
+    <Compile Include="ConflictManagement\FrameworkBasicConflicts\GenericConflictType.cs" />
+    <Compile Include="ConflictManagement\VCBasicConflicts\VCMissingItemConflict.cs" />
+    <Compile Include="ConflictManagement\VCBasicConflicts\VCMissingItemConflictAction.cs" />
+    <Compile Include="ConflictManagement\VCBasicConflicts\VCMissingItemConflictHandler.cs" />
+    <Compile Include="ConflictManagement\VCBasicConflicts\VCMissingItemConflictType.cs" />
+    <Compile Include="ConflictManagement\VCBasicConflicts\VCBasicPathScopeInterpreter.cs" />
+    <Compile Include="GenericSerializer.cs" />
+    <Compile Include="Interfaces\ConflictManagement\IResolutionRule.cs" />
+    <Compile Include="ConflictManagement\ResolutionRuleDataSchema_ext.cs" />
+    <Compile Include="ConflictManagement\FrameworkBasicConflicts\ChainOnBackloggedItemConflictHandler.cs" />
+    <Compile Include="ConflictManagement\FrameworkBasicConflicts\ChainOnBackloggedItemConflictType.cs" />
+    <Compile Include="ConflictManagement\MigrationConflict.cs" />
+    <Compile Include="ConflictManagement\ConflictManager.cs" />
+    <Compile Include="ConflictManagement\ConflictType.cs" />
+    <Compile Include="ConflictManagement\ConflictUnresolvedEventArgs.cs" />
+    <Compile Include="ConflictManagement\Constants.cs" />
+    <Compile Include="Interfaces\ConflictManagement\IApplicabilityScopeInterpreter.cs" />
+    <Compile Include="Interfaces\ConflictManagement\IConflictHandler.cs" />
+    <Compile Include="ConflictManagement\ResolutionAction.cs" />
+    <Compile Include="ConflictManagement\ResolutionRuleDataSchema.cs">
+      <DependentUpon>ResolutionRuleDataSchema.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ConflictManagement\VCBasicConflicts\VCContentConflict.cs" />
+    <Compile Include="ConflictManagement\VCBasicConflicts\VCContentConflictHandler.cs" />
+    <Compile Include="ConflictManagement\VCBasicConflicts\VCContentConflictChangeAction.cs" />
+    <Compile Include="ConflictManagement\VCBasicConflicts\VCContentConflictType.cs" />
+    <Compile Include="ConflictManagement\VCBasicConflicts\VCPathNotMappedConflict.cs" />
+    <Compile Include="ConflictManagement\VCBasicConflicts\VCPathNotMappedConflictChangeAction.cs" />
+    <Compile Include="ConflictManagement\VCBasicConflicts\VCPathNotMappedConflictHandler.cs" />
+    <Compile Include="ConflictManagement\VCBasicConflicts\VCPathNotMappedConflictType.cs" />
+    <Compile Include="ConflictManagement\WITBasicConflicts\WITEditEditConflictHandler.cs" />
+    <Compile Include="ConflictManagement\WITBasicConflicts\WITEditEditConflictTakeSourceChangesAction.cs" />
+    <Compile Include="ConflictManagement\WITBasicConflicts\WITEditEditConflictType.cs" />
+    <Compile Include="Constants.cs" />
+    <Compile Include="ConversionResult.cs" />
+    <Compile Include="Interfaces\Framework Services\IConflictAnalysisService.cs" />
+    <Compile Include="Interfaces\IProvider.cs" />
+    <Compile Include="Interfaces\Framework Services\ITranslationService.cs" />
+    <Compile Include="Interfaces\ILinkProvider.cs" />
+    <Compile Include="Interfaces\Monitoring\ChangeSummary.cs" />
+    <Compile Include="Interfaces\Monitoring\ISyncMonitorProvider.cs" />
+    <Compile Include="Interfaces\Monitoring\MigrationItemId.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Interfaces\TranslationServices\ServerPathTranslationException.cs" />
+    <Compile Include="UserIdentityLookup\IdentityLookupContextManager.cs" />
+    <Compile Include="UserIdentityLookup\IgnoreTextRule.cs" />
+    <Compile Include="UserIdentityLookup\IStringManipulationRule.cs" />
+    <Compile Include="UserIdentityLookup\IUserIdMappingRuleEvaluator.cs" />
+    <Compile Include="UserIdentityLookup\SimpleTextReplacementRule.cs" />
+    <Compile Include="UserIdentityLookup\StringManipulationRuleFactory.cs" />
+    <Compile Include="UserIdentityLookup\UserIdentityMappingConfigSymbols.cs" />
+    <Compile Include="UserIdentityLookup\UserIdLookupConfiguration.cs" />
+    <Compile Include="UserIdentityLookup\UserIdMappingAlgorithm.cs" />
+    <Compile Include="Linking\Artifact.cs" />
+    <Compile Include="Linking\ArtifactComparer.cs" />
+    <Compile Include="Linking\ArtifactType.cs" />
+    <Compile Include="Linking\ArtifactLink.cs" />
+    <Compile Include="Linking\ExtendedLinkProperties.cs" />
+    <Compile Include="Interfaces\Linking\IArtifact.cs" />
+    <Compile Include="Interfaces\Linking\IArtifactHandler.cs" />
+    <Compile Include="Interfaces\Linking\ILink.cs" />
+    <Compile Include="Linking\LinkChangeAction.cs" />
+    <Compile Include="Linking\LinkChangeGroup.cs" />
+    <Compile Include="Linking\LinkChangeGroupManager.cs" />
+    <Compile Include="Linking\LinkComparer.cs" />
+    <Compile Include="Linking\LinkConfigurationLookupService.cs" />
+    <Compile Include="Linking\LinkEngine.cs" />
+    <Compile Include="Linking\LinkService.cs" />
+    <Compile Include="Linking\LinkType.cs" />
+    <Compile Include="Linking\NonCyclicReferenceClosure.cs" />
+    <Compile Include="Linking\VCPathNotMappedException.cs" />
+    <Compile Include="MD5Producer.cs" />
+    <Compile Include="MigrationEngine.cs" />
+    <Compile Include="MigrationSqlTransaction.cs" />
+    <Compile Include="MigrationToolkitResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MigrationToolkitResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="MigrationTransaction.cs" />
+    <Compile Include="UserIdentityLookup\RichIdentity.cs" />
+    <Compile Include="Services\AddinManagementService.cs" />
+    <Compile Include="ServerDiff\ServerDiffEngine.cs" />
+    <Compile Include="UserIdentityLookup\UserMappingRuleEvaluator.cs" />
+    <Compile Include="Utility.cs" />
+    <Compile Include="VC\VCDiffComparer.cs" />
+    <Compile Include="ServerDiff\ServerDiffResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ServerDiffResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="WCFServices\CustomConfigChannelFactory.cs" />
+    <Compile Include="WCFServices\CustomConfigServiceHost.cs" />
+    <Compile Include="WIT\WITDiffComparer.cs" />
+    <Compile Include="Services\ChangeActionRegistrationService.cs" />
+    <Compile Include="HighWaterMark.cs" />
+    <Compile Include="Interfaces\Toolkit\IMigrationAction.cs" />
+    <Compile Include="Interfaces\Toolkit\IMigrationItem.cs" />
+    <Compile Include="MigrationAction.cs" />
+    <Compile Include="MigrationException.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\ChangeGroupService.cs" />
+    <Compile Include="Services\ConfigurationService.cs" />
+    <Compile Include="Services\ContentTypeRegistrationService.cs" />
+    <Compile Include="Services\BasicDeltaTableMaintenanceService.cs" />
+    <Compile Include="Services\EventService.cs" />
+    <Compile Include="Services\IDeltaTableMaintenanceService.cs" />
+    <Compile Include="Services\TFSVCServerPathTranslationService.cs" />
+    <Compile Include="Services\UnixStyleServerPathTranslationService.cs" />
+    <Compile Include="Services\UserIdentityLookupService.cs" />
+    <Compile Include="SessionContentTypeBinding.cs" />
+    <Compile Include="SqlChangeGroup.cs" />
+    <Compile Include="SqlChangeGroupManager.cs" />
+    <Compile Include="SqlMigrationAction.cs" />
+    <Compile Include="SqlUtil.cs" />
+    <Compile Include="SymDiff.cs" />
+    <Compile Include="SyncOrchestrator\ISyncCommandQueue.cs" />
+    <Compile Include="SyncOrchestrator\ISyncStateManager.cs" />
+    <Compile Include="SyncOrchestrator\Enums.cs" />
+    <Compile Include="SyncMonitor\Endpoint.cs" />
+    <Compile Include="SyncMonitor\MonitorWatcher.cs" />
+    <Compile Include="SyncOrchestrator\ProviderDescriptionAttribute.cs" />
+    <Compile Include="SyncOrchestrator\ProviderHandler.cs" />
+    <Compile Include="SyncOrchestrator\SessionOrchestrationPolicy.cs" />
+    <Compile Include="SyncOrchestrator\SessionWorker.cs" />
+    <Compile Include="SyncOrchestrator\SqlSyncStateManager.cs" />
+    <Compile Include="SyncOrchestrator\SyncOrchestrator.cs" />
+    <Compile Include="SyncOrchestrator\ProviderManager.cs" />
+    <Compile Include="SyncOrchestrator\SyncStateMachine.cs" />
+    <Compile Include="SyncOrchestrator\SyncStateTransitionAlgorithm.cs" />
+    <Compile Include="SystemType.cs" />
+    <Compile Include="TraceManager.cs" />
+    <Compile Include="TraceWriterBase.cs" />
+    <Compile Include="UserIdentityLookup\UserIdLookupProviderRegistry.cs" />
+    <Compile Include="UserIdentityLookup\UserIdMappingAlgorithmPool.cs" />
+    <Compile Include="VC\CanonicalServerPathValidator.cs" />
+    <Compile Include="VC\VCServerPathTranslationService.cs" />
+    <Compile Include="VC\VersionControlDiffException.cs" />
+    <Compile Include="VC\VCBasicConflictAnalysisService.cs" />
+    <Compile Include="VC\VCTranslationService.cs" />
+    <Compile Include="VC\VersionControlMapping.cs" />
+    <Compile Include="VC\VersionControlMigrationException.cs" />
+    <Compile Include="RuntimeSession.cs" />
+    <Compile Include="WCFServices\IMigrationService.cs" />
+    <Compile Include="WCFServices\IRuntimeTrace.cs" />
+    <Compile Include="WCFServices\MemoryQueueStream.cs" />
+    <Compile Include="WCFServices\MigrationService.cs" />
+    <Compile Include="WCFServices\MigrationServiceClient.cs" />
+    <Compile Include="WCFServices\RuntimeTrace.cs" />
+    <Compile Include="WCFServices\RuntimeTraceClient.cs" />
+    <Compile Include="WIT\DefaultMigrationFileAttachmentComparer.cs" />
+    <Compile Include="WIT\FileAttachmentAnalyzer.cs" />
+    <Compile Include="Interfaces\WIT\IMigrationFileAttachment.cs" />
+    <Compile Include="SyncOrchestrator\ISessionOrchestrator.cs" />
+    <Compile Include="WIT\WITBasicConflictAnalysisService.cs" />
+    <Compile Include="WIT\WitDiffResult.cs" />
+    <Compile Include="WIT\WITTranslationService.cs" />
+    <Compile Include="WIT\WorkItemContextSyncMigrationItem.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="MigrationToolkitResources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>MigrationToolkitResources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ServerDiff\ServerDiffResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ServerDiffResources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TfsMigrationEntityModel\TfsMigrationEntityModel\TfsMigrationEntityModel.csproj">
+      <Project>{DD017AA0-4088-42F1-98D6-99BC96DAAD37}</Project>
+      <Name>TfsMigrationEntityModel</Name>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\WinCredentials\WinCredentials.vcxproj">
+      <Project>{70D20CAA-CC74-4679-B035-F9002ACB96DC}</Project>
+      <Name>WinCredentials</Name>
+      <Private>False</Private>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Linking\ClassDiagramsForLinkingOM.cd" />
+    <None Include="ConflictManagement\ResolutionRuleDataSchema.xsd" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(TfsIPRoot)\Build\Microsoft.TeamFoundation.Migration.targets" />
+</Project>

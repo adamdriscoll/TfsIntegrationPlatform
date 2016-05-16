@@ -1,0 +1,660 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AssemblyQualNameInvalid" xml:space="preserve">
+    <value>Assembly name must contain a valid assembly qualified type name.</value>
+  </data>
+  <data name="ChangesetIdNonNegative" xml:space="preserve">
+    <value>Changeset Id must be a non-negative value</value>
+  </data>
+  <data name="DefaultEventString" xml:space="preserve">
+    <value>Unspecified migration event.</value>
+  </data>
+  <data name="DependentProviderMissing" xml:space="preserve">
+    <value>A provider dependency could not be resolved.  Provider not found: {0}.</value>
+  </data>
+  <data name="ErrorAbortingSession" xml:space="preserve">
+    <value>Session cannot be aborted because it is neither running nor paused.</value>
+  </data>
+  <data name="ErrorCompletingSession" xml:space="preserve">
+    <value>Session cannot be completed because it is not running.</value>
+  </data>
+  <data name="ErrorCreateLinkingEngine" xml:space="preserve">
+    <value>Provider could not instantiate a linking engine object.</value>
+  </data>
+  <data name="ErrorCreatingProviderFromXml" xml:space="preserve">
+    <value>Error creating migration provider factory instance from configuration xml.</value>
+  </data>
+  <data name="ErrorExecutingNamedSQLResource" xml:space="preserve">
+    <value>An unexpected error occurred while executing an embedded SQL resource.  The error details are: {0}</value>
+  </data>
+  <data name="ErrorGetWorkItem" xml:space="preserve">
+    <value>Failed to get work item.</value>
+  </data>
+  <data name="ErrorInvalidArg" xml:space="preserve">
+    <value>Argument '{0}' is invalid.</value>
+  </data>
+  <data name="ErrorNoWitSessionInLinking" xml:space="preserve">
+    <value>No work item tracking session is specified in the linking engine.</value>
+  </data>
+  <data name="ErrorPausingSession" xml:space="preserve">
+    <value>Attempt to pause an inactive session</value>
+  </data>
+  <data name="ErrorResumingSession" xml:space="preserve">
+    <value>Session cannot be resumed because it is not running.</value>
+  </data>
+  <data name="ErrorSessionAlreadyRunning" xml:space="preserve">
+    <value>Session is already running.</value>
+  </data>
+  <data name="ErrorStartingSession" xml:space="preserve">
+    <value>Session cannot be started because it is already running.</value>
+  </data>
+  <data name="EventProviderAttributeMissing" xml:space="preserve">
+    <value>Unable to load event sink provider attribute.</value>
+  </data>
+  <data name="EventProviderNotExist" xml:space="preserve">
+    <value>Event sink provider does not exist: {0}</value>
+  </data>
+  <data name="FileElementEmpty" xml:space="preserve">
+    <value>The File element is missing or empty.</value>
+  </data>
+  <data name="GroupingError_Add" xml:space="preserve">
+    <value>Cannot add new actions to a locked change grouping</value>
+  </data>
+  <data name="GroupingError_Comment" xml:space="preserve">
+    <value>Cannot change the grouping comment after being locked</value>
+  </data>
+  <data name="GroupingError_Name" xml:space="preserve">
+    <value>Cannot change the grouping name after being locked</value>
+  </data>
+  <data name="GroupingError_Order" xml:space="preserve">
+    <value>Cannot change the grouping execution order after being locked</value>
+  </data>
+  <data name="GroupingError_Owner" xml:space="preserve">
+    <value>Cannot change the grouping owner after being locked</value>
+  </data>
+  <data name="GroupingError_SessionId" xml:space="preserve">
+    <value>Cannot change the grouping session ID after being locked</value>
+  </data>
+  <data name="GroupingError_SourceId" xml:space="preserve">
+    <value>Cannot change the grouping source Id after being locked</value>
+  </data>
+  <data name="GroupingError_Time" xml:space="preserve">
+    <value>Cannot change the grouping time after being locked</value>
+  </data>
+  <data name="NoAbortNonStarted" xml:space="preserve">
+    <value>Attempt to abort a non-started session</value>
+  </data>
+  <data name="NoCompleteAbortedException" xml:space="preserve">
+    <value>Cannot complete an aborted session.</value>
+  </data>
+  <data name="OneSessionPerTextReport" xml:space="preserve">
+    <value>Cannot register more than one session to TextReport</value>
+  </data>
+  <data name="SessionAborted" xml:space="preserve">
+    <value>Session has been aborted.</value>
+  </data>
+  <data name="SessionAlreadyStarted" xml:space="preserve">
+    <value>Attempt to start an already started session.</value>
+  </data>
+  <data name="SessionComplete" xml:space="preserve">
+    <value>Session complete</value>
+  </data>
+  <data name="SessionPaused" xml:space="preserve">
+    <value>Session has been paused.</value>
+  </data>
+  <data name="SessionResumed" xml:space="preserve">
+    <value>Session has been resumed.</value>
+  </data>
+  <data name="SessionStarting" xml:space="preserve">
+    <value>Starting session.</value>
+  </data>
+  <data name="SessionUsesUndefTfs" xml:space="preserve">
+    <value>The session {0} references an undefined TFS server {1}.</value>
+  </data>
+  <data name="SettingDefinedTwice" xml:space="preserve">
+    <value>The setting {0} was defined more than once in the same scope.</value>
+  </data>
+  <data name="SettingNotFound" xml:space="preserve">
+    <value>The setting {0} was not found.</value>
+  </data>
+  <data name="SQLMissingConnectionString" xml:space="preserve">
+    <value>The SQL configuration is missing the ConnectionString element.  The configuration must either define the Server and Database settings or the ConnectionString setting.</value>
+  </data>
+  <data name="SQLReportConnectionStringNotValid" xml:space="preserve">
+    <value>Unable to connect to the reporting SQL server using the specified connection string.</value>
+  </data>
+  <data name="SQLReportMissingDatabase" xml:space="preserve">
+    <value>The SQL report provider configuration is missing the Database element.  The SQL report adaptor must either define the Server and Database settings or the ConnectionString setting.</value>
+  </data>
+  <data name="SQLReportMissingServer" xml:space="preserve">
+    <value>The SQL report provider configuration is missing the Server attribute.  The SQL report adaptor must either define the Server and Database settings or the ConnectionString setting.</value>
+  </data>
+  <data name="TooManyChangeGroupsReturned" xml:space="preserve">
+    <value>An unexpected error occurred while querying for the next version control change grouping.  One change group was expected but multiple groups were returned.</value>
+  </data>
+  <data name="TwoProvidersOneName" xml:space="preserve">
+    <value>Two providers using the same name: {0}</value>
+  </data>
+  <data name="TwoTargetsOneName" xml:space="preserve">
+    <value>There can only be one migration target named {0}</value>
+  </data>
+  <data name="UICredProvider_MessageText" xml:space="preserve">
+    <value>Connecting to Team Foundation Server</value>
+  </data>
+  <data name="UICredProvider_TitleText" xml:space="preserve">
+    <value>Connect to {0}</value>
+  </data>
+  <data name="UnableToLoadType" xml:space="preserve">
+    <value>Unable to load type: {0}</value>
+  </data>
+  <data name="UnknownInitError" xml:space="preserve">
+    <value>An unknown error occurred while loading the migration configuration.  {0}</value>
+  </data>
+  <data name="UnknownLinkingException" xml:space="preserve">
+    <value>An unexpected error occurred while processing links.</value>
+  </data>
+  <data name="UnknownMigrationTarget" xml:space="preserve">
+    <value>Unknown migration target {0}</value>
+  </data>
+  <data name="UserNotInServiceAccountGroup" xml:space="preserve">
+    <value>The user '{0}' that runs work item migration is not a member of Service Accounts Group on server '{1}'.</value>
+  </data>
+  <data name="FailureCreatingNewActionRow" xml:space="preserve">
+    <value>An unexpected failure occurred while creating a new version control migration action row.</value>
+  </data>
+  <data name="UnknownChangeStatusValue" xml:space="preserve">
+    <value>An unknown ChangeStatus value "{0}" was encountered.</value>
+  </data>
+  <data name="WrongRowCountUpdatingActions" xml:space="preserve">
+    <value>Fail to update action row - expected 1 row, actually got {0}</value>
+  </data>
+  <data name="ChangeGroupManagerExists" xml:space="preserve">
+    <value>ChangeGroupManager of source {0} has already been registered in session {1}.</value>
+  </data>
+  <data name="ChangeGroupManagerNotRegistered" xml:space="preserve">
+    <value>ChangeGroupManager of source {0} is not registered.</value>
+  </data>
+  <data name="DefaultUnresolvableConflictExceptionMessage" xml:space="preserve">
+    <value>The migration engine is unable to resolve a change conflict.</value>
+  </data>
+  <data name="MigrationProcessAborted" xml:space="preserve">
+    <value>The version control migration process has been aborted.</value>
+  </data>
+  <data name="VCMappingMissingUnknownItem" xml:space="preserve">
+    <value>No version control mapping was found for the unknown server item.</value>
+  </data>
+  <data name="UnknownSourceId" xml:space="preserve">
+    <value>An unknown sourceId {0} is encountered. </value>
+  </data>
+  <data name="MappingPathNotFound" xml:space="preserve">
+    <value>Can't find mapped path for {0}</value>
+  </data>
+  <data name="DefaultVCEventString" xml:space="preserve">
+    <value>Unspecified version control migration event.</value>
+  </data>
+  <data name="UninitializedHighWaterMark" xml:space="preserve">
+    <value>The high water mark {0}  is not registered with any session or source system. </value>
+  </data>
+  <data name="UnknownChangeAction" xml:space="preserve">
+    <value>The change action with Id {0} is not registered with the provider of type {1}.</value>
+  </data>
+  <data name="ErrorNonexistConflictChangeAction" xml:space="preserve">
+    <value>Cannot find the conflicted change action associated with the raised migration conflict.</value>
+  </data>
+  <data name="ErrorResolutionRuleNotFound" xml:space="preserve">
+    <value>Cannot find resolution rule with Reference Name {0} in the Tfs Migration Database.</value>
+  </data>
+  <data name="ErrorInvalidConflictResolutionRule" xml:space="preserve">
+    <value>Conflict type {0} (Reference name: {1}) for resolution rule {2} is not registered in conflict manager (ScopeId: {3}; SourceId: {4} ({5})).</value>
+  </data>
+  <data name="ErrorDuplicateResolutionRule" xml:space="preserve">
+    <value>Cannot save conflict resolution rule {0}. Another rule with the same reference name has already been created.</value>
+  </data>
+  <data name="ErrorInvalidResolutionActionForConflictType" xml:space="preserve">
+    <value>Resolution action {0} is not valid for conflict type {1} ({2}).</value>
+  </data>
+  <data name="ErrorMissingResolutionRuleSerializer" xml:space="preserve">
+    <value>Cannot find the serializer for the conflict resolution rule {0} ({1}).</value>
+  </data>
+  <data name="InvalidWitEditEditConflictDetailsString" xml:space="preserve">
+    <value>{0} is not a well-formed "Details" for WITEditEditConflict.</value>
+  </data>
+  <data name="InvalidConflictResolutionAction" xml:space="preserve">
+    <value>Action with reference name '{0}' is not a valid resolution action for conflict type '{1}'.</value>
+  </data>
+  <data name="InvalidVCContentConflictDetailsString" xml:space="preserve">
+    <value>{0} is not a well-formed "Details" for VCContentConflict.</value>
+  </data>
+  <data name="ConflictTypeNotRegistered" xml:space="preserve">
+    <value>Conflict Type (Reference Name: '{0}') is not registered with the conflict maanger (ScopeId: '{1}'; SourceId: '{2}').</value>
+  </data>
+  <data name="ErrorInvalidConflictInternalId" xml:space="preserve">
+    <value>'{0}' does not correspond to a conflict in the backlog.</value>
+  </data>
+  <data name="ResolutionRuleNotApplicable" xml:space="preserve">
+    <value>Conflict resolution rule '{0}' is not applicable to the conflict of internal ID '{1}'.</value>
+  </data>
+  <data name="GroupingError_ContainsBackloggedAction" xml:space="preserve">
+    <value>Cannot change the grouping ContainsBackloggedAction after being locked</value>
+  </data>
+  <data name="ErrorLinkTopologyIsUnknown" xml:space="preserve">
+    <value>LinkTopology is unknown.</value>
+  </data>
+  <data name="ErrorSaveDuplicateLinkAction" xml:space="preserve">
+    <value>Cannot save duplicate LinkAction with Internal Id ({0}).</value>
+  </data>
+  <data name="MissingArtifactTypeDispName" xml:space="preserve">
+    <value>ArtifactType display name cannot be empty.</value>
+  </data>
+  <data name="MissingArtifactTypeRefName" xml:space="preserve">
+    <value>ArtifactType reference name cannot be empty.</value>
+  </data>
+  <data name="ErrorArtifactTypeNotSupported" xml:space="preserve">
+    <value>Artifact Type {0} is not supported by the link provider.</value>
+  </data>
+  <data name="ErrorLinkTypeNotSupported" xml:space="preserve">
+    <value>Link Type {0} is not supported by the link provider.</value>
+  </data>
+  <data name="MissingSourceLinkArtifact" xml:space="preserve">
+    <value>Cannot find the link's source artifact id (Uri: {0}).</value>
+  </data>
+  <data name="InvalidConversionHistoryInfo" xml:space="preserve">
+    <value>Invalid conversion history information is provided. </value>
+  </data>
+  <data name="InvalideChangeActionDescription" xml:space="preserve">
+    <value>The description of the Change Action (Id: {0}) is not valid.</value>
+  </data>
+  <data name="InvalidSourceItemForAttachmentOperation" xml:space="preserve">
+    <value>Source Item is not an IMigrationFileAttachment for attachment operation</value>
+  </data>
+  <data name="InvalidConflictDescription" xml:space="preserve">
+    <value>Conflict description is invalid.</value>
+  </data>
+  <data name="ErrorMissingParentChangeGroup" xml:space="preserve">
+    <value>The change action does not have a parent change group persisted in data store.</value>
+  </data>
+  <data name="InvalidMD5HashCode" xml:space="preserve">
+    <value>Invalid MD5 hash code</value>
+  </data>
+  <data name="InvalidScopeIntValueExpected" xml:space="preserve">
+    <value>Error: '{0}' is not an integer value expected by this scope syntax.</value>
+  </data>
+  <data name="ScopeIsValid" xml:space="preserve">
+    <value>The scope is valid.</value>
+  </data>
+  <data name="SQLInvalidDBReferenceName" xml:space="preserve">
+    <value>The migration DB does not have a valid extended property of 'ReferenceName'. DB schema validation failed.</value>
+  </data>
+  <data name="SQLMismatchingDBSchema" xml:space="preserve">
+    <value> The database schema (Reference Name: '{0}') is not supported by the current version (v {1}) of the framework.</value>
+  </data>
+  <data name="ErrorMultiResolutionRuleOfSameRefName" xml:space="preserve">
+    <value>More than one resolution rules with Reference Name {0} are present in the Tfs Migration Database.</value>
+  </data>
+  <data name="ErrorProviderNotFound" xml:space="preserve">
+    <value>Provider not found for migration source: '{0}'. Please make sure that the provider assembly is deployed in the 'Plugins' folder and all its requisite resources are accessible.</value>
+  </data>
+  <data name="VCPathTranslationError_CannotFindFilterString" xml:space="preserve">
+    <value>'{0}' - path is not mapped.</value>
+  </data>
+  <data name="VCPathTranslationErrVCPathTranslationError_InvalidCanonicalPath" xml:space="preserve">
+    <value>'{0}' is not a valid canonical server path.</value>
+  </data>
+  <data name="ErrorMissingVCPathTranslationService" xml:space="preserve">
+    <value>VCPathTranslationService is not available for migration source '{0}'.</value>
+  </data>
+  <data name="ProviderDoesNotImplementISyncMonitor" xml:space="preserve">
+    <value>The provider does not implement the ISyncMonitor interface:{0}</value>
+  </data>
+  <data name="ProviderHandlerNotLoadedForMigrationSouce" xml:space="preserve">
+    <value>No provider handler is loaded for the Migration Souce: {0}</value>
+  </data>
+  <data name="SessionNotFoundForMigrationSource" xml:space="preserve">
+    <value>The session with the Id '{0}' for the migration source '{1}' was not found</value>
+  </data>
+  <data name="SyncMonitorError" xml:space="preserve">
+    <value>SyncMonitor: ERROR: {0}</value>
+  </data>
+  <data name="SyncMonitorInfo" xml:space="preserve">
+    <value>SyncMonitor: INFO: {0}</value>
+  </data>
+  <data name="SyncMonitorWarning" xml:space="preserve">
+    <value>SyncMonitor: WARNING: {0}</value>
+  </data>
+  <data name="Conflict_UnmappedWIT_Description" xml:space="preserve">
+    <value>This conflict is detected when a source Work Item Type is not mapped in the configuration.</value>
+  </data>
+  <data name="Conflict_UnmappedWIT_Details" xml:space="preserve">
+    <value>Work Item Type '{0}' is not mapped in the configuration.</value>
+  </data>
+  <data name="Conflict_UnmappedWIT_Name" xml:space="preserve">
+    <value>WIT unmapped Work Item Type conflict type</value>
+  </data>
+  <data name="Conflict_UnmappedWIT_Action_SkipMigration" xml:space="preserve">
+    <value>Resolve the "Unmapped Work Item Type" conflicts by skipping the migration of this type of Work Items.</value>
+  </data>
+  <data name="ErrorRestartOneTimeCompleteSessionGroup" xml:space="preserve">
+    <value>Cannot restart Session Group '{0}' - the session group has completed the OneTime migration. Please consider change the WorkFlowType.Frequency to ContinuousManual, if you want to restart it.</value>
+  </data>
+  <data name="PollingEndpoint" xml:space="preserve">
+    <value>Polling endpoint for migration source: {0}</value>
+  </data>
+  <data name="SessionGroupNotFound" xml:space="preserve">
+    <value>No session group found with ID: {0}</value>
+  </data>
+  <data name="SuccessfullyPolledEndpoint" xml:space="preserve">
+    <value>Successfully polled endpoint for migration source: {0}; Latency: {1}, BacklogCount: {2}</value>
+  </data>
+  <data name="SyncMonitorCollectingBacklogData" xml:space="preserve">
+    <value>Collecting backlog data for {0} migration sources from {1} sessions</value>
+  </data>
+  <data name="SyncMonitorNoActiveSessions" xml:space="preserve">
+    <value>There are no active migration sessions</value>
+  </data>
+  <data name="ErrorCannotLoadCertificateIdentity" xml:space="preserve">
+    <value>The certificate identity specified in the WCF service configuration cannot be loaded.</value>
+  </data>
+  <data name="UnknownEndpointSystem" xml:space="preserve">
+    <value>Unknown</value>
+  </data>
+  <data name="WitDiffIngoringDiff1" xml:space="preserve">
+    <value>Ignoring difference between work items {0} on '{1}' and {2} on '{3}' because the first work item has been changed since the last sync</value>
+  </data>
+  <data name="WitDiffIngoringDiff2" xml:space="preserve">
+    <value>Ignoring difference between work items {0} on '{1}' and {2} on '{3}' because the second work item has been changed since the last sync</value>
+  </data>
+  <data name="WitDiffNoContentComparison" xml:space="preserve">
+    <value>Only checking for existence of corresponding work items; skipping content comparison</value>
+  </data>
+  <data name="WitDiffResultReportHeader" xml:space="preserve">
+    <value>Difference Report</value>
+  </data>
+  <data name="WitDiffResultReportSeparator" xml:space="preserve">
+    <value>-----------------</value>
+  </data>
+  <data name="WitDiffResultWorkItemErrorsHeader" xml:space="preserve">
+    <value>Processing errors:</value>
+  </data>
+  <data name="WitDiffResultWorkItemFieldDiffDetail" xml:space="preserve">
+    <value>Field name: '{0}' First value: '{1}' Second value: '{2}'</value>
+  </data>
+  <data name="WitDiffResultWorkItemFieldDiffHeader" xml:space="preserve">
+    <value>Field differences:</value>
+  </data>
+  <data name="WitDiffResultWorkItemMismatch" xml:space="preserve">
+    <value>Work item {0} on '{1}' does not match work item {2} on '{3}': {4}</value>
+  </data>
+  <data name="WitDiffWorkItemDescriptionMissingChildNodes" xml:space="preserve">
+    <value>The XML document describing work item {0} for '{1}' is missing child nodes for element {2}</value>
+  </data>
+  <data name="WitDiffWorkItemsMatch" xml:space="preserve">
+    <value>Work item {0} on '{1}' matches work item {2} on '{3}'</value>
+  </data>
+  <data name="WitDiffResultWorkItemFieldMissing" xml:space="preserve">
+    <value>Field name: '{0}' found only on '{1}'</value>
+  </data>
+  <data name="WitDiffResultWorkItemFieldMissingHeader" xml:space="preserve">
+    <value>Fields found in work item description for one side but not the other:</value>
+  </data>
+  <data name="ErrorMultiSessionGroupConfigWithSameId" xml:space="preserve">
+    <value>Error: More than one session group configuration have the same unique Id.</value>
+  </data>
+  <data name="Conflict_FilePropertyCreation_Description" xml:space="preserve">
+    <value>This conflict is detected when a migration action that attempts to create a file property fails</value>
+  </data>
+  <data name="Conflict_FilePropertyCreation_Name" xml:space="preserve">
+    <value>File property creation conflict type</value>
+  </data>
+  <data name="Conflict_FilePropertyCreation_RetryAction" xml:space="preserve">
+    <value>Resolve file property creation conflict by retrying the creation of the file property</value>
+  </data>
+  <data name="Conflict_FilePropertyCreation_SkipAction" xml:space="preserve">
+    <value>Resolve file property creation conflict by skipping the creation of the file property</value>
+  </data>
+  <data name="Conflict_LabelCreation_Description" xml:space="preserve">
+    <value>This conflict is detected when a migration action that attempts to create a label fails</value>
+  </data>
+  <data name="Conflict_LabelCreation_Name" xml:space="preserve">
+    <value>Label creation conflict type</value>
+  </data>
+  <data name="Conflict_LabelCreation_RetryAction" xml:space="preserve">
+    <value>Resolve label creation conflict by retrying the creation of the label</value>
+  </data>
+  <data name="Conflict_LabelCreation_SkipAction" xml:space="preserve">
+    <value>Resolve label creation conflict by skipping the creation of the label</value>
+  </data>
+  <data name="WitDiffUnknownWorkItemId" xml:space="preserve">
+    <value>unknown or non-existant work item id</value>
+  </data>
+  <data name="CommandSwitchIgnoreUnmappedPath" xml:space="preserve">
+    <value>IgnoreUnmappedPath</value>
+  </data>
+  <data name="ErrReport_Exception_Message_Deadlock" xml:space="preserve">
+    <value>deadlock</value>
+  </data>
+  <data name="ErrReport_Exception_Message_NotEnoughSpaceOnDisk" xml:space="preserve">
+    <value>There is not enough space on the disk</value>
+  </data>
+  <data name="ErrReport_Exception_Message_Timeout" xml:space="preserve">
+    <value>Timeout expired</value>
+  </data>
+  <data name="ErrReport_Exception_Message_WorkspaceIsRequired" xml:space="preserve">
+    <value>A local workspace is required</value>
+  </data>
+  <data name="ErrorEventLogSourceNotFound" xml:space="preserve">
+    <value>TFS Integration Platform Windows Event Log Source '{0}' cannot be found.</value>
+  </data>
+  <data name="GetLastMigratedChangeNameFoundNoRows" xml:space="preserve">
+    <value>GetLastMigratedChangeName: Query on Endpoint {0} returned 0 rows</value>
+  </data>
+  <data name="GetLastMigratedChangeNameReturnedEmpty" xml:space="preserve">
+    <value>Endpoint.Poll: GetLastMigratedChangeName returned empty name for endpoint '{0}'; no data will be saved</value>
+  </data>
+  <data name="LastMigratedItemName" xml:space="preserve">
+    <value>LastMigratedItemName: {0}</value>
+  </data>
+  <data name="TimeForGetLastMigratedChangeName" xml:space="preserve">
+    <value>Time for GetLastMigratedChangeName(): {0} ms</value>
+  </data>
+  <data name="TimeForGetSummaryOfChangesSince" xml:space="preserve">
+    <value>Time for GetSummaryOfChangesSince(): {0} ms</value>
+  </data>
+  <data name="WitDiffResultWorkItemAttachmentDiffDetail" xml:space="preserve">
+    <value>Source attachment '{0}' property '{1}:' First value: '{2}' Second value: '{3}'</value>
+  </data>
+  <data name="WitDiffResultWorkItemAttachmentDiffHeader" xml:space="preserve">
+    <value>Attachment differences:</value>
+  </data>
+  <data name="WitDiffResultWorkItemLinkDiffDetail" xml:space="preserve">
+    <value> Property '{0}': First value: '{1}' Second value: '{2}'</value>
+  </data>
+  <data name="WitDiffResultWorkItemLinkDiffHeader" xml:space="preserve">
+    <value>Link differences:</value>
+  </data>
+  <data name="WitDiffResultWorkItemAttachmentMissingDetail" xml:space="preserve">
+    <value>Attachment name: {0}</value>
+  </data>
+  <data name="WitDiffResultWorkItemAttachmentMissingHeader" xml:space="preserve">
+    <value>Attachments found only one one side:</value>
+  </data>
+  <data name="WitDiffResultWorkItemLinkMissingDetail" xml:space="preserve">
+    <value>Linked artifact and type: {0}</value>
+  </data>
+  <data name="WitDiffResultWorkItemLinkMissingHeader" xml:space="preserve">
+    <value>Links found only one one side:</value>
+  </data>
+  <data name="ErrorUserIdFormatStringCompositionRule_InvalidFormat" xml:space="preserve">
+    <value>The format string configured for the format string composition rule in the User Id Lookup setting is not valid.</value>
+  </data>
+  <data name="AnalysisAddinKeyName" xml:space="preserve">
+    <value>AnalysisAddin</value>
+  </data>
+  <data name="AnalysisAddinNotFound" xml:space="preserve">
+    <value>Did not find AnalysisAddin with ID '{0}'</value>
+  </data>
+  <data name="ExceptionLoadingAnalysisAddin" xml:space="preserve">
+    <value>An exception occurred while loading AnalysisAddins: {0}</value>
+  </data>
+  <data name="ExceptionLoadingMigrationAddin" xml:space="preserve">
+    <value>An exception occurred while loading MigrationAddins:{0}</value>
+  </data>
+  <data name="LoadedAnalysisAddin" xml:space="preserve">
+    <value>Loaded AnalysisAddin of type {0} for migration source '{1}'</value>
+  </data>
+  <data name="LoadedMigrationAddin" xml:space="preserve">
+    <value>Loaded MigrationAddin of type {0} for migration source '{1}'</value>
+  </data>
+  <data name="MigrationAddinKeyName" xml:space="preserve">
+    <value>MigrationAddin</value>
+  </data>
+  <data name="MigrationAddinNotFound" xml:space="preserve">
+    <value>Did not find MigrationAddin with ID '{0}'</value>
+  </data>
+  <data name="VCSetting_DisableTargetAnalysis" xml:space="preserve">
+    <value>DisableTargetAnalysis</value>
+  </data>
+  <data name="AnalysisAddinSkippingPass" xml:space="preserve">
+    <value>Skipping this synchronization pass because AnalysisAddin of type '{0}' returned false for ProceedToAnalysis()</value>
+  </data>
+  <data name="SyncMonitorNotStoringInvalidLatencyPollData" xml:space="preserve">
+    <value>Not storing invalid latency data from adapter for migration source: {0}. LastMigratedChangeName: {1}</value>
+  </data>
+  <data name="GroupingError_RevisionTime" xml:space="preserve">
+    <value>Cannot change the grouping revision time after being locked</value>
+  </data>
+  <data name="SyncMonitorThreadName" xml:space="preserve">
+    <value>Sync Monitor Thread</value>
+  </data>
+  <data name="ErrorRestartDeletedSessionGroup" xml:space="preserve">
+    <value>Cannot start Session Group '{0}' - the session group has been deleted.</value>
+  </data>
+  <data name="ErrorDeletingActiveSessionGroup" xml:space="preserve">
+    <value>Cannot delete Session Group '{0}' - it is still running.</value>
+  </data>
+  <data name="VerbosePlatformCommentSuffixFormat" xml:space="preserve">
+    <value>{0} from '{1}' Id: {2};{3}{4}</value>
+  </data>
+  <data name="UnknownSource" xml:space="preserve">
+    <value>Unknown</value>
+  </data>
+  <data name="ErrorCallingAddin" xml:space="preserve">
+    <value>Addin '{0}' threw exception: {1}</value>
+  </data>
+</root>

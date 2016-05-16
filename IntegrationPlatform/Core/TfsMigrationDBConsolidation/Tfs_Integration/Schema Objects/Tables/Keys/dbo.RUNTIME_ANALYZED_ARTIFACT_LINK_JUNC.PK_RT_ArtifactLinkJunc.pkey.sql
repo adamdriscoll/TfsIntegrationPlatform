@@ -1,0 +1,3 @@
+﻿ALTER TABLE [dbo].[RUNTIME_ANALYSIS_ARTIFACT_LINK_JUNC]
+	ADD CONSTRAINT [PK_RT_AnalyzedArtifactLinkJunc]
+	PRIMARY KEY (LinkAnalysisResultId, ArtifactLinkId)

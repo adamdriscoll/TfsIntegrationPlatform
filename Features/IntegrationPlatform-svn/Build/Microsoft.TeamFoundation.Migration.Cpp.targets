@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <Import Project="Microsoft.TeamFoundation.Migration.Common.targets" />
+
+  <!-- ************************************************************************ -->
+  <!-- Build partially signed managed assemblies.                               -->
+  <!-- ************************************************************************ -->
+
+  <ItemDefinitionGroup Condition="'$(PartiallySignedBuild)' == 'true'">
+    <Link>
+      <!-- This Microsoft public key is copied in when strong name signing as Microsoft. -->
+      <KeyFile>$(TfsIPRoot)\Binaries\External\35MSSharedLib1024.snk</KeyFile>
+      <DelaySign>true</DelaySign>
+    </Link>
+
+    <ClCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);PARTIALLY_SIGNED_BUILD</PreprocessorDefinitions>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  
+</Project>

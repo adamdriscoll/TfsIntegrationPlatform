@@ -1,0 +1,29 @@
+﻿<UserControl x:Class="Microsoft.TeamFoundation.Migration.Shell.ProvidersView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:v="clr-namespace:Microsoft.TeamFoundation.Migration.Shell">
+
+    <UserControl.CommandBindings>
+        <CommandBinding Command="v:SkinnableEditorCommands.AddProvider" CanExecute="OnAddProviderCanExecute" Executed="OnAddProviderExecuted" />
+        <CommandBinding Command="ApplicationCommands.Delete" CanExecute="OnDeleteCanExecute" Executed="OnDeleteExecuted" />
+        <CommandBinding Command="ApplicationCommands.Cut" CanExecute="OnCutCanExecute" Executed="OnCutExecuted" />
+        <CommandBinding Command="ApplicationCommands.Copy" CanExecute="OnCopyCanExecute" Executed="OnCopyExecuted" />
+        <CommandBinding Command="ApplicationCommands.Paste" CanExecute="OnPasteCanExecute" Executed="OnPasteExecuted" />
+    </UserControl.CommandBindings>
+    
+    <ListBox Name="providersListBox" ItemsSource="{Binding Provider}" Style="{DynamicResource ProvidersListBoxStyle}" >
+        <ListBox.ContextMenu>
+            <ContextMenu>
+                <ContextMenu.Items>
+                    <MenuItem Style="{DynamicResource AddMenuItemStyle}" Command="v:SkinnableEditorCommands.AddProvider" CommandTarget="{Binding RelativeSource={RelativeSource AncestorType={x:Type ContextMenu}},Path=PlacementTarget}" />
+                    <MenuItem Style="{DynamicResource DeleteMenuItemStyle}" Command="ApplicationCommands.Delete" CommandTarget="{Binding RelativeSource={RelativeSource AncestorType={x:Type ContextMenu}},Path=PlacementTarget}" />
+                    <Separator />
+                    <MenuItem Style="{DynamicResource CutMenuItemStyle}" Command="ApplicationCommands.Cut" CommandTarget="{Binding RelativeSource={RelativeSource AncestorType={x:Type ContextMenu}},Path=PlacementTarget}" />
+                    <MenuItem Style="{DynamicResource CopyMenuItemStyle}" Command="ApplicationCommands.Copy" CommandTarget="{Binding RelativeSource={RelativeSource AncestorType={x:Type ContextMenu}},Path=PlacementTarget}" />
+                    <MenuItem Style="{DynamicResource PasteMenuItemStyle}" Command="ApplicationCommands.Paste" CommandTarget="{Binding RelativeSource={RelativeSource AncestorType={x:Type ContextMenu}},Path=PlacementTarget}" />
+                </ContextMenu.Items>
+            </ContextMenu>
+        </ListBox.ContextMenu>
+    </ListBox>
+        
+</UserControl>

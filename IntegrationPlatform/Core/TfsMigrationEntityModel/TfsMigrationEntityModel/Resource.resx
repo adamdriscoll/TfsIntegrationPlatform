@@ -1,0 +1,192 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ErrorAttachManagerToMultipleModel" xml:space="preserve">
+    <value>Error: Attempting to attach a business model manager to multiple models.</value>
+  </data>
+  <data name="ErrorAttachMultipleManagerToBusinessModel" xml:space="preserve">
+    <value>Error: Attempting to attach multiple business model manager to a model.</value>
+  </data>
+  <data name="ErrorDefaultTimeoutSettingInvalid" xml:space="preserve">
+    <value>Error: Setting of default command timeout value does not contain valid value.</value>
+  </data>
+  <data name="ErrorGenericDBInconsistency" xml:space="preserve">
+    <value>Error: There are inconsistent data stored for {0}.</value>
+  </data>
+  <data name="ErrorInternalIdOfSessionGroupConfigNotExist" xml:space="preserve">
+    <value>Error: Cannot find a session group config with the provided Id.</value>
+  </data>
+  <data name="ErrorInvalidMigrationSourceChange" xml:space="preserve">
+    <value>Error: Cannot change the Provider, Server and Source of a migration source. Please consider to create a new one.</value>
+  </data>
+  <data name="ErrorMigrationDataFolderNotFound" xml:space="preserve">
+    <value>Error: Cannot find the migration data folder at {0}.</value>
+  </data>
+  <data name="ErrorMissingConfigurationFile" xml:space="preserve">
+    <value>Error: Configuration file '{0}' does not exist.</value>
+  </data>
+  <data name="ErrorMissingEventSink" xml:space="preserve">
+    <value>Error: Failed to find required event sink.</value>
+  </data>
+  <data name="ErrorMissingEventSinkProvider" xml:space="preserve">
+    <value>Error: Cannot find the provider for the event sink.</value>
+  </data>
+  <data name="ErrorMissingGlobalConfigFile" xml:space="preserve">
+    <value>Error: Global configuration file {0} does not exist in current working directory {1}.</value>
+  </data>
+  <data name="ErrorMissingLinkingEngineProvider" xml:space="preserve">
+    <value>Error: Cannot find the provider for the linking engine.</value>
+  </data>
+  <data name="ErrorMissingMigrSourceConfig" xml:space="preserve">
+    <value>Error: Missing migration source configuration.</value>
+  </data>
+  <data name="ErrorMissingProviderForMigrationSource" xml:space="preserve">
+    <value>Error: Cannot find the provider of a migration source.</value>
+  </data>
+  <data name="ErrorMissingSessionConfig" xml:space="preserve">
+    <value>Error: Cannot find the session configuration in a session group.</value>
+  </data>
+  <data name="ErrorMultiActiveConfigExist" xml:space="preserve">
+    <value>Error: More than one active configuration for a session group were found.</value>
+  </data>
+  <data name="ErrorMultiConfigWithSameId" xml:space="preserve">
+    <value>Error: More than one configuration have the same internal Id.</value>
+  </data>
+  <data name="ErrorMultiMigrationSourceWithSameUniqueId" xml:space="preserve">
+    <value>Error: More than one migration source have the same unique Id.</value>
+  </data>
+  <data name="ErrorMultiProviderWithReferenceName" xml:space="preserve">
+    <value>Error: More than one provider have the same reference name.</value>
+  </data>
+  <data name="ErrorMultiSessionConfigWithSameId" xml:space="preserve">
+    <value>Error: More than one session configuration have the same unique Id.</value>
+  </data>
+  <data name="ErrorMultiSessionGroupConfigWithSameId" xml:space="preserve">
+    <value>Error: More than one session group configuration have the same unique Id.</value>
+  </data>
+  <data name="ErrorMultiSessionGroupWithSameId" xml:space="preserve">
+    <value>Error: More than one session group have the same unique Id.</value>
+  </data>
+  <data name="ErrorUseWindowsServiceSettingInvalid" xml:space="preserve">
+    <value>Error: The 'UseWindowsService' configuration setting contains invalid value.</value>
+  </data>
+  <data name="ErrorUsingConfigValidatorMultiTimes" xml:space="preserve">
+    <value>Error: Attempting to use the same ConfigurationValidator for more than once.</value>
+  </data>
+</root>

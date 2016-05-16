@@ -1,0 +1,248 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="CQ_BASE_ENTITY_REQ">
+    <value xml:space="preserve">TF61100: Unable to start {0}. Base Entity '{1}' has to be converted. Include the base entity in migration by adding the name in SourceEntity element in '{2}'.</value>
+  </data>
+  <data name="CQ_ENTITY_NOT_EXIST">
+    <value xml:space="preserve">TF61101: Unable to start {0}. Entity Type '{1}' does not exist in ClearQuest database. Please fix SourceEntity element in '{2}' so that it points to a valid ClearQuest entity.</value>
+  </data>
+  <data name="CQ_ENTITY_NOT_MIG">
+    <value xml:space="preserve">Entity '{0}' will not be converted as it is not connected with the base entity '{1}'.</value>
+  </data>
+  <data name="CQ_ENTITY_NOT_MIG_EXIST">
+    <value xml:space="preserve">Work item type '{0}' cannot be created because it already exists on your Team Foundation Server.</value>
+  </data>
+  <data name="CQ_VALIDATE_FLD_MAP">
+    <value xml:space="preserve">Validating field map file '{0}' </value>
+  </data>
+  <data name="CQ_FLD_NOT_EXIST">
+    <value xml:space="preserve">TF61102: Migration stopped. Field Map validation failed for file '{0}'. Field(s) '{1}' does not exist in ClearQuest Entity '{2}'. Delete the fields that do not exist in the entity from the field mapping file.</value>
+  </data>
+  <data name="CQ_VER_NOT_SUPPORT">
+    <value xml:space="preserve">TF61103: Unable to start {0}. Unable to find details about ClearQuest connection. Please make sure that ClearQuest is installed on your system and you have connected at least once from the ClearQuest client running under the user credentials you are using to run the converter.</value>
+  </data>
+  <data name="CQ_DROP_ENTITY">
+    <value xml:space="preserve">Skipping import for Entity '{0}' as it does not exist in '{1}'.</value>
+  </data>
+  <data name="CQ_ENTER_PWD">
+    <value xml:space="preserve">Enter the password for ClearQuest user '{0}': </value>
+  </data>
+  <data name="CQ_NO_ADMIN_RIGHT">
+    <value xml:space="preserve">TF61105: Unable to start {0}. The ClearQuest credentials you provided do not have admin rights on the ClearQuest database. Verify that the user specified in &lt;UserID&gt; element in the configuration file '{1}' has admin rights.</value>
+  </data>
+  <data name="CQ_INVALID_QUERY">
+    <value xml:space="preserve">TF61106: Unable to start {0}. The query name '{1}' was not recognized. Correct the query name in the configuration file '{2}' and try again.</value>
+  </data>
+  <data name="CQ_PROCESSING_REC">
+    <value xml:space="preserve">Processing record for '{0}'.</value>
+  </data>
+  <data name="CQ_WI_CREATION_FAILED">
+    <value xml:space="preserve">TF61110: Migration halted. The converter could not create work item '{0}' because of the following error: {1}.</value>
+  </data>
+  <data name="CQ_WI_MIG_FAILED">
+    <value xml:space="preserve">TF61111: The converter could not convert work item '{0}' because of the following error: {1}. Please fix the source of the error and run the converter again to migrate the work item.</value>
+  </data>
+  <data name="CQ_ENTITY_MIGRATED">
+    <value xml:space="preserve">Entities selected for conversion - </value>
+  </data>
+  <data name="CQ_REC_MIGRATED">
+    <value xml:space="preserve">Work item '{0}' is already migrated.</value>
+  </data>
+  <data name="CQ_NOT_SUBMIT_ENTITY">
+    <value xml:space="preserve">TF61112: Unable to start {0}. The query is not based on the Submit type entity. CQConverter supports only submit type entities for conversion. Correct the query in the configuration file '{1}' and try again.</value>
+  </data>
+  <data name="CQ_DUPLICATE_LINK_COMMENT">
+    <value xml:space="preserve">Work Item '{0}' duplicate of '{1}'</value>
+  </data>
+  <data name="CQ_DUPLICATE_LINK_SKIP">
+    <value xml:space="preserve">Skipping link creation for work item '{0}' as duplicate of work item type '{1}', which is not in the migration list.</value>
+  </data>
+  <data name="CQ_HISTORY_STRING">
+    <value xml:space="preserve">Changed on:{0}, Changed By:{1}, Action:{2}, from state:'{3}' to '{4}'</value>
+  </data>
+  <data name="CQ_FLD_READONLY_CHANGED">
+    <value xml:space="preserve">Changing field '{0}' attribute from Read-only to Editable</value>
+  </data>
+  <data name="CQ_FLD_SKIP_HOOK">
+    <value xml:space="preserve">Not migrating the Hooks behavior for Field '{0}'</value>
+  </data>
+  <data name="CQ_NO_WITD_FILE">
+    <value xml:space="preserve">TF61114: Unable to start {0}. The converter could not find a work item type definition (WITD) file in the Schema Map file '{1}'. The WITD file is needed to create the work item type '{2}'.</value>
+  </data>
+  <data name="CQ_SELF_REFERENCE">
+    <value xml:space="preserve">The work item '{0}' of type '{1}' contains a reference to itself in field '{2}'. Team Foundation does not support relating a work item to itself. </value>
+  </data>
+  <data name="CQ_LINK_COMMENT">
+    <value xml:space="preserve">Link from '{0}' to '{1}'</value>
+  </data>
+  <data name="CQ_USER_LIST_CHANGED">
+    <value xml:space="preserve">The '{0}' field is of the type 'User List'. The converter is converting it to a 'Simple String' field because Team Foundation does not support multi-value fields.</value>
+  </data>
+  <data name="CQ_INVALID_CONN">
+    <value xml:space="preserve">TF61115: Unable to start {0}. Unable to find details for Connection '{1}', User Database '{2}'. Check these values in configuration file '{3}'</value>
+  </data>
+  <data name="CQ_OUTDIR_CREATION_FAILED">
+    <value xml:space="preserve">TF61116: The converter could not create the output directory '{0}' specified in '{1}' because of the following error: {2}. Correct the directory name in the configuration file '{1}' and try again.</value>
+  </data>
+  <data name="CQ_NO_DBID_IN_QUERY">
+    <value xml:space="preserve">TF61117: Query '{0}' specified in configuration file '{1}' does not contain 'dbid' field. Please edit the query to include 'dbid' field.</value>
+  </data>
+  <data name="CQ_COM_ERROR">
+    <value xml:space="preserve">TF61118: ClearQuest API call failed with the following error:
+{0}
+Refer ClearQuest documentation for more help.</value>
+  </data>
+  <data name="CQ_CONNECTION_ERROR">
+    <value xml:space="preserve">TF61119: Connection to ClearQuest failed with the following error:
+{0}
+- Check the ClearQuest information in the configuration file {1}. 
+- Check to see if you can access ClearQuest from the ClearQuest client.</value>
+  </data>
+  <data name="CQ_PROGRESS">
+    <value xml:space="preserve">Migrated {0} of {1} records</value>
+  </data>
+  <data name="CQ_WI_READ_FAILED">
+    <value xml:space="preserve">TF61120: The converter could not migrate Clear Quest item with dbid='{0}' because of the following error: {1}.  Please fix the source of the error and run the converter again to migrate the work item.</value>
+  </data>
+  <data name="CQ_DUP_REC_FAILED">
+    <value xml:space="preserve">TF61121: The converter could not migrate parent record '{0}' of '{1}' because of the following error: {2}.  Please fix the source of the error and run the converter again to migrate the work item.</value>
+  </data>
+  <data name="CQ_REF_REC_FAILED">
+    <value xml:space="preserve">TF611202: The converter could not migrate the referenced record with value '{0}' associated with record '{1}' because of the following error: {2}.  Please fix the source of the error and run the converter again to migrate the work item.</value>
+  </data>
+  <data name="Witd" xml:space="preserve">
+    <value>Work Item Type Definition</value>
+  </data>
+  <data name="WitFieldMap" xml:space="preserve">
+    <value>Work Item Field Map</value>
+  </data>
+  <data name="SchemaCreation" xml:space="preserve">
+    <value>Generating Schema for Work Item Type '{0}'</value>
+  </data>
+  <data name="CoreFieldComment">
+    <value xml:space="preserve">{0} is a core field in Team Foundation Work Item Tracking and it is recommended that you use this field because it best suits the purpose</value>
+  </data>
+  <data name="UserMap" xml:space="preserve">
+    <value>User Map</value>
+  </data>
+  <data name="SchemaMap" xml:space="preserve">
+    <value>Schema Map</value>
+  </data>
+  <data name="SchemaValidation" xml:space="preserve">
+    <value>Validating work item file '{0}'</value>
+  </data>
+</root>

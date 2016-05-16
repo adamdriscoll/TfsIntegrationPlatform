@@ -1,0 +1,288 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AssemblyQualNameInvalid" xml:space="preserve">
+    <value>Assembly name must contain a valid assembly qualified type name.</value>
+  </data>
+  <data name="ChangesetIdNonNegative" xml:space="preserve">
+    <value>Changeset Id must be a non-negative value</value>
+  </data>
+  <data name="DefaultEventString" xml:space="preserve">
+    <value>Unspecified migration event.</value>
+  </data>
+  <data name="DependentProviderMissing" xml:space="preserve">
+    <value>A provider dependency could not be resolved.  Provider not found: {0}.</value>
+  </data>
+  <data name="ErrorAbortingSession" xml:space="preserve">
+    <value>Session cannot be aborted because it is neither running nor paused.</value>
+  </data>
+  <data name="ErrorCompletingSession" xml:space="preserve">
+    <value>Session cannot be completed because it is not running.</value>
+  </data>
+  <data name="ErrorCreateLinkingEngine" xml:space="preserve">
+    <value>Provider could not instantiate a linking engine object.</value>
+  </data>
+  <data name="ErrorCreatingProviderFromXml" xml:space="preserve">
+    <value>Error creating migration provider factory instance from configuration xml.</value>
+  </data>
+  <data name="ErrorExecutingNamedSQLResource" xml:space="preserve">
+    <value>An unexpected error occurred while executing an embedded SQL resource.  The error details are: {0}</value>
+  </data>
+  <data name="ErrorGetWorkItem" xml:space="preserve">
+    <value>Failed to get work item.</value>
+  </data>
+  <data name="ErrorInvalidArg" xml:space="preserve">
+    <value>Argument '{0}' is invalid.</value>
+  </data>
+  <data name="ErrorNoWitSessionInLinking" xml:space="preserve">
+    <value>No work item tracking session is specified in the linking engine.</value>
+  </data>
+  <data name="ErrorPausingSession" xml:space="preserve">
+    <value>Attempt to pause an inactive session</value>
+  </data>
+  <data name="ErrorResumingSession" xml:space="preserve">
+    <value>Session cannot be resumed because it is not running.</value>
+  </data>
+  <data name="ErrorSessionAlreadyRunning" xml:space="preserve">
+    <value>Session is already running.</value>
+  </data>
+  <data name="ErrorStartingSession" xml:space="preserve">
+    <value>Session cannot be started because it is already running.</value>
+  </data>
+  <data name="EventProviderAttributeMissing" xml:space="preserve">
+    <value>Unable to load event sink provider attribute.</value>
+  </data>
+  <data name="EventProviderNotExist" xml:space="preserve">
+    <value>Event sink provider does not exist: {0}</value>
+  </data>
+  <data name="FileElementEmpty" xml:space="preserve">
+    <value>The File element is missing or empty.</value>
+  </data>
+  <data name="GroupingError_Add" xml:space="preserve">
+    <value>Cannot add new actions to a locked change grouping</value>
+  </data>
+  <data name="GroupingError_Comment" xml:space="preserve">
+    <value>Cannot change the grouping comment after being locked</value>
+  </data>
+  <data name="GroupingError_Name" xml:space="preserve">
+    <value>Cannot change the grouping name after being locked</value>
+  </data>
+  <data name="GroupingError_Order" xml:space="preserve">
+    <value>Cannot change the grouping execution order after being locked</value>
+  </data>
+  <data name="GroupingError_Owner" xml:space="preserve">
+    <value>Cannot change the grouping owner after being locked</value>
+  </data>
+  <data name="GroupingError_SessionId" xml:space="preserve">
+    <value>Cannot change the grouping session ID after being locked</value>
+  </data>
+  <data name="GroupingError_SourceId" xml:space="preserve">
+    <value>Cannot change the grouping source Id after being locked</value>
+  </data>
+  <data name="GroupingError_Time" xml:space="preserve">
+    <value>Cannot change the grouping time after being locked</value>
+  </data>
+  <data name="NoAbortNonStarted" xml:space="preserve">
+    <value>Attempt to abort a non-started session</value>
+  </data>
+  <data name="NoCompleteAbortedException" xml:space="preserve">
+    <value>Cannot complete an aborted session.</value>
+  </data>
+  <data name="OneSessionPerTextReport" xml:space="preserve">
+    <value>Cannot register more than one session to TextReport</value>
+  </data>
+  <data name="SessionAborted" xml:space="preserve">
+    <value>Session has been aborted.</value>
+  </data>
+  <data name="SessionAlreadyStarted" xml:space="preserve">
+    <value>Attempt to start an already started session.</value>
+  </data>
+  <data name="SessionComplete" xml:space="preserve">
+    <value>Session complete</value>
+  </data>
+  <data name="SessionPaused" xml:space="preserve">
+    <value>Session has been paused.</value>
+  </data>
+  <data name="SessionResumed" xml:space="preserve">
+    <value>Session has been resumed.</value>
+  </data>
+  <data name="SessionStarting" xml:space="preserve">
+    <value>Starting session.</value>
+  </data>
+  <data name="SessionUsesUndefTfs" xml:space="preserve">
+    <value>The session {0} references an undefined TFS server {1}.</value>
+  </data>
+  <data name="SettingDefinedTwice" xml:space="preserve">
+    <value>The setting {0} was defined more than once in the same scope.</value>
+  </data>
+  <data name="SettingNotFound" xml:space="preserve">
+    <value>The setting {0} was not found.</value>
+  </data>
+  <data name="SQLMissingConnectionString" xml:space="preserve">
+    <value>The SQL configuration is missing the ConnectionString element.  The configuration must either define the Server and Database settings or the ConnectionString setting.</value>
+  </data>
+  <data name="SQLReportConnectionStringNotValid" xml:space="preserve">
+    <value>Unable to connect to the reporting SQL server using the specified connection string.</value>
+  </data>
+  <data name="SQLReportMissingDatabase" xml:space="preserve">
+    <value>The SQL report provider configuration is missing the Database element.  The SQL report adaptor must either define the Server and Database settings or the ConnectionString setting.</value>
+  </data>
+  <data name="SQLReportMissingServer" xml:space="preserve">
+    <value>The SQL report provider configuration is missing the Server attribute.  The SQL report adaptor must either define the Server and Database settings or the ConnectionString setting.</value>
+  </data>
+  <data name="TooManyChangeGroupsReturned" xml:space="preserve">
+    <value>An unexpected error occurred while querying for the next version control change grouping.  One change group was expected but multiple groups were returned.</value>
+  </data>
+  <data name="TwoProvidersOneName" xml:space="preserve">
+    <value>Two providers using the same name: {0}</value>
+  </data>
+  <data name="TwoTargetsOneName" xml:space="preserve">
+    <value>There can only be one migration target named {0}</value>
+  </data>
+  <data name="UICredProvider_MessageText" xml:space="preserve">
+    <value>Connecting to Team Foundation Server</value>
+  </data>
+  <data name="UICredProvider_TitleText" xml:space="preserve">
+    <value>Connect to {0}</value>
+  </data>
+  <data name="UnableToLoadType" xml:space="preserve">
+    <value>Unable to load type: {0}</value>
+  </data>
+  <data name="UnknownInitError" xml:space="preserve">
+    <value>An unknown error occurred while loading the migration configuration.  {0}</value>
+  </data>
+  <data name="UnknownLinkingException" xml:space="preserve">
+    <value>An unexpected error occurred while processing links.</value>
+  </data>
+  <data name="UnknownMigrationTarget" xml:space="preserve">
+    <value>Unknown migration target {0}</value>
+  </data>
+  <data name="UserNotInServiceAccountGroup" xml:space="preserve">
+    <value>The user '{0}' that runs work item migration is not a member of Service Accounts Group on server '{1}'.</value>
+  </data>
+  <data name="FailureCreatingNewActionRow" xml:space="preserve">
+    <value>An unexpected failure occurred while creating a new version control migration action row.</value>
+  </data>
+  <data name="UnknownChangeStatusValue" xml:space="preserve">
+    <value>An unknown ChangeStatus value "{0}" was encountered.</value>
+  </data>
+  <data name="WrongRowCountUpdatingActions" xml:space="preserve">
+    <value>Fail to update action row - expected 1 row, actually got {0}</value>
+  </data>
+</root>

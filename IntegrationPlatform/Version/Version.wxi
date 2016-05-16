@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Include xmlns="http://schemas.microsoft.com/wix/2006/wi">
+  <!-- ********************************************************************************************* -->
+  <!-- Manually update to keep setup aligned with version.cs.                                        -->
+  <!-- ********************************************************************************************* -->
+
+  <!-- ProductVersion should match version.cs and a new GUID should be generated for every update -->
+  <?define ProductCode = "{03E02C3F-1C24-448D-8993-977F7934D8BF}" ?>
+  <?define ProductVersion = 2.2.20312?>
+</Include>

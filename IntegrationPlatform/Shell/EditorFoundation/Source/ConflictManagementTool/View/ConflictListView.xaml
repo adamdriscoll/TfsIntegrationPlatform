@@ -1,0 +1,261 @@
+﻿<!-- Copyright © Microsoft Corporation.  All Rights Reserved.  This code released under the terms of the Microsoft Public License (MS-PL, http://opensource.org/licenses/ms-pl.html.) -->
+<UserControl x:Class="Microsoft.TeamFoundation.Migration.Shell.ConflictManagement.ConflictListView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:Microsoft.TeamFoundation.Migration.Shell.ConflictManagement"
+    xmlns:properties="clr-namespace:Microsoft.TeamFoundation.Migration.Shell.Properties" DataContextChanged="UserControl_DataContextChanged"
+    Width="600" Background="{DynamicResource WindowBackgroundBrush}">
+    <UserControl.Resources>
+        <Style TargetType="{x:Type ListViewItem}"/>
+        <CollectionViewSource x:Key="src" Source="{Binding FilteredConflicts}">
+            <CollectionViewSource.GroupDescriptions>
+                <PropertyGroupDescription PropertyName="ConflictTypeFriendlyName"/>
+            </CollectionViewSource.GroupDescriptions>
+        </CollectionViewSource>
+        <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
+    </UserControl.Resources>
+    <Grid x:Name="main">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto" MinHeight="30" />
+            <RowDefinition Height="150" MinHeight="100" MaxHeight="200" />
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <TextBlock Text="Conflicts" Margin="0,6,6,6" Style="{DynamicResource PageTitle}" Grid.Row="0" Background="{DynamicResource WindowBackgroundBrush}"/>
+        <DockPanel Grid.Row="1" Margin="0,0,0,6">
+            <Button x:Name="runtimeConflictsButton" DockPanel.Dock="Right" Margin="6,0,0,0" Click="runtimeConflictsButton_Click">
+                <Button.Content>
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="..\Resources\Images\warning.png">
+                            <Image.Style>
+                                <Style>
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding RuntimeConflictCount}" Value="0">
+                                            <Setter Property="Image.Visibility" Value="Collapsed" />
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Image.Style>
+                        </Image>
+                        <TextBlock Text="{Binding RuntimeConflictCount, StringFormat='View Runtime Conflicts ({0})'}" />
+                    </StackPanel>
+                </Button.Content>
+            </Button>
+            <Button x:Name="rulesButton" DockPanel.Dock="Right" Margin="6,0,0,0" Content="View Rules" Click="rulesButton_Click" />
+            <Button x:Name="clearButton" DockPanel.Dock="Right" Margin="6,0,0,0" Content="Clear Resolved" Click="clearButton_Click" />
+            <TextBlock Text="Migration Source:" DockPanel.Dock="Left" VerticalAlignment="Center"/>
+            <ComboBox ItemsSource="{Binding MigrationSources}" Margin="6,0,0,0" SelectedItem="{Binding SelectedMigrationSource}" DisplayMemberPath="FriendlyName" />
+        </DockPanel>
+        <ListView x:Name="conflictsListView" Grid.Row="2" IsSynchronizedWithCurrentItem="True" ItemsSource="{Binding Source={StaticResource src}}" SizeChanged="ListView_SizeChanged" SelectionChanged="conflictsListView_SelectionChanged" GridViewColumnHeader.Click="conflictsListView_Click" SelectionMode="Single">
+            <ListView.Resources>
+                <ContextMenu x:Key="contextMenu">
+                    <MenuItem Header="View Conflict Details" Click="MenuItem_Click" FontWeight="Bold"/>
+                    <MenuItem Header="Preview Resolvable Conflicts" Click="previewButton_Click" IsEnabled="{Binding CanSave}"/>
+                    <MenuItem Header="Resolve Conflict(s)" Click="btnResolve_Click" IsEnabled="{Binding CanSave}"/>
+                </ContextMenu>
+                <local:IsResolvedConverter x:Key="isResolvedConverter"/>
+                <local:IsResolvableConverter x:Key="isResolvableConverter"/>
+                <local:ResolvedStatusConverter x:Key="resolvedStatusConverter"/>
+            </ListView.Resources>
+            <ListView.ItemContainerStyle>
+                <Style TargetType="{x:Type ListViewItem}" BasedOn="{StaticResource {x:Type ListViewItem}}">
+                    <Setter Property="Foreground" Value="{Binding IsResolved, Converter={StaticResource isResolvedConverter}}"/>
+                    <Setter Property="ContextMenu" Value="{StaticResource contextMenu}"/>
+                    <EventSetter Event="MouseDoubleClick" Handler="conflictsListView_MouseDoubleClick"/>
+                    <EventSetter Event="KeyDown" Handler="conflictsListView_KeyDown"/>
+                </Style>
+            </ListView.ItemContainerStyle>
+            <ListView.GroupStyle>
+                <GroupStyle>
+                    <GroupStyle.ContainerStyle>
+                        <Style TargetType="{x:Type GroupItem}">
+                            <Setter Property="Margin" Value="0,0,0,5"/>
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="{x:Type GroupItem}">
+                                        <Expander IsExpanded="True" BorderBrush="#FFA4B97F" BorderThickness="0,0,0,1">
+                                            <Expander.Header>
+                                                <DockPanel>
+                                                    <TextBlock FontWeight="Bold" Text="{Binding Path=Name}" />
+                                                    <TextBlock FontWeight="Bold" Text="{Binding Path=ItemCount, StringFormat=({0})}"/>
+                                                </DockPanel>
+                                            </Expander.Header>
+                                            <Expander.Content>
+                                                <ItemsPresenter />
+                                            </Expander.Content>
+                                        </Expander>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+                    </GroupStyle.ContainerStyle>
+                </GroupStyle>
+            </ListView.GroupStyle>
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn HeaderStringFormat="Type" Width="32">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <Grid>
+                                    <Grid.ToolTip>
+                                        <TextBlock>
+                                            <TextBlock.Text>
+                                                <MultiBinding StringFormat="{}{0} Conflict ({1})">
+                                                    <Binding Path="TypeName"/>
+                                                    <Binding Path="IsResolved"/>
+                                                </MultiBinding>
+                                            </TextBlock.Text>
+                                        </TextBlock>
+                                    </Grid.ToolTip>
+                                    <Image Source="{Binding TypeIcon}" Width="16"/>
+                                    <Image HorizontalAlignment="Right" VerticalAlignment="Bottom" Source="{Binding IsResolved, Converter={StaticResource resolvedStatusConverter}}" Width="8"/>
+                                </Grid>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Header="Id" HeaderStringFormat="ConflictInternalId" Width="50">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding ConflictInternalId}" ToolTip="{Binding ConflictInternalId}" TextTrimming="CharacterEllipsis"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Header="Creation Time" HeaderStringFormat="CreationTime" Width="100">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding CreationTime}" ToolTip="{Binding CreationTime}" TextTrimming="CharacterEllipsis"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Header="Source/Local" HeaderStringFormat="MigrationSource" Width="100">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding MigrationSource}" ToolTip="{Binding MigrationSource}" TextTrimming="CharacterEllipsis"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Header="Target/Other" HeaderStringFormat="MigrationOther" Width="100">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding MigrationOther}" ToolTip="{Binding MigrationOther}" TextTrimming="CharacterEllipsis"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Header="Scope" HeaderStringFormat="Scope">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <DockPanel>
+                                    <Image Source="../Resources/Images/check.png" Width="10" ToolTip="All conflicts with this icon will be simultaneously resolved.">
+                                        <Image.Style>
+                                            <Style>
+                                                <Style.Triggers>
+                                                    <DataTrigger Binding="{Binding IsResolvable}" Value="false">
+                                                        <Setter Property="Image.Visibility" Value="Hidden"/>
+                                                    </DataTrigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </Image.Style>
+                                    </Image>
+                                    <TextBlock Height="17" Text="{Binding Scope}" ToolTip="{Binding Scope}" TextTrimming="CharacterEllipsis"/>
+                                </DockPanel>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <TextBlock Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center"  Text="Loading..." Visibility="{Binding IsActiveConflictsBWBusy, Converter={StaticResource BooleanToVisibilityConverter}}"/>
+        <GridSplitter Grid.Row="3" HorizontalAlignment="Stretch" Focusable="False" />
+        <Line Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Center" Stroke="{DynamicResource {x:Static SystemColors.WindowTextBrushKey}}" X1="0" X2="60" Y1="-2" Y2="-2" Margin="6" StrokeThickness="0.75"/>
+        <Line Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Center" Stroke="{DynamicResource {x:Static SystemColors.WindowTextBrushKey}}" X1="0" X2="60" Y1="3" Y2="3" Margin="6" StrokeThickness="0.75"/>
+        <Grid x:Name="grid" Grid.Row="4" DataContext="{Binding CurrentRule}">
+            <Grid Margin="9" Grid.Row="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid.Style>
+                    <Style>
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding}" Value="{x:Null}">
+                                <Setter Property="Grid.Visibility" Value="Hidden" />
+                            </DataTrigger>
+                            <DataTrigger Binding="{Binding IsResolved}" Value="Resolved">
+                                <Setter Property="Grid.IsEnabled" Value="False" />
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </Grid.Style>
+                  <Grid Grid.Row="0">
+                    <Grid.ColumnDefinitions>
+                      <ColumnDefinition Width="Auto"/>
+                      <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Text="Resolve Conflict" Margin="0,6,6,6" Style="{DynamicResource PageTitle}" Grid.Column="0"/>
+                    <StackPanel Grid.Column="1" HorizontalAlignment="Right" Orientation="Horizontal">
+                      <Image x:Uid="icon" x:Name="icon" Source="..\Resources\Images\help.png" Width="16" Height="16" 
+                             Margin="6,0,6,0" VerticalAlignment="Center"/>
+                      <TextBlock Margin="0,0,6,0" x:Uid="textblock26" VerticalAlignment="Center">
+                        <Hyperlink x:Name="m_helpLink" NavigateUri="Test" x:Uid="hyperlink13"
+                                   Localization.Attributes="NavigateUri (Unmodifiable Readable)" RequestNavigate="OnHyperlinkRequestNavigate">
+                          <TextBlock Text="Help" x:Uid="textblock27"/>
+                        </Hyperlink>
+                      </TextBlock>
+                    </StackPanel>
+                  </Grid>
+                <Grid Grid.Row="1" Grid.IsSharedSizeScope="True" Background="LightGray">
+                    <ItemsControl ItemsSource="{Binding CustomControl.Details}" Margin="4" Width="Auto">
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto" SharedSizeGroup="Label1" />
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+                                    <TextBlock Grid.Column="0" Text="{Binding Key, StringFormat={}{0}:}" Margin="0,0,6,0" />
+                                    <ContentControl Grid.Column="1" Content="{Binding Value}" />
+                                </Grid>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+                </Grid>
+                <ScrollViewer Grid.Row="2" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" Margin="0,6,0,6">
+                    <Grid Margin="6">
+                        <Grid x:Name="customControl">
+                            <Grid.Style>
+                                <Style>
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding ElementName=advancedButton, Path=IsChecked}" Value="True">
+                                            <Setter Property="Grid.Visibility" Value="Collapsed" />
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Grid.Style>
+                            <ContentControl Width="Auto" Content="{Binding CustomControl.UserControl}" />
+                        </Grid>
+                        <Grid x:Name="advancedEdit">
+                            <Grid.Style>
+                                <Style>
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding ElementName=advancedButton, Path=IsChecked}" Value="False">
+                                            <Setter Property="Grid.Visibility" Value="Collapsed" />
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Grid.Style>
+                            <local:RuleEditView Width="Auto" />
+                        </Grid>
+                    </Grid>
+                </ScrollViewer>
+                <StackPanel Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Right">
+                    <ToggleButton x:Name="advancedButton" Content="Advanced..." IsChecked="{Binding ShowAdvancedOptions}" Visibility="{Binding ElementName=main, Path=DataContext.ShellViewModel.IsAdvancedRulesEnabled, Converter={StaticResource BooleanToVisibilityConverter}}" MinWidth="75" />
+                    <Button x:Name="previewButton" Content="Preview" Click="previewButton_Click" IsEnabled="{Binding CanSave}" Margin="6,0,0,0" MinWidth="75"/>
+                    <Button x:Name="btnResolve" Content="Resolve" Click="btnResolve_Click" IsEnabled="{Binding CanSave}" Margin="6,0,0,0" MinWidth="75" />
+                </StackPanel>
+            </Grid>
+        </Grid>
+    </Grid>
+</UserControl>

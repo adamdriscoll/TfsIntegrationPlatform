@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Include>
+  <!-- Variables that must be set when building this project.  See installation.csproj. -->
+  <?ifndef RawBinPath ?>
+  <?define RawBinPath=$(var.RawBinPath)?>
+  <?endif ?>
+  <?ifndef PluginBinPath ?>
+  <?define PluginBinPath=$(var.PluginPath)?>
+  <?endif ?>
+  <?ifndef AdapterBinPath ?>
+  <?define AdapterBinPath=$(var.AdapterBinPath)?>
+  <?endif ?>
+  <?ifndef AddinBinPath ?>
+  <?define AddinBinPath=$(var.AddinBinPath)?>
+  <?endif ?>
+  <?ifndef JobBinPath ?>
+  <?define JobBinPath=$(var.JobBinPath)?>
+  <?endif ?>
+  <?ifndef ConfigurationPath ?>
+  <?define ConfigurationPath=$(var.ConfigurationPath)?>
+  <?endif ?>
+  <?ifndef DocumentationPath ?>
+  <?define DocumentationPath=$(var.DocumentationPath)?>
+  <?endif ?>
+  <?ifndef ReportPath ?>
+  <?define ReportPath=$(var.ReportPath)?>
+  <?endif ?>
+  
+  <!-- Computed paths to keep relative references clean -->
+  <?ifndef VersionPath ?>
+  <?define VersionPath=$(var.TfsIPRoot)\Version?>
+  <?endif ?>
+
+  <?ifndef DBPath ?>
+  <?define DBPath=$(var.InstallRootPath)\Database?>
+  <?endif ?>
+  <?ifndef UIPath ?>
+  <?define UIPath=$(var.InstallRootPath)\UI?>
+  <?endif ?>
+</Include>

@@ -1,0 +1,46 @@
+﻿<UserControl x:Class="Microsoft.TeamFoundation.Migration.Shell.ConflictsView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:Microsoft.TeamFoundation.Migration.Shell">
+
+    <Grid >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <ListBox Grid.Row="0" Grid.ColumnSpan="3" Margin="5" ItemsSource="{Binding ActiveSessionGroup.SessionViewModels}">
+            <ListBox.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <StackPanel Orientation="Horizontal"/>
+                </ItemsPanelTemplate>
+            </ListBox.ItemsPanel>
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <DockPanel>
+                        <TextBlock DockPanel.Dock="Top" Text="{Binding Path=SessionConfig.FriendlyName}"/>
+                        <!-- ConflictTypeTotals -->
+                        <ListView Style="{DynamicResource KeyValuePairListViewStyle}" ItemsSource="{Binding Path=ConflictTypeTotals}" />
+                    </DockPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <TabControl Grid.Row="1" Grid.ColumnSpan="3" Margin="5" SelectedIndex="0" ItemsSource="{Binding ActiveSessionGroup.SessionViewModels}" >
+            <TabControl.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding Path=SessionConfig.FriendlyName}"/>
+                </DataTemplate>
+            </TabControl.ItemTemplate>
+            <TabControl.ContentTemplate>
+                <DataTemplate>
+                    <local:ConflictCollectionView DataContext="{Binding}"/>
+                </DataTemplate>
+            </TabControl.ContentTemplate>
+        </TabControl>
+    </Grid>
+</UserControl>

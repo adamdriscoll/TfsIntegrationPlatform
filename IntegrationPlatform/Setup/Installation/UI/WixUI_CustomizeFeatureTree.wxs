@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+    <Fragment>
+        <UI Id="WixUI_CustomizeFeatureTree">
+          <TextStyle Id="WixUI_Font_Normal" FaceName="Tahoma" Size="8" />
+          <TextStyle Id="WixUI_Font_Bigger" FaceName="Tahoma" Size="12" />
+          <TextStyle Id="WixUI_Font_Title" FaceName="Tahoma" Size="9" Bold="yes" />
+
+          <Property Id="DefaultUIFont" Value="WixUI_Font_Normal" />
+          <Property Id="WixUI_Mode" Value="FeatureTree" />
+
+          <DialogRef Id="ErrorDlg" />
+          <DialogRef Id="FatalError" />
+          <DialogRef Id="FilesInUse" />
+          <DialogRef Id="MsiRMFilesInUse" />
+          <DialogRef Id="PrepareDlg" />
+          <DialogRef Id="ProgressDlg" />
+          <DialogRef Id="ResumeDlg" />
+          <DialogRef Id="UserExit" />
+          <DialogRef Id="ServiceAccountDlg"/>
+          
+          <Publish Dialog="WelcomeDlg" Control="Next" Event="NewDialog" Value="LicenseAgreementDlg">1</Publish>
+
+          <Publish Dialog="LicenseAgreementDlg" Control="Back" Event="NewDialog" Value="WelcomeDlg">1</Publish>
+          <Publish Dialog="LicenseAgreementDlg" Control="Next" Event="NewDialog" Value="CustomizeDlg">LicenseAccepted = "1"</Publish>
+
+          <Publish Dialog="CustomizeDlg" Control="Back" Event="NewDialog" Value="MaintenanceTypeDlg" Order="1">Installed</Publish>
+          <Publish Dialog="CustomizeDlg" Control="Back" Event="NewDialog" Value="LicenseAgreementDlg" Order="2">NOT Installed</Publish>
+          <Publish Dialog="CustomizeDlg" Control="Next" Event="NewDialog" Value="ServiceAccountDlg"><![CDATA[&FEAT_SyncServices>2]]></Publish>
+          <Publish Dialog="CustomizeDlg" Control="Next" Event="NewDialog" Value="DbInformationDlg"><![CDATA[&FEAT_SyncServices<=2]]></Publish>
+ 
+          <Publish Dialog="ServiceAccountDlg" Control="Back" Event="NewDialog" Value="CustomizeDlg">1</Publish>
+          <Publish Dialog="ServiceAccountDlg" Control="Next" Event="SpawnDialog" Value="PasswordMismatchDlg">
+            <![CDATA[SERVICEACCOUNTPASSWORD<>CONFIRMSERVICEACCOUNTPASSWORD]]>
+          </Publish>
+          <Publish Dialog="ServiceAccountDlg" Control="Next" Event="NewDialog" Value="DbInformationDlg">
+            <![CDATA[SERVICEACCOUNTPASSWORD=CONFIRMSERVICEACCOUNTPASSWORD]]>
+          </Publish>
+          <Publish Dialog="DbInformationDlg" Control="Next" Event="DoAction" Value="CheckDatabaseConnectivity" Order="1">1</Publish>
+          <Publish Dialog="DbInformationDlg" Control="Next" Event="DoAction" Value="CheckDBPermission" Order="2">
+            <![CDATA[(CACURRENTDBCHECK = "pass")]]>
+          </Publish>
+          <Publish Dialog="DbInformationDlg" Control="Next" Event="NewDialog" Value="VerifyReadyDlg" Order="3">
+            <![CDATA[(CACURRENTDBCHECK = "pass") AND (CACHECKDBPERMISSION = "pass")]]>
+          </Publish>
+          <Publish Dialog="DbInformationDlg" Control="Next" Event="SpawnDialog" Value="DbConnectErrorDlg" Order="3">
+            <![CDATA[(CACURRENTDBCHECK <> "pass")]]>
+          </Publish>
+          <Publish Dialog="DbInformationDlg" Control="Next" Event="SpawnDialog" Value="GrantPermissionErrorDlg" Order="3">
+            <![CDATA[(CACURRENTDBCHECK = "pass")  AND (CACHECKDBPERMISSION <> "pass")]]>
+          </Publish>
+          <Publish Dialog="DbInformationDlg" Control="Back" Event="NewDialog" Value="CustomizeDlg" Order="1"><![CDATA[&FEAT_SyncServices<=2]]></Publish>
+          <Publish Dialog="DbInformationDlg" Control="Back" Event="NewDialog" Value="ServiceAccountDlg" Order="1"><![CDATA[&FEAT_SyncServices>2]]></Publish>
+          
+          <Publish Dialog="VerifyReadyDlg" Control="Back" Event="DoAction" Value="ResetCACURRENTDBCHECK" Order="2">1</Publish>
+          <Publish Dialog="VerifyReadyDlg" Control="Back" Event="DoAction" Value="ResetCACHECKDBPERMISSION" Order="3">1</Publish>
+          <Publish Dialog="VerifyReadyDlg" Control="Back" Event="NewDialog" Value="DbInformationDlg" Order="4">NOT Installed OR WixUI_InstallMode = "Change"</Publish>
+
+          <Publish Dialog="VerifyReadyDlg" Control="Back" Event="NewDialog" Value="MaintenanceTypeDlg" Order="2">Installed</Publish>
+
+          <Publish Dialog="MaintenanceWelcomeDlg" Control="Next" Event="NewDialog" Value="MaintenanceTypeDlg">1</Publish>
+
+          <Publish Dialog="MaintenanceTypeDlg" Control="ChangeButton" Event="NewDialog" Value="CustomizeDlg">1</Publish>
+          <Publish Dialog="MaintenanceTypeDlg" Control="RepairButton" Event="NewDialog" Value="VerifyReadyDlg"><![CDATA[&FEAT_MigrationTool<>3]]></Publish>
+          <Publish Dialog="MaintenanceTypeDlg" Control="RepairButton" Event="NewDialog" Value="ServiceAccountDlg"><![CDATA[&FEAT_MigrationTool=3]]></Publish>
+          <Publish Dialog="MaintenanceTypeDlg" Control="RemoveButton" Event="NewDialog" Value="VerifyReadyDlg">1</Publish>
+          <Publish Dialog="MaintenanceTypeDlg" Control="Back" Event="NewDialog" Value="MaintenanceWelcomeDlg">1</Publish>
+        
+          <Publish Dialog="ExitDialog" Control="Finish" Event="EndDialog" Value="Return" Order="999">1</Publish>
+        </UI>
+
+        <UIRef Id="WixUI_Common" />
+    </Fragment>
+</Wix>

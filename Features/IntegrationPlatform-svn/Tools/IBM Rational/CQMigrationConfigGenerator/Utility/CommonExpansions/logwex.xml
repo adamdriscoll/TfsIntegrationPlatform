@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippet Format="1.0.0">
+    <Header>
+        <Title>log exception</Title>
+        <Shortcut>logwex</Shortcut>
+        <Description>Expansion snippet for Logger.WriteException</Description>
+        <SnippetTypes>
+            <SnippetType>Expansion</SnippetType>
+        </SnippetTypes>
+    </Header>
+    <Snippet>
+        <Declarations>
+            <Literal default="true">
+                <ID>source</ID>
+                <ToolTip>LogSource for this message</ToolTip>
+                <Default>Common</Default>
+            </Literal>
+            <Literal default="true">
+                <ID>exception</ID>
+                <ToolTip>Exception to log</ToolTip>
+                <Default>null</Default>
+            </Literal>
+        </Declarations>
+        <Code Language="csharp" Format="CData"><![CDATA[Logger.WriteException(LogSource.$source$, $exception$);$end$]]>
+	</Code>
+    </Snippet>
+</CodeSnippet>

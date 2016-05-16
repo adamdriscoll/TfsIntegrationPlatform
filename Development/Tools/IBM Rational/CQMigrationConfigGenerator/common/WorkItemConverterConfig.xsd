@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="WorkItemConverterConfig" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+  <xs:element name="WorkItemConverter">
+    <xs:complexType>
+      <xs:all>
+        <xs:element name="Source" minOccurs="1" maxOccurs="1">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:any processContents="skip" />
+            </xs:sequence>
+            <xs:attribute name="id" type="xs:string" use="required" />
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="VSTS" minOccurs="1" maxOccurs="1">
+          <xs:complexType>
+            <xs:all>
+              <xs:element name="URI" type="NonEmptyString" minOccurs="1" maxOccurs="1"/>
+              <xs:element name="ProjectName" type="NonEmptyString" minOccurs="1" maxOccurs="1"/>
+            </xs:all>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="ExitOnError" type="NonEmptyString" minOccurs="0" maxOccurs="1" />
+        <!--<xs:element name="EditSourceItem" minOccurs="0" maxOccurs="1">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:enumeration value="NoChange" />
+              <xs:enumeration value="AddComment" />
+              <xs:enumeration value="AddCommentAndResolve" />
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>-->
+        <xs:element name="OutputDirectory" type="NonEmptyString" minOccurs="0" maxOccurs="1" />
+        <!--<xs:element name="LadyBugProcessing" minOccurs="0" maxOccurs="1">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="PSField" minOccurs="1" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:attribute name="name" type="NonEmptyString" use="required" />
+                  <xs:attribute name="value" type="NonEmptyString" use="required" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>-->
+        <!--<xs:element name="SendSummaryEmail" minOccurs="0" maxOccurs="1">
+          <xs:complexType>
+            <xs:all>
+              <xs:element name="From" type="NonEmptyString" minOccurs="1" maxOccurs="1"/>
+              <xs:element name="To" type="NonEmptyString" minOccurs="1" maxOccurs="1"/>
+              <xs:element name="SMTPServer" type="NonEmptyString" minOccurs="1" maxOccurs="1"/>
+            </xs:all>
+          </xs:complexType>
+        </xs:element>-->
+
+      </xs:all>
+    </xs:complexType>
+  </xs:element>
+
+  <!-- Non-empty string -->
+  <xs:simpleType name="NonEmptyString">
+   <xs:restriction base="xs:string">
+          <xs:minLength value="1" />
+      </xs:restriction>
+  </xs:simpleType>
+</xs:schema>

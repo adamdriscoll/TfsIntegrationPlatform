@@ -1,0 +1,685 @@
+﻿<!-- Copyright © Microsoft Corporation.  All Rights Reserved.  This code released under the terms of the Microsoft Public License (MS-PL, http://opensource.org/licenses/ms-pl.html.) -->
+<UserControl x:Class="Microsoft.TeamFoundation.Migration.Shell.View.ConfigurationView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:eg="clr-namespace:Microsoft.TeamFoundation.Migration.Shell.Globalization"
+        xmlns:ev="clr-namespace:Microsoft.TeamFoundation.Migration.Shell.View"
+        xmlns:v="clr-namespace:Microsoft.TeamFoundation.Migration.Shell"
+        xmlns:vp="clr-namespace:Microsoft.TeamFoundation.Migration.Shell.Properties"
+        xmlns:diagnostics="clr-namespace:System.Diagnostics;assembly=WindowsBase"
+        xmlns:local="clr-namespace:Microsoft.TeamFoundation.Migration.BusinessModel;assembly=Microsoft.TeamFoundation.Migration.EntityModel"
+        xmlns:sys="clr-namespace:System;assembly=mscorlib" 
+        Background="{DynamicResource WindowBackgroundBrush}"
+        DataContextChanged="UserControl_DataContextChanged"
+        x:Name="main">
+    <UserControl.Resources>
+      <eg:ManagedResourceProvider x:Key="TfsMigrationShellResources" ResourceManager="{x:Static vp:ShellResources.ResourceManager}" />
+      <Style TargetType="{x:Type GroupBox}">
+        <Setter Property="Focusable" Value="False" />
+        <Setter Property="KeyboardNavigation.IsTabStop" Value="False" />
+      </Style>
+      <Style TargetType="{x:Type Menu}">
+        <Setter Property="Focusable" Value="False" />
+        <Setter Property="KeyboardNavigation.IsTabStop" Value="False" />
+      </Style>
+      <Style TargetType="{x:Type ItemsControl}">
+        <Setter Property="Focusable" Value="False" />
+        <Setter Property="KeyboardNavigation.IsTabStop" Value="False" />
+      </Style>
+      <Style TargetType="{x:Type StackPanel}">
+        <Setter Property="Focusable" Value="False" />
+      </Style>
+      <Style TargetType="{x:Type Grid}">
+        <Setter Property="Focusable" Value="False" />
+      </Style>
+      <ObjectDataProvider x:Key="directionOfFlowTypes" MethodName="GetValues" ObjectType="{x:Type sys:Enum}">
+            <ObjectDataProvider.MethodParameters>
+                <x:Type TypeName="local:DirectionOfFlow" />
+            </ObjectDataProvider.MethodParameters>
+        </ObjectDataProvider>
+        <ObjectDataProvider x:Key="frequencyTypes" MethodName="GetValues" ObjectType="{x:Type sys:Enum}">
+            <ObjectDataProvider.MethodParameters>
+                <x:Type TypeName="local:Frequency" />
+            </ObjectDataProvider.MethodParameters>
+        </ObjectDataProvider>
+        <ObjectDataProvider x:Key="syncContextTypes" MethodName="GetValues" ObjectType="{x:Type sys:Enum}">
+            <ObjectDataProvider.MethodParameters>
+                <x:Type TypeName="local:SyncContext" />
+            </ObjectDataProvider.MethodParameters>
+        </ObjectDataProvider>
+        <ObjectDataProvider x:Key="sessionTypes" MethodName="GetValues" ObjectType="{x:Type sys:Enum}">
+            <ObjectDataProvider.MethodParameters>
+                <x:Type TypeName="local:SessionTypeEnum" />
+            </ObjectDataProvider.MethodParameters>
+        </ObjectDataProvider>
+
+        <DataTemplate x:Key="vcFilterStringTemplate">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" SharedSizeGroup="cloakedColumn" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    <ComboBox Grid.Column="0" SelectedIndex="0" Margin="0,0,6,0">
+                        <ComboBoxItem Content="Active" />
+                        <ComboBoxItem Content="Cloaked" IsSelected="{Binding FilterPair.Neglect}" />
+                    </ComboBox>
+                    <TextBox Grid.Column="1" Text="{Binding Path=LeftFilterItem.FilterString, UpdateSourceTrigger=PropertyChanged}" />
+                    <Button Grid.Column="2" x:Name="leftFilterStringButton" Content="..." Click="leftFilterStringButton_Click">
+                        <Button.Style>
+                            <Style>
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding LeftFilterStringExtension.Command}" Value="{x:Null}">
+                                        <Setter Property="Button.Visibility" Value="Collapsed" />
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
+                    </Button>
+                </Grid>
+                <Grid Grid.Column="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    <TextBox Grid.Column="0" Text="{Binding Path=RightFilterItem.FilterString, UpdateSourceTrigger=PropertyChanged}" />
+                    <Button Grid.Column="1" x:Name="rightFilterStringButton" Content="..." Click="rightFilterStringButton_Click" Margin="0,0,6,0">
+                        <Button.Style>
+                            <Style>
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding RightFilterStringExtension.Command}" Value="{x:Null}">
+                                        <Setter Property="Button.Visibility" Value="Collapsed" />
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
+                    </Button>
+                    <Button Grid.Column="2" x:Name="deleteFilterButton" Click="deleteFilterButton_Click" Margin="6,0,6,0" HorizontalAlignment="Left" Content="Delete"/>
+                </Grid>
+            </Grid>
+        </DataTemplate>
+        <DataTemplate x:Key="witOneWayFilterStringTemplate">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    <TextBox Grid.Column="0" Text="{Binding Path=LeftFilterItem.FilterString, UpdateSourceTrigger=PropertyChanged}" />
+                    <Button Grid.Column="1" x:Name="leftFilterStringButton" Content="..." Click="leftFilterStringButton_Click" Margin="0,0,6,0">
+                        <Button.Style>
+                            <Style>
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding LeftFilterStringExtension.Command}" Value="{x:Null}">
+                                        <Setter Property="Button.Visibility" Value="Collapsed" />
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
+                    </Button>
+                </Grid>
+                <Grid Grid.Column="1">
+                    <Button HorizontalAlignment="Right" x:Name="deleteFilterButton" Content="Delete" Click="deleteFilterButton_Click" Margin="0,0,6,0"/>
+                </Grid>
+            </Grid>
+        </DataTemplate>
+        <DataTemplate x:Key="witTwoWayFilterStringTemplate">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    <TextBox Grid.Column="0" Text="{Binding Path=LeftFilterItem.FilterString, UpdateSourceTrigger=PropertyChanged}" />
+                    <Button Grid.Column="1" x:Name="leftFilterStringButton" Content="..." Click="leftFilterStringButton_Click" Margin="0,0,6,0">
+                        <Button.Style>
+                            <Style>
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding LeftFilterStringExtension.Command}" Value="{x:Null}">
+                                        <Setter Property="Button.Visibility" Value="Collapsed" />
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
+                    </Button>
+                </Grid>
+                <Grid Grid.Column="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    <TextBox Grid.Column="0" Text="{Binding Path=RightFilterItem.FilterString, UpdateSourceTrigger=PropertyChanged}" />
+                    <Button Grid.Column="1" x:Name="rightFilterStringButton" Content="..." Click="rightFilterStringButton_Click" Margin="0,0,6,0">
+                        <Button.Style>
+                            <Style>
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding RightFilterStringExtension.Command}" Value="{x:Null}">
+                                        <Setter Property="Button.Visibility" Value="Collapsed" />
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
+                    </Button>
+                    <Button Grid.Column="2" x:Name="deleteFilterButton" Content="Delete" Click="deleteFilterButton_Click" Margin="0,0,6,0"/>
+                </Grid>
+            </Grid>
+        </DataTemplate>
+        
+        <ControlTemplate x:Key="configureSourceMenu" TargetType="{x:Type ContentControl}">
+            <Menu>
+                <Menu.Resources>
+                    <Style x:Key="ButtonFocusVisual">
+                        <Setter Property="Control.Template">
+                            <Setter.Value>
+                                <ControlTemplate>
+                                    <Rectangle Stroke="Black" StrokeDashArray="1 2" StrokeThickness="1" Margin="2" SnapsToDevicePixels="true"/>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                    <Style TargetType="Menu" BasedOn="{StaticResource {x:Type Menu}}">
+                        <Setter Property="FocusVisualStyle" Value="{StaticResource ButtonFocusVisual}"/>
+                        <Setter Property="Background" Value="{DynamicResource {x:Static SystemColors.ControlLightLightColor}}"/>
+                        <Setter Property="BorderBrush" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+                        <Setter Property="BorderThickness" Value="1"/>
+                        <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+                        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                        <Setter Property="VerticalContentAlignment" Value="Center"/>
+                        <Setter Property="Padding" Value="1"/>
+                    </Style>
+                    <Style TargetType="MenuItem" BasedOn="{StaticResource {x:Type MenuItem}}">
+                        <EventSetter Event="Click" Handler="MenuItem_Click" />
+                    </Style>
+                    <ev:ProviderEndpointConverter x:Key="providerEndpointConverter" />
+                </Menu.Resources>
+                <MenuItem HorizontalAlignment="Left">
+                    <MenuItem.ItemsSource>
+                        <MultiBinding Converter="{StaticResource providerEndpointConverter}">
+                            <Binding />
+                            <Binding ElementName="main" Path="DataContext.AllProviders" />
+                        </MultiBinding>
+                    </MenuItem.ItemsSource>
+                    <MenuItem.Header>
+                        <ContentPresenter />
+                    </MenuItem.Header>
+                    <MenuItem.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding ProviderName}"/>
+                        </DataTemplate>
+                    </MenuItem.ItemTemplate>
+                </MenuItem>
+            </Menu>
+        </ControlTemplate>
+
+        <DataTemplate DataType="{x:Type ev:SerializableSource}">
+            <Grid>
+                <Grid x:Name="configuration" Visibility="Collapsed">
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <Image Source="..\..\Graphics\Warning.png" Width="16" Margin="0,0,6,0"/>
+                        <ContentControl Content="Configure..." Template="{StaticResource configureSourceMenu}" />
+                    </StackPanel>
+                </Grid>
+                <Grid x:Name="editor" Grid.IsSharedSizeScope="True">
+                    <Grid.Resources>
+                        <ev:ProviderNameConverter x:Key="providerNameConverter" />
+                    </Grid.Resources>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" SharedSizeGroup="label" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Grid.Row="0" Grid.Column="0" Text="Name: " Margin="3" />
+                    <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding Model.FriendlyName, UpdateSourceTrigger=PropertyChanged}" Margin="3" ToolTip="The friendly name appears in generated comments and possibly in SQL Server Reporting Services reports if you have installed that feature." />
+                    <Grid Grid.Row="1" Grid.ColumnSpan="2">
+                        <ItemsControl ItemsSource="{Binding Properties}">
+                            <ItemsControl.ItemTemplate>
+                                <DataTemplate>
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="Auto" SharedSizeGroup="label" />
+                                            <ColumnDefinition Width="*" />
+                                        </Grid.ColumnDefinitions>
+                                        <TextBlock Grid.Column="0" Text="{Binding Key, StringFormat='{}{0}: '}" Margin="3" />
+                                        <TextBlock Grid.Column="1" Text="{Binding Value}" ToolTip="{Binding Value}" Margin="3" />
+                                    </Grid>
+                                </DataTemplate>
+                            </ItemsControl.ItemTemplate>
+                        </ItemsControl>
+                    </Grid>
+                    <TextBlock Grid.Row="2" Grid.Column="0" Text="Provider: " Margin="3" />
+                    <TextBlock Grid.Row="2" Grid.Column="1" Margin="3">
+                        <TextBlock.Text>
+                            <MultiBinding Converter="{StaticResource providerNameConverter}">
+                                <Binding Path="Model.ProviderReferenceName" />
+                                <Binding ElementName="main" Path="DataContext.AllProviders" />
+                            </MultiBinding>
+                        </TextBlock.Text>
+                    </TextBlock>
+                </Grid>
+            </Grid>
+            <DataTemplate.Triggers>
+                <DataTrigger Binding="{Binding IsConfigured}" Value="False">
+                    <Setter Property="Visibility" TargetName="configuration" Value="Visible" />
+                    <Setter Property="Visibility" TargetName="editor" Value="Hidden" />
+                </DataTrigger>
+            </DataTemplate.Triggers>
+        </DataTemplate>
+       
+        
+        <!-- TODO: Get this working... -->
+        <Style x:Key="ImageButton" TargetType="{x:Type Button}" BasedOn="{ev:DeferredStyle {x:Type Button}}">
+            <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+            <Setter Property="ContentTemplate">
+                <Setter.Value>
+                    <DataTemplate>
+                        <Grid>
+                            <Image Grid.Row="0"
+                            Source="{Binding Path=Image, diagnostics:PresentationTraceSources.TraceLevel=High}"
+                            Margin="5,5,5,5" />
+                            <TextBlock Grid.Row="1"
+                            Text="{TemplateBinding Content}"
+                            HorizontalAlignment="Center"/>
+                        </Grid>
+                    </DataTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </UserControl.Resources>
+    <Grid Margin="12">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <TabControl TabStripPlacement="Bottom">
+                <TabItem Header="Form">
+                    <Grid>
+                        <DockPanel>
+                            <ScrollViewer x:Name="configurationScrollViewer" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
+                                <StackPanel>
+                                    <Grid x:Uid="gridConfiguration">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition x:Uid="row1" Height="Auto"/>
+                                            <RowDefinition x:Uid="row2" Height="*"/>
+                                        </Grid.RowDefinitions>
+                                        <TextBlock Text="Configuration" Margin="0,6,6,6" Style="{DynamicResource PageTitle}" Grid.Row="0"/>
+                                        <Grid Grid.Row="1">
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="Auto"/>
+                                                <RowDefinition Height="Auto"/>
+                                            </Grid.RowDefinitions>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="Auto"/>
+                                                <ColumnDefinition Width="*"/>
+                                            </Grid.ColumnDefinitions>
+                                            <Label Grid.Row="0" Grid.Column="0" Content="Configuration Name: " Margin="6,3,6,6"
+                                                   ToolTip="Choose a name to identify your configuration."/>
+                                            <TextBox x:Name="configurationFriendlyNameTextBox" Grid.Column="1" Margin="6,3,6,6" Width="400" 
+                                                     Text="{Binding Path=Model.FriendlyName, UpdateSourceTrigger=PropertyChanged}" 
+                                                     TextChanged="configurationFriendlyNameTextBox_TextChanged" MaxLength="300" HorizontalAlignment="Left"/>
+                                            <Label Grid.Row="1" Grid.Column="0" Content="Workflow Type: " Margin="6,0,6,6"
+                                                   ToolTip="Choose the Workflow Type that matches  your scenario." />
+                                            <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Horizontal" Margin="6,0,6,6">
+                                                <StackPanel.Resources>
+                                                    <ev:WorkFlowTypeConverter x:Key="workFlowTypeConverter" />
+                                                </StackPanel.Resources>
+                                                <ComboBox x:Name="workFlowScenariosComboBox" ToolTipService.ShowOnDisabled="True" ToolTipService.ShowDuration="10000" Width="130" ItemsSource="{Binding Source={x:Static ev:WorkFlowTypeConverter.WorkFlowScenarioNames}}" SelectedItem="{Binding Model.SessionGroup.WorkFlowType, Converter={StaticResource workFlowTypeConverter}, Mode=TwoWay}" SelectionChanged="workFlowScenariosComboBox_SelectionChanged">
+                                                    <ComboBox.Style>
+                                                        <Style>
+                                                            <Style.Triggers>
+                                                                <DataTrigger Binding="{Binding ElementName=main, Path=DataContext.CanReconfigure}" Value="False">
+                                                                    <Setter Property="ComboBox.IsEnabled" Value="False" />
+                                                                    <Setter Property="ComboBox.ToolTip" Value="Cannot change workflow type of an existing configuration.  To reconfigure, Export to a file and create a new configuration from the new file." />
+                                                                </DataTrigger>
+                                                            </Style.Triggers>
+                                                        </Style>
+                                                    </ComboBox.Style>
+                                                </ComboBox>
+                                                <ContentControl Content="{Binding Model.SessionGroup.WorkFlowType}">
+                                                    <ContentControl.Style>
+                                                        <Style>
+                                                            <Setter Property="ContentControl.Visibility" Value="Hidden" />
+                                                            <Style.Triggers>
+                                                                <DataTrigger Binding="{Binding ElementName=workFlowScenariosComboBox, Path=SelectedItem}" Value="{x:Static ev:WorkFlowTypeConverter.CustomString}">
+                                                                    <Setter Property="ContentControl.Visibility" Value="Visible" />
+                                                                </DataTrigger>
+                                                            </Style.Triggers>
+                                                        </Style>
+                                                    </ContentControl.Style>
+                                                    <ContentControl.ContentTemplate>
+                                                        <DataTemplate>
+                                                            <StackPanel Orientation="Horizontal">
+                                                                <TextBlock Margin="8,0,6,0" Text="Frequency: " VerticalAlignment="Center" ToolTip="{Binding Source={StaticResource TfsMigrationShellResources}, Path=[FrequencyTooltip]}" />
+                                                                <ComboBox ItemsSource="{Binding Source={StaticResource frequencyTypes}}" SelectedItem="{Binding Frequency}"/>
+                                                                <TextBlock Margin="8,0,6,0" Text="Direction: " VerticalAlignment="Center" ToolTip="{Binding Source={StaticResource TfsMigrationShellResources}, Path=[DirectionTooltip]}" />
+                                                                <ComboBox ItemsSource="{Binding Source={StaticResource directionOfFlowTypes}}" SelectedItem="{Binding DirectionOfFlow}" IsEnabled="{Binding ElementName=main, Path=DataContext.CanReconfigure}" SelectionChanged="workFlowScenariosComboBox_SelectionChanged" />
+                                                                <TextBlock Margin="8,0,6,0" Text="Sync Context: " VerticalAlignment="Center" ToolTip="{Binding Source={StaticResource TfsMigrationShellResources}, Path=[SyncContextTooltip]}" />
+                                                                <ComboBox ItemsSource="{Binding Source={StaticResource syncContextTypes}}" SelectedItem="{Binding SyncContext}" IsEnabled="{Binding ElementName=main, Path=DataContext.CanReconfigure}" />
+                                                            </StackPanel>
+                                                        </DataTemplate>
+                                                    </ContentControl.ContentTemplate>
+                                                </ContentControl>
+                                            </StackPanel>
+                                        </Grid>
+                                    </Grid>
+                                    <GroupBox BorderThickness="0">
+                                        <ItemsControl x:Name="sessionListBox" ItemsSource="{Binding SerializableSessions}" HorizontalContentAlignment="Stretch" >
+                                            <ItemsControl.ItemTemplate>
+                                                <DataTemplate>
+                                                    <GroupBox >
+                                                        <GroupBox.Header>
+                                                            <StackPanel Orientation="Horizontal">
+                                                                <Image Height="16" ToolTip="{Binding Model.SessionType}">
+                                                                    <Image.Style>
+                                                                        <Style>
+                                                                            <Style.Triggers>
+                                                                                <DataTrigger Binding="{Binding Model.SessionType}" Value="VersionControl">
+                                                                                    <Setter Property="Image.Source" Value="..\..\Graphics\vc.png" />
+                                                                                </DataTrigger>
+                                                                                <DataTrigger Binding="{Binding Model.SessionType}" Value="WorkItemTracking">
+                                                                                    <Setter Property="Image.Source" Value="..\..\Graphics\wit.png" />
+                                                                                </DataTrigger>
+                                                                            </Style.Triggers>
+                                                                        </Style>
+                                                                    </Image.Style>
+                                                                </Image>
+                                                                <TextBlock Text="{Binding Model.FriendlyName}" Margin="4,0,0,0" VerticalAlignment="Center" />
+                                                            </StackPanel>
+                                                        </GroupBox.Header>
+                                                        <GroupBox.Content>
+                                                            <StackPanel Margin="6">
+                                                                <StackPanel.Resources>
+                                                                    <ev:CustomSettingsConverter x:Key="customSettingsConverter" />
+                                                                </StackPanel.Resources>
+                                                                <Grid>
+                                                                    <Grid.Resources>
+                                                                        <DataTemplate x:Key="migrationSourceHeader">
+                                                                            <StackPanel Orientation="Horizontal">
+                                                                                <Grid>
+                                                                                    <Grid.Style>
+                                                                                        <Style>
+                                                                                            <Style.Triggers>
+                                                                                                <DataTrigger Binding="{Binding IsConfigured}" Value="False">
+                                                                                                    <Setter Property="Grid.Visibility" Value="Collapsed" />
+                                                                                                </DataTrigger>
+                                                                                            </Style.Triggers>
+                                                                                        </Style>
+                                                                                    </Grid.Style>
+                                                                                    <StackPanel Orientation="Horizontal">
+                                                                                        <Button x:Name="editXmlButton" Margin="6,3,3,6" Padding="3" Content="Edit XML" Click="editXmlButton_Click" MinHeight="23"/>
+                                                                                        <ContentControl ToolTipService.ShowOnDisabled="True" Margin="6,3,3,6"
+                                                                                                        ToolTipService.ShowDuration="10000" Content="Reconfigure..." Template="{StaticResource configureSourceMenu}">
+                                                                                            <ContentControl.Style>
+                                                                                                <Style>
+                                                                                                    <Style.Triggers>
+                                                                                                        <DataTrigger Binding="{Binding ElementName=main, Path=DataContext.CanReconfigure}" Value="False">
+                                                                                                            <Setter Property="ComboBox.IsEnabled" Value="False" />
+                                                                                                            <Setter Property="ComboBox.ToolTip" Value="Cannot reconfigure an existing migration source.  To reconfigure, Export to a file and create a new configuration from the new file." />
+                                                                                                        </DataTrigger>
+                                                                                                    </Style.Triggers>
+                                                                                                </Style>
+                                                                                            </ContentControl.Style>
+                                                                                        </ContentControl>
+                                                                                        <Button x:Name="AddinsButton" Margin="6,3,3,6" Padding="3" Content="Addins" Click="addinsButton_Click" MinHeight="23"/>
+                                                                                    </StackPanel>
+                                                                                </Grid>
+                                                                            </StackPanel>
+                                                                        </DataTemplate>
+                                                                        <DataTemplate x:Key="migrationSourceHeaderLeft">
+                                                                            <StackPanel Orientation="Horizontal">
+                                                                                <TextBlock Text="Left Source" VerticalAlignment="Center" />
+                                                                                <ContentControl Content="{Binding}" ContentTemplate="{StaticResource migrationSourceHeader}" />
+                                                                            </StackPanel>
+                                                                        </DataTemplate>
+                                                                        <DataTemplate x:Key="migrationSourceHeaderRight">
+                                                                            <StackPanel Orientation="Horizontal">
+                                                                                <TextBlock Text="Right Source" VerticalAlignment="Center" />
+                                                                                <ContentControl Content="{Binding}" ContentTemplate="{StaticResource migrationSourceHeader}" />
+                                                                            </StackPanel>
+                                                                        </DataTemplate>
+                                                                    </Grid.Resources>
+                                                                    <Grid.ColumnDefinitions>
+                                                                        <ColumnDefinition Width="*" />
+                                                                        <ColumnDefinition Width="*" />
+                                                                    </Grid.ColumnDefinitions>
+                                                                    <GroupBox Grid.Column="0" DataContext="{Binding LeftMigrationSource}" Content="{Binding}" Header="{Binding}" HeaderTemplate="{StaticResource migrationSourceHeaderLeft}" />
+                                                                    <GroupBox Grid.Column="1" DataContext="{Binding RightMigrationSource}" Content="{Binding}" Header="{Binding}" HeaderTemplate="{StaticResource migrationSourceHeaderRight}" />
+                                                                </Grid>
+                                                                <Grid>
+                                                                    <Grid.Style>
+                                                                        <Style>
+                                                                            <Style.Triggers>
+                                                                                <DataTrigger Binding="{Binding LeftMigrationSource.IsConfigured}" Value="False">
+                                                                                    <Setter Property="Grid.Visibility" Value="Collapsed" />
+                                                                                </DataTrigger>
+                                                                                <DataTrigger Binding="{Binding RightMigrationSource.IsConfigured}" Value="False">
+                                                                                    <Setter Property="Grid.Visibility" Value="Collapsed" />
+                                                                                </DataTrigger>
+                                                                            </Style.Triggers>
+                                                                        </Style>
+                                                                    </Grid.Style>
+                                                                    <StackPanel>
+                                                                        <GroupBox Padding="6">
+                                                                            <GroupBox.Style>
+                                                                                <Style>
+                                                                                    <Style.Triggers>
+                                                                                        <DataTrigger Binding="{Binding Model.SessionType}" Value="VersionControl">
+                                                                                            <Setter Property="GroupBox.Header" Value="Paths" />
+                                                                                        </DataTrigger>
+                                                                                        <DataTrigger Binding="{Binding Model.SessionType}" Value="WorkItemTracking">
+                                                                                            <Setter Property="GroupBox.Header" Value="Queries" />
+                                                                                        </DataTrigger>
+                                                                                    </Style.Triggers>
+                                                                                </Style>
+                                                                            </GroupBox.Style>
+                                                                            <StackPanel>
+                                                                                <TextBlock Margin="0,0,0,6">
+                                                                                    <TextBlock.Style>
+                                                                                        <Style>
+                                                                                            <Setter Property="TextBlock.Visibility" Value="Collapsed" />
+                                                                                            <Style.Triggers>
+                                                                                                <MultiDataTrigger>
+                                                                                                    <MultiDataTrigger.Conditions>
+                                                                                                        <Condition Binding="{Binding ElementName=main, Path=DataContext.CanReconfigure}" Value="False" />
+                                                                                                        <Condition Binding="{Binding Model.SessionType}" Value="VersionControl" />
+                                                                                                    </MultiDataTrigger.Conditions>
+                                                                                                    <Setter Property="TextBlock.Visibility" Value="Visible" />
+                                                                                                </MultiDataTrigger>
+                                                                                            </Style.Triggers>
+                                                                                        </Style>
+                                                                                    </TextBlock.Style>
+                                                                                    <TextBlock Text="Editing Version Control filter pairs is not supported after saving the configuration to the database." />
+                                                                                    <Hyperlink NavigateUri="http://go.microsoft.com/fwlink/?LinkId=196336" RequestNavigate="Hyperlink_RequestNavigate">
+                                                                                        <TextBlock Text="Click here to learn more." />
+                                                                                    </Hyperlink>
+                                                                                </TextBlock>
+                                                                                <Grid Grid.IsSharedSizeScope="True">
+                                                                                    <Grid.RowDefinitions>
+                                                                                        <RowDefinition Height="*" />
+                                                                                        <RowDefinition Height="Auto" />
+                                                                                    </Grid.RowDefinitions>
+                                                                                    <Grid.Style>
+                                                                                        <Style>
+                                                                                            <Style.Triggers>
+                                                                                                <MultiDataTrigger>
+                                                                                                    <MultiDataTrigger.Conditions>
+                                                                                                        <Condition Binding="{Binding ElementName=main, Path=DataContext.CanReconfigure}" Value="False" />
+                                                                                                        <Condition Binding="{Binding Model.SessionType}" Value="VersionControl" />
+                                                                                                    </MultiDataTrigger.Conditions>
+                                                                                                    <Setter Property="Grid.IsEnabled" Value="False" />
+                                                                                                </MultiDataTrigger>
+                                                                                            </Style.Triggers>
+                                                                                        </Style>
+                                                                                    </Grid.Style>
+                                                                                    <ItemsControl x:Name="filterPairsItemsControl" Grid.Row="0" ItemsSource="{Binding FilterPairs}">
+                                                                                        <ItemsControl.Style>
+                                                                                            <Style>
+                                                                                                <Style.Triggers>
+                                                                                                    <DataTrigger Binding="{Binding Model.SessionType}" Value="VersionControl">
+                                                                                                        <Setter Property="ItemsControl.ItemTemplate" Value="{StaticResource vcFilterStringTemplate}" />
+                                                                                                    </DataTrigger>
+                                                                                                    <MultiDataTrigger>
+                                                                                                        <MultiDataTrigger.Conditions>
+                                                                                                            <Condition Binding="{Binding Model.SessionType}" Value="WorkItemTracking" />
+                                                                                                            <Condition Binding="{Binding ElementName=main, Path=DataContext.Model.SessionGroup.WorkFlowType.DirectionOfFlow}" Value="Unidirectional" />
+                                                                                                        </MultiDataTrigger.Conditions>
+                                                                                                        <Setter Property="ItemsControl.ItemTemplate" Value="{StaticResource witOneWayFilterStringTemplate}" />
+                                                                                                    </MultiDataTrigger>
+                                                                                                    <MultiDataTrigger>
+                                                                                                        <MultiDataTrigger.Conditions>
+                                                                                                            <Condition Binding="{Binding Model.SessionType}" Value="WorkItemTracking" />
+                                                                                                            <Condition Binding="{Binding ElementName=main, Path=DataContext.Model.SessionGroup.WorkFlowType.DirectionOfFlow}" Value="Bidirectional" />
+                                                                                                        </MultiDataTrigger.Conditions>
+                                                                                                        <Setter Property="ItemsControl.ItemTemplate" Value="{StaticResource witTwoWayFilterStringTemplate}" />
+                                                                                                    </MultiDataTrigger>
+                                                                                                </Style.Triggers>
+                                                                                            </Style>
+                                                                                        </ItemsControl.Style>
+                                                                                    </ItemsControl>
+                                                                                    <Button Grid.Row="1" x:Name="addFilterButton" Content="Add New" Click="addFilterButton_Click" HorizontalAlignment="Center" MinWidth="75" Margin="3"/>
+                                                                                </Grid>
+                                                                            </StackPanel>
+                                                                        </GroupBox>
+                                                                        <ev:CustomSettingsView DataContext="{Binding Model, Converter={StaticResource customSettingsConverter}}" />
+                                                                    </StackPanel>
+                                                                </Grid>
+                                                            </StackPanel>
+                                                        </GroupBox.Content>
+                                                    </GroupBox>
+                                                </DataTemplate>
+                                            </ItemsControl.ItemTemplate>
+                                        </ItemsControl>
+                                    </GroupBox>
+                                </StackPanel>
+                            </ScrollViewer>
+                        </DockPanel>
+                    </Grid>
+                </TabItem>
+                <TabItem IsSelected="{Binding IsEditingXml}">
+                    <TabItem.Header>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="Xml" />
+                            <Grid>
+                                <Grid.Style>
+                                    <Style>
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding Errors.Count}" Value="0">
+                                                <Setter Property="Grid.Visibility" Value="Collapsed" />
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </Grid.Style>
+                                <Image Source="..\..\Graphics\Warning.png" Width="16" Margin="3,0,0,0"/>
+                            </Grid>
+                        </StackPanel>
+                    </TabItem.Header>
+                    <TabItem.Style>
+                        <Style TargetType="{x:Type TabItem}" BasedOn="{StaticResource {x:Type TabItem}}">
+                            <Setter Property="TabItem.IsEnabled" Value="False" />
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding FormErrors.Count}" Value="0">
+                                    <Setter Property="TabItem.IsEnabled" Value="True" />
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </TabItem.Style>
+                    <Grid>
+                        <DockPanel>
+                            <StackPanel DockPanel.Dock="Bottom" Orientation="Horizontal" HorizontalAlignment="Right">
+                                <TextBlock Text="{Binding LineNumber, StringFormat='Ln {0}'}" MinWidth="75" />
+                                <TextBlock Text="{Binding ColumnNumber, StringFormat='Col {0}'}" MinWidth="75" />
+                            </StackPanel>
+                            <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+                                <TextBox x:Name="xmlEditorTextBox" Text="{Binding PrettySerializedContent, UpdateSourceTrigger=PropertyChanged}" FontFamily="Global Monospace" AcceptsReturn="True" AcceptsTab="True" SelectionChanged="TextBox_SelectionChanged" LostFocus="xmlEditorTextBox_LostFocus" />
+                            </ScrollViewer>
+                        </DockPanel>
+                    </Grid>
+                </TabItem>
+            </TabControl>
+        </Grid>
+        <DockPanel Grid.Row="1">
+            <UniformGrid DockPanel.Dock="Right" Columns="3">
+                <Button x:Name="exportMenuItem" DataContext="{Binding AllErrors}" Content="Export Config" Command="ev:ShellCommands.Export" CommandTarget="{DynamicResource ShellContent}" Margin="6,0,0,0">
+                    <Button.Style>
+                        <Style TargetType="{x:Type Button}" BasedOn="{StaticResource {x:Type Button}}">
+                            <Setter Property="Button.IsEnabled" Value="False" />
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding Count}" Value="0">
+                                    <Setter Property="Button.IsEnabled" Value="True" />
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                </Button>
+                <Button x:Name="saveButton" DataContext="{Binding AllErrors}"  MinWidth="75" MinHeight="23" Content="Save to Database" Command="ev:ShellCommands.SaveToDB" CommandTarget="{DynamicResource ShellContent}" 
+                        Margin="6,0,0,0" Click="saveButton_Click" >
+                    <Button.Style>
+                        <Style TargetType="{x:Type Button}" BasedOn="{StaticResource {x:Type Button}}">
+                            <Setter Property="Button.IsEnabled" Value="False" />
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding Count}" Value="0">
+                                    <Setter Property="Button.IsEnabled" Value="True" />
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                </Button>
+                <Button x:Name="cancelButton" Content="Cancel" Click="cancelButton_Click" KeyboardNavigation.IsTabStop="true" Margin="6,0,0,0"/>
+            </UniformGrid>
+            <ContentControl DataContext="{Binding AllErrors}">
+                <ContentControl.Template>
+                    <ControlTemplate>
+                        <Grid>
+                            <ToggleButton Name="statusToggleButton" Background="LightYellow" HorizontalContentAlignment="Left" Height="23" LostFocus="statusToggleButton_LostFocus">
+                                <ToggleButton.Content>
+                                    <StackPanel Orientation="Horizontal">
+                                        <Image Source="..\..\Graphics\Warning.png" Width="16" />
+                                        <TextBlock TextTrimming="WordEllipsis" >
+                                            <TextBlock.Text>
+                                                <MultiBinding StringFormat="{}{0} Errors: {1}">
+                                                    <Binding Path="Count" />
+                                                    <Binding Path="CurrentItem" />
+                                                </MultiBinding>
+                                            </TextBlock.Text>
+                                        </TextBlock>
+                                    </StackPanel>
+                                </ToggleButton.Content>
+                                <ToggleButton.Style>
+                                    <Style TargetType="{x:Type ToggleButton}" BasedOn="{StaticResource {x:Type ToggleButton}}">
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding Count}" Value="0">
+                                                <Setter Property="ToggleButton.Visibility" Value="Hidden" />
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </ToggleButton.Style>
+                            </ToggleButton>
+                            <Popup StaysOpen="False" IsOpen="{Binding ElementName=statusToggleButton, Path=IsChecked}">
+                                <ListBox ItemsSource="{Binding}" />
+                            </Popup>
+                        </Grid>
+                    </ControlTemplate>
+                </ContentControl.Template>
+            </ContentControl>
+        </DockPanel>
+    </Grid>
+</UserControl>

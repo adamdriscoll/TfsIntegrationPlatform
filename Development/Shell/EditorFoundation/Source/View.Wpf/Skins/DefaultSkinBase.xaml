@@ -1,0 +1,714 @@
+﻿<!-- Copyright © Microsoft Corporation.  All Rights Reserved.  This code released under the terms of the Microsoft Public License (MS-PL, http://opensource.org/licenses/ms-pl.html.) -->
+<ResourceDictionary x:Class="Microsoft.TeamFoundation.Migration.Shell.View.DefaultSkinBase"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:sys="clr-namespace:System;assembly=mscorlib"
+    xmlns:ep="clr-namespace:Microsoft.TeamFoundation.Migration.Shell.Properties"
+    xmlns:eg="clr-namespace:Microsoft.TeamFoundation.Migration.Shell.Globalization"
+    xmlns:ev="clr-namespace:Microsoft.TeamFoundation.Migration.Shell.View">
+  <!---->
+ 
+  <!-- TODO: Handle resources this way? Could have some kind of tool to generate a xaml file from the resources containing all these definitions -->
+  <!--<eg:Resource x:Key="FileString" ResourceManager="{x:Static ep:Resources.ResourceManager}" ResourceKey="FileString" />-->
+  
+  <!--=================================== Base Resource Provider ==================================-->
+  <eg:ManagedResourceProvider x:Key="BaseResources" ResourceManager="{x:Static ep:WpfViewResources.ResourceManager}" />
+    <eg:ManagedResourceProvider x:Key="TfsMigrationShellResources" ResourceManager="{x:Static ep:ShellResources.ResourceManager}" />
+  <!--=============================================================================================-->
+
+
+  <!--===================================== Common Converters =====================================-->
+  <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
+  <ev:BooleanToNumberConverter x:Key="IsEnabledToOpacityConverter" DefaultFalseValue="0.3" />
+  <!--=============================================================================================-->
+
+
+  <!--======================================= Command Status ======================================-->
+  <ev:CommandStatus x:Key="SearchCommandStatus" Command="NavigationCommands.Search" />
+  <!--=============================================================================================-->
+
+
+  <!--======================================= Control Styles ======================================-->
+
+  <!-- Shell -->
+  <Style x:Key="ShellStyle" TargetType="Window" BasedOn="{ev:DeferredStyle {x:Type Window}}">
+    <Setter Property="Title" Value="{Binding ViewModel.Title}" />
+    <Setter Property="AllowDrop" Value="True" />
+    <Setter Property="ev:Extensions.OpenOnFileDrop" Value="True" />
+    <Setter Property="FontSize" Value="{Binding Source={x:Static ep:Settings.Default},Path=FontSize,Mode=TwoWay}" />
+  </Style>
+
+  <!-- Menu -->
+  <Style x:Key="MainMenuStyle" TargetType="Menu" BasedOn="{ev:DeferredStyle {x:Type Menu}}">
+    <Setter Property="DockPanel.Dock" Value="Top" />
+  </Style>
+
+  <Style x:Key="FileMenuItemStyle" TargetType="MenuItem" BasedOn="{ev:DeferredStyle {x:Type MenuItem}}">
+    <Setter Property="Header" Value="{Binding Source={StaticResource BaseResources},Path=[FileString]}" />
+    <!--<Setter Property="Header" Value="{Binding Source={StaticResource FileString}}" />-->
+  </Style>
+
+  <Style x:Key="NewMenuItemStyle" TargetType="MenuItem" BasedOn="{ev:DeferredStyle {x:Type MenuItem}}">
+    <Setter Property="Header" Value="{Binding Source={StaticResource BaseResources},Path=[NewString]}" />
+    <Setter Property="Icon" Value="{DynamicResource NewImage16x16}" />
+    <Setter Property="Visibility" Value="{Binding Path=ViewModel.AllowCreate,Converter={StaticResource BooleanToVisibilityConverter}}" />
+  </Style>
+
+  <Style x:Key="OpenMenuItemStyle" TargetType="MenuItem" BasedOn="{ev:DeferredStyle {x:Type MenuItem}}">
+    <Setter Property="Header" Value="{Binding Source={StaticResource BaseResources},Path=[OpenString]}" />
+    <Setter Property="Icon" Value="{DynamicResource OpenImage16x16}" />
+    <Setter Property="Visibility" Value="{Binding Path=ViewModel.AllowOpen,Converter={StaticResource BooleanToVisibilityConverter}}" />
+  </Style>
+
+  <Style x:Key="CloseMenuItemStyle" TargetType="MenuItem" BasedOn="{ev:DeferredStyle {x:Type MenuItem}}">
+    <Setter Property="Header" Value="{Binding Source={StaticResource BaseResources},Path=[CloseString]}" />
+    <Setter Property="Icon" Value="{DynamicResource CloseImage16x16}" />
+    <Setter Property="Visibility" Value="{Binding Path=ViewModel.AllowClose,Converter={StaticResource BooleanToVisibilityConverter}}" />
+  </Style>
+
+  <Style x:Key="SaveMenuItemStyle" TargetType="MenuItem" BasedOn="{ev:DeferredStyle {x:Type MenuItem}}">
+    <Setter Property="Header" Value="{Binding Source={StaticResource BaseResources},Path=[SaveString]}" />
+    <Setter Property="Icon" Value="{DynamicResource SaveImage16x16}" />
+    <Setter Property="Visibility" Value="{Binding Path=ViewModel.AllowSave,Converter={StaticResource BooleanToVisibilityConverter}}" />
+  </Style>
+
+  <Style x:Key="SaveAsMenuItemStyle" TargetType="MenuItem" BasedOn="{ev:DeferredStyle {x:Type MenuItem}}">
+    <Setter Property="Header" Value="{Binding Source={StaticResource BaseResources},Path=[SaveAsString]}" />
+    <Setter Property="Icon" Value="{DynamicResource SaveAsImage16x16}" />
+    <Setter Property="Visibility" Value="{Binding Path=ViewModel.AllowSave,Converter={StaticResource BooleanToVisibilityConverter}}" />
+  </Style>
+
+  <Style x:Key="ValidateMenuItemStyle" TargetType="MenuItem" BasedOn="{ev:DeferredStyle {x:Type MenuItem}}">
+    <Setter Property="Header" Value="{Binding Source={StaticResource BaseResources},Path=[ValidateString]}" />
+    <Setter Property="Icon" Value="{DynamicResource ValidateImage16x16}" />
+    <Setter Property="Visibility" Value="{Binding Path=ViewModel.AllowValidation,Converter={StaticResource BooleanToVisibilityConverter}}" />
+  </Style>
+
+  <Style x:Key="RecentFileMenuItem" TargetType="MenuItem" BasedOn="{ev:DeferredStyle RecentFileMenuItemStyle}">
+    <Setter Property="Command" Value="ApplicationCommands.Open" />
+    <Setter Property="CommandParameter" Value="{Binding FullName}" />
+    <Setter Property="CommandTarget" Value="{DynamicResource ShellContent}" />
+  </Style>
+
+  <Style x:Key="RecentFileMenuItemStyle" TargetType="MenuItem" BasedOn="{ev:DeferredStyle {x:Type MenuItem}}">
+    <Setter Property="Header" Value="{Binding Name}" />
+    <Setter Property="ToolTip" Value="{Binding FullName}" />
+    <Setter Property="InputGestureText" Value="" />
+  </Style>
+
+  <Style x:Key="RecentFilesMenuItemStyle" TargetType="MenuItem" BasedOn="{ev:DeferredStyle {x:Type MenuItem}}">
+    <Setter Property="Header" Value="{Binding Source={StaticResource BaseResources},Path=[RecentFilesString]}" />
+    <Setter Property="ItemContainerStyle" Value="{StaticResource RecentFileMenuItem}" />
+  </Style>
+
+  <Style x:Key="ExitMenuItemStyle" TargetType="MenuItem" BasedOn="{ev:DeferredStyle {x:Type MenuItem}}">
+    <Setter Property="Header" Value="{Binding Source={StaticResource BaseResources},Path=[ExitString]}" />
+    <Setter Property="Icon" Value="{DynamicResource ExitImage16x16}" />
+  </Style>
+
+  <Style x:Key="EditMenuItemStyle" TargetType="MenuItem" BasedOn="{ev:DeferredStyle {x:Type MenuItem}}">
+    <Setter Property="Header" Value="{Binding Source={StaticResource BaseResources},Path=[EditString]}" />
+  </Style>
+
+  <Style x:Key="UndoMenuItemStyle" TargetType="MenuItem" BasedOn="{ev:DeferredStyle {x:Type MenuItem}}">
+    <Setter Property="Header" Value="{Binding Source={StaticResource BaseResources},Path=[UndoString]}" />
+    <Setter Property="Icon" Value="{DynamicResource UndoImage16x16}" />
+    <Setter Property="Visibility" Value="{Binding Path=ViewModel.AllowUndoRedo,Converter={StaticResource BooleanToVisibilityConverter}}" />
+  </Style>
+
+  <Style x:Key="RedoMenuItemStyle" TargetType="MenuItem" BasedOn="{ev:DeferredStyle {x:Type MenuItem}}">
+    <Setter Property="Header" Value="{Binding Source={StaticResource BaseResources},Path=[RedoString]}" />
+    <Setter Property="Icon" Value="{DynamicResource RedoImage16x16}" />
+    <Setter Property="Visibility" Value="{Binding Path=ViewModel.AllowUndoRedo,Converter={StaticResource BooleanToVisibilityConverter}}" />
+  </Style>
+
+  <Style x:Key="CutMenuItemStyle" TargetType="MenuItem" BasedOn="{ev:DeferredStyle {x:Type MenuItem}}">
+    <Setter Property="Header" Value="{Binding Source={StaticResource BaseResources},Path=[CutString]}" />
+    <Setter Property="Icon" Value="{DynamicResource CutImage16x16}" />
+  </Style>
+
+  <Style x:Key="CopyMenuItemStyle" TargetType="MenuItem" BasedOn="{ev:DeferredStyle {x:Type MenuItem}}">
+    <Setter Property="Header" Value="{Binding Source={StaticResource BaseResources},Path=[CopyString]}" />
+    <Setter Property="Icon" Value="{DynamicResource CopyImage16x16}" />
+  </Style>
+
+  <Style x:Key="PasteMenuItemStyle" TargetType="MenuItem" BasedOn="{ev:DeferredStyle {x:Type MenuItem}}">
+    <Setter Property="Header" Value="{Binding Source={StaticResource BaseResources},Path=[PasteString]}" />
+    <Setter Property="Icon" Value="{DynamicResource PasteImage16x16}" />
+  </Style>
+
+  <Style x:Key="HelpMenuItemStyle" TargetType="MenuItem" BasedOn="{ev:DeferredStyle {x:Type MenuItem}}">
+    <Setter Property="Header" Value="{Binding Source={StaticResource BaseResources},Path=[HelpString]}" />
+  </Style>
+
+  <Style x:Key="AboutMenuItemStyle" TargetType="MenuItem" BasedOn="{ev:DeferredStyle {x:Type MenuItem}}">
+    <Setter Property="Header" Value="{Binding Source={StaticResource BaseResources},Path=[AboutString]}" />
+  </Style>
+
+
+    <Style x:Key="ImportMenuItemStyle" TargetType="MenuItem" BasedOn="{ev:DeferredStyle {x:Type MenuItem}}">
+        <Setter Property="Header" Value="{Binding Source={StaticResource TfsMigrationShellResources},Path=[ImportMenuItem]}" />
+        <Setter Property="Icon" Value="{DynamicResource OpenImage16x16}" />
+        <Setter Property="Visibility" Value="{Binding Path=ViewModel.AllowOpen,Converter={StaticResource BooleanToVisibilityConverter}}" />
+    </Style>
+
+    <Style x:Key="ExportMenuItemStyle" TargetType="MenuItem" BasedOn="{ev:DeferredStyle {x:Type MenuItem}}">
+        <Setter Property="Header" Value="{Binding Source={StaticResource TfsMigrationShellResources},Path=[ExportMenuItem]}" />
+        <Setter Property="Icon" Value="{DynamicResource SaveImage16x16}" />
+        <Setter Property="Visibility" Value="{Binding Path=ViewModel.AllowSave,Converter={StaticResource BooleanToVisibilityConverter}}" />
+    </Style>
+
+    <Style x:Key="OpenFromDBMenuItemStyle" TargetType="MenuItem" BasedOn="{ev:DeferredStyle {x:Type MenuItem}}">
+        <Setter Property="Header" Value="Open..." />
+        <Setter Property="Icon" Value="{DynamicResource OpenFromDBImage16x16}" />
+        <Setter Property="Visibility" Value="{Binding Path=ViewModel.AllowOpenFromDB,Converter={StaticResource BooleanToVisibilityConverter}}" />
+    </Style>
+
+    <Style x:Key="SaveToDBMenuItemStyle" TargetType="MenuItem" BasedOn="{ev:DeferredStyle {x:Type MenuItem}}">
+        <Setter Property="Header" Value="{Binding Source={StaticResource TfsMigrationShellResources},Path=[SaveToDBString]}" />
+        <Setter Property="Icon" Value="{DynamicResource SaveToDBImage16x16}" />
+        <Setter Property="Visibility" Value="{Binding Path=ViewModel.AllowSaveToDB,Converter={StaticResource BooleanToVisibilityConverter}}" />
+    </Style>
+
+    <Style x:Key="SaveAsToDBMenuItemStyle" TargetType="MenuItem" BasedOn="{ev:DeferredStyle {x:Type MenuItem}}">
+        <Setter Property="Header" Value="Save as..." />
+        <Setter Property="Icon" Value="{DynamicResource SaveToDBImage16x16}" />
+        <Setter Property="Visibility" Value="{Binding Path=ViewModel.AllowSaveToDB,Converter={StaticResource BooleanToVisibilityConverter}}" />
+    </Style>
+
+
+    <!-- Tool Bar -->
+  <Style x:Key="MainToolBarStyle" TargetType="ToolBarTray" BasedOn="{ev:DeferredStyle {x:Type ToolBarTray}}">
+    <Setter Property="DockPanel.Dock" Value="Top" />
+  </Style>
+
+  <Style x:Key="FileToolBarStyle" TargetType="ToolBar" BasedOn="{ev:DeferredStyle {x:Type ToolBar}}" />
+
+  <Style x:Key="NewButtonStyle" TargetType="Button" BasedOn="{ev:DeferredStyle {x:Type Button}}">
+    <Setter Property="Content" Value="{DynamicResource NewImage16x16}" />
+    <Setter Property="ToolTip" Value="{Binding Source={StaticResource BaseResources},Path=[NewString]}" />
+    <Setter Property="Visibility" Value="{Binding Path=ViewModel.AllowCreate,Converter={StaticResource BooleanToVisibilityConverter}}" />
+  </Style>
+
+  <Style x:Key="OpenButtonStyle" TargetType="Button" BasedOn="{ev:DeferredStyle {x:Type Button}}">
+    <Setter Property="Content" Value="{DynamicResource OpenImage16x16}" />
+    <Setter Property="ToolTip" Value="{Binding Source={StaticResource BaseResources},Path=[OpenString]}" />
+    <Setter Property="Visibility" Value="{Binding Path=ViewModel.AllowOpen,Converter={StaticResource BooleanToVisibilityConverter}}" />
+  </Style>
+
+  <Style x:Key="SaveButtonStyle" TargetType="Button" BasedOn="{ev:DeferredStyle {x:Type Button}}">
+    <Setter Property="Content" Value="{DynamicResource SaveImage16x16}" />
+    <Setter Property="ToolTip" Value="{Binding Source={StaticResource BaseResources},Path=[SaveString]}" />
+    <Setter Property="Visibility" Value="{Binding Path=ViewModel.AllowSave,Converter={StaticResource BooleanToVisibilityConverter}}" />
+  </Style>
+
+  <Style x:Key="UndoRedoToolBarStyle" TargetType="ToolBar" BasedOn="{ev:DeferredStyle {x:Type ToolBar}}" >
+    <Setter Property="Visibility" Value="{Binding Path=ViewModel.AllowUndoRedo,Converter={StaticResource BooleanToVisibilityConverter}}" />
+  </Style>
+
+  <Style x:Key="UndoButtonStyle" TargetType="Button" BasedOn="{ev:DeferredStyle {x:Type Button}}">
+    <Setter Property="Content" Value="{DynamicResource UndoImage16x16}" />
+    <Setter Property="ToolTip" Value="{Binding Source={StaticResource BaseResources},Path=[UndoString]}" />
+  </Style>
+
+  <Style x:Key="RedoButtonStyle" TargetType="Button" BasedOn="{ev:DeferredStyle {x:Type Button}}">
+    <Setter Property="Content" Value="{DynamicResource RedoImage16x16}" />
+    <Setter Property="ToolTip" Value="{Binding Source={StaticResource BaseResources},Path=[RedoString]}" />
+  </Style>
+
+  <Style x:Key="CutCopyPasteToolBarStyle" TargetType="ToolBar" BasedOn="{ev:DeferredStyle {x:Type ToolBar}}" />
+
+  <Style x:Key="CutButtonStyle" TargetType="Button" BasedOn="{ev:DeferredStyle {x:Type Button}}">
+    <Setter Property="Content" Value="{DynamicResource CutImage16x16}" />
+    <Setter Property="ToolTip" Value="{Binding Source={StaticResource BaseResources},Path=[CutString]}" />
+  </Style>
+
+  <Style x:Key="CopyButtonStyle" TargetType="Button" BasedOn="{ev:DeferredStyle {x:Type Button}}">
+    <Setter Property="Content" Value="{DynamicResource CopyImage16x16}" />
+    <Setter Property="ToolTip" Value="{Binding Source={StaticResource BaseResources},Path=[CopyString]}" />
+  </Style>
+
+  <Style x:Key="PasteButtonStyle" TargetType="Button" BasedOn="{ev:DeferredStyle {x:Type Button}}">
+    <Setter Property="Content" Value="{DynamicResource PasteImage16x16}" />
+    <Setter Property="ToolTip" Value="{Binding Source={StaticResource BaseResources},Path=[PasteString]}" />
+  </Style>
+
+  <Style x:Key="SearchToolBarStyle" TargetType="ToolBar" BasedOn="{ev:DeferredStyle {x:Type ToolBar}}">
+    <Setter Property="Visibility" Value="{Binding Path=ViewModel.AllowSearch,Converter={StaticResource BooleanToVisibilityConverter}}" />
+  </Style>
+
+  <Style x:Key="SearchTextBoxStyle" TargetType="TextBox" BasedOn="{ev:DeferredStyle {x:Type TextBox}}">
+    <Setter Property="Width" Value="100" />
+    <Setter Property="IsEnabled" Value="{Binding ViewModel.CanSearch}" />
+    <!--<Setter Property="(SpellChecker.IsEnabled)" Value="true" />-->
+  </Style>
+
+  <Style x:Key="SearchButtonStyle" TargetType="Button" BasedOn="{ev:DeferredStyle {x:Type Button}}">
+    <Setter Property="Content" Value="{DynamicResource SearchImage16x16}" />
+    <Setter Property="ToolTip" Value="{Binding Source={StaticResource BaseResources},Path=[FindString]}" />
+  </Style>
+
+  <Style x:Key="ValidationToolBarStyle" TargetType="ToolBar" BasedOn="{ev:DeferredStyle {x:Type ToolBar}}">
+    <Setter Property="Visibility" Value="{Binding Path=ViewModel.AllowValidation,Converter={StaticResource BooleanToVisibilityConverter}}" />
+  </Style>
+
+  <Style x:Key="ValidateButtonStyle" TargetType="Button" BasedOn="{ev:DeferredStyle {x:Type Button}}">
+    <Setter Property="Content" Value="{DynamicResource ValidateImage16x16}" />
+    <Setter Property="ToolTip" Value="{Binding Source={StaticResource BaseResources},Path=[ValidateString]}" />
+  </Style>
+
+
+    <Style x:Key="OpenFromDBButtonStyle" TargetType="Button" BasedOn="{ev:DeferredStyle {x:Type Button}}">
+        <Setter Property="Content" Value="{DynamicResource OpenFromDBImage16x16}" />
+        <Setter Property="ToolTip" Value="{Binding Source={StaticResource TfsMigrationShellResources},Path=[OpenFromDBString]}" />
+        <!--<Setter Property="Visibility" Value="{Binding Path=ViewModel.AllowStart,Converter={StaticResource BooleanToVisibilityConverter}}" />-->
+    </Style>
+
+    <Style x:Key="SaveToDBButtonStyle" TargetType="Button" BasedOn="{ev:DeferredStyle {x:Type Button}}">
+        <Setter Property="Content" Value="{DynamicResource SaveToDBImage16x16}" />
+        <Setter Property="ToolTip" Value="{Binding Source={StaticResource TfsMigrationShellResources},Path=[SaveToDBString]}" />
+        <!--<Setter Property="Visibility" Value="{Binding Path=ViewModel.AllowStart,Converter={StaticResource BooleanToVisibilityConverter}}" />-->
+    </Style>
+
+    <Style x:Key="PlayButtonStyle" TargetType="Button" BasedOn="{ev:DeferredStyle {x:Type Button}}">
+        <Setter Property="Content" Value="{DynamicResource PlayImage16x16}" />
+        <Setter Property="ToolTip" Value="{Binding Source={StaticResource TfsMigrationShellResources},Path=[SessionStartTooltip]}" />
+        <!--<Setter Property="Visibility" Value="{Binding Path=ViewModel.AllowStart,Converter={StaticResource BooleanToVisibilityConverter}}" />-->
+    </Style>
+
+    <Style x:Key="PauseButtonStyle" TargetType="Button" BasedOn="{ev:DeferredStyle {x:Type Button}}">
+        <Setter Property="Content" Value="{DynamicResource PauseImage16x16}" />
+        <Setter Property="ToolTip" Value="{Binding Source={StaticResource TfsMigrationShellResources},Path=[SessionPauseTooltip]}" />
+        <!--<Setter Property="Visibility" Value="{Binding Path=ViewModel.AllowPause,Converter={StaticResource BooleanToVisibilityConverter}}" />-->
+    </Style>
+
+    <Style x:Key="StopButtonStyle" TargetType="Button" BasedOn="{ev:DeferredStyle {x:Type Button}}">
+        <Setter Property="Content" Value="{DynamicResource StopImage16x16}" />
+        <Setter Property="ToolTip" Value="{Binding Source={StaticResource TfsMigrationShellResources},Path=[SessionStopTooltip]}" />
+        <!--<Setter Property="Visibility" Value="{Binding Path=ViewModel.AllowStop,Converter={StaticResource BooleanToVisibilityConverter}}" />-->
+    </Style>
+    <!-- Status Bar -->
+  <Style x:Key="MainStatusBarStyle" TargetType="StatusBar" BasedOn="{ev:DeferredStyle {x:Type StatusBar}}">
+    <Setter Property="DockPanel.Dock" Value="Bottom" />
+  </Style>
+
+  <Style x:Key="OptionsStatusBarItemStyle" TargetType="StatusBarItem" BasedOn="{ev:DeferredStyle {x:Type StatusBarItem}}">
+    <Setter Property="DockPanel.Dock" Value="Right" />
+  </Style>
+
+  <Style x:Key="OptionsStackPanelStyle" TargetType="StackPanel" BasedOn="{ev:DeferredStyle {x:Type StackPanel}}">
+    <Setter Property="Orientation" Value="Horizontal" />
+  </Style>
+
+  <Style x:Key="LocalizationsComboBoxStyle" TargetType="ComboBox" BasedOn="{ev:DeferredStyle {x:Type ComboBox}}">
+    <Setter Property="Margin" Value="3,0,0,0" />
+    <Setter Property="ToolTip" Value="{Binding Source={StaticResource BaseResources},Path=[CultureString]}" />
+    <Setter Property="Visibility" Value="{Binding Path=IsRuntimeLocalizationEnabled,Converter={StaticResource BooleanToVisibilityConverter}}" />
+  </Style>
+
+  <Style x:Key="SkinsComboBoxStyle" TargetType="ComboBox" BasedOn="{ev:DeferredStyle {x:Type ComboBox}}">
+    <Setter Property="Margin" Value="3,0,0,0" />
+    <Setter Property="ToolTip" Value="{Binding Source={StaticResource BaseResources},Path=[SkinString]}" />
+    <Setter Property="Visibility" Value="{Binding Path=IsRuntimeSkinningEnabled,Converter={StaticResource BooleanToVisibilityConverter}}" />
+  </Style>
+
+  <Style x:Key="StatusStatusBarItemStyle" TargetType="StatusBarItem" BasedOn="{ev:DeferredStyle {x:Type StatusBarItem}}">
+  </Style>
+
+  <Style x:Key="StatusToggleButtonStyle" TargetType="ToggleButton" BasedOn="{ev:DeferredStyle {x:Type ToggleButton}}">
+    <Setter Property="Width" Value="300" />
+    <Setter Property="ToolTip" Value="{Binding Source={StaticResource BaseResources},Path=[StatusHistoryString]}" />
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="ToggleButton">
+          <ContentPresenter />
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+    <Setter Property="Content" Value="{DynamicResource StatusToggleButtonContent}" />
+  </Style>
+
+  <Style x:Key="StatusProgressBarStyle" TargetType="ProgressBar" BasedOn="{ev:DeferredStyle {x:Type ProgressBar}}">
+  </Style>
+
+  <Style x:Key="StatusTextBlockStyle" TargetType="TextBlock" BasedOn="{ev:DeferredStyle {x:Type TextBlock}}">
+    <Setter Property="Margin" Value="3" />
+    <Setter Property="VerticalAlignment" Value="Center" />
+  </Style>
+
+  <Style x:Key="StatusPopupStyle" TargetType="Popup" BasedOn="{ev:DeferredStyle {x:Type Popup}}">
+    <Setter Property="StaysOpen" Value="False" />
+  </Style>
+
+  <Style x:Key="StatusListBoxStyle" TargetType="ListBox" BasedOn="{ev:DeferredStyle {x:Type ListBox}}">
+    <Setter Property="MaxHeight" Value="200" />
+  </Style>
+
+  <!-- Search Results -->
+  <Style x:Key="SearchResultsListViewStyle" TargetType="ListView" BasedOn="{ev:DeferredStyle {x:Type ListView}}">
+    <Setter Property="DockPanel.Dock" Value="Bottom" />
+    <Setter Property="ItemTemplate">
+      <Setter.Value>
+        <DataTemplate>
+          <StackPanel Orientation="Horizontal">
+            <TextBlock Text="{Binding ModelObject}" />
+              <TextBlock Text=", " />
+              <TextBlock Text="{Binding PropertyDescriptor.Name}" />
+              <TextBlock Text=": " />
+              <TextBlock Text="{Binding PropertyValue}" />
+          </StackPanel>
+        </DataTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+
+  <Style x:Key="SearchResultsExpanderStyle" TargetType="Expander" BasedOn="{ev:DeferredStyle {x:Type Expander}}">
+    <Setter Property="DockPanel.Dock" Value="Bottom" />
+    <Setter Property="ExpandDirection" Value="Down" />
+    <Setter Property="MaxHeight" Value="200" />
+    <Setter Property="Header" Value="{DynamicResource SearchResultsExpanderHeader}" />
+    <Setter Property="Visibility" Value="{Binding Path=ViewModel.AllowSearch,Converter={StaticResource BooleanToVisibilityConverter}}" />
+  </Style>
+
+  <!-- Validation Results -->
+  <Style x:Key="ValidationResultsListViewStyle" TargetType="ListView" BasedOn="{ev:DeferredStyle {x:Type ListView}}">
+    <Setter Property="View" Value="{DynamicResource ValidationResultsListViewView}" />
+    <Setter Property="ev:Extensions.GroupStyles">
+      <Setter.Value>
+        <ev:GroupStyleCollection>
+          <GroupStyle>
+            <GroupStyle.ContainerStyle>
+              <Style TargetType="{x:Type GroupItem}">
+                <Setter Property="Template">
+                  <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type GroupItem}">
+                      <GroupBox Margin="3,3,3,3">
+                        <GroupBox.Header>
+                          <DockPanel>
+                            <TextBlock FontWeight="Bold" Margin="5,0,0,0">
+                              <TextBlock.Text>
+                                <MultiBinding>
+                                  <MultiBinding.Converter>
+                                    <ev:PropertyPathConverter Source="{StaticResource BaseResources}" PathFormatString="[{0}]" />
+                                  </MultiBinding.Converter>
+                                  <Binding Path="Name">
+                                    <Binding.Converter>
+                                      <ev:PropertyPathConverter PathFormatString="[{0}]">
+                                        <ev:PropertyPathConverter.Source>
+                                          <ResourceDictionary>
+                                            <sys:String x:Key="Information">InformationString</sys:String>
+                                            <sys:String x:Key="Warning">WarningString</sys:String>
+                                            <sys:String x:Key="Error">ErrorString</sys:String>
+                                          </ResourceDictionary>
+                                        </ev:PropertyPathConverter.Source>
+                                      </ev:PropertyPathConverter>
+                                    </Binding.Converter>
+                                  </Binding>
+                                  <Binding Source="{StaticResource BaseResources}" Path="ActiveCulture" />
+                                </MultiBinding>
+                              </TextBlock.Text>
+                            </TextBlock>
+                            <TextBlock xml:space="preserve"> </TextBlock>
+                            <TextBlock>(</TextBlock>
+                            <TextBlock FontWeight="Bold" Text="{Binding Path=ItemCount}" />
+                            <TextBlock>)</TextBlock>
+                          </DockPanel>
+                        </GroupBox.Header>
+
+                        <GroupBox.Content>
+                          <ItemsPresenter />
+                        </GroupBox.Content>
+                      </GroupBox>
+                    </ControlTemplate>
+                  </Setter.Value>
+                </Setter>
+              </Style>
+            </GroupStyle.ContainerStyle>
+          </GroupStyle>
+        </ev:GroupStyleCollection>
+      </Setter.Value>
+    </Setter>
+  </Style>
+
+  <Style x:Key="ValidationResultsExpanderStyle" TargetType="Expander" BasedOn="{ev:DeferredStyle {x:Type Expander}}">
+    <Setter Property="DockPanel.Dock" Value="Bottom" />
+    <Setter Property="ExpandDirection" Value="Down" />
+    <Setter Property="MaxHeight" Value="200" />
+    <Setter Property="Header" Value="{DynamicResource ValidationResultsExpanderHeader}" />
+    <Setter Property="Visibility" Value="{Binding Path=ViewModel.AllowValidation,Converter={StaticResource BooleanToVisibilityConverter}}" />
+  </Style>
+
+  <!-- About Box -->
+  <Style x:Key="IconInfoStackPanelStyle" TargetType="StackPanel" BasedOn="{ev:DeferredStyle {x:Type StackPanel}}">
+    <Setter Property="Orientation" Value="Horizontal" />
+  </Style>
+
+  <Style x:Key="ApplicationIconStyle" TargetType="Image" BasedOn="{ev:DeferredStyle {x:Type Image}}">
+    <Setter Property="MaxWidth" Value="128" />
+    <Setter Property="MaxHeight" Value="128" />
+    <Setter Property="StretchDirection" Value="DownOnly" />
+    <Setter Property="Margin" Value="5" />
+    <Setter Property="Source" Value="{Binding Path=ViewModel.ApplicationPath,Converter={x:Static ev:AssociatedIconConverter.Default}}" />
+  </Style>
+
+  <Style x:Key="InfoStackPanelStyle" TargetType="StackPanel" BasedOn="{ev:DeferredStyle {x:Type StackPanel}}">
+    <Setter Property="Margin" Value="5,0,0,0" />
+  </Style>
+
+  <Style x:Key="ApplicationNameTextBlockStyle" TargetType="TextBlock" BasedOn="{ev:DeferredStyle {x:Type TextBlock}}">
+    <Setter Property="Margin" Value="5" />
+    <Setter Property="FontWeight" Value="Bold" />
+    <Setter Property="Text" Value="{Binding ViewModel.ApplicationName}" />
+  </Style>
+
+  <Style x:Key="ApplicationVersionTextBlockStyle" TargetType="TextBlock" BasedOn="{ev:DeferredStyle {x:Type TextBlock}}">
+    <Setter Property="Margin" Value="5" />
+    <Setter Property="FontWeight" Value="Bold" />
+    <Setter Property="Text">
+      <Setter.Value>
+        <MultiBinding Converter="{x:Static ev:StringFormatConverter.Default}">
+          <Binding Source="{StaticResource BaseResources}" Path="[ApplicationVersionString]" />
+          <Binding Path="ViewModel.ApplicationVersion" />
+        </MultiBinding>
+      </Setter.Value>
+    </Setter>
+  </Style>
+
+  <Style x:Key="CopyrightTextBlockStyle" TargetType="TextBlock" BasedOn="{ev:DeferredStyle {x:Type TextBlock}}">
+    <Setter Property="Margin" Value="5" />
+    <Setter Property="Text" Value="{Binding ViewModel.ApplicationCopyright}" />
+  </Style>
+
+  <Style x:Key="AboutDividerRectangleStyle" TargetType="Rectangle" BasedOn="{ev:DeferredStyle {x:Type Rectangle}}">
+    <Setter Property="Margin" Value="5" />
+    <Setter Property="Fill" Value="{DynamicResource {x:Static SystemColors.ControlDarkBrushKey}}" />
+    <Setter Property="Height" Value="3" />
+    <Setter Property="HorizontalAlignment" Value="Stretch" />
+  </Style>
+
+  <Style x:Key="CopyrightWarningDockPanelStyle" TargetType="DockPanel" BasedOn="{ev:DeferredStyle {x:Type DockPanel}}">
+  </Style>
+
+  <Style x:Key="CopyrightWarningTextBlockStyle" TargetType="TextBlock" BasedOn="{ev:DeferredStyle {x:Type TextBlock}}">
+    <Setter Property="Margin" Value="5" />
+    <Setter Property="MaxWidth" Value="326" />
+    <Setter Property="TextWrapping" Value="Wrap" />
+    <Setter Property="FontSize" Value="9" />
+    <Setter Property="Text" Value="{Binding Source={StaticResource BaseResources},Path=[CopyrightWarningString]}" />
+  </Style>
+
+  <Style x:Key="AboutOkButtonStyle" TargetType="Button" BasedOn="{ev:DeferredStyle {x:Type Button}}">
+    <Setter Property="Margin" Value="5" />
+    <Setter Property="Button.IsDefault" Value="True" />
+    <Setter Property="Button.IsCancel" Value="True" />
+    <Setter Property="MinWidth" Value="75" />
+    <Setter Property="Height" Value="23" />
+    <Setter Property="VerticalAlignment" Value="Top" />
+    <Setter Property="Content" Value="{Binding Source={StaticResource BaseResources},Path=[OKString]}" />
+  </Style>
+
+  <!--=============================================================================================-->
+
+
+  <!--===================================== Style UI Elements =====================================-->
+  <Image x:Key="NewImage" x:Shared="false" Source="{Binding Source={StaticResource BaseResources},Path=[NewImage],Converter={x:Static eg:ImageConverter.Default}}" Stretch="Fill" Opacity="{Binding RelativeSource={RelativeSource Self},Path=IsEnabled,Converter={StaticResource IsEnabledToOpacityConverter}}" />
+  <Image x:Key="OpenImage" x:Shared="false" Source="{Binding Source={StaticResource BaseResources},Path=[OpenImage],Converter={x:Static eg:ImageConverter.Default}}" Stretch="Fill" Opacity="{Binding RelativeSource={RelativeSource Self},Path=IsEnabled,Converter={StaticResource IsEnabledToOpacityConverter}}" />
+  <Image x:Key="SaveImage" x:Shared="false" Source="{Binding Source={StaticResource BaseResources},Path=[SaveImage],Converter={x:Static eg:ImageConverter.Default}}" Stretch="Fill" Opacity="{Binding RelativeSource={RelativeSource Self},Path=IsEnabled,Converter={StaticResource IsEnabledToOpacityConverter}}" />
+
+  <Image x:Key="UndoImage" x:Shared="false" Source="{Binding Source={StaticResource BaseResources},Path=[UndoImage],Converter={x:Static eg:ImageConverter.Default}}" Stretch="Fill" Opacity="{Binding RelativeSource={RelativeSource Self},Path=IsEnabled,Converter={StaticResource IsEnabledToOpacityConverter}}" />
+  <Image x:Key="RedoImage" x:Shared="false" Source="{Binding Source={StaticResource BaseResources},Path=[RedoImage],Converter={x:Static eg:ImageConverter.Default}}" Stretch="Fill" Opacity="{Binding RelativeSource={RelativeSource Self},Path=IsEnabled,Converter={StaticResource IsEnabledToOpacityConverter}}" />
+
+  <Image x:Key="CutImage" x:Shared="false" Source="{Binding Source={StaticResource BaseResources},Path=[CutImage],Converter={x:Static eg:ImageConverter.Default}}" Stretch="Fill" Opacity="{Binding RelativeSource={RelativeSource Self},Path=IsEnabled,Converter={StaticResource IsEnabledToOpacityConverter}}" />
+  <Image x:Key="CopyImage" x:Shared="false" Source="{Binding Source={StaticResource BaseResources},Path=[CopyImage],Converter={x:Static eg:ImageConverter.Default}}" Stretch="Fill" Opacity="{Binding RelativeSource={RelativeSource Self},Path=IsEnabled,Converter={StaticResource IsEnabledToOpacityConverter}}" />
+  <Image x:Key="PasteImage" x:Shared="false" Source="{Binding Source={StaticResource BaseResources},Path=[PasteImage],Converter={x:Static eg:ImageConverter.Default}}" Stretch="Fill" Opacity="{Binding RelativeSource={RelativeSource Self},Path=IsEnabled,Converter={StaticResource IsEnabledToOpacityConverter}}" />
+
+  <Image x:Key="SearchImage" x:Shared="false" Source="{Binding Source={StaticResource BaseResources},Path=[SearchImage],Converter={x:Static eg:ImageConverter.Default}}" Stretch="Fill" Opacity="{Binding RelativeSource={RelativeSource Self},Path=IsEnabled,Converter={StaticResource IsEnabledToOpacityConverter}}" />
+
+  <Image x:Key="ValidateImage" x:Shared="false" Source="{Binding Source={StaticResource BaseResources},Path=[ValidateImage],Converter={x:Static eg:ImageConverter.Default}}" Stretch="Fill" Opacity="{Binding RelativeSource={RelativeSource Self},Path=IsEnabled,Converter={StaticResource IsEnabledToOpacityConverter}}" />
+
+  <Image x:Key="InfoImage" x:Shared="false" Source="{Binding Source={StaticResource BaseResources},Path=[InfoImage],Converter={x:Static eg:ImageConverter.Default}}" Stretch="Fill" Opacity="{Binding RelativeSource={RelativeSource Self},Path=IsEnabled,Converter={StaticResource IsEnabledToOpacityConverter}}" />
+  <Image x:Key="WarningImage" x:Shared="false" Source="{Binding Source={StaticResource BaseResources},Path=[WarningImage],Converter={x:Static eg:ImageConverter.Default}}" Stretch="Fill" Opacity="{Binding RelativeSource={RelativeSource Self},Path=IsEnabled,Converter={StaticResource IsEnabledToOpacityConverter}}" />
+  <Image x:Key="ErrorImage" x:Shared="false" Source="{Binding Source={StaticResource BaseResources},Path=[ErrorImage],Converter={x:Static eg:ImageConverter.Default}}" Stretch="Fill" Opacity="{Binding RelativeSource={RelativeSource Self},Path=IsEnabled,Converter={StaticResource IsEnabledToOpacityConverter}}" />
+
+    <Image x:Key="OpenFromDBImage" x:Shared="false" Source="{Binding Source={StaticResource TfsMigrationShellResources},Path=[OpenFromDBImage],Converter={x:Static eg:ImageConverter.Default}}" Stretch="Fill" Opacity="{Binding RelativeSource={RelativeSource Self},Path=IsEnabled,Converter={StaticResource IsEnabledToOpacityConverter}}" />
+    <Image x:Key="SaveToDBImage" x:Shared="false" Source="{Binding Source={StaticResource TfsMigrationShellResources},Path=[SaveToDBImage],Converter={x:Static eg:ImageConverter.Default}}" Stretch="Fill" Opacity="{Binding RelativeSource={RelativeSource Self},Path=IsEnabled,Converter={StaticResource IsEnabledToOpacityConverter}}" />
+    <Image x:Key="PlayImage" x:Shared="false" Source="{Binding Source={StaticResource TfsMigrationShellResources},Path=[PlayImage],Converter={x:Static eg:ImageConverter.Default}}" Stretch="Fill" Opacity="{Binding RelativeSource={RelativeSource Self},Path=IsEnabled,Converter={StaticResource IsEnabledToOpacityConverter}}" />
+    <Image x:Key="PauseImage" x:Shared="false" Source="{Binding Source={StaticResource TfsMigrationShellResources},Path=[PauseImage],Converter={x:Static eg:ImageConverter.Default}}" Stretch="Fill" Opacity="{Binding RelativeSource={RelativeSource Self},Path=IsEnabled,Converter={StaticResource IsEnabledToOpacityConverter}}" />
+    <Image x:Key="StopImage" x:Shared="false" Source="{Binding Source={StaticResource TfsMigrationShellResources},Path=[StopImage],Converter={x:Static eg:ImageConverter.Default}}" Stretch="Fill" Opacity="{Binding RelativeSource={RelativeSource Self},Path=IsEnabled,Converter={StaticResource IsEnabledToOpacityConverter}}" />
+
+    <ContentControl x:Key="NewImage16x16" x:Shared="false" Width="16" Height="16" Content="{DynamicResource NewImage}" />
+  <ContentControl x:Key="OpenImage16x16" x:Shared="false" Width="16" Height="16" Content="{DynamicResource OpenImage}" />
+  <ContentControl x:Key="SaveImage16x16" x:Shared="false" Width="16" Height="16" Content="{DynamicResource SaveImage}" />
+
+  <ContentControl x:Key="UndoImage16x16" x:Shared="false" Width="16" Height="16" Content="{DynamicResource UndoImage}" />
+  <ContentControl x:Key="RedoImage16x16" x:Shared="false" Width="16" Height="16" Content="{DynamicResource RedoImage}" />
+
+  <ContentControl x:Key="CutImage16x16" x:Shared="false" Width="16" Height="16" Content="{DynamicResource CutImage}" />
+  <ContentControl x:Key="CopyImage16x16" x:Shared="false" Width="16" Height="16" Content="{DynamicResource CopyImage}" />
+  <ContentControl x:Key="PasteImage16x16" x:Shared="false" Width="16" Height="16" Content="{DynamicResource PasteImage}" />
+
+  <ContentControl x:Key="SearchImage16x16" x:Shared="false" Width="16" Height="16" Content="{DynamicResource SearchImage}" />
+
+  <ContentControl x:Key="ValidateImage16x16" x:Shared="false" Width="16" Height="16" Content="{DynamicResource ValidateImage}" />
+
+  <ContentControl x:Key="InfoImage16x16" x:Shared="false" Width="16" Height="16" Content="{DynamicResource InfoImage}" />
+  <ContentControl x:Key="WarningImage16x16" x:Shared="false" Width="16" Height="16" Content="{DynamicResource WarningImage}" />
+  <ContentControl x:Key="ErrorImage16x16" x:Shared="false" Width="16" Height="16" Content="{DynamicResource ErrorImage}" />
+
+    <ContentControl x:Key="OpenFromDBImage16x16" x:Shared="false" Width="16" Height="16" Content="{DynamicResource OpenFromDBImage}" />
+    <ContentControl x:Key="SaveToDBImage16x16" x:Shared="false" Width="16" Height="16" Content="{DynamicResource SaveToDBImage}" />
+    <ContentControl x:Key="PlayImage16x16" x:Shared="false" Width="16" Height="16" Content="{DynamicResource PlayImage}" />
+    <ContentControl x:Key="PauseImage16x16" x:Shared="false" Width="16" Height="16" Content="{DynamicResource PauseImage}" />
+    <ContentControl x:Key="StopImage16x16" x:Shared="false" Width="16" Height="16" Content="{DynamicResource StopImage}" />
+
+    <ContentControl x:Key="StatusToggleButtonContent" x:Shared="false">
+    <ContentControl.ContentTemplate>
+      <DataTemplate>
+        <Grid>
+          <Grid.DataContext>
+            <Binding Path="DataContext">
+              <Binding.RelativeSource>
+                <RelativeSource Mode="FindAncestor" AncestorType="{x:Type ContentControl}" />
+              </Binding.RelativeSource>
+            </Binding>
+          </Grid.DataContext>
+          <ProgressBar Name="statusProgressBar" Style="{DynamicResource StatusProgressBarStyle}" IsIndeterminate="{Binding ViewModel.IsBusy}" />
+          <TextBlock Name="statusTextBlock" Style="{DynamicResource StatusTextBlockStyle}" Text="{Binding DataContext.ViewModel.StatusEvents[0].EventData}" />
+        </Grid>
+        <DataTemplate.Triggers>
+          <Trigger SourceName="statusProgressBar" Property="IsIndeterminate" Value="True">
+            <Trigger.EnterActions>
+              <BeginStoryboard>
+                <Storyboard>
+                  <DoubleAnimation To="1" Duration="0:0:0" Storyboard.TargetName="statusTextBlock" Storyboard.TargetProperty="Opacity" />
+                </Storyboard>
+              </BeginStoryboard>
+            </Trigger.EnterActions>
+            <Trigger.ExitActions>
+              <BeginStoryboard>
+                <Storyboard>
+                  <DoubleAnimation To="0" Duration="0:0:2" AccelerationRatio="1" Storyboard.TargetName="statusTextBlock" Storyboard.TargetProperty="Opacity" />
+                </Storyboard>
+              </BeginStoryboard>
+            </Trigger.ExitActions>
+          </Trigger>
+        </DataTemplate.Triggers>
+      </DataTemplate>
+    </ContentControl.ContentTemplate>
+  </ContentControl>
+
+  <TextBox x:Key="SearchResultsExpanderHeader" x:Shared="False" Text="{Binding Path=ViewModel.SearchResults.Count,Mode=OneWay}" Focusable="False">
+    <TextBox.BitmapEffect>
+      <OuterGlowBitmapEffect GlowSize="2" GlowColor="Transparent" />
+    </TextBox.BitmapEffect>
+    <TextBox.Template>
+      <ControlTemplate>
+        <StackPanel Orientation="Horizontal">
+          <TextBlock Text="{Binding Source={StaticResource BaseResources},Path=[SearchResultsString]}" />
+          <TextBlock xml:space="preserve"> </TextBlock>
+          <TextBlock>(</TextBlock>
+          <TextBlock Text="{TemplateBinding Property=TextBox.Text}" />
+          <TextBlock>)</TextBlock>
+        </StackPanel>
+      </ControlTemplate>
+    </TextBox.Template>
+    <TextBox.Style>
+      <Style>
+        <Style.Triggers>
+          <EventTrigger RoutedEvent="TextBox.TextChanged">
+            <BeginStoryboard>
+              <Storyboard>
+                <ColorAnimation AccelerationRatio="1" From="Blue" To="Transparent" Storyboard.TargetProperty="(BitmapEffect).(GlowColor)" />
+              </Storyboard>
+            </BeginStoryboard>
+          </EventTrigger>
+        </Style.Triggers>
+      </Style>
+    </TextBox.Style>
+  </TextBox>
+
+  <TextBox x:Key="ValidationResultsExpanderHeader" x:Shared="False" Text="{Binding Path=ViewModel.ValidationResults.Count,Mode=OneWay}" Focusable="False">
+    <TextBox.BitmapEffect>
+      <OuterGlowBitmapEffect GlowSize="2" GlowColor="Transparent" />
+    </TextBox.BitmapEffect>
+    <TextBox.Template>
+      <ControlTemplate>
+        <StackPanel Orientation="Horizontal">
+          <TextBlock Text="{Binding Source={StaticResource BaseResources},Path=[ValidationResultsString]}" />
+          <TextBlock xml:space="preserve"> </TextBlock>
+          <TextBlock>(</TextBlock>
+          <TextBlock Text="{TemplateBinding Property=TextBox.Text}" />
+          <TextBlock>)</TextBlock>
+        </StackPanel>
+      </ControlTemplate>
+    </TextBox.Template>
+    <TextBox.Style>
+      <Style>
+        <Style.Triggers>
+          <EventTrigger RoutedEvent="TextBox.TextChanged">
+            <BeginStoryboard>
+              <Storyboard>
+                <ColorAnimation AccelerationRatio="1" From="Red" To="Transparent" Storyboard.TargetProperty="(BitmapEffect).(GlowColor)" />
+              </Storyboard>
+            </BeginStoryboard>
+          </EventTrigger>
+        </Style.Triggers>
+      </Style>
+    </TextBox.Style>
+  </TextBox>
+
+  <GridView x:Key="ValidationResultsListViewView" x:Shared="False">
+
+    <GridView.ColumnHeaderContainerStyle>
+      <Style TargetType="GridViewColumnHeader">
+        <Setter Property="Visibility" Value="Collapsed" />
+      </Style>
+    </GridView.ColumnHeaderContainerStyle>
+
+    <GridViewColumn Header="{Binding Source={StaticResource BaseResources},Path=[MessageString]}" Width="350">
+      <GridViewColumn.CellTemplate>
+        <DataTemplate>
+          <StackPanel Orientation="Horizontal">
+            <ContentControl x:Name="ValidationResultIconContainer" />
+            <TextBlock Margin="5,0,0,0" Text="{Binding Message}" />
+          </StackPanel>
+          <DataTemplate.Triggers>
+            <DataTrigger Binding="{Binding Level}" Value="Information">
+              <Setter TargetName="ValidationResultIconContainer" Property="Content" Value="{DynamicResource InfoImage16x16}" />
+            </DataTrigger>
+            <DataTrigger Binding="{Binding Level}" Value="Warning">
+              <Setter TargetName="ValidationResultIconContainer" Property="Content" Value="{DynamicResource WarningImage16x16}" />
+            </DataTrigger>
+            <DataTrigger Binding="{Binding Level}" Value="Error">
+              <Setter TargetName="ValidationResultIconContainer" Property="Content" Value="{DynamicResource ErrorImage16x16}" />
+            </DataTrigger>
+          </DataTemplate.Triggers>
+        </DataTemplate>
+      </GridViewColumn.CellTemplate>
+    </GridViewColumn>
+
+    <GridViewColumn Header="{Binding Source={StaticResource BaseResources},Path=[SourceString]}" DisplayMemberBinding="{Binding Source}" Width="200" />
+
+  </GridView>
+
+  <ev:DefaultView x:Key="ShellContent" Content="{DynamicResource ViewContent}" />
+
+  <!-- About -->
+  <Style x:Key="AboutStyle" TargetType="Window" BasedOn="{ev:DeferredStyle {x:Type Window}}">
+    <Setter Property="SizeToContent" Value="WidthAndHeight" />
+    <Setter Property="ResizeMode" Value="NoResize" />
+    <Setter Property="Title">
+      <Setter.Value>
+        <MultiBinding Converter="{x:Static ev:StringFormatConverter.Default}">
+          <Binding Source="{StaticResource BaseResources}" Path="[AboutApplicationString]" />
+          <Binding Path="ViewModel.ApplicationName" />
+        </MultiBinding>
+      </Setter.Value>
+    </Setter>
+  </Style>
+
+  <ev:DefaultAbout x:Key="AboutContent" x:Shared="False" />
+  <!--=============================================================================================-->
+
+
+</ResourceDictionary>

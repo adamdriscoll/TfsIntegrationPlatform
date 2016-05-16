@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippet Format="1.0.0">
+    <Header>
+        <Title>log entered</Title>
+        <Shortcut>logen</Shortcut>
+        <Description>Expansion snippet for Logger.EnteredMethod</Description>
+        <SnippetTypes>
+            <SnippetType>Expansion</SnippetType>
+        </SnippetTypes>
+    </Header>
+    <Snippet>
+        <Declarations>
+            <Literal default="true">
+                <ID>source</ID>
+                <ToolTip>LogSource for this message</ToolTip>
+                <Default>Common</Default>
+            </Literal>
+            <Literal default="true">
+                <ID>parameters</ID>
+                <ToolTip>Parameters passed to this method</ToolTip>
+                <Default>null</Default>
+            </Literal>
+        </Declarations>
+        <Code Language="csharp" Format="CData"><![CDATA[Logger.EnteredMethod(LogSource.$source$, $parameters$);$end$]]>
+	</Code>
+    </Snippet>
+</CodeSnippet>

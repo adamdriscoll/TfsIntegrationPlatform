@@ -1,0 +1,54 @@
+﻿<?xml version="1.0"?>
+<Configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+               UniqueId="A338288F-795D-47B2-89F2-58A20C9ED69C" FriendlyName="Subversion To TFS">
+  <Providers>
+    <Provider ReferenceName="FEBC091F-82A2-449e-AED8-133E5896C47A" FriendlyName="TFS 2010 VC Migration Provider" />
+    <Provider ReferenceName="BCC31CA2-534D-4054-9013-C1FEF67D5273" FriendlyName="Subversion Provider" />
+  </Providers>
+  
+  <SessionGroup FriendlyName="Subversion to TFS Version Control Session" SessionGroupGUID="57BD55D0-BF7A-4455-9C1E-87A4062F9EF2">
+    <WorkFlowType Frequency="ContinuousManual" DirectionOfFlow="Unidirectional" SyncContext="Disabled" />
+    <MigrationSources>
+      <MigrationSource InternalUniqueId="5FC1C613-DE50-4B01-9AD5-A57A4E5BBF3C" FriendlyName="TFS 2010 source"
+                       ServerIdentifier="TFS 2010 target"
+                       ServerUrl="http://localhost:8080/tfs"
+                       SourceIdentifier="sourceTfs"
+                       ProviderReferenceName="FEBC091F-82A2-449e-AED8-133E5896C47A">
+        <CustomSettings />
+      </MigrationSource>
+      
+      <MigrationSource InternalUniqueId="52346EF8-149B-4FE5-8DF7-0D7CC759FD78" FriendlyName="Subversion Source source"
+                         ServerIdentifier="Subversion target"
+                         ServerUrl="svn://localhost/svn2tfs/"
+                         SourceIdentifier="sourceSubversion"
+                         ProviderReferenceName="BCC31CA2-534D-4054-9013-C1FEF67D5273">
+        <CustomSettings>
+          <CustomSetting SettingKey="Username" SettingValue="harry" />
+          <CustomSetting SettingKey="Password" SettingValue="harryssecret" />
+          <CustomSetting SettingKey="LogRecordPrefetchSize" SettingValue="50"/>
+        </CustomSettings>
+      </MigrationSource>
+    </MigrationSources>
+    
+    <Sessions>
+      <Session SessionType="VersionControl" SessionUniqueId="7EFCBF0E-CF4E-4733-8D1A-3BFA24B0E0A3" FriendlyName="Subversion to TFS Version Control Session"
+               RightMigrationSourceUniqueId="5FC1C613-DE50-4B01-9AD5-A57A4E5BBF3C"
+               LeftMigrationSourceUniqueId="52346EF8-149B-4FE5-8DF7-0D7CC759FD78">
+        <EventSinks />
+        <CustomSettings />
+        <Filters>
+          <FilterPair Neglect="false">
+            <FilterItem MigrationSourceUniqueId="5FC1C613-DE50-4B01-9AD5-A57A4E5BBF3C" FilterString="$/SVN2TFS/trunk10"/>
+            <FilterItem MigrationSourceUniqueId="52346EF8-149B-4FE5-8DF7-0D7CC759FD78" FilterString="/trunk" />
+          </FilterPair>
+        </Filters>
+      </Session>
+    </Sessions>
+    
+    <Linking>
+      <CustomSettings />
+      <LinkTypeMappings />
+    </Linking>
+    
+  </SessionGroup>
+</Configuration>

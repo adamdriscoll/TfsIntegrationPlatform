@@ -1,0 +1,3 @@
+﻿ALTER TABLE [dbo].[PROVIDERS]
+	ADD CONSTRAINT [PK_Providers]
+	PRIMARY KEY (Id)

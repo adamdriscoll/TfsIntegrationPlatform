@@ -1,0 +1,3 @@
+﻿ALTER TABLE [dbo].[MIGRATION_SOURCES]
+	ADD CONSTRAINT [PK_MigrationSources]
+	PRIMARY KEY (Id)

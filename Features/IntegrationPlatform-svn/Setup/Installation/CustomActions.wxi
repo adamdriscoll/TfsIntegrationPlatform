@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Include xmlns="http://schemas.microsoft.com/wix/2006/wi">
+
+  <Binary Id="InstallationCA" SourceFile="$(var.InstallationCA.TargetDir)\InstallationCA.CA.dll"/>
+
+  <!--                                                                                            -->
+  <!-- Immediate Custom Actions                                                                   -->
+  <!--                                                                                            -->
+  <CustomAction Id="SetDefaultValues" BinaryKey="InstallationCA" DllEntry="SetDefaultValues" Execute="immediate" Impersonate="yes" Return="check" />
+  <CustomAction Id='NewerVersionDetected' Error='!(loc.MsgNewerVersionDetected)' />
+  
+  <CustomAction Id="CheckDatabaseConnectivity" BinaryKey="InstallationCA" DllEntry="CheckExistingDBVersion" Execute="immediate" Impersonate="yes"  Return="check" />
+  <CustomAction Id="CheckDBPermission" BinaryKey="InstallationCA" DllEntry="CheckDBPermission" Execute="immediate" Impersonate="yes" Return="check" />
+
+  <!--                                                                                            -->
+  <!-- Deferred Custom Actions                                                                    -->
+  <!--                                                                                            -->
+  <!-- Custom actions that change the system directly, like those that register an event source   -->
+  <!-- or our actions that update the deployed config file under Program Files must be deferred   -->
+  <!-- to the point in time where the installation script is executed.  Also, only deferred CAs   -->
+  <!-- can run as a privileged user (actions run as local system). Deferred custom actions cannot -->
+  <!-- rely on Session context and so must have aruments passed through a packed string           -->
+  <!-- set by an immediate custom action.  A defered custom action sets Execute =                 -->
+  <!-- deferred|commit|rollback.  Actions that are marked Impersonate="no" run as local system.   -->
+  <!--                                                                                            -->
+
+  <CustomAction Id="CACreateEventSources.SetProperty" Property="CACreateEventSources" Return="check"
+                Value="[TFSINTEGRATIONSERVICENAME],[TFSINTEGRATIONJOBSERVICENAME]" />
+  <CustomAction Id="CACreateEventSources" BinaryKey="InstallationCA" DllEntry="CreateEventSources" Execute="deferred" Impersonate="no" Return="check" />
+  
+  <CustomAction Id="CADeleteEventSources.SetProperty" Property="CADeleteEventSources" Return="check"
+                Value="[TFSINTEGRATIONSERVICENAME],[TFSINTEGRATIONJOBSERVICENAME]" />
+  <CustomAction Id="CADeleteEventSources" BinaryKey="InstallationCA" DllEntry="DeleteEventSources" Execute="deferred" Impersonate="no" Return="check" />
+  
+  <CustomAction Id="CAStartWindowsServices.SetProperty" Property="CAStartWindowsServices" Return="check"
+                  Value="[TFSINTEGRATIONSERVICENAME],[TFSINTEGRATIONJOBSERVICENAME],[INSTALLDIR]" />
+  <CustomAction Id="CAStartWindowsServices" BinaryKey="InstallationCA" DllEntry="StartWindowsServices" Execute="deferred" Impersonate="no" Return="check" />
+
+  <CustomAction Id="CACreateWorkerProcessGroup.SetProperty" Property="CACreateWorkerProcessGroup" Return="check"
+                Value="[TFSWPGNAME],[TFSWPGCOMMENT],[SERVICEACCOUNTNAME]" />
+  <CustomAction Id="CACreateWorkerProcessGroup" BinaryKey="InstallationCA" DllEntry="CreateWorkerProcessGroup" Execute="deferred" Impersonate="no" Return="check" />
+
+  <CustomAction Id="CAGrantFullControlRights.SetProperty" Property="CAGrantFullControlRights" Return="check"
+                Value="[TFSWPGNAME],[WORKSPACEDIR]" />
+  <CustomAction Id="CAGrantFullControlRights" BinaryKey="InstallationCA" DllEntry="GrantFullControlRights" Execute="deferred" Impersonate="no" Return="check" />
+
+  <CustomAction Id="CADeleteWorkerProcessGroup.SetProperty" Property="CADeleteWorkerProcessGroup" Return="check"
+                Value="[TFSWPGNAME]" />
+  <CustomAction Id="CADeleteWorkerProcessGroup" BinaryKey="InstallationCA" DllEntry="DeleteWorkerProcessGroup" Execute="deferred" Impersonate="no" Return="check" />
+  
+  <CustomAction Id="CACreateDatabaseRole.SetProperty" Property="CACreateDatabaseRole" Return="check"
+              Value="[DATABASESERVER],[DATABASENAME],[SERVICEACCOUNTNAME]" />
+  <!-- Impersonate="yes" when touching the DB: we need the user's credentials to interact with SQL -->
+  <CustomAction Id="CACreateDatabaseRole" BinaryKey="InstallationCA" DllEntry="CreateDatabaseRole" Execute="deferred" Impersonate="yes" Return="check" />
+  
+  <!-- Properties -->
+  <CustomAction Id="ResetCACURRENTDBCHECK" Property="CACURRENTDBCHECK" Value="notRun" />
+  <CustomAction Id="ResetCACHECKDBPERMISSION" Property="CACHECKDBPERMISSION" Value="notRun" />
+
+</Include>

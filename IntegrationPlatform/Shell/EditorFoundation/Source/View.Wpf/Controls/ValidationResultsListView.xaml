@@ -1,0 +1,27 @@
+﻿<!-- Copyright © Microsoft Corporation.  All Rights Reserved.  This code released under the terms of the Microsoft Public License (MS-PL, http://opensource.org/licenses/ms-pl.html.) -->
+<ListView x:Class="Microsoft.TeamFoundation.Migration.Shell.View.ValidationResultsListView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:scm="clr-namespace:System.ComponentModel;assembly=WindowsBase"
+    Style="{DynamicResource ValidationResultsListViewStyle}">
+
+    <ListView.Resources>
+        <CollectionViewSource x:Key="ValidationResults" Source="{Binding ViewModel.ValidationResults}">
+            <CollectionViewSource.GroupDescriptions>
+                <PropertyGroupDescription PropertyName="Level" />
+            </CollectionViewSource.GroupDescriptions>
+            <CollectionViewSource.SortDescriptions>
+                <scm:SortDescription PropertyName="Level" />
+            </CollectionViewSource.SortDescriptions>
+        </CollectionViewSource>
+    </ListView.Resources>
+
+    <ListView.ItemsSource>
+        <Binding Source="{StaticResource ValidationResults}" />
+    </ListView.ItemsSource>
+
+    <ListView.CommandBindings>
+        <CommandBinding Command="ApplicationCommands.Copy" CanExecute="OnCanExecuteCopy" Executed="OnExecutedCopy" />
+    </ListView.CommandBindings>
+
+</ListView>

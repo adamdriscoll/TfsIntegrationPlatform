@@ -1,0 +1,3 @@
+﻿ALTER TABLE [dbo].[SYNC_POINT]
+	ADD CONSTRAINT [PK_SyncPoint]
+	PRIMARY KEY (Id)

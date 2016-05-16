@@ -1,0 +1,218 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ClearQuest_Config_IncompleteLoginCredentialSetting" xml:space="preserve">
+    <value>The login credential setting in the ClearQuest migraiton source configuration is not complete.</value>
+  </data>
+  <data name="ClearQuest_Config_MissingLoginCredentialSettingType" xml:space="preserve">
+    <value>The configuration of the ClearQuest migraiton source does not have a valid login credential setting type.</value>
+  </data>
+  <data name="ClearQuest_Config_UnknownLoginCredentialSettingType" xml:space="preserve">
+    <value>The login credential setting type in the ClearQuest migraiton source configuration is not supported.</value>
+  </data>
+  <data name="ClearQuest_Conflict_Action_AddFieldMap" xml:space="preserve">
+    <value>Resolving ClearQuest invalid field value conflict by adding a field map for mandatory field.</value>
+  </data>
+  <data name="ClearQuest_Conflict_Action_DropField" xml:space="preserve">
+    <value>Resolving ClearQuest invalid field value conflict by dropping the conflicted field.</value>
+  </data>
+  <data name="ClearQuest_Conflict_Action_DropValueSetting" xml:space="preserve">
+    <value>Skip setting a field value to resolve a ClearQuest migration conflict.</value>
+  </data>
+  <data name="ClearQuest_Conflict_Action_RegexValueReplacement" xml:space="preserve">
+    <value>Use Regex-based string replacement to transform a field value and resolve a ClearQuest migration conflict.</value>
+  </data>
+  <data name="ClearQuest_Conflict_Action_UseValueMap" xml:space="preserve">
+    <value>Resolving ClearQuest invalid field value conflict by adding a value map.</value>
+  </data>
+  <data name="ClearQuest_Conflict_GenericConflict_Desc" xml:space="preserve">
+    <value>This conflict is detected when an unhandled exception is caught at adapter interface boundary.</value>
+  </data>
+  <data name="ClearQuest_Conflict_GenericConflict_Name" xml:space="preserve">
+    <value>ClearQuest adapter generic conflict</value>
+  </data>
+  <data name="ClearQuest_Conflict_InitConflict_Desc" xml:space="preserve">
+    <value>This conflict is detected when there is an error initializing the ClearQuest adapter.</value>
+  </data>
+  <data name="ClearQuest_Conflict_InitConflict_Name" xml:space="preserve">
+    <value>ClearQuest adapter initialization conflict</value>
+  </data>
+  <data name="ClearQuest_Conflict_InsufficentPrivilege_Desc" xml:space="preserve">
+    <value>This conflict is detected when the ClearQuest login user does not have sufficent privilege to complete the migration session.</value>
+  </data>
+  <data name="ClearQuest_Conflict_InsufficentPrivilege_Name" xml:space="preserve">
+    <value>ClearQuest adapter insufficent user privilege conflict</value>
+  </data>
+  <data name="ClearQuest_Conflict_InsufficientPrivilege_DetailsFormat" xml:space="preserve">
+    <value>User '{0}' does not have ClearQuest user privilege '{1}' that's required to complete the migration session.</value>
+  </data>
+  <data name="ClearQuest_Conflict_InvalidFieldValue_Name" xml:space="preserve">
+    <value>ClearQuest invalid field value conflict type</value>
+  </data>
+  <data name="ClearQuest_Conflict_MisingCQCom_Desc" xml:space="preserve">
+    <value>This conflict is detected when the ClearQuest adapter fails to find the ClearQuest COM DLL.</value>
+  </data>
+  <data name="ClearQuest_Conflict_MisingCQCom_Name" xml:space="preserve">
+    <value>ClearQuest adapter missing ClearQuest COM dll conflict</value>
+  </data>
+  <data name="ClearQuest_Conflict_MissingResolutionData" xml:space="preserve">
+    <value>Missing resolution data: {0}.</value>
+  </data>
+  <data name="ClearQuest_Conflict_SetFieldConflict_Desc" xml:space="preserve">
+    <value>This conflict is detected when ClearQuest Interop returns an error string when setting a field value.</value>
+  </data>
+  <data name="ClearQuest_Conflict_SetFieldConflict_DtlsFormat" xml:space="preserve">
+    <value>Failed to migrate source Work Item (Id: {0}, Rev: {1}) due to error in setting target ClearQuest Record field '{2}' with value '{3}'. ClearQuest returned the following error:
+{4}</value>
+  </data>
+  <data name="ClearQuest_Conflict_SetFieldConflict_Name" xml:space="preserve">
+    <value>ClearQuest adapter set field conflict</value>
+  </data>
+  <data name="ClearQuest_Error_CredntialMissing" xml:space="preserve">
+    <value>There is not stored credential availlable for the resource (Uri: {0}).</value>
+  </data>
+  <data name="ClearQuest_Error_InvalidActionDescription" xml:space="preserve">
+    <value>The action description of the migration action '{0}' is invalid.</value>
+  </data>
+  <data name="ClearQuest_Error_LoginFailure" xml:space="preserve">
+    <value>Failed to login to UserDB '{0}' of DBSet '{1}' with Session Type '{2}' as User '{3}'.</value>
+  </data>
+  <data name="ClearQuest_Msg_ConflictResolved" xml:space="preserve">
+    <value>Resolved conflict '{0}'.</value>
+  </data>
+  <data name="ClearQuest_Msg_ConflictUnresolved" xml:space="preserve">
+    <value>Failed to resolve conflict '{0}'.</value>
+  </data>
+  <data name="ClearQuest_Msg_RecordDeleted" xml:space="preserve">
+    <value>'{0}' '{1}' has been deleted on the ClearQuest server.</value>
+  </data>
+  <data name="ClearQuest_Msg_UpdateLogHeaderFormat" xml:space="preserve">
+    <value>Author: {0}
+Change Date: {1}
+
+----- Change Details -----
+</value>
+  </data>
+  <data name="ClearQuest_Msg_UpdateLogRevFormat" xml:space="preserve">
+    <value>rev {0}</value>
+  </data>
+  <data name="StoredCredentialNotSupported" xml:space="preserve">
+    <value>Using Windows Credential Store to preserve ClearQuest login information is not supported on the current Operating System.</value>
+  </data>
+</root>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="Microsoft.TeamFoundation.Migration.Common.targets" />
+
+  <!-- ************************************************************************ -->
+  <!-- CopyContentFiles Target                                                  -->
+  <!--                                                                          -->
+  <!-- This target is used for projects that exist only to push content to      -->
+  <!-- OutDir.  Replace the DefaultTarget in the project with CopyContentFiles  -->
+  <!-- and make sure all files that should be moved have Build Action set to    -->
+  <!-- Content.                                                                 -->
+  <!--                                                                          -->
+  <!-- NOTE: The use of %(RelativeDir) maintains source directory structure.    -->
+  <!-- ************************************************************************ -->
+  
+  <Target Name="CopyContentFiles">
+    <Message Text="Copy content files to the output directory" Importance="low" />
+    <Copy SourceFiles="@(Content)" DestinationFolder="$(OutputPath)\%(RelativeDir)" />
+  </Target>
+
+  <!-- ************************************************************************ -->
+  <!-- Augment defines here since this comes after generated project            -->
+  <!-- DefineConstants statements that blindly overwrite existing values.       -->
+  <!-- ************************************************************************ -->
+  
+  <PropertyGroup Condition="'$(PartiallySignedBuild)' == 'true'">
+    <!-- This Microsoft public key is copied in when strong name signing as Microsoft. -->
+    <AssemblyOriginatorKeyFile>$(TfsIPRoot)\Binaries\External\35MSSharedLib1024.snk</AssemblyOriginatorKeyFile>
+    <DelaySign>true</DelaySign>
+    <SignAssembly>true</SignAssembly>
+    
+    <DefineConstants>$(DefineConstants);PARTIALLY_SIGNED_BUILD</DefineConstants>
+  </PropertyGroup>
+
+</Project>

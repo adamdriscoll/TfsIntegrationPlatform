@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Include xmlns="http://schemas.microsoft.com/wix/2006/wi">
+
+  <!-- You must be an admin to install this tool -->
+  <Condition Message="!(loc.AdminPrivilegesRequired)">Privileged</Condition>
+
+  <Condition Message="!(loc.NetFrameworkRequired)"><![CDATA[(NETFRAMEWORK35SP1 <> "#0")]]> OR Installed</Condition>
+
+  <Condition Message="!(loc.TeamExplorerRequired)">(TEAMEXPLORER9 OR TEAMEXPLORER10) OR Installed</Condition>
+</Include>

@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="NewDataSet" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+  <xs:element name="Linking">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="CustomSettings" minOccurs="0" maxOccurs="1">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="SettingXml" type="xs:string" minOccurs="0" />
+              <xs:element name="SettingXmlSchema" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="LinkTypeMappings" minOccurs="0" maxOccurs="1">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="LinkTypeMapping" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:attribute name="LeftMigrationSourceUniqueId" type="xs:string" />
+                  <xs:attribute name="LeftLinkType" type="xs:string" />
+                  <xs:attribute name="RightMigrationSourceUniqueId" type="xs:string" />
+                  <xs:attribute name="RightLinkType" type="xs:string" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+      <xs:attribute name="EngineProviderReferenceName" type="xs:string" />
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

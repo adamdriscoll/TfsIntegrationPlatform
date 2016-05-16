@@ -1,0 +1,31 @@
+
+      <TabGroup>
+        <Tab Label="Summary">
+          <Group>
+            <Column PercentWidth="30">
+              <Control Type="HtmlFieldControl" FieldName="System.Description" Label="Description" LabelPosition="Top" Dock="Left" /> 
+            </Column>
+            <Column FixedWidth="5">
+              <Splitter Dock="Left" /> 
+            </Column>
+            <Column PercentWidth="70">
+              <Control Type="WorkItemLogControl" FieldName="System.History" Label="History" LabelPosition="Top" Dock="Fill" /> 
+            </Column>
+          </Group>
+        </Tab>
+        <Tab Label="Details">
+          <Group>
+            <Column PercentWidth="100">
+              <Control Type="FieldControl" FieldName="System.CreatedDate" Label="Created Date" LabelPosition="Left" /> 
+              <Control Type="FieldControl" FieldName="System.ChangedBy" Label="Changed By" LabelPosition="Left" /> 
+              <Control Type="FieldControl" FieldName="System.ChangedDate" Label="Changed Date" LabelPosition="Left" /> 
+            </Column>
+          </Group>
+        </Tab>
+        <Tab Label="Links">
+          <Control Type="LinksControl"/> 
+        </Tab>
+        <Tab Label="Attachments">
+          <Control Type="AttachmentsControl"/> 
+        </Tab>
+      </TabGroup>

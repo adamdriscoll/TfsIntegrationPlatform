@@ -1,0 +1,3 @@
+﻿ALTER TABLE [dbo].[RUNTIME_LINK_ANALYSIS_RESULTS]
+ADD CONSTRAINT [UK_RT_LinkAnalysisRslts]
+UNIQUE (SessionGroupRunId)

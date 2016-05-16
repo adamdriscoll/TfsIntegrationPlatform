@@ -1,0 +1,346 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="BranchSettingName" xml:space="preserve">
+    <value>CCBranchName</value>
+  </data>
+  <data name="BranchVersionString" xml:space="preserve">
+    <value>main\{0}</value>
+  </data>
+  <data name="CCActionCommentModifier" xml:space="preserve">
+    <value>{0}</value>
+  </data>
+  <data name="CCConfigSpecLoadRule" xml:space="preserve">
+    <value>load {0}</value>
+  </data>
+  <data name="ChangeActionNotSupportedException" xml:space="preserve">
+    <value>The change action {0} is not supported by the ClearCaseDetailedHistoryAdapter</value>
+  </data>
+  <data name="ClearCaseDateTimeFormat" xml:space="preserve">
+    <value>dd-MMM-yyyy.HH:mm:ss</value>
+  </data>
+  <data name="ClearCaseServerNotFound" xml:space="preserve">
+    <value>Cannot find the clearcase server object with view name {0}.</value>
+  </data>
+  <data name="ClearToolCommandException" xml:space="preserve">
+    <value>An exception occurred running cleartool command: '{0}': {1}</value>
+  </data>
+  <data name="ClearToolViewPath" xml:space="preserve">
+    <value>{0}.vws</value>
+  </data>
+  <data name="ConfigSpecCheckOutRule" xml:space="preserve">
+    <value>element * CHECKEDOUT</value>
+  </data>
+  <data name="ConfigSpecCreateBranch" xml:space="preserve">
+    <value> 
+element * /main/LATEST -mkbranch {0}</value>
+  </data>
+  <data name="ConfigSpecLoadRule" xml:space="preserve">
+    <value> 
+load {0}</value>
+  </data>
+  <data name="ConfigSpecSelectBranch" xml:space="preserve">
+    <value> 
+element * .../{0}/LATEST</value>
+  </data>
+  <data name="ConfigSpecSelectMain" xml:space="preserve">
+    <value> 
+element * /main/LATEST</value>
+  </data>
+  <data name="DefaultBranchName" xml:space="preserve">
+    <value>main</value>
+  </data>
+  <data name="DefaultStorageLocation" xml:space="preserve">
+    <value>\\localhost\cccstg</value>
+  </data>
+  <data name="DefaultStorageLocationLocalPath" xml:space="preserve">
+    <value>c:\cccstg</value>
+  </data>
+  <data name="DownloadFolderSettingName" xml:space="preserve">
+    <value>DownloadFolder</value>
+  </data>
+  <data name="DownloadLocationNotSpecified" xml:space="preserve">
+    <value>ClearCaseDetailedHistoryAdapter specific CustomSetting 'DownloadFolder' is required. Please add the setting to the configuration file. </value>
+  </data>
+  <data name="DynamicViewRootDoesNotExist" xml:space="preserve">
+    <value>The {0} directory ({1}) specified in the config file does not exist or is not accessible.</value>
+  </data>
+  <data name="DynamicViewRootSettingName" xml:space="preserve">
+    <value>DynamicViewRoot</value>
+  </data>
+  <data name="PrecreatedViewSettingName" xml:space="preserve">
+    <value>PrecreatedViewName</value>
+  </data>
+  <data name="ElementNotFoundException" xml:space="preserve">
+    <value>The element {0} cannot be found.</value>
+  </data>
+  <data name="ErrorMultipleBranchInstance" xml:space="preserve">
+    <value>Element {0} has two branches of type {1}. This is not supported by the converter tool. Hence skipping the branch applied at {2}</value>
+  </data>
+  <data name="FilesLeftCheckedOutInView" xml:space="preserve">
+    <value>Some files are left checked out in the current migration view.</value>
+  </data>
+  <data name="GetDiffItemsException" xml:space="preserve">
+    <value>An exception occurred getting items for diff from folder '{0}': {1}</value>
+  </data>
+  <data name="HistoryRecordColumnDeliminator" xml:space="preserve">
+    <value>*</value>
+  </data>
+  <data name="HistoryRecordRowDeliminator" xml:space="preserve">
+    <value>##</value>
+  </data>
+  <data name="InvalidClearCasePath" xml:space="preserve">
+    <value>{0} is not a valid clearcase item path. </value>
+  </data>
+  <data name="InvalidDynamicViewRoot" xml:space="preserve">
+    <value>The config file contains an invalid value for {0}: '{1}'.  The value should be in the form '&lt;drive&gt;:\'</value>
+  </data>
+  <data name="InvalidVobExtendedPath" xml:space="preserve">
+    <value>The path {0} is not a well formed vob extended path.</value>
+  </data>
+  <data name="InvalidVobExtendedPathForBranch" xml:space="preserve">
+    <value>The path {0} is not a well formed vob extended path for a branch.</value>
+  </data>
+  <data name="InvalidVobExtendedPathForElement" xml:space="preserve">
+    <value>The path {0} is not a well formed vob extended path for an element.</value>
+  </data>
+  <data name="InvalidVobExtendedPathForVersion" xml:space="preserve">
+    <value>The path {0} is not a well formed vob extended path for a version.</value>
+  </data>
+  <data name="LabelTypeCreated" xml:space="preserve">
+    <value>ClearCaseDetailedHistoryAdapter created label type '{0}'</value>
+  </data>
+  <data name="LabelTypeCreationFailed" xml:space="preserve">
+    <value>ClearCaseDetailedHistoryAdapter failed to create label type '{0}': {1}</value>
+  </data>
+  <data name="LabelTypeRemoveFailed" xml:space="preserve">
+    <value>ClearCaseDetailedHistoryAdapter failed to remove label type '{0}': {1}</value>
+  </data>
+  <data name="NoVobNameInVobExtendedPath" xml:space="preserve">
+    <value>The Vob extended path {0} does not contain vob name {1}</value>
+  </data>
+  <data name="PathNotUnderBasePath" xml:space="preserve">
+    <value>Path '{0}' is not under base path '{1}'</value>
+  </data>
+  <data name="StorageLocationLocalPathSettingName" xml:space="preserve">
+    <value>StorageLocationLocalPath</value>
+  </data>
+  <data name="StorageLocationSettingName" xml:space="preserve">
+    <value>StorageLocation</value>
+  </data>
+  <data name="ToStringVersion" xml:space="preserve">
+    <value>DataSourceName: '{0}' AssociatedFileOrFolderPath: '{2}' VersionPath: '{3}' AssociatedFileOrFolderId: '{1}'</value>
+  </data>
+  <data name="UnableToGetHashVaue" xml:space="preserve">
+    <value>ClearCaseDetailedHistoryAdapter: Unable to get HashValue for item {0}: {1}</value>
+  </data>
+  <data name="ViewName" xml:space="preserve">
+    <value>CCC_{0}_view_{1}</value>
+  </data>
+  <data name="VobNotFound" xml:space="preserve">
+    <value>Vob '{0} does not exist on ClearCase server. </value>
+  </data>
+  <data name="VobSettingName" xml:space="preserve">
+    <value>VobName</value>
+  </data>
+  <data name="CCAttrTypeNotFoundConflictTypeDescription" xml:space="preserve">
+    <value>This conflict occurs when a file attribute is added, but the attribute type name cannot be found; the attribute type name must already exist in the ClearCase server.</value>
+  </data>
+  <data name="CCAttrTypeNotFoundConflictTypeFriendlyName" xml:space="preserve">
+    <value>ClearCase attribute type not found conflict type</value>
+  </data>
+  <data name="CCAttrTypeNotFoundRetryActionFriendlyName" xml:space="preserve">
+    <value>Resolve attribute type not found by retrying the adding of the attribute (after manually adding the attribute type outside)</value>
+  </data>
+  <data name="CCAttrTypeNotFoundSkipActionFriendlyName" xml:space="preserve">
+    <value>Resolve attribute type not found by skipping the adding of the attribute</value>
+  </data>
+  <data name="SkippingAddingAttribute" xml:space="preserve">
+    <value>Skipping adding attribute {0} to {1} per conflict resolution choice</value>
+  </data>
+  <data name="UnableToAddAttribute" xml:space="preserve">
+    <value>Unable to add attribute {0} to {1}: {2}</value>
+  </data>
+  <data name="SkippingAddingLabel" xml:space="preserve">
+    <value>Skipping adding label {0} per conflict resolution choice</value>
+  </data>
+  <data name="DetectChangesInCC" xml:space="preserve">
+    <value>DetectChangesInCC</value>
+  </data>
+  <data name="ClearfsimportConfigurationMaster" xml:space="preserve">
+    <value>ClearfsimportConfiguration.Master</value>
+  </data>
+  <data name="ClearfsimportConfigurationUnco" xml:space="preserve">
+    <value>ClearfsimportConfiguration.Unco</value>
+  </data>
+  <data name="CCCheckinConflictSkipActionFriendlyName" xml:space="preserve">
+    <value>Resolve the conflict by skipping the checkin command.</value>
+  </data>
+  <data name="CCCheckinConflictTypeFriendlyName" xml:space="preserve">
+    <value>The checkin to clearcase server failed.</value>
+  </data>
+  <data name="ClearfsimportConfigurationBatchSize" xml:space="preserve">
+    <value>ClearfsimportConfiguration.BatchSize</value>
+  </data>
+  <data name="LabelAllVersions" xml:space="preserve">
+    <value>LabelAllVersions</value>
+  </data>
+  <data name="CheckinLabelFormat" xml:space="preserve">
+    <value>MIGRATION_LABEL_ALL_VERSIONS_AT_{0:yyyy}_{0:MM}_{0:dd}_{0:HH}_{0:mm}_{0:ss}_{0:fff}</value>
+  </data>
+  <data name="ClearfsimportConfigurationParseOutput" xml:space="preserve">
+    <value>ClearfsimportConfiguration.ParseOutput</value>
+  </data>
+  <data name="UsingExistingLabelType" xml:space="preserve">
+    <value>ClearCaseDetailedHistoryAdapter adding items to existing label type '{0}'</value>
+  </data>
+  <data name="AddinNotFound" xml:space="preserve">
+    <value>ClearCaseDetailedHistoryAdapter: Did not find Addin with ID '{0}'</value>
+  </data>
+  <data name="LoadedAddin" xml:space="preserve">
+    <value>ClearCaseDetailedHistoryAdapter: Loaded Addin of type {0}</value>
+  </data>
+  <data name="NoChangesReadyToMigrate" xml:space="preserve">
+    <value>ClearCaseDetailedHistoryAdapter: No changes ready to migrate</value>
+  </data>
+  <data name="CustomSettingNotSpecified" xml:space="preserve">
+    <value>CustomSetting '{0}' is not specified. This setting is required for {1}. Please change the configuration file and restart the migration.</value>
+  </data>
+  <data name="RedundentViewRoot" xml:space="preserve">
+    <value>Both 'DynamicViewRoot' (for dynamic view) and 'StorageLocation' (for snapshot view) are specified in the configuration file. Only one is needed. Please change the configuration file and restart the migration.</value>
+  </data>
+  <data name="ViewRootNeeded" xml:space="preserve">
+    <value>Either 'DynamicViewRoot' (for dynamic view) or 'StorageLocation' (for snapshot view) needs to be specified if a pre-created view is used for migration. Please change the configuration file and restart the migration.</value>
+  </data>
+  <data name="InvalidChangeItemIdFormat" xml:space="preserve">
+    <value>The lastProcessedChangeItemId argument ('{0}') is not in the correct format.</value>
+  </data>
+  <data name="BatchChangesInGroup" xml:space="preserve">
+    <value>BatchChangesInGroup</value>
+  </data>
+  <data name="InvalidSnapshotString" xml:space="preserve">
+    <value>The specified snap shot start point string '{0}' is in a wrong format.</value>
+  </data>
+  <data name="QueryRenameHistory" xml:space="preserve">
+    <value>QueryRenameHistory</value>
+  </data>
+  <data name="ClearfsimportConfigurationIdentical" xml:space="preserve">
+    <value>ClearfsimportConfiguration.Identical</value>
+  </data>
+</root>

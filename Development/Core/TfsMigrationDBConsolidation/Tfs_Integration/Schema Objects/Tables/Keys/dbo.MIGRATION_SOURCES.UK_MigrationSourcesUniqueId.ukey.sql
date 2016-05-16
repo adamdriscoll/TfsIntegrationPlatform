@@ -1,0 +1,3 @@
+﻿ALTER TABLE [dbo].[MIGRATION_SOURCES]
+ADD CONSTRAINT [UK_MigrationSourcesUniqueId]
+UNIQUE (UniqueId)

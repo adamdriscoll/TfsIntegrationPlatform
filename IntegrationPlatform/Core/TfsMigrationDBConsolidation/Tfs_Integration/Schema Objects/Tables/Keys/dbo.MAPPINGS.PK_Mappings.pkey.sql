@@ -1,0 +1,3 @@
+﻿ALTER TABLE [dbo].[MAPPINGS]
+	ADD CONSTRAINT [PK_Mappings]
+	PRIMARY KEY (Id)

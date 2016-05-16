@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- 
+  Instructions:
+  1. Update test server names in MigrationSourceList
+  2. Update team project names in Source elements
+-->
+
+<MigrationTestEnvironment>
+  
+  <TestProjectList>
+    <TestProject Name="BasicVCTest" DefaultTestEnvironmentId="1" ConfigurationFile="TfsVCConfiguration.xml" />
+    <TestProject Name="TfsVCTest" DefaultTestEnvironmentId="1" ConfigurationFile="TfsVCConfiguration.xml" />
+    <TestProject Name="Tfs2TfsVCTest" DefaultTestEnvironmentId="1" ConfigurationFile="TfsVCConfiguration.xml" />
+    <TestProject Name="BasicWITTest" DefaultTestEnvironmentId="2" ConfigurationFile="TfsWITConfiguration.xml" />
+    <TestProject Name="TfsWITTest" DefaultTestEnvironmentId="2" ConfigurationFile="TfsWITConfiguration.xml" />
+  </TestProjectList>
+  
+  <!-- List of test case adapters -->
+  <TestAdapterList>
+    <TestAdapter Id="0A2595BE-5DA5-4fb7-A298-BB05C40C5CC0" FriendlyName="Tfs2008VCTCAdapter" />
+    <TestAdapter Id="1F9D1FCE-6E9E-45ea-AB21-3F6B395AB323" FriendlyName="Tfs2008WITTCAdapter" />
+  </TestAdapterList>
+
+  <MigrationSourceList>
+    <!-- TFS 2008 SP1 using TFS 2008 VC adapter -->
+    <Source Id = "1"
+            TFSVersion="TFS2008"
+            ServerIdentifier="TFS 2008 source"
+            ProviderRefName="2F82C6C4-BBEE-42fb-B3D0-4799CABCF00E"> 
+      <TCAdapterEnv AdapterRefName="0A2595BE-5DA5-4fb7-A298-BB05C40C5CC0">
+        <ServerUrl>http://testserver:8080</ServerUrl>
+        <TeamProject>teamprojectname</TeamProject>
+        <WorkspaceName>sourceWorkspace</WorkspaceName>
+      </TCAdapterEnv>
+    </Source>
+    <!-- TFS 2008 SP1 using TFS 2008 VC adapter -->
+    <Source Id ="2"
+            TFSVersion="TFS2008"
+            ServerIdentifier="TFS 2008 target (hykwon1)"
+            ProviderRefName="2F82C6C4-BBEE-42fb-B3D0-4799CABCF00E">
+      <TCAdapterEnv AdapterRefName="0A2595BE-5DA5-4fb7-A298-BB05C40C5CC0">
+        <ServerUrl>http://testserver:8080</ServerUrl>
+        <TeamProject>teamprojectname</TeamProject>
+        <WorkspaceName>targetWorkSpace</WorkspaceName>
+      </TCAdapterEnv>
+    </Source>
+    <!-- TFS 2008 SP1 using TFS 2008 WIT adapter -->
+    <Source Id = "3"
+            ServerIdentifier="TFS 2008 source (hykwon1)"
+            ProviderRefName="663A8B36-7852-4750-87FC-D189B0640FC1">
+      <TCAdapterEnv AdapterRefName="1F9D1FCE-6E9E-45ea-AB21-3F6B395AB323">
+        <ServerUrl>http://testserver:8080</ServerUrl>
+        <TeamProject>teamprojectname</TeamProject>
+        <WorkspaceName>workspace1</WorkspaceName>
+      </TCAdapterEnv>
+    </Source>
+    <!-- TFS 2008 SP1 using TFS 2008 WIT adapter -->
+    <Source Id = "4"
+            ServerIdentifier="TFS 2008 source (hykwon1)"
+            ProviderRefName="663A8B36-7852-4750-87FC-D189B0640FC1">
+      <TCAdapterEnv AdapterRefName="1F9D1FCE-6E9E-45ea-AB21-3F6B395AB323">
+        <ServerUrl>http://testserver:8080</ServerUrl>
+        <TeamProject>teamprojectname</TeamProject>
+        <WorkspaceName>workspace1</WorkspaceName>
+      </TCAdapterEnv>
+    </Source>
+    <!-- TFS 2010 using TFS 2010 WIT adapter -->
+    <Source Id ="5"
+            ServerIdentifier="TFS 2010 target (hykwon1)"
+            ProviderRefName="04201D39-6E47-416f-98B2-07F0013F8455">
+      <TCAdapterEnv AdapterRefName="1F9D1FCE-6E9E-45ea-AB21-3F6B395AB323">
+        <ServerUrl>http://testserver:8080/Collection0</ServerUrl>
+        <TeamProject>teamprojectname</TeamProject>
+        <WorkspaceName>workspace2</WorkspaceName>
+      </TCAdapterEnv>
+    </Source>
+  </MigrationSourceList>
+  
+  <TestEnvironmentList>
+    <!-- VC:  TFS2008 -> TFS2008 -->
+    <TestEnv Id="1" SourceMigrationSourcdId="1" TargetMigrationSourceId="2" />
+    <!-- WIT: TFS2008 -> TFS2008 -->
+    <TestEnv Id="2" SourceMigrationSourcdId="3" TargetMigrationSourceId="4" />
+    <!-- WIT: TFS2008 -> TFS2010 -->
+    <TestEnv Id="3" SourceMigrationSourcdId="3" TargetMigrationSourceId="5" />
+  </TestEnvironmentList>
+  
+</MigrationTestEnvironment>

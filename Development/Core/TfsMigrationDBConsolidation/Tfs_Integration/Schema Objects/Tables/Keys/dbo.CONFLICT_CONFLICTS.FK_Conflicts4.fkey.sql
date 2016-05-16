@@ -1,0 +1,5 @@
+﻿ALTER TABLE [dbo].[CONFLICT_CONFLICTS]
+	ADD CONSTRAINT [FK_Conflicts_to_MigrationSource] 
+	FOREIGN KEY (SourceMigrationSourceId)
+	REFERENCES MIGRATION_SOURCES (Id)	
+

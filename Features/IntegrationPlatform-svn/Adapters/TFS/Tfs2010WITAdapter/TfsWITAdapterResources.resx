@@ -1,0 +1,230 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="BadHttpResponse" xml:space="preserve">
+    <value>Http Response not OK: {0}</value>
+  </data>
+  <data name="CyclicalLinkError" xml:space="preserve">
+    <value>The target work item is ancestor of the source work item and cannot be its child: SourceID='{0}', TargetID='{1}', LinkType='{2}'</value>
+  </data>
+  <data name="ErrorAttachmentDownloadFailure" xml:space="preserve">
+    <value>Cannot download attachment {0} from source server.</value>
+  </data>
+  <data name="ErrorAttachmentFileExceedsMaxSize" xml:space="preserve">
+    <value>This work item (Id {0}) contains an attachment, file "{1}" ({2} bytes) which exceeds the maximum allowed attachment file size ({3} bytes).</value>
+  </data>
+  <data name="ErrorFieldConversion" xml:space="preserve">
+    <value>Value of field '{0}' could not be converted to the opposite side.</value>
+  </data>
+  <data name="ErrorInvalidActionDescription" xml:space="preserve">
+    <value>The action description of the migration action '{0}' is invalid.</value>
+  </data>
+  <data name="ErrorMalformedRegistrationData" xml:space="preserve">
+    <value>Registration data for the server '{0}' contains some invalid entries</value>
+  </data>
+  <data name="ErrorMissingArea" xml:space="preserve">
+    <value>Area '{0}' does not exist in the TFS work item store '{1}' or access is denied.</value>
+  </data>
+  <data name="ErrorMissingInformationInActionDescription" xml:space="preserve">
+    <value>'{0}' is missing in the description document of migration action '{1}'.</value>
+  </data>
+  <data name="ErrorMissingIteration" xml:space="preserve">
+    <value>Iteration '{0}' does not exist in the TFS work item store '{1}' or access is denied.</value>
+  </data>
+  <data name="ErrorOrphanedWorkItem" xml:space="preserve">
+    <value>Work item '{0}' no longer exist or access is denied.</value>
+  </data>
+  <data name="ErrorResolutionRuleContainsInvalidData" xml:space="preserve">
+    <value>Resolution rule '{0}' contains invalid data.</value>
+  </data>
+  <data name="ErrorResolutionRuleContainsInvalidDataField" xml:space="preserve">
+    <value>Resolution rule '{0}' contains an invalid data field '{1}'.</value>
+  </data>
+  <data name="ErrorResolutionRuleContainsInvalidFieldValue" xml:space="preserve">
+    <value>Data field '{0}' of resolution rule '{1}' contains an invalid value '{2}'.</value>
+  </data>
+  <data name="ErrorUnsupportedChangeAction" xml:space="preserve">
+    <value>Change action is not supported by the end system.</value>
+  </data>
+  <data name="ErrorWrongNumberOfUpdateResults" xml:space="preserve">
+    <value>Updating the store '{0}!{1}' returned wrong number of results.
+Expected results: {2}
+Obtained results: {3}</value>
+  </data>
+  <data name="FileIdNotFound" xml:space="preserve">
+    <value>FileId was not found in Uri.</value>
+  </data>
+  <data name="FileIdNotInteger" xml:space="preserve">
+    <value>FileId was not an integer in Uri.</value>
+  </data>
+  <data name="FinishedComputeDelta" xml:space="preserve">
+    <value>Finished computing the delta table</value>
+  </data>
+  <data name="FullIdString" xml:space="preserve">
+    <value>{0}!{1}:{2}</value>
+  </data>
+  <data name="FullRevisionString" xml:space="preserve">
+    <value>{0}!{1}:{2} (rev {3})</value>
+  </data>
+  <data name="GettingModifiedItems" xml:space="preserve">
+    <value>Getting modified items from '{0}!{1}'</value>
+  </data>
+  <data name="InvalidChangeItemIdFormat" xml:space="preserve">
+    <value>The lastProcessedChangeItemId argument ('{0}') is not in the correct format.</value>
+  </data>
+  <data name="InvalidHighwaterMark" xml:space="preserve">
+    <value>"Wrong Highwater Mark handling happened."</value>
+  </data>
+  <data name="InvalidTFSWorkItemId" xml:space="preserve">
+    <value>'{0}' is not a valid TFS Work Item Id.</value>
+  </data>
+  <data name="LinkClosureHeader" xml:space="preserve">
+    <value>The source and target work items are related by the following link hierarchy:</value>
+  </data>
+  <data name="MsgItemAnalysisComplete" xml:space="preserve">
+    <value>Work item '{0}' has been analyzed. Revision(s) read: {1}.</value>
+  </data>
+  <data name="ReceivedModifiedItems" xml:space="preserve">
+    <value>Received modified items from '{0}!{1}'</value>
+  </data>
+  <data name="StartingComputeDelta" xml:space="preserve">
+    <value>Starting computing the delta table</value>
+  </data>
+  <data name="TeamProjectNotFound" xml:space="preserve">
+    <value>Team project '{0}' cannot be found.</value>
+  </data>
+  <data name="TfsAttachmentDisplayName" xml:space="preserve">
+    <value>{0}(Id: {1})</value>
+  </data>
+  <data name="UpdatedHighWatermark" xml:space="preserve">
+    <value>Updated high watermark to '{0}'</value>
+  </data>
+  <data name="UserNotInServiceAccountGroup" xml:space="preserve">
+    <value>TFS WIT bypass-rule submission is enabled. However, the migration service account '{0}' is not in the Service Accounts Group on server '{1}'.</value>
+  </data>
+  <data name="WorkItemLinkTypeNotFound" xml:space="preserve">
+    <value>Cannot find WorkItem link type Id for '{0}'.</value>
+  </data>
+  <data name="WorkItemServerIsNotAvailable" xml:space="preserve">
+    <value>Cannot get WorkItemServer to continue the migration.</value>
+  </data>
+  <data name="WorkItemTypeNotFound" xml:space="preserve">
+    <value>Work Item Type {0} was not found.</value>
+  </data>
+</root>

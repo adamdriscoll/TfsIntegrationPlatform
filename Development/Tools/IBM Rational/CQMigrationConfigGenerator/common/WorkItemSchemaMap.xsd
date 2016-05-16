@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="WorkItemSchemaMap" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+  <xs:element name="Mappings">
+  <xs:annotation>
+    <xs:documentation xml:lang="en">
+      The intent of SchemaMap is to provide the mapping from Source System WIT to Target System WIT for PS, there shall be just one entry in SchemaMaps, for target WIT (earlier specified in config.xml). However for CQ, we can have multiple Entities to be migrated to Work Item Tracking, so each SchemaMap will define one such pair of Entity to WIT
+      Also the User Mapping is taken out from FieldMap.xml and the file is specified in UserMap element.
+    </xs:documentation>
+  </xs:annotation>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="SchemaMaps" minOccurs="1" maxOccurs="1">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="SchemaMap" minOccurs="1" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:attribute name="SourceEntity" type="xs:string" use="required"/>
+                  <xs:attribute name="TargetWIT" type="xs:string" use="optional"/>
+                  <xs:attribute name="WITDFile" type="xs:string" use="optional"/>
+                  <xs:attribute name="FieldMapFile" type="xs:string" use="required"/>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="UserMap" minOccurs="1" maxOccurs="1">
+          <xs:complexType>
+            <xs:attribute name="File" type="xs:string" use="required"/>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

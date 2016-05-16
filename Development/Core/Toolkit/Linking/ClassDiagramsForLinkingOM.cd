@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Microsoft.TeamFoundation.Migration.Toolkit.Linking.LinkType">
+    <Position X="0.5" Y="0.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAAgAAAAAAAAAAIAAAAAAAAAAAAAAAQAAAAAAI=</HashCode>
+      <FileName>Linking\LinkType.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Microsoft.TeamFoundation.Migration.Toolkit.Linking.ArtifactType">
+    <Position X="0.5" Y="8.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAQAAAAAAI=</HashCode>
+      <FileName>Linking\ArtifactType.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Microsoft.TeamFoundation.Migration.Toolkit.Linking.ArtifactLink">
+    <Position X="6.25" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAAEAAAAAAAAAAAAAAAAAEAAAAAAAAAAMAABAAA=</HashCode>
+      <FileName>Linking\ArtifactLink.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Microsoft.TeamFoundation.Migration.Toolkit.Linking.ExtendedLinkProperties">
+    <Position X="3" Y="0.5" Width="2.75" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Enum Name="Microsoft.TeamFoundation.Migration.Toolkit.Linking.ExtendedLinkProperties.Topology">
+        <TypeIdentifier>
+          <NewMemberFileName>Linking\ExtendedLinkProperties.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+      <Enum Name="Microsoft.TeamFoundation.Migration.Toolkit.Linking.ExtendedLinkProperties.ToplogyRuleAndDirectionality">
+        <TypeIdentifier>
+          <NewMemberFileName>Linking\ExtendedLinkProperties.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAACAAAQAAAAAAAAABBAAAAAAAAAA=</HashCode>
+      <FileName>Linking\ExtendedLinkProperties.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Microsoft.TeamFoundation.Migration.Toolkit.Linking.Artifact">
+    <Position X="0.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAACAAAAAAAAAA=</HashCode>
+      <FileName>Linking\Artifact.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Microsoft.TeamFoundation.Migration.Toolkit.Linking.LinkService">
+    <Position X="7" Y="0.75" Width="3.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAgAAAAAARAAAAEAAAAABIBAUACIAAIAAEAAAAAEA=</HashCode>
+      <FileName>Linking\LinkService.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Microsoft.TeamFoundation.Migration.Toolkit.Linking.LinkEngine">
+    <Position X="2.25" Y="11.5" Width="3.5" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Enum Name="Microsoft.TeamFoundation.Migration.Toolkit.Linking.LinkEngine.LinkEnd">
+        <TypeIdentifier>
+          <NewMemberFileName>Linking\LinkEngine.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>BCAACAAAAAAAApCAABMkAAoAAgENAgBQAAAEAAwAAEk=</HashCode>
+      <FileName>Linking\LinkEngine.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Microsoft.TeamFoundation.Migration.Toolkit.Linking.LinkChangeAction">
+    <Position X="11.25" Y="10.75" Width="2.5" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Enum Name="Microsoft.TeamFoundation.Migration.Toolkit.Linking.LinkChangeAction.LinkChangeActionStatus">
+        <TypeIdentifier>
+          <NewMemberFileName>Linking\LinkChangeAction.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAEAEAkAIAAAQAAAAAgAAAAAAAAAAAAAAAAYAAAAAA=</HashCode>
+      <FileName>Linking\LinkChangeAction.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Microsoft.TeamFoundation.Migration.Toolkit.Linking.LinkChangeGroup">
+    <Position X="8.5" Y="10.75" Width="2.5" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Enum Name="Microsoft.TeamFoundation.Migration.Toolkit.Linking.LinkChangeGroup.LinkChangeGroupStatus">
+        <TypeIdentifier>
+          <NewMemberFileName>Linking\LinkChangeGroup.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAEAAAEIIAQAQAAAAAgAAAAAAAAAAAAAAAAAAAAAAE=</HashCode>
+      <FileName>Linking\LinkChangeGroup.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="Microsoft.TeamFoundation.Migration.Toolkit.Linking.ILink">
+    <Position X="8" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAAEAAAAAAAAAAAAAAAAAEAAAAAAAAAAMAABAAA=</HashCode>
+      <FileName>Interfaces\Linking\ILink.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Microsoft.TeamFoundation.Migration.Toolkit.Linking.IArtifact">
+    <Position X="2.25" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAACAAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\Linking\IArtifact.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Microsoft.TeamFoundation.Migration.Toolkit.AdapterInterfaces.ILinkProvider">
+    <Position X="10.75" Y="0.75" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AiAAAAAIAAIAKYAAAAACIAAAAiDAAAABAAAAAAAIICA=</HashCode>
+      <FileName>Interfaces\ILinkProvider.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

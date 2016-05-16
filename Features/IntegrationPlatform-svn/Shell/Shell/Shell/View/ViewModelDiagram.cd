@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Microsoft.TeamFoundation.Migration.Shell.ViewModel">
+    <Position X="0.75" Y="4.25" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>QQgiCIAgAKEgoEAIQgFBVAIQCAgkCAAgIAAiRBCAAEA=</HashCode>
+      <FileName>View\ViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Microsoft.TeamFoundation.Migration.BusinessModel.Configuration" Collapsed="true">
+    <Position X="10.75" Y="3.5" Width="2.25" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Microsoft.TeamFoundation.Migration.Shell.View.ViewModel&lt;TController, TModel&gt;" Collapsed="true">
+    <Position X="1" Y="1.5" Width="2.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Microsoft.TeamFoundation.Migration.Shell.Controller.ControllerBase&lt;T&gt;" Collapsed="true">
+    <Position X="4.5" Y="1.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Microsoft.TeamFoundation.Migration.Shell.Controller.ShellController">
+    <Position X="4" Y="2.75" Width="2.25" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Microsoft.TeamFoundation.Migration.Shell.Model.ConfigurationModel">
+    <Position X="6.75" Y="2.75" Width="2.5" />
+    <TypeIdentifier />
+    <ShowAsAssociation>
+      <Property Name="Configuration" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Microsoft.TeamFoundation.Migration.Shell.Model.ConfigurationModelSerializer" Collapsed="true">
+    <Position X="10.75" Y="2.75" Width="2.25" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Microsoft.TeamFoundation.Migration.Shell.Model.RuntimeViewModelManager">
+    <Position X="5.25" Y="8.25" Width="2.25" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Microsoft.TeamFoundation.Migration.Shell.Model.RuntimeViewModel">
+    <Position X="9.25" Y="8.25" Width="1.75" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Microsoft.TeamFoundation.Migration.Shell.Model.SessionGroupRunViewModel">
+    <Position X="13" Y="8.25" Width="2.25" />
+    <TypeIdentifier />
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

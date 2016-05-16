@@ -1,0 +1,3 @@
+﻿ALTER TABLE [dbo].[SESSION_GROUP_CONFIGS]
+ADD CONSTRAINT [UK_SessionGroupConfigs1]
+UNIQUE (UniqueId)

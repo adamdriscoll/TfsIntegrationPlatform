@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <!--
+   TYPE DEFINITION STARTS HERE
+  -->
+  <!-- Non-empty string -->
+  <xs:simpleType name="NonEmptyString">
+    <xs:restriction base="xs:normalizedString">
+      <xs:minLength value="1" />
+    </xs:restriction>
+  </xs:simpleType>
+  <!-- The representation of a GUID in registry format -->
+  <!-- Taken from: http://msdn.microsoft.com/en-us/library/aa203890(office.11).aspx -->
+  <xs:simpleType name="GUID">
+    <xs:restriction base="NonEmptyString">
+      <xs:pattern value="[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}" />
+    </xs:restriction>
+  </xs:simpleType>
+  <!-- TFS Version Enum -->
+  <xs:simpleType name="TFSVersionEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="TFS2008" />
+      <xs:enumeration value="TFS2010" />
+      <xs:enumeration value="ClearCaseV6" />
+    </xs:restriction>
+  </xs:simpleType>
+
+  <!-- 
+   ELEMENT DEFINITION STARTS HERE
+  -->
+  <xs:element name="MigrationTestEnvironment">
+    <xs:complexType>
+      <xs:sequence>
+        
+        <xs:element name="TestProjectList">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element maxOccurs="unbounded" name="TestProject">
+                <xs:complexType>
+                  <xs:attribute name="Name" type="xs:string" use="required" />
+                  <xs:attribute name="DefaultTestEnvironmentID" type="xs:string" use="required" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        
+        <xs:element name="TestAdapterList">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="TestAdapter">
+                <xs:complexType>
+                  <xs:attribute name="Id" type="GUID" use="required" />
+                  <xs:attribute name="FriendlyName" type="xs:string" use="required" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+
+        <xs:element name="MigrationConnectorList">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element maxOccurs="unbounded" name="Source" type="TestMigrationConnector" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        
+        <xs:element name="TestEnvironmentList">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element minOccurs="1" maxOccurs="unbounded" name="TestEnvironment" type="TestEnvironment" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <!-- TestEnvironment -->
+  <xs:complexType name="TestEnvironment">
+    <xs:attribute name="Id" type="xs:string" use="required" />
+    <xs:attribute name="TestProject" type="xs:string" use="required" />
+    <xs:attribute name="LeftConnectorId" type="xs:string" use="required" />
+    <xs:attribute name="RightConnectorId" type="xs:string" use="required" />
+  </xs:complexType>
+  
+  <!-- MigrationSourceElement -->
+  <xs:complexType name="TestMigrationSource">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="EndPoint" type="TCAdapterEnvironment" />
+      <xs:element minOccurs="0" maxOccurs="1" name="CustomSettingList" type="TCCustomSettings" />
+    </xs:sequence>
+    <xs:attribute name="ID" type="xs:string" use="required" />
+    <xs:attribute name="TFSVersion" type="TFSVersionEnum" use="required" />
+    <xs:attribute name="ServerIdentifier" type="xs:string" use="required" />
+    <xs:attribute name="ProviderRefName" type="GUID" use="required" />
+  </xs:complexType>
+  
+  <!-- TCAdapterEnvironmentElement -->
+  <xs:complexType name="TCAdapterEnvironment">
+    <xs:sequence>
+      <xs:element name="ServerUrl" type="xs:string" />
+      <xs:element name="TeamProject" type="xs:string" />
+      <xs:element name="WorkspaceName" type="xs:string" />
+    </xs:sequence>
+    <xs:attribute name="ID" type="GUID" use="required" />
+  </xs:complexType>
+
+  <!-- CustomSettingsElement -->
+  <xs:complexType name="TCCustomSettings">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Setting">
+        <xs:complexType>
+          <xs:attribute name="SettingKey" type="NonEmptyString" /> <!-- Name of the property -->
+          <xs:attribute name="SettingValue" type="xs:string" />    <!-- Value of the property -->
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  
+</xs:schema>

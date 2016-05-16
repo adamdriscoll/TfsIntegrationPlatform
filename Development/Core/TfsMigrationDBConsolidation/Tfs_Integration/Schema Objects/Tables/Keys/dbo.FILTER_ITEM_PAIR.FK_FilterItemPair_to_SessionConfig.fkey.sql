@@ -1,0 +1,5 @@
+﻿ALTER TABLE [dbo].[FILTER_ITEM_PAIR]
+	ADD CONSTRAINT [FK_FilterItemPair_to_SessionConfig] 
+	FOREIGN KEY (SessionConfigId)
+	REFERENCES SESSION_CONFIGURATIONS (Id)	
+

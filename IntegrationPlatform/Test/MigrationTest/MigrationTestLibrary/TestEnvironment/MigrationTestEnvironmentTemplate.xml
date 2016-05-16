@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MigrationTestEnvironment>
+  <!-- 
+  Instructions:
+  1. Update test server names in MigrationSourceList
+  2. Update team project names in Source elements
+-->
+
+  <!--
+  MigrationTestTypes has three different options:
+  OneWay:  Alter the Left side and migrate Left to Right
+  TwoWayLeft: Alter the Left side and two-way sync Left and Right
+  TwoWayRight: Alter the Right side and two-way sync Left and Right 
+   -->
+  <MigrationTestType>OneWay</MigrationTestType>
+
+  <TestProjectList>
+    <TestProject Name="BasicVCTest" LeftEndPointID="TFSVC1" RightEndPointID="TFSVC2" ConfigurationFile="TfsVCConfiguration.xml"/>
+    <TestProject Name="TfsVCTest" LeftEndPointID="TFSVC1" RightEndPointID="TFSVC2" ConfigurationFile="TfsVCConfiguration.xml"/>
+    <TestProject Name="Tfs2TfsVCTest" LeftEndPointID="TFSVC1" RightEndPointID="TFSVC2" ConfigurationFile="TfsVCConfiguration.xml"/>
+    <TestProject Name="BasicWITTest" LeftEndPointID="TFSWIT1" RightEndPointID="TFSWIT2" ConfigurationFile="TfsWITConfiguration.xml"/>
+    <TestProject Name="TfsWITTest" LeftEndPointID="TFSWIT1" RightEndPointID="TFSWIT2" ConfigurationFile="TfsWITConfiguration.xml"/>
+  </TestProjectList>
+
+  <EndPointList>
+
+    <EndPoint ID = "TFSVC1">
+      <AdapterType>TFS2010VC</AdapterType>
+      <FriendlyName>TFS 2010</FriendlyName>
+      <ServerUrl>http://myserver:8080/tfs/DefaultCollection</ServerUrl>
+      <TeamProject>Test1</TeamProject>
+      <WorkspaceName>workspace1</WorkspaceName>
+    </EndPoint>
+
+    <EndPoint ID = "TFSVC2">
+      <AdapterType>TFS2010VC</AdapterType>
+      <FriendlyName>TFS 2010</FriendlyName>
+      <ServerUrl>http://myserver:8080/tfs/DefaultCollection</ServerUrl>
+      <TeamProject>Test2</TeamProject>
+      <WorkspaceName>workspace2</WorkspaceName>
+    </EndPoint>
+
+    <EndPoint ID = "TFSWIT1">
+      <AdapterType>TFS2010WIT</AdapterType>
+      <FriendlyName>TFS 2010</FriendlyName>
+      <ServerUrl>http://myserver:8080/tfs/DefaultCollection</ServerUrl>
+      <TeamProject>Test1</TeamProject>
+      <WorkspaceName>workspace</WorkspaceName>
+    </EndPoint>
+
+    <EndPoint ID = "TFSWIT2">
+      <AdapterType>TFS2010WIT</AdapterType>
+      <FriendlyName>TFS 2010</FriendlyName>
+      <ServerUrl>http://myserver:8080/tfs/DefaultCollection</ServerUrl>
+      <TeamProject>Test2</TeamProject>
+      <WorkspaceName>workspace</WorkspaceName>
+    </EndPoint>
+
+    <EndPoint ID = "FileSystem1">
+      <AdapterType>FileSystem</AdapterType>
+      <FriendlyName>File system (local)</FriendlyName>
+      <ServerUrl>local system</ServerUrl>
+      <TeamProject>c:</TeamProject>
+      <WorkspaceName>na</WorkspaceName>
+    </EndPoint>
+
+    <EndPoint ID ="ClearCaseDH">
+      <AdapterType>ClearCaseDetailedHistory</AdapterType>
+      <FriendlyName>ClearCase</FriendlyName>
+      <Repository>myVob</Repository>
+      <ViewName>myViewName</ViewName>
+      <UncStorageLocation>\\myserver\fileshare</UncStorageLocation>
+      <LocalStorageLocation>c:\myfolder</LocalStorageLocation>
+    </EndPoint>
+
+    <EndPoint ID ="ClearCaseSH">
+      <AdapterType>ClearCaseSelectedHistory</AdapterType>
+      <FriendlyName>ClearCase Selected History Adapter</FriendlyName>
+      <Repository>myVob</Repository>
+      <ViewName>myViewName</ViewName>
+      <UncStorageLocation>\\myserver\fileshare</UncStorageLocation>
+      <LocalStorageLocation>c:\myfolder</LocalStorageLocation>
+    </EndPoint>
+
+    <EndPoint ID ="ClearQuest1">
+      <AdapterType>ClearQuest</AdapterType>
+      <FriendlyName>ClearQuest</FriendlyName>
+      <ServerUrl>7.0.0</ServerUrl>
+      <TeamProject>UCM01</TeamProject>
+      <WorkspaceName></WorkspaceName>
+    </EndPoint>
+
+    <EndPoint ID ="Subversion1">
+      <AdapterType>Subversion</AdapterType>
+      <FriendlyName>My Subversion Server</FriendlyName>
+      <ServerUrl>http://myserver:80/svn/myRepository</ServerUrl>
+      <CustomSettingsList>
+        <Setting Key="Username" Value="mySvnUsername" />
+        <Setting Key="Password" Value="mySvnPassword" />
+      </CustomSettingsList>
+    </EndPoint>
+
+  </EndPointList>
+
+</MigrationTestEnvironment>

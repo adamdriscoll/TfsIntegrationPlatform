@@ -1,0 +1,153 @@
+﻿<UserControl x:Class="Microsoft.TeamFoundation.Migration.Shell.ProviderEditView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:eg="clr-namespace:Microsoft.TeamFoundation.Migration.Shell.Globalization;assembly=Microsoft.TeamFoundation.Migration.Shell"
+    xmlns:ev="clr-namespace:Microsoft.TeamFoundation.Migration.Shell.View;assembly=Microsoft.TeamFoundation.Migration.Shell"
+    xmlns:v="clr-namespace:Microsoft.TeamFoundation.Migration.Shell"
+    xmlns:vp="clr-namespace:Microsoft.TeamFoundation.Migration.Shell.Properties;assembly=Microsoft.TeamFoundation.Migration.Shell"
+    xmlns:diagnostics="clr-namespace:System.Diagnostics;assembly=WindowsBase"
+    xmlns:local="clr-namespace:Microsoft.TeamFoundation.Migration.BusinessModel;assembly=Microsoft.TeamFoundation.Migration.EntityModel"
+    MinWidth="300">
+
+    <UserControl.Resources>
+        <eg:ManagedResourceProvider x:Key="TfsMigrationShellResources" ResourceManager="{x:Static vp:ShellResources.ResourceManager}" />
+
+        <!-- TODO: Rename MigrationProviderView to something like MigrationAdapter -->
+        <!-- Extract name from MigrationProviderView -->
+        <DataTemplate x:Key="ProviderNameTemplate">
+            <TextBlock Text="{Binding Path=Name}" />
+        </DataTemplate>
+        
+        <DataTemplate DataType="{x:Type local:Session}">
+            <Expander>
+                <Expander.Header>
+                    <TextBox Text="{Binding FriendlyName, UpdateSourceTrigger=PropertyChanged}"/>
+                </Expander.Header>
+                <DockPanel>
+                    <Grid DockPanel.Dock="Left">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Grid.Row="0" Grid.Column="0" Text="Unique ID: "/>
+                        <TextBlock Grid.Row="0" Grid.Column="1" Text="{Binding SessionUniqueId}"/>
+                        <TextBlock Grid.Row="1" Grid.Column="0" Text="Left ID: "/>
+                        <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding LeftMigrationSourceUniqueId}"/>
+                        <TextBlock Grid.Row="2" Grid.Column="0" Text="Right ID: "/>
+                        <TextBlock Grid.Row="2" Grid.Column="1" Text="{Binding RightMigrationSourceUniqueId}"/>
+                        <TextBlock Grid.Row="3" Grid.Column="0" Text="Type: "/>
+                        <TextBlock Grid.Row="3" Grid.Column="1" Text="{Binding SessionType}"/>
+                        <TextBlock Grid.Row="4" Grid.Column="0" Text="Filters: "/>
+                        <StackPanel Grid.Row="4" Grid.Column="1">
+                            <ListView ItemsSource="{Binding Path=Filters.FilterPair}">
+                                <ListView.View>
+                                    <GridView>
+                                        <GridViewColumn Header="Left">
+                                            <GridViewColumn.CellTemplate>
+                                                <DataTemplate>
+                                                    <TextBox Text="{Binding Path=FilterItem[0].FilterString, UpdateSourceTrigger=PropertyChanged}" />
+                                                </DataTemplate>
+                                            </GridViewColumn.CellTemplate>
+                                        </GridViewColumn>
+                                        <GridViewColumn Header="Right">
+                                            <GridViewColumn.CellTemplate>
+                                                <DataTemplate>
+                                                    <TextBox Text="{Binding Path=FilterItem[1].FilterString, UpdateSourceTrigger=PropertyChanged}" />
+                                                </DataTemplate>
+                                            </GridViewColumn.CellTemplate>
+                                        </GridViewColumn>
+                                    </GridView>
+                                </ListView.View>
+                            </ListView>
+                            <Button x:Name="addFilterButton" DockPanel.Dock="Bottom" Content="Add" Click="addFilterButton_Click"/>
+                        </StackPanel>
+                    </Grid>
+                </DockPanel>
+            </Expander>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type local:MigrationSource}">
+            <Grid>
+                <StackPanel Orientation="Horizontal">
+                    <RadioButton GroupName="Left" Content="Left" Checked="LeftRadioButton_Checked" VerticalAlignment="Center"/>
+                    <RadioButton GroupName="Right" Content="Right" Checked="RightRadioButton_Checked" VerticalAlignment="Center"/>
+                    <Expander>
+                        <Expander.Header>
+                            <TextBox Text="{Binding Path=FriendlyName, UpdateSourceTrigger=PropertyChanged}"/>
+                        </Expander.Header>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Grid.Row="0" Grid.Column="0" Text="Server Identifier:"/>
+                            <TextBlock Grid.Row="0" Grid.Column="1" Text="{Binding Path=ServerIdentifier}" />
+                            <TextBlock Grid.Row="1" Grid.Column="0" Text="Server URL:"/>
+                            <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding Path=ServerUrl}" />
+                            <TextBlock Grid.Row="2" Grid.Column="0" Text="Source Identifier:"/>
+                            <TextBlock Grid.Row="2" Grid.Column="1" Text="{Binding Path=SourceIdentifier}" />
+                            <TextBlock Grid.Row="3" Grid.Column="0" Text="Provider Reference Name:"/>
+                            <TextBlock Grid.Row="3" Grid.Column="1" Text="{Binding Path=ProviderReferenceName}" />
+                        </Grid>
+                    </Expander>
+                </StackPanel>
+            </Grid>
+        </DataTemplate>
+
+        <!-- TODO: Get this working... -->
+        <Style x:Key="ImageButton" TargetType="{x:Type Button}" BasedOn="{ev:DeferredStyle {x:Type Button}}">
+            <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+            <Setter Property="ContentTemplate">
+                <Setter.Value>
+                    <DataTemplate>
+                        <Grid>
+                            <Image Grid.Row="0"
+                            Source="{Binding Path=Image, diagnostics:PresentationTraceSources.TraceLevel=High}"
+                            Margin="5,5,5,5" />
+                            <TextBlock Grid.Row="1"
+                            Text="{TemplateBinding Content}"
+                            HorizontalAlignment="Center"/>
+                        </Grid>
+                    </DataTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </UserControl.Resources>
+    
+    <Grid>
+        <Expander Header="{Binding Source={StaticResource TfsMigrationShellResources},Path=[MigrationPipelineHeader]}" IsExpanded="True">
+            <StackPanel>
+                <GroupBox Header="Providers">
+                    <DockPanel>
+                        <Button DockPanel.Dock="Right" x:Name="providerButton" Content="..." Click="providerButton_Click"/>
+                        <ListBox x:Name="providerListBox" SelectedIndex="0"  ItemsSource="{Binding Path=ViewModel.ExtensibileViewModel.MigrationProviderViews}" ItemTemplate="{StaticResource ProviderNameTemplate}" />
+                    </DockPanel>
+                </GroupBox>
+                <GroupBox Header="Migration Sources">
+                    <ListBox x:Name="migrationListBox" ItemsSource="{Binding Path=ViewModel.DataModel.Configuration.SessionGroup.MigrationSources.MigrationSource}" SelectionMode="Multiple" />
+                </GroupBox>
+                <GroupBox Header="Sessions">
+                    <StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <Button x:Name="VCSessionButton" Content="Create VC Session" Click="VCSessionButton_Click"/>
+                            <Button x:Name="WITSessionButton" Content="Create WIT Session" Click="WITSessionButton_Click"/>
+                        </StackPanel>
+                        <ListBox x:Name="sessionListBox" ItemsSource="{Binding Path=ViewModel.DataModel.Configuration.SessionGroup.Sessions.Session}" SelectionMode="Multiple"/>
+                    </StackPanel>
+                </GroupBox>
+            </StackPanel>
+        </Expander>
+    </Grid>
+</UserControl>

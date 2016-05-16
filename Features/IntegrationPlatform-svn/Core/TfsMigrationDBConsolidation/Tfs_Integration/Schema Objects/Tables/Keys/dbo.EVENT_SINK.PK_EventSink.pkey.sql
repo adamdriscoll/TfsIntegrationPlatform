@@ -1,0 +1,3 @@
+﻿ALTER TABLE [dbo].[EVENT_SINK]
+	ADD CONSTRAINT [PK_EventSink]
+	PRIMARY KEY (Id)

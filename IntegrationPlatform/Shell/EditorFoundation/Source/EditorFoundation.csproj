@@ -1,0 +1,686 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <!-- ********************************************************************************************* -->
+  <!-- OutputPath should NOT be set in this project file to let the common settings determine        -->
+  <!-- the build location.                                                                           -->
+  <!-- ********************************************************************************************* -->
+  <PropertyGroup>
+    <!-- Relative path to Binaries subdirectory. -->
+    <TfsIPRoot>..\..\..</TfsIPRoot>
+    <!-- See common settings for possible values of TfsIPProjectType.  Determines placement of binaries. -->
+    <TfsIPProjectType>Base</TfsIPProjectType>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>CODE_ANALYSIS;DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <Import Project="$(TfsIPRoot)\Build\Microsoft.TeamFoundation.Migration.Settings.targets" />
+  <!-- ********************************************************************************************* -->
+  <PropertyGroup>
+    <!--<UICulture>en-US</UICulture>-->
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{8437726A-FB7F-4109-96EC-BA2880957CED}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Microsoft.TeamFoundation.Migration.Shell</RootNamespace>
+    <AssemblyName>Microsoft.TeamFoundation.Migration.Shell</AssemblyName>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <!--<OutputPath>bin\Debug\</OutputPath>-->
+    <DefineConstants>CODE_ANALYSIS;DEBUG;TRACE</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <!--<OutputPath>bin\Release\</OutputPath>-->
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.ServiceModel">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\..\..\Version\Version.cs">
+      <Link>Version.cs</Link>
+    </Compile>
+    <Compile Include="BackBufferedStream.cs" />
+    <Compile Include="ConflictManagementTool\ConflictChanges.cs" />
+    <Compile Include="ConflictManagementTool\View\ConflictHelpProvider.cs" />
+    <Compile Include="Controller\ShellController.cs" />
+    <Compile Include="Controller\ControllerBase.cs">
+    </Compile>
+    <Compile Include="Controller\ControllerEvents.cs" />
+    <Compile Include="Controller\IController.cs" />
+    <Compile Include="Extensibility\IPlugin.cs" />
+    <Compile Include="Extensibility\IPluginManager.cs" />
+    <Compile Include="Extensibility\PluginContextAttribute.cs" />
+    <Compile Include="Extensibility\PluginDescriptionAttribute.cs" />
+    <Compile Include="Extensibility\PluginDescriptor.cs" />
+    <Compile Include="Extensibility\PluginHandler.cs" />
+    <Compile Include="Extensibility\PluginManager.cs" />
+    <Compile Include="Extensibility\PluginManagerEvents.cs" />
+    <Compile Include="Globalization\ImageConverter.cs" />
+    <Compile Include="Globalization\IResourceProvider.cs" />
+    <Compile Include="Globalization\LocalizationCollectionView.cs" />
+    <Compile Include="Globalization\LocalizationManager.cs" />
+    <Compile Include="Globalization\ManagedResourceProvider.cs" />
+    <Compile Include="Globalization\ObservableResourceProvider.cs" />
+    <Compile Include="Globalization\ManagedResource.cs" />
+    <Compile Include="Globalization\ResourceBinding.cs" />
+    <Compile Include="Globalization\ResourceBoundStyle.cs" />
+    <Compile Include="HashCollection.cs" />
+    <Compile Include="HashList.cs" />
+    <Compile Include="Model\Services\MigrationServiceManager.cs" />
+    <Compile Include="Properties\ModelResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Model\ConfigurationModel.cs" />
+    <Compile Include="Model\ConfigurationModelSerializer.cs" />
+    <Compile Include="Model\IModelSerializer.cs" />
+    <Compile Include="Model\ModelRoot.cs" />
+    <Compile Include="Model\ModelWatcher.cs" />
+    <Compile Include="Model\RelationAttribute.cs" />
+    <Compile Include="TextBoxTraceWriter.cs" />
+    <Compile Include="View.Wpf\Commands\ViewHomeCommand.cs" />
+    <Compile Include="View.Wpf\Commands\ViewImportExportPage.cs" />
+    <Compile Include="View.Wpf\Commands\ViewEventLogsCommand.cs" />
+    <Compile Include="View.Wpf\Commands\RefreshCommand.cs" />
+    <Compile Include="View.Wpf\Commands\ViewLogsCommand.cs" />
+    <Compile Include="View.Wpf\Commands\ViewSettingsCommand.cs" />
+    <Compile Include="View.Wpf\Commands\OpenRecentCommand.cs" />
+    <Compile Include="View.Wpf\Commands\ViewConfigurationCommand.cs" />
+    <Compile Include="View.Wpf\Dialogs\AddinsDialog.xaml.cs">
+      <DependentUpon>AddinsDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View.Wpf\Dialogs\ConfigurationView.xaml.cs">
+      <DependentUpon>ConfigurationView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View.Wpf\Dialogs\ConfigurationViewModel.cs" />
+    <Compile Include="View.Wpf\Dialogs\GenericMigrationSourceDialog.xaml.cs">
+      <DependentUpon>GenericMigrationSourceDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View.Wpf\Dialogs\EditXmlDialog.xaml.cs">
+      <DependentUpon>EditXmlDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View.Wpf\Dialogs\ImportExportPage.xaml.cs">
+      <DependentUpon>ImportExportPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View.Wpf\Dialogs\WITCustomSettingViewModel.cs" />
+    <Compile Include="View.Wpf\WindowWrapper.cs" />
+    <Compile Include="ViewModels\RuntimeSessionViewModel.cs" />
+    <Compile Include="ViewModels\SessionHistoryViewModel.cs" />
+    <Compile Include="ViewModels\OneWaySessionHistoryViewModel.cs" />
+    <Compile Include="ViewModels\DualChangeGroupViewModel.cs" />
+    <Compile Include="ViewModels\RuntimeViewModel.cs" />
+    <Compile Include="ViewModels\OneWaySessionMigrationViewModel.cs" />
+    <Compile Include="ViewModels\OneWaySessionViewModel.cs" />
+    <Compile Include="ViewModels\SessionGroupViewModel.cs" />
+    <Compile Include="ViewModels\SessionMigrationViewModel.cs" />
+    <Compile Include="ViewModels\SessionViewModel.cs" />
+    <Compile Include="Model\Services\IRefreshService.cs" />
+    <Compile Include="Model\Services\RefreshService.cs" />
+    <Compile Include="Model\Services\RuntimeManager.cs" />
+    <Compile Include="Model\XmlModelSerializer.cs" />
+    <Compile Include="Mutable.cs" />
+    <Compile Include="PrivateCollection.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\ShellResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ShellResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="View.Wpf\Commands\ExportCommand.cs" />
+    <Compile Include="View.Wpf\Commands\ImportCommand.cs" />
+    <Compile Include="View.Wpf\Commands\OpenFromDBCommand.cs" />
+    <Compile Include="View.Wpf\Commands\PauseCommand.cs" />
+    <Compile Include="View.Wpf\Commands\ProviderViewModelCommand.cs" />
+    <Compile Include="View.Wpf\Commands\SaveAsToDBCommand.cs" />
+    <Compile Include="View.Wpf\Commands\SaveToDBCommand.cs" />
+    <Compile Include="View.Wpf\Commands\ShellCommands.cs" />
+    <Compile Include="View.Wpf\Commands\StartCommand.cs" />
+    <Compile Include="View.Wpf\Commands\StopCommand.cs" />
+    <Compile Include="View.Wpf\Dialogs\OpenFromDBDialog.xaml.cs">
+      <DependentUpon>OpenFromDBDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View.Wpf\Dialogs\SaveToDBDialog.xaml.cs">
+      <DependentUpon>SaveToDBDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View.Wpf\Dialogs\SettingsPage.xaml.cs">
+      <DependentUpon>SettingsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View.Wpf\Dialogs\StartupDialog.xaml.cs">
+      <DependentUpon>StartupDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View.Wpf\Extensions\ListViewColumns.cs" />
+    <Compile Include="ViewModel\ExtensibilityViewModel.cs" />
+    <Compile Include="ViewModel\HeadlineControlViewModel.cs" />
+    <Compile Include="ViewModel\HomeViewModel.cs" />
+    <Compile Include="ViewModel\NotificationBarViewModel.cs" />
+    <Compile Include="ViewModel\ShellViewModel.cs" />
+    <Compile Include="Properties\WpfViewResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WpfViewResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Search\Base\ISearchEngine.cs" />
+    <Compile Include="Search\IEditorSearchEngine.cs" />
+    <Compile Include="Search\SearchCompleteEvent.cs" />
+    <Compile Include="Search\Base\SearchEngine.cs" />
+    <Compile Include="Search\DefaultKeywordProvider.cs" />
+    <Compile Include="Search\IKeywordProvider.cs" />
+    <Compile Include="Search\SearchableAttribute.cs" />
+    <Compile Include="Search\EditorSearchEngine.cs" />
+    <Compile Include="Search\Base\SearchIndex.cs" />
+    <Compile Include="Search\Base\SearchIndexNode.cs" />
+    <Compile Include="Search\EditorSearchItem.cs" />
+    <Compile Include="Undo\Base\IUndoable.cs" />
+    <Compile Include="Undo\Base\IUndoableGroup.cs" />
+    <Compile Include="Undo\Base\IUndoManager.cs" />
+    <Compile Include="Undo\Base\UndoableGroup.cs" />
+    <Compile Include="Undo\Base\UndoManager.cs" />
+    <Compile Include="Undo\EditorUndoManager.cs" />
+    <Compile Include="Undo\IEditorUndoManager.cs" />
+    <Compile Include="Undo\UndoableExplicitGroup.cs" />
+    <Compile Include="Undo\UndoableItemAddedChange.cs" />
+    <Compile Include="Undo\UndoableItemRemovedChange.cs" />
+    <Compile Include="Undo\UndoableCollectionChange.cs" />
+    <Compile Include="Undo\UndoablePropertyChange.cs" />
+    <Compile Include="Undo\UndoablePropertyChangeGroup.cs" />
+    <Compile Include="Undo\UndoableRegion.cs" />
+    <Compile Include="Undo\UndoableTemporalGroup.cs" />
+    <Compile Include="Utilities.cs" />
+    <Compile Include="Validation\AffectsValidityAttribute.cs" />
+    <Compile Include="Validation\Base\IValidationManager.cs" />
+    <Compile Include="Validation\EditorValidationManager.cs" />
+    <Compile Include="Validation\Base\ISupportValidationNotification.cs" />
+    <Compile Include="Validation\Base\ISupportValidation.cs" />
+    <Compile Include="Validation\Base\ValidationResult.cs" />
+    <Compile Include="Validation\Base\ValidationResultsChangedEvent.cs" />
+    <Compile Include="Validation\Base\ValidationManager.cs" />
+    <Compile Include="Validation\IEditorValidationManager.cs" />
+    <Compile Include="View.Wpf\About.cs" />
+    <Compile Include="View.Wpf\Commands\AboutCommand.cs" />
+    <Compile Include="View.Wpf\Controls\DefaultView.cs" />
+    <Compile Include="View.Wpf\Converters\AssociatedIconConverter.cs" />
+    <Compile Include="View.Wpf\Converters\DebugConverter.cs" />
+    <Compile Include="View.Wpf\Converters\PropertyPathConverter.cs" />
+    <Compile Include="View.Wpf\Converters\StringFormatConverter.cs" />
+    <Compile Include="View.Wpf\Extensions\Extensions.cs" />
+    <Compile Include="View.Wpf\Extensions\EventBinding.cs" />
+    <Compile Include="View.Wpf\Extensions\EventBindingCollection.cs" />
+    <Compile Include="View.Wpf\Extensions\CommandStatus.cs" />
+    <Compile Include="View.Wpf\Commands\CloseCommand.cs" />
+    <Compile Include="View.Wpf\Commands\Command.cs" />
+    <Compile Include="View.Wpf\Commands\ValidateCommand.cs" />
+    <Compile Include="View.Wpf\Commands\ExitCommand.cs" />
+    <Compile Include="View.Wpf\Commands\EditorCommands.cs" />
+    <Compile Include="View.Wpf\Commands\RedoCommand.cs" />
+    <Compile Include="View.Wpf\Commands\CreateCommand.cs" />
+    <Compile Include="View.Wpf\Commands\FocusCommand.cs" />
+    <Compile Include="View.Wpf\Commands\OpenCommand.cs" />
+    <Compile Include="View.Wpf\Commands\SaveAsCommand.cs" />
+    <Compile Include="View.Wpf\Commands\SaveCommand.cs" />
+    <Compile Include="View.Wpf\Commands\SearchCommand.cs" />
+    <Compile Include="View.Wpf\Commands\UndoCommand.cs" />
+    <Compile Include="View.Wpf\Commands\ViewModelCommand.cs" />
+    <Compile Include="View.Wpf\Converters\BooleanToDoubleConverter.cs" />
+    <Compile Include="View.Wpf\Extensions\EditorServices.cs" />
+    <Compile Include="View.Wpf\Extensions\GroupStyleCollection.cs" />
+    <Compile Include="View.Wpf\Extensions\PropertyPath.cs" />
+    <Compile Include="View.Wpf\Skin.cs" />
+    <Compile Include="View.Wpf\SkinCollectionView.cs" />
+    <Compile Include="View.Wpf\Controls\DefaultAbout.xaml.cs">
+      <DependentUpon>DefaultAbout.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View.Wpf\Controls\DefaultMenu.xaml.cs">
+      <DependentUpon>DefaultMenu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View.Wpf\Controls\DefaultStatusBar.xaml.cs">
+      <DependentUpon>DefaultStatusBar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View.Wpf\Skins\DefaultSkinBase.xaml.cs">
+      <DependentUpon>DefaultSkinBase.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View.Wpf\SkinManager.cs" />
+    <Compile Include="View.Wpf\Extensions\DeferredStyle.cs" />
+    <Compile Include="View.Wpf\Controls\DefaultToolBar.xaml.cs">
+      <DependentUpon>DefaultToolBar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View.Wpf\Controls\SearchResultsListView.xaml.cs">
+      <DependentUpon>SearchResultsListView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View.Wpf\Controls\ValidationResultsListView.xaml.cs">
+      <DependentUpon>ValidationResultsListView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModel\SearchResultCollection.cs" />
+    <Compile Include="ViewModel\RecentFilesCollection.cs" />
+    <Compile Include="ViewModel\StatusEvent.cs" />
+    <Compile Include="ViewModel\ValidationResultCollection.cs" />
+    <Compile Include="ViewModel\ViewModel.cs" />
+    <Compile Include="View.Wpf\Shell.CommandBindings.cs" />
+    <Compile Include="View.Wpf\Shell.cs" />
+    <Compile Include="ViewModel\ViewModelBase.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>PublicSettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Snippets\MutableProperty.snippet" />
+    <None Include="ViewModels\ViewModels.cd" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\WpfViewResources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>WpfViewResources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+      <CustomToolNamespace>Microsoft.TeamFoundation.Migration.Shell.Properties</CustomToolNamespace>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\ModelResources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ModelResources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\ShellResources.resx">
+      <LastGenOutput>ShellResources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+      <Generator>PublicResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="View.Wpf\Controls\DefaultAbout.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View.Wpf\Controls\DefaultMenu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View.Wpf\Controls\DefaultStatusBar.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View.Wpf\Dialogs\AddinsDialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View.Wpf\Dialogs\ConfigurationView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View.Wpf\Dialogs\GenericMigrationSourceDialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View.Wpf\Dialogs\EditXmlDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View.Wpf\Dialogs\ImportExportPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View.Wpf\Dialogs\OpenFromDBDialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View.Wpf\Dialogs\SaveToDBDialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View.Wpf\Dialogs\SettingsPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View.Wpf\Dialogs\StartupDialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View.Wpf\Skins\DefaultSkinBase.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View.Wpf\Controls\DefaultToolBar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View.Wpf\Controls\SearchResultsListView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View.Wpf\Controls\ValidationResultsListView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="ConflictManagementTool\View\ConflictListView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ConflictManagementTool\View\RuntimeConflictsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ConflictManagementTool\View\ViewConflictDialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ConflictManagementTool\View\ViewRuleDialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ConflictManagementTool\View\NewRuleView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ConflictManagementTool\View\PreviewDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ConflictManagementTool\View\ResultsDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ConflictManagementTool\View\RuleEditView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ConflictManagementTool\View\ExistingRuleListView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View.Wpf\Dialogs\CustomSettingsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ConflictManagementTool\Constants.cs" />
+    <Compile Include="ConflictManagementTool\Converters.cs" />
+    <Compile Include="ConflictManagementTool\IConflictTypeUserControl.cs" />
+    <Compile Include="ConflictManagementTool\Test\ConflictManagementTest.cs" />
+    <Compile Include="ConflictManagementTool\UIHelper.cs" />
+    <Compile Include="ConflictManagementTool\View\ConflictListView.xaml.cs">
+      <DependentUpon>ConflictListView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ConflictManagementTool\ViewModel\ApplicationViewModel.cs" />
+    <Compile Include="ConflictManagementTool\ViewModel\ConflictRuleViewModel.cs" />
+    <Compile Include="ConflictManagementTool\View\RuntimeConflictsView.xaml.cs">
+      <DependentUpon>RuntimeConflictsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ConflictManagementTool\View\ViewConflictDialog.xaml.cs">
+      <DependentUpon>ViewConflictDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ConflictManagementTool\View\ViewRuleDialog.xaml.cs">
+      <DependentUpon>ViewRuleDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ConflictManagementTool\View\NewRuleView.xaml.cs">
+      <DependentUpon>NewRuleView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ConflictManagementTool\ViewModel\NewRuleViewModel.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="ConflictManagementTool\ViewModel\RuleViewModelBase.cs" />
+    <Compile Include="ConflictManagementTool\View\PreviewDialog.xaml.cs">
+      <DependentUpon>PreviewDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ConflictManagementTool\View\ResultsDialog.xaml.cs">
+      <DependentUpon>ResultsDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ConflictManagementTool\View\RuleEditView.xaml.cs">
+      <DependentUpon>RuleEditView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ConflictManagementTool\View\ExistingRuleListView.xaml.cs">
+      <DependentUpon>ExistingRuleListView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ConflictManagementTool\ViewModel\ExistingRuleViewModel.cs" />
+    <Compile Include="View.Wpf\Commands\EditCurrentConfigurationCommand.cs" />
+    <Compile Include="View.Wpf\Commands\HelpCommand.cs" />
+    <Compile Include="View.Wpf\Commands\ViewConflictsCommand.cs" />
+    <Compile Include="View.Wpf\Commands\ViewCurrentConfigurationCommand.cs" />
+    <Compile Include="View.Wpf\Commands\ViewProgressCommand.cs" />
+    <Compile Include="View.Wpf\Dialogs\CustomSettingsView.xaml.cs">
+      <DependentUpon>CustomSettingsView.xaml</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <AppDesigner Include="ConflictManagementTool\Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ConflictManagementTool\Resources\Images\info.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ConflictManagementTool\Resources\Images\refresh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ConflictManagementTool\Resources\Images\add.png" />
+    <Resource Include="ConflictManagementTool\Resources\Images\delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ConflictManagementTool\Resources\Images\global.png" />
+    <Resource Include="ConflictManagementTool\Resources\Images\vc.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ConflictManagementTool\Resources\Images\unresolved1.png" />
+    <Resource Include="ConflictManagementTool\Resources\Images\successfulresolve1.png" />
+    <Resource Include="ConflictManagementTool\Resources\Images\warning.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ConflictManagementTool\Resources\Images\failedresolve.png" />
+    <Resource Include="ConflictManagementTool\Resources\Images\unresolved.png" />
+    <Resource Include="ConflictManagementTool\Resources\Images\successfulresolve.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ConflictManagementTool\Resources\Images\wit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ConflictManagementTool\Resources\Images\copy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Core\TfsMigrationEntityModel\TfsMigrationEntityModel\TfsMigrationEntityModel.csproj">
+      <Project>{DD017AA0-4088-42F1-98D6-99BC96DAAD37}</Project>
+      <Name>TfsMigrationEntityModel</Name>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Core\Toolkit\Toolkit.csproj">
+      <Project>{CB63E30B-6779-4F8B-A9BD-3BEB7DD84A2A}</Project>
+      <Name>Toolkit</Name>
+      <Private>False</Private>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ConflictManagementTool\Resources\Images\check.png" />
+    <Resource Include="ConflictManagementTool\Resources\Images\help.png" />
+    <Content Include="Graphics\Copy.png" />
+    <Content Include="Graphics\Cut.png" />
+    <Content Include="Graphics\Error.png" />
+    <Resource Include="Graphics\Info.png" />
+    <Content Include="Graphics\New.png" />
+    <Content Include="Graphics\Open.png" />
+    <Content Include="Graphics\OpenFromDB.png" />
+    <Content Include="Graphics\Paste.png" />
+    <Content Include="Graphics\Pause.png" />
+    <Content Include="Graphics\Play.png" />
+    <Content Include="Graphics\Redo.png" />
+    <Content Include="Graphics\Save.png" />
+    <Content Include="Graphics\SaveToDB.png" />
+    <Content Include="Graphics\Search.png" />
+    <Content Include="Graphics\Stop.png" />
+    <Content Include="Graphics\Undo.png" />
+    <Content Include="Graphics\Validate.png" />
+    <Resource Include="Graphics\vc.png" />
+    <Resource Include="Graphics\Warning.png" />
+    <Resource Include="Graphics\wit.png" />
+  </ItemGroup>
+  <Import Project="$(TfsIPRoot)\Build\Microsoft.TeamFoundation.Migration.targets" />
+</Project>

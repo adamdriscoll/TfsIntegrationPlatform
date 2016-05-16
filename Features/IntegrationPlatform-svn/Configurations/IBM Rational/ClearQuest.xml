@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Configuration UniqueId="191B2CD3-CC5F-4433-ADA6-D2FB4C305969"
+               FriendlyName="IBM Rational ClearQuest to TFS" >
+  <Providers>
+    <Provider ReferenceName="00000000-0000-0000-0000-000000000000"
+              FriendlyName="Empty Provider" />
+  </Providers>
+  <SessionGroup FriendlyName="ClearQuest to TFS Sync Sessions"
+                SessionGroupGUID="DE6896E7-22E1-4618-A70B-CD36E18EC9D6">
+    <WorkFlowType Frequency="ContinuousManual"
+                  DirectionOfFlow="Unidirectional"
+                  SyncContext="Disabled"/>
+
+    <MigrationSources>
+      <!-- CQ migration source -->
+      <!-- ServerUrl: Database Set name. ex) 7.0.0 -->
+      <!-- SourceIdentifier: Database name. ex) UCM01 -->
+      <MigrationSource InternalUniqueId="BB2BD2C6-92B5-4817-AB51-A087B6532F0D"
+                       FriendlyName="CQ source"
+                       ServerIdentifier="Server identifier"
+                       ServerUrl="DatabaseSetName"
+                       SourceIdentifier="UserDatabaseName"
+                       EndpointSystemName="ClearQuest"
+                       ProviderReferenceName="00000000-0000-0000-0000-000000000000">
+        <CustomSettings>
+          <CustomSetting SettingKey="EnableLastRevisionAutoCorrection"
+                         SettingValue="False" />
+          <CustomSetting SettingKey="LoginCredentialConfigType"
+                         SettingValue="UseTextUsernamePasswordPairInConfig" />
+          <CustomSetting SettingKey="UserName"
+                         SettingValue="userid" />
+          <CustomSetting SettingKey="Password"
+                         SettingValue="password" />
+        </CustomSettings>
+      </MigrationSource>
+
+      <!-- TFS WIT migration source -->
+      <MigrationSource InternalUniqueId="F4741818-F14C-458F-BB20-4BBAC20F95C3"
+                       FriendlyName="TFS WIT target"
+                       ServerIdentifier="server identifier"
+                       ServerUrl="http://server1.com:8080"
+                       SourceIdentifier="MyTeamProjectName"
+                       EndpointSystemName="TFS"
+                       ProviderReferenceName="00000000-0000-0000-0000-000000000000">
+        <CustomSettings>
+          <CustomSetting SettingKey="EnableBypassRuleDataSubmission"
+                         SettingValue="" />
+          <CustomSetting SettingKey="DisableAreaPathAutoCreation"
+                         SettingValue="" />
+          <CustomSetting SettingKey="DisableIterationPathAutoCreation"
+                         SettingValue="" />
+        </CustomSettings>
+      </MigrationSource>
+    </MigrationSources>
+
+    <Sessions>
+      <Session SessionUniqueId="882d715f-214a-4901-aefb-a309ed4a8bd2"
+               FriendlyName="Work Item Tracking Session"
+               LeftMigrationSourceUniqueId="BB2BD2C6-92B5-4817-AB51-A087B6532F0D"
+               RightMigrationSourceUniqueId="F4741818-F14C-458F-BB20-4BBAC20F95C3"
+               SessionType="WorkItemTracking">
+        <EventSinks />
+        <Filters>
+          <FilterPair>
+            <FilterItem MigrationSourceUniqueId="BB2BD2C6-92B5-4817-AB51-A087B6532F0D"
+                        FilterString="[Select a ClearQuest stored query]" />
+            <FilterItem MigrationSourceUniqueId="F4741818-F14C-458F-BB20-4BBAC20F95C3"
+                        FilterString="[System.Id] = 0" />
+          </FilterPair>
+        </Filters>
+        <CustomSettings>
+          <SettingXml>
+            <WITSessionCustomSetting>
+              <WorkItemTypes>
+                <WorkItemType LeftWorkItemTypeName="Defect"
+                              RightWorkItemTypeName="Bug"
+                              fieldMap="Defect2BugFieldMap" />
+              </WorkItemTypes>
+              <FieldMaps>
+                <FieldMap name="Defect2BugFieldMap">
+                  <MappedFields>
+                    <MappedField LeftName="Headline"
+                                 RightName="System.Title"
+                                 MapFromSide="Left"
+                                 valueMap=""/>
+                    <MappedField LeftName="State"
+                                 RightName="System.State"
+                                 MapFromSide="Left"
+                                 valueMap="StateMap"/>
+                    <MappedField LeftName="Description"
+                                 RightName="System.Description"
+                                 MapFromSide="Left"
+                                 valueMap=""/>
+                    <MappedField LeftName="history"
+                                 RightName="System.History"
+                                 MapFromSide="Left"
+                                 valueMap=""/>
+                    <MappedField LeftName="Owner"
+                                 RightName="System.AssignedTo"
+                                 MapFromSide="Left"
+                                 valueMap=""/>
+                    <MappedField LeftName="Priority"
+                                 RightName="Microsoft.VSTS.Common.Priority"
+                                 MapFromSide="Left"
+                                 valueMap="PriorityMap"/>
+                  </MappedFields>
+                </FieldMap>
+              </FieldMaps>
+              <ValueMaps>
+                <ValueMap name="StateMap">
+                  <Value LeftValue="Assigned"
+                         RightValue="Active" />
+                  <Value LeftValue="Duplicate"
+                         RightValue="Active" />
+                  <Value LeftValue="Opened"
+                         RightValue="Active" />
+                  <Value LeftValue="Submitted"
+                         RightValue="Active" />
+                  <Value LeftValue="Postponed"
+                         RightValue="Resolved" />
+                  <Value LeftValue="Resolved"
+                         RightValue="Resolved" />
+                  <Value LeftValue="Closed"
+                         RightValue="Closed" />
+                </ValueMap>
+                <ValueMap name="PriorityMap">
+                  <Value LeftValue="1-Resolve Immediately"
+                         RightValue="1" />
+                  <Value LeftValue="2-Give High Attention"
+                         RightValue="2" />
+                  <Value LeftValue="3-Normal Queue"
+                         RightValue="3" />
+                  <Value LeftValue="4-Low Priority"
+                         RightValue="3" />
+                </ValueMap>
+              </ValueMaps>
+            </WITSessionCustomSetting>
+          </SettingXml>
+        </CustomSettings>
+      </Session>
+    </Sessions>
+
+    <Linking>
+      <CustomSettings>
+      </CustomSettings>
+      <LinkTypeMappings>
+        <LinkTypeMapping LeftMigrationSourceUniqueId="BB2BD2C6-92B5-4817-AB51-A087B6532F0D"
+                         LeftLinkType="ClearQuestAdapter.LinkType.Duplicate"
+                         RightMigrationSourceUniqueId="F4741818-F14C-458F-BB20-4BBAC20F95C3"
+                         RightLinkType="Microsoft.TeamFoundation.Migration.TFS.LinkType.WorkItemToWorkItem"/>
+      </LinkTypeMappings>
+    </Linking>
+
+  </SessionGroup>
+</Configuration>

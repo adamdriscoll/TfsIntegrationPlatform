@@ -1,0 +1,19 @@
+Pre-requisites:
+1. Install "Microsoft® Visual Studio Team System 2008 Database Edition Power Tools"
+2. If a run-time exception occurs when running sqlspp, you need to install the following feature packs
+    SQLServer2005_ADOMD_x64.msi, SQLServer2005_XMO_x64.msi (Verified on w2k8 x64 machine)
+3. Update the Tfs_IntegrationPlatform project property, to "Always re-create database" in the Build property page
+   *AND* build the dbproj
+
+TODO:
+- currently the generateInstallerSQLScript.bat contains hard-coded paths. You may need to update the paths.
+
+Steps:
+1. Check out "Setup\Installation\Tfs_IntegrationPlatform.sql" file
+2. [optional] You may need to update the hard-coded paths in Setup\generateInstallerSQLScript.bat
+3. Run the "\Setup\generateInstallerSQLScript.bat" file
+4. Edit 1 line in the newly generated "Setup\Installation\Tfs_IntegrationPlatform.sql" file
+   - Remove machine-specific information at the line where it creates database [Tfs_IntegrationPlatform]
+   - After removing the machine-specific information the line should look like below:
+     CREATE DATABASE [Tfs_IntegrationPlatform] COLLATE SQL_Latin1_General_CP1_CS_AS 
+

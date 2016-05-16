@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippet Format="1.0.0">
+    <Header>
+        <Title>log perf</Title>
+        <Shortcut>logwperf</Shortcut>
+        <Description>Expansion snippet for Logger.WritePerf</Description>
+        <SnippetTypes>
+            <SnippetType>Expansion</SnippetType>
+        </SnippetTypes>
+    </Header>
+    <Snippet>
+        <Declarations>
+            <Literal default="true">
+                <ID>source</ID>
+                <ToolTip>LogSource for this message</ToolTip>
+                <Default>Common</Default>
+            </Literal>
+            <Literal default="true">
+                <ID>message</ID>
+                <ToolTip>Message to log</ToolTip>
+                <Default>""</Default>
+            </Literal>
+        </Declarations>
+        <Code Language="csharp" Format="CData"><![CDATA[Logger.WritePerf(LogSource.$source$, $message$);$end$]]>
+	</Code>
+    </Snippet>
+</CodeSnippet>

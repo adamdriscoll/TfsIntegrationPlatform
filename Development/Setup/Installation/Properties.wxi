@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Include xmlns="http://schemas.microsoft.com/wix/2006/wi"
+         xmlns:util="http://schemas.microsoft.com/wix/UtilExtension">
+
+  <!--The following properties will be referenced by custom actions.-->
+  <Property Id="ALLUSERS" Value="1" />
+
+  <Property Id='SERVICEACCOUNTNAME' Secure='yes' />
+  <Property Id='SERVICEACCOUNTPASSWORD' Secure='yes' Hidden='yes'/>
+  <Property Id='CONFIRMSERVICEACCOUNTPASSWORD' Secure='yes' Hidden='yes'/>
+  <!-- Pass name of Windows Services to custom action that is used to start services -->
+  <Property Id='TFSINTEGRATIONSERVICENAME' Secure='yes' Hidden='yes'>!(loc.TfsIntegrationServiceName)</Property>
+  <Property Id='TFSINTEGRATIONJOBSERVICENAME' Secure='yes' Hidden='yes'>!(loc.TfsIntegrationJobServiceName)</Property>
+  <Property Id='TFSWPGNAME' Secure='yes' Hidden='yes'>!(loc.TfsIntegrationExecWorkProcessGroupName)</Property>
+  <Property Id='TFSWPGCOMMENT' Secure='yes' Hidden='yes'>!(loc.TfsIntegrationExecWorkProcessGroupComment)</Property>
+  <Property Id='DATABASESERVER' Secure='yes' />
+  <Property Id='DATABASENAME' Secure='yes' />
+  <!-- This is one of the few reliable ways to find the config file.  Do not be tempted to replace this with [INSTALLDIR]+filename as INSTALLDIR -->
+  <!-- either isn't set or points to a temp directory in many cases when you look at the full spectrum of install, uninstall, repair, etc. -->
+  <Property Id='MIGRATIONTOOLSERVERSFILE' Secure='yes'>
+    <ComponentSearch Id='CurrentSettings' Guid='{063F6F9A-4DE5-43F8-8756-938C4171F8E4}' Type='file'>
+      <FileSearch Name='MigrationToolServers.config'/>
+    </ComponentSearch>
+  </Property>
+  
+  <Property Id='LASTERROR' Secure='yes' />
+  <Property Id='CACURRENTDBCHECK' Secure='yes' />
+  <Property Id='CACHECKDBPERMISSION' Secure='yes' />
+  <!-- DBNOTFOUND: Initial Value: DBVERSIONNOTFOUND: DB exists but version not found, otherwise GUID -->
+  <Property Id='EXISTINGDBVERSION' Secure="yes"><![CDATA[DBNOTFOUND]]></Property>
+  
+  <!-- Launch conditions and corresponding properties.-->
+  <!-- Secure=yes is added to make the repair option in the maintenance mode work properly on Vista. Properties -->
+  <!-- such as TEAMEXPLORER10 and etc that are used as conditions in features should have Secure=yes. -->
+  <Property Id="NETFRAMEWORK20" Secure="yes">
+    <RegistrySearch Id="FxInstalledRegistry" Key="SOFTWARE\Microsoft\NET Framework Setup\NDP\v2.0.50727" Name="Install" Root="HKLM" Type="raw" />
+  </Property>
+  <Property Id="NETFRAMEWORK35SP1" Secure="yes" Value="#0">
+    <RegistrySearch Id="DetectNetFX35SP1VerSignature" Key="SOFTWARE\Microsoft\NET Framework Setup\NDP\v3.5" Name="SP" Root="HKLM" Type="raw" />
+  </Property>
+  <Property Id="NETFRAMEWORK40" Secure="yes">
+    <RegistrySearch Id="NetFramework40Registry" Key="SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Client" Name="Install" Root="HKLM" Type="raw" />
+  </Property>
+  
+  <Property Id="TEAMEXPLORER10" Secure="yes">
+    <RegistrySearch Id="TeamExplorer10Registry" Root="HKLM" Key="SOFTWARE\Microsoft\VisualStudio\10.0\InstalledProducts\Team Explorer" Name="Package" Type="raw" />
+  </Property>
+  <Property Id="TEAMEXPLORER9" Secure="yes">
+    <RegistrySearch Id="TeamExplorer9Registry" Root="HKLM" Key="SOFTWARE\Microsoft\VisualStudio\9.0\InstalledProducts\Team Explorer" Name="Package" Type="raw" />
+  </Property>
+
+  <Property Id="BROWSER">
+    <RegistrySearch Id="IEXPLORE_SEARCH" Root="HKLM" Key="SOFTWARE\Microsoft\Windows\CurrentVersion\App Paths\IEXPLORE.EXE" Type="raw" />
+  </Property>
+  
+  <Property Id="DiskPrompt"><![CDATA[[1]]]></Property>
+
+</Include>

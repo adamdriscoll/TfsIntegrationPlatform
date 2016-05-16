@@ -1,0 +1,45 @@
+﻿<!-- Copyright © Microsoft Corporation.  All Rights Reserved.  This code released under the terms of the Microsoft Public License (MS-PL, http://opensource.org/licenses/ms-pl.html.) -->
+<Menu x:Class="Microsoft.TeamFoundation.Migration.Shell.View.DefaultMenu"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:ev="clr-namespace:Microsoft.TeamFoundation.Migration.Shell.View"
+    Style="{DynamicResource MainMenuStyle}">
+    
+    <Menu.Resources>
+        <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
+    </Menu.Resources>
+
+    <MenuItem Name="fileMenuItem" Style="{DynamicResource FileMenuItemStyle}">
+        <MenuItem Name="importMenuItem" Icon="{DynamicResource NewImage16x16}" Header="New from template..." Command="ev:ShellCommands.Import" CommandTarget="{DynamicResource ShellContent}" />
+        <MenuItem Name="openFromDBMenuItem" Style="{DynamicResource OpenFromDBMenuItemStyle}" Command="ev:ShellCommands.OpenFromDB" CommandTarget="{DynamicResource ShellContent}" />
+        <Separator />
+        <MenuItem Name="exportMenuItem" Header="Export..." Command="ev:ShellCommands.Export" CommandTarget="{DynamicResource ShellContent}" />
+        <MenuItem Name="settingsMenuItem" Header="Options..." Command="ev:ShellCommands.ViewSettings" CommandTarget="{DynamicResource ShellContent}"/>
+        <MenuItem Name="exitMenuItem" Style="{DynamicResource ExitMenuItemStyle}" Command="ev:EditorCommands.Exit" CommandTarget="{DynamicResource ShellContent}" />
+    </MenuItem>
+
+    <MenuItem Name="viewMenuItem" Header="View" ItemsSource="{Binding Items}">
+        <MenuItem.ItemContainerStyle>
+            <Style TargetType="MenuItem">
+                <Setter Property="Header" Value="{Binding Path=Header}" />
+                <Setter Property="HeaderStringFormat" Value="View {0}"/>
+                <Setter Property="IsCheckable" Value="True" />
+                <Setter Property="IsChecked" Value="{Binding Path=IsSelected, Mode=TwoWay}" />
+            </Style>
+        </MenuItem.ItemContainerStyle>
+    </MenuItem>
+
+    <MenuItem Name="runMenuItem" Header="Run">
+        <MenuItem Name="startMenuItem" Header="Start" Command="MediaCommands.Play" CommandTarget="{DynamicResource ShellContent}" />
+        <MenuItem Name="pauseMenuItem" Header="Pause" Command="MediaCommands.Pause" CommandTarget="{DynamicResource ShellContent}" />
+        <MenuItem Name="stopMenuItem" Header="Stop" Command="MediaCommands.Stop" CommandTarget="{DynamicResource ShellContent}" />
+        <MenuItem Name="refreshMenuItem" Header="Refresh" Command="ev:ShellCommands.Refresh" CommandTarget="{DynamicResource ShellContent}" />
+    </MenuItem>
+
+    <MenuItem Name="helpMenuItem" Style="{DynamicResource HelpMenuItemStyle}">
+        <MenuItem Name="forumsMenuItem" Header="MSDN Forums" />
+        <MenuItem Name="codeplexMenuItem" Header="CodePlex Project Homepage" />
+        <MenuItem Name="aboutMenuItem" Style="{DynamicResource AboutMenuItemStyle}" Command="ev:EditorCommands.About" CommandTarget="{DynamicResource ShellContent}" />
+    </MenuItem>
+
+</Menu>

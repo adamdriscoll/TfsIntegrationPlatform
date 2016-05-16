@@ -1,0 +1,515 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+<xs:schema 
+    elementFormDefault="unqualified" 
+    attributeFormDefault="unqualified" 
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    targetNamespace="http://schemas.microsoft.com/VisualStudio/2005/workitemtracking/typedef"
+    xmlns="http://schemas.microsoft.com/VisualStudio/2005/workitemtracking/typedef">
+    
+    <!-- Simple types -->
+    
+    <!-- Any constant -->
+    <xs:simpleType name="Constant">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="255" />
+        </xs:restriction>
+    </xs:simpleType>
+    <!-- Non-empty constant -->
+    <xs:simpleType name="NonEmptyConstant">
+        <xs:restriction base="Constant">
+            <xs:minLength value="1" />
+        </xs:restriction>
+    </xs:simpleType>
+    <!-- Global list name -->
+    <xs:simpleType name="GlobalListName">
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="254" />
+            <!-- backslashes are prohibited -->
+            <xs:pattern value="^[^\\]*$" />
+        </xs:restriction>
+    </xs:simpleType>
+    <!-- Filter items -->
+    <xs:simpleType name="FilterItems">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="excludegroups" />
+        </xs:restriction>
+    </xs:simpleType>
+    <!-- Base field name (inherited by field name and reference field name) -->
+    <xs:simpleType name="FieldNameBase">
+        <xs:restriction base="xs:string">
+            <!-- Double dashes are prohibited! -->
+            <xs:pattern value="^(-{0,1}[^-]+)*-{0,1}$" />
+        </xs:restriction>
+    </xs:simpleType>
+    <!-- Field name -->
+    <xs:simpleType name="FieldName">
+        <xs:restriction base="FieldNameBase">
+            <xs:minLength value="1" />
+            <xs:maxLength value="128" />
+        </xs:restriction>
+    </xs:simpleType>
+    <!-- Reference field name (basic validation) -->
+    <xs:simpleType name="ReferenceFieldName">
+        <xs:restriction base="FieldNameBase">
+            <xs:minLength value="1" />
+            <xs:maxLength value="70" />
+            <!-- These regular expressions are also mentioned in the PSDBDAL.CH file. Keep them in sync! -->
+            <!-- One or more groups of two elements separated by dot -->
+            <xs:pattern value="^[a-zA-Z_][a-zA-Z0-9_]*(\.[a-zA-Z0-9_]+)+$" />
+        </xs:restriction>
+    </xs:simpleType>
+    <!-- Field type -->
+    <xs:simpleType name="FieldType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="String" />
+            <xs:enumeration value="Integer" />
+            <xs:enumeration value="Double" />
+            <xs:enumeration value="DateTime" />
+            <xs:enumeration value="PlainText" />
+            <xs:enumeration value="HTML" />
+            <xs:enumeration value="TreePath" />
+            <xs:enumeration value="History" />
+        </xs:restriction>
+    </xs:simpleType>
+    <!-- Field reportability -->
+    <xs:simpleType name="Reportability">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="dimension" />
+            <xs:enumeration value="detail" />
+            <xs:enumeration value="measure" />
+        </xs:restriction>
+    </xs:simpleType>
+    <!-- Measuring formula -->
+    <xs:simpleType name="MeasureFormula">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="sum" />
+            <xs:enumeration value="count" />
+            <xs:enumeration value="distinctcount" />
+            <xs:enumeration value="avg" />
+            <xs:enumeration value="min" />
+            <xs:enumeration value="max" />
+        </xs:restriction>
+    </xs:simpleType>
+    <!-- Application name -->
+    <xs:simpleType name="Application">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Work item type editor" />
+        </xs:restriction>
+    </xs:simpleType>
+    <!-- Version -->
+    <xs:simpleType name="Version">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="1.0" />
+        </xs:restriction>
+    </xs:simpleType>
+    <!-- Copy from -->
+    <xs:simpleType name="CopyFrom">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="value" />
+            <xs:enumeration value="field" />
+            <xs:enumeration value="clock" />
+            <xs:enumeration value="currentuser" />
+        </xs:restriction>
+    </xs:simpleType>
+    <!-- Default from for SERVERDEFAULT rules -->
+    <xs:simpleType name="ServerDefaultFrom">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="clock" />
+            <xs:enumeration value="currentuser" />
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <!-- Complex types -->
+    
+    <!-- WITD (root element) -->
+    <xs:complexType name="Witd">
+        <xs:sequence>
+            <xs:element name="WORKITEMTYPE" type="WorkItemType" />
+        </xs:sequence>
+        <xs:attribute name="application" type="Application" />
+        <xs:attribute name="version" type="Version" use="required" />
+    </xs:complexType>
+    <!-- WORKITEMTYPE -->
+    <xs:complexType name="WorkItemType">
+        <xs:sequence>
+            <xs:element name="DESCRIPTION" type="Constant" minOccurs="0" />
+            <xs:element name="GLOBALLISTS" type="GlobalListsDef" minOccurs="0"/>
+            <xs:element name="FIELDS" type="FieldDefinitions" />
+            <xs:element name="WORKFLOW" type="Workflow" />
+            <xs:element name="FORM" type="Form" />
+        </xs:sequence>
+        <xs:attribute name="name" type="NonEmptyConstant" use="required" />
+    </xs:complexType>
+    <!-- FIELDS (field definitions) -->
+    <xs:complexType name="FieldDefinitions">
+        <xs:sequence >
+            <xs:element name="FIELD" type="FieldDefinition" maxOccurs="unbounded" />
+        </xs:sequence >
+    </xs:complexType>
+    <!-- FIELD (field definition) -->
+    <xs:complexType name="FieldDefinition">
+        <xs:group ref="FieldDefinitionRules" />
+        <xs:attribute name="name" type="FieldName" use="required" />
+        <xs:attribute name="refname" type="ReferenceFieldName" use="required" />
+        <xs:attribute name="type" type="FieldType" use="required" />
+        <xs:attribute name="reportable" type="Reportability" use="optional" />
+        <xs:attribute name="formula" type="MeasureFormula" use="optional" />
+    </xs:complexType>
+    <!-- Field definition rules -->
+    <xs:group name="FieldDefinitionRules">
+        <xs:sequence>
+            <xs:element name="HELPTEXT" type="HelpTextRule" minOccurs="0"/>
+            <xs:group ref="Rules" minOccurs="0" maxOccurs="unbounded" />
+            <xs:group ref="Conditions" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:group>
+    <!-- HELPTEXT -->
+    <xs:complexType name="HelpTextRule">
+        <xs:simpleContent>
+            <xs:extension base="Constant" />
+        </xs:simpleContent>
+    </xs:complexType>
+    <!-- Rules -->
+    <xs:group name="Rules">
+        <xs:choice>
+            <xs:element name="REQUIRED" type="PlainRule" />
+            <xs:element name="READONLY" type="PlainRule" />
+            <xs:element name="EMPTY" type="PlainRule" />
+            <xs:element name="FROZEN" type="PlainRule" />
+            <xs:element name="CANNOTLOSEVALUE" type="PlainRule" />
+            <xs:element name="NOTSAMEAS" type="FieldRule" />
+            <xs:element name="VALIDUSER" type="ValidUserRule" />
+            <xs:element name="ALLOWEXISTINGVALUE" type="EmptyRule" />
+            <xs:element name="MATCH" type="PatternRule" />
+            <xs:element name="ALLOWEDVALUES" type="ListRule" />
+            <xs:element name="SUGGESTEDVALUES" type="ListRule"  />
+            <xs:element name="PROHIBITEDVALUES" type="ListRule"  />
+            <xs:element name="DEFAULT" type="DefaultRule" />
+            <xs:element name="COPY" type="CopyRule" />
+            <xs:element name="SERVERDEFAULT" type="ServerDefaultRule" />
+        </xs:choice>
+    </xs:group>
+    <!-- Plain rule (REQUIRED, READONLY, etc) -->
+    <xs:complexType name="PlainRule">
+        <xs:attribute name="for" type="NonEmptyConstant" />
+        <xs:attribute name="not" type="NonEmptyConstant" />
+    </xs:complexType>
+    <!-- Field rule (NOTSAMEAS) -->
+    <xs:complexType name="FieldRule">
+        <xs:complexContent>
+            <xs:extension base="PlainRule">
+                <xs:attribute name="field" type="FieldName" use="required" />
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <!-- Value rule (any rule with 'value' attribute referring to a constant) -->
+    <xs:complexType name="PatternRule">
+        <xs:complexContent>
+            <xs:extension base="PlainRule">
+                <xs:attribute name="pattern" type="NonEmptyConstant" use="required"/>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <!-- Min/max rule (MIN, MAX) -->
+    <xs:complexType name="MinMaxRule">
+        <xs:complexContent>
+            <xs:extension base="PlainRule">
+                <xs:attribute name="value" type="xs:integer" />
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <!-- Valid user rule (VALIDUSER) -->
+    <xs:complexType name="ValidUserRule" >
+        <xs:attribute name="group" type="NonEmptyConstant" />
+    </xs:complexType>
+    <!-- Empty rule (ALLOWEXISTINGVALUE) -->
+    <xs:complexType name="EmptyRule" />
+    <!-- Copy rule (COPY)-->
+    <xs:complexType name="CopyRule">
+        <xs:attribute name="from" type="CopyFrom" use="required" />
+        <xs:attribute name="value" type="Constant" />
+        <xs:attribute name="field" type="FieldName" />
+    </xs:complexType>
+    <!-- Default rule (DEFAULT) -->
+    <xs:complexType name="DefaultRule">
+        <xs:complexContent>
+            <xs:restriction base="CopyRule">
+                <xs:attribute name="value" type="NonEmptyConstant" />
+            </xs:restriction>
+        </xs:complexContent>
+    </xs:complexType>
+    <!-- Server default rule (SERVERDEFAULT) -->
+    <xs:complexType name="ServerDefaultRule">
+        <xs:attribute name="from" type="ServerDefaultFrom" use="required" />
+    </xs:complexType>
+    <!-- List rule (ALLOWEDVALUES, SUGGESTEDVALUES, PROHIBITEDVALUES) -->
+    <xs:complexType name="ListRule">
+        <xs:sequence maxOccurs="unbounded">
+            <xs:choice>
+                <xs:element name="GLOBALLIST" type="GlobalList" />
+                <xs:element name="LISTITEM" type="ListItem" />
+            </xs:choice>
+        </xs:sequence>
+        <xs:attribute name="expanditems" type="xs:boolean" default="true" />
+        <xs:attribute name="filteritems" type="FilterItems" />
+    </xs:complexType>
+    <!-- Global list (GLOBALLIST) -->
+    <xs:complexType name="GlobalList">
+        <xs:attribute name="name" type="GlobalListName" use="required"/>
+    </xs:complexType>
+    <!-- List item (LISTITEM) -->
+    <xs:complexType name="ListItem">
+        <xs:attribute name="value" type="NonEmptyConstant" use="required" />
+    </xs:complexType>
+    <!-- Conditions -->
+    <xs:group name="Conditions">
+        <xs:choice>
+            <xs:element name="WHEN" type="FieldValueCondition" />
+            <xs:element name="WHENNOT" type="FieldValueCondition" />
+            <xs:element name="WHENCHANGED" type="FieldCondition" />
+        </xs:choice>
+    </xs:group>
+    <!-- Field condition (WHEN, WHENNOT) -->
+    <xs:complexType name="FieldCondition">
+        <xs:choice minOccurs="1" maxOccurs="unbounded">
+            <xs:group ref="Rules" />
+        </xs:choice>
+        <xs:attribute name="field" type="FieldName" use="required" />
+    </xs:complexType>
+    <!-- Field value condition (WHENCHANGED) -->
+    <xs:complexType name="FieldValueCondition">
+        <xs:complexContent>
+            <xs:extension base="FieldCondition">
+                <xs:attribute name="value" type="Constant" use="required" />
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <!-- WORKFLOW -->
+    <xs:complexType name="Workflow">
+        <xs:sequence>
+            <xs:element name="STATES" type="States" />
+            <xs:element name="TRANSITIONS" type="Transitions" />
+        </xs:sequence>
+    </xs:complexType>
+    <!-- States (STATES) -->
+    <xs:complexType name="States">
+        <xs:sequence>
+            <xs:element name="STATE" type="State" minOccurs="1" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+    <!-- State -->
+    <xs:complexType name="State">
+        <xs:sequence>
+            <xs:element name="FIELDS" type="FieldReferences" minOccurs="0" />
+        </xs:sequence>
+        <xs:attribute name="value" type="NonEmptyConstant" use="required" />
+    </xs:complexType>
+    <!-- Field references (FIELDS) -->
+    <xs:complexType name="FieldReferences">
+        <xs:sequence>
+            <xs:element name="FIELD" type="FieldReference" minOccurs="1" maxOccurs="unbounded" />
+        </xs:sequence>
+    </xs:complexType>
+    <!-- Field reference (FIELD) -->
+    <xs:complexType name="FieldReference">
+        <xs:choice>
+            <!-- At least one rule plus any number of conditions -->
+            <xs:sequence>
+                <!-- At least one rule... -->
+                <xs:choice>
+                    <xs:group ref="Rules" maxOccurs="unbounded"/>
+                </xs:choice>
+                <!-- Plus any number of conditions -->
+                <xs:group ref="Conditions" minOccurs="0" maxOccurs="unbounded" />
+            </xs:sequence>
+            <!-- No rules; at least one condition -->
+            <xs:sequence>
+                <xs:group ref="Conditions" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:choice>
+        <xs:attribute name="name" type="FieldName" use="required"/>
+    </xs:complexType>
+    <!-- Transitions (TRANSITIONS) -->
+    <xs:complexType name="Transitions">
+        <xs:sequence>
+            <xs:element name="TRANSITION" type="Transition" maxOccurs="unbounded" />
+        </xs:sequence>
+    </xs:complexType>
+    <!-- Transition (TRANSITION) -->
+    <xs:complexType name="Transition">
+        <xs:all>
+            <xs:element name="ACTIONS" type="ActionList" minOccurs="0" />
+            <xs:element name="REASONS" type="Reasons" />
+            <xs:element name="FIELDS" type="FieldReferences" minOccurs="0"/>
+        </xs:all>
+        <xs:attribute name="from" type="Constant" use="required" />
+        <xs:attribute name="to" type="NonEmptyConstant" use="required" />
+        <xs:attribute name="for" type="NonEmptyConstant" />
+        <xs:attribute name="not" type="NonEmptyConstant" />
+    </xs:complexType>
+    <!-- Action list (ACTIONS) -->
+    <xs:complexType name="ActionList">
+        <xs:sequence>
+            <xs:element name="ACTION" type="ListItem" minOccurs="0" maxOccurs="unbounded" />
+        </xs:sequence>
+    </xs:complexType>
+    <!-- Reasons (REASONS) -->
+    <xs:complexType name="Reasons">
+        <xs:sequence>
+            <xs:element name="REASON" type="Reason" minOccurs="0" maxOccurs="unbounded" />
+            <xs:element name="DEFAULTREASON" type="Reason" />
+            <!-- <xs:element name="REASON" type="Reason" minOccurs="0" maxOccurs="unbounded" /> -->
+        </xs:sequence>
+    </xs:complexType>
+    <!-- Reason (REASON) -->
+    <xs:complexType name="Reason">
+        <xs:sequence>
+            <xs:element name="FIELDS" type="FieldReferences" minOccurs="0"/>
+        </xs:sequence>
+        <xs:attribute name="value" type="NonEmptyConstant" use="required" />
+    </xs:complexType>
+    <!-- Global lists definitions (GLOBALLISTS) -->
+    <xs:complexType name="GlobalListsDef">
+        <xs:sequence>
+            <xs:element name="GLOBALLIST" type="GlobalListDef" minOccurs="0" maxOccurs="unbounded" />
+        </xs:sequence>
+    </xs:complexType>
+    <!-- Global list definition (GLOBALLIST) -->
+    <xs:complexType name="GlobalListDef">
+        <xs:sequence>
+            <xs:element name="LISTITEM" type="ListItem" minOccurs="1" maxOccurs="unbounded" />
+        </xs:sequence>
+        <xs:attribute name="name" type="GlobalListName" use="required" />
+    </xs:complexType>
+
+    <!-- Root element -->
+    <xs:element name="WITD" type="Witd" />
+
+<!-- ****BEGIN**** Form Definition schema ****BEGIN**** -->    
+    <xs:complexType name="Form">
+        <xs:sequence>
+            <xs:element name="Layout" type="LayoutType" minOccurs="1" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="LayoutType">
+        <xs:choice minOccurs="1" maxOccurs="unbounded">
+            <xs:element name="Group" type="GroupType" minOccurs="0"/>
+            <xs:element name="Control" type="ControlType" minOccurs="0"/>
+            <xs:element name="TabGroup" type="TabGroupType" minOccurs="0"/>
+            <xs:element name="Splitter" type="SplitterType" minOccurs="0"/>
+        </xs:choice>
+        <xs:attribute name="Target" type="xs:string" use="optional" />
+        <xs:attribute name="MinimumSize" type="SizeType" use="optional" />
+        <xs:attribute name="Padding" type="PaddingType" use="optional" />
+        <xs:attribute name="Margin" type="PaddingType" use="optional" />
+    </xs:complexType>
+
+    <xs:complexType name="GroupType">
+        <xs:sequence>
+            <xs:element name="Column" type="ColumnType" minOccurs="1" maxOccurs="unbounded"/>
+        </xs:sequence>
+        <xs:attribute name="Label" type="LabelType" use="optional" />
+        <xs:attribute name="Padding" type="PaddingType" use="optional" />
+        <xs:attribute name="Margin" type="PaddingType" use="optional" />
+    </xs:complexType>
+
+    <xs:complexType name="ColumnType">
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+            <xs:element name="Group"      type="GroupType"    minOccurs="0" />
+            <xs:element name="Control"    type="ControlType"    minOccurs="0" />
+            <xs:element name="TabGroup"   type="TabGroupType" minOccurs="0" />
+            <xs:element name="Splitter"   type="SplitterType"    minOccurs="0" />
+        </xs:choice>
+        <xs:attribute name="PercentWidth" type="PercentWidthType" use="optional" />
+        <xs:attribute name="FixedWidth"   type="FixedWidthType" use="optional" />
+    </xs:complexType>
+
+    <xs:complexType name="TabGroupType">
+        <xs:sequence>
+            <xs:element name="Tab" type="TabType" minOccurs="1" maxOccurs="unbounded"/>
+        </xs:sequence>
+        <xs:attribute name="Padding" type="PaddingType" use="optional" />
+        <xs:attribute name="Margin" type="PaddingType" use="optional" />
+    </xs:complexType>
+
+    <xs:complexType name="TabType">
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+            <xs:element name="Group" type="GroupType" minOccurs="0" maxOccurs="unbounded" />
+            <xs:element name="Control" type="ControlType" minOccurs="0" maxOccurs="unbounded" />
+            <xs:element name="TabGroup" type="TabGroupType" minOccurs="0" maxOccurs="unbounded" />
+            <xs:element name="Splitter" type="SplitterType" minOccurs="0" maxOccurs="unbounded" />
+        </xs:choice>
+        <xs:attribute name="Label" type="LabelType" use="required"/>
+        <xs:attribute name="Padding" type="PaddingType" use="optional" />
+        <xs:attribute name="Margin" type="PaddingType" use="optional" />
+    </xs:complexType>
+
+    <xs:complexType name="ControlType">
+        <xs:attribute name="FieldName" use="optional" />
+        <xs:attribute name="Type" use="required" />
+        <xs:attribute name="Label"     type="LabelType" use="optional" />
+        <xs:attribute name="LabelPosition" type="LabelPositionType" />
+        <xs:attribute name="Dock"     type="DockType" use="optional" />
+        <xs:attribute name="Padding" type="PaddingType" use="optional" />
+        <xs:attribute name="Margin" type="PaddingType" use="optional" />
+        <xs:anyAttribute processContents="skip"/>
+    </xs:complexType>
+
+    <xs:complexType name="SplitterType">
+        <xs:attribute name="Dock" type="DockType" use="required"/>
+    </xs:complexType>
+
+    <xs:simpleType name="FixedWidthType">
+        <xs:restriction base="xs:integer">
+            <xs:minInclusive value="1" />
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="PercentWidthType">
+        <xs:restriction base="xs:integer">
+            <xs:minInclusive value="1"/>
+            <xs:maxInclusive value="100"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="LabelType">
+        <xs:restriction  base="xs:string">
+            <xs:maxLength value="80"/>
+        </xs:restriction>
+    </xs:simpleType>            
+
+    <xs:simpleType name="LabelPositionType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Top"/>
+            <xs:enumeration value="Bottom"/>
+            <xs:enumeration value="Left"/>
+            <xs:enumeration value="Right"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+
+    <xs:simpleType name="DockType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Fill"/>
+            <xs:enumeration value="Top"/>
+            <xs:enumeration value="Bottom"/>
+            <xs:enumeration value="Left"/>
+            <xs:enumeration value="Right"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="SizeType">
+        <xs:restriction  base="xs:string">
+            <xs:pattern value="^\(\d+\,\d+\)$"/>
+        </xs:restriction>
+    </xs:simpleType>            
+
+    <xs:simpleType name="PaddingType">
+        <xs:restriction  base="xs:string">
+            <xs:pattern value="^\(\d+\,\d+\,\d+\,\d+\)$"/>
+        </xs:restriction>
+    </xs:simpleType>            
+</xs:schema>
+<!-- *****END***** Form Definition schema *****END*****  -->

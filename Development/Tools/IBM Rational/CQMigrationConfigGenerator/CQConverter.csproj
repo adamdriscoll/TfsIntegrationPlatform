@@ -1,0 +1,259 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <!-- ********************************************************************************************* -->
+  <!-- OutputPath should NOT be set in this project file to let the common settings determine        -->
+  <!-- the build location.                                                                           -->
+  <!-- ********************************************************************************************* -->
+  <PropertyGroup>
+    <!-- Relative path to Binaries subdirectory. -->
+    <TfsIPRoot>..\..\..</TfsIPRoot>
+    <!-- See common settings for possible values of TfsIPProjectType.  Determines placement of binaries. -->
+    <TfsIPProjectType>Base</TfsIPProjectType>
+  </PropertyGroup>
+  <Import Project="$(TfsIPRoot)\Build\Microsoft.TeamFoundation.Migration.Settings.targets" />
+  <!-- ********************************************************************************************* -->
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{5FD4A8A9-6539-4F2D-9520-CBDC6FAD3993}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CQConverter</RootNamespace>
+    <AssemblyName>ClearQuestMigrationConfigGenerator</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Accessibility" />
+    <Reference Include="ClearQuest.Interop">
+      <HintPath>$(TfsIPRoot)\Binaries\External\IBM Rational\ClearQuest\ClearQuest.Interop.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.TeamFoundation, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Binaries\Internal\TFS2008\Microsoft.TeamFoundation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.TeamFoundation.Client, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Binaries\Internal\TFS2008\Microsoft.TeamFoundation.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.TeamFoundation.Common, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Binaries\Internal\TFS2008\Microsoft.TeamFoundation.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.TeamFoundation.WorkItemTracking.Client, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Binaries\Internal\TFS2008\Microsoft.TeamFoundation.WorkItemTracking.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.TeamFoundation.WorkItemTracking.Proxy, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Binaries\Internal\TFS2008\Microsoft.TeamFoundation.WorkItemTracking.Proxy.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\..\..\Version\Version.cs">
+      <Link>Version.cs</Link>
+    </Compile>
+    <Compile Include="common\CommonConstants.cs" />
+    <Compile Include="common\ConverterMain.cs" />
+    <Compile Include="common\ConverterParameters.cs" />
+    <Compile Include="common\CurConResource1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CurConResource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="common\InMemoryItemDefinitions.cs" />
+    <Compile Include="common\IWorkItemConverter.cs" />
+    <Compile Include="common\MigrationReport.cs" />
+    <Compile Include="common\WITDHelper.cs" />
+    <Compile Include="common\WITFieldMapHelper.cs" />
+    <Compile Include="common\WITSchemaMapHelper.cs" />
+    <Compile Include="common\WorkItemFieldMap.cs">
+      <DependentUpon>WorkItemFieldMap.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="common\WorkItemSchemaMap.cs">
+      <DependentUpon>WorkItemSchemaMap.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="common\WorkItemTypeDefinition.cs">
+      <DependentUpon>WorkItemTypeDefinition.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Core\CQConnection.cs" />
+    <Compile Include="Core\CQConstants.cs" />
+    <Compile Include="Core\CQConverter.cs" />
+    <Compile Include="Core\CQConverterUtil.cs" />
+    <Compile Include="Core\CQEntity.cs" />
+    <Compile Include="Core\CQEntityRec.cs" />
+    <Compile Include="Core\CQWrapper.cs" />
+    <Compile Include="Core\LinkMapElement.cs">
+      <DependentUpon>LinkMapElement.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Core\WITDXMLGenerator.cs" />
+    <Compile Include="CQResource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CQResource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="currituck\VSTSCache.cs" />
+    <Compile Include="currituck\VSTSConnection.cs" />
+    <Compile Include="currituck\VSTSConstants.cs" />
+    <Compile Include="currituck\VSTSResource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>VSTSResource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="currituck\VSTSUtil.cs" />
+    <Compile Include="currituck\VSTSWorkItemHelper.cs" />
+    <Compile Include="currituck\VSTSWorkItemHelperWS.cs" />
+    <Compile Include="currituck\ws.cs" />
+    <Compile Include="currituck\wshelper.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utility\AsyncTask.cs" />
+    <Compile Include="Utility\CommandLineParser.cs" />
+    <Compile Include="Utility\CommonResource1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CommonResource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Utility\ConverterExceptions.cs" />
+    <Compile Include="Utility\Display.cs" />
+    <Compile Include="Utility\Logger.cs" />
+    <Compile Include="Utility\LogSource.cs" />
+    <Compile Include="Utility\NativeMethods.cs" />
+    <Compile Include="Utility\ReportSchema.cs">
+      <DependentUpon>ReportSchema.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Utility\ReportSchemaEx.cs" />
+    <Compile Include="Utility\SendMail.cs" />
+    <Compile Include="Utility\StatusDisplay.cs" />
+    <Compile Include="Utility\UserMap.cs" />
+    <Compile Include="Utility\UserMapEx.cs" />
+    <Compile Include="Utility\UtilityMethods.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="common\FixedForm.xml" />
+    <EmbeddedResource Include="Utility\ReportOutput.xslt" />
+    <EmbeddedResource Include="Utility\UpgradeReport.css" />
+    <EmbeddedResource Include="Utility\UpgradeReport_Minus.gif" />
+    <EmbeddedResource Include="Utility\UpgradeReport_Plus.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="common\CurConResource.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>CurConResource1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+      <CustomToolNamespace>Microsoft.TeamFoundation.Converters.WorkItemTracking.Common</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CQResource.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>CQResource.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+      <CustomToolNamespace>Microsoft.TeamFoundation.Converters.WorkItemTracking.CQ</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="currituck\VSTSResource.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>VSTSResource.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+      <CustomToolNamespace>Microsoft.TeamFoundation.Converters.WorkItemTracking</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Utility\CommonResource.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>CommonResource1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+      <CustomToolNamespace>Microsoft.TeamFoundation.Converters.Utility</CustomToolNamespace>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="common\CQConverterConfig.xsd" />
+    <EmbeddedResource Include="common\PSConverterConfig.xsd" />
+    <EmbeddedResource Include="common\WorkItemConverterConfig.xsd" />
+    <EmbeddedResource Include="common\WorkItemFieldMap.xsd" />
+    <EmbeddedResource Include="common\WorkItemSchemaMap.xsd" />
+    <EmbeddedResource Include="common\WorkItemTypeDefinition.xsd" />
+    <EmbeddedResource Include="Utility\ReportSchema.xsd" />
+    <EmbeddedResource Include="Utility\UserMap.xsd" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Core\LinkMapElement.xsd" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Utility\CommonExpansions\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(TfsIPRoot)\Build\Microsoft.TeamFoundation.Migration.targets" />
+
+</Project>

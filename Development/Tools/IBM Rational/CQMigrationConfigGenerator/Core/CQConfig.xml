@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WorkItemConverter>
+    <!-- 
+      specifies the details about source work-item tracking system.
+    -->
+    <Source id="ClearQuest">
+        <ClearQuest>
+          <!-- CQ connection name as specified in ClearQuest Maintenance tool  -->
+          <ConnectionName>srinidb</ConnectionName>
+
+          <!-- User database name -->
+          <UserDatabase>TEST</UserDatabase>
+
+          <!-- Query name to extract the related schema and filter the records for migration -->
+          <QueryName>Personal Queries/My Defects</QueryName> 
+
+          <!-- User name -->
+          <UserID>admin</UserID> 
+        </ClearQuest >
+    </Source>
+
+    <!--
+        Specifies the connection information to Visual Studio Team Foundation Server.
+        This includes the server uri and project name
+    -->
+    
+    <VSTS>
+        <URI>HYD11</URI>
+        <ProjectName>cqproj30</ProjectName>
+    </VSTS>
+
+    <!-- 
+      Do you want to stop the converter on the very first error occured during records migration.
+      Valid values : true / false
+    -->
+    <ExitOnError>true</ExitOnError>
+
+    <!-- 
+      Folder where the files will be generated
+    -->
+    <OutputDirectory>out</OutputDirectory>
+
+</WorkItemConverter>

@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<Configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" UniqueId="828b37cd-b889-4805-9e4d-f0eeb3921635" FriendlyName="AddTest">
+   <Providers>
+      <Provider ReferenceName="2F82C6C4-BBEE-42fb-B3D0-4799CABCF00E" FriendlyName="TFS 2008 VC Migration Provider"/>
+      <Provider ReferenceName="F2A6BA65-8ACB-4cd0-BE8F-B25887F94392" FriendlyName="ClearCase 2003 Provider"/>
+   </Providers>
+   <SessionGroup FriendlyName="Session Group Friendly Name" SessionGroupGUID="2ef620e3-3805-4487-bed2-b7118e1179c7">
+      <WorkFlowType Frequency="ContinuousManual" DirectionOfFlow="Unidirectional" SyncContext="Disabled"/>
+      <MigrationSources>
+         <MigrationSource InternalUniqueId="305ffa48-7082-46de-bad2-6ca7f80ca786" FriendlyName="TFS 2008 source (hykwon1)" ServerIdentifier="TFS 2008 source (hykwon1)95c6c779-e327-417c-9153-5e37114320d1" ServerUrl="http://va02-orcas3:8080" SourceIdentifier="targetTP" ProviderReferenceName="2F82C6C4-BBEE-42fb-B3D0-4799CABCF00E">
+            <CustomSettings/>
+            <StoredCredential/>
+         </MigrationSource>
+         <MigrationSource InternalUniqueId="07ed1fe0-c06a-4e41-9f2d-59899bfa0265" FriendlyName="CC Dynamic View billbar_billb2_development" ServerIdentifier="ClearCase 7.1" ServerUrl="\billb2_elements_vob" SourceIdentifier="feb04_view" ProviderReferenceName="F2A6BA65-8ACB-4cd0-BE8F-B25887F94392">
+            <CustomSettings>
+              <CustomSetting SettingKey="DynamicViewName" SettingValue="billbar_billb2_development" />
+              <CustomSetting SettingKey="DynamicViewRoot" SettingValue="w" />
+              <CustomSetting SettingKey="StorageLocation" SettingValue="\\msl-1417058\cc_stg" />
+            </CustomSettings>
+            <StoredCredential/>
+         </MigrationSource>
+      </MigrationSources>
+      <Sessions>
+         <Session SessionType="VersionControl" SessionUniqueId="f5124457-62d2-45b0-a8f7-f2097bf653e8" FriendlyName="Version Control Session" LeftMigrationSourceUniqueId="305ffa48-7082-46de-bad2-6ca7f80ca786" RightMigrationSourceUniqueId="07ed1fe0-c06a-4e41-9f2d-59899bfa0265">
+            <EventSinks/>
+            <CustomSettings>
+               <SettingXml>
+                  <VCSessionCustomSetting>
+                     <Settings><!--<Setting name="" value="" />--></Settings>
+                  </VCSessionCustomSetting>
+               </SettingXml>
+               <SettingXmlSchema/>
+            </CustomSettings>
+            <Filters>
+               <FilterPair Neglect="false">
+                  <FilterItem MigrationSourceUniqueId="305ffa48-7082-46de-bad2-6ca7f80ca786" FilterString="$/targetTP/billbar1/Folder1"/>
+                  <FilterItem MigrationSourceUniqueId="07ed1fe0-c06a-4e41-9f2d-59899bfa0265" FilterString="\billb2_elements_vob\billbar\Folder1"/>
+               </FilterPair>
+            </Filters>
+         </Session>
+      </Sessions>
+      <Linking>
+      </Linking>
+   </SessionGroup>
+</Configuration>

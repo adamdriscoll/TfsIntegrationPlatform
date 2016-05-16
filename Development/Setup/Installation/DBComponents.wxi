@@ -1,0 +1,380 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Include xmlns="http://schemas.microsoft.com/wix/2006/wi"
+         xmlns:sql="http://schemas.microsoft.com/wix/SqlExtension" >
+
+  <!-- Despite the fact that setup has a DATABASENAME property floating around, the generated -->
+  <!-- SQL pins the DB name to Tfs_IntegrationPlatform.  We use master as the initial catalog and -->
+  <!-- rely on the scripts to set context. -->
+  <sql:SqlDatabase Id="master" Database="master" Server="[DATABASESERVER]" />
+
+  <Binary Id="MigrationToolSqlScript" SourceFile="$(var.DBPath)\Tfs_IntegrationPlatform.sql" />
+  <Binary Id="UpgradeDBVersion1.0" SourceFile="$(var.DBPath)\UpgradeFromDBVersion1.0.sql" />
+  <Binary Id="UpgradeDBVersion1.1" SourceFile="$(var.DBPath)\UpgradeFromDBVersion1.1.sql" />
+  <Binary Id="UpgradeDBVersion1.2" SourceFile="$(var.DBPath)\UpgradeFromDBVersion1.2.sql" />
+  <Binary Id="UpgradeDBVersion1.3" SourceFile="$(var.DBPath)\UpgradeFromDBVersion1.3.sql" />
+  <Binary Id="UpgradeDBVersion1.4" SourceFile="$(var.DBPath)\UpgradeFromDBVersion1.4.sql" />
+  <Binary Id="UpgradeDBVersion1.5" SourceFile="$(var.DBPath)\UpgradeFromDBVersion1.5.sql" />
+  <Binary Id="UpgradeDBVersion1.6" SourceFile="$(var.DBPath)\UpgradeFromDBVersion1.6.sql" />
+  <Binary Id="UpgradeDBVersion1.7" SourceFile="$(var.DBPath)\UpgradeFromDBVersion1.7.sql" />
+  <Binary Id="UpgradeDBVersion1.8" SourceFile="$(var.DBPath)\UpgradeFromDBVersion1.8.sql" />
+  <Binary Id="UpgradeDBVersion1.9" SourceFile="$(var.DBPath)\UpgradeFromDBVersion1.9.sql" />
+  <Binary Id="UpgradeDBVersion2.0" SourceFile="$(var.DBPath)\UpgradeFromDBVersion2.0.sql" />
+  <Binary Id="UpgradeDBVersion2.1" SourceFile="$(var.DBPath)\UpgradeFromDBVersion2.1.sql" />
+  <Binary Id="UpgradeDBVersion2.2" SourceFile="$(var.DBPath)\UpgradeFromDBVersion2.2.sql" />
+  <Binary Id="UpgradeDBVersion2.3" SourceFile="$(var.DBPath)\UpgradeFromDBVersion2.3.sql" />
+  <Binary Id="UpgradeDBVersion2.4" SourceFile="$(var.DBPath)\UpgradeFromDBVersion2.4.sql" />
+  <Binary Id="UpgradeDBVersion2.5" SourceFile="$(var.DBPath)\UpgradeFromDBVersion2.5.sql" />
+  <Binary Id="UpgradeDBVersion2.6" SourceFile="$(var.DBPath)\UpgradeFromDBVersion2.6.sql" />
+  <Binary Id="UpgradeDBVersion2.7" SourceFile="$(var.DBPath)\UpgradeFromDBVersion2.7.sql" />
+  <Binary Id="UpgradeDBVersion2.8" SourceFile="$(var.DBPath)\UpgradeFromDBVersion2.8.sql" />
+  <Binary Id="UpgradeDBVersion2.9" SourceFile="$(var.DBPath)\UpgradeFromDBVersion2.9.sql" />
+
+  <DirectoryRef Id="INSTALLDIR">
+
+    <!-- Deploy a new DB -->
+    <Component Id="DeployNewDatabase" Guid="958FBAE1-F712-45f4-AC65-EA0731EEE6F6">
+      <Condition><![CDATA[(EXISTINGDBVERSION = "DBNOTFOUND")]]></Condition>
+      <!-- Connecting to master instead of using a SqlDatabase line to create Tfs_IntegrationPlatform avoids -->
+      <!-- a race that would sometimes cause the DBPro generated script to complain that the new DB was not ONLINE. -->
+      <sql:SqlScript Id="CreateDatabaseScript" BinaryKey="MigrationToolSqlScript" ExecuteOnInstall="yes" SqlDb="master" />
+      <CreateFolder />
+    </Component>
+
+    <!-- Upgrade from DB Version 1.0 -->
+    <Component Id="UpgradeDBVersion1.0" Guid="BF1F86A9-A15C-4e9b-9B72-0B769DED2226">
+      <Condition><![CDATA[(EXISTINGDBVERSION = "59696839-4745-4A9C-B902-AF9E10E8D167")]]></Condition>
+      <sql:SqlScript Id="UpgradeDBVersion1.0" BinaryKey="UpgradeDBVersion1.0" ExecuteOnInstall="yes" SqlDb="master" />
+      <sql:SqlScript Id="UpgradeDBVersion1.1_1" BinaryKey="UpgradeDBVersion1.1" ExecuteOnInstall="yes" SqlDb="master" />
+      <sql:SqlScript Id="UpgradeDBVersion1.2_1" BinaryKey="UpgradeDBVersion1.2" ExecuteOnInstall="yes" SqlDb="master" />
+      <sql:SqlScript Id="UpgradeDBVersion1.3_1" BinaryKey="UpgradeDBVersion1.3" ExecuteOnInstall="yes" SqlDb="master" />
+      <sql:SqlScript Id="UpgradeDBVersion1.4_1" BinaryKey="UpgradeDBVersion1.4" ExecuteOnInstall="yes" SqlDb="master" />
+      <sql:SqlScript Id="UpgradeDBVersion1.5_1" BinaryKey="UpgradeDBVersion1.5" ExecuteOnInstall="yes" SqlDb="master" />
+      <sql:SqlScript Id="UpgradeDBVersion1.6_1" BinaryKey="UpgradeDBVersion1.6" ExecuteOnInstall="yes" SqlDb="master" />
+      <sql:SqlScript Id="UpgradeDBVersion1.7_1" BinaryKey="UpgradeDBVersion1.7" ExecuteOnInstall="yes" SqlDb="master" />
+      <sql:SqlScript Id="UpgradeDBVersion1.8_1" BinaryKey="UpgradeDBVersion1.8" ExecuteOnInstall="yes" SqlDb="master" />
+      <sql:SqlScript Id="UpgradeDBVersion1.9_1" BinaryKey="UpgradeDBVersion1.9" ExecuteOnInstall="yes" SqlDb="master" />
+      <sql:SqlScript Id="UpgradeDBVersion2.0_1" BinaryKey="UpgradeDBVersion2.0" ExecuteOnInstall="yes" SqlDb="master" />
+      <sql:SqlScript Id="UpgradeDBVersion2.1_1" BinaryKey="UpgradeDBVersion2.1" ExecuteOnInstall="yes" SqlDb="master" />
+      <sql:SqlScript Id="UpgradeDBVersion2.2_1" BinaryKey="UpgradeDBVersion2.2" ExecuteOnInstall="yes" SqlDb="master" />
+      <sql:SqlScript Id="UpgradeDBVersion2.3_1" BinaryKey="UpgradeDBVersion2.3" ExecuteOnInstall="yes" SqlDb="master" />
+      <sql:SqlScript Id="UpgradeDBVersion2.4_1" BinaryKey="UpgradeDBVersion2.4" ExecuteOnInstall="yes" SqlDb="master" />
+      <sql:SqlScript Id="UpgradeDBVersion2.5_1" BinaryKey="UpgradeDBVersion2.5" ExecuteOnInstall="yes" SqlDb="master" />
+      <sql:SqlScript Id="UpgradeDBVersion2.6_1" BinaryKey="UpgradeDBVersion2.6" ExecuteOnInstall="yes" SqlDb="master" />
+      <sql:SqlScript Id="UpgradeDBVersion2.7_1" BinaryKey="UpgradeDBVersion2.7" ExecuteOnInstall="yes" SqlDb="master" />
+      <sql:SqlScript Id="UpgradeDBVersion2.8_1" BinaryKey="UpgradeDBVersion2.8" ExecuteOnInstall="yes" SqlDb="master" />
+      <sql:SqlScript Id="UpgradeDBVersion2.9_1" BinaryKey="UpgradeDBVersion2.9" ExecuteOnInstall="yes" SqlDb="master" />
+      <CreateFolder />
+    </Component>
+
+    <Component Id="UpgradeDBVersion1.1" Guid="68CD3035-A396-475e-AC6E-5F76D59534B3">
+      <Condition><![CDATA[(EXISTINGDBVERSION = "2F74C285-001E-47B9-80A6-2AEF812EA8F7")]]></Condition>
+      <sql:SqlScript Id="UpgradeDBVersion1.1_2" BinaryKey="UpgradeDBVersion1.1" ExecuteOnInstall="yes" SqlDb="master" />
+      <sql:SqlScript Id="UpgradeDBVersion1.2_2" BinaryKey="UpgradeDBVersion1.2" ExecuteOnInstall="yes" SqlDb="master" />
+      <sql:SqlScript Id="UpgradeDBVersion1.3_2" BinaryKey="UpgradeDBVersion1.3" ExecuteOnInstall="yes" SqlDb="master" />
+      <sql:SqlScript Id="UpgradeDBVersion1.4_2" BinaryKey="UpgradeDBVersion1.4" ExecuteOnInstall="yes" SqlDb="master" />
+      <sql:SqlScript Id="UpgradeDBVersion1.5_2" BinaryKey="UpgradeDBVersion1.5" ExecuteOnInstall="yes" SqlDb="master" />
+      <sql:SqlScript Id="UpgradeDBVersion1.6_2" BinaryKey="UpgradeDBVersion1.6" ExecuteOnInstall="yes" SqlDb="master" />
+      <sql:SqlScript Id="UpgradeDBVersion1.7_2" BinaryKey="UpgradeDBVersion1.7" ExecuteOnInstall="yes" SqlDb="master" />
+      <sql:SqlScript Id="UpgradeDBVersion1.8_2" BinaryKey="UpgradeDBVersion1.8" ExecuteOnInstall="yes" SqlDb="master" />
+      <sql:SqlScript Id="UpgradeDBVersion1.9_2" BinaryKey="UpgradeDBVersion1.9" ExecuteOnInstall="yes" SqlDb="master" />
+      <sql:SqlScript Id="UpgradeDBVersion2.0_2" BinaryKey="UpgradeDBVersion2.0" ExecuteOnInstall="yes" SqlDb="master" />
+      <sql:SqlScript Id="UpgradeDBVersion2.1_2" BinaryKey="UpgradeDBVersion2.1" ExecuteOnInstall="yes" SqlDb="master" />
+      <sql:SqlScript Id="UpgradeDBVersion2.2_2" BinaryKey="UpgradeDBVersion2.2" ExecuteOnInstall="yes" SqlDb="master" />
+      <sql:SqlScript Id="UpgradeDBVersion2.3_2" BinaryKey="UpgradeDBVersion2.3" ExecuteOnInstall="yes" SqlDb="master" />
+      <sql:SqlScript Id="UpgradeDBVersion2.4_2" BinaryKey="UpgradeDBVersion2.4" ExecuteOnInstall="yes" SqlDb="master" />
+      <sql:SqlScript Id="UpgradeDBVersion2.5_2" BinaryKey="UpgradeDBVersion2.5" ExecuteOnInstall="yes" SqlDb="master" />
+      <sql:SqlScript Id="UpgradeDBVersion2.6_2" BinaryKey="UpgradeDBVersion2.6" ExecuteOnInstall="yes" SqlDb="master" />
+      <sql:SqlScript Id="UpgradeDBVersion2.7_2" BinaryKey="UpgradeDBVersion2.7" ExecuteOnInstall="yes" SqlDb="master" />
+      <sql:SqlScript Id="UpgradeDBVersion2.8_2" BinaryKey="UpgradeDBVersion2.8" ExecuteOnInstall="yes" SqlDb="master" />
+      <sql:SqlScript Id="UpgradeDBVersion2.9_2" BinaryKey="UpgradeDBVersion2.9" ExecuteOnInstall="yes" SqlDb="master" />
+      <CreateFolder />
+    </Component>
+
+    <Component Id="UpgradeDBVersion1.2" Guid="C4C88013-AD91-4bf1-8970-13BCE14C137D">
+      <Condition><![CDATA[(EXISTINGDBVERSION = "D75F0A18-4B53-4640-97DF-9D8620119F46")]]></Condition>
+      <sql:SqlScript Id="UpgradeDBVersion1.2_3" BinaryKey="UpgradeDBVersion1.2" ExecuteOnInstall="yes" SqlDb="master" />
+      <sql:SqlScript Id="UpgradeDBVersion1.3_3" BinaryKey="UpgradeDBVersion1.3" ExecuteOnInstall="yes" SqlDb="master" />
+      <sql:SqlScript Id="UpgradeDBVersion1.4_3" BinaryKey="UpgradeDBVersion1.4" ExecuteOnInstall="yes" SqlDb="master" />
+      <sql:SqlScript Id="UpgradeDBVersion1.5_3" BinaryKey="UpgradeDBVersion1.5" ExecuteOnInstall="yes" SqlDb="master" />
+      <sql:SqlScript Id="UpgradeDBVersion1.6_3" BinaryKey="UpgradeDBVersion1.6" ExecuteOnInstall="yes" SqlDb="master" />
+      <sql:SqlScript Id="UpgradeDBVersion1.7_3" BinaryKey="UpgradeDBVersion1.7" ExecuteOnInstall="yes" SqlDb="master" />
+      <sql:SqlScript Id="UpgradeDBVersion1.8_3" BinaryKey="UpgradeDBVersion1.8" ExecuteOnInstall="yes" SqlDb="master" />
+      <sql:SqlScript Id="UpgradeDBVersion1.9_3" BinaryKey="UpgradeDBVersion1.9" ExecuteOnInstall="yes" SqlDb="master" />
+      <sql:SqlScript Id="UpgradeDBVersion2.0_3" BinaryKey="UpgradeDBVersion2.0" ExecuteOnInstall="yes" SqlDb="master" />
+      <sql:SqlScript Id="UpgradeDBVersion2.1_3" BinaryKey="UpgradeDBVersion2.1" ExecuteOnInstall="yes" SqlDb="master" />
+      <sql:SqlScript Id="UpgradeDBVersion2.2_3" BinaryKey="UpgradeDBVersion2.2" ExecuteOnInstall="yes" SqlDb="master" />
+      <sql:SqlScript Id="UpgradeDBVersion2.3_3" BinaryKey="UpgradeDBVersion2.3" ExecuteOnInstall="yes" SqlDb="master" />
+      <sql:SqlScript Id="UpgradeDBVersion2.4_3" BinaryKey="UpgradeDBVersion2.4" ExecuteOnInstall="yes" SqlDb="master" />
+      <sql:SqlScript Id="UpgradeDBVersion2.5_3" BinaryKey="UpgradeDBVersion2.5" ExecuteOnInstall="yes" SqlDb="master" />
+      <sql:SqlScript Id="UpgradeDBVersion2.6_3" BinaryKey="UpgradeDBVersion2.6" ExecuteOnInstall="yes" SqlDb="master" />
+      <sql:SqlScript Id="UpgradeDBVersion2.7_3" BinaryKey="UpgradeDBVersion2.7" ExecuteOnInstall="yes" SqlDb="master" />
+      <sql:SqlScript Id="UpgradeDBVersion2.8_3" BinaryKey="UpgradeDBVersion2.8" ExecuteOnInstall="yes" SqlDb="master" />
+      <sql:SqlScript Id="UpgradeDBVersion2.9_3" BinaryKey="UpgradeDBVersion2.9" ExecuteOnInstall="yes" SqlDb="master" />
+      <CreateFolder />
+    </Component>
+
+    <Component Id="UpgradeDBVersion1.3" Guid="F8AF3277-C073-40cc-B288-F38C35E815DB">
+      <Condition><![CDATA[(EXISTINGDBVERSION = "EED75629-45C5-4B6C-85D2-C379FD2C9874")]]></Condition>
+      <sql:SqlScript Id="UpgradeDBVersion1.3_4" BinaryKey="UpgradeDBVersion1.3" ExecuteOnInstall="yes" SqlDb="master" />
+      <sql:SqlScript Id="UpgradeDBVersion1.4_4" BinaryKey="UpgradeDBVersion1.4" ExecuteOnInstall="yes" SqlDb="master" />
+      <sql:SqlScript Id="UpgradeDBVersion1.5_4" BinaryKey="UpgradeDBVersion1.5" ExecuteOnInstall="yes" SqlDb="master" />
+      <sql:SqlScript Id="UpgradeDBVersion1.6_4" BinaryKey="UpgradeDBVersion1.6" ExecuteOnInstall="yes" SqlDb="master" />
+      <sql:SqlScript Id="UpgradeDBVersion1.7_4" BinaryKey="UpgradeDBVersion1.7" ExecuteOnInstall="yes" SqlDb="master" />
+      <sql:SqlScript Id="UpgradeDBVersion1.8_4" BinaryKey="UpgradeDBVersion1.8" ExecuteOnInstall="yes" SqlDb="master" />
+      <sql:SqlScript Id="UpgradeDBVersion1.9_4" BinaryKey="UpgradeDBVersion1.9" ExecuteOnInstall="yes" SqlDb="master" />
+      <sql:SqlScript Id="UpgradeDBVersion2.0_4" BinaryKey="UpgradeDBVersion2.0" ExecuteOnInstall="yes" SqlDb="master" />
+      <sql:SqlScript Id="UpgradeDBVersion2.1_4" BinaryKey="UpgradeDBVersion2.1" ExecuteOnInstall="yes" SqlDb="master" />
+      <sql:SqlScript Id="UpgradeDBVersion2.2_4" BinaryKey="UpgradeDBVersion2.2" ExecuteOnInstall="yes" SqlDb="master" />
+      <sql:SqlScript Id="UpgradeDBVersion2.3_4" BinaryKey="UpgradeDBVersion2.3" ExecuteOnInstall="yes" SqlDb="master" />
+      <sql:SqlScript Id="UpgradeDBVersion2.4_4" BinaryKey="UpgradeDBVersion2.4" ExecuteOnInstall="yes" SqlDb="master" />
+      <sql:SqlScript Id="UpgradeDBVersion2.5_4" BinaryKey="UpgradeDBVersion2.5" ExecuteOnInstall="yes" SqlDb="master" />
+      <sql:SqlScript Id="UpgradeDBVersion2.6_4" BinaryKey="UpgradeDBVersion2.6" ExecuteOnInstall="yes" SqlDb="master" />
+      <sql:SqlScript Id="UpgradeDBVersion2.7_4" BinaryKey="UpgradeDBVersion2.7" ExecuteOnInstall="yes" SqlDb="master" />
+      <sql:SqlScript Id="UpgradeDBVersion2.8_4" BinaryKey="UpgradeDBVersion2.8" ExecuteOnInstall="yes" SqlDb="master" />
+      <sql:SqlScript Id="UpgradeDBVersion2.9_4" BinaryKey="UpgradeDBVersion2.9" ExecuteOnInstall="yes" SqlDb="master" />
+      <CreateFolder />
+    </Component>
+
+    <Component Id="UpgradeDBVersion1.4" Guid="6EEEB444-92A8-4c5b-8304-55E8AC23DE6C">
+      <Condition><![CDATA[(EXISTINGDBVERSION = "0023D2ED-91D4-46D8-ABB3-243127646196")]]></Condition>
+      <sql:SqlScript Id="UpgradeDBVersion1.4_5" BinaryKey="UpgradeDBVersion1.4" ExecuteOnInstall="yes" SqlDb="master" />
+      <sql:SqlScript Id="UpgradeDBVersion1.5_5" BinaryKey="UpgradeDBVersion1.5" ExecuteOnInstall="yes" SqlDb="master" />
+      <sql:SqlScript Id="UpgradeDBVersion1.6_5" BinaryKey="UpgradeDBVersion1.6" ExecuteOnInstall="yes" SqlDb="master" />
+      <sql:SqlScript Id="UpgradeDBVersion1.7_5" BinaryKey="UpgradeDBVersion1.7" ExecuteOnInstall="yes" SqlDb="master" />
+      <sql:SqlScript Id="UpgradeDBVersion1.8_5" BinaryKey="UpgradeDBVersion1.8" ExecuteOnInstall="yes" SqlDb="master" />
+      <sql:SqlScript Id="UpgradeDBVersion1.9_5" BinaryKey="UpgradeDBVersion1.9" ExecuteOnInstall="yes" SqlDb="master" />
+      <sql:SqlScript Id="UpgradeDBVersion2.0_5" BinaryKey="UpgradeDBVersion2.0" ExecuteOnInstall="yes" SqlDb="master" />
+      <sql:SqlScript Id="UpgradeDBVersion2.1_5" BinaryKey="UpgradeDBVersion2.1" ExecuteOnInstall="yes" SqlDb="master" />
+      <sql:SqlScript Id="UpgradeDBVersion2.2_5" BinaryKey="UpgradeDBVersion2.2" ExecuteOnInstall="yes" SqlDb="master" />
+      <sql:SqlScript Id="UpgradeDBVersion2.3_5" BinaryKey="UpgradeDBVersion2.3" ExecuteOnInstall="yes" SqlDb="master" />
+      <sql:SqlScript Id="UpgradeDBVersion2.4_5" BinaryKey="UpgradeDBVersion2.4" ExecuteOnInstall="yes" SqlDb="master" />
+      <sql:SqlScript Id="UpgradeDBVersion2.5_5" BinaryKey="UpgradeDBVersion2.5" ExecuteOnInstall="yes" SqlDb="master" />
+      <sql:SqlScript Id="UpgradeDBVersion2.6_5" BinaryKey="UpgradeDBVersion2.6" ExecuteOnInstall="yes" SqlDb="master" />
+      <sql:SqlScript Id="UpgradeDBVersion2.7_5" BinaryKey="UpgradeDBVersion2.7" ExecuteOnInstall="yes" SqlDb="master" />
+      <sql:SqlScript Id="UpgradeDBVersion2.8_5" BinaryKey="UpgradeDBVersion2.8" ExecuteOnInstall="yes" SqlDb="master" />
+      <sql:SqlScript Id="UpgradeDBVersion2.9_5" BinaryKey="UpgradeDBVersion2.9" ExecuteOnInstall="yes" SqlDb="master" />
+      <CreateFolder />
+    </Component>
+
+    <Component Id="UpgradeDBVersion1.5" Guid="CBD7153B-2CD3-443c-A80F-CB332905F32F">
+      <Condition><![CDATA[(EXISTINGDBVERSION = "0ADD3C9A-0AF5-4764-9112-C01AE0FE10D9")]]></Condition>
+      <sql:SqlScript Id="UpgradeDBVersion1.5_6" BinaryKey="UpgradeDBVersion1.5" ExecuteOnInstall="yes" SqlDb="master" />
+      <sql:SqlScript Id="UpgradeDBVersion1.6_6" BinaryKey="UpgradeDBVersion1.6" ExecuteOnInstall="yes" SqlDb="master" />
+      <sql:SqlScript Id="UpgradeDBVersion1.7_6" BinaryKey="UpgradeDBVersion1.7" ExecuteOnInstall="yes" SqlDb="master" />
+      <sql:SqlScript Id="UpgradeDBVersion1.8_6" BinaryKey="UpgradeDBVersion1.8" ExecuteOnInstall="yes" SqlDb="master" />
+      <sql:SqlScript Id="UpgradeDBVersion1.9_6" BinaryKey="UpgradeDBVersion1.9" ExecuteOnInstall="yes" SqlDb="master" />
+      <sql:SqlScript Id="UpgradeDBVersion2.0_6" BinaryKey="UpgradeDBVersion2.0" ExecuteOnInstall="yes" SqlDb="master" />
+      <sql:SqlScript Id="UpgradeDBVersion2.1_6" BinaryKey="UpgradeDBVersion2.1" ExecuteOnInstall="yes" SqlDb="master" />
+      <sql:SqlScript Id="UpgradeDBVersion2.2_6" BinaryKey="UpgradeDBVersion2.2" ExecuteOnInstall="yes" SqlDb="master" />
+      <sql:SqlScript Id="UpgradeDBVersion2.3_6" BinaryKey="UpgradeDBVersion2.3" ExecuteOnInstall="yes" SqlDb="master" />
+      <sql:SqlScript Id="UpgradeDBVersion2.4_6" BinaryKey="UpgradeDBVersion2.4" ExecuteOnInstall="yes" SqlDb="master" />
+      <sql:SqlScript Id="UpgradeDBVersion2.5_6" BinaryKey="UpgradeDBVersion2.5" ExecuteOnInstall="yes" SqlDb="master" />
+      <sql:SqlScript Id="UpgradeDBVersion2.6_6" BinaryKey="UpgradeDBVersion2.6" ExecuteOnInstall="yes" SqlDb="master" />
+      <sql:SqlScript Id="UpgradeDBVersion2.7_6" BinaryKey="UpgradeDBVersion2.7" ExecuteOnInstall="yes" SqlDb="master" />
+      <sql:SqlScript Id="UpgradeDBVersion2.8_6" BinaryKey="UpgradeDBVersion2.8" ExecuteOnInstall="yes" SqlDb="master" />
+      <sql:SqlScript Id="UpgradeDBVersion2.9_6" BinaryKey="UpgradeDBVersion2.9" ExecuteOnInstall="yes" SqlDb="master" />
+      <CreateFolder />
+    </Component>
+
+    <Component Id="UpgradeDBVersion1.6" Guid="2F9BB7C9-3204-42c0-BD59-2D9760837C76">
+      <Condition><![CDATA[(EXISTINGDBVERSION = "94F47334-ACD5-42E9-A50A-4EF2BFFF63A0")]]></Condition>
+      <sql:SqlScript Id="UpgradeDBVersion1.6_7" BinaryKey="UpgradeDBVersion1.6" ExecuteOnInstall="yes" SqlDb="master" />
+      <sql:SqlScript Id="UpgradeDBVersion1.7_7" BinaryKey="UpgradeDBVersion1.7" ExecuteOnInstall="yes" SqlDb="master" />
+      <sql:SqlScript Id="UpgradeDBVersion1.8_7" BinaryKey="UpgradeDBVersion1.8" ExecuteOnInstall="yes" SqlDb="master" />
+      <sql:SqlScript Id="UpgradeDBVersion1.9_7" BinaryKey="UpgradeDBVersion1.9" ExecuteOnInstall="yes" SqlDb="master" />
+      <sql:SqlScript Id="UpgradeDBVersion2.0_7" BinaryKey="UpgradeDBVersion2.0" ExecuteOnInstall="yes" SqlDb="master" />
+      <sql:SqlScript Id="UpgradeDBVersion2.1_7" BinaryKey="UpgradeDBVersion2.1" ExecuteOnInstall="yes" SqlDb="master" />
+      <sql:SqlScript Id="UpgradeDBVersion2.2_7" BinaryKey="UpgradeDBVersion2.2" ExecuteOnInstall="yes" SqlDb="master" />
+      <sql:SqlScript Id="UpgradeDBVersion2.3_7" BinaryKey="UpgradeDBVersion2.3" ExecuteOnInstall="yes" SqlDb="master" />
+      <sql:SqlScript Id="UpgradeDBVersion2.4_7" BinaryKey="UpgradeDBVersion2.4" ExecuteOnInstall="yes" SqlDb="master" />
+      <sql:SqlScript Id="UpgradeDBVersion2.5_7" BinaryKey="UpgradeDBVersion2.5" ExecuteOnInstall="yes" SqlDb="master" />
+      <sql:SqlScript Id="UpgradeDBVersion2.6_7" BinaryKey="UpgradeDBVersion2.6" ExecuteOnInstall="yes" SqlDb="master" />
+      <sql:SqlScript Id="UpgradeDBVersion2.7_7" BinaryKey="UpgradeDBVersion2.7" ExecuteOnInstall="yes" SqlDb="master" />
+      <sql:SqlScript Id="UpgradeDBVersion2.8_7" BinaryKey="UpgradeDBVersion2.8" ExecuteOnInstall="yes" SqlDb="master" />
+      <sql:SqlScript Id="UpgradeDBVersion2.9_7" BinaryKey="UpgradeDBVersion2.9" ExecuteOnInstall="yes" SqlDb="master" />
+      <CreateFolder />
+    </Component>
+
+    <Component Id="UpgradeDBVersion1.7" Guid="600AE901-A1B0-4469-9066-EA0695E02F6B">
+      <Condition><![CDATA[(EXISTINGDBVERSION = "E5CFE584-A193-48F5-B015-EF13593B60CE")]]></Condition>
+      <sql:SqlScript Id="UpgradeDBVersion1.7_8" BinaryKey="UpgradeDBVersion1.7" ExecuteOnInstall="yes" SqlDb="master" />
+      <sql:SqlScript Id="UpgradeDBVersion1.8_8" BinaryKey="UpgradeDBVersion1.8" ExecuteOnInstall="yes" SqlDb="master" />
+      <sql:SqlScript Id="UpgradeDBVersion1.9_8" BinaryKey="UpgradeDBVersion1.9" ExecuteOnInstall="yes" SqlDb="master" />
+      <sql:SqlScript Id="UpgradeDBVersion2.0_8" BinaryKey="UpgradeDBVersion2.0" ExecuteOnInstall="yes" SqlDb="master" />
+      <sql:SqlScript Id="UpgradeDBVersion2.1_8" BinaryKey="UpgradeDBVersion2.1" ExecuteOnInstall="yes" SqlDb="master" />
+      <sql:SqlScript Id="UpgradeDBVersion2.2_8" BinaryKey="UpgradeDBVersion2.2" ExecuteOnInstall="yes" SqlDb="master" />
+      <sql:SqlScript Id="UpgradeDBVersion2.3_8" BinaryKey="UpgradeDBVersion2.3" ExecuteOnInstall="yes" SqlDb="master" />
+      <sql:SqlScript Id="UpgradeDBVersion2.4_8" BinaryKey="UpgradeDBVersion2.4" ExecuteOnInstall="yes" SqlDb="master" />
+      <sql:SqlScript Id="UpgradeDBVersion2.5_8" BinaryKey="UpgradeDBVersion2.5" ExecuteOnInstall="yes" SqlDb="master" />
+      <sql:SqlScript Id="UpgradeDBVersion2.6_8" BinaryKey="UpgradeDBVersion2.6" ExecuteOnInstall="yes" SqlDb="master" />
+      <sql:SqlScript Id="UpgradeDBVersion2.7_8" BinaryKey="UpgradeDBVersion2.7" ExecuteOnInstall="yes" SqlDb="master" />
+      <sql:SqlScript Id="UpgradeDBVersion2.8_8" BinaryKey="UpgradeDBVersion2.8" ExecuteOnInstall="yes" SqlDb="master" />
+      <sql:SqlScript Id="UpgradeDBVersion2.9_8" BinaryKey="UpgradeDBVersion2.9" ExecuteOnInstall="yes" SqlDb="master" />
+      <CreateFolder />
+    </Component>
+
+    <Component Id="UpgradeDBVersion1.8" Guid="06828EAD-71EB-43b4-86CB-267BAEC4DD04">
+      <Condition><![CDATA[(EXISTINGDBVERSION = "3BE681EC-C301-4944-8190-720C73B8B76A")]]></Condition>
+      <sql:SqlScript Id="UpgradeDBVersion1.8_9" BinaryKey="UpgradeDBVersion1.8" ExecuteOnInstall="yes" SqlDb="master" />
+      <sql:SqlScript Id="UpgradeDBVersion1.9_9" BinaryKey="UpgradeDBVersion1.9" ExecuteOnInstall="yes" SqlDb="master" />
+      <sql:SqlScript Id="UpgradeDBVersion2.0_9" BinaryKey="UpgradeDBVersion2.0" ExecuteOnInstall="yes" SqlDb="master" />
+      <sql:SqlScript Id="UpgradeDBVersion2.1_9" BinaryKey="UpgradeDBVersion2.1" ExecuteOnInstall="yes" SqlDb="master" />
+      <sql:SqlScript Id="UpgradeDBVersion2.2_9" BinaryKey="UpgradeDBVersion2.2" ExecuteOnInstall="yes" SqlDb="master" />
+      <sql:SqlScript Id="UpgradeDBVersion2.3_9" BinaryKey="UpgradeDBVersion2.3" ExecuteOnInstall="yes" SqlDb="master" />
+      <sql:SqlScript Id="UpgradeDBVersion2.4_9" BinaryKey="UpgradeDBVersion2.4" ExecuteOnInstall="yes" SqlDb="master" />
+      <sql:SqlScript Id="UpgradeDBVersion2.5_9" BinaryKey="UpgradeDBVersion2.5" ExecuteOnInstall="yes" SqlDb="master" />
+      <sql:SqlScript Id="UpgradeDBVersion2.6_9" BinaryKey="UpgradeDBVersion2.6" ExecuteOnInstall="yes" SqlDb="master" />
+      <sql:SqlScript Id="UpgradeDBVersion2.7_9" BinaryKey="UpgradeDBVersion2.7" ExecuteOnInstall="yes" SqlDb="master" />
+      <sql:SqlScript Id="UpgradeDBVersion2.8_9" BinaryKey="UpgradeDBVersion2.8" ExecuteOnInstall="yes" SqlDb="master" />
+      <sql:SqlScript Id="UpgradeDBVersion2.9_9" BinaryKey="UpgradeDBVersion2.9" ExecuteOnInstall="yes" SqlDb="master" />
+      <CreateFolder />
+    </Component>
+
+    <Component Id="UpgradeDBVersion1.9" Guid="72B3DFD6-DCFF-4764-91B7-139E252B4E7C">
+      <Condition><![CDATA[(EXISTINGDBVERSION = "3385CC83-67AE-4CA3-A0F4-88596EA4FF05")]]></Condition>
+      <sql:SqlScript Id="UpgradeDBVersion1.9_10" BinaryKey="UpgradeDBVersion1.9" ExecuteOnInstall="yes" SqlDb="master" />
+      <sql:SqlScript Id="UpgradeDBVersion2.0_10" BinaryKey="UpgradeDBVersion2.0" ExecuteOnInstall="yes" SqlDb="master" />
+      <sql:SqlScript Id="UpgradeDBVersion2.1_10" BinaryKey="UpgradeDBVersion2.1" ExecuteOnInstall="yes" SqlDb="master" />
+      <sql:SqlScript Id="UpgradeDBVersion2.2_10" BinaryKey="UpgradeDBVersion2.2" ExecuteOnInstall="yes" SqlDb="master" />
+      <sql:SqlScript Id="UpgradeDBVersion2.3_10" BinaryKey="UpgradeDBVersion2.3" ExecuteOnInstall="yes" SqlDb="master" />
+      <sql:SqlScript Id="UpgradeDBVersion2.4_10" BinaryKey="UpgradeDBVersion2.4" ExecuteOnInstall="yes" SqlDb="master" />
+      <sql:SqlScript Id="UpgradeDBVersion2.5_10" BinaryKey="UpgradeDBVersion2.5" ExecuteOnInstall="yes" SqlDb="master" />
+      <sql:SqlScript Id="UpgradeDBVersion2.6_10" BinaryKey="UpgradeDBVersion2.6" ExecuteOnInstall="yes" SqlDb="master" />
+      <sql:SqlScript Id="UpgradeDBVersion2.7_10" BinaryKey="UpgradeDBVersion2.7" ExecuteOnInstall="yes" SqlDb="master" />
+      <sql:SqlScript Id="UpgradeDBVersion2.8_10" BinaryKey="UpgradeDBVersion2.8" ExecuteOnInstall="yes" SqlDb="master" />
+      <sql:SqlScript Id="UpgradeDBVersion2.9_10" BinaryKey="UpgradeDBVersion2.9" ExecuteOnInstall="yes" SqlDb="master" />
+      <CreateFolder />
+    </Component>
+
+    <Component Id="UpgradeDBVersion2.0" Guid="3A7B1D03-3614-4908-9B85-D73B899B1980">
+      <Condition><![CDATA[(EXISTINGDBVERSION = "E0D84458-23B4-48C1-B7F5-8A2799FD82F4")]]></Condition>
+      <sql:SqlScript Id="UpgradeDBVersion2.0_11" BinaryKey="UpgradeDBVersion2.0" ExecuteOnInstall="yes" SqlDb="master" />
+      <sql:SqlScript Id="UpgradeDBVersion2.1_11" BinaryKey="UpgradeDBVersion2.1" ExecuteOnInstall="yes" SqlDb="master" />
+      <sql:SqlScript Id="UpgradeDBVersion2.2_11" BinaryKey="UpgradeDBVersion2.2" ExecuteOnInstall="yes" SqlDb="master" />
+      <sql:SqlScript Id="UpgradeDBVersion2.3_11" BinaryKey="UpgradeDBVersion2.3" ExecuteOnInstall="yes" SqlDb="master" />
+      <sql:SqlScript Id="UpgradeDBVersion2.4_11" BinaryKey="UpgradeDBVersion2.4" ExecuteOnInstall="yes" SqlDb="master" />
+      <sql:SqlScript Id="UpgradeDBVersion2.5_11" BinaryKey="UpgradeDBVersion2.5" ExecuteOnInstall="yes" SqlDb="master" />
+      <sql:SqlScript Id="UpgradeDBVersion2.6_11" BinaryKey="UpgradeDBVersion2.6" ExecuteOnInstall="yes" SqlDb="master" />
+      <sql:SqlScript Id="UpgradeDBVersion2.7_11" BinaryKey="UpgradeDBVersion2.7" ExecuteOnInstall="yes" SqlDb="master" />
+      <sql:SqlScript Id="UpgradeDBVersion2.8_11" BinaryKey="UpgradeDBVersion2.8" ExecuteOnInstall="yes" SqlDb="master" />
+      <sql:SqlScript Id="UpgradeDBVersion2.9_11" BinaryKey="UpgradeDBVersion2.9" ExecuteOnInstall="yes" SqlDb="master" />
+      <CreateFolder />
+    </Component>
+
+    <Component Id="UpgradeDBVersion2.1" Guid="56AFED0B-73BB-41EC-B83D-E46FA5C9C8A4">
+      <Condition><![CDATA[(EXISTINGDBVERSION = "E5D0A79E-1AB9-498F-8B76-D4B10D7674FF")]]></Condition>
+      <sql:SqlScript Id="UpgradeDBVersion2.1_12" BinaryKey="UpgradeDBVersion2.1" ExecuteOnInstall="yes" SqlDb="master" />
+      <sql:SqlScript Id="UpgradeDBVersion2.2_12" BinaryKey="UpgradeDBVersion2.2" ExecuteOnInstall="yes" SqlDb="master" />
+      <sql:SqlScript Id="UpgradeDBVersion2.3_12" BinaryKey="UpgradeDBVersion2.3" ExecuteOnInstall="yes" SqlDb="master" />
+      <sql:SqlScript Id="UpgradeDBVersion2.4_12" BinaryKey="UpgradeDBVersion2.4" ExecuteOnInstall="yes" SqlDb="master" />
+      <sql:SqlScript Id="UpgradeDBVersion2.5_12" BinaryKey="UpgradeDBVersion2.5" ExecuteOnInstall="yes" SqlDb="master" />
+      <sql:SqlScript Id="UpgradeDBVersion2.6_12" BinaryKey="UpgradeDBVersion2.6" ExecuteOnInstall="yes" SqlDb="master" />
+      <sql:SqlScript Id="UpgradeDBVersion2.7_12" BinaryKey="UpgradeDBVersion2.7" ExecuteOnInstall="yes" SqlDb="master" />
+      <sql:SqlScript Id="UpgradeDBVersion2.8_12" BinaryKey="UpgradeDBVersion2.8" ExecuteOnInstall="yes" SqlDb="master" />
+      <sql:SqlScript Id="UpgradeDBVersion2.9_12" BinaryKey="UpgradeDBVersion2.9" ExecuteOnInstall="yes" SqlDb="master" />
+      <CreateFolder />
+    </Component>
+
+    <Component Id="UpgradeDBVersion2.2" Guid="B4F3B967-B782-48F6-B9F0-8F6B07D991C7">
+      <Condition><![CDATA[(EXISTINGDBVERSION = "CC9A877B-74D6-4A90-990B-97856D2BF5AF")]]></Condition>
+      <sql:SqlScript Id="UpgradeDBVersion2.2_13" BinaryKey="UpgradeDBVersion2.2" ExecuteOnInstall="yes" SqlDb="master" />
+      <sql:SqlScript Id="UpgradeDBVersion2.3_13" BinaryKey="UpgradeDBVersion2.3" ExecuteOnInstall="yes" SqlDb="master" />
+      <sql:SqlScript Id="UpgradeDBVersion2.4_13" BinaryKey="UpgradeDBVersion2.4" ExecuteOnInstall="yes" SqlDb="master" />
+      <sql:SqlScript Id="UpgradeDBVersion2.5_13" BinaryKey="UpgradeDBVersion2.5" ExecuteOnInstall="yes" SqlDb="master" />
+      <sql:SqlScript Id="UpgradeDBVersion2.6_13" BinaryKey="UpgradeDBVersion2.6" ExecuteOnInstall="yes" SqlDb="master" />
+      <sql:SqlScript Id="UpgradeDBVersion2.7_13" BinaryKey="UpgradeDBVersion2.7" ExecuteOnInstall="yes" SqlDb="master" />
+      <sql:SqlScript Id="UpgradeDBVersion2.8_13" BinaryKey="UpgradeDBVersion2.8" ExecuteOnInstall="yes" SqlDb="master" />
+      <sql:SqlScript Id="UpgradeDBVersion2.9_13" BinaryKey="UpgradeDBVersion2.9" ExecuteOnInstall="yes" SqlDb="master" />
+      <CreateFolder />
+    </Component>
+
+    <Component Id="UpgradeDBVersion2.3" Guid="5AD2AA10-A7CF-4FEF-9F2F-140FF6EDFFFF">
+      <Condition><![CDATA[(EXISTINGDBVERSION = "A380E420-AE04-4019-A065-60BDFD4BF08D")]]></Condition>
+      <sql:SqlScript Id="UpgradeDBVersion2.3_14" BinaryKey="UpgradeDBVersion2.3" ExecuteOnInstall="yes" SqlDb="master" />
+      <sql:SqlScript Id="UpgradeDBVersion2.4_14" BinaryKey="UpgradeDBVersion2.4" ExecuteOnInstall="yes" SqlDb="master" />
+      <sql:SqlScript Id="UpgradeDBVersion2.5_14" BinaryKey="UpgradeDBVersion2.5" ExecuteOnInstall="yes" SqlDb="master" />
+      <sql:SqlScript Id="UpgradeDBVersion2.6_14" BinaryKey="UpgradeDBVersion2.6" ExecuteOnInstall="yes" SqlDb="master" />
+      <sql:SqlScript Id="UpgradeDBVersion2.7_14" BinaryKey="UpgradeDBVersion2.7" ExecuteOnInstall="yes" SqlDb="master" />
+      <sql:SqlScript Id="UpgradeDBVersion2.8_14" BinaryKey="UpgradeDBVersion2.8" ExecuteOnInstall="yes" SqlDb="master" />
+      <sql:SqlScript Id="UpgradeDBVersion2.9_14" BinaryKey="UpgradeDBVersion2.9" ExecuteOnInstall="yes" SqlDb="master" />
+      <CreateFolder />
+    </Component>
+
+    <Component Id="UpgradeDBVersion2.4" Guid="02825224-DED7-4092-A4EE-A5C6D8CCAA7E">
+      <Condition><![CDATA[(EXISTINGDBVERSION = "84DA2ED6-69C6-4B53-934B-EF0540412F9A")]]></Condition>
+      <sql:SqlScript Id="UpgradeDBVersion2.4_15" BinaryKey="UpgradeDBVersion2.4" ExecuteOnInstall="yes" SqlDb="master" />
+      <sql:SqlScript Id="UpgradeDBVersion2.5_15" BinaryKey="UpgradeDBVersion2.5" ExecuteOnInstall="yes" SqlDb="master" />
+      <sql:SqlScript Id="UpgradeDBVersion2.6_15" BinaryKey="UpgradeDBVersion2.6" ExecuteOnInstall="yes" SqlDb="master" />
+      <sql:SqlScript Id="UpgradeDBVersion2.7_15" BinaryKey="UpgradeDBVersion2.7" ExecuteOnInstall="yes" SqlDb="master" />
+      <sql:SqlScript Id="UpgradeDBVersion2.8_15" BinaryKey="UpgradeDBVersion2.8" ExecuteOnInstall="yes" SqlDb="master" />
+      <sql:SqlScript Id="UpgradeDBVersion2.9_15" BinaryKey="UpgradeDBVersion2.9" ExecuteOnInstall="yes" SqlDb="master" />
+      <CreateFolder />
+    </Component>
+
+    <Component Id="UpgradeDBVersion2.5" Guid="037039B5-661A-4B65-8002-4F88FEED5501">
+      <Condition><![CDATA[(EXISTINGDBVERSION = "BC951692-F5EC-4FB9-BDBF-C859B5714372")]]></Condition>
+      <sql:SqlScript Id="UpgradeDBVersion2.5_16" BinaryKey="UpgradeDBVersion2.5" ExecuteOnInstall="yes" SqlDb="master" />
+      <sql:SqlScript Id="UpgradeDBVersion2.6_16" BinaryKey="UpgradeDBVersion2.6" ExecuteOnInstall="yes" SqlDb="master" />
+      <sql:SqlScript Id="UpgradeDBVersion2.7_16" BinaryKey="UpgradeDBVersion2.7" ExecuteOnInstall="yes" SqlDb="master" />
+      <sql:SqlScript Id="UpgradeDBVersion2.8_16" BinaryKey="UpgradeDBVersion2.8" ExecuteOnInstall="yes" SqlDb="master" />
+      <sql:SqlScript Id="UpgradeDBVersion2.9_16" BinaryKey="UpgradeDBVersion2.9" ExecuteOnInstall="yes" SqlDb="master" />
+      <CreateFolder />
+    </Component>
+
+
+    <Component Id="UpgradeDBVersion2.6" Guid="19D19789-D891-4FBE-AB39-608DEBEAA758">
+      <Condition><![CDATA[(EXISTINGDBVERSION = "58062E32-D0D9-4127-AE86-B3E5DF6B36B5")]]></Condition>
+      <sql:SqlScript Id="UpgradeDBVersion2.6_17" BinaryKey="UpgradeDBVersion2.6" ExecuteOnInstall="yes" SqlDb="master" />
+      <sql:SqlScript Id="UpgradeDBVersion2.7_17" BinaryKey="UpgradeDBVersion2.7" ExecuteOnInstall="yes" SqlDb="master" />
+      <sql:SqlScript Id="UpgradeDBVersion2.8_17" BinaryKey="UpgradeDBVersion2.8" ExecuteOnInstall="yes" SqlDb="master" />
+      <sql:SqlScript Id="UpgradeDBVersion2.9_17" BinaryKey="UpgradeDBVersion2.9" ExecuteOnInstall="yes" SqlDb="master" />
+      <CreateFolder />
+    </Component>
+
+    <Component Id="UpgradeDBVersion2.7" Guid="7D8C535D-00D5-487B-8848-EFECED12483E">
+      <Condition><![CDATA[(EXISTINGDBVERSION = "06D42502-4BBC-4D41-AA6D-57E4A6C79305")]]></Condition>
+      <sql:SqlScript Id="UpgradeDBVersion2.7_18" BinaryKey="UpgradeDBVersion2.7" ExecuteOnInstall="yes" SqlDb="master" />
+      <sql:SqlScript Id="UpgradeDBVersion2.8_18" BinaryKey="UpgradeDBVersion2.8" ExecuteOnInstall="yes" SqlDb="master" />
+      <sql:SqlScript Id="UpgradeDBVersion2.9_18" BinaryKey="UpgradeDBVersion2.9" ExecuteOnInstall="yes" SqlDb="master" />
+      <CreateFolder />
+    </Component>
+
+    <Component Id="UpgradeDBVersion2.8" Guid="61CAE8D3-67BC-45E2-98D7-3BD3E796E308">
+      <Condition><![CDATA[(EXISTINGDBVERSION = "C4893198-8818-4C3B-8E1E-EECF575F4B92")]]></Condition>
+      <sql:SqlScript Id="UpgradeDBVersion2.8_19" BinaryKey="UpgradeDBVersion2.8" ExecuteOnInstall="yes" SqlDb="master" />
+      <sql:SqlScript Id="UpgradeDBVersion2.9_19" BinaryKey="UpgradeDBVersion2.9" ExecuteOnInstall="yes" SqlDb="master" />
+      <CreateFolder />
+    </Component>
+
+    <Component Id="UpgradeDBVersion2.9" Guid="5ECC4512-1CE6-474C-BFD6-DE2BD2CECAE2">
+      <Condition><![CDATA[(EXISTINGDBVERSION = "820D3636-9D14-4970-81CB-D0CD372F6D84")]]></Condition>
+      <sql:SqlScript Id="UpgradeDBVersion2.9_20" BinaryKey="UpgradeDBVersion2.9" ExecuteOnInstall="yes" SqlDb="master" />
+      <CreateFolder />
+    </Component>
+
+  </DirectoryRef>
+
+  <ComponentGroup Id="DatabaseGroup">
+    <ComponentRef Id="DeployNewDatabase" />
+    <ComponentRef Id="UpgradeDBVersion1.0" />
+    <ComponentRef Id="UpgradeDBVersion1.1" />
+    <ComponentRef Id="UpgradeDBVersion1.2" />
+    <ComponentRef Id="UpgradeDBVersion1.3" />
+    <ComponentRef Id="UpgradeDBVersion1.4" />
+    <ComponentRef Id="UpgradeDBVersion1.5" />
+    <ComponentRef Id="UpgradeDBVersion1.6" />
+    <ComponentRef Id="UpgradeDBVersion1.7" />
+    <ComponentRef Id="UpgradeDBVersion1.8" />
+    <ComponentRef Id="UpgradeDBVersion1.9" />
+    <ComponentRef Id="UpgradeDBVersion2.0" />
+    <ComponentRef Id="UpgradeDBVersion2.1" />
+    <ComponentRef Id="UpgradeDBVersion2.2" />
+    <ComponentRef Id="UpgradeDBVersion2.3" />
+    <ComponentRef Id="UpgradeDBVersion2.4" />
+    <ComponentRef Id="UpgradeDBVersion2.5" />
+    <ComponentRef Id="UpgradeDBVersion2.6" />
+    <ComponentRef Id="UpgradeDBVersion2.7" />
+    <ComponentRef Id="UpgradeDBVersion2.8" />
+    <ComponentRef Id="UpgradeDBVersion2.9" />
+  </ComponentGroup>
+</Include>

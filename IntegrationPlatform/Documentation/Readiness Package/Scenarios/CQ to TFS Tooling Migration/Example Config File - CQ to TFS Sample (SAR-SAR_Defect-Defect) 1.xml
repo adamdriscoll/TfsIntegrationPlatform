@@ -1,0 +1,747 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Configuration UniqueId="191B2CD3-CC5F-4433-ADA6-D2FB4C305969" FriendlyName="##FRIENDLYNAME##">
+  <Providers>
+    <Provider ReferenceName="D9637401-7385-4643-9C64-31585D77ED16" FriendlyName="ClearQuest 7.x Provider" />
+    <Provider ReferenceName="04201d39-6e47-416f-98b2-07f0013f8455" FriendlyName="TFS 2010 WIT Provider">
+    </Provider>
+  </Providers>
+  <Addins>
+    <Addin ReferenceName="cdde6b6b-72fc-43b6-bbd1-b8a89a788c6f" FriendlyName="Active Directory User Lookup" />
+  </Addins>
+
+  <!-- The ## token is used to encapsulate tokens that you would need to reconfigure to match your environment.
+         For example ... SourceIdentifier="##TEAM_PROJECT_NAME##" indicates that you need to replace the ##TEAM_PROJECT_NAME##
+                         with a valid team project name. If you look at the Getting Started Hands-On-Labs (HOL) this would appear
+                         as SourceIdentifier="TP-A" 
+      -->
+
+  <SessionGroup FriendlyName="##FRIENDLYNAME##" SessionGroupGUID="DE6896E7-22E1-4618-A70B-CD36E18EC9D8">
+    <WorkFlowType Frequency="ContinuousManual" DirectionOfFlow="Unidirectional" SyncContext="Disabled" />
+    <UserIdentityMappings UserIdLookupEnabled="true">
+      <UserIdentityLookupAddins>
+        <UserIdentityLookupAddin>cdde6b6b-72fc-43b6-bbd1-b8a89a788c6f</UserIdentityLookupAddin>
+      </UserIdentityLookupAddins>
+      <AliasMappings DirectionOfMapping="LeftToRight">
+        <AliasMapping Left="*" Right="*" MappingRule="SimpleReplacement" />
+      </AliasMappings>
+    </UserIdentityMappings>
+    <MigrationSources>
+      <!--CQ 7.x SAR Session Source-->
+      <MigrationSource InternalUniqueId="BB2BD2C6-92B5-4817-AB51-A087B6532F0D" 
+                       FriendlyName="CQ 7.x SAR Session Source" 
+                       ServerIdentifier="##CQ_SOURCE_SERVER@CQ.MigrateMeFromRationalTools##" 
+                       ServerUrl="##CQ_TARGET_SERVER@CQ.MigrateMeFromRationalTools##" 
+                       SourceIdentifier="##CQ_SOURCE_SERVER##" 
+                       ProviderReferenceName="D9637401-7385-4643-9C64-31585D77ED16">
+        <Settings>
+          <UserIdentityLookup>
+            <LookupAddin Precedence="1" ReferenceName="cdde6b6b-72fc-43b6-bbd1-b8a89a788c6f" />
+          </UserIdentityLookup>
+        </Settings>
+        <CustomSettings>
+          <CustomSetting SettingKey="LoginCredentialConfigType" SettingValue="UseTextUsernamePasswordPairInConfig" />
+          <CustomSetting SettingKey="UserName" SettingValue="##CQReaderAccount##" />
+          <CustomSetting SettingKey="Password" SettingValue="##PASSWORD##" />
+          <CustomSetting SettingKey="AdminUserName" SettingValue="" />
+          <CustomSetting SettingKey="AdminPassword" SettingValue="" />
+          <CustomSetting SettingKey="CQWebRecordUrlFormat" SettingValue="http://##SERVER@@/##SITE##/main?command=GenerateMainFrame&amp;service=CQ&amp;schema=UCM_Test&amp;contextid=AIS&amp;entityID={0}&amp;entityDefName=SAR" />
+        </CustomSettings>
+      </MigrationSource>
+      <!--CQ 7.x Defect Session Source-->
+      <MigrationSource InternalUniqueId="5412CF59-5ECD-4E46-B0A3-1CA034A707DD" 
+                       FriendlyName="CQ 7.x Source" 
+                       ServerIdentifier="##CQ_SOURCE_SERVER@CQ.MigrateMeFromRationalTools##" 
+                       ServerUrl="##CQ_TARGET_SERVER@CQ.MigrateMeFromRationalTools##" 
+                       SourceIdentifier="##CQ_SOURCE_SERVER##" 
+                       ProviderReferenceName="D9637401-7385-4643-9C64-31585D77ED16">
+        <Settings>
+          <UserIdentityLookup>
+            <LookupAddin Precedence="1" ReferenceName="cdde6b6b-72fc-43b6-bbd1-b8a89a788c6f" />
+          </UserIdentityLookup>
+        </Settings>
+        <CustomSettings>
+          <CustomSetting SettingKey="LoginCredentialConfigType" SettingValue="UseTextUsernamePasswordPairInConfig" />
+          <CustomSetting SettingKey="UserName" SettingValue="##CQReaderAccount##" />
+          <CustomSetting SettingKey="Password" SettingValue="##PASSWORD##" />
+          <CustomSetting SettingKey="AdminUserName" SettingValue="" />
+          <CustomSetting SettingKey="AdminPassword" SettingValue="" />
+          <CustomSetting SettingKey="EnableLastRevisionAutoCorrection" SettingValue="false" />
+        </CustomSettings>
+      </MigrationSource>
+      <!--TFS 2010 WIT SAR Session Target-->
+      <MigrationSource InternalUniqueId="F4741818-F14C-458F-BB20-4BBAC20F95C3" 
+                       FriendlyName="TFS 2010 WIT SAR Session Target" 
+                       ServerIdentifier="##TFS_SERVER_NAME##" 
+                       ServerUrl="##http://TFS_SERVER_NAME:8080/TFS##" 
+                       SourceIdentifier="##TEAM_PROJECT_NAME##" 
+                       ProviderReferenceName="04201d39-6e47-416f-98b2-07f0013f8455">
+        <Settings>
+          <UserIdentityLookup>
+            <LookupAddin Precedence="1" ReferenceName="cdde6b6b-72fc-43b6-bbd1-b8a89a788c6f" />
+          </UserIdentityLookup>
+        </Settings>
+        <CustomSettings>
+          <CustomSetting SettingKey="EnableBypassRuleDataSubmission" SettingValue="" />
+          <CustomSetting SettingKey="DisableAreaPathAutoCreation" SettingValue="" />
+          <CustomSetting SettingKey="DisableIterationPathAutoCreation" SettingValue="" />
+        </CustomSettings>
+      </MigrationSource>
+      <!--TFS 2010 WIT Defect Session Target-->
+      <MigrationSource InternalUniqueId="E0CB3023-3201-4C88-8EB1-9F4363F111AA" 
+                       FriendlyName="TFS WIT target" 
+                       ServerIdentifier="##TFS_SERVER_NAME##" 
+                       ServerUrl="##http://TFS_SERVER_NAME:8080/TFS##" 
+                       SourceIdentifier="##TEAM_PROJECT_NAME##" 
+                       ProviderReferenceName="04201d39-6e47-416f-98b2-07f0013f8455">
+        <Settings>
+          <UserIdentityLookup>
+            <LookupAddin Precedence="1" ReferenceName="cdde6b6b-72fc-43b6-bbd1-b8a89a788c6f" />
+          </UserIdentityLookup>
+        </Settings>
+        <CustomSettings>
+          <CustomSetting SettingKey="EnableBypassRuleDataSubmission" SettingValue="" />
+          <CustomSetting SettingKey="DisableAreaPathAutoCreation" SettingValue="" />
+          <CustomSetting SettingKey="DisableIterationPathAutoCreation" SettingValue="" />
+        </CustomSettings>
+      </MigrationSource>
+    </MigrationSources>
+    <Sessions>
+      <!--SAR Migration Session-->
+      <Session SessionUniqueId="882d715f-214a-4901-aefb-a309ed4a8bd5" 
+               FriendlyName="SAR Session" 
+               LeftMigrationSourceUniqueId="BB2BD2C6-92B5-4817-AB51-A087B6532F0D" 
+               RightMigrationSourceUniqueId="F4741818-F14C-458F-BB20-4BBAC20F95C3" 
+               SessionType="WorkItemTracking">
+        <EventSinks />
+        <Filters>
+          <FilterPair>
+            <FilterItem MigrationSourceUniqueId="BB2BD2C6-92B5-4817-AB51-A087B6532F0D" 
+                        FilterString="SAR::defect_1::(dbid &lt;&gt; 0 and form_planned_release = '##RELEASE##' and state in (select id from statedef T2 where T2.name not in ('Closed', 'Postponed', 'Duplicate')) and (product in (select dbid from product T3 where T3.name = '##NAME##') or product in (select dbid from product T3 where T3.name = '##NAME##') or product in (select dbid from product T3 where T3.name = '##NAME##') or product in (select dbid from product T3 where T3.name = '##NAME##') or product in (select dbid from product T3 where T3.name = '##NAME##') or product in (select dbid from product T3 where T3.name = '##NAME##') or product in (select dbid from product T3 where T3.name = '##NAME##') or product in (select dbid from product T3 where T3.name = '##NAME##') or product in (select dbid from product T3 where T3.name = '##NAME##') or product in (select dbid from product T3 where T3.name = '##NAME##') or product in (select dbid from product T3 where T3.name = '##NAME##') or product in (select dbid from product T3 where T3.name = '##NAME##')))" />
+            <FilterItem MigrationSourceUniqueId="F4741818-F14C-458F-BB20-4BBAC20F95C3" 
+                        FilterString="[System.Id] = 0" />
+          </FilterPair>
+        </Filters>
+        <CustomSettings>
+          <SettingXml>
+            <WITSessionCustomSetting>
+              <WorkItemTypes>
+                <WorkItemType LeftWorkItemTypeName="SAR" RightWorkItemTypeName="SAR" fieldMap="SARtoSAR" />
+              </WorkItemTypes>
+              <FieldMaps>
+                <FieldMap name="SARtoSAR">
+                  <MappedFields>
+                    <MappedField LeftName="Headline_Long" RightName="System.Title" MapFromSide="Left" valueMap="" />
+                    <MappedField LeftName="assigned_to_username" RightName="System.AssignedTo" MapFromSide="Left" valueMap="AssignedToMap" />
+                    <MappedField LeftName="State" RightName="System.State" MapFromSide="Left" valueMap="StateMap" />
+                    <MappedField LeftName="resolution" RightName="System.Reason" MapFromSide="Left" valueMap="ReasonMap" />
+                    <MappedField LeftName="product" RightName="Product" MapFromSide="Left" valueMap=""></MappedField>
+                    <MappedField LeftName="sar_type" RightName="Enhancement" MapFromSide="Left" valueMap="EnhancementMap" />
+                    <MappedField LeftName="Priority" RightName="Microsoft.VSTS.Common.Severity" MapFromSide="Left" valueMap="SeverityMap" />
+                    <MappedField LeftName="ccb_priority" RightName="Microsoft.VSTS.Common.Priority" MapFromSide="Left" valueMap="PriorityMap" />
+                    <MappedField LeftName="int_ext_spr" RightName="Origin" MapFromSide="Left" valueMap="OriginMap" />
+                    <MappedField LeftName="company" RightName="OriginatingOrganization" MapFromSide="Left" valueMap="" />
+                    <MappedField LeftName="contact" RightName="OriginatingContact" MapFromSide="Left" valueMap="" />
+                    <MappedField LeftName="form_found_in_release" RightName="Microsoft.VSTS.Build.FoundIn" MapFromSide="Left" valueMap="" />
+                    <MappedField LeftName="form_fixed_in_release" RightName="Microsoft.VSTS.Build.IntegrationBuild" MapFromSide="Left" valueMap="" />
+                    <MappedField LeftName="Description" RightName="Microsoft.VSTS.TCM.ReproSteps" MapFromSide="Left" valueMap="" />
+                    <MappedField LeftName="current_workaround" RightName="CurrentWorkAround" MapFromSide="Left" valueMap="" />
+                    <MappedField LeftName="impact_description" RightName="ImpactDescription2" MapFromSide="Left" valueMap="" />
+                    <MappedField LeftName="resolution_description" RightName="ResolutionDescription" MapFromSide="Left" valueMap="" />
+                    <MappedField LeftName="release_notes" RightName="ReleaseNote" MapFromSide="Left" valueMap="" />
+                    <MappedField LeftName="test_procedures" RightName="IntegrationTestProcedures" MapFromSide="Left" valueMap="" />
+                    <MappedField LeftName="verification" RightName="VerificationDescription" MapFromSide="Left" valueMap="" />
+                    <MappedField LeftName="history" RightName="System.History" MapFromSide="Left" valueMap="" />
+                  </MappedFields>
+                  <AggregatedFields>
+                    <FieldsAggregationGroup MapFromSide="Left" TargetFieldName="AssessmentDescription" Format="Assessment Description:{0}&amp;#x0D; Estimated Time To Fix:{1}">
+                      <SourceField Index="0" SourceFieldName="assess_desc"></SourceField>
+                      <SourceField Index="1" SourceFieldName="estimated_time_to_fix" />
+                    </FieldsAggregationGroup>
+                  </AggregatedFields>
+                  <UserIdentityFields>
+                    <LeftUserIdentityFields>
+                      <UserIdField FieldReferenceName="assigned_to_username" UserIdPropertyName="Alias" />
+                    </LeftUserIdentityFields>
+                    <RightUserIdentityFields>
+                      <UserIdField FieldReferenceName="System.AssignedTo" UserIdPropertyName="DisplayName" />
+                    </RightUserIdentityFields>
+                  </UserIdentityFields>
+                </FieldMap>
+              </FieldMaps>
+              <ValueMaps>
+                <ValueMap name="AssignedToMap">
+                  <Value LeftValue="*" RightValue="">
+                    <When ConditionalSrcFieldName="State" ConditionalSrcFieldValue="Submitted"></When>
+                  </Value>
+                </ValueMap>
+                <ValueMap name="StateMap">
+                  <!--Default mapping when none of the following conditional mappings apply-->
+                  <Value LeftValue="*" RightValue="Submitted"></Value>
+                  <!--Submitted-->
+                  <Value LeftValue="Submitted" RightValue="Submitted"></Value>
+                  <!--Assigned-->
+                  <Value LeftValue="Assigned" RightValue="CCB">
+                    <When ConditionalSrcFieldName="resolution" ConditionalSrcFieldValue="Duplicate"></When>
+                  </Value>
+                  <Value LeftValue="Assigned" RightValue="CCB">
+                    <When ConditionalSrcFieldName="resolution" ConditionalSrcFieldValue="Functions as Designed" />
+                  </Value>
+                  <Value LeftValue="Assigned" RightValue="Submitted"></Value>
+                  <!--Assessing-->
+                  <Value LeftValue="Assessing" RightValue="CCB">
+                    <When ConditionalSrcFieldName="resolution" ConditionalSrcFieldValue="Duplicate"></When>
+                  </Value>
+                  <Value LeftValue="Assessing" RightValue="CCB">
+                    <When ConditionalSrcFieldName="resolution" ConditionalSrcFieldValue="Functions as Designed" />
+                  </Value>
+                  <Value LeftValue="Assessing" RightValue="Submitted"></Value>
+                  <!--Assessed-->
+                  <Value LeftValue="Assessed" RightValue="CCB">
+                    <When ConditionalSrcFieldName="resolution" ConditionalSrcFieldValue="Duplicate"></When>
+                  </Value>
+                  <Value LeftValue="Assessed" RightValue="CCB">
+                    <When ConditionalSrcFieldName="resolution" ConditionalSrcFieldValue="Functions as Designed" />
+                  </Value>
+                  <Value LeftValue="Assessed" RightValue="CCB"></Value>
+                  <!--CCB_Approved-->
+                  <Value LeftValue="CCB_Approved" RightValue="CCB">
+                    <When ConditionalSrcFieldName="resolution" ConditionalSrcFieldValue="Duplicate"></When>
+                  </Value>
+                  <Value LeftValue="CCB_Approved" RightValue="CCB">
+                    <When ConditionalSrcFieldName="resolution" ConditionalSrcFieldValue="Functions as Designed" />
+                  </Value>
+                  <Value LeftValue="CCB_Approved" RightValue="Active"></Value>
+                  <!--Opened-->
+                  <Value LeftValue="Opened" RightValue="CCB">
+                    <When ConditionalSrcFieldName="resolution" ConditionalSrcFieldValue="Duplicate"></When>
+                  </Value>
+                  <Value LeftValue="Opened" RightValue="CCB">
+                    <When ConditionalSrcFieldName="resolution" ConditionalSrcFieldValue="Functions as Designed" />
+                  </Value>
+                  <Value LeftValue="Opened" RightValue="Active"></Value>
+                  <!--Resolved-->
+                  <Value LeftValue="Resolved" RightValue="CCB">
+                    <When ConditionalSrcFieldName="resolution" ConditionalSrcFieldValue="Duplicate"></When>
+                  </Value>
+                  <Value LeftValue="Resolved" RightValue="CCB">
+                    <When ConditionalSrcFieldName="resolution" ConditionalSrcFieldValue="Functions as Designed" />
+                  </Value>
+                  <Value LeftValue="Resolved" RightValue="Resolved"></Value>
+                  <!--MergedToInteg-->
+                  <Value LeftValue="MergedToInteg" RightValue="CCB">
+                    <When ConditionalSrcFieldName="resolution" ConditionalSrcFieldValue="Duplicate"></When>
+                  </Value>
+                  <Value LeftValue="MergedToInteg" RightValue="CCB">
+                    <When ConditionalSrcFieldName="resolution" ConditionalSrcFieldValue="Functions as Designed" />
+                  </Value>
+                  <Value LeftValue="MergedToInteg" RightValue="Resolved"></Value>
+                  <!--MergedToProd-->
+                  <Value LeftValue="MergedToProd" RightValue="CCB">
+                    <When ConditionalSrcFieldName="resolution" ConditionalSrcFieldValue="Duplicate"></When>
+                  </Value>
+                  <Value LeftValue="MergedToProd" RightValue="CCB">
+                    <When ConditionalSrcFieldName="resolution" ConditionalSrcFieldValue="Functions as Designed" />
+                  </Value>
+                  <Value LeftValue="MergedToProd" RightValue="Resolved"></Value>
+                  <!--Built-->
+                  <Value LeftValue="Built" RightValue="CCB">
+                    <When ConditionalSrcFieldName="resolution" ConditionalSrcFieldValue="Duplicate"></When>
+                  </Value>
+                  <Value LeftValue="Built" RightValue="CCB">
+                    <When ConditionalSrcFieldName="resolution" ConditionalSrcFieldValue="Functions as Designed" />
+                  </Value>
+                  <Value LeftValue="Built" RightValue="Resolved"></Value>
+                  <!--Integration_Passed-->
+                  <Value LeftValue="Integration_Passed" RightValue="CCB">
+                    <When ConditionalSrcFieldName="resolution" ConditionalSrcFieldValue="Duplicate"></When>
+                  </Value>
+                  <Value LeftValue="Integration_Passed" RightValue="CCB">
+                    <When ConditionalSrcFieldName="resolution" ConditionalSrcFieldValue="Functions as Designed" />
+                  </Value>
+                  <Value LeftValue="Integration_Passed" RightValue="Test"></Value>
+                  <!--Integration_Failed-->
+                  <Value LeftValue="Integration_Failed" RightValue="CCB">
+                    <When ConditionalSrcFieldName="resolution" ConditionalSrcFieldValue="Duplicate"></When>
+                  </Value>
+                  <Value LeftValue="Integration_Failed" RightValue="CCB">
+                    <When ConditionalSrcFieldName="resolution" ConditionalSrcFieldValue="Functions as Designed" />
+                  </Value>
+                  <Value LeftValue="Integration_Failed" RightValue="Active"></Value>
+                  <!--Approved-->
+                  <Value LeftValue="Approved" RightValue="CCB">
+                    <When ConditionalSrcFieldName="resolution" ConditionalSrcFieldValue="Duplicate"></When>
+                  </Value>
+                  <Value LeftValue="Approved" RightValue="CCB">
+                    <When ConditionalSrcFieldName="resolution" ConditionalSrcFieldValue="Functions as Designed" />
+                  </Value>
+                  <Value LeftValue="Approved" RightValue="Test"></Value>
+                  <!--Entered_Test-->
+                  <Value LeftValue="Entered_Test" RightValue="CCB">
+                    <When ConditionalSrcFieldName="resolution" ConditionalSrcFieldValue="Duplicate"></When>
+                  </Value>
+                  <Value LeftValue="Entered_Test" RightValue="CCB">
+                    <When ConditionalSrcFieldName="resolution" ConditionalSrcFieldValue="Functions as Designed" />
+                  </Value>
+                  <Value LeftValue="Entered_Test" RightValue="Test"></Value>
+                  <!--Passed-->
+                  <Value LeftValue="Passed" RightValue="CCB">
+                    <When ConditionalSrcFieldName="resolution" ConditionalSrcFieldValue="Duplicate"></When>
+                  </Value>
+                  <Value LeftValue="Passed" RightValue="CCB">
+                    <When ConditionalSrcFieldName="resolution" ConditionalSrcFieldValue="Functions as Designed" />
+                  </Value>
+                  <Value LeftValue="Passed" RightValue="Verified"></Value>
+                  <!--Failed-->
+                  <Value LeftValue="Failed" RightValue="CCB">
+                    <When ConditionalSrcFieldName="resolution" ConditionalSrcFieldValue="Duplicate"></When>
+                  </Value>
+                  <Value LeftValue="Failed" RightValue="CCB">
+                    <When ConditionalSrcFieldName="resolution" ConditionalSrcFieldValue="Functions as Designed" />
+                  </Value>
+                  <Value LeftValue="Failed" RightValue="Active"></Value>
+                </ValueMap>
+                <ValueMap name="ReasonMap">
+                  <!--Default mapping when none of the following conditional mappings apply-->
+                  <Value LeftValue="*" RightValue="New"></Value>
+                  <!--When CQ state = Submitted-->
+                  <Value LeftValue="*" RightValue="New">
+                    <When ConditionalSrcFieldName="State" ConditionalSrcFieldValue="Submitted" />
+                  </Value>
+                  <!--When CQ state = Assigned-->
+                  <Value LeftValue="Duplicate" RightValue="Duplicate">
+                    <When ConditionalSrcFieldName="State" ConditionalSrcFieldValue="Assigned" />
+                  </Value>
+                  <Value LeftValue="Functions as Designed" RightValue="Functions as Designed">
+                    <When ConditionalSrcFieldName="State" ConditionalSrcFieldValue="Assigned" />
+                  </Value>
+                  <Value LeftValue="*" RightValue="New">
+                    <When ConditionalSrcFieldName="State" ConditionalSrcFieldValue="Assigned" />
+                  </Value>
+                  <!--When CQ state = Assessing-->
+                  <Value LeftValue="Duplicate" RightValue="Duplicate">
+                    <When ConditionalSrcFieldName="State" ConditionalSrcFieldValue="Assessing" />
+                  </Value>
+                  <Value LeftValue="Functions as Designed" RightValue="Functions as Designed">
+                    <When ConditionalSrcFieldName="State" ConditionalSrcFieldValue="Assessing" />
+                  </Value>
+                  <Value LeftValue="*" RightValue="New">
+                    <When ConditionalSrcFieldName="State" ConditionalSrcFieldValue="Assessing" />
+                  </Value>
+                  <!--When CQ state = Assessed-->
+                  <Value LeftValue="Duplicate" RightValue="Duplicate">
+                    <When ConditionalSrcFieldName="State" ConditionalSrcFieldValue="Assessed" />
+                  </Value>
+                  <Value LeftValue="Functions as Designed" RightValue="Functions as Designed">
+                    <When ConditionalSrcFieldName="State" ConditionalSrcFieldValue="Assessed" />
+                  </Value>
+                  <Value LeftValue="*" RightValue="Confirmed">
+                    <When ConditionalSrcFieldName="State" ConditionalSrcFieldValue="Assessed" />
+                  </Value>
+                  <!--When CQ state = CCB_Approved-->
+                  <Value LeftValue="Duplicate" RightValue="Duplicate">
+                    <When ConditionalSrcFieldName="State" ConditionalSrcFieldValue="CCB_Approved" />
+                  </Value>
+                  <Value LeftValue="Functions as Designed" RightValue="Functions as Designed">
+                    <When ConditionalSrcFieldName="State" ConditionalSrcFieldValue="CCB_Approved" />
+                  </Value>
+                  <Value LeftValue="*" RightValue="Approved">
+                    <When ConditionalSrcFieldName="State" ConditionalSrcFieldValue="CCB_Approved" />
+                  </Value>
+                  <!--When CQ state = Opened-->
+                  <Value LeftValue="Duplicate" RightValue="Duplicate">
+                    <When ConditionalSrcFieldName="State" ConditionalSrcFieldValue="Opened" />
+                  </Value>
+                  <Value LeftValue="Functions as Designed" RightValue="Functions as Designed">
+                    <When ConditionalSrcFieldName="State" ConditionalSrcFieldValue="Opened" />
+                  </Value>
+                  <Value LeftValue="*" RightValue="Approved">
+                    <When ConditionalSrcFieldName="State" ConditionalSrcFieldValue="Opened" />
+                  </Value>
+                  <!--When CQ state = Resolved-->
+                  <Value LeftValue="Enhancement Request" RightValue="Ready for Integ Testing When Built">
+                    <When ConditionalSrcFieldName="State" ConditionalSrcFieldValue="Resolved" />
+                  </Value>
+                  <Value LeftValue="Fixed" RightValue="Ready for Integ Testing When Built">
+                    <When ConditionalSrcFieldName="State" ConditionalSrcFieldValue="Resolved" />
+                  </Value>
+                  <Value LeftValue="Fixed - Indirectly" RightValue="Ready for Integ Testing When Built">
+                    <When ConditionalSrcFieldName="State" ConditionalSrcFieldValue="Resolved" />
+                  </Value>
+                  <Value LeftValue="Duplicate" RightValue="Duplicate">
+                    <When ConditionalSrcFieldName="State" ConditionalSrcFieldValue="Resolved" />
+                  </Value>
+                  <Value LeftValue="Functions as Designed" RightValue="Functions as Designed">
+                    <When ConditionalSrcFieldName="State" ConditionalSrcFieldValue="Resolved" />
+                  </Value>
+                  <!--When CQ state = MergedToInteg-->
+                  <Value LeftValue="Duplicate" RightValue="Duplicate">
+                    <When ConditionalSrcFieldName="State" ConditionalSrcFieldValue="MergedToInteg" />
+                  </Value>
+                  <Value LeftValue="Functions as Designed" RightValue="Functions as Designed">
+                    <When ConditionalSrcFieldName="State" ConditionalSrcFieldValue="MergedToInteg" />
+                  </Value>
+                  <Value LeftValue="*" RightValue="Ready to Test in Dev Branch When Built">
+                    <When ConditionalSrcFieldName="State" ConditionalSrcFieldValue="MergedToInteg" />
+                  </Value>
+                  <!--When CQ state = MergedToProd-->
+                  <Value LeftValue="Duplicate" RightValue="Duplicate">
+                    <When ConditionalSrcFieldName="State" ConditionalSrcFieldValue="MergedToProd" />
+                  </Value>
+                  <Value LeftValue="Functions as Designed" RightValue="Functions as Designed">
+                    <When ConditionalSrcFieldName="State" ConditionalSrcFieldValue="MergedToProd" />
+                  </Value>
+                  <Value LeftValue="*" RightValue="Ready to Test in Main Branch When Built">
+                    <When ConditionalSrcFieldName="State" ConditionalSrcFieldValue="MergedToProd" />
+                  </Value>
+                  <!--When CQ state = Built-->
+                  <Value LeftValue="Duplicate" RightValue="Duplicate">
+                    <When ConditionalSrcFieldName="State" ConditionalSrcFieldValue="Built" />
+                  </Value>
+                  <Value LeftValue="Functions as Designed" RightValue="Functions as Designed">
+                    <When ConditionalSrcFieldName="State" ConditionalSrcFieldValue="Built" />
+                  </Value>
+                  <Value LeftValue="*" RightValue="Ready for Integ Testing When Built">
+                    <When ConditionalSrcFieldName="State" ConditionalSrcFieldValue="Built" />
+                  </Value>
+                  <!--When CQ state = Integration_Passed-->
+                  <Value LeftValue="Duplicate" RightValue="Duplicate">
+                    <When ConditionalSrcFieldName="State" ConditionalSrcFieldValue="Integration_Passed" />
+                  </Value>
+                  <Value LeftValue="Functions as Designed" RightValue="Functions as Designed">
+                    <When ConditionalSrcFieldName="State" ConditionalSrcFieldValue="Integration_Passed" />
+                  </Value>
+                  <Value LeftValue="*" RightValue="Ready to Test in Dev Branch When Built">
+                    <When ConditionalSrcFieldName="State" ConditionalSrcFieldValue="Integration_Passed" />
+                  </Value>
+                  <!--When CQ state = Integration_Failed-->
+                  <Value LeftValue="Duplicate" RightValue="Duplicate">
+                    <When ConditionalSrcFieldName="State" ConditionalSrcFieldValue="Integration_Failed" />
+                  </Value>
+                  <Value LeftValue="Functions as Designed" RightValue="Functions as Designed">
+                    <When ConditionalSrcFieldName="State" ConditionalSrcFieldValue="Integration_Failed" />
+                  </Value>
+                  <Value LeftValue="*" RightValue="Integ Test Failed">
+                    <When ConditionalSrcFieldName="State" ConditionalSrcFieldValue="Integration_Failed" />
+                  </Value>
+                  <!--When CQ state = Approved-->
+                  <Value LeftValue="Duplicate" RightValue="Duplicate">
+                    <When ConditionalSrcFieldName="State" ConditionalSrcFieldValue="Approved" />
+                  </Value>
+                  <Value LeftValue="Functions as Designed" RightValue="Functions as Designed">
+                    <When ConditionalSrcFieldName="State" ConditionalSrcFieldValue="Approved" />
+                  </Value>
+                  <Value LeftValue="*" RightValue="Ready to Test in Dev Branch When Built">
+                    <When ConditionalSrcFieldName="State" ConditionalSrcFieldValue="Approved" />
+                  </Value>
+                  <!--When CQ state = Entered_Test-->
+                  <Value LeftValue="Duplicate" RightValue="Duplicate">
+                    <When ConditionalSrcFieldName="State" ConditionalSrcFieldValue="Entered_Test" />
+                  </Value>
+                  <Value LeftValue="Functions as Designed" RightValue="Functions as Designed">
+                    <When ConditionalSrcFieldName="State" ConditionalSrcFieldValue="Entered_Test" />
+                  </Value>
+                  <Value LeftValue="*" RightValue="Ready to Test in Dev Branch When Built">
+                    <When ConditionalSrcFieldName="State" ConditionalSrcFieldValue="Entered_Test" />
+                  </Value>
+                  <!--When CQ state = Passed-->
+                  <Value LeftValue="Duplicate" RightValue="Duplicate">
+                    <When ConditionalSrcFieldName="State" ConditionalSrcFieldValue="Passed" />
+                  </Value>
+                  <Value LeftValue="Functions as Designed" RightValue="Functions as Designed">
+                    <When ConditionalSrcFieldName="State" ConditionalSrcFieldValue="Passed" />
+                  </Value>
+                  <Value LeftValue="*" RightValue="Test Passed">
+                    <When ConditionalSrcFieldName="State" ConditionalSrcFieldValue="Passed" />
+                  </Value>
+                  <!--When CQ state = Failed-->
+                  <Value LeftValue="Duplicate" RightValue="Duplicate">
+                    <When ConditionalSrcFieldName="State" ConditionalSrcFieldValue="Failed" />
+                  </Value>
+                  <Value LeftValue="Functions as Designed" RightValue="Functions as Designed">
+                    <When ConditionalSrcFieldName="State" ConditionalSrcFieldValue="Failed" />
+                  </Value>
+                  <Value LeftValue="*" RightValue="Not Fixed">
+                    <When ConditionalSrcFieldName="State" ConditionalSrcFieldValue="Failed" />
+                  </Value>
+                </ValueMap>
+                <ValueMap name="EnhancementMap">
+                  <Value LeftValue="Enhancement" RightValue="Yes - meeting specifications will not fully resolve the problem"></Value>
+                  <Value LeftValue="*" RightValue="No - just meeting specifications will resolve the problem"></Value>
+                </ValueMap>
+                <ValueMap name="SeverityMap">
+                  <Value LeftValue="1" RightValue="1 - Critical"></Value>
+                  <Value LeftValue="2" RightValue="2 - High: no work-around"></Value>
+                  <Value LeftValue="3" RightValue="3 - Medium: work-around exist"></Value>
+                  <Value LeftValue="4" RightValue="4 - Low: inconvenience"></Value>
+                  <Value LeftValue="5" RightValue="5 - All other errors"></Value>
+                  <Value LeftValue="E" RightValue="E - SPR Emergency"></Value>
+                  <Value LeftValue="R" RightValue="R - SPR Routine"></Value>
+                  <Value LeftValue="U" RightValue="U - SPR Urgent"></Value>
+                </ValueMap>
+                <ValueMap name="PriorityMap">
+                  <Value LeftValue="1" RightValue="1"></Value>
+                  <Value LeftValue="2" RightValue="2"></Value>
+                  <Value LeftValue="3" RightValue="3"></Value>
+                  <Value LeftValue="4" RightValue="4"></Value>
+                  <Value LeftValue="5" RightValue="5"></Value>
+                  <Value LeftValue="E" RightValue="6"></Value>
+                  <Value LeftValue="R" RightValue="7"></Value>
+                  <Value LeftValue="U" RightValue="8"></Value>
+                </ValueMap>
+                <ValueMap name="OriginMap">
+                  <Value LeftValue="Internal" RightValue="Internal"></Value>
+                  <Value LeftValue="External" RightValue="Customer"></Value>
+                  <Value LeftValue="*" RightValue="Internal"></Value>
+                </ValueMap>
+              </ValueMaps>
+            </WITSessionCustomSetting>
+          </SettingXml>
+        </CustomSettings>
+      </Session>
+      <!--Defect Migration Session-->
+      <Session SessionUniqueId="882d715f-214a-4901-aefb-a309ed4a8bd8" 
+               FriendlyName="Defect Session" 
+               LeftMigrationSourceUniqueId="5412CF59-5ECD-4E46-B0A3-1CA034A707DD" 
+               RightMigrationSourceUniqueId="E0CB3023-3201-4C88-8EB1-9F4363F111AA" 
+               SessionType="WorkItemTracking">
+        <EventSinks />
+        <Filters>
+          <FilterPair>
+            <FilterItem MigrationSourceUniqueId="5412CF59-5ECD-4E46-B0A3-1CA034A707DD" FilterString="SAR::defect_1::(dbid &lt;&gt; 0 and form_planned_release = '3.1.00' and state in (select id from statedef T2 where T2.name in ('Approved', 'Built', 'Entered_Test', 'Failed', 'Integration_Failed', 'Integration_Passed', 'MergedToInteg', 'MergedToProd', 'Opened', 'Passed', 'Resolved')) and (product in (select dbid from product T3 where T3.name = '##NAME##') or product in (select dbid from product T3 where T3.name = '##NAME##') or product in (select dbid from product T3 where T3.name = '##NAME##') or product in (select dbid from product T3 where T3.name = '##NAME##') or product in (select dbid from product T3 where T3.name = '##NAME##') or product in (select dbid from product T3 where T3.name = '##NAME##') or product in (select dbid from product T3 where T3.name = '##NAME##') or product in (select dbid from product T3 where T3.name = '##NAME##') or product in (select dbid from product T3 where T3.name = '##NAME##') or product in (select dbid from product T3 where T3.name = '##NAME##') or product in (select dbid from product T3 where T3.name = '##NAME##') or product in (select dbid from product T3 where T3.name = '##NAME##')))" />
+            <FilterItem MigrationSourceUniqueId="E0CB3023-3201-4C88-8EB1-9F4363F111AA" FilterString="[System.Id] = 0" />
+          </FilterPair>
+        </Filters>
+        <CustomSettings>
+          <SettingXml>
+            <WITSessionCustomSetting>
+              <WorkItemTypes>
+                <WorkItemType LeftWorkItemTypeName="SAR" RightWorkItemTypeName="Defect" fieldMap="SARtoDefect" />
+              </WorkItemTypes>
+              <FieldMaps>
+                <FieldMap name="SARtoDefect">
+                  <MappedFields>
+                    <MappedField LeftName="@@MissingField@@" RightName="FeatureModel" MapFromSide="Left" valueMap="FeatureModelMap" />
+                    <MappedField LeftName="sar_type" RightName="SarType" MapFromSide="Left" valueMap="" />
+                    <MappedField LeftName="root_cause" RightName="Microsoft.VSTS.CMMI.RootCause" MapFromSide="Left" valueMap="RootCauseMap"></MappedField>
+                    <MappedField LeftName="root_cause_other" RightName="OtherRootCause" MapFromSide="Left" valueMap=""></MappedField>
+                    <MappedField LeftName="defect_catagory" RightName="PhaseInjected" MapFromSide="Left" valueMap="" />
+                    <MappedField LeftName="phase_detected" RightName="PhaseDetected" MapFromSide="Left" valueMap="" />
+                    <MappedField LeftName="assigned_to_username" RightName="System.AssignedTo" MapFromSide="Left" valueMap="AssignedToMap" />
+                    <MappedField LeftName="State" RightName="System.State" MapFromSide="Left" valueMap="DefectStateMap" />
+                    <MappedField LeftName="resolution" RightName="System.Reason" MapFromSide="Left" valueMap="DefectReasonMap" />
+                    <!--Using submit_date to as a temporary source for resolved date since resolved date is not availble during this time.-->
+                    <MappedField LeftName="submit_date" RightName="Microsoft.VSTS.Common.ResolvedDate" MapFromSide="Left" valueMap="ResolvedDateMap"></MappedField>
+                  </MappedFields>
+                  <AggregatedFields>
+                    <FieldsAggregationGroup MapFromSide="Left" TargetFieldName="System.Title" Format="CSC:{0} {1}">
+                      <SourceField Index="0" SourceFieldName="form_csc_id"></SourceField>
+                      <SourceField Index="1" SourceFieldName="csc_subfunction" />
+                    </FieldsAggregationGroup>
+                  </AggregatedFields>
+                  <UserIdentityFields>
+                    <LeftUserIdentityFields>
+                      <UserIdField FieldReferenceName="assigned_to_username" UserIdPropertyName="Alias" />
+                    </LeftUserIdentityFields>
+                    <RightUserIdentityFields>
+                      <UserIdField FieldReferenceName="System.AssignedTo" UserIdPropertyName="DisplayName" />
+                    </RightUserIdentityFields>
+                  </UserIdentityFields>
+                </FieldMap>
+              </FieldMaps>
+              <ValueMaps>
+                <ValueMap name="FeatureModelMap">
+                  <Value LeftValue="" RightValue="-"></Value>
+                </ValueMap>
+                <ValueMap name="RootCauseMap">
+                  <Value LeftValue="Arch/Design Shortfal" RightValue="Arch/Design Shortfall"></Value>
+                  <Value LeftValue="Code/Doc Style" RightValue="Code/Doc Style"></Value>
+                  <Value LeftValue="Code Logic Error" RightValue="Code Logic Error"></Value>
+                  <Value LeftValue="Code Typo" RightValue="Code Typo"></Value>
+                  <Value LeftValue="Documentation Error" RightValue="Documentation Error"></Value>
+                  <Value LeftValue="Duplicate" RightValue="Duplicate"></Value>
+                  <Value LeftValue="FAD" RightValue="FAD"></Value>
+                  <Value LeftValue="Installer Ambiguous Specification" RightValue="Installer Ambiguous Specification"></Value>
+                  <Value LeftValue="Installer Implementation Error" RightValue="Installer Implementation Error"></Value>
+                  <Value LeftValue="Installer New Feature Development" RightValue="Installer New Feature Development"></Value>
+                  <Value LeftValue="Installer Specification Update" RightValue="Installer Specification Update"></Value>
+                  <Value LeftValue="Merge Error" RightValue="Merge Error"></Value>
+                  <Value LeftValue="Missing Functionality" RightValue="Missing Functionality"></Value>
+                  <Value LeftValue="Other" RightValue="Other"></Value>
+                  <Value LeftValue="Planning SAR" RightValue="Planning SAR"></Value>
+                  <Value LeftValue="Reference Error" RightValue="Reference Error"></Value>
+                  <Value LeftValue="Requirements Change" RightValue="Requirements Change"></Value>
+                  <Value LeftValue="Requirements Completeness" RightValue="Requirements Completeness"></Value>
+                  <Value LeftValue="Requirements Deferred" RightValue="Requirements Deferred"></Value>
+                  <Value LeftValue="Requirements Incorrect" RightValue="Requirements Incorrect"></Value>
+                  <Value LeftValue="Requirements Logic" RightValue="Requirements Logic"></Value>
+                  <Value LeftValue="Requirements Presentation" RightValue="Requirements Presentation"></Value>
+                  <Value LeftValue="Requirments Verifiability" RightValue="Requirments Verifiability"></Value>
+                  <Value LeftValue="Test Case Incorrect/Ambiguous" RightValue="Test Case Incorrect/Ambiguous"></Value>
+                  <Value LeftValue="Reference Error" RightValue="Ref Error"></Value>
+                  <Value LeftValue="Un-Reproducible" RightValue="Un-Reproducible"></Value>
+                  <Value LeftValue="*" RightValue="Unknown"></Value>
+                </ValueMap>
+                <ValueMap name="AssignedToMap">
+                  <Value LeftValue="*" RightValue="">
+                    <When ConditionalSrcFieldName="State" ConditionalSrcFieldValue="Submitted"></When>
+                  </Value>
+                </ValueMap>
+                <ValueMap name="DefectStateMap">
+                  <!--Default mapping for when none of the following conditions are met-->
+                  <Value LeftValue="*" RightValue="Active" />
+                  <!--Opened-->
+                  <Value LeftValue="Opened" RightValue="Resolved">
+                    <When ConditionalSrcFieldName="resolution" ConditionalSrcFieldValue="Duplicate"></When>
+                  </Value>
+                  <Value LeftValue="Opened" RightValue="Resolved">
+                    <When ConditionalSrcFieldName="resolution" ConditionalSrcFieldValue="Functions as Designed"></When>
+                  </Value>
+                  <Value LeftValue="Opened" RightValue="Active"></Value>
+                  <!--Resolved-->
+                  <Value LeftValue="Resolved" RightValue="Resolved" />
+                  <!--MergedToInteg-->
+                  <Value LeftValue="MergedToInteg" RightValue="Resolved" />
+                  <!--MergedToProd-->
+                  <Value LeftValue="MergedToProd" RightValue="Resolved" />
+                  <!--Built-->
+                  <Value LeftValue="Built" RightValue="Resolved" />
+                  <!--Integration_Passed-->
+                  <Value LeftValue="Integration_Passed" RightValue="Resolved" />
+                  <!--Integration_Failed-->
+                  <Value LeftValue="Integration_Failed" RightValue="Resolved">
+                    <When ConditionalSrcFieldName="resolution" ConditionalSrcFieldValue="Duplicate"></When>
+                  </Value>
+                  <Value LeftValue="Integration_Failed" RightValue="Resolved">
+                    <When ConditionalSrcFieldName="resolution" ConditionalSrcFieldValue="Functions as Designed"></When>
+                  </Value>
+                  <Value LeftValue="Integration_Failed" RightValue="Active" />
+                  <!--Approved-->
+                  <Value LeftValue="Approved" RightValue="Resolved" />
+                  <!--Entered_Test-->
+                  <Value LeftValue="Entered_Test" RightValue="Resolved" />
+                  <!--Passed-->
+                  <Value LeftValue="Passed" RightValue="Resolved" />
+                  <!--Failed-->
+                  <Value LeftValue="Failed" RightValue="Resolved">
+                    <When ConditionalSrcFieldName="resolution" ConditionalSrcFieldValue="Duplicate"></When>
+                  </Value>
+                  <Value LeftValue="Failed" RightValue="Resolved">
+                    <When ConditionalSrcFieldName="resolution" ConditionalSrcFieldValue="Functions as Designed"></When>
+                  </Value>
+                  <Value LeftValue="Failed" RightValue="Active" />
+                </ValueMap>
+                <ValueMap name="DefectReasonMap">
+                  <!--Default mapping for when none of the following conditions are met-->
+                  <Value LeftValue="*" RightValue="New"></Value>
+                  <!--No resolution value - possible only when CQ State = Opened-->
+                  <Value LeftValue="" RightValue="New">
+                    <!--CQ State = Opened-->
+                    <When ConditionalSrcFieldName="State" ConditionalSrcFieldValue="Opened" />
+                  </Value>
+                  <!--Duplicate-->
+                  <Value LeftValue="Duplicate" RightValue="Resolved"></Value>
+                  <!--Functions as Designed-->
+                  <Value LeftValue="Functions as Designed" RightValue="Resolved"></Value>
+                  <!--Enhancement Request-->
+                  <Value LeftValue="Enhancement Request" RightValue="New">
+                    <!--CQ State = Opened-->
+                    <When ConditionalSrcFieldName="State" ConditionalSrcFieldValue="Opened" />
+                  </Value>
+                  <Value LeftValue="Enhancement Request" RightValue="Reactivated">
+                    <!--CQ State = Integration_Failed-->
+                    <When ConditionalSrcFieldName="State" ConditionalSrcFieldValue="Integration_Failed" />
+                  </Value>
+                  <Value LeftValue="Enhancement Request" RightValue="Reactivated">
+                    <!--CQ State = Failed-->
+                    <When ConditionalSrcFieldName="State" ConditionalSrcFieldValue="Failed" />
+                  </Value>
+                  <Value LeftValue="Enhancement Request" RightValue="Resolved"></Value>
+                  <!--Fixed-->
+                  <Value LeftValue="Fixed" RightValue="New">
+                    <!--CQ State = Opened-->
+                    <When ConditionalSrcFieldName="State" ConditionalSrcFieldValue="Opened"></When>
+                  </Value>
+                  <Value LeftValue="Fixed" RightValue="Reactivated">
+                    <!--CQ State = Integration_Failed-->
+                    <When ConditionalSrcFieldName="State" ConditionalSrcFieldValue="Integration_Failed" />
+                  </Value>
+                  <Value LeftValue="Fixed" RightValue="Reactivated">
+                    <!--CQ State = Failed-->
+                    <When ConditionalSrcFieldName="State" ConditionalSrcFieldValue="Failed" />
+                  </Value>
+                  <Value LeftValue="Fixed" RightValue="Resolved"></Value>
+                  <!--Fixed - Indirectly-->
+                  <Value LeftValue="Fixed - Indirectly" RightValue="New">
+                    <!--CQ State = Opened-->
+                    <When ConditionalSrcFieldName="State" ConditionalSrcFieldValue="Opened" />
+                  </Value>
+                  <Value LeftValue="Fixed - Indirectly" RightValue="Reactivated">
+                    <!--CQ State = Integration_Failed-->
+                    <When ConditionalSrcFieldName="State" ConditionalSrcFieldValue="Integration_Failed" />
+                  </Value>
+                  <Value LeftValue="Fixed - Indirectly" RightValue="Reactivated">
+                    <!--CQ State = Failed-->
+                    <When ConditionalSrcFieldName="State" ConditionalSrcFieldValue="Failed" />
+                  </Value>
+                  <Value LeftValue="Fixed - Indirectly" RightValue="Resolved"></Value>
+                </ValueMap>
+                <ValueMap name="ResolvedDateMap">
+                  <!--When none of the conditions are met, the default mapping sets the resolved date to empty. Otherwise, the TFS resolved date is populated from the resolved date in CQ (once available) -->
+                  <Value LeftValue="*" RightValue=""></Value>
+                  <!--CQ Resolution is duplicate or functions as designed-->
+                  <Value LeftValue="*" RightValue="*">
+                    <When ConditionalSrcFieldName="resolution" ConditionalSrcFieldValue="Duplicate"></When>
+                  </Value>
+                  <Value LeftValue="*" RightValue="*">
+                    <When ConditionalSrcFieldName="resolution" ConditionalSrcFieldValue="Functions as Designed"></When>
+                  </Value>
+                  <!--CQ State is Resolved-->
+                  <Value LeftValue="*" RightValue="*">
+                    <When ConditionalSrcFieldName="State" ConditionalSrcFieldValue="Resolved"></When>
+                  </Value>
+                  <!--CQ State is MergedToInteg-->
+                  <Value LeftValue="*" RightValue="*">
+                    <When ConditionalSrcFieldName="State" ConditionalSrcFieldValue="MergedToInteg"></When>
+                  </Value>
+                  <!--CQ State is MergedToProd-->
+                  <Value LeftValue="*" RightValue="*">
+                    <When ConditionalSrcFieldName="State" ConditionalSrcFieldValue="MergedToProd"></When>
+                  </Value>
+                  <!--CQ State is Built-->
+                  <Value LeftValue="*" RightValue="*">
+                    <When ConditionalSrcFieldName="State" ConditionalSrcFieldValue="Built"></When>
+                  </Value>
+                  <!--CQ State is Integration_Passed-->
+                  <Value LeftValue="*" RightValue="*">
+                    <When ConditionalSrcFieldName="State" ConditionalSrcFieldValue="Integration_Passed"></When>
+                  </Value>
+                  <!--CQ State is Approved-->
+                  <Value LeftValue="*" RightValue="*">
+                    <When ConditionalSrcFieldName="State" ConditionalSrcFieldValue="Approved"></When>
+                  </Value>
+                  <!--CQ State is Entered_Test-->
+                  <Value LeftValue="*" RightValue="*">
+                    <When ConditionalSrcFieldName="State" ConditionalSrcFieldValue="Entered_Test"></When>
+                  </Value>
+                  <!--CQ State is Passed-->
+                  <Value LeftValue="*" RightValue="*">
+                    <When ConditionalSrcFieldName="State" ConditionalSrcFieldValue="Passed"></When>
+                  </Value>
+                </ValueMap>
+              </ValueMaps>
+            </WITSessionCustomSetting>
+          </SettingXml>
+        </CustomSettings>
+      </Session>
+    </Sessions>
+    <Linking>
+      <CustomSettings></CustomSettings>
+      <LinkTypeMappings>
+        <LinkTypeMapping LeftMigrationSourceUniqueId="BB2BD2C6-92B5-4817-AB51-A087B6532F0D" 
+                         LeftLinkType="ClearQuestAdapter.LinkType.Web.RecordHyperLink" 
+                         RightMigrationSourceUniqueId="F4741818-F14C-458F-BB20-4BBAC20F95C3" 
+                         RightLinkType="Microsoft.TeamFoundation.Migration.TFS.LinkType.WorkItemToHyperlink" />
+      </LinkTypeMappings>
+    </Linking>
+  </SessionGroup>
+</Configuration>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 

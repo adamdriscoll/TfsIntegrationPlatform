@@ -1,0 +1,5 @@
+﻿ALTER TABLE [dbo].[LINK_LINK_TYPE]
+	ADD CONSTRAINT [FK_LinkType_to_ArtifactTypeTarget] 
+	FOREIGN KEY (TargetArtifactTypeId)
+	REFERENCES LINK_ARTIFACT_TYPE (Id)	
+

@@ -1,0 +1,3 @@
+﻿ALTER TABLE [dbo].[VALUE_MAP_COLLECTION]
+	ADD CONSTRAINT [PK_ValueMapCollection]
+	PRIMARY KEY (MappingId)

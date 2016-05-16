@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippet Format="1.0.0">
+    <Header>
+        <Title>log writeif</Title>
+        <Shortcut>logwif</Shortcut>
+        <Description>Expansion snippet for Logger.WriteIf</Description>
+        <SnippetTypes>
+            <SnippetType>Expansion</SnippetType>
+        </SnippetTypes>
+    </Header>
+    <Snippet>
+        <Declarations>
+            <Literal default="true">
+                <ID>condition</ID>
+                <ToolTip>Condition to check</ToolTip>
+                <Default>true</Default>
+            </Literal>
+            <Literal default="true">
+                <ID>source</ID>
+                <ToolTip>LogSource for this message</ToolTip>
+                <Default>Common</Default>
+            </Literal>
+            <Literal default="true">
+                <ID>level</ID>
+                <ToolTip>TraceLevel for this message</ToolTip>
+                <Default>Error</Default>
+            </Literal>
+            <Literal default="true">
+                <ID>message</ID>
+                <ToolTip>Message to log</ToolTip>
+                <Default>""</Default>
+            </Literal>
+        </Declarations>
+        <Code Language="csharp" Format="CData"><![CDATA[Logger.WriteIf($condition$, LogSource.$source$, TraceLevel.$level$, $message$);$end$]]>
+	</Code>
+    </Snippet>
+</CodeSnippet>

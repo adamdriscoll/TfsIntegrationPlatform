@@ -1,0 +1,73 @@
+<?xml version="1.0"?>
+<Configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" UniqueId="828b37cd-b889-4805-9e4d-f0eeb3921639" FriendlyName="AddTestTFStoCC">
+   <Providers>
+      <Provider ReferenceName="FEBC091F-82A2-449e-AED8-133E5896C47A" FriendlyName="TFS 2010 VC Migration Provider"/>
+      <Provider ReferenceName="b9379f30-2026-4d36-92a6-9654abf91bfd" FriendlyName="ClearCase selected history adapter between ClearCase and TFS." />
+   </Providers>
+   <Addins>
+    <Addin ReferenceName="AC260D98-2411-4829-B4F7-D548F1BC8143" FriendlyName="Start Sync via Semaphore File AnalysisAddin" />
+   </Addins>
+
+  <!-- The ## token is used to encapsulate tokens that you would need to reconfigure to match your environment.
+         For example ... SourceIdentifier="##TEAM_PROJECT_NAME##" indicates that you need to replace the ##TEAM_PROJECT_NAME##
+                         with a valid team project name. If you look at the Getting Started Hands-On-Labs (HOL) this would appear
+                         as SourceIdentifier="TP-A" 
+      -->
+
+  <SessionGroup FriendlyName="Session Group Friendly Name" SessionGroupGUID="cafe0f88-bc34-44a7-be70-a8f8c429d9d7">
+	  <WorkFlowType Frequency="ContinuousManual" DirectionOfFlow="Unidirectional" SyncContext="Disabled" />
+      <MigrationSources>
+         <MigrationSource InternalUniqueId="cec23a25-e807-48a7-bd55-41191410d5bc" 
+                          FriendlyName="TFS 2010 Sandbox" 
+                          ServerIdentifier="TFS 2010 Sandbox" 
+                          ServerUrl="http://##SERVER##:8080/tfs/##.Sandbox" SourceIdentifier="TestTools.Sandbox.##" ProviderReferenceName="FEBC091F-82A2-449e-AED8-133E5896C47A">
+						<CustomSettings>
+						  <CustomSetting SettingKey="ChangeGroupLabelAddinName" SettingValue="ca63c6ec-513e-4597-b393-e5bdf539d848" />
+            </CustomSettings>
+            <StoredCredential/>
+         </MigrationSource>
+         <MigrationSource InternalUniqueId="065ff392-7e79-4301-8062-f591e5efa303" 
+                          FriendlyName="ClearCaseV6" 
+                          ServerIdentifier="ClearCaseV6" 
+                          ServerUrl="\##DIR##" SourceIdentifier="sourceClearCase" 
+                          ProviderReferenceName="b9379f30-2026-4d36-92a6-9654abf91bfd">
+            <CustomSettings>
+              <CustomSetting SettingKey="CCBranchName" SettingValue="tfs_integration_branch_20100519" />
+              <CustomSetting SettingKey="DownloadFolder" SettingValue="c:\localDownloadFolderPath" />
+              <CustomSetting SettingKey="DetectChangesInCC"          SettingValue="true" />
+              <CustomSetting SettingKey="PrecreatedViewName" SettingValue="##_tfs_vs_cc_view" />
+              <CustomSetting SettingKey="DynamicViewRoot" SettingValue="y:\" />
+              <CustomSetting SettingKey="VobName" SettingValue="\TAU" />
+              <CustomSetting SettingKey="AnalysisAddin1" SettingValue="AC260D98-2411-4829-B4F7-D548F1BC8143" /> 
+              <CustomSetting SettingKey="SemaphoreFilePath" SettingValue="c:\MigrationSemaphoreAndMetadata.xml" /> 
+            </CustomSettings>
+            <StoredCredential/>
+         </MigrationSource>
+      </MigrationSources>
+      <Sessions>
+         <Session SessionType="VersionControl" SessionUniqueId="f5124457-62d2-45b0-a8f7-f2097bf653e9" FriendlyName="Version Control session" 
+                  RightMigrationSourceUniqueId="cec23a25-e807-48a7-bd55-41191410d5bc" LeftMigrationSourceUniqueId="065ff392-7e79-4301-8062-f591e5efa303">
+            <EventSinks/>
+            <CustomSettings>
+               <SettingXml>
+                  <VCSessionCustomSetting>
+                     <Settings>
+                       <Setting SettingKey="DisableTargetAnalysis" SettingValue="True" />
+                     </Settings>
+                  </VCSessionCustomSetting>
+               </SettingXml>
+               <SettingXmlSchema/>
+            </CustomSettings>
+            <Filters>
+            <FilterPair Neglect="false">
+                  <FilterItem MigrationSourceUniqueId="cec23a25-e807-48a7-bd55-41191410d5bc" FilterString="$/TestTools.Sandbox.3/##_Core4/CC_in"/>
+                  <FilterItem MigrationSourceUniqueId="065ff392-7e79-4301-8062-f591e5efa303" FilterString="\TESTVOB\Core20100507"/>
+               </FilterPair>
+            </Filters>
+         </Session>
+      </Sessions>
+      <Linking>
+      </Linking>
+   </SessionGroup>
+   
+</Configuration>

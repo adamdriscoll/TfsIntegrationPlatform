@@ -1,0 +1,495 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" id="Schema" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="Configuration" type="ConfigurationElement">
+    <xs:key name="ProviderName">
+      <xs:selector xpath="Providers/Provider" />
+      <xs:field xpath="@ReferenceName" />
+    </xs:key>
+    <xs:unique name="UniqueProviderName">
+      <xs:selector xpath="Providers/Provider" />
+      <xs:field xpath="@ReferenceName" />
+    </xs:unique>
+    <xs:key name="MigrationSourceInternalId">
+      <xs:selector xpath="SessionGroup/MigrationSources/MigrationSource" />
+      <xs:field xpath="@InternalUniqueId" />
+    </xs:key>
+    <xs:unique name="UniqueMigrationSourceInternalId">
+      <xs:selector xpath="SessionGroup/MigrationSources/MigrationSource" />
+      <xs:field xpath="@InternalUniqueId" />
+    </xs:unique>
+    <xs:keyref name="MigrationSourceProviderNameReference" refer="ProviderName">
+      <xs:selector xpath="SessionGroup/MigrationSources/MigrationSource" />
+      <xs:field xpath="@ProviderReferenceName" />
+    </xs:keyref>
+    <xs:keyref name="LinkProviderReference" refer="ProviderName">
+      <xs:selector xpath="SessionGroup/Linking" />
+      <xs:field xpath="@EngineProviderReferenceName" />
+    </xs:keyref>
+    <xs:keyref name="LeftMigrationSourceReference" refer="MigrationSourceInternalId">
+      <xs:selector xpath="SessionGroup/Sessions/Session" />
+      <xs:field xpath="@LeftMigrationSourceUniqueId" />
+    </xs:keyref>
+    <xs:keyref name="RightMigrationSourceReference" refer="MigrationSourceInternalId">
+      <xs:selector xpath="SessionGroup/Sessions/Session" />
+      <xs:field xpath="@RightMigrationSourceUniqueId" />
+    </xs:keyref>
+    <xs:keyref name="EventSinkProviderNameReference" refer="ProviderName">
+      <xs:selector xpath="SessionGroup/Session/EventSinks/EventSink" />
+      <xs:field xpath="@ProviderReferenceName" />
+    </xs:keyref>
+    <xs:keyref name="FilterPathMigrationSourceReference" refer="MigrationSourceInternalId">
+      <xs:selector xpath="SessionGroup/Sessions/Session/Filters/FilterPair/FilterItem" />
+      <xs:field xpath="@MigrationSourceUniqueId" />
+    </xs:keyref>
+  </xs:element>
+  <!--
+   TYPE DEFINITION STARTS HERE
+  -->
+  <!-- Non-empty string -->
+  <xs:simpleType name="NonEmptyString">
+    <xs:restriction base="xs:normalizedString">
+      <xs:minLength value="1" />
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="Min0Max4000StringType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="4000" />
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="Min0Max200StringType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="200" />
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="Min1Max128StringType">
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1" />
+      <xs:maxLength value="128" />
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="Min1Max300StringType">
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1" />
+      <xs:maxLength value="300" />
+    </xs:restriction>
+  </xs:simpleType>
+
+  <!-- The representation of a GUID in registry format -->
+  <!-- Taken from: http://msdn.microsoft.com/en-us/library/aa203890(office.11).aspx -->
+  <xs:simpleType name="GUID">
+    <xs:restriction base="NonEmptyString">
+      <xs:pattern value="[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}|{[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}}" />
+    </xs:restriction>
+  </xs:simpleType>
+  <!-- SessionTypeEnum -->
+  <xs:simpleType name="SessionTypeEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="VersionControl" />
+      <xs:enumeration value="WorkItemTracking" />
+    </xs:restriction>
+  </xs:simpleType>
+  <!-- User -->
+  <xs:complexType name="User">
+    <xs:attribute name="Alias" type="NonEmptyString" use="required" />
+    <xs:attribute name="Domain" type="xs:string" use="required" />
+  </xs:complexType>
+  <!-- MappingRules -->
+  <xs:simpleType name="MappingRules">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="SimpleReplacement" />
+      <xs:enumeration value="FormatStringComposition" />
+      <xs:enumeration value="FormatStringDecomposition" />
+      <xs:enumeration value="Ignore" />
+    </xs:restriction>
+  </xs:simpleType>
+  <!-- MappingDirectionEnum -->
+  <xs:simpleType name="MappingDirectionEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="LeftToRight" />
+      <xs:enumeration value="RightToLeft" />
+      <xs:enumeration value="TwoWay" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="UserIdPropertyNameEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="DisplayName" />
+      <xs:enumeration value="Domain" />
+      <xs:enumeration value="Alias" />
+      <xs:enumeration value="EmailAddress" />
+      <xs:enumeration value="UniqueId"/>
+      <xs:enumeration value="QualifiedName" />
+      <xs:enumeration value="DomainAlias" />
+    </xs:restriction>
+  </xs:simpleType>
+  <!-- 
+   ELEMENT DEFINITION STARTS HERE
+  -->
+  <!-- Root Element -->
+  <xs:complexType name="ConfigurationElement">
+    <xs:all>
+      <xs:element name="Providers" minOccurs="1" maxOccurs="1">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element maxOccurs="unbounded" name="Provider" type="ProviderElement" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="Addins" minOccurs="0" maxOccurs="1">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="Addin" type="AddinElement" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="SessionGroup" type="SessionGroupElement" maxOccurs="1" minOccurs="1"/>
+    </xs:all>
+    <xs:attribute name="UniqueId" type="GUID" use="required" />
+    <xs:attribute name="FriendlyName" type="Min1Max300StringType" use="optional" />
+  </xs:complexType>
+  <!-- ProviderElement-->
+  <xs:complexType name="ProviderElement">
+    <xs:attribute name="ReferenceName" type="GUID" use="required" />            <!-- The unique identifier of a provider (e.g. an adapter) -->
+    <xs:attribute name="FriendlyName" type="Min1Max128StringType" use="required" />   <!-- The friendly name of a provider -->
+  </xs:complexType>
+  <!-- AddinElement-->
+  <xs:complexType name="AddinElement">
+    <xs:all>
+      <xs:element minOccurs="0" maxOccurs="1" name="CustomSettings" type="CustomSettingsElement" />      
+    </xs:all>
+    <xs:attribute name="ReferenceName" type="GUID" use="required" />
+    <!-- The unique identifier of a provider (e.g. an adapter) -->
+    <xs:attribute name="FriendlyName" type="Min1Max128StringType" use="required" />
+    <!-- The friendly name of a provider -->     
+  </xs:complexType>
+  <!-- SessionGroupElement -->
+  <xs:complexType name="SessionGroupElement">
+    <xs:all>
+      <xs:element minOccurs="1" maxOccurs="1" name="MigrationSources" type="MigrationSourcesElement" />
+      <xs:element minOccurs="1" maxOccurs="1" name="Sessions" type="SessionsElement" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Linking" type="LinkingElement" />
+      <xs:element minOccurs="0" maxOccurs="1" name="WorkFlowType" type="WorkFlowType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="CustomSettings" type="CustomSettingsElement" />
+      <xs:element minOccurs="0" maxOccurs="1" name="UserIdentityMappings" nillable="true">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="UserIdentityLookupAddins">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="UserIdentityLookupAddin" minOccurs="0" maxOccurs="unbounded" type="GUID" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>            
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="UserMappings">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element minOccurs="0" maxOccurs="unbounded" name="UserMapping">
+                    <xs:complexType>
+                      <xs:all>
+                        <xs:element name="LeftUser" type="User" />
+                        <xs:element name="RightUser" type="User" />
+                      </xs:all>
+                    </xs:complexType>
+                  </xs:element>
+                </xs:sequence>
+                <xs:attribute default="TwoWay" name="DirectionOfMapping" type="MappingDirectionEnum" use="optional" />
+              </xs:complexType>
+            </xs:element>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="DisplayNameMappings">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element minOccurs="0" maxOccurs="unbounded" name="DisplayNameMapping">
+                    <xs:complexType>
+                      <xs:attribute name="Left" type="xs:string" use="required" />
+                      <xs:attribute name="Right" type="xs:string" use="required" />
+                      <xs:attribute name="MappingRule" type="MappingRules" use="required" />
+                    </xs:complexType>
+                  </xs:element>
+                </xs:sequence>
+                <xs:attribute default="TwoWay" name="DirectionOfMapping" type="MappingDirectionEnum" use="optional" />
+              </xs:complexType>
+            </xs:element>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="AliasMappings">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element minOccurs="0" maxOccurs="unbounded" name="AliasMapping">
+                    <xs:complexType>
+                      <xs:attribute name="Left" type="xs:string" use="required" />
+                      <xs:attribute name="Right" type="xs:string" use="required" />
+                      <xs:attribute name="MappingRule" type="MappingRules" use="required" />
+                    </xs:complexType>
+                  </xs:element>
+                </xs:sequence>
+                <xs:attribute default="TwoWay" name="DirectionOfMapping" type="MappingDirectionEnum" />
+              </xs:complexType>
+            </xs:element>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="DomainMappings">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element minOccurs="0" maxOccurs="unbounded" name="DomainMapping">
+                    <xs:complexType>
+                      <xs:attribute name="Left" type="xs:string" use="required" />
+                      <xs:attribute name="Right" type="xs:string" use="required" />
+                      <xs:attribute name="MappingRule" type="MappingRules" use="required" />
+                    </xs:complexType>
+                  </xs:element>
+                </xs:sequence>
+                <xs:attribute default="TwoWay" name="DirectionOfMapping" type="MappingDirectionEnum" use="optional" />
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+          <xs:attribute name="EnableValidation" type="xs:boolean" use="optional" default="false"/>
+        </xs:complexType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="ErrorManagement" nillable="true">
+        <xs:complexType>
+          <xs:all>
+            <xs:element minOccurs="0" maxOccurs="1" name="ErrorRouters" nillable="true">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element minOccurs="0" maxOccurs="unbounded" name="ErrorRouter" nillable="true">
+                    <xs:complexType>
+                      <xs:sequence>
+                        <xs:element name="Signature" minOccurs="1" maxOccurs="1">
+                          <xs:complexType>
+                            <xs:attribute name="Exception" type="xs:string" use="required" />
+                            <xs:attribute name="Message" type="xs:string" use="optional" />
+                            <xs:attribute name="InnerException" type="xs:string" use="optional" />
+                            <xs:attribute name="InnerMessage" type="xs:string" use="optional" />
+                          </xs:complexType>
+                        </xs:element>
+                        <xs:element name="Policy" minOccurs="0" maxOccurs="1">
+                          <xs:complexType>
+                            <xs:choice>
+                              <xs:element name="OccurrenceCount" default="1" minOccurs="0" maxOccurs="1" type="xs:int" />
+                            </xs:choice>
+                          </xs:complexType>
+                        </xs:element>
+                      </xs:sequence>
+                    </xs:complexType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element minOccurs="0" maxOccurs="1" name="ReportingSettings" nillable="true">
+              <xs:complexType>
+                <xs:all>
+                  <!-- 0: write to windows event log (default) -->
+                  <!-- 1: block session group and everything from lower level -->
+                  <!-- 2: raise debug assertion and everything from lower level -->
+                  <xs:element name="ReportingLevel" minOccurs="0" maxOccurs="1" nillable="true" type="xs:int" />
+                  <xs:element name="EnableDebugAssertion" minOccurs="0" maxOccurs="1" nillable="true" type="xs:boolean" default="false" />
+                </xs:all>
+              </xs:complexType>
+            </xs:element>
+          </xs:all>
+        </xs:complexType>
+      </xs:element>
+    </xs:all>
+    <xs:attribute name="FriendlyName" type="NonEmptyString" use="required" />               <!-- The friendly name of a session group, which groups sessions together and link artifacts among them -->
+    <xs:attribute name="SessionGroupGUID" type="GUID" use="required" />                     <!-- The unique identifier of a session group -->
+    <xs:attribute name="CreationTime" type="xs:dateTime" use="optional" />                  <!-- The time when a session group first appear in the configuration -->
+    <xs:attribute name="Creator" type="NonEmptyString" use="optional" />                    <!-- The creator who creates the group -->
+    <xs:attribute name="DeprecationTime" type="xs:dateTime" use="optional" />               <!-- The time when a session group is deprecated -->
+    <xs:attribute name="SyncIntervalInSeconds" type="xs:int" use="optional" default="1800"/><!-- Internal between two runs of a synchronous session default to 30 minutes; 0 is invalid value -->
+    <xs:attribute name="SyncDurationInMinutes" type="xs:int" use="optional"/>               <!-- Duration of which a run f a synchronous session can last -->
+  </xs:complexType>
+  <!-- MigrationSourceElement -->
+  <xs:complexType name="MigrationSourcesElement">
+    <xs:sequence>
+      <xs:element minOccurs="2" maxOccurs="unbounded" name="MigrationSource">
+        <!-- Migration Source START -->
+        <xs:complexType>
+          <xs:all>
+            <xs:element minOccurs="0" maxOccurs="1" name="Settings">
+              <xs:complexType>
+                <xs:all>
+                  <xs:element name="Addins" minOccurs="0" maxOccurs="1">
+                    <xs:complexType>
+                      <xs:sequence>
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="Addin" type="AddinElement" />
+                      </xs:sequence>
+                    </xs:complexType>
+                  </xs:element>                  
+                  <xs:element minOccurs="0" maxOccurs="1" name="UserIdentityLookup">
+                    <xs:complexType>
+                      <xs:sequence>
+                        <xs:element name="LookupAddin" minOccurs="0" maxOccurs="unbounded">
+                          <xs:complexType>
+                            <xs:attribute name="Precedence" type="xs:int" use="required"></xs:attribute>
+                            <xs:attribute name="ReferenceName" type="GUID" use="required"></xs:attribute>
+                          </xs:complexType>
+                        </xs:element>
+                      </xs:sequence>
+                    </xs:complexType>
+                  </xs:element>
+                  <xs:element minOccurs="0" maxOccurs="1" name="DefaultUserIdProperty">
+                    <xs:complexType>
+                      <xs:attribute name="UserIdPropertyName" use="optional" type="UserIdPropertyNameEnum" default="QualifiedName"></xs:attribute>
+                    </xs:complexType>
+                  </xs:element>
+                </xs:all>
+              </xs:complexType>
+            </xs:element>
+            <xs:element minOccurs="1" maxOccurs="1" name="CustomSettings" type="CustomSettingsElement" />            
+            <xs:element minOccurs="0" maxOccurs="1" name="StoredCredential">
+              <xs:complexType>
+                <xs:attribute name="CredentialString" type="Min1Max300StringType" use="optional" />
+              </xs:complexType>
+            </xs:element>
+          </xs:all>
+          <xs:attribute name="InternalUniqueId" type="GUID" use="required" />           <!-- The unique identifier of a migration source, ie. an endpoint of the sync/migration -->
+          <xs:attribute name="FriendlyName" type="Min1Max128StringType" use="required" />     <!-- The friendly name of a migration source -->
+          <xs:attribute name="ServerIdentifier" type="Min1Max128StringType" use="required" /> <!-- An identifier of the source, not necessary to be unique -->
+          <xs:attribute name="ServerUrl" type="xs:anyURI" use="required" />             <!-- The url of the migration source server -->
+          <xs:attribute name="SourceIdentifier" type="Min1Max300StringType" use="required" /> <!-- Team Project name for WIT sessions -->
+          <xs:attribute name="ProviderReferenceName" type="GUID" use="required" />      <!-- The reference name of the provider (Adapter) that is used to move data from/to this migration source-->
+          <xs:attribute name="EndpointSystemName" type="xs:string" use="optional" />    <!-- This is only used in Configuration Template and is not persisted to storage. -->
+        </xs:complexType>
+        <!-- Migration Source END -->
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <!-- LinkingElement -->
+  <xs:complexType name="LinkingElement">
+    <xs:all>
+      <xs:element minOccurs="0" maxOccurs="1" name="CustomSettings" type="CustomSettingsElement" />
+      <xs:element minOccurs="0" maxOccurs="1" name="LinkTypeMappings" type="LinkTypeMappingsElement" />
+    </xs:all>
+  </xs:complexType>
+  <!-- SessionsElement -->
+  <xs:complexType name="SessionsElement">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="unbounded" name="Session">
+        <!-- Session element START -->
+        <xs:complexType>
+          <xs:all minOccurs="1" maxOccurs="1">
+            <xs:element minOccurs="0" maxOccurs="1" name="EventSinks" type="EventSinksElement" /> <!-- not used for now -->
+            <xs:element minOccurs="0" maxOccurs="1" name="CustomSettings" type="GenericSettingsElement" />
+            <xs:element minOccurs="1" maxOccurs="1" name="Filters" type="FiltersElement" />
+          </xs:all>
+          <xs:attribute name="SessionUniqueId" type="GUID" use="required" />              <!-- The unique identifier of a session -->
+          <xs:attribute name="FriendlyName" type="Min1Max128StringType" use="required" />       <!-- The friendly name of a session -->
+          <xs:attribute name="CreationTime" type="xs:dateTime" use="optional" />          <!-- The time when a sesison first appear in the config -->
+          <xs:attribute name="Creator" type="NonEmptyString" use="optional" />            <!-- The use who adds the session -->
+          <xs:attribute name="DeprecationTime" type="xs:dateTime" use="optional" />       <!-- The time when a session is removed/become deprecated -->
+          <xs:attribute name="LeftMigrationSourceUniqueId" type="GUID" use="required" />  <!-- The "left" side of the migration source. Note in bi-directional dataflow, data flows from "left" to "right" first -->
+          <xs:attribute name="RightMigrationSourceUniqueId" type="GUID" use="required" /> <!-- The "right" side of the migration source. -->
+          <xs:attribute name="SessionType" type="SessionTypeEnum" use="required" />       <!-- The type of the session, currently either VC or WIT -->
+        </xs:complexType>
+        <!-- Session element END -->
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <!-- FiltersElement -->
+  <xs:complexType name="FiltersElement">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="unbounded" name="FilterPair">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="2" maxOccurs="2" name="FilterItem">
+              <xs:complexType>
+                <xs:attribute name="MigrationSourceUniqueId" type="GUID" use="required" />  <!-- UniqueId of the migration source, to which this filter applies-->
+                <xs:attribute name="FilterString" type="Min0Max4000StringType" use="required" />        <!-- The filter string. For VC, mapped path. For TFS WIT, a partial WIQL conditions -->
+                <xs:attribute name="SnapshotStartPoint" type="Min0Max200StringType" use="optional" /> <!-- The snapshot start point. For VC only, it specifies the starting changeset for the migration on this path-->
+                <xs:attribute name="PeerSnapshotStartPoint" type="Min0Max200StringType" use="optional" /> <!-- The peer snapshot start point.  For VC only, it specifies the changeset on the other system that contains the initial snapshot.-->
+                <xs:attribute name="MergeScope" type="Min0Max200StringType" use="optional" /> <!-- The scope of merge operation that is supported under the filter string-->
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+          <xs:attribute default="false" name="Neglect" type="xs:boolean" use="optional" />  <!-- VC session specific, to tell if a path is cloaked -->
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <!-- PropertyBagElement -->
+  <xs:complexType name="PropertyBagElement">
+    <xs:attribute name="Name" type="xs:NCName" use="required" />                <!-- Name of the property -->
+    <xs:attribute name="Value" type="xs:normalizedString" use="required" />     <!-- Value of the property -->
+  </xs:complexType>
+  <!-- EventSinkElement -->
+  <xs:complexType name="EventSinksElement">                                     <!-- Not used for now. -->
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="EventSink">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="1" maxOccurs="1" name="CustomSettings" type="CustomSettingsElement" />
+          </xs:sequence>
+          <xs:attribute name="ProviderReferenceName" type="GUID" use="required" />
+          <xs:attribute name="CreationTime" type="xs:dateTime" use="optional" />
+          <xs:attribute name="FriendlyName" type="NonEmptyString" use="required" />
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <!-- CustomSettingsElement -->
+  <xs:complexType name="CustomSettingsElement">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CustomSetting">
+        <xs:complexType>
+          <xs:attribute name="SettingKey" type="NonEmptyString" />              <!-- Name of the property -->
+          <xs:attribute name="SettingValue" type="xs:string" />                 <!-- Value of the property -->
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <!-- GenericSettingsElement -->
+  <xs:complexType name="GenericSettingsElement">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="SettingXml">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:any minOccurs="0" maxOccurs="unbounded" processContents="skip" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="SettingXmlSchema">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:any minOccurs="0" maxOccurs="unbounded" processContents="skip" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="LinkTypeMappingsElement">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="LinkTypeMapping">
+        <xs:complexType>
+          <xs:attribute name="LeftMigrationSourceUniqueId" type="GUID" use="required"/>   <!-- Unique identifier of the Left migration source, to which the link type belongs-->
+          <xs:attribute name="LeftLinkType" type="NonEmptyString" use="required" />       <!-- The left-side link type -->
+          <xs:attribute name="RightLinkType" type="NonEmptyString" use="required" />      <!-- The right-side link type, mapped to the left side -->
+          <xs:attribute name="RightMigrationSourceUniqueId" type="GUID" use="required" /> <!-- Unique identifier of the Left migration source, to which the link type belongs-->
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="Frequency">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="ContinuousManual" />
+      <xs:enumeration value="ContinuousAutomatic" />
+      <xs:enumeration value="OneTime" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="DirectionOfFlow">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Unidirectional" />
+      <xs:enumeration value="Bidirectional" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="SyncContext">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Disabled" />
+      <xs:enumeration value="Unidirectional" />
+      <xs:enumeration value="Bidirectional" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="WorkFlowType">
+    <xs:attribute name="Frequency" type="Frequency" default="ContinuousManual" use="optional" />
+    <xs:attribute name="DirectionOfFlow" type="DirectionOfFlow" default="Unidirectional" use="optional" />
+    <xs:attribute name="SyncContext" type="SyncContext" default="Disabled" use="optional" />
+  </xs:complexType>
+</xs:schema>

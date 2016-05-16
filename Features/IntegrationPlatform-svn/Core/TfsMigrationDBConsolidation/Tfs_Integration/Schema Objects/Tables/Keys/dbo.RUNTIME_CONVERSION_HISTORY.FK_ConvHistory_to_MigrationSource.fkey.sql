@@ -1,0 +1,5 @@
+﻿ALTER TABLE [dbo].[RUNTIME_CONVERSION_HISTORY]
+	ADD CONSTRAINT [FK_ConvHistory_to_MigrationSource] 
+	FOREIGN KEY (SourceMigrationSourceId)
+	REFERENCES MIGRATION_SOURCES (Id)	
+

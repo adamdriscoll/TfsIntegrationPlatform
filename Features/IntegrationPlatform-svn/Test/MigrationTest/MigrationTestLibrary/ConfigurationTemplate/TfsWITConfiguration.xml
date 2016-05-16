@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Configuration UniqueId="346E4CD5-37C6-429D-B3BA-15ACE946698F" FriendlyName="WIT test configuration">
+  <Providers>
+    <Provider FriendlyName="TFS 2008 Migration Provider" ReferenceName="663A8B36-7852-4750-87FC-D189B0640FC1" />
+    <Provider FriendlyName="TFS 2010 Migration Provider" ReferenceName="04201D39-6E47-416f-98B2-07F0013F8455" />
+  </Providers>
+  <SessionGroup FriendlyName="Session Group Friendly Name"
+              SessionGroupGUID="EE90F85A-01AE-4ce8-B897-1F4F46F3570C"
+              WorkFlowType="OneDirectionalMigration">
+    <MigrationSources>
+      <!-- migration source attributes will be constructed at runtime based on MirationTestEnvironment.xml -->
+      <MigrationSource InternalUniqueId="BB2BD2C6-92B5-4817-AB51-A087B6532F0D"
+                       FriendlyName="Source System"
+                       ServerIdentifier="B82E30CA-9f12-492C-848d-F0F369F9FC18"
+                       ServerUrl="teyang-test-vm1"
+                       SourceIdentifier="sourceTP"
+                       ProviderReferenceName="663A8B36-7852-4750-87FC-D189B0640FC1">
+      </MigrationSource>
+      <MigrationSource InternalUniqueId="F4741818-F14C-458F-BB20-4BBAC20F95C3"
+                       FriendlyName="Target System"
+                       ServerIdentifier="b82e30ca-9f12-492c-848d-f0f369f9fc18"
+                       ServerUrl="teyang-test-vm1"
+                       SourceIdentifier="targetTP"
+                       ProviderReferenceName="663a8b36-7852-4750-87fc-d189b0640fc1">
+      </MigrationSource>
+    </MigrationSources>
+    <Sessions>
+      <Session SessionUniqueId="882d715f-214a-4901-aefb-a309ed4a8bd2"
+               FriendlyName="Work Item Tracking session"
+               LeftMigrationSourceUniqueId="BB2BD2C6-92B5-4817-AB51-A087B6532F0D"
+               RightMigrationSourceUniqueId="f4741818-F14C-458f-bb20-4bbac20f95c3"
+               SessionType="WorkItemTracking">
+
+        <CustomSettings>
+         <SettingXml>
+         </SettingXml>
+        </CustomSettings>
+
+        <Filters>
+          <!-- Filter Pairs will be constructed at run time. Any existing filters will be ingored. -->
+        </Filters>
+      </Session>
+    </Sessions>
+    <Linking>
+    </Linking>
+  </SessionGroup>
+</Configuration>

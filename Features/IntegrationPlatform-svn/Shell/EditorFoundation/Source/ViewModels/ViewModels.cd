@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Microsoft.TeamFoundation.Migration.Shell.ViewModel.SessionGroupViewModel">
+    <Position X="1.75" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEFAgAAAAABAAAAAAAEgAACQQAAAAAIAAAAEIAAAAAQ=</HashCode>
+      <FileName>ViewModels\SessionGroupViewModel.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="SessionViewModels" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="Microsoft.TeamFoundation.Migration.Shell.ViewModel.RuntimeViewModel&lt;T&gt;">
+    <Position X="4.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAAAAAAAAAACAAAAAAAAAAAAAAAIAAAAAAQAA=</HashCode>
+      <FileName>ViewModels\RuntimeViewModel.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="m_sessionGroup" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Microsoft.TeamFoundation.Migration.Shell.ViewModel.SessionMigrationViewModel">
+    <Position X="6.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAABQAQAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModels\SessionMigrationViewModel.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Session" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="OneWaySessions" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="Microsoft.TeamFoundation.Migration.Shell.ViewModel.OneWaySessionMigrationViewModel">
+    <Position X="10" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgAQggSgQAgAEAAAAEQAAAAAAAAAACAQgAAAAAA=</HashCode>
+      <FileName>ViewModels\OneWaySessionMigrationViewModel.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="m_oneWaySession" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Microsoft.TeamFoundation.Migration.Shell.ViewModel.SessionViewModel">
+    <Position X="6.75" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAAAAAAQAAAgAAAAAAAAAAAAAAAAAAAQAAAAAAA=</HashCode>
+      <FileName>ViewModels\SessionViewModel.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="OneWaySessions" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="Microsoft.TeamFoundation.Migration.Shell.ViewModel.OneWaySessionViewModel">
+    <Position X="10" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAgAAAAAAAAAAACRAAAAAAAAAAAAAAAACAAA=</HashCode>
+      <FileName>ViewModels\OneWaySessionViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Microsoft.TeamFoundation.Migration.Shell.ViewModel.RuntimeSessionViewModel">
+    <Position X="4.5" Y="1.75" Width="1.5" />
+    <Members>
+      <Method Name="Refresh" Hidden="true" />
+      <Property Name="Session" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AABAAAAAAABAAQAAAAAAAAAQAAAAAAAAAAAQAAAAAAA=</HashCode>
+      <FileName>ViewModels\RuntimeSessionViewModel.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Session" />
+    </ShowAsAssociation>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
