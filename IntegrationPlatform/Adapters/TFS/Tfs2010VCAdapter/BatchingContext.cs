@@ -14,6 +14,7 @@ using Microsoft.TeamFoundation.Migration.Toolkit.Services;
 using Microsoft.TeamFoundation.VersionControl.Client;
 using Microsoft.TeamFoundation.VersionControl.Common;
 using Microsoft.TeamFoundation.Migration.TfsVCAdapterCommon;
+using System.Linq;
 
 namespace Microsoft.TeamFoundation.Migration.Tfs2010VCAdapter
 {
@@ -404,11 +405,11 @@ namespace Microsoft.TeamFoundation.Migration.Tfs2010VCAdapter
                     {
                         string[] filter = new string[] { mergeItem.Target };
                         Conflict[] conflicts = m_workspace.QueryConflicts(filter, mergeItem.Recursion != RecursionType.None);
-                        foreach (Conflict conflict in conflicts)
+                        foreach (Conflict conflict in conflicts.AsParallel())
                         {
                             conflict.Resolution = Resolution.AcceptTheirs;
                             m_workspace.ResolveConflict(conflict);
-                            TraceManager.TraceInformation("Resolved conflict '{0}' as 'AcceptTheirs'", conflict.ToString());
+                            TraceManager.TraceInformation("Resolved conflict '{0}' as 'AcceptTheirs'", conflict.ConflictId);
                         }
                     }
 
@@ -566,6 +567,7 @@ namespace Microsoft.TeamFoundation.Migration.Tfs2010VCAdapter
             batchedItems.Sort(compareBatchedItemBySourcePathLength);
 
             GetStatus stat = null;
+            List<Conflict> allConflicts = new List<Conflict>();
             foreach (BatchedItem branchPath in batchedItems)
             {
                 try
@@ -583,11 +585,11 @@ namespace Microsoft.TeamFoundation.Migration.Tfs2010VCAdapter
                     {
                         string[] filter = new string[] { branchPath.Target };
                         Conflict[] conflicts = m_workspace.QueryConflicts(filter, false);
-                        foreach (Conflict conflict in conflicts)
+                        foreach (Conflict conflict in conflicts.AsParallel())
                         {
                             conflict.Resolution = Resolution.AcceptTheirs;
                             m_workspace.ResolveConflict(conflict);
-                            TraceManager.TraceInformation("Resolved conflict '{0}' as 'AcceptTheirs'", conflict.ToString());
+                            TraceManager.TraceInformation("Resolved conflict '{0}' as 'AcceptTheirs'", conflict.ConflictId);
                         }
                     }
                 }

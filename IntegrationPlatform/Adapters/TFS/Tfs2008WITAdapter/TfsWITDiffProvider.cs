@@ -31,7 +31,7 @@ namespace Microsoft.TeamFoundation.Migration.Tfs2008WitAdapter
             "System.AreaID", 
             "Microsoft.VSTS.Common.StateChangeDate", 
             "Microsoft.VSTS.Common.ActivatedDate", 
-            "TfsMigrationTool.ReflectedWorkItemId"
+            "TfsMigrationToolReflectedWorkItemId"
         };
 
         private WorkItemStore m_workItemStore;

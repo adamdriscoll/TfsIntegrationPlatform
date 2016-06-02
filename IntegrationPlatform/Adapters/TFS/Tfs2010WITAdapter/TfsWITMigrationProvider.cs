@@ -739,9 +739,9 @@ namespace Microsoft.TeamFoundation.Migration.Tfs2010WitAdapter
         private const string ReflectedIdFieldDef =
 @"<FIELD type=""String"" 
          name=""Mirrored TFS ID"" 
-         refname=""TfsMigrationTool.ReflectedWorkItemId"">
+         refname=""TfsMigrationToolReflectedWorkItemId"">
     <HELPTEXT>TFS ID from mirrored TFS server</HELPTEXT>
   </FIELD>";
-        private const string ReflectedIdSearchPath = "//FIELDS/FIELD[@refname='TfsMigrationTool.ReflectedWorkItemId']";
+        private const string ReflectedIdSearchPath = "//FIELDS/FIELD[@refname='TfsMigrationToolReflectedWorkItemId']";
     }
 }

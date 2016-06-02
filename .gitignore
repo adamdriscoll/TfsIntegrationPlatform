@@ -16,7 +16,6 @@ TestResults
 # Build results
 [Dd]ebug/
 [Rr]elease/
-[Bb]inaries/
 x64/
 *_i.c
 *_p.c
@@ -117,3 +116,5 @@ App_Data/*.ldf
 GeneratedArtifacts/
 _Pvt_Extensions/
 ModelManifest.xml
+/IntegrationPlatform/Binaries
+/TestEnv/MigrationTestEnvironment.xml

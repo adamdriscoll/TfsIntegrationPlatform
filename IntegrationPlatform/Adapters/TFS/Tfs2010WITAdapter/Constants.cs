@@ -14,7 +14,7 @@ namespace Microsoft.TeamFoundation.Migration.Tfs2010WitAdapter
         public static readonly string ReflectedWorkItemIdFieldReferenceName = "ReflectedWorkItemIdFieldReferenceName";
         public static readonly string EnableInsertReflectedWorkItemId = "EnableInsertReflectedWorkItemId";
 
-        public static readonly string MigrationTracingFieldRefName = "TfsMigrationTool.ReflectedWorkItemId";
+        public static readonly string MigrationTracingFieldRefName = "TfsMigrationToolReflectedWorkItemId";
         public static readonly string MigrationTracingFieldDispName = "Mirrored TFS ID";
         public const FieldType MigrationTracingFieldType = FieldType.String;
 
