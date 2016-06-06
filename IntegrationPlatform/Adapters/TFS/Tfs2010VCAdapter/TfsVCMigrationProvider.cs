@@ -18,6 +18,7 @@ using Microsoft.TeamFoundation.VersionControl.Client;
 using Microsoft.TeamFoundation.VersionControl.Common;
 using Microsoft.TeamFoundation.Migration.TfsVCAdapterCommon;
 using System.DirectoryServices;
+using System.Linq;
 
 namespace Microsoft.TeamFoundation.Migration.Tfs2010VCAdapter
 {
@@ -991,7 +992,7 @@ namespace Microsoft.TeamFoundation.Migration.Tfs2010VCAdapter
                     checkinConflict = TfsCheckinConflictType.CreateConflict(group.Name);
                     m_conflictManagementService.BacklogUnresolvedConflict(group.SourceId, checkinConflict, false);
 
-                    while (!checkinConflict.Reload() || (checkinConflict.ConflictStatus != MigrationConflict.Status.Resolved))
+                    while (!checkinConflict.Reload() || (checkinConmflict.ConflictStatus != MigrationConflict.Status.Resolved))
                     {
                         changes = Workspace.GetPendingChangesEnumerable();
                         if (codeReview(changes, int.Parse(group.Name), implicitRenames, implicitAdds, skippedActions, out changeCount, false))
@@ -1028,6 +1029,11 @@ namespace Microsoft.TeamFoundation.Migration.Tfs2010VCAdapter
             WorkspaceCheckInParameters checkinParameters = new WorkspaceCheckInParameters(changes, comment);
 
             checkinParameters.Author = GetChangeOwner(group);
+
+            if (this.m_tfsClient.GetAllCheckinNoteFieldNames().Any(m => m.Equals("SourceChangesetId", StringComparison.OrdinalIgnoreCase)))
+            {
+                checkinParameters.CheckinNotes = new CheckinNote(new[] { new CheckinNoteFieldValue("SourceChangesetId", group.Name) });
+            }
 
             if (!string.IsNullOrEmpty(checkinParameters.Author))
             {
