@@ -992,7 +992,7 @@ namespace Microsoft.TeamFoundation.Migration.Tfs2010VCAdapter
                     checkinConflict = TfsCheckinConflictType.CreateConflict(group.Name);
                     m_conflictManagementService.BacklogUnresolvedConflict(group.SourceId, checkinConflict, false);
 
-                    while (!checkinConflict.Reload() || (checkinConmflict.ConflictStatus != MigrationConflict.Status.Resolved))
+                    while (!checkinConflict.Reload() || (checkinConflict.ConflictStatus != MigrationConflict.Status.Resolved))
                     {
                         changes = Workspace.GetPendingChangesEnumerable();
                         if (codeReview(changes, int.Parse(group.Name), implicitRenames, implicitAdds, skippedActions, out changeCount, false))
